@@ -97,6 +97,7 @@
       <WarningLevel>Level4</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <CompileAs>CompileAsC</CompileAs>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <OutputFile>$(OutDir)libogg.dll</OutputFile>
@@ -107,6 +108,9 @@
       <ImportLibrary>$(OutDir)libogg.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
