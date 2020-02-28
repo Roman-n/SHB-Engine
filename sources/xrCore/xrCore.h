@@ -4,7 +4,7 @@
 
 #pragma warning(disable:4996)
 
-#if (defined(_DEBUG) || defined(MIXED) || defined(DEBUG)) && !defined(FORCE_NO_EXCEPTIONS)
+#if (defined(_DEBUG) || defined(DEBUG)) && !defined(FORCE_NO_EXCEPTIONS)
 	// "debug" or "mixed"
 	#if !defined(_CPPUNWIND)
 		#error Please enable exceptions...
@@ -41,15 +41,13 @@
 */
 
 // *** try to minimize code bloat of STLport
-#ifdef __BORLANDC__
+#ifdef XRCORE_EXPORTS				// no exceptions, export allocator and common stuff
+#	define _STLP_DESIGNATED_DLL	1
+#	define _STLP_USE_DECLSPEC		1
 #else
-	#ifdef XRCORE_EXPORTS				// no exceptions, export allocator and common stuff
-	#define _STLP_DESIGNATED_DLL	1
-	#define _STLP_USE_DECLSPEC		1
-	#else
-	#define _STLP_USE_DECLSPEC		1	// no exceptions, import allocator and common stuff
-	#endif
+#	define _STLP_USE_DECLSPEC		1	// no exceptions, import allocator and common stuff
 #endif
+
 
 // #include <exception>
 // using std::exception;
@@ -69,17 +67,6 @@
 	#ifdef _DEBUG
     	#define DEBUG
     #endif
-	#ifdef MIXED
-    	#define DEBUG
-    #endif
-#endif
-
-#ifdef XRCORE_STATIC
-#	define NO_FS_SCAN
-#endif
-
-#ifdef _EDITOR
-#	define NO_FS_SCAN
 #endif
 
 // inline control - redefine to use compiler's heuristics ONLY
@@ -101,47 +88,14 @@
 #ifndef DEBUG
 	#pragma inline_depth	( 254 )
 	#pragma inline_recursion( on )
-	#ifndef __BORLANDC__
-		#pragma intrinsic	(abs, fabs, fmod, sin, cos, tan, asin, acos, atan, sqrt, exp, log, log10, strcpy, strcat)
-	#endif
+	#pragma intrinsic	(abs, fabs, fmod, sin, cos, tan, asin, acos, atan, sqrt, exp, log, log10, strcpy, strcat)
 #endif
 
 #include <time.h>
-// work-around dumb borland compiler
-#ifdef __BORLANDC__
-	#define ALIGN(a)
 
-	#include <assert.h>
-	#include <utime.h>
-	#define _utimbuf utimbuf
-	#define MODULE_NAME 		"xrCoreB.dll"
-
-	// function redefinition
-    #define fabsf(a) fabs(a)
-    #define sinf(a) sin(a)
-    #define asinf(a) asin(a)
-    #define cosf(a) cos(a)
-    #define acosf(a) acos(a)
-    #define tanf(a) tan(a)
-    #define atanf(a) atan(a)
-    #define sqrtf(a) sqrt(a)
-    #define expf(a) ::exp(a)
-    #define floorf floor
-    #define atan2f atan2
-    #define logf log
-	// float redefine
-	#define _PC_24 PC_24
-	#define _PC_53 PC_53
-	#define _PC_64 PC_64
-	#define _RC_CHOP RC_CHOP
-	#define _RC_NEAR RC_NEAR
-    #define _MCW_EM MCW_EM
-#else
-	#define ALIGN(a)		__declspec(align(a))
-	#include <sys\utime.h>
-	#define MODULE_NAME 	"xrCore.dll"
-#endif
-
+#define ALIGN(a)		__declspec(align(a))
+#include <sys\utime.h>
+#define MODULE_NAME 	"xrCore.dll"
 
 // Warnings
 #pragma warning (disable : 4251 )		// object needs DLL interface
@@ -155,11 +109,6 @@
 #pragma warning (disable : 4189 )		//  local variable is initialized but not refenced
 #endif									//	frequently in release code due to large amount of VERIFY
 
-
-#ifdef _M_AMD64
-#pragma warning (disable : 4512 )
-#endif
-       
 // stl
 #pragma warning (push)
 #pragma warning (disable:4702)
@@ -175,14 +124,10 @@
 #pragma warning (disable : 4100 )		// unreferenced formal parameter
 
 // Our headers
-#ifdef XRCORE_STATIC
-#	define XRCORE_API
+#ifdef XRCORE_EXPORTS
+#	define XRCORE_API __declspec(dllexport)
 #else
-#	ifdef XRCORE_EXPORTS
-#		define XRCORE_API __declspec(dllexport)
-#	else
-#		define XRCORE_API __declspec(dllimport)
-#	endif
+#	define XRCORE_API __declspec(dllimport)
 #endif
 
 #include "xrDebug.h"
@@ -238,11 +183,7 @@ DEFINE_VECTOR	(xr_rtoken,RTokenVec,RTokenVecIt);
 #include "log.h"
 #include "xr_trims.h"
 #include "xr_ini.h"
-#ifdef NO_FS_SCAN
-#	include "ELocatorAPI.h"
-#else
-#	include "LocatorAPI.h"
-#endif
+#include "LocatorAPI.h"
 #include "FileSystem.h"
 #include "FTimer.h"
 #include "fastdelegate.h"

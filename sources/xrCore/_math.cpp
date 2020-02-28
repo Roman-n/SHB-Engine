@@ -16,39 +16,6 @@ XRCORE_API	Fmatrix			Fidentity;
 XRCORE_API	Dmatrix			Didentity;
 XRCORE_API	CRandom			Random;
 
-#ifdef _M_AMD64
-u16			getFPUsw()		{ return 0;	}
-
-namespace	FPU 
-{
-	XRCORE_API void 	m24		(void)	{
-		_control87	( _PC_24,   MCW_PC );
-		_control87	( _RC_CHOP, MCW_RC );
-	}
-	XRCORE_API void 	m24r	(void)	{
-		_control87	( _PC_24,   MCW_PC );
-		_control87	( _RC_NEAR, MCW_RC );
-	}
-	XRCORE_API void 	m53		(void)	{
-		_control87	( _PC_53,   MCW_PC );
-		_control87	( _RC_CHOP, MCW_RC );
-	}
-	XRCORE_API void 	m53r	(void)	{
-		_control87	( _PC_53,   MCW_PC );
-		_control87	( _RC_NEAR, MCW_RC );
-	}
-	XRCORE_API void 	m64		(void)	{
-		_control87	( _PC_64,   MCW_PC );
-		_control87	( _RC_CHOP, MCW_RC );
-	}
-	XRCORE_API void 	m64r	(void)	{
-		_control87	( _PC_64,   MCW_PC );
-		_control87	( _RC_NEAR, MCW_RC );
-	}
-
-	void		initialize		()				{}
-};
-#else
 u16 getFPUsw() 
 {
 	u16		SW;
@@ -112,16 +79,12 @@ namespace FPU
 		_control87	( _RC_NEAR, MCW_RC );
 		_64r		= getFPUsw();	// 64, rounding
 
-#ifndef XRCORE_STATIC
-
 		m24r		();
-
-#endif	//XRCORE_STATIC
 
 		::Random.seed	( u32(CPU::GetCLK()%(1i64<<32i64)) );
 	}
 };
-#endif
+
 
 namespace CPU 
 {
@@ -144,14 +107,6 @@ namespace CPU
 		qpc_counter	++	;
 		return	_dest	;
 	}
-
-#ifdef M_BORLAND
-	u64	__fastcall GetCLK		(void)
-	{
-		_asm    db 0x0F;
-		_asm    db 0x31;
-	}
-#endif
 
 	void Detect	()
 	{
@@ -244,11 +199,6 @@ void _initialize_cpu	(void)
 	_initialize_cpu_thread	();
 }
 
-#ifdef M_BORLAND
-void _initialize_cpu_thread	()
-{
-}
-#else
 // per-thread initialization
 #include <xmmintrin.h>
 #define _MM_DENORMALS_ZERO_MASK 0x0040
@@ -263,10 +213,10 @@ void debug_on_thread_spawn	();
 void _initialize_cpu_thread	()
 {
 	debug_on_thread_spawn	();
-#ifndef XRCORE_STATIC
+
 	// fpu & sse 
 	FPU::m24r	();
-#endif  // XRCORE_STATIC
+
 	if (CPU::ID.feature&_CPU_FEATURE_SSE)	{
 		//_mm_setcsr ( _mm_getcsr() | (_MM_FLUSH_ZERO_ON+_MM_DENORMALS_ZERO_ON) );
 		_MM_SET_FLUSH_ZERO_MODE			(_MM_FLUSH_ZERO_ON);
@@ -279,7 +229,7 @@ void _initialize_cpu_thread	()
 		}
 	}
 }
-#endif
+
 // threading API 
 #pragma pack(push,8)
 struct THREAD_NAME	{

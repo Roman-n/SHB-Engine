@@ -7,12 +7,6 @@ void	__stdcall xrMemCopy_x86					(LPVOID dest, const void* src, u32 n)
 	memcpy		(dest,src,n);
 }
 
-#if defined(M_BORLAND) || defined(_M_AMD64)
-void	__stdcall xrMemCopy_MMX					(LPVOID dest, const void* src, u32 n)
-{
-	memcpy		(dest,src,n);
-}
-#else
 //-------------------------------------------------------------------------------------------------
 #define TINY_BLOCK_COPY 64				//upper limit for movsd type copy
 //The smallest copy uses the X86 "movsd"instruction,in an optimized
@@ -221,4 +215,3 @@ $memcpy_final:
 		mov eax,[dest ];						// ret value =destination pointer
 	}
 }
-#endif

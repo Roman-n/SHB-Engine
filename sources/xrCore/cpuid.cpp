@@ -3,26 +3,7 @@
 
 #include "cpuid.h"
 
-#ifdef _M_AMD64
-
-int _cpuid (_processor_info *pinfo)
-{
-	_processor_info&	P	= *pinfo;
-	strcpy				(P.v_name,		"AuthenticAMD");
-	strcpy				(P.model_name,	"AMD64 family");
-	P.family			=	8;
-	P.model				=	8;
-	P.stepping			=	0;
-	P.feature			=	_CPU_FEATURE_SSE | _CPU_FEATURE_SSE2;
-	P.os_support		=	_CPU_FEATURE_SSE | _CPU_FEATURE_SSE2;
-	return P.feature;
-}
-
-#else
-
-#ifdef	M_VISUAL
 #include "mmintrin.h"
-#endif
 
 // These are the bit flags that get set on calling cpuid
 // with register eax set to 1
@@ -54,7 +35,6 @@ int IsCPUID()
 *   - Checks if OS Supports the capablity or not
 ****************************************************************/
 
-#ifdef M_VISUAL
 void _os_support(int feature, int& res)
 {
 
@@ -97,16 +77,6 @@ void _os_support(int feature, int& res)
 	_mm_empty	();
 	res |= feature;
 }
-#endif
-
-#ifdef M_BORLAND
-// borland doesn't understand MMX/3DNow!/SSE/SSE2 asm opcodes
-void _os_support(int feature, int& res)
-{
-	res |= feature;
-}
-#endif
-
 
 /***
 *
@@ -332,4 +302,3 @@ notamd:
    return feature;
 }
 
-#endif
