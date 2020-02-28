@@ -436,7 +436,7 @@ XML_NODE* CXml::SearchForAttribute(XML_NODE* start_node, LPCSTR tag_name, LPCSTR
 	return NULL;
 }
 
-#ifdef DEBUG // debug & mixed
+#ifdef DEBUG // debug
 
 LPCSTR CXml::CheckUniqueAttrib (XML_NODE* start_node, LPCSTR tag_name, LPCSTR attrib_name)
 {
