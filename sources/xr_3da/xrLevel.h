@@ -201,10 +201,6 @@ const u32 XRCL_PRODUCTION_VERSION	=	14;	// output
 const u32 CFORM_CURRENT_VERSION		=	4;
 const u32 MAX_NODE_BIT_COUNT		=	23;
 
-#ifdef PRIQUEL
-	const u32 XRAI_CURRENT_VERSION	=	9;
-#else // PRIQUEL
-	const u32 XRAI_CURRENT_VERSION	=	8;
-#endif // PRIQUEL
+const u32 XRAI_CURRENT_VERSION	=	8;
 
 #endif // xrLevelH

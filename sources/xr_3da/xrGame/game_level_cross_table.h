@@ -50,11 +50,9 @@ private:
 	CHeader					m_tCrossTableHeader;
 	CCell					*m_tpaCrossTable;
 
-#ifndef PRIQUEL
 private:
 	IReader					*m_tpCrossTableVFS;
 	IReader					*m_chunk;
-#endif // PRIQUEL
 
 public:
 	IC					CGameLevelCrossTable	();

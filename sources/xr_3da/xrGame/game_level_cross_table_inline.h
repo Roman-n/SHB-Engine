@@ -30,13 +30,11 @@ IC CGameLevelCrossTable::CGameLevelCrossTable	()
 
 IC CGameLevelCrossTable::~CGameLevelCrossTable	()
 {
-#ifndef PRIQUEL
 	VERIFY				(m_chunk);
 	m_chunk->close		();
 	
 	VERIFY				(m_tpCrossTableVFS);
 	FS.r_close			(m_tpCrossTableVFS);
-#endif // PRIQUEL
 };
 
 IC const CGameLevelCrossTable::CCell &CGameLevelCrossTable::vertex(u32 level_vertex_id) const

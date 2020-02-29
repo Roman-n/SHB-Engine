@@ -463,11 +463,7 @@ public:
 
 	virtual void	Execute	(LPCSTR args)
 	{
-#ifdef DEDICATED_SERVER
-		inherited::Execute	("renderer_r1");
-#else
 		inherited::Execute	(args);
-#endif // DEDICATED_SERVER
 
 		psDeviceFlags.set	(rsR2, (renderer_value>0) );
 		r2_sun_static =		(renderer_value!=2);

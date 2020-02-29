@@ -11,15 +11,10 @@ class ECORE_API CPSLibrary	{
     PS::PEDVec			m_PEDs;
     PS::PGDVec			m_PGDs;
 
-#ifdef _EDITOR    
-    AnsiString			m_CurrentParticles;
-public:
-	void __stdcall	 	FindByName		(LPCSTR new_name, bool& res);
-#endif
-
 public:
     bool 				Load			(LPCSTR nm);
     bool				Save			(LPCSTR nm);
+
 public:
 						CPSLibrary		(){;}
     		 			~CPSLibrary		(){;}

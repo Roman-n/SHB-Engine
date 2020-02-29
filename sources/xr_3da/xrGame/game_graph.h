@@ -12,9 +12,7 @@
 #include "script_export_space.h"
 #include "game_level_cross_table.h"
 
-#ifndef PRIQUEL
-#	define GRAPH_NAME			"game.graph"
-#endif // PRIQUEL
+#define GRAPH_NAME			"game.graph"
 
 class CGameGraph {
 private:
