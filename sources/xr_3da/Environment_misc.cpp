@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#pragma hdrstop
 
 #include "Environment.h"
 #include "xr_efflensflare.h"
@@ -145,7 +144,7 @@ void CEnvDescriptor::load	(LPCSTR exec_tm, LPCSTR S, CEnvironment* parent)
 	fog_density				= pSettings->r_float	(S,"fog_density");
 	fog_distance			= pSettings->r_float	(S,"fog_distance");
 	rain_density			= pSettings->r_float	(S,"rain_density");		clamp(rain_density,0.f,1.f);
-	rain_color				= pSettings->r_fvector3	(S,"rain_color");            
+	rain_color				= pSettings->r_fvector3	(S,"rain_color");
 	wind_velocity			= pSettings->r_float	(S,"wind_velocity");
 	wind_direction			= deg2rad(pSettings->r_float(S,"wind_direction"));
 	ambient					= pSettings->r_fvector3	(S,"ambient");
@@ -267,7 +266,6 @@ void CEnvDescriptorMixer::lerp	(CEnvironment* , CEnvDescriptor& A, CEnvDescripto
 	sun_color.lerp			(A.sun_color,B.sun_color,f);
 	sun_dir.lerp			(A.sun_dir,B.sun_dir,f).normalize();
 	VERIFY2					(sun_dir.y<0,"Invalid sun direction settings while lerp");
-
 }
 
 //-----------------------------------------------------------------------------

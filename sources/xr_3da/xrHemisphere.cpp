@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#pragma hdrstop
 
 #include "xrHemisphere.h"
 
@@ -539,7 +538,7 @@ const Fvector hemi_3[HEMI3_VERTS] =
 };
 #pragma warning(default:4305)
 
-void ECORE_API xrHemisphereBuild	(int quality, float energy, xrHemisphereIterator* iterator, LPVOID param)
+void xrHemisphereBuild	(int quality, float energy, xrHemisphereIterator* iterator, LPVOID param)
 {
 	const Fvector* hemi=0;
 	int h_count		= xrHemisphereVertices(quality,hemi); VERIFY(h_count>0);
@@ -558,7 +557,7 @@ void ECORE_API xrHemisphereBuild	(int quality, float energy, xrHemisphereIterato
     }
 }
 
-int ECORE_API xrHemisphereVertices	(int quality, const Fvector*& verts)
+int xrHemisphereVertices	(int quality, const Fvector*& verts)
 {
 	// SELECT table
 	int				h_count	= 0;
@@ -582,7 +581,7 @@ int ECORE_API xrHemisphereVertices	(int quality, const Fvector*& verts)
 	return h_count;
 }
 
-int	ECORE_API xrHemisphereIndices	(int quality, const u16*& indices)
+int xrHemisphereIndices	(int quality, const u16*& indices)
 {
 	// SELECT table
 	int				h_count	= 0;

@@ -1,4 +1,4 @@
-#include "StdAfx.h"
+#include "stdafx.h"
 
 #include "UITextVote.h"
 #include "UIVotingCategory.h"

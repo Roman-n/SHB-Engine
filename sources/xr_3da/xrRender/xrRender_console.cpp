@@ -1,7 +1,6 @@
-#include	"stdafx.h"
-#pragma		hdrstop
+#include "stdafx.h"
 
-#include	"xrRender_console.h"
+#include "xrRender_console.h"
 
 u32			ps_Preset				=	2	;
 xr_token							qpreset_token							[ ]={

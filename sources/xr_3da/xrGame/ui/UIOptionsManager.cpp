@@ -2,7 +2,7 @@
 // class CUIOptionsManager
 ///////////////////////////////////
 
-#include "StdAfx.h"
+#include "stdafx.h"
 #include "UIOptionsManager.h"
 #include "UIOptionsItem.h"
 #include "../../xr_ioconsole.h"

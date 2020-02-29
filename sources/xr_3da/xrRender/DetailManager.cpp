@@ -3,7 +3,6 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#pragma hdrstop
 
 #include "DetailManager.h"
 #include "cl_intersect.h"
@@ -164,7 +163,7 @@ void CDetailManager::Unload		()
 	FS.r_close			(dtFS);
 }
 
-extern ECORE_API float r_ssaDISCARD;
+extern float r_ssaDISCARD;
 
 void CDetailManager::UpdateVisibleM()
 {

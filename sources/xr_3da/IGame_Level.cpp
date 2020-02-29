@@ -49,7 +49,7 @@ void IGame_Level::net_Stop			()
 	Objects.Unload				( );
 	IR_Release					( );
 
-	bReady						= false;	
+	bReady						= false;
 }
 
 //-------------------------------------------------------------------------------------------

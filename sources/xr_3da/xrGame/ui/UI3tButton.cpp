@@ -7,7 +7,7 @@
 // copyright 2004 GSC Game World
 //
 
-#include "StdAfx.h"
+#include "stdafx.h"
 #include "UI3tButton.h"
 #include "UIXmlInit.h"
 

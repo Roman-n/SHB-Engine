@@ -23,7 +23,7 @@ IC	void	CBackend::set_xform_world	(const Fmatrix& M)
 { 
 	xforms.set_W(M);	
 }
-IC	void	CBackend::set_xform_view	(const Fmatrix& M)					
+IC	void	CBackend::set_xform_view	(const Fmatrix& M)
 { 
 	xforms.set_V(M);	
 }

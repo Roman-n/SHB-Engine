@@ -99,7 +99,7 @@ enum ESMFlags{
     esmSyncPart	= 1<<3
 };
 
-struct ECORE_API SAnimParams		{
+struct SAnimParams		{
     float			t;
     float			min_t;
     float			max_t;

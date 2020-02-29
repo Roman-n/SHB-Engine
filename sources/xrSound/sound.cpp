@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#pragma hdrstop
 
 #include "SoundRender_CoreA.h"
 #include "SoundRender_CoreD.h"

@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#pragma hdrstop
 
 #include "particle_actions_collection.h"
+
 using namespace PAPI;
 
 void ParticleAction::Load	(IReader& F)

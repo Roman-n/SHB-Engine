@@ -131,7 +131,7 @@ void CObjectList::Update		(bool bForce)
 	if ( ! (Device.Paused() && !bForce) )
 	{
 		// Clients
-		if (Device.fTimeDelta>EPS_S || bForce)			
+		if (Device.fTimeDelta>EPS_S || bForce)
 		{
 			// Select Crow-Mode
 			Device.Statistic->UpdateClient_updated	= 0;
@@ -279,7 +279,7 @@ void CObjectList::net_Import		(NET_Packet* Packet)
 		if (P)		
 		{
 
-			u32 rsize = Packet->r_tell();			
+			u32 rsize = Packet->r_tell();
 			
 			P->net_Import	(*Packet);
 

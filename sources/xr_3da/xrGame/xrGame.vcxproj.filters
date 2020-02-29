@@ -4677,9 +4677,6 @@
     <ClInclude Include="pch_script.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="StdAfx.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="xr_Client_BattlEye.h">
       <Filter>Core\Client</Filter>
     </ClInclude>
@@ -6558,6 +6555,9 @@
     <ClInclude Include="ui\UIGameTutorial.h">
       <Filter>UI\Tutorial</Filter>
     </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="damage_manager.cpp">
@@ -7785,9 +7785,6 @@
       <Filter>AI\ASpace</Filter>
     </ClCompile>
     <ClCompile Include="pch_script.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="StdAfx.cpp">
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="xr_Client_BattlEye.cpp">
@@ -9706,6 +9703,9 @@
     </ClCompile>
     <ClCompile Include="ui\UIGameTutorialVideoItem.cpp">
       <Filter>UI\Tutorial</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,11 +1,10 @@
 //---------------------------------------------------------------------------
-#include 	"stdafx.h"
-#pragma hdrstop
+#include "stdafx.h"
 
-#include 	"SkeletonMotions.h"
-#include 	"SkeletonAnimated.h"
-#include	"fmesh.h"
-#include	"motion.h"
+#include "SkeletonMotions.h"
+#include "SkeletonAnimated.h"
+#include "fmesh.h"
+#include "motion.h"
 
 motions_container*	g_pMotionsContainer	= 0;
 
@@ -19,7 +18,6 @@ u16 find_bone_id(vecBones* bones, shared_str nm)
 //-----------------------------------------------------------------------
 BOOL motions_value::load		(LPCSTR N, IReader *data, vecBones* bones)
 {
-
 	m_id						= N;
 
 	bool bRes					= true;

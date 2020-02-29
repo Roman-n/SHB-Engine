@@ -3,10 +3,9 @@
 //----------------------------------------------------
 
 #include "stdafx.h"
-#pragma hdrstop
 
-#include "cderr.h"
-#include "commdlg.h"
+#include <cderr.h>
+#include <commdlg.h>
 
 EFS_Utils*	xr_EFS	= NULL;
 //----------------------------------------------------

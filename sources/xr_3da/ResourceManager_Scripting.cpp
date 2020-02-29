@@ -1,14 +1,13 @@
 #include "stdafx.h"
-#pragma hdrstop
 
-#include	"render.h"
-#include	"ResourceManager.h"
-#include	"tss.h"
-#include	"blenders\blender.h"
-#include	"blenders\blender_recorder.h"
-#include	"ai_script_space.h"
-#include	"ai_script_lua_extension.h"
-#include	"luabind/return_reference_to_policy.hpp"
+#include "render.h"
+#include "ResourceManager.h"
+#include "tss.h"
+#include "blenders\blender.h"
+#include "blenders\blender_recorder.h"
+#include "ai_script_space.h"
+#include "ai_script_lua_extension.h"
+#include "luabind/return_reference_to_policy.hpp"
 
 using namespace				luabind;
 

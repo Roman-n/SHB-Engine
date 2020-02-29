@@ -7,7 +7,7 @@
 // Copyright 2005 GSC Game World
 //
 
-#include "StdAfx.h"
+#include "stdafx.h"
 #include "UITimeWnd.h"
 #include "UIInventoryUtilities.h"
 

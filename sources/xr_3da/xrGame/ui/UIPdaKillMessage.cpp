@@ -6,7 +6,7 @@
 // 
 // Copyright 2005 GSC GameWorld
 
-#include "StdAfx.h"
+#include "stdafx.h"
 #include "UIPdaKillMessage.h"
 #include "UIInventoryUtilities.h"
 

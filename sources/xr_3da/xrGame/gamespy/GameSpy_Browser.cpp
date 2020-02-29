@@ -1,4 +1,4 @@
-#include "StdAfx.h"
+#include "stdafx.h"
 #include "..\game_base_space.h"
 #include "..\Spectator.h"
 #include "GameSpy_Browser.h"
@@ -15,10 +15,6 @@
 void __cdecl SBCallback(void* sb, SBCallbackReason reason, void* server, void *instance);
 
 CGameSpy_Browser::CGameSpy_Browser()
-#ifdef PROFILE_CRITICAL_SECTIONS
-	:m_refresh_lock(MUTEX_PROFILE_ID(CGameSpy_Browser::m_refresh_lock))
-#endif // PROFILE_CRITICAL_SECTIONS
-
 {
 	//-------------------------
 	m_hGameSpyDLL = NULL;
@@ -38,10 +34,6 @@ CGameSpy_Browser::CGameSpy_Browser()
 };
 
 CGameSpy_Browser::CGameSpy_Browser(HMODULE hGameSpyDLL)
-#ifdef PROFILE_CRITICAL_SECTIONS
-	:m_refresh_lock(MUTEX_PROFILE_ID(CGameSpy_Browser::m_refresh_lock))
-#endif // PROFILE_CRITICAL_SECTIONS
-
 {
 	//-------------------------
 	m_hGameSpyDLL = NULL;

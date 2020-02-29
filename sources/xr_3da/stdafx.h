@@ -11,34 +11,22 @@
 
 #pragma warning(disable:4995)
 #include <d3d9.h>
-//#include <dplay8.h>
 #pragma warning(default:4995)
 
 // you must define ENGINE_BUILD then building the engine itself
 // and not define it if you are about to build DLL
-#ifndef NO_ENGINE_API
-	#ifdef	ENGINE_BUILD
-		#define DLL_API			__declspec(dllimport)
-		#define ENGINE_API		__declspec(dllexport)
-	#else
-		#define DLL_API			__declspec(dllexport)
-		#define ENGINE_API		__declspec(dllimport)
-	#endif
+#ifdef	ENGINE_BUILD
+	#define DLL_API			__declspec(dllimport)
+	#define ENGINE_API		__declspec(dllexport)
 #else
-	#define ENGINE_API
-	#define DLL_API
-#endif // NO_ENGINE_API
-
-#define ECORE_API
+	#define DLL_API			__declspec(dllexport)
+	#define ENGINE_API		__declspec(dllimport)
+#endif
 
 // Our headers
 #include "engine.h"
 #include "defines.h"
-#ifndef NO_XRLOG
-#include "..\xrCore\log.h"
-#endif
 #include "device.h"
-#include "..\xrCore\fs.h"
 
 #include "xrXRC.h"
 

@@ -42,7 +42,7 @@ enum fsSLS_Chunks		{
 };
 
 enum EBuildQuality{
-	ebqDraft			= 0,			
+	ebqDraft			= 0,
 	ebqHigh,
 	ebqCustom,
 	ebq_force_u16		= u16(-1)

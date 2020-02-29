@@ -10,9 +10,6 @@
     <Filter Include="Interfaces">
       <UniqueIdentifier>{41f0a2eb-d527-41b8-8426-35b8119604fb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Interfaces\Sound">
-      <UniqueIdentifier>{a7e3e2e3-74ab-4a0f-bdf1-0cb56ebbcf29}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Interfaces\Input">
       <UniqueIdentifier>{d93add5f-28f7-4bcb-b7dd-ab96f2d53eff}</UniqueIdentifier>
     </Filter>
@@ -144,9 +141,6 @@
     <ClInclude Include="_d3d_extensions.h">
       <Filter>General</Filter>
     </ClInclude>
-    <ClInclude Include="CopyProtection.h">
-      <Filter>General</Filter>
-    </ClInclude>
     <ClInclude Include="defines.h">
       <Filter>General</Filter>
     </ClInclude>
@@ -232,9 +226,6 @@
       <Filter>Game API\Environment\Effects</Filter>
     </ClInclude>
     <ClInclude Include="CameraBase.h">
-      <Filter>Game API\Cameras</Filter>
-    </ClInclude>
-    <ClInclude Include="CameraDebug.h">
       <Filter>Game API\Cameras</Filter>
     </ClInclude>
     <ClInclude Include="CameraDefs.h">
@@ -865,9 +856,6 @@
     </ClCompile>
     <ClCompile Include="mailSlot.cpp">
       <Filter>Engine\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="_scripting.cpp">
-      <Filter>Engine\Core\Scripting</Filter>
     </ClCompile>
     <ClCompile Include="ai_script_lua_debug.cpp">
       <Filter>Engine\Core\Scripting</Filter>

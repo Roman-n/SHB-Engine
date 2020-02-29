@@ -75,31 +75,12 @@ void CLevel::IR_OnMouseMove( int dx, int dy )
 	}
 }
 
-class		vtune_		{
-	BOOL	enabled_	;
-public:
-			vtune_	()		{
-		enabled_	= FALSE;
-	}
-	void	enable	()	{ if (!enabled_)	{ 
-		Engine.External.tune_resume	();	enabled_=TRUE;	
-		Msg	("vtune : enabled");
-	}}
-	void	disable	()	{ if (enabled_)		{ 
-		Engine.External.tune_pause	();	enabled_=FALSE; 
-		Msg	("vtune : disabled");
-	}}
-}	vtune	;
-
 // Обработка нажатия клавиш
 extern bool g_block_pause;
 
 void CLevel::IR_OnKeyboardPress	(int key)
 {
 	bool b_ui_exist = (pHUD && pHUD->GetUI());
-
-//.	if (DIK_F10 == key)		vtune.enable();
-//.	if (DIK_F11 == key)		vtune.disable();
 	
 	EGameActions _curr = get_binded_action(key);
 	switch ( _curr ) 

@@ -1,7 +1,4 @@
-// file: D3DUtils.cpp
-
 #include "stdafx.h"
-#pragma hdrstop
 
 #include "gamefont.h"
 #include "d3dutils.h"

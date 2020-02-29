@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#pragma hdrstop
 
 #pragma warning(push)
 #pragma warning(disable:4995)
@@ -84,7 +83,6 @@ void	CBackend::set_ClipPlanes	(u32 _enable, Fplane*	_planes /*=NULL */, u32 coun
 	CHK_DX	(HW.pDevice->SetRenderState(D3DRS_CLIPPLANEENABLE,e_mask));
 }
 
-#ifndef DEDICATED_SREVER
 void	CBackend::set_ClipPlanes	(u32 _enable, Fmatrix*	_xform  /*=NULL */, u32 fmask/* =0xff */)
 {
 	if (0==HW.Caps.geometry.dwClipPlanes)	return;
@@ -154,9 +152,3 @@ void CBackend::set_Textures			(STextureList* _T)
 		CHK_DX							(HW.pDevice->SetTexture(_last_vs+256,NULL));
 	}
 }
-#else
-
-void	CBackend::set_ClipPlanes	(u32 _enable, Fmatrix*	_xform  /*=NULL */, u32 fmask/* =0xff */) {}
-void CBackend::set_Textures			(STextureList* _T) {}
-
-#endif

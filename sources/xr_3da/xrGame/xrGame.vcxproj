@@ -1327,7 +1327,7 @@
     <ClInclude Include="stalker_velocity_collection_inline.h" />
     <ClInclude Include="stalker_velocity_holder.h" />
     <ClInclude Include="stalker_velocity_holder_inline.h" />
-    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="stdafx.h" />
     <ClInclude Include="step_manager.h" />
     <ClInclude Include="step_manager_defs.h" />
     <ClInclude Include="string_table.h" />
@@ -3434,7 +3434,7 @@
     </ClCompile>
     <ClCompile Include="stalker_velocity_collection.cpp" />
     <ClCompile Include="stalker_velocity_holder.cpp" />
-    <ClCompile Include="StdAfx.cpp">
+    <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>

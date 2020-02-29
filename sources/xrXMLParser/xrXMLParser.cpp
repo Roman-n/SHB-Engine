@@ -1,8 +1,6 @@
 #include "stdafx.h"
-#pragma hdrstop
 
 #include "xrXMLParser.h"
-
 
 XRXMLPARSER_API CXml::CXml()
 	:	m_root			(NULL),

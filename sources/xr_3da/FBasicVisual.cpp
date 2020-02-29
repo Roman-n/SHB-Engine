@@ -3,10 +3,9 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#pragma hdrstop
 
 #include "render.h"
-   
+
 #include "fbasicvisual.h"
 #include "fmesh.h"
 

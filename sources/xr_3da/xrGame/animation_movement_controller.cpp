@@ -1,4 +1,4 @@
-#include "StdAfx.h"
+#include "stdafx.h"
 #include "animation_movement_controller.h"
 #include "../SkeletonAnimated.h" 
 #include "game_object_space.h"

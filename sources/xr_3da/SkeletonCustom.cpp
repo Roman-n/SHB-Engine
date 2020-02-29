@@ -1,18 +1,13 @@
 //---------------------------------------------------------------------------
-#include 	"stdafx.h"
-#pragma hdrstop
+#include "stdafx.h"
 
-#include 	"SkeletonCustom.h"
-#include	"SkeletonX.h"
-#include	"fmesh.h"
-#include	"Render.h"
+#include "SkeletonCustom.h"
+#include "SkeletonX.h"
+#include "fmesh.h"
+#include "Render.h"
 
 int			psSkeletonUpdate	= 32;
-xrCriticalSection	UCalc_Mutex
-#ifdef PROFILE_CRITICAL_SECTIONS
-	(MUTEX_PROFILE_ID(UCalc_Mutex))
-#endif // PROFILE_CRITICAL_SECTIONS
-;
+xrCriticalSection	UCalc_Mutex;
 
 //////////////////////////////////////////////////////////////////////////
 // BoneInstance methods

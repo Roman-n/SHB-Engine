@@ -2,14 +2,9 @@
 //
 //////////////////////////////////////////////////////////////////////
 #include "stdafx.h"
-#pragma hdrstop
 
 #include "NET_Common.h"
 #include "NET_Compressor.h"
-
-
-
-
 
 #if NET_USE_COMPRESSION
 
@@ -263,11 +258,7 @@ void NET_Compressor::done_decoding		( )
 //////////////////////////////////////////////////////////////////////
 
 NET_Compressor::NET_Compressor()
-#ifdef PROFILE_CRITICAL_SECTIONS
-	:CS(MUTEX_PROFILE_ID(NET_Compressor))
-#endif // PROFILE_CRITICAL_SECTIONS
-{
-}
+{ }
 
 NET_Compressor::~NET_Compressor()
 {

@@ -1,4 +1,4 @@
-#include "StdAfx.h"
+#include "stdafx.h"
 #include ".\r__occlusion.h"
 
 R_occlusion::R_occlusion(void)

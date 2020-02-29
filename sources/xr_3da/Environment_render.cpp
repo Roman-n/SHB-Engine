@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#pragma hdrstop
 
 #include "Environment.h"
 #include "render.h"
@@ -224,7 +223,6 @@ void CEnvironment::OnDeviceCreate()
 			for (EnvIt it=_I->second.begin(); it!=_I->second.end(); it++)
 				(*it)->on_device_create();
 	}
-
 
 	Invalidate	();
 	OnFrame		();

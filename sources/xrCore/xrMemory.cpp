@@ -1,10 +1,9 @@
 #include "stdafx.h"
-#pragma hdrstop
 
-#include	"xrsharedmem.h"
-#include	"xrMemory_pure.h"
+#include "xrsharedmem.h"
+#include "xrMemory_pure.h"
 
-#include	<malloc.h>
+#include <malloc.h>
 
 xrMemory	Memory;
 BOOL		mem_initialized	= FALSE;
@@ -32,16 +31,9 @@ XRCORE_API void dump_phase		()
 #endif // DEBUG_MEMORY_MANAGER
 
 xrMemory::xrMemory()
-#ifdef DEBUG_MEMORY_MANAGER
-#	ifdef PROFILE_CRITICAL_SECTIONS
-		:debug_cs(MUTEX_PROFILE_ID(xrMemory))
-#	endif // PROFILE_CRITICAL_SECTIONS
-#endif // DEBUG_MEMORY_MANAGER
 {
 #ifdef DEBUG_MEMORY_MANAGER
-
 	debug_mode	= FALSE;
-
 #endif // DEBUG_MEMORY_MANAGER
 	mem_copy	= xrMemCopy_x86;
 	mem_fill	= xrMemFill_x86;

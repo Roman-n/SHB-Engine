@@ -15,9 +15,6 @@
     <ClCompile Include="Frustum.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="StdAfx.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
     <ClCompile Include="xrCDB.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
@@ -102,12 +99,12 @@
     <ClCompile Include="Opcode.cpp">
       <Filter>Opcode</Filter>
     </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Frustum.h">
-      <Filter>Kernel</Filter>
-    </ClInclude>
-    <ClInclude Include="StdAfx.h">
       <Filter>Kernel</Filter>
     </ClInclude>
     <ClInclude Include="xrCDB.h">
@@ -229,6 +226,9 @@
     </ClInclude>
     <ClInclude Include="Opcode.h">
       <Filter>Opcode</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Kernel</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,8 +1,7 @@
 //---------------------------------------------------------------------------
-#include 	"stdafx.h"
-#pragma hdrstop
+#include "stdafx.h"
 
-#include 	"SkeletonCustom.h"
+#include "SkeletonCustom.h"
 
 extern int	psSkeletonUpdate;
 

@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#pragma hdrstop
 
 #include "..\skeletonX.h"
 #include "..\skeletoncustom.h"

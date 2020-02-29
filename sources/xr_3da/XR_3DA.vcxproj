@@ -188,11 +188,9 @@
     <ClInclude Include="Blenders\Blender_Recorder.h" />
     <ClInclude Include="bone.h" />
     <ClInclude Include="CameraBase.h" />
-    <ClInclude Include="CameraDebug.h" />
     <ClInclude Include="CameraDefs.h" />
     <ClInclude Include="CameraManager.h" />
     <ClInclude Include="cl_intersect.h" />
-    <ClInclude Include="CopyProtection.h" />
     <ClInclude Include="CustomHUD.h" />
     <ClInclude Include="D3DUtils.h" />
     <ClInclude Include="defines.h" />
@@ -335,7 +333,10 @@
     <ClCompile Include="du_cylinder.cpp" />
     <ClCompile Include="du_sphere.cpp" />
     <ClCompile Include="du_sphere_part.cpp" />
-    <ClCompile Include="Effector.cpp" />
+    <ClCompile Include="Effector.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="EffectorPP.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="EngineAPI.cpp" />
@@ -431,7 +432,10 @@
     <ClCompile Include="xrTheora_Surface_mmx.cpp" />
     <ClCompile Include="xrXRC.cpp" />
     <ClCompile Include="xr_area.cpp" />
-    <ClCompile Include="xr_area_query.cpp" />
+    <ClCompile Include="xr_area_query.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="xr_area_raypick.cpp" />
     <ClCompile Include="xr_collide_form.cpp" />
     <ClCompile Include="xr_effgamma.cpp" />
@@ -442,7 +446,6 @@
     <ClCompile Include="xr_object.cpp" />
     <ClCompile Include="xr_object_list.cpp" />
     <ClCompile Include="x_ray.cpp" />
-    <ClCompile Include="_scripting.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="OutOfVirtError.RES" />

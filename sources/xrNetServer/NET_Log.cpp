@@ -62,16 +62,12 @@ string64 PacketName[] = {
 };
 //---------------------------------------------------------
 INetLog::INetLog(LPCSTR sFileName, u32 dwStartTime)
-#ifdef PROFILE_CRITICAL_SECTIONS
-	:m_cs(MUTEX_PROFILE_ID(NET_Log))
-#endif // PROFILE_CRITICAL_SECTIONS
 {
 	strcpy(m_cFileName, sFileName);
 
 	m_pLogFile = NULL;
 	m_pLogFile = fopen(sFileName, "wb");
-	m_dwStartTime = 0;//dwStartTime;
-
+	m_dwStartTime = 0;
 }
 
 INetLog::~INetLog() 

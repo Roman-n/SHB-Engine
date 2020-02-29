@@ -3,7 +3,6 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#pragma hdrstop
 
 #pragma warning(disable:4995)
 #include <direct.h>
@@ -177,9 +176,6 @@ XRCORE_API void _dump_open_files(int mode)
 }
 
 CLocatorAPI::CLocatorAPI()
-#ifdef PROFILE_CRITICAL_SECTIONS
-	:m_auth_lock			(MUTEX_PROFILE_ID(CLocatorAPI::m_auth_lock))
-#endif // PROFILE_CRITICAL_SECTIONS
 {
     m_Flags.zero		();
 	// get page size

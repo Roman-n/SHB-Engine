@@ -1,5 +1,4 @@
 #include "stdafx.h"
-#pragma hdrstop
 
 #include "render.h"
 
@@ -17,7 +16,7 @@
 #include "IGame_Level.h"
 
 #include "D3DUtils.h"
-//#include "xrCore.h"
+
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -323,7 +322,6 @@ void CEnvironment::OnFrame()
 			CurrentEnv.sky_r_textures_env.push_back	(mk_pair(2,tonemap));								//. hack
 			CurrentEnv.clouds_r_textures.push_back	(mk_pair(2,tonemap));								//. hack
 		}
-		
 	}
 
 	//. Setup skybox textures, somewhat ugly
