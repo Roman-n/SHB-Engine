@@ -1,7 +1,5 @@
 #include "stdafx.h"
 
-#include "xrstring.h"
-
 XRCORE_API	extern		str_container*	g_pStringContainer	= NULL;
 
 #define		HEADER		12			// ref + len + crc

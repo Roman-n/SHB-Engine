@@ -1,12 +1,18 @@
-#ifndef xrCoreH
-#define xrCoreH
 #pragma once
+
+#ifndef DEBUG
+#	ifdef _DEBUG
+#		define DEBUG
+#	endif
+#endif
+
+#include "build defines.h"
 
 #pragma warning(disable:4996)
 
-#if (defined(_DEBUG) || defined(DEBUG)) && !defined(FORCE_NO_EXCEPTIONS)
-	// "debug" or "mixed"
-	#if !defined(_CPPUNWIND)
+#if (defined(DEBUG) && !defined(FORCE_NO_EXCEPTIONS))
+	// "debug"
+	#ifndef _CPPUNWIND
 		#error Please enable exceptions...
 	#endif
 	#define _HAS_EXCEPTIONS		1	// STL
@@ -14,7 +20,7 @@
 	#define BOOST_NO_EXCEPTIONS
 #else
 	// "release"
-	#if defined(_CPPUNWIND)
+	#ifdef _CPPUNWIND
 		#error Please disable exceptions...
 	#endif
 //	#define _HAS_EXCEPTIONS		1	// STL
@@ -24,21 +30,12 @@
 	#pragma warning(disable:4530)
 #endif
 
-#if !defined(_MT)
+#ifndef _MT
 	// multithreading disabled
 	#error Please enable multi-threaded library...
 #endif
 
-#	include "xrCore_platform.h"
-
-/*
-// stl-config
-// *** disable exceptions for both STLport and VC7.1 STL
-// #define _STLP_NO_EXCEPTIONS	1
-// #if XRAY_EXCEPTIONS
- 	#define _HAS_EXCEPTIONS		1	// force STL again
-// #endif
-*/
+#include "xrCore_platform.h"
 
 // *** try to minimize code bloat of STLport
 #ifdef XRCORE_EXPORTS				// no exceptions, export allocator and common stuff
@@ -48,10 +45,6 @@
 #	define _STLP_USE_DECLSPEC		1	// no exceptions, import allocator and common stuff
 #endif
 
-
-// #include <exception>
-// using std::exception;
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
@@ -59,15 +52,6 @@
 #include <string.h>
 
 #include <typeinfo>
-//#include <typeinfo.h>
-
-//#include <process.h>
-
-#ifndef DEBUG
-	#ifdef _DEBUG
-    	#define DEBUG
-    #endif
-#endif
 
 // inline control - redefine to use compiler's heuristics ONLY
 // it seems "IC" is misused in many places which cause code-bloat
@@ -129,7 +113,6 @@
 #include "clsid.h"
 #include "xrSyncronize.h"
 #include "xrMemory.h"
-#include "xrDebug.h"
 
 #include "_stl_extensions.h"
 #include "xrsharedmem.h"
@@ -210,5 +193,3 @@ public:
 	void		_destroy	();
 };
 extern XRCORE_API xrCore Core;
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef TYPES_H
-#define TYPES_H
+#pragma once
 
 // Type defs
 typedef	signed		char	s8;
@@ -19,15 +18,6 @@ typedef double				f64;
 
 typedef char*				pstr;
 typedef const char*			pcstr;
-
-// windoze stuff
-#ifndef _WINDOWS_
-	typedef	int				BOOL;
-	typedef pstr			LPSTR;
-	typedef pcstr			LPCSTR;
-	#define TRUE			true
-	#define FALSE			false
-#endif
 
 // Type limits
 #define type_max(T)		(std::numeric_limits<T>::max())
@@ -64,6 +54,4 @@ typedef	char	string1024	[1024];
 typedef	char	string2048	[2048];
 typedef	char	string4096	[4096];
 
-typedef	char	string_path	[2*_MAX_PATH];
-
-#endif
+typedef	char	string_path	[_MAX_PATH];

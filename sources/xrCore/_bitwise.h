@@ -1,5 +1,3 @@
-#ifndef _BITWISE_
-#define _BITWISE_
 #pragma once
 
 // float values defines
@@ -147,5 +145,3 @@ IC float apx_acos	(const float x)
 {
 	return PI_DIV_2 - apx_asin(x);
 }
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef _STD_EXT_internal
-#define _STD_EXT_internal
+#pragma once
 
 #define	BREAK_AT_STRCMP
 #ifndef DEBUG
@@ -226,5 +225,3 @@ IC int							xr_strcmp				( const char* S1, const char* S2 )
 XRCORE_API	char*				timestamp				(string64& dest);
 
 extern XRCORE_API u32			crc32					(const void* P, u32 len);
-
-#endif

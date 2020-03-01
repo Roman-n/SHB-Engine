@@ -1,6 +1,5 @@
 #include "stdafx.h"
 
-#include "LocatorAPI_defs.h"
 #pragma warning(disable:4995)
 #include <io.h>
 #include <direct.h>

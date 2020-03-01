@@ -32,8 +32,6 @@
 
 #define ENGINE_API
 
-#include "..\xrCore\xr_resource.h"
-
 // TODO: reference additional headers your program requires here
 #endif
 

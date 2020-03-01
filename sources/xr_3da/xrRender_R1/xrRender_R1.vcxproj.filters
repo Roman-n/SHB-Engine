@@ -414,7 +414,4 @@
       <Filter>Lights</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="Pipeline.txt" />
-  </ItemGroup>
 </Project>

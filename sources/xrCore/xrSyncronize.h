@@ -1,5 +1,3 @@
-#ifndef xrSyncronizeH
-#define xrSyncronizeH
 #pragma once
 
 // Desc: Simple wrapper for critical section
@@ -16,5 +14,3 @@ public:
     void				Leave	();
 	BOOL				TryEnter();
 };
-
-#endif // xrSyncronizeH

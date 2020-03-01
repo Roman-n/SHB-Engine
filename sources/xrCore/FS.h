@@ -1,9 +1,7 @@
 // FS.h: interface for the CFS class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#ifndef fsH
-#define fsH
+#pragma once
 
 #define CFS_CompressMark	(1ul << 31ul)
 
@@ -295,5 +293,3 @@ public:
 			CVirtualFileRW		(const char *cFileName);
 	virtual ~CVirtualFileRW		();
 };
-
-#endif // fsH

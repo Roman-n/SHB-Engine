@@ -297,10 +297,12 @@ _DDS:
 		// Load and get header
 		D3DXIMAGE_INFO			IMG;
 		S						= FS.r_open	(fn);
-#ifdef DEBUG
-		Msg						("* Loaded: %s[%d]b",fn,S->length());
-#endif // DEBUG
 		img_size				= S->length	();
+
+#ifdef LOADED_TEXTURE_LOG
+		Msg("* Loaded texture: [%s] %i byte", fn, S->length( ));
+#endif // def LOADED_TEXTURE_LOG
+
 		R_ASSERT				(S);
 		R_CHK2					(D3DXGetImageInfoFromFileInMemory	(S->pointer(),S->length(),&IMG), fn);
 		if (IMG.ResourceType	== D3DRTYPE_CUBETEXTURE)			goto _DDS_CUBE;

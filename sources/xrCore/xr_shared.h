@@ -1,5 +1,3 @@
-#ifndef xr_sharedH
-#define xr_sharedH
 #pragma once
 
 class XRCORE_API shared_value
@@ -81,5 +79,3 @@ public:
 	template <typename _on_new>
 	void					create				(shared_str key, shared_container<T>* container, const _on_new& p){	T* v = container->dock(key,p); if (0!=v) v->m_ref_cnt++; destroy(); p_ = v;	}
 };
-
-#endif

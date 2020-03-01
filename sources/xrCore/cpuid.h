@@ -1,5 +1,4 @@
-#ifndef _INC_CPUID
-#define _INC_CPUID
+#pragma once
 
 #define _CPU_FEATURE_MMX    0x0001
 #define _CPU_FEATURE_SSE    0x0002
@@ -17,5 +16,3 @@ struct _processor_info {
 };
 
 int _cpuid (_processor_info *);
-
-#endif

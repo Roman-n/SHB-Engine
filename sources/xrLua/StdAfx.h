@@ -11,20 +11,7 @@
 
 #include "../xrCore/xrCore.h"
 
-//#include <errno.h>
 #include <locale.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-
-//#include "xr_LuaAllocator.h"
-
-/*
-#include "src\lua.h"
-#include "src\lauxlib.h"
-#include "src\lualib.h"
-*/
 
 #pragma comment( lib, "xrCore.lib"	)
 

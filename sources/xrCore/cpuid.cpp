@@ -1,8 +1,6 @@
 #include "stdafx.h"
 
-#include "cpuid.h"
-
-#include "mmintrin.h"
+#include <mmintrin.h>
 
 // These are the bit flags that get set on calling cpuid
 // with register eax set to 1

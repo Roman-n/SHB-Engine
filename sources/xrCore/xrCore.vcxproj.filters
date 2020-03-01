@@ -192,9 +192,6 @@
     <ClCompile Include="crc32.cpp">
       <Filter>shared memory/string library</Filter>
     </ClCompile>
-    <ClCompile Include="xr_shared.cpp">
-      <Filter>shared memory/string library</Filter>
-    </ClCompile>
     <ClCompile Include="xrsharedmem.cpp">
       <Filter>shared memory/string library</Filter>
     </ClCompile>
@@ -322,9 +319,6 @@
       <Filter>Math\CPU</Filter>
     </ClInclude>
     <ClInclude Include="FixedMap.h">
-      <Filter>Math\STLext</Filter>
-    </ClInclude>
-    <ClInclude Include="FixedSet.h">
       <Filter>Math\STLext</Filter>
     </ClInclude>
     <ClInclude Include="FixedVector.h">
@@ -502,6 +496,9 @@
       <Filter>Compression\lzo</Filter>
     </ClInclude>
     <ClInclude Include="xrSyncronize.h" />
+    <ClInclude Include="build defines.h">
+      <Filter>Kernel</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="FileSystem.h">

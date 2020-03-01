@@ -1,5 +1,4 @@
-#ifndef MEMORY_MONITOR_H
-#define MEMORY_MONITOR_H
+#pragma once
 
 #ifdef DEBUG
 #	define USE_MEMORY_MONITOR
@@ -14,5 +13,3 @@ namespace memory_monitor {
 }
 
 #endif // USE_MEMORY_MONITOR
-
-#endif // MEMORY_MONITOR_H

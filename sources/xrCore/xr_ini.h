@@ -1,5 +1,4 @@
-#ifndef xr_iniH
-#define xr_iniH
+#pragma once
 
 // refs
 class	CInifile;
@@ -136,6 +135,3 @@ public:
 
 // Main configuration file
 extern XRCORE_API CInifile *pSettings;
-
-
-#endif //__XR_INI_H__

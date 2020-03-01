@@ -1,5 +1,4 @@
-#ifndef _vector_included
-#define _vector_included
+#pragma once
 
 // Undef some macros
 #ifdef M_PI
@@ -93,7 +92,6 @@ template <class T> struct _quaternion;
 #include "_obb.h"
 #include "_sphere.h"
 #include "_cylinder.h"
-#include "_random.h"
 #include "_compressed_normal.h"
 #include "_plane.h"
 #include "_plane2.h"
@@ -373,6 +371,4 @@ IC _quaternion<T>& _quaternion<T>::set(const _matrix<T>& M)
 #ifndef XRCORE_EXPORTS
 //. #pragma deprecated("MIN","MAX","ABS",fabs,fabsf,sqrt,sqrtf,malloc,free,calloc,realloc,memcpy,memmove,memset,strdup,strlen,strcmp,sin,cos,sinf,cosf)
 #pragma deprecated("MIN","MAX","ABS",fabs,fabsf,sqrt,sqrtf,malloc,free,calloc,realloc,memmove,memset,strdup,strlen,strcmp,sin,cos,sinf,cosf)
-#endif
-
 #endif

@@ -1,5 +1,4 @@
-#ifndef _STL_EXT_internal
-#define _STL_EXT_internal
+#pragma once
 
 using std::swap;
 
@@ -216,5 +215,3 @@ DEFINE_VECTOR(float,FloatVec,FloatIt);
 DEFINE_VECTOR(float*,LPFloatVec,LPFloatIt);
 DEFINE_VECTOR(int,IntVec,IntIt);
 DEFINE_VECTOR(int*,LPIntVec,LPIntIt);
-
-#endif

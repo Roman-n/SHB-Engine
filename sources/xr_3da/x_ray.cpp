@@ -467,8 +467,8 @@ int APIENTRY WinMain_impl(HINSTANCE hInstance,
                      int       nCmdShow)
 {
 	// Check for virtual memory
-	if ( ( strstr( lpCmdLine , "--skipmemcheck" ) == NULL ))
-		return 0;
+//	if ( ( strstr( lpCmdLine , "--skipmemcheck" ) == NULL ))
+//		return 0;
 
 	// Check for another instance
 #ifdef NO_MULTI_INSTANCES

@@ -885,10 +885,4 @@
       <Filter>General\Resources</Filter>
     </Image>
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="ClientServer.txt" />
-    <Text Include="Effects description.txt" />
-    <Text Include="features.txt" />
-    <Text Include="TODO.txt" />
-  </ItemGroup>
 </Project>

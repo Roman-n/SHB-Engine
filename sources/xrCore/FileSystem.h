@@ -1,11 +1,7 @@
 //----------------------------------------------------
 // file: FileSystem.h
 //----------------------------------------------------
-
-#ifndef FileSystemH
-#define FileSystemH
-
-#define BACKUP_FILE_LEVEL 5
+#pragma once
 
 class XRCORE_API EFS_Utils {
 	DEFINE_MAP	(xr_string,void*,HANDLEMap,HANDLEPairIt);
@@ -48,6 +44,3 @@ public:
 };
 extern XRCORE_API	EFS_Utils*	xr_EFS;
 #define EFS (*xr_EFS)
-
-#endif /*_INCDEF_FileSystem_H_*/
-

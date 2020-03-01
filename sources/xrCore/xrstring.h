@@ -1,5 +1,3 @@
-#ifndef xrstringH
-#define xrstringH
 #pragma once
 
 #pragma pack(push,4)
@@ -105,5 +103,3 @@ IC void	xr_strlwr		(xr_string& src)									{ for(xr_string::iterator it=src.beg
 IC void	xr_strlwr		(shared_str& src)									{ if (*src){LPSTR lp=xr_strdup(*src); xr_strlwr(lp); src=lp; xr_free(lp);} }
 
 #pragma pack(pop)
-
-#endif

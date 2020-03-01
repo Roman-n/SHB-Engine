@@ -1,5 +1,4 @@
-#ifndef __XR_MATH_H__
-#define __XR_MATH_H__
+#pragma once
 
 #include "cpuid.h"
 
@@ -47,5 +46,3 @@ extern XRCORE_API	void	thread_spawn			(
 	unsigned	stack,
 	void*		arglist 
 	);
-
-#endif //__XR_MATH_H__

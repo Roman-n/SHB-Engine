@@ -1,5 +1,4 @@
-#ifndef __V3D__
-#define __V3D__
+#pragma once
 
 // Inline call
 #ifndef IC
@@ -507,5 +506,3 @@ aa2_largest:	// aa2 is largest
 }
 IC BOOL	exact_normalize	(Fvector3& a)	{	return exact_normalize(&a.x);	}
 #pragma warning(pop)
-
-#endif
