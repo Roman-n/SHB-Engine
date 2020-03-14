@@ -135,5 +135,3 @@ void CScriptGameObject::set_default_panic_threshold()
 	CBaseMonster *monster = smart_cast<CBaseMonster *>(&object());
 	if (monster) monster->set_default_panic_threshold();
 }
-
-

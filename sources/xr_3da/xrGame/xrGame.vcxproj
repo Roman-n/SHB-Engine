@@ -1162,7 +1162,6 @@
     <ClInclude Include="script_hit.h" />
     <ClInclude Include="script_hit_inline.h" />
     <ClInclude Include="script_ini_file.h" />
-    <ClInclude Include="script_ini_file_inline.h" />
     <ClInclude Include="script_lanim.h" />
     <ClInclude Include="script_lua_helper.h" />
     <ClInclude Include="script_monster_action.h" />
@@ -1175,7 +1174,6 @@
     <ClInclude Include="script_object_action.h" />
     <ClInclude Include="script_object_action_inline.h" />
     <ClInclude Include="script_particles.h" />
-    <ClInclude Include="script_particles_inline.h" />
     <ClInclude Include="script_particle_action.h" />
     <ClInclude Include="script_particle_action_inline.h" />
     <ClInclude Include="script_process.h" />
@@ -1192,10 +1190,8 @@
     <ClInclude Include="script_sound_info.h" />
     <ClInclude Include="script_sound_inline.h" />
     <ClInclude Include="script_sound_type.h" />
-    <ClInclude Include="script_space.h" />
     <ClInclude Include="script_space_forward.h" />
     <ClInclude Include="script_stack_tracker.h" />
-    <ClInclude Include="script_stack_tracker_inline.h" />
     <ClInclude Include="script_storage.h" />
     <ClInclude Include="script_storage_inline.h" />
     <ClInclude Include="script_storage_space.h" />

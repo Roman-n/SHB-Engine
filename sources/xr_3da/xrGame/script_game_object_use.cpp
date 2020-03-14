@@ -18,6 +18,7 @@
 #include "PHScriptCall.h"
 #include "PHSimpleCalls.h"
 #include "phworld.h"
+
 void CScriptGameObject::SetTipText (LPCSTR tip_text)
 {
 	CUsableScriptObject	*l_tpUseableScriptObject = smart_cast<CUsableScriptObject*>(&object());
@@ -42,7 +43,6 @@ void CScriptGameObject::SetNonscriptUsable(bool nonscript_usable)
 	else l_tpUseableScriptObject->set_nonscript_usable(nonscript_usable);
 }
 
-
 Fvector CScriptGameObject::GetCurrentDirection()
 {
 	CProjector	*obj = smart_cast<CProjector*>(&object());
@@ -60,8 +60,7 @@ CScriptGameObject::CScriptGameObject		(CGameObject *game_object)
 }
 
 CScriptGameObject::~CScriptGameObject		()
-{
-}
+{ }
 
 CScriptGameObject *CScriptGameObject::Parent				() const
 {
@@ -103,7 +102,6 @@ void CScriptGameObject::Kill					(CScriptGameObject* who)
 		l_tpEntity->KillEntity					(who ? who->object().ID() : object().ID());
 	else
 		ai().script_engine().script_log			(ScriptStorage::eLuaMessageTypeError,"attempt to kill dead object %s",*object().cName());
-
 }
 
 bool CScriptGameObject::Alive					() const
@@ -194,17 +192,13 @@ void CScriptGameObject::SetCallback(GameObject::ECallbackType type)
 
 void CScriptGameObject::set_fastcall(const luabind::functor<bool> &functor, const luabind::object &object)
 {
-	
-
-	
 	CPHScriptGameObjectCondition* c=xr_new<CPHScriptGameObjectCondition>(object,functor,m_game_object);
 	CPHDummiAction*				  a=xr_new<CPHDummiAction>();
 	CPHSriptReqGObjComparer cmpr(m_game_object);
 	Level().ph_commander_scripts().remove_calls(&cmpr);
 	Level().ph_commander_scripts().add_call(c,a);
-	
-
 }
+
 void CScriptGameObject::set_const_force(const Fvector &dir,float value,u32 time_interval)
 {
 	CPhysicsShell	*shell=object().cast_physics_shell_holder()->PPhysicsShell();
@@ -222,5 +216,4 @@ void CScriptGameObject::set_const_force(const Fvector &dir,float value,u32 time_
 	CPHExpireOnStepCondition *cn=xr_new<CPHExpireOnStepCondition>();
 	cn->set_time_interval(time_interval);
 	ph_world->AddCall(cn,a);
-	
 }

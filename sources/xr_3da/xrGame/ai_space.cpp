@@ -165,7 +165,6 @@ void CAI_Space::validate			(const u32 level_id) const
 			VERIFY							(cross_table().vertex((*I).level_vertex_id()).game_vertex_id() == i);
 		}
 	}
-	
 
 //	Msg						("* Graph corresponds to the cross table");
 }

@@ -4,7 +4,6 @@
 
 struct UIRegistrator{
 
-
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
 add_to_type_list(UIRegistrator)

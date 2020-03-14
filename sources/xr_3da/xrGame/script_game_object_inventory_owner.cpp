@@ -69,6 +69,7 @@ void _AddIconedTalkMessage(LPCSTR text, LPCSTR texture_name, const Frect& tex_re
 	if(pGameSP->TalkMenu->IsShown())
 		pGameSP->TalkMenu->AddIconedMessage(text, texture_name, tex_rect, templ_name?templ_name:"iconed_answer_item" );
 }
+
 bool _give_news	(LPCSTR news, LPCSTR texture_name, const Frect& tex_rect, int delay, int show_time);
 
 bool  CScriptGameObject::GiveGameNews		(LPCSTR news, LPCSTR texture_name, Frect tex_rect, int delay, int show_time)
@@ -79,6 +80,7 @@ bool  CScriptGameObject::GiveGameNews		(LPCSTR news, LPCSTR texture_name, Frect 
 									delay, 
 									show_time);
 }
+
 bool _give_news	(LPCSTR text, LPCSTR texture_name, const Frect& tex_rect, int delay, int show_time)
 {
 	GAME_NEWS_DATA				news_data;
@@ -90,7 +92,6 @@ bool _give_news	(LPCSTR text, LPCSTR texture_name, const Frect& tex_rect, int de
 
 	news_data.texture_name			= texture_name;
 	news_data.tex_rect				= tex_rect;
-
 
 	if(delay==0)
 		Actor()->AddGameNews(news_data);
@@ -106,8 +107,8 @@ bool  CScriptGameObject::HasInfo				(LPCSTR info_id)
 	if(!pInventoryOwner) return false;
 
 	return pInventoryOwner->HasInfo(info_id);
-
 }
+
 bool  CScriptGameObject::DontHasInfo			(LPCSTR info_id)
 {
 	CInventoryOwner* pInventoryOwner = smart_cast<CInventoryOwner*>(&object());
@@ -127,8 +128,6 @@ xrTime CScriptGameObject::GetInfoTime			(LPCSTR info_id)
 	else
 		return xrTime(0);
 }
-
-
 
 bool CScriptGameObject::IsTalking()
 {
@@ -150,6 +149,7 @@ void CScriptGameObject::EnableTalk()
 	if(!pInventoryOwner) return;
 	pInventoryOwner->EnableTalk();
 }
+
 void CScriptGameObject::DisableTalk()
 {
 	CInventoryOwner* pInventoryOwner = smart_cast<CInventoryOwner*>(&object());
@@ -170,12 +170,14 @@ void CScriptGameObject::EnableTrade			()
 	if(!pInventoryOwner) return;
 	pInventoryOwner->EnableTrade();
 }
+
 void CScriptGameObject::DisableTrade		()
 {
 	CInventoryOwner* pInventoryOwner = smart_cast<CInventoryOwner*>(&object());
 	if(!pInventoryOwner) return;
 	pInventoryOwner->DisableTrade();
 }
+
 bool CScriptGameObject::IsTradeEnabled		()
 {
 	CInventoryOwner* pInventoryOwner = smart_cast<CInventoryOwner*>(&object());
@@ -268,7 +270,6 @@ void CScriptGameObject::UnloadMagazine		()
 
 	weapon_magazined->UnloadMagazine	(false);
 }
-//
 
 void CScriptGameObject::DropItem			(CScriptGameObject* pItem)
 {
@@ -388,7 +389,6 @@ void CScriptGameObject::ChangeGoodwill(int delta_goodwill, CScriptGameObject* pW
 	RELATION_REGISTRY().ChangeGoodwill(pInventoryOwner->object_id(), pWhoToSet->object().ID(), delta_goodwill);
 }
 
-
 //////////////////////////////////////////////////////////////////////////
 
 void CScriptGameObject::SetRelation(ALife::ERelationType relation, CScriptGameObject* pWhoToSet)
@@ -418,7 +418,6 @@ int	CScriptGameObject::GetAttitude			(CScriptGameObject* pToWho)
 	return RELATION_REGISTRY().GetAttitude(pInventoryOwner, pOthersInventoryOwner);
 }
 
-
 //////////////////////////////////////////////////////////////////////////
 
 LPCSTR CScriptGameObject::ProfileName			()
@@ -436,7 +435,6 @@ LPCSTR CScriptGameObject::ProfileName			()
 		return *profile_id;
 }
 
-
 LPCSTR CScriptGameObject::CharacterName			()
 {
 	CInventoryOwner* pInventoryOwner = smart_cast<CInventoryOwner*>(&object());
@@ -447,6 +445,7 @@ LPCSTR CScriptGameObject::CharacterName			()
 	}
 	return pInventoryOwner->Name();
 }
+
 int CScriptGameObject::CharacterRank			()
 {
 	// rank support for monster
@@ -461,6 +460,7 @@ int CScriptGameObject::CharacterRank			()
 	} 	
 	return monster->Rank();
 }
+
 void CScriptGameObject::SetCharacterRank			(int char_rank)
 {
 	CInventoryOwner* pInventoryOwner = smart_cast<CInventoryOwner*>(&object());
@@ -493,7 +493,6 @@ int CScriptGameObject::CharacterReputation			()
 	}
 	return pInventoryOwner->Reputation();
 }
-
 
 void CScriptGameObject::ChangeCharacterReputation		(int char_rep)
 {
@@ -561,7 +560,6 @@ ETaskState CScriptGameObject::GetGameTaskState	(LPCSTR task_id, int objective_nu
 		return eTaskStateDummy;
 	}
 	return t->m_Objectives[objective_num].TaskState();
-
 }
 
 void CScriptGameObject::SetGameTaskState	(ETaskState state, LPCSTR task_id, int objective_num)
@@ -585,6 +583,7 @@ void  CScriptGameObject::SwitchToTrade		()
 		pGameSP->TalkMenu->SwitchToTrade();
 	}
 }
+
 void  CScriptGameObject::SwitchToTalk		()
 {
 	R_ASSERT("switch_to_talk called ;)");

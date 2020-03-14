@@ -18,8 +18,8 @@ class CScriptSound {
 	shared_str					m_caSoundToPlay;
 
 	friend class CScriptSoundAction;
-public:
 
+public:
 								CScriptSound		(LPCSTR caSoundName, ESoundTypes sound_type = SOUND_TYPE_NO_SOUND);
 	virtual						~CScriptSound		();
 	IC		u32					Length				();
@@ -48,6 +48,7 @@ public:
 
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
+
 add_to_type_list(CScriptSound)
 #undef script_type_list
 #define script_type_list save_type_list(CScriptSound)

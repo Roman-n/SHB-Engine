@@ -34,8 +34,7 @@ public:
 			Fvector		r_fvector3			(LPCSTR S, LPCSTR L);
 			DECLARE_SCRIPT_REGISTER_FUNCTION
 };
+
 add_to_type_list(CScriptIniFile)
 #undef script_type_list
 #define script_type_list save_type_list(CScriptIniFile)
-
-#include "script_ini_file_inline.h"

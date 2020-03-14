@@ -33,9 +33,7 @@ int CDbgLuaHelper::PrepareLua(lua_State* l)
 	lua_getglobal(l, "DEBUGGER_ERRORMESSAGE");
 	lua_insert(l, top);
 	return top;
-
 }
-
 
 void CDbgLuaHelper::PrepareLuaBind()
 {
@@ -44,7 +42,6 @@ void CDbgLuaHelper::PrepareLuaBind()
 	luabind::set_error_callback (errormessageLuaBind);
 #endif
 }
-
 
 int CDbgLuaHelper::OutputTop(lua_State* L)
 {
@@ -243,7 +240,6 @@ const char* CDbgLuaHelper::GetSource()
 	return m_pAr->source+1; 
 };
 
-
 void CDbgLuaHelper::DrawStackTrace()
 {
 	debugger()->ClearStackTrace();
@@ -368,7 +364,6 @@ bool CDbgLuaHelper::GetCalltip(const char *szWord, char *szCalltip, int sz_callt
 
 	return false;
 }
-
 
 bool CDbgLuaHelper::Eval(const char *szCode, char* szRet,int szret_size)
 {
@@ -542,7 +537,6 @@ void CDbgLuaHelper::DrawTable(lua_State *l, LPCSTR S, bool bRecursive)
 
 		lua_pop		(l, 1);  /* removes `value'; keeps `key' for next iteration */
 	}
-
 }
 
 void CDbgLuaHelper::DrawVariableInfo(char* varName)

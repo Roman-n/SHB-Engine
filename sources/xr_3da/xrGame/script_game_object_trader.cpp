@@ -16,8 +16,8 @@ void CScriptGameObject::set_trader_global_anim(LPCSTR anim)
 		return;
 	}
 	trader->animation().set_animation(anim);
-
 }
+
 void CScriptGameObject::set_trader_head_anim(LPCSTR anim)
 {
 	CAI_Trader *trader = smart_cast<CAI_Trader *>(&object());
@@ -57,4 +57,3 @@ void CScriptGameObject::external_sound_stop()
 	}
 	trader->animation().external_sound_stop();
 }
-

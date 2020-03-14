@@ -68,5 +68,3 @@ void CScriptCallStack::GotoStackTraceLevel(int nLevel)
 									(LPARAM)m_lines[nLevel]);
 
 }
-
-

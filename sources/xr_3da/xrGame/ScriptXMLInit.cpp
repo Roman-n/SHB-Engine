@@ -64,7 +64,6 @@ CUIFrameWindow*	CScriptXmlInit::InitFrame(LPCSTR path, CUIWindow* parent){
 	return pWnd;
 }
 
-
 CUIFrameLineWnd* CScriptXmlInit::InitFrameLine(LPCSTR path, CUIWindow* parent){
 	CUIFrameLineWnd* pWnd = xr_new<CUIFrameLineWnd>();
 	CUIXmlInit::InitFrameLine(m_xml, path, 0, pWnd);
@@ -82,7 +81,6 @@ CUILabel* CScriptXmlInit::InitLabel(LPCSTR path, CUIWindow* parent){
 //.	if(parent) parent->AttachChild(pWnd);
 	return pWnd;
 }
-
 
 CUIEditBox* CScriptXmlInit::InitEditBox(LPCSTR path, CUIWindow* parent){
 	CUIEditBox* pWnd = xr_new<CUIEditBox>();
@@ -124,8 +122,6 @@ CUIScrollView* CScriptXmlInit::InitScrollView(LPCSTR path, CUIWindow* parent){
 //.	if(parent) parent->AttachChild(pWnd);
 	return pWnd;
 }
-
-
 
 CUICheckButton* CScriptXmlInit::InitCheck(LPCSTR path, CUIWindow* parent){
 	CUICheckButton* pWnd = xr_new<CUICheckButton>();
@@ -180,7 +176,6 @@ CUIButton* CScriptXmlInit::InitButton(LPCSTR path, CUIWindow* parent){
 	return pWnd;
 }
 
-
 CUI3tButton* CScriptXmlInit::Init3tButton(LPCSTR path, CUIWindow* parent){
 	CUI3tButton* pWnd = xr_new<CUI3tButton>();
 	CUIXmlInit::Init3tButton(m_xml, path, 0, pWnd);
@@ -190,7 +185,6 @@ CUI3tButton* CScriptXmlInit::Init3tButton(LPCSTR path, CUIWindow* parent){
 	return pWnd;	
 }
 
-
 CUIListWnd* CScriptXmlInit::InitList(LPCSTR path, CUIWindow* parent){
 	CUIListWnd* pWnd = xr_new<CUIListWnd>();
 	CUIXmlInit::InitListWnd(m_xml, path, 0, pWnd);
@@ -199,7 +193,6 @@ CUIListWnd* CScriptXmlInit::InitList(LPCSTR path, CUIWindow* parent){
 //.	if(parent) parent->AttachChild(pWnd);
 	return pWnd;
 }
-
 
 CUITabControl* CScriptXmlInit::InitTab(LPCSTR path, CUIWindow* parent){
 	CUITabControl* pWnd = xr_new<CUITabControl>();
@@ -318,5 +311,4 @@ void CScriptXmlInit::script_register(lua_State *L){
 		.def("InitAutoStaticGroup",		&CScriptXmlInit::InitAutoStaticGroup)
 		.def("InitProgressBar",			&CScriptXmlInit::InitProgressBar)
 	];
-
 }

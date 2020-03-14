@@ -47,6 +47,7 @@ void CScriptParticlesCustom::shedule_Update(u32 _dt)
 		UpdateParent			(m_animator->XFORM(),vel);
 	}
 }
+
 void CScriptParticlesCustom::LoadPath(LPCSTR caPathName)
 {
 	if (!m_animator) m_animator	= xr_new<CObjectAnimator>();
@@ -55,16 +56,19 @@ void CScriptParticlesCustom::LoadPath(LPCSTR caPathName)
 		m_animator->Load		(caPathName);
 	}
 }
+
 void CScriptParticlesCustom::StartPath(bool looped)
 {
 	VERIFY						(m_animator);
 	m_animator->Play			(looped);
 }
+
 void CScriptParticlesCustom::PausePath(bool val)
 {
 	VERIFY						(m_animator);
 	m_animator->Pause			(val);
 }
+
 void CScriptParticlesCustom::StopPath()
 {
 	VERIFY						(m_animator);
@@ -135,14 +139,17 @@ void CScriptParticles::LoadPath(LPCSTR caPathName)
 	VERIFY						(m_particles);
 	m_particles->LoadPath		(caPathName);
 }
+
 void CScriptParticles::StartPath(bool looped)
 {
 	m_particles->StartPath		(looped);
 }
+
 void CScriptParticles::StopPath	()
 {
 	m_particles->StopPath		();
 }
+
 void CScriptParticles::PausePath(bool val)
 {
 	m_particles->PausePath		(val);

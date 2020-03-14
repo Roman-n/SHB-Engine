@@ -67,4 +67,3 @@ void  CDbgScriptThreads::DrawThreads()
 		m_debugger->AddThread(th);
 	}
 }
-
