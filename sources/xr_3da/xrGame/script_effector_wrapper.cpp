@@ -10,8 +10,7 @@
 #include "script_effector_wrapper.h"
 
 CScriptEffectorWrapper::~CScriptEffectorWrapper	()
-{
-}
+{ }
 
 bool CScriptEffectorWrapper::process		(SPPInfo *pp)
 {

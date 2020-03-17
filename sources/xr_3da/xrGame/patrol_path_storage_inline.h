@@ -9,8 +9,7 @@
 #pragma once
 
 IC	CPatrolPathStorage::CPatrolPathStorage		()
-{
-}
+{ }
 
 IC	const CPatrolPathStorage::PATROL_REGISTRY &CPatrolPathStorage::patrol_paths	() const
 {

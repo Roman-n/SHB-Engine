@@ -17,7 +17,7 @@ class CController : public CBaseMonster {
 	ref_sound			control_hit_sound;			// звук, который играется в голове у актера
 
 	ref_sound			m_sound_hit_fx;
-	SndShockEffector*	m_sndShockEffector;					
+	SndShockEffector*	m_sndShockEffector;
 
 	SAttackEffector		m_control_effector;
 
@@ -33,7 +33,6 @@ class CController : public CBaseMonster {
 	u32					m_psy_fire_delay;
 
 	bool				m_tube_at_once;
-
 	
 	//////////////////////////////////////////////////////////////////////////
 	// PsyAura
@@ -44,7 +43,6 @@ class CController : public CBaseMonster {
 		ref_sound	right;
 	} aura_sound;
 	SAuraSound		*current_aura_sound;
-	
 
 public:	
 	float			aura_radius;
@@ -52,7 +50,7 @@ public:
 
 	//////////////////////////////////////////////////////////////////////////
 
-public:	
+public:
 	CControllerPsyHit	*m_psy_hit;
 
 	ref_sound			m_sound_aura_left_channel;
@@ -67,11 +65,11 @@ public:
 
 	ref_sound			m_sound_tube_prepare;
 
-public:	
+public:
 	SVelocityParam		m_velocity_move_fwd;
 	SVelocityParam		m_velocity_move_bkwd;
 
-public:	
+public:
 	CControllerAnimation	&custom_anim()	{return (*m_custom_anim_base);}
 	CControllerDirection	&custom_dir()	{return (*m_custom_dir_base);}
 
@@ -113,14 +111,11 @@ public:
 	//-------------------------------------------------------------------
 	// Controller ability
 			bool	HasUnderControl		() {return (!m_controlled_objects.empty());}
-			void	TakeUnderControl	(CEntity *);
 			void	UpdateControlled	();
 			void	FreeFromControl		();
 			void	OnFreedFromControl	(const CEntity *);  // если монстр сам себя освободил (destroyed || die)
 
 			void	set_controlled_task (u32 task);
-
-
 
 			void	play_control_sound_start	();
 			void	play_control_sound_hit		();
@@ -139,17 +134,11 @@ public:
 
 			void	set_psy_fire_delay_zero		();
 			void	set_psy_fire_delay_default	();
-
 	//-------------------------------------------------------------------
-
-	
-
-public: 
-
+public:
 	void						draw_fire_particles();
 	
 	void						test_covers();
-
 
 public:
 	enum EMentalState {
@@ -176,11 +165,9 @@ private:
 		Fvector			P1,P2;
 #endif
 
-
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
 
 add_to_type_list(CController)
 #undef script_type_list
 #define script_type_list save_type_list(CController)
-

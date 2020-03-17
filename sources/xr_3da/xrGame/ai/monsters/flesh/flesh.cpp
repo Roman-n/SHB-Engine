@@ -6,7 +6,6 @@
 #include "../control_animation_base.h"
 #include "../control_movement_base.h"
 
-
 CAI_Flesh::CAI_Flesh()
 {
 	StateMan = xr_new<CStateManagerFlesh>(this);
@@ -54,21 +53,21 @@ void CAI_Flesh::Load(LPCSTR section)
 	anim().AddAnim(eAnimStandTurnLeft,	"stand_turn_ls_",		-1, &velocity_turn,		PS_STAND);
 	anim().AddAnim(eAnimStandTurnRight,	"stand_turn_rs_",		-1, &velocity_turn,		PS_STAND);
 
-	anim().AddAnim(eAnimLieIdle,			"lie_idle_",			-1, &velocity_none,		PS_LIE);
+	anim().AddAnim(eAnimLieIdle,		"lie_idle_",			-1, &velocity_none,		PS_LIE);
 	anim().AddAnim(eAnimSleep,			"lie_idle_",			-1, &velocity_none,		PS_LIE);
 
-	anim().AddAnim(eAnimWalkFwd,			"stand_walk_fwd_",		-1, &velocity_walk,		PS_STAND);
-	anim().AddAnim(eAnimWalkDamaged,		"stand_walk_fwd_dmg_",	-1, &velocity_walk_dmg,	PS_STAND);
+	anim().AddAnim(eAnimWalkFwd,		"stand_walk_fwd_",		-1, &velocity_walk,		PS_STAND);
+	anim().AddAnim(eAnimWalkDamaged,	"stand_walk_fwd_dmg_",	-1, &velocity_walk_dmg,	PS_STAND);
 
-	anim().AddAnim(eAnimRun,				"stand_run_",			-1,	&velocity_run,		PS_STAND);
+	anim().AddAnim(eAnimRun,			"stand_run_",			-1,	&velocity_run,		PS_STAND);
 	anim().AddAnim(eAnimRunDamaged,		"stand_run_dmg_",		-1,	&velocity_run_dmg,	PS_STAND);
 
 	anim().AddAnim(eAnimAttack,			"stand_attack_",		-1, &velocity_turn,		PS_STAND);
 	anim().AddAnim(eAnimAttackFromBack,	"stand_attack_back_",	-1, &velocity_none,		PS_STAND);
-	anim().AddAnim(eAnimCheckCorpse,		"stand_eat_",			 1,	&velocity_none,		PS_STAND);
+	anim().AddAnim(eAnimCheckCorpse,	"stand_eat_",			 1,	&velocity_none,		PS_STAND);
 
-	anim().AddAnim(eAnimEat,				"stand_eat_",			-1, &velocity_none,		PS_STAND);
-	anim().AddAnim(eAnimDie,				"stand_die_",			-1, &velocity_none,		PS_STAND);
+	anim().AddAnim(eAnimEat,			"stand_eat_",			-1, &velocity_none,		PS_STAND);
+	anim().AddAnim(eAnimDie,			"stand_die_",			-1, &velocity_none,		PS_STAND);
 
 	anim().AddAnim(eAnimStandLieDown,	"stand_lie_down_",		-1, &velocity_none,		PS_STAND);
 	anim().AddAnim(eAnimLieStandUp,		"lie_stand_up_",		-1, &velocity_none,		PS_LIE);
@@ -88,14 +87,14 @@ void CAI_Flesh::Load(LPCSTR section)
 	anim().LinkAction(ACT_SIT_IDLE,		eAnimLieIdle);
 	anim().LinkAction(ACT_LIE_IDLE,		eAnimLieIdle);
 	anim().LinkAction(ACT_WALK_FWD,		eAnimWalkFwd);
-	anim().LinkAction(ACT_WALK_BKWD,		eAnimWalkBkwd);
+	anim().LinkAction(ACT_WALK_BKWD,	eAnimWalkBkwd);
 	anim().LinkAction(ACT_RUN,			eAnimRun);
 	anim().LinkAction(ACT_EAT,			eAnimEat);
-	anim().LinkAction(ACT_SLEEP,			eAnimSleep);
+	anim().LinkAction(ACT_SLEEP,		eAnimSleep);
 	anim().LinkAction(ACT_REST,			eAnimLieIdle);
 	anim().LinkAction(ACT_DRAG,			eAnimDragCorpse);
 	anim().LinkAction(ACT_ATTACK,		eAnimAttack);
-	anim().LinkAction(ACT_STEAL,			eAnimSteal);
+	anim().LinkAction(ACT_STEAL,		eAnimSteal);
 	anim().LinkAction(ACT_LOOK_AROUND,	eAnimScared);
 
 #ifdef DEBUG	
@@ -120,7 +119,6 @@ void CAI_Flesh::CheckSpecParams(u32 spec_params)
 	if ((spec_params & ASP_THREATEN) == ASP_THREATEN) anim().SetCurAnim(eAnimThreaten);
 }
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Функция ConeSphereIntersection
 // Пересечение конуса (не ограниченного) со сферой
@@ -132,7 +130,6 @@ bool CAI_Flesh::ConeSphereIntersection(Fvector ConeVertex, float ConeAngle, Fvec
 	float fInvSin = 1.0f/_sin(ConeAngle);
 	float fCosSqr = _cos(ConeAngle)*_cos(ConeAngle);
 
-	
 	Fvector kCmV;	kCmV.sub(SphereCenter,ConeVertex);
 	Fvector kD		= kCmV;
 	Fvector tempV	= ConeDir;
@@ -151,7 +148,7 @@ bool CAI_Flesh::ConeSphereIntersection(Fvector ConeVertex, float ConeAngle, Fvec
 			float fRSqr = SphereRadius*SphereRadius;
 			return fDSqrLen <= fRSqr;
 		} else return true;
-	} 
-	
+	}
+
 	return false;
 }

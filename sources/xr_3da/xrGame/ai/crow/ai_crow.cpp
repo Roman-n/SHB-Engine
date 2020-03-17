@@ -119,8 +119,6 @@ void CAI_Crow::Load( LPCSTR section )
 	vVarGoal					= pSettings->r_fvector3	(section,"goal_variability");
 	fIdleSoundDelta				= pSettings->r_float	(section,"idle_sound_delta");
 	fIdleSoundTime				= fIdleSoundDelta+fIdleSoundDelta*Random.randF(-.5f,.5f);
-
-
 }
 
 BOOL CAI_Crow::net_Spawn		(CSE_Abstract* DC)
@@ -159,10 +157,12 @@ void CAI_Crow::switch2_FlyUp()
 {
 	smart_cast<CKinematicsAnimated*>(Visual())->PlayCycle	(m_Anims.m_fly.GetRandom());
 }
+
 void CAI_Crow::switch2_FlyIdle()
 {
 	smart_cast<CKinematicsAnimated*>(Visual())->PlayCycle	(m_Anims.m_idle.GetRandom());
 }
+
 void CAI_Crow::switch2_DeathDead()
 {
 	// AI need to pickup this
@@ -171,6 +171,7 @@ void CAI_Crow::switch2_DeathDead()
 	//
 	smart_cast<CKinematicsAnimated*>(Visual())->PlayCycle	(m_Anims.m_death_dead.GetRandom());
 }
+
 void CAI_Crow::switch2_DeathFall()
 {
 	Fvector V;
@@ -217,7 +218,6 @@ void CAI_Crow::state_Flying		(float fdt)
 	vHPB.x  +=  fDHeading;
 	vHPB.z  = -fDHeading * 9.0f;
 
-
 	// Update position
 	vOldPosition.set(Position());
 	XFORM().setHPB	(vHPB.x,vHPB.y,vHPB.z);
@@ -249,6 +249,7 @@ void CAI_Crow::Die				(CObject* who)
 	CreateSkeleton	()		;
 	
 };
+
 void CAI_Crow::UpdateWorkload	(float fdt)
 {
 	if (o_workload_frame	==	Device.dwFrame)	return;
@@ -263,6 +264,7 @@ void CAI_Crow::UpdateWorkload	(float fdt)
 		break;
 	}
 }
+
 void CAI_Crow::UpdateCL		()
 {
 	inherited::UpdateCL		();
@@ -271,12 +273,14 @@ void CAI_Crow::UpdateCL		()
 		XFORM().set					(m_pPhysicsShell->mXFORM);
 	}
 }
+
 void CAI_Crow::renderable_Render	()
 {
 	UpdateWorkload					(Device.fTimeDelta);
 	inherited::renderable_Render	();
 	o_workload_rframe				= Device.dwFrame	;
 }
+
 void CAI_Crow::shedule_Update		(u32 DT)
 {
 	float fDT				= float(DT)/1000.F;

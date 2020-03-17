@@ -18,13 +18,11 @@
 TEMPLATE_SPECIALIZATION
 IC	CEdgePathBuilder::CDataStorage			(const u32 vertex_count) :
 	inherited					(vertex_count)
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 CEdgePathBuilder::~CDataStorage				()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	void CEdgePathBuilder::assign_parent	(CGraphVertex	&neighbour, CGraphVertex *parent)

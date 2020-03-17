@@ -29,8 +29,7 @@
 
 TEMPLATE_SPECIALIZATION
 IC	CSolverPathManager::~CPathManager			()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	void CSolverPathManager::setup					(

@@ -31,8 +31,7 @@
 
 TEMPLATE_SPECIALIZATION
 CGameVertexTypePathManager::~CPathManager			()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	void CGameVertexTypePathManager::setup			(

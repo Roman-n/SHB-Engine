@@ -1,4 +1,3 @@
-
 #pragma once
 
 #define TEMPLATE_SPECIALIZATION template <\
@@ -16,10 +15,8 @@ CStateControllerPanicAbstract::CStateControllerPanic(_Object *obj) : inherited(o
 
 TEMPLATE_SPECIALIZATION
 CStateControllerPanicAbstract::~CStateControllerPanic()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 void CStateControllerPanicAbstract::reselect_state()
-{
-}
+{ }

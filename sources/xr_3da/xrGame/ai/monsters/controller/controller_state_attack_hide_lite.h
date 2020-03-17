@@ -14,7 +14,6 @@ class CStateControlHideLite : public CState<_Object> {
 	u32				m_time_finished;
 
 public:
-
 					CStateControlHideLite	(_Object *obj) : inherited(obj) {}
 	virtual			~CStateControlHideLite	() {}
 
@@ -28,11 +27,8 @@ public:
 	virtual bool 	check_completion		();
 	virtual bool 	check_start_conditions	();
 
-
 private:
-	void	select_target_point		();
+			void	select_target_point		();
 };
 
-
 #include "controller_state_attack_hide_lite_inline.h"
-

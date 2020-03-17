@@ -11,13 +11,11 @@
 
 TEMPLATE_SPECIALIZATION
 CStateControllerControlHitAbstract::CStateControlAttack(_Object *obj) : inherited(obj)
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 CStateControllerControlHitAbstract::~CStateControlAttack()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 void CStateControllerControlHitAbstract::initialize()
@@ -94,7 +92,6 @@ void CStateControllerControlHitAbstract::critical_finalize()
 //////////////////////////////////////////////////////////////////////////
 // Processing
 //////////////////////////////////////////////////////////////////////////
-
 
 TEMPLATE_SPECIALIZATION
 void CStateControllerControlHitAbstract::execute_hit_prepare()

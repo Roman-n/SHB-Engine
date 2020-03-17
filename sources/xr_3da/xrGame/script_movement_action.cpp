@@ -108,8 +108,7 @@ CScriptMovementAction::CScriptMovementAction		(MonsterSpace::EScriptMonsterMoveA
 }
 
 CScriptMovementAction::~CScriptMovementAction	()
-{
-}
+{ }
 
 void CScriptMovementAction::SetObjectToGo		(CScriptGameObject *tpObjectToGo)
 {

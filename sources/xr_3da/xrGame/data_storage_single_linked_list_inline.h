@@ -26,8 +26,7 @@ IC	CSingleLinkedList::CDataStorage				(const u32 vertex_count, const _dist_type 
 
 TEMPLATE_SPECIALIZATION
 CSingleLinkedList::~CDataStorage				()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	void CSingleLinkedList::init				()

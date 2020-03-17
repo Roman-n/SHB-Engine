@@ -69,5 +69,4 @@ IC	void CScriptParticleAction::SetVelocity			(const Fvector &tVelocity)
 }
 
 IC	void CScriptParticleAction::initialize			()
-{
-}
+{ }

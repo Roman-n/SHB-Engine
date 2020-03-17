@@ -11,7 +11,6 @@
 #define TIME_POINT_CHANGE_MIN		2000
 #define TIME_POINT_CHANGE_MAX		5000
 
-
 TEMPLATE_SPECIALIZATION
 void CStateControlCampAbstract::initialize()
 {

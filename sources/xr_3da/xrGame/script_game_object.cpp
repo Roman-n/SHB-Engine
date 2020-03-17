@@ -36,7 +36,6 @@
 #include "actor_memory.h"
 #include "visual_memory_manager.h"
 
-
 class CScriptBinderObject;
 
 //////////////////////////////////////////////////////////////////////////
@@ -176,7 +175,6 @@ CHelicopter* CScriptGameObject::get_helicopter	()
 	return helicopter;
 }
 
-
 CHangingLamp* CScriptGameObject::get_hanging_lamp()
 {
 	CHangingLamp*	lamp = smart_cast<CHangingLamp*>(&object());
@@ -195,7 +193,6 @@ CHolderCustom* CScriptGameObject::get_custom_holder()
 	}
 	return holder;
 }
-
 
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
@@ -287,7 +284,6 @@ u32 CScriptGameObject::get_current_patrol_point_index()
 	}
 	return				(monster->movement().patrol().get_current_point_index());
 }
-
 
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////

@@ -10,7 +10,6 @@ class CStatePsyDogHide : public CState<_Object> {
 		u32		node;
 	} target;
 
-
 public:
 					CStatePsyDogHide		(_Object *obj) : inherited(obj) {}
 	virtual			~CStatePsyDogHide		() {}
@@ -26,4 +25,3 @@ private:
 };
 
 #include "psy_dog_state_psy_attack_hide_inline.h"
-

@@ -31,8 +31,7 @@
 
 TEMPLATE_SPECIALIZATION
 CNearestVertexPathManager::~CPathManager			()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	void CNearestVertexPathManager::setup			(

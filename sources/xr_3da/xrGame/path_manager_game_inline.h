@@ -21,8 +21,7 @@
 
 TEMPLATE_SPECIALIZATION
 CGamePathManager::~CPathManager				()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	void CGamePathManager::setup			(

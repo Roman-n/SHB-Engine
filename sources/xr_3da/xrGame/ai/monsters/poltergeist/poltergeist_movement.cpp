@@ -110,5 +110,3 @@ Fvector CPoltergeisMovementManager::CalculateRealPosition()
 	ret_val.y += m_monster->m_height;
 	return (ret_val);
 }
-
-

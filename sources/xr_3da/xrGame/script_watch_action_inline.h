@@ -65,5 +65,4 @@ IC	void CScriptWatchAction::SetWatchBone		(LPCSTR bone_to_watch)
 }
 
 IC	void CScriptWatchAction::initialize			()
-{
-}
+{ }

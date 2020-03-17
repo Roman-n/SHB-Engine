@@ -16,7 +16,6 @@ void CStatePsyDogHideAbstract::initialize()
 
 	select_target_point();
 	object->path().prepare_builder();
-
 }
 
 TEMPLATE_SPECIALIZATION

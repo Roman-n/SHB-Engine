@@ -265,7 +265,6 @@ public:
 		return self->CGameObject::use(who_use);
 	}
 
-
 	virtual void			net_Import			(NET_Packet &packet)
 	{
 		call<void>("net_Import",&packet);

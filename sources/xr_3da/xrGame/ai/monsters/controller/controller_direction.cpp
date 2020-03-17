@@ -44,7 +44,6 @@ void CControllerDirection::assign_bones()
 	m_bones.AddBone(m_bone_head,	AXIS_X);		m_bones.AddBone(m_bone_head,	AXIS_Y);
 }
 
-
 void CControllerDirection::update_head_orientation()
 {
 	m_head_orient.current.yaw	= 0.f;
@@ -66,7 +65,6 @@ void CControllerDirection::update_schedule()
 
 	update_head_orientation		();
 }
-
 
 void CControllerDirection::head_look_point(const Fvector &look_point)
 {
@@ -110,7 +108,6 @@ void CControllerDirection::head_look_point(const Fvector &look_point)
 	m_bones.SetMotion	(m_bone_spine,	AXIS_X,  bone_angle_torso,	bone_speed, 1000);
 	m_bones.SetMotion	(m_bone_head,	AXIS_X,  bone_angle_head,	bone_speed, 1000);
 
-	
 	//// установить параметры вращения по pitch (более упрощеная схема, без расчета скорости вращения)
 	//bone_angle_head		= _pmt_head_bone_limit	/ (_pmt_head_bone_limit + _pmt_torso_bone_limit) * dir_pitch;
 	//bone_angle_torso	= _pmt_torso_bone_limit / (_pmt_head_bone_limit + _pmt_torso_bone_limit) * dir_pitch;
@@ -121,4 +118,3 @@ void CControllerDirection::head_look_point(const Fvector &look_point)
 	//m_bones.SetMotion(m_bone_spine, AXIS_Y, bone_angle_torso,	_pmt_rotation_speed, 1000);
 	//m_bones.SetMotion(m_bone_head,	AXIS_Y,	bone_angle_head,	_pmt_rotation_speed, 1000);
 }
-

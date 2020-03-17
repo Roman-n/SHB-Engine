@@ -47,5 +47,3 @@ BOOL CPseudogigantStepEffector::Process(Fvector &p, Fvector &d, Fvector &n, floa
 
 	return TRUE;
 }
-
-

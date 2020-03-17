@@ -9,7 +9,6 @@ CLocatorAPI* getFS()
 	return &FS;
 }
 
-
 LPCSTR update_path_script(CLocatorAPI* fs, LPCSTR initial, LPCSTR src)
 {
 	string_path			temp;
@@ -47,9 +46,9 @@ struct FS_item
 		return		buff;
 	}
 
-	LPCSTR		ModifDigitOnly	()								
+	LPCSTR		ModifDigitOnly	()
 	{ 
-		struct tm*	newtime;	
+		struct tm*	newtime;
 		time_t t	= modif; 
 		newtime		= localtime( &t ); 
 		sprintf_s		(buff, "%02d:%02d:%4d %02d:%02d",
@@ -67,11 +66,13 @@ bool sizeSorter(const FS_item& itm1, const FS_item& itm2){
 	if(b) return	(itm1.size<itm2.size);
 	return			(itm2.size<itm1.size);
 }
+
 template<bool b>
 bool modifSorter(const FS_item& itm1, const FS_item& itm2){
 	if(b) return	(itm1.modif<itm2.modif);
 	return			(itm2.modif<itm1.modif);
 }
+
 template<bool b>
 bool nameSorter(const FS_item& itm1, const FS_item& itm2){
 	if(b) return	(xr_strcmp(itm1.name,itm2.name)<0);
@@ -187,7 +188,6 @@ void fs_registrator::script_register(lua_State *L)
 			.def_readonly("size_real",					&CLocatorAPI::file::size_real)
 			.def_readonly("size_compressed",			&CLocatorAPI::file::size_compressed)
 			.def_readonly("modif",						&CLocatorAPI::file::modif),
-
 
 		class_<CLocatorAPI>("FS")
 			.enum_("FS_sort_mode")

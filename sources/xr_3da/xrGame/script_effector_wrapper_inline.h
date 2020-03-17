@@ -10,5 +10,4 @@
 
 IC	CScriptEffectorWrapper::CScriptEffectorWrapper	(int iType, float fTime) :
 	CScriptEffector	(iType, fTime)
-{
-}
+{ }

@@ -35,4 +35,3 @@ public:
 			void	on_death						();
 			void	update_schedule					();
 };
-

@@ -29,11 +29,9 @@
 	_iteration_type\
 >
 
-
 TEMPLATE_SPECIALIZATION
 CLevelFlooderPathManager::~CPathManager				()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	void CLevelFlooderPathManager::setup			(

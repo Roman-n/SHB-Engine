@@ -85,4 +85,3 @@ public:
 
 	virtual CEntity*	cast_entity					() {return this;}
 };
-

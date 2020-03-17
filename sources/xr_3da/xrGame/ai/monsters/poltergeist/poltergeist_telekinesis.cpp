@@ -5,17 +5,14 @@
 #include "../../../actor.h"
 
 CPolterTele::CPolterTele(CPoltergeist *polter) : inherited (polter)
-{
-}
+{ }
 
 CPolterTele::~CPolterTele()
-{
-}
+{ }
 
 void CPolterTele::load(LPCSTR section)
 {
 	inherited::load(section);
-
 
 	m_pmt_radius						= READ_IF_EXISTS(pSettings,r_float,section,	"Tele_Find_Radius",					10.f);
 	m_pmt_object_min_mass				= READ_IF_EXISTS(pSettings,r_float,section,	"Tele_Object_Min_Mass",				40.f);
@@ -34,11 +31,9 @@ void CPolterTele::load(LPCSTR section)
 	::Sound->create						(m_sound_tele_hold,		pSettings->r_string(section,"sound_tele_hold"),	st_Effect,SOUND_TYPE_WORLD);
 	::Sound->create						(m_sound_tele_throw,	pSettings->r_string(section,"sound_tele_throw"),st_Effect,SOUND_TYPE_WORLD);
 
-
 	m_state								= eWait;
 	m_time								= 0;
 	m_time_next							= 0;
-
 }
 
 void CPolterTele::update_schedule()
@@ -93,7 +88,6 @@ void CPolterTele::update_schedule()
 		break;
 	}
 }
-
 
 //////////////////////////////////////////////////////////////////////////
 // Выбор подходящих объектов для телекинеза
@@ -160,7 +154,6 @@ bool CPolterTele::trace_object(CObject *obj, const Fvector &target)
 	return false;
 }
 
-
 void CPolterTele::tele_find_objects(xr_vector<CObject*> &objects, const Fvector &pos) 
 {
 	m_nearest.clear_not_free		();
@@ -179,7 +172,6 @@ void CPolterTele::tele_find_objects(xr_vector<CObject*> &objects, const Fvector 
 			(obj == m_object) || 
 			m_object->CTelekinesis::is_active_object(obj) || 
 			!obj->m_pPhysicsShell->get_ApplyByGravity()) continue;
-
 		
 		Fvector center;
 		Actor()->Center(center);
@@ -188,7 +180,6 @@ void CPolterTele::tele_find_objects(xr_vector<CObject*> &objects, const Fvector 
 			objects.push_back(obj);
 	}
 }
-
 
 bool CPolterTele::tele_raise_objects()
 {
@@ -265,4 +256,3 @@ void CPolterTele::tele_fire_objects()
 		}
 	}
 }
-

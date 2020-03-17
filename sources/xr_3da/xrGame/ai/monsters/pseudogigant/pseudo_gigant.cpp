@@ -16,7 +16,6 @@
 #include "../../../CharacterPhysicsSupport.h"
 #include "../control_path_builder_base.h"
 
-
 CPseudoGigant::CPseudoGigant()
 {
 	CControlled::init_external(this);
@@ -33,7 +32,6 @@ CPseudoGigant::~CPseudoGigant()
 {
 	xr_delete(StateMan);
 }
-
 
 void CPseudoGigant::Load(LPCSTR section)
 {
@@ -62,7 +60,6 @@ void CPseudoGigant::Load(LPCSTR section)
 //	SVelocityParam &velocity_run_dmg	= move().get_velocity(MonsterMovement::eVelocityParameterRunDamaged);
 	SVelocityParam &velocity_steal		= move().get_velocity(MonsterMovement::eVelocityParameterSteal);
 
-
 	anim().AddAnim(eAnimStandIdle,		"stand_idle_",			-1, &velocity_none,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
 	anim().AddAnim(eAnimStandTurnLeft,	"stand_turn_ls_",		-1, &velocity_turn,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
 	anim().AddAnim(eAnimStandTurnRight,	"stand_turn_rs_",		-1, &velocity_turn,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
@@ -80,7 +77,6 @@ void CPseudoGigant::Load(LPCSTR section)
 	anim().AddAnim(eAnimDie,			"stand_idle_",			-1, &velocity_none,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
 	anim().AddAnim(eAnimStandLieDown,	"stand_lie_down_",		-1, &velocity_none,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");	
 	anim().AddAnim(eAnimLieToSleep,		"lie_to_sleep_",		-1, &velocity_none,		PS_LIE,		"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
-
 
 	//anim().AddAnim(eAnimStandIdle,		"stand_idle_",			-1, &velocity_none,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
 	//anim().AddAnim(eAnimStandTurnLeft,	"stand_turn_ls_",		-1, &velocity_turn,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
@@ -127,7 +123,6 @@ void CPseudoGigant::Load(LPCSTR section)
 	anim().accel_chain_test		();
 #endif
 
-
 	// Load psi postprocess --------------------------------------------------------
 	LPCSTR ppi_section = pSettings->r_string(section, "threaten_effector");
 	m_threaten_effector.ppi.duality.h		= pSettings->r_float(ppi_section,"duality_h");
@@ -152,8 +147,7 @@ void CPseudoGigant::Load(LPCSTR section)
 	m_threaten_effector.ce_period_number	= pSettings->r_float(ppi_section,"ce_period_number");
 	m_threaten_effector.ce_power			= pSettings->r_float(ppi_section,"ce_power");
 
-	// --------------------------------------------------------------------------------
-	
+	// --------------------------------------------------------------------------------	
 
 	::Sound->create(m_sound_threaten_hit,pSettings->r_string(section,"sound_threaten_hit"),		st_Effect,SOUND_TYPE_WORLD);
 	::Sound->create(m_sound_start_threaten,pSettings->r_string(section,"sound_threaten_start"), st_Effect,SOUND_TYPE_MONSTER_ATTACKING);
@@ -183,8 +177,6 @@ void CPseudoGigant::reinit()
 	com_man().set_threaten_data	("stand_kick_0", 0.43f);
 }
 
-
-
 #define MAX_STEP_RADIUS 60.f
 
 void CPseudoGigant::event_on_step()
@@ -211,7 +203,7 @@ bool CPseudoGigant::check_start_conditions(ControlCom::EControlType type)
 {
 	if (!inherited::check_start_conditions(type))	return false;
 
-	if (type == ControlCom::eControlRunAttack)		
+	if (type == ControlCom::eControlRunAttack)
 		return true;
 
 	if (type == ControlCom::eControlThreaten) {
@@ -320,4 +312,3 @@ void CPseudoGigant::TranslateActionToPathParams()
 	path().set_desirable_mask	(des_mask);
 	path().enable_path			();
 }
-

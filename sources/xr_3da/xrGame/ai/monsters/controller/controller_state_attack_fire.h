@@ -8,7 +8,6 @@ class CStateControlFire : public CState<_Object> {
 	u32				m_time_state_last_execute;
 
 public:
-
 					CStateControlFire	(_Object *obj) : inherited(obj) {}
 	virtual			~CStateControlFire	() {}
 
@@ -19,7 +18,6 @@ public:
 	virtual void	critical_finalize		();
 	virtual bool	check_completion		();
 	virtual bool	check_start_conditions	();
-
 };
 
 #include "controller_state_attack_fire_inline.h"

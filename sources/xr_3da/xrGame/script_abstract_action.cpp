@@ -10,8 +10,7 @@
 #include "script_abstract_action.h"
 
 CScriptAbstractAction::~CScriptAbstractAction	()
-{
-}
+{ }
 
 bool CScriptAbstractAction::completed			()
 {

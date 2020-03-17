@@ -44,4 +44,3 @@ struct SStraightLineParams : public SBaseParameters<
 	{
 	}
 };
-

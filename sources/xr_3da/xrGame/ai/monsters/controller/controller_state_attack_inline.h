@@ -10,7 +10,6 @@
 #define CONTROL_FIRE_PERC 80
 #define CONTROL_TUBE_PERC 20
 
-
 #define TEMPLATE_SPECIALIZATION template <\
 	typename _Object\
 >
@@ -27,7 +26,6 @@ CStateControllerAttackAbstract::CStateControllerAttack(_Object *obj, state_ptr s
 	add_state	(eStateAttack_ControlFire,		xr_new<CStateControlFire<_Object> >		(obj));
 
 	add_state	(eStateAttack_ControlTube,		xr_new<CStateControllerTube<_Object> >	(obj));
-	
 }
 
 TEMPLATE_SPECIALIZATION
@@ -120,8 +118,6 @@ void CStateControllerAttackAbstract::execute()
 			}
 		}
 	}
-
-
 
 	if (state_id == eStateUnknown) {
 		state_id = eStateAttack_HideInCover;

@@ -117,5 +117,4 @@ IC	void CScriptMovementAction::SetInputKeys		(const EInputKeys tInputKeys)
 }
 
 IC	void CScriptMovementAction::initialize			()
-{
-}
+{ }

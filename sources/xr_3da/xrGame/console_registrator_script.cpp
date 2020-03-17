@@ -48,6 +48,5 @@ void console_registrator::script_register(lua_State *L)
 		.def("get_float",					&get_console_float)
 		.def("get_token",					&CConsole::GetToken)
 //		.def("",				&CConsole::)
-
 	];
 }

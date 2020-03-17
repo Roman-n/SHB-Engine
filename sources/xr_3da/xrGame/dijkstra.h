@@ -86,7 +86,6 @@ public:
 		}
 	};
 
-
 	typedef _data_storage_constructor<
 		_priority_queue,
 		_vertex_manager,

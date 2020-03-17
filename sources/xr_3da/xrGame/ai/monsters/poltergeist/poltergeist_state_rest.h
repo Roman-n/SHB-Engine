@@ -53,4 +53,3 @@ void CPoltergeistStateRest<_Object>::execute()
 	get_state_current()->execute();
 	prev_substate = current_substate;
 }
-

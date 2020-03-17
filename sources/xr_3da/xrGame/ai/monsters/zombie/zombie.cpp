@@ -13,7 +13,6 @@
 #include <dinput.h>
 #endif
 
-
 CZombie::CZombie()
 {
 	StateMan = xr_new<CStateManagerZombie>(this);
@@ -42,30 +41,29 @@ void CZombie::Load(LPCSTR section)
 	SVelocityParam &velocity_run		= move().get_velocity(MonsterMovement::eVelocityParameterRunNormal);
 	//SVelocityParam &velocity_walk_dmg	= move().get_velocity(MonsterMovement::eVelocityParameterWalkDamaged);
 	//SVelocityParam &velocity_run_dmg	= move().get_velocity(MonsterMovement::eVelocityParameterRunDamaged);
-	//SVelocityParam &velocity_steal		= move().get_velocity(MonsterMovement::eVelocityParameterSteal);
+	//SVelocityParam &velocity_steal	= move().get_velocity(MonsterMovement::eVelocityParameterSteal);
 	//SVelocityParam &velocity_drag		= move().get_velocity(MonsterMovement::eVelocityParameterDrag);
-
 
 	anim().AddAnim(eAnimStandIdle,		"stand_idle_",			-1, &velocity_none,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
 	anim().AddAnim(eAnimStandTurnLeft,	"stand_turn_ls_",		-1, &velocity_turn,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
 	anim().AddAnim(eAnimStandTurnRight,	"stand_turn_rs_",		-1, &velocity_turn,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
-	anim().AddAnim(eAnimWalkFwd,			"stand_walk_fwd_",		-1, &velocity_walk,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
-	anim().AddAnim(eAnimRun,				"stand_run_",			-1,	&velocity_run,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
+	anim().AddAnim(eAnimWalkFwd,		"stand_walk_fwd_",		-1, &velocity_walk,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
+	anim().AddAnim(eAnimRun,			"stand_run_",			-1,	&velocity_run,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
 	anim().AddAnim(eAnimAttack,			"stand_attack_",		-1, &velocity_turn,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
-	anim().AddAnim(eAnimDie,				"stand_die_",			0, &velocity_none,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
+	anim().AddAnim(eAnimDie,			"stand_die_",			0, &velocity_none,		PS_STAND,	"fx_stand_f", "fx_stand_b", "fx_stand_l", "fx_stand_r");
 
 	anim().LinkAction(ACT_STAND_IDLE,	eAnimStandIdle);
 	anim().LinkAction(ACT_SIT_IDLE,		eAnimStandIdle);
 	anim().LinkAction(ACT_LIE_IDLE,		eAnimStandIdle);
 	anim().LinkAction(ACT_WALK_FWD,		eAnimWalkFwd);
-	anim().LinkAction(ACT_WALK_BKWD,		eAnimWalkFwd);
+	anim().LinkAction(ACT_WALK_BKWD,	eAnimWalkFwd);
 	anim().LinkAction(ACT_RUN,			eAnimRun);
 	anim().LinkAction(ACT_EAT,			eAnimStandIdle);
-	anim().LinkAction(ACT_SLEEP,			eAnimStandIdle);
+	anim().LinkAction(ACT_SLEEP,		eAnimStandIdle);
 	anim().LinkAction(ACT_REST,			eAnimStandIdle);
 	anim().LinkAction(ACT_DRAG,			eAnimStandIdle);
 	anim().LinkAction(ACT_ATTACK,		eAnimAttack);
-	anim().LinkAction(ACT_STEAL,			eAnimWalkFwd);
+	anim().LinkAction(ACT_STEAL,		eAnimWalkFwd);
 	anim().LinkAction(ACT_LOOK_AROUND,	eAnimStandIdle);
 
 #ifdef DEBUG	
@@ -98,7 +96,6 @@ void CZombie::reload(LPCSTR section)
 	com_man().ta_fill_data(anim_triple_death[3],	"fake_death_3_0",	"fake_death_3_1",	"fake_death_3_2",	true, false);
 }
 
-
 void CZombie::BoneCallback(CBoneInstance *B)
 {
 	CZombie*	this_class = static_cast<CZombie*>(B->Callback_Param);
@@ -107,7 +104,6 @@ void CZombie::BoneCallback(CBoneInstance *B)
 	this_class->Bones.Update(B, Device.dwTimeGlobal);
 	STOP_PROFILE("AI/Zombie/Bones Update");
 }
-
 
 void CZombie::vfAssignBones()
 {
@@ -164,7 +160,6 @@ void	CZombie::Hit								(SHit* pHDS)
 	last_hit_frame = Device.dwFrame;
 }
 
-
 void CZombie::shedule_Update(u32 dt)
 {
 	inherited::shedule_Update(dt);
@@ -179,7 +174,6 @@ void CZombie::shedule_Update(u32 dt)
 		}
 	}
 }
-
 
 bool CZombie::fake_death_fall_down()
 {
@@ -205,7 +199,6 @@ void CZombie::fake_death_stand_up()
 	
 	com_man().ta_pointbreak();
 }
-
 
 #ifdef _DEBUG
 void CZombie::debug_on_key(int key)

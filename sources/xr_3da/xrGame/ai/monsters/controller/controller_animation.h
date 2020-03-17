@@ -41,7 +41,6 @@ public:
 		eLegsStealBkwdLeft		= eLegsTypeStealMotion | 5,
 		eLegsStealBkwdRight		= eLegsTypeStealMotion | 6,
 
-
 		eLegsStandDamaged		= eLegsTypeStand	| 2,
 		eLegsRunDamaged			= eLegsTypeRun		| 7,
 		eLegsWalkDamaged		= eLegsTypeWalk		| 2,
@@ -105,5 +104,4 @@ private:
 			SPathRotations	get_path_rotation	(float cur_yaw);
 
 			bool		is_moving				();
-			
 };

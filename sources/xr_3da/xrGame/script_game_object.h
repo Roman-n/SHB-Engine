@@ -238,7 +238,6 @@ public:
 			void				external_sound_start	(LPCSTR sound);
 			void				external_sound_stop		();
 
-
 			template <typename T>
 			IC		T			*action_planner			();
 
@@ -259,7 +258,6 @@ public:
 			ETaskState			GetGameTaskState	(LPCSTR task_id, int objective_num);
 			void				SetGameTaskState	(ETaskState state, LPCSTR task_id, int objective_num);
 			void				GiveTaskToActor		(CGameTask* t, u32 dt, bool bCheckExisting);
-
 			
 			bool				IsTalking			();
 			void				StopTalk			();
@@ -292,7 +290,6 @@ public:
 			void				SetGoodwill			(int goodwill, CScriptGameObject* pWhoToSet);
 			void				ChangeGoodwill		(int delta_goodwill, CScriptGameObject* pWhoToSet);
 
-
 			void				SetStartDialog		(LPCSTR dialog_id);
 			void				GetStartDialog		();
 			void				RestoreDefaultStartDialog();
@@ -311,12 +308,10 @@ public:
 			int					CharacterRank		();
 			int					CharacterReputation	();
 
-
 			void SetCharacterRank			(int);
 			void ChangeCharacterRank		(int);
 			void ChangeCharacterReputation	(int);
 			void SetCharacterCommunity		(LPCSTR,int,int);
-		
 
 			u32					GetInventoryObjectCount() const;
 
@@ -325,7 +320,6 @@ public:
 			CScriptGameObject	*GetObjectByName	(LPCSTR caObjectName) const;
 			CScriptGameObject	*GetObjectByIndex	(int iIndex) const;
 
-			
 	// Callbacks			
 			void				SetCallback			(GameObject::ECallbackType type, const luabind::functor<void> &functor);
 			void				SetCallback			(GameObject::ECallbackType type, const luabind::functor<void> &functor, const luabind::object &object);
@@ -383,7 +377,6 @@ public:
 			void					bind_object		(CScriptBinderObject *object);
 			CScriptGameObject		*GetCurrentOutfit() const;
 			float					GetCurrentOutfitProtection(int hit_type);
-			
 
 	//////////////////////////////////////////////////////////////////////////
 	//////////////////////////////////////////////////////////////////////////
@@ -486,8 +479,7 @@ public:
 			void				DisableAnomaly			();
 			float				GetAnomalyPower			();
 			void				SetAnomalyPower			(float p);
-			
-	
+
 			// HELICOPTER
 			CHelicopter*		get_helicopter			();
 			//CAR
@@ -559,6 +551,7 @@ public:
 
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
+
 add_to_type_list(CScriptGameObject)
 #undef script_type_list
 #define script_type_list save_type_list(CScriptGameObject)

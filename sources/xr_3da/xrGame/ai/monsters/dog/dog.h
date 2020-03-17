@@ -20,14 +20,11 @@ public:
 	virtual void	CheckSpecParams		(u32 spec_params);
 
 	virtual bool	ability_can_drag		() {return true;}
-	
 
 private:
-#ifdef _DEBUG	
+#ifdef _DEBUG
 	virtual void	debug_on_key		(int key);
 #endif
-
-
 
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };

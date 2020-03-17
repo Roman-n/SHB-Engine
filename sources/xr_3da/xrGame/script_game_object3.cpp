@@ -637,6 +637,7 @@ float CScriptGameObject::GetAnomalyPower()
 	CCustomZone		*zone = smart_cast<CCustomZone*>(&object()); THROW(zone);
 	return zone->GetMaxPower();
 }
+
 void CScriptGameObject::SetAnomalyPower(float p)
 {
 	CCustomZone		*zone = smart_cast<CCustomZone*>(&object()); THROW(zone);
@@ -683,7 +684,6 @@ void CScriptGameObject::patrol_path_make_inactual	()
 	monster->movement().patrol().make_inactual();
 }
 
-
 Fvector	CScriptGameObject::head_orientation		() const
 {
 	CAI_Stalker		*stalker = smart_cast<CAI_Stalker*>(&object());
@@ -719,7 +719,6 @@ void CScriptGameObject::jump(const Fvector &position, float factor)
 	
 	monster->jump(position, factor);
 }
-
 
 void CScriptGameObject::make_object_visible_somewhen	(CScriptGameObject *object)
 {

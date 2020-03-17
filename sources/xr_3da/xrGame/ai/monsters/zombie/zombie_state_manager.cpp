@@ -34,8 +34,7 @@ CStateManagerZombie::CStateManagerZombie(CZombie *obj) : inherited(obj)
 }
 
 CStateManagerZombie::~CStateManagerZombie()
-{
-}
+{ }
 
 void CStateManagerZombie::execute()
 {
@@ -67,4 +66,3 @@ void CStateManagerZombie::execute()
 
 	prev_substate = current_substate;
 }
-

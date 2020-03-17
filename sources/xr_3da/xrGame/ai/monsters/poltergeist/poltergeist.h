@@ -25,10 +25,8 @@ class CPoltergeist :	public CBaseMonster ,
 
 	SMotionVel				invisible_vel;
 
-
 	CPolterSpecialAbility	*m_flame;
 	CPolterSpecialAbility	*m_tele;
-
 
 public:
 					CPoltergeist		();
@@ -55,12 +53,9 @@ public:
 	virtual	void	on_deactivate		();
 	virtual	void	Hit					(SHit* pHDS);
 
-
-	IC		CPolterSpecialAbility		*ability() {return (m_flame ? m_flame : m_tele);}
-	
+	IC		CPolterSpecialAbility		*ability() {return (m_flame ? m_flame : m_tele);}	
 	
 	IC		bool	is_hidden			() {return state_invisible;}
-
 	
 	// Poltergeist ability
 			void	PhysicalImpulse		(const Fvector &position);
@@ -77,8 +72,7 @@ public:
 
 			void	UpdateHeight			();
 
-	// Invisibility 
-
+	// Invisibility
 			void	EnableHide				(){m_disable_hide = false;}
 			void	DisableHide				(){m_disable_hide = true;}
 	
@@ -86,12 +80,10 @@ private:
 			void	Hide					();
 			void	Show					();
 
-
 public:
 #ifdef DEBUG
 			virtual CBaseMonster::SDebugInfo show_debug_info();
 #endif
-
 
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
@@ -99,7 +91,6 @@ public:
 add_to_type_list(CPoltergeist)
 #undef script_type_list
 #define script_type_list save_type_list(CPoltergeist)
-
 
 //////////////////////////////////////////////////////////////////////////
 // Interface
@@ -135,8 +126,6 @@ public:
 	virtual void	on_hit						(SHit* pHDS);
 };
 
-
-
 //////////////////////////////////////////////////////////////////////////
 // Flame
 //////////////////////////////////////////////////////////////////////////
@@ -166,7 +155,6 @@ class CPolterFlame : public CPolterSpecialAbility {
 	float					m_max_flame_height;
 
 	float					m_pmt_aura_radius;
-
 	
 	// Scanner
 	float					m_scan_radius;
@@ -182,13 +170,11 @@ class CPolterFlame : public CPolterSpecialAbility {
 	bool					m_state_scanning;
 	u32						m_scan_next_time;
 
-
 	enum EFlameState {
 		ePrepare,
 		eFire,
 		eStop
 	};
-
 
 public:
 	struct SFlameElement {
@@ -201,7 +187,6 @@ public:
 		EFlameState			state;
 		u32					time_last_hit;
 	};
-
 
 private:
 	DEFINE_VECTOR			(SFlameElement*, FLAME_ELEMS_VEC, FLAME_ELEMS_IT);
@@ -221,7 +206,6 @@ private:
 			bool	get_valid_flame_position	(const CObject *target_object, Fvector &res_pos);
 			void	create_flame				(const CObject *target_object);
 };
-
 
 //////////////////////////////////////////////////////////////////////////
 // TELE
@@ -249,7 +233,6 @@ class CPolterTele : public CPolterSpecialAbility {
 	ref_sound			m_sound_tele_hold;
 	ref_sound			m_sound_tele_throw;
 
-
 	enum ETeleState {
 		eStartRaiseObjects,
 		eRaisingObjects,
@@ -274,4 +257,3 @@ private:
 
 			bool	trace_object				(CObject *obj, const Fvector &target);
 };
-

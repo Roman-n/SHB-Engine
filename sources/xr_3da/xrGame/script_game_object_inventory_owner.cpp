@@ -778,8 +778,6 @@ bool CScriptGameObject::attachable_item_enabled	() const
 	return									(attachable_item->enabled());
 }
 
-
-
 void  CScriptGameObject::RestoreWeapon		()
 {
 	Actor()->SetWeaponHideState(INV_STATE_BLOCK_ALL,false);

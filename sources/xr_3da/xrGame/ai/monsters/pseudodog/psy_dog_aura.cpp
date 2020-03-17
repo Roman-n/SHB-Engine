@@ -12,15 +12,13 @@ CPPEffectorPsyDogAura::CPPEffectorPsyDogAura(const SPPInfo &ppi, u32 time_to_fad
 	m_time_to_fade			= time_to_fade;
 	m_effector_state		= eStateFadeIn;
 	m_time_state_started	= Device.dwTimeGlobal;
-
 }
 
 void CPPEffectorPsyDogAura::switch_off()
 {
-	m_effector_state		= eStateFadeOut;		
+	m_effector_state		= eStateFadeOut;
 	m_time_state_started	= Device.dwTimeGlobal;
 }
-
 
 BOOL CPPEffectorPsyDogAura::update()
 {
@@ -103,7 +101,6 @@ void CPsyDogAura::update_schedule()
 			Actor()->Cameras().AddPPEffector		(m_effector);
 		}
 	}
-
 }
 
 void CPsyDogAura::on_death()
@@ -113,4 +110,3 @@ void CPsyDogAura::on_death()
 		m_effector				= 0;
 	}
 }
-

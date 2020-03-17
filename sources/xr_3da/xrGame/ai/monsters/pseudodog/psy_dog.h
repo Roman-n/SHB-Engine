@@ -24,7 +24,6 @@ class CPsyDog : public CAI_PseudoDog {
 	//internals
 	u32				m_time_last_phantom_appear;
 
-
 public:
 						CPsyDog				();
 		virtual			~CPsyDog			();
@@ -105,5 +104,3 @@ private:
 add_to_type_list(CPsyDogPhantom)
 #undef script_type_list
 #define script_type_list save_type_list(CPsyDogPhantom)
-
-

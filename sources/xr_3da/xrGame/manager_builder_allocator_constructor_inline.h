@@ -35,13 +35,11 @@
 TEMPLATE_SPECIALIZATION
 IC	CConstructorManagerBuilderAllocator::CDataStorage	(const u32 vertex_count) :
 		inherited				(vertex_count)
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 CConstructorManagerBuilderAllocator::~CDataStorage	()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	void CConstructorManagerBuilderAllocator::init	()

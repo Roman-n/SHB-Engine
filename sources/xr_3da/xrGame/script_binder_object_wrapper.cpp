@@ -14,12 +14,10 @@
 
 CScriptBinderObjectWrapper::CScriptBinderObjectWrapper	(CScriptGameObject *object) :
 	CScriptBinderObject	(object)
-{
-}
+{ }
 
 CScriptBinderObjectWrapper::~CScriptBinderObjectWrapper ()
-{
-}
+{ }
 
 void CScriptBinderObjectWrapper::reinit					()
 {

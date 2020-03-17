@@ -380,7 +380,6 @@
     <ClInclude Include="ai\Monsters\Poltergeist\poltergeist_state_manager.h" />
     <ClInclude Include="ai\Monsters\Poltergeist\poltergeist_state_rest.h" />
     <ClInclude Include="ai\Monsters\Pseudodog\pseudodog.h" />
-    <ClInclude Include="ai\Monsters\Pseudodog\pseudodog_psi_effector.h" />
     <ClInclude Include="ai\Monsters\Pseudodog\pseudodog_state_manager.h" />
     <ClInclude Include="ai\Monsters\Pseudodog\psy_dog.h" />
     <ClInclude Include="ai\Monsters\Pseudodog\psy_dog_aura.h" />
@@ -982,8 +981,6 @@
     <ClInclude Include="path_manager_level_inline.h" />
     <ClInclude Include="path_manager_level_nearest_vertex.h" />
     <ClInclude Include="path_manager_level_nearest_vertex_inline.h" />
-    <ClInclude Include="path_manager_level_straight_line.h" />
-    <ClInclude Include="path_manager_level_straight_line_inline.h" />
     <ClInclude Include="path_manager_params.h" />
     <ClInclude Include="path_manager_params_flooder.h" />
     <ClInclude Include="path_manager_params_game_level.h" />
@@ -998,7 +995,6 @@
     <ClInclude Include="patrol_path_manager_inline.h" />
     <ClInclude Include="patrol_path_manager_space.h" />
     <ClInclude Include="patrol_path_params.h" />
-    <ClInclude Include="patrol_path_params_inline.h" />
     <ClInclude Include="patrol_path_storage.h" />
     <ClInclude Include="patrol_path_storage_inline.h" />
     <ClInclude Include="patrol_point.h" />
@@ -1866,7 +1862,6 @@
     <ClCompile Include="ai\Monsters\Poltergeist\poltergeist_state_manager.cpp" />
     <ClCompile Include="ai\Monsters\Poltergeist\poltergeist_telekinesis.cpp" />
     <ClCompile Include="ai\Monsters\Pseudodog\pseudodog.cpp" />
-    <ClCompile Include="ai\Monsters\Pseudodog\pseudodog_psi_effector.cpp" />
     <ClCompile Include="ai\Monsters\Pseudodog\pseudodog_script.cpp">
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">pch_script.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(ProjectName)_script.pch</PrecompiledHeaderOutputFile>

@@ -16,8 +16,7 @@ CPhantom::CPhantom()
 }
 
 CPhantom::~CPhantom()
-{
-}
+{ }
 
 //---------------------------------------------------------------------
 void CPhantom::Load( LPCSTR section )
@@ -51,6 +50,7 @@ void CPhantom::Load( LPCSTR section )
 	snd_name						= pSettings->r_string(section,"sound_shoot");
 	if (snd_name&&snd_name[0])		m_state_data[stShoot].sound.create(snd_name,st_Effect,sg_SourceType);
 }
+
 BOOL CPhantom::net_Spawn(CSE_Abstract* DC)
 {
 	CSE_ALifeCreaturePhantom*	OBJ	= smart_cast<CSE_ALifeCreaturePhantom*>(DC); VERIFY(OBJ);
@@ -106,6 +106,7 @@ BOOL CPhantom::net_Spawn(CSE_Abstract* DC)
 
 	return			TRUE;
 }
+
 void CPhantom::net_Destroy	()
 {
 	inherited::net_Destroy	();
@@ -127,6 +128,7 @@ void CPhantom::animation_end_callback(CBlend* B)
 	case stShoot:	phantom->SwitchToState(stIdle);	break;
 	}
 }
+
 //---------------------------------------------------------------------
 void CPhantom::SwitchToState_internal(EState new_state)
 {
@@ -214,10 +216,12 @@ void CPhantom::OnFlyState()
 		}
 	}
 }
+
 void CPhantom::OnDeadState() 
 {
 	UpdateFlyMedia	();
 }
+
 void CPhantom::UpdateFlyMedia()
 {
 	UpdatePosition	(m_enemy->Position());
@@ -232,8 +236,6 @@ void CPhantom::UpdateFlyMedia()
 	if (m_state_data[stFly].sound._feedback()) m_state_data[stFly].sound.set_position(xform.c);
 }
 //---------------------------------------------------------------------
-
-
 void CPhantom::shedule_Update(u32 DT)
 {
 	spatial.type &=~STYPE_VISIBLEFORAI;
@@ -384,4 +386,3 @@ void CPhantom::net_Import	(NET_Packet& P)
 
 	XFORM().setHPB		(yaw,pitch,bank);
 }
-

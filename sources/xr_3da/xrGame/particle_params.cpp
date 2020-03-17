@@ -10,5 +10,4 @@
 #include "particle_params.h"
 
 CParticleParams::~CParticleParams	()
-{
-}
+{ }

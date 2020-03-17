@@ -3,7 +3,6 @@
 #include "../controlled_entity.h"
 #include "../../../script_export_space.h"
 
-
 class CPseudoGigant : public CBaseMonster,
 					  public CControlledEntity<CPseudoGigant> {
 	
@@ -40,7 +39,6 @@ private:
 
 	LPCSTR			m_kick_particles;
 
-
 public:
 					CPseudoGigant				();
 	virtual			~CPseudoGigant				();	
@@ -58,7 +56,6 @@ public:
 
 	virtual void	HitEntityInJump		(const CEntity *pEntity);
 	virtual void	TranslateActionToPathParams	();
-
 
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };

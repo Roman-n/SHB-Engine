@@ -33,8 +33,7 @@ IC	CBucketList::CDataStorage			(const u32 vertex_count) :
 
 TEMPLATE_SPECIALIZATION
 CBucketList::~CDataStorage				()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	void CBucketList::init				()

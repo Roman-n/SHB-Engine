@@ -11,8 +11,7 @@
 #include "script_game_object.h"
 
 CScriptObjectAction::~CScriptObjectAction	()
-{
-}
+{ }
 
 void CScriptObjectAction::SetObject			(CScriptGameObject *tpLuaGameObject)
 {

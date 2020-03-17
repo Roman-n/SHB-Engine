@@ -10,13 +10,11 @@
 
 TEMPLATE_SPECIALIZATION
 CStateZombieAttackRunAbstract::CStateZombieAttackRun(_Object *obj) : inherited(obj)
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 CStateZombieAttackRunAbstract::~CStateZombieAttackRun()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 void CStateZombieAttackRunAbstract::initialize()
@@ -119,4 +117,3 @@ void CStateZombieAttackRunAbstract::choose_action()
 
 #undef TEMPLATE_SPECIALIZATION
 #undef CStateZombieAttackRunAbstract
-

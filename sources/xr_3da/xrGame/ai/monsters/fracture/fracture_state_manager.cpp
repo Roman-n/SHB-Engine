@@ -27,8 +27,7 @@ CStateManagerFracture::CStateManagerFracture(CFracture *obj) : inherited(obj)
 }
 
 CStateManagerFracture::~CStateManagerFracture()
-{
-}
+{ }
 
 void CStateManagerFracture::execute()
 {
@@ -60,4 +59,3 @@ void CStateManagerFracture::execute()
 
 	prev_substate = current_substate;
 }
-

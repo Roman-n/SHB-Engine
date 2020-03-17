@@ -38,8 +38,7 @@ CStateManagerSnork::CStateManagerSnork(CSnork *obj) : inherited(obj)
 }
 
 CStateManagerSnork::~CStateManagerSnork()
-{
-}
+{ }
 
 void CStateManagerSnork::execute()
 {
@@ -65,7 +64,6 @@ void CStateManagerSnork::execute()
 		else			state_id = eStateRest;
 	}
 
-
 	//state_id = eStateFindEnemy;
 
 	select_state(state_id); 
@@ -78,6 +76,4 @@ void CStateManagerSnork::execute()
 	get_state_current()->execute();
 
 	prev_substate = current_substate;
-
 }
-

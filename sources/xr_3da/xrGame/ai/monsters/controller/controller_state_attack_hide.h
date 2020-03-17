@@ -17,7 +17,6 @@ class CStateControlHide : public CState<_Object> {
 	bool			m_state_fast_run;
 
 public:
-
 					CStateControlHide		(_Object *obj) : inherited(obj) {}
 	virtual			~CStateControlHide		() {}
 
@@ -30,11 +29,8 @@ public:
 	virtual bool 	check_completion		();
 	virtual bool 	check_start_conditions	();
 
-
 private:
 			void	select_target_point		();
 };
 
-
 #include "controller_state_attack_hide_inline.h"
-

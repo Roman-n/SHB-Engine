@@ -25,8 +25,7 @@ CPatrolPathParams::CPatrolPathParams	(LPCSTR caPatrolPathToGo, const PatrolPathM
 }
 
 CPatrolPathParams::~CPatrolPathParams	()
-{
-}
+{ }
 
 u32	CPatrolPathParams::count			() const
 {
@@ -93,4 +92,3 @@ bool CPatrolPathParams::terminal (u32 index) const
 
 	return				(m_path->vertex(index)->edges().size() == 0);
 }
-

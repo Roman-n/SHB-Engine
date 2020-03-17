@@ -4,7 +4,6 @@
 #include "../ai_monster_bones.h"
 #include "../../../ai_monster_space.h"
 
-
 class CController;
 
 class CControllerDirection : public CControlDirectionBase {

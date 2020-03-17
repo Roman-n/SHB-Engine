@@ -18,7 +18,6 @@
 
 #include "../../../entitycondition.h"
 
-
 CStateManagerTushkano::CStateManagerTushkano(CTushkano *obj) : inherited(obj)
 {
 	add_state(eStateRest,				xr_new<CStateMonsterRest<CTushkano> >				(obj));
@@ -32,8 +31,7 @@ CStateManagerTushkano::CStateManagerTushkano(CTushkano *obj) : inherited(obj)
 }
 
 CStateManagerTushkano::~CStateManagerTushkano()
-{
-}
+{ }
 
 void CStateManagerTushkano::execute()
 {
@@ -69,4 +67,3 @@ void CStateManagerTushkano::execute()
 
 	prev_substate = current_substate;
 }
-

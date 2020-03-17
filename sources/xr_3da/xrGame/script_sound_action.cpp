@@ -12,8 +12,7 @@
 #include "script_engine.h"
 
 CScriptSoundAction::~CScriptSoundAction	()
-{
-}
+{ }
 
 void CScriptSoundAction::SetSound			(LPCSTR caSoundToPlay)
 {
@@ -31,4 +30,3 @@ void CScriptSoundAction::SetSound			(LPCSTR caSoundToPlay)
 		m_bCompleted	= true;
 	}
 }
-

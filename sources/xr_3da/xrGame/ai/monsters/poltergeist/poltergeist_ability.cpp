@@ -5,7 +5,6 @@
 #include "../../../material_manager.h"
 #include "../../../level_debug.h"
 
-
 CPolterSpecialAbility::CPolterSpecialAbility(CPoltergeist *polter)
 {
 	m_object					= polter;
@@ -13,7 +12,6 @@ CPolterSpecialAbility::CPolterSpecialAbility(CPoltergeist *polter)
 	m_particles_object			= 0;
 	m_particles_object_electro	= 0;
 }
-
 
 CPolterSpecialAbility::~CPolterSpecialAbility()
 {
@@ -97,8 +95,6 @@ void CPolterSpecialAbility::on_hit(SHit* pHDS)
 //////////////////////////////////////////////////////////////////////////
 // Other
 //////////////////////////////////////////////////////////////////////////
-
-
 #define IMPULSE					10.f
 #define IMPULSE_RADIUS			5.f
 #define TRACE_DISTANCE			10.f
@@ -149,9 +145,8 @@ void CPoltergeist::StrangeSounds(const Fvector &position)
 					pos.mad(position, dir, ((l_rq.range - 0.1f > 0) ? l_rq.range - 0.1f  : l_rq.range));
 					m_strange_sound.play_at_pos(this,pos);
 					return;
-				}			
+				}
 			}
 		}
 	}
 }
-

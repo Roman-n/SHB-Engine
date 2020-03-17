@@ -39,7 +39,6 @@ void CAI_Dog::Load(LPCSTR section)
 	anim().accel_chain_add		(eAnimWalkFwd,		eAnimRunTurnRight);
 	anim().accel_chain_add		(eAnimWalkDamaged,	eAnimRunDamaged);
 
-
 	SVelocityParam &velocity_none		= move().get_velocity(MonsterMovement::eVelocityParameterIdle);	
 	SVelocityParam &velocity_turn		= move().get_velocity(MonsterMovement::eVelocityParameterStand);
 	SVelocityParam &velocity_walk		= move().get_velocity(MonsterMovement::eVelocityParameterWalkNormal);
@@ -75,10 +74,10 @@ void CAI_Dog::Load(LPCSTR section)
 	anim().AddAnim(eAnimThreaten,		"stand_threaten_",		-1, &velocity_none,		PS_STAND);
 
 	anim().AddAnim(eAnimSitLieDown,		"sit_lie_down_",		-1, &velocity_none,		PS_SIT);
-	anim().AddAnim(eAnimStandSitDown,	"stand_sit_down_",		-1, &velocity_none,		PS_STAND);	
+	anim().AddAnim(eAnimStandSitDown,	"stand_sit_down_",		-1, &velocity_none,		PS_STAND);
 	anim().AddAnim(eAnimSitStandUp,		"sit_stand_up_",		-1, &velocity_none,		PS_SIT);
 	//anim().AddAnim(eAnimLieToSleep,	"lie_to_sleep_",		-1,	&velocity_none,		PS_LIE);
-	anim().AddAnim(eAnimLieSitUp,		"lie_to_sit_",		-1, &velocity_none,		PS_LIE);
+	anim().AddAnim(eAnimLieSitUp,		"lie_to_sit_",			-1, &velocity_none,		PS_LIE);
 
 	anim().AddAnim(eAnimJumpLeft,		"stand_jump_left_",		-1, &velocity_none,		PS_STAND);
 	anim().AddAnim(eAnimJumpRight,		"stand_jump_right_",	-1, &velocity_none,		PS_STAND);
@@ -124,7 +123,6 @@ void CAI_Dog::reinit()
 	com_man().add_melee_jump_data("5","jump_right_0");
 }
 
-
 void CAI_Dog::CheckSpecParams(u32 spec_params)
 {
 	if ((spec_params & ASP_CHECK_CORPSE) == ASP_CHECK_CORPSE) {
@@ -135,8 +133,6 @@ void CAI_Dog::CheckSpecParams(u32 spec_params)
 		anim().SetCurAnim(eAnimThreaten);
 	}
 }
-
-
 
 #ifdef _DEBUG
 void CAI_Dog::debug_on_key(int key)
@@ -163,4 +159,3 @@ void CAI_Dog::debug_on_key(int key)
 	}
 }
 #endif
-

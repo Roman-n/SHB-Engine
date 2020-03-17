@@ -196,7 +196,6 @@ bool CControllerPsyHit::check_conditions_final()
 	return true;
 }
 
-
 void CControllerPsyHit::death_glide_start()
 {
 	if (!check_conditions_final()) {
@@ -260,13 +259,11 @@ void CControllerPsyHit::death_glide_end()
 	CController *monster = smart_cast<CController *>(m_object);
 	monster->draw_fire_particles();
 
-
 	monster->m_sound_tube_hit_left.play_at_pos(Actor(), Fvector().set(-1.f, 0.f, 1.f), sm_2D);
 	monster->m_sound_tube_hit_right.play_at_pos(Actor(), Fvector().set(1.f, 0.f, 1.f), sm_2D);
 
 	//m_object->Hit_Psy		(Actor(), monster->m_tube_damage);
 	m_object->Hit_Wound		(Actor(), monster->m_tube_damage,Fvector().set(0.0f,1.0f,0.0f),0.0f);
-
 }
 
 void CControllerPsyHit::update_frame()

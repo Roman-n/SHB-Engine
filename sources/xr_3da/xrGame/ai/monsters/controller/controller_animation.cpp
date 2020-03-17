@@ -21,7 +21,6 @@ void CControllerAnimation::reinit()
 
 	m_man->animation().add_anim_event(m_torso[eTorsoPsyAttack], _pmt_psy_attack_time, CControlAnimation::eAnimationHit);
 	m_wait_torso_anim_end	= false;
-
 }
 
 void CControllerAnimation::on_start_control(ControlCom::EControlType type)
@@ -72,11 +71,9 @@ void CControllerAnimation::on_event(ControlCom::EEventType type, ControlCom::IEv
 
 void CControllerAnimation::update_frame()
 {
-	
 	inherited::update_frame();
 	return;
 
-	
 	//if (m_controller->m_mental_state == CController::eStateIdle) {
 	//	inherited::update_frame();
 	//	return;
@@ -136,7 +133,6 @@ void CControllerAnimation::load()
 	add_path_rotation					(eLegsTypeStealMotion, -PI_DIV_4,		eLegsStealFwdRight);
 	add_path_rotation					(eLegsTypeStealMotion, (PI - PI_DIV_4),	eLegsStealBkwdLeft);
 	add_path_rotation					(eLegsTypeStealMotion, -(PI - PI_DIV_4),eLegsStealBkwdRight);
-
 
 	// 1. link animation with action
 	// 2. link animation with velocities and path velocities
@@ -218,7 +214,6 @@ void CControllerAnimation::select_torso_animation()
 		ctrl_data->torso.motion	= target_motion;
 		ctrl_data->torso.actual	= false;
 	}
-
 }
 
 void CControllerAnimation::select_legs_animation()
@@ -356,5 +351,3 @@ void CControllerAnimation::on_switch_controller()
 		select_animation		();
 	}
 }
-
-

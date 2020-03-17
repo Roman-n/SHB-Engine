@@ -20,7 +20,6 @@ void CStateControllerHideAbstract::initialize()
 	m_cover_reached		= false;
 	select_target_point();
 	object->path().prepare_builder();
-	
 }
 
 TEMPLATE_SPECIALIZATION
@@ -95,7 +94,7 @@ void CStateControllerHideAbstract::select_target_point()
 		target.position				= point->position			();
 	} else {
 		target.node					= 0;
-		target.position				= ai().level_graph().vertex_position(target.node);			
+		target.position				= ai().level_graph().vertex_position(target.node);
 	}
 
 	m_state_fast_run = (target.position.distance_to(object->Position()) > 20.f);

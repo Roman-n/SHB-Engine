@@ -164,7 +164,6 @@ void CScriptGameObject::Hit(CScriptHit *tpLuaHit)
 	object().u_EventSend(P);
 }
 
-
 #pragma todo("Dima to Dima : find out why user defined conversion operators work incorrect")
 
 CScriptGameObject::operator CObject*()
@@ -310,6 +309,7 @@ void CScriptGameObject::GetStartDialog		()
 	if(!pDialogManager) return;
 	pDialogManager->GetStartDialog();
 }
+
 void CScriptGameObject::RestoreDefaultStartDialog()
 {
 	CAI_PhraseDialogManager* pDialogManager = smart_cast<CAI_PhraseDialogManager*>(&object());

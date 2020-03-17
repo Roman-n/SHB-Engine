@@ -26,7 +26,6 @@ namespace GameGraph {
 		LOCATION_COUNT		= (u32(1) << (8*sizeof(_LOCATION_ID))),
 	};
 
-
 	class
 
 		SLevel {

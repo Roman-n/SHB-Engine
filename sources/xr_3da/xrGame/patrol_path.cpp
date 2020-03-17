@@ -39,8 +39,7 @@ CPatrolPath	&CPatrolPath::load_raw	(const CLevelGraph *level_graph, const CGameL
 }
 
 CPatrolPath::~CPatrolPath	()
-{
-}
+{ }
 
 #ifdef DEBUG
 void CPatrolPath::load		(IReader &stream)

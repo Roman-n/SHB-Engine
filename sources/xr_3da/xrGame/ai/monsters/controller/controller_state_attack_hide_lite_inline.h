@@ -18,7 +18,6 @@ void CStateControllerHideLiteAbstract::initialize()
 
 	select_target_point				();
 	object->path().prepare_builder	();
-
 }
 
 TEMPLATE_SPECIALIZATION
@@ -51,14 +50,12 @@ void CStateControllerHideLiteAbstract::reinit()
 	m_time_finished = 0;
 }
 
-
 TEMPLATE_SPECIALIZATION
 void CStateControllerHideLiteAbstract::finalize()
 {
 	inherited::finalize();
 	m_time_finished	= Device.dwTimeGlobal;
 }
-
 
 TEMPLATE_SPECIALIZATION
 bool CStateControllerHideLiteAbstract::check_completion()

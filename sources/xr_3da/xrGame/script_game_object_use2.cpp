@@ -91,6 +91,7 @@ void CScriptGameObject::set_home(LPCSTR name, float r_min, float r_max, bool agg
 	CBaseMonster *monster = smart_cast<CBaseMonster *>(&object());
 	if (monster) monster->Home->setup(name,r_min,r_max,aggressive);
 }
+
 void CScriptGameObject::remove_home()
 {
 	CBaseMonster *monster = smart_cast<CBaseMonster *>(&object());
@@ -107,6 +108,7 @@ bool CScriptGameObject::fake_death_fall_down()
 
 	return monster->fake_death_fall_down();
 }
+
 void CScriptGameObject::fake_death_stand_up()
 {
 	CZombie	*monster = smart_cast<CZombie*>(&object());

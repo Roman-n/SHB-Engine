@@ -28,15 +28,12 @@ void CStateControllerFastMoveAbstract::critical_finalize()
 	object->set_mental_state	(CController::eStateDanger);
 }
 
-
 TEMPLATE_SPECIALIZATION
 void CStateControllerFastMoveAbstract::execute()
 {
 	object->set_action	(ACT_RUN);
 
 	//select another cover
-
-
 }
 
 #undef TEMPLATE_SPECIALIZATION

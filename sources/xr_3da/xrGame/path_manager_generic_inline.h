@@ -30,13 +30,11 @@ IC	CGenericPathManager::CPathManagerGeneric		()
 
 TEMPLATE_SPECIALIZATION
 CGenericPathManager::~CPathManagerGeneric			()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	void CGenericPathManager::init					()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	void CGenericPathManager::setup					(
@@ -147,8 +145,7 @@ IC	const _index_type CGenericPathManager::get_value(const_iterator &i) const
 
 TEMPLATE_SPECIALIZATION
 IC	void CGenericPathManager::finalize				()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	const typename CGenericPathManager::const_iterator &CGenericPathManager::edge	(const_iterator &i) const

@@ -11,14 +11,10 @@
 #include "../ai_monster_effector.h"
 
 CPolterFlame::CPolterFlame(CPoltergeist *polter) : inherited (polter)
-{
-}
+{ }
 
 CPolterFlame::~CPolterFlame()
-{
-}
-
-
+{ }
 
 void CPolterFlame::load(LPCSTR section) 
 {
@@ -51,7 +47,6 @@ void CPolterFlame::load(LPCSTR section)
 	// Scanner
 	m_scan_radius		= pSettings->r_float(section,"flame_scan_radius");
 	read_delay			(section,"flame_scan_delay_min_max",m_scan_delay_min,	m_scan_delay_max);
-
 	
 	// load scan effector
 	LPCSTR ppi_section = pSettings->r_string(section, "flame_scan_effector_section");
@@ -77,7 +72,6 @@ void CPolterFlame::load(LPCSTR section)
 
 	m_state_scanning	= false;
 	m_scan_next_time	= 0;
-
 
 	m_time_flame_started	= 0;
 }
@@ -138,7 +132,6 @@ struct remove_predicate {
 	}
 };
 
-
 void CPolterFlame::update_schedule()
 {
 	inherited::update_schedule();
@@ -179,7 +172,6 @@ void CPolterFlame::update_schedule()
 		}
 	}
 	//---------------------------------------------------------------------
-
 
 	// check all flames
 	for (FLAME_ELEMS_IT it = m_flames.begin();it != m_flames.end();it++) {
@@ -254,10 +246,8 @@ void CPolterFlame::update_schedule()
 			}
 		}
 	}
-
-	
-
 }
+
 void CPolterFlame::on_destroy()
 {
 	inherited::on_destroy();
@@ -283,8 +273,6 @@ void CPolterFlame::on_die()
 	inherited::on_die();
 	if (m_scan_sound._feedback()) m_scan_sound.stop();
 }
-
-
 
 #define FIND_POINT_ATTEMPT_COUNT	5
 
@@ -317,7 +305,6 @@ bool CPolterFlame::get_valid_flame_position(const CObject *target_object, Fvecto
 		}
 	}
 
-
 	float angle = ai().level_graph().vertex_cover_angle(Obj->ai_location().level_vertex_id(),PI_DIV_6,std::less<float>());
 
 	dir.set(1.f,0.f,0.f);
@@ -336,4 +323,3 @@ bool CPolterFlame::get_valid_flame_position(const CObject *target_object, Fvecto
 
 	return (false);
 }
-

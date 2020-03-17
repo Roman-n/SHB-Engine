@@ -49,7 +49,6 @@
 const u32	_pmt_psy_attack_delay		= 2000;
 const float	_pmt_psy_attack_min_angle	= deg(5);
 
-
 CController::CController()
 {
 	StateMan = xr_new<CStateManagerController>(this);
@@ -60,7 +59,6 @@ CController::CController()
 	control().add		(m_psy_hit,  ControlCom::eComCustom1);
 
 	m_aura				= xr_new<CControllerAura>(this);
-
 
 #ifdef _DEBUG	
 	P1.set(0.f,0.f,0.f);
@@ -251,7 +249,6 @@ void CController::load_friend_community_overrides(LPCSTR section)
 		_GetItem	(src,i,st);
 		m_friend_community_overrides[i] = st;
 	}
-	
 }
 
 bool CController::is_community_friend_overrides(const CEntityAlive *entity_alive) const
@@ -278,7 +275,6 @@ BOOL CController::net_Spawn(CSE_Abstract *DC)
 
 	return (TRUE);
 }
-
 
 void CController::UpdateControlled()
 {
@@ -438,7 +434,6 @@ void CController::UpdateCL()
 	}
 
 	m_aura->update_frame();
-
 }
 
 void CController::shedule_Update(u32 dt)
@@ -566,7 +561,6 @@ void CController::set_psy_fire_delay_default()
 	m_psy_fire_delay = _pmt_psy_attack_delay;
 }
 
-
 //////////////////////////////////////////////////////////////////////////
 // TUBE
 //////////////////////////////////////////////////////////////////////////
@@ -584,7 +578,6 @@ void CController::tube_fire()
 
 	control().activate	(ControlCom::eComCustom1);
 }
-
 
 bool CController::can_tube_fire()
 {
@@ -606,7 +599,6 @@ bool CController::can_tube_fire()
 }
 
 //////////////////////////////////////////////////////////////////////////
-
 
 const MonsterSpace::SBoneRotation &CController::head_orientation	() const
 {
@@ -653,7 +645,6 @@ void CController::TranslateActionToPathParams()
 	path().set_velocity_mask	(vel_mask);
 	path().set_desirable_mask	(des_mask);
 	path().enable_path			();
-
 }
 
 bool CController::is_relation_enemy(const CEntityAlive *tpEntityAlive) const
@@ -674,23 +665,18 @@ void CController::set_mental_state(EMentalState state)
 	m_custom_anim_base->on_switch_controller	();
 }
 
-
-
-
 #ifdef DEBUG
 CBaseMonster::SDebugInfo CController::show_debug_info()
 {
 	CBaseMonster::SDebugInfo info = inherited::show_debug_info();
 	if (!info.active) return CBaseMonster::SDebugInfo();
 
-	
 	// Draw Controlled Lines
 	DBG().level_info(this).clear();
 	
 	Fvector my_pos = Position();
 	my_pos.y += 1.5f;
-		
-	
+
 	for (u32 i=0; i < m_controlled_objects.size(); i++) {
 		Fvector enemy_pos	= m_controlled_objects[i]->Position();
 		
@@ -737,7 +723,6 @@ void CController::debug_on_key(int key)
 		//	}
 		//}
 
-
 		break;
 	case DIK_EQUALS:
 		P2.set		(Actor()->Position());
@@ -759,6 +744,3 @@ void CController::debug_on_key(int key)
 	}
 }
 #endif
-
-
-

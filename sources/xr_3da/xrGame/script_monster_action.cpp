@@ -11,8 +11,7 @@
 #include "script_game_object.h"
 
 CScriptMonsterAction::~CScriptMonsterAction	()
-{
-}
+{ }
 
 void CScriptMonsterAction::SetObject	(CScriptGameObject *tObj)
 {

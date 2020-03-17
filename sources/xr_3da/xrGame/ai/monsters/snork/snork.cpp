@@ -19,9 +19,6 @@
 #	include "../monster_cover_manager.h"
 #endif
 
-
-
-
 CSnork::CSnork() 
 {
 	StateMan		= xr_new<CStateManagerSnork>	(this);
@@ -243,8 +240,7 @@ void CSnork::CheckSpecParams(u32 spec_params)
 }
 
 void CSnork::HitEntityInJump(const CEntity *pEntity)
-{
-	
+{	
 	SAAParam &params	= anim().AA_GetParams("stand_attack_2_1");
 	HitEntity			(pEntity, params.hit_power, params.impulse, params.impulse_dir);
 }
@@ -293,4 +289,3 @@ void CSnork::debug_on_key(int key)
 	}
 }
 #endif
-

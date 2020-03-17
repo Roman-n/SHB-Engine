@@ -21,7 +21,6 @@ class CStateControlMoveOut : public CState<_Object> {
 	u32				m_enemy_vertex;	
 
 public:
-
 					CStateControlMoveOut	(_Object *obj) : inherited(obj) {}
 	virtual			~CStateControlMoveOut	() {}
 
@@ -30,12 +29,9 @@ public:
 	virtual bool 	check_completion		();
 	virtual bool 	check_start_conditions	();
 
-
 private:
-			void	update_target_point		();	
+			void	update_target_point		();
 			void	update_look_point		();
-
 };
 
 #include "controller_state_attack_moveout_inline.h"
-

@@ -22,6 +22,7 @@ CPsyDog::CPsyDog()
 {
 	m_aura = xr_new<CPsyDogAura>(this);
 }
+
 CPsyDog::~CPsyDog()
 {
 	xr_delete(m_aura);
@@ -44,17 +45,18 @@ BOOL CPsyDog::net_Spawn(CSE_Abstract *dc)
 
 	return TRUE;
 }
+
 void CPsyDog::reinit()
 {
 	inherited::reinit	();
 	m_aura->reinit		();
 	m_time_last_phantom_appear = 0;
 }
+
 void CPsyDog::reload(LPCSTR section)
 {
 	inherited::reload(section);
 }
-
 
 //////////////////////////////////////////////////////////////////////////
 // Register/Unregister
@@ -108,7 +110,6 @@ void CPsyDog::delete_all_phantoms()
 	m_storage.clear();
 }
 
-
 void CPsyDog::Think()
 {
 	inherited::Think();
@@ -125,7 +126,6 @@ void CPsyDog::Think()
 		}
 	}
 }
-
 
 void CPsyDog::net_Destroy()
 {
@@ -154,11 +154,11 @@ u8 CPsyDog::get_phantoms_count()
 // Phantom Psy Dog
 //////////////////////////////////////////////////////////////////////////
 CPsyDogPhantom::CPsyDogPhantom()
-{
-}
+{ }
+
 CPsyDogPhantom::~CPsyDogPhantom()
-{
-}
+{ }
+
 BOOL CPsyDogPhantom::net_Spawn(CSE_Abstract *dc)
 {
 	if (!inherited::net_Spawn(dc)) return FALSE;

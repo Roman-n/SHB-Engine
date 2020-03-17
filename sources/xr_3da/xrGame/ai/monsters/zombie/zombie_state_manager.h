@@ -11,5 +11,4 @@ public:
 	virtual				~CStateManagerZombie	();
 
 	virtual	void		execute					();
-	
 };

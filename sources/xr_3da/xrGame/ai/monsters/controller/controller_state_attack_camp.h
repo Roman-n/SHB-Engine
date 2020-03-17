@@ -11,7 +11,6 @@ class CStateControlCamp : public CState<_Object> {
 	u32				m_time_next_updated;
 
 public:
-
 					CStateControlCamp	(_Object *obj) : inherited(obj) {}
 	virtual			~CStateControlCamp	() {}
 
@@ -21,9 +20,7 @@ public:
 	virtual bool	check_start_conditions	();
 
 private:
-
 	virtual void	update_target_angle		();
-
 };
 
 #include "controller_state_attack_camp_inline.h"

@@ -19,6 +19,7 @@
 #include "sight_control_action.h"
 #include "sight_manager.h"
 #include "inventoryBox.h"
+
 class CWeapon;
 
 //////////////////////////////////////////////////////////////////////////

@@ -104,6 +104,5 @@ void CScriptFvector::script_register(lua_State *L)
 			.def_readwrite("x2",				&Frect::x2)
 			.def_readwrite("y1",				&Frect::y1)
 			.def_readwrite("y2",				&Frect::y2)
-
 	];
 }

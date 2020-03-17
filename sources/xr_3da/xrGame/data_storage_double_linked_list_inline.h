@@ -26,8 +26,7 @@ IC	CDoubleLinkedList::CDataStorage			(const u32 vertex_count, const _dist_type _
 
 TEMPLATE_SPECIALIZATION
 CDoubleLinkedList::~CDataStorage			()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	void CDoubleLinkedList::init			()
@@ -141,7 +140,6 @@ IC	void CDoubleLinkedList::set_switch_factor	(const _dist_type _switch_factor)
 		NODEFAULT;
 	m_switch_factor			= _switch_factor;
 }
-
 
 #undef TEMPLATE_SPECIALIZATION
 #undef CDoubleLinkedList

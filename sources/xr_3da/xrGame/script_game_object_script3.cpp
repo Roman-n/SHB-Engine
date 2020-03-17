@@ -174,8 +174,6 @@ class_<CScriptGameObject> &script_register_game_object2(class_<CScriptGameObject
 		.def("general_goodwill",			&CScriptGameObject::GetAttitude)
 		.def("set_relation",				&CScriptGameObject::SetRelation)
 
-
-
 		//////////////////////////////////////////////////////////////////////////
 		.def("profile_name",				&CScriptGameObject::ProfileName)
 		.def("character_name",				&CScriptGameObject::CharacterName)

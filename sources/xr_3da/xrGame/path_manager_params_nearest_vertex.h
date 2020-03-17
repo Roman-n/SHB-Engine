@@ -40,4 +40,3 @@ struct SNearestVertex : public SBaseParameters<
 	{
 	}
 };
-

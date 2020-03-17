@@ -17,7 +17,6 @@
 #include "../states/monster_state_hear_danger_sound.h"
 #include "../states/monster_state_hitted.h"
 
-
 CStateManagerPseudodog::CStateManagerPseudodog(CAI_PseudoDog *monster) : inherited(monster)
 {
 	add_state(eStateRest,					xr_new<CStateMonsterRest<CAI_PseudoDog> >				(monster));
@@ -61,4 +60,3 @@ void CStateManagerPseudodog::execute()
 
 	prev_substate = current_substate;
 }
-

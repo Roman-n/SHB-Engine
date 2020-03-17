@@ -23,4 +23,3 @@ IC	CGameObject &CScriptGameObject::object	() const
 #endif
 	return	(*m_game_object);
 }
-

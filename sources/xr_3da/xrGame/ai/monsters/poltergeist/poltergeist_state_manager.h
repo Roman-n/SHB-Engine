@@ -6,7 +6,6 @@ class CPoltergeist;
 class CStateManagerPoltergeist : public CMonsterStateManager<CPoltergeist> {
 	typedef CMonsterStateManager<CPoltergeist> inherited;
 
-
 public:
 						CStateManagerPoltergeist		(CPoltergeist *obj);
 	virtual				~CStateManagerPoltergeist	();
@@ -21,7 +20,4 @@ private:
 			u32			time_next_scare_attack;
 
 			void		polter_attack				();
-			
-
-
 };

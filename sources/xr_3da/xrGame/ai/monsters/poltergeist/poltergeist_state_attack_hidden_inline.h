@@ -11,7 +11,6 @@
 #define FLY_AROUND_DIST		15.f
 #define DIST_TO_PATH_END	1.5f
 
-
 TEMPLATE_SPECIALIZATION
 void CStatePoltergeistAttackHiddenAbstract::initialize()
 {

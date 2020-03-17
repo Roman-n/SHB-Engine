@@ -22,7 +22,6 @@ class CControllerPsyHit : public CControl_ComCustom<> {
 		eNone
 	} m_sound_state;
 
-
 	float				m_min_tube_dist;
 
 	// internal flag if weapon was hidden
@@ -39,8 +38,8 @@ public:
 	virtual void	on_event				(ControlCom::EEventType, ControlCom::IEventData*);
 
 			void	on_death				();
-private:
 
+private:
 			void	play_anim				();
 			void	death_glide_start			();
 			void	death_glide_end			();
@@ -49,4 +48,3 @@ private:
 			void	hit						();
 			bool	check_conditions_final	();
 };
-

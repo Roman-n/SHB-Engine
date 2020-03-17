@@ -1075,9 +1075,6 @@
     <Filter Include="AI\ANavigation\Pathfinding\PathManagers\path_manager_level\flooder">
       <UniqueIdentifier>{205059e6-5a10-4310-a5b0-0d1f483fa44c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="AI\ANavigation\Pathfinding\PathManagers\path_manager_level\straight_line">
-      <UniqueIdentifier>{c20004e9-c64a-42d6-ab39-9cb69ea0f8b1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="AI\ANavigation\Pathfinding\PathManagers\path_manager_params">
       <UniqueIdentifier>{08c52467-f5b8-46b2-9f7f-d5ceec4bacd8}</UniqueIdentifier>
     </Filter>
@@ -3690,9 +3687,6 @@
     <ClInclude Include="ai\Monsters\Pseudodog\pseudodog.h">
       <Filter>AI\AMonsters\monsters\PseudoDog</Filter>
     </ClInclude>
-    <ClInclude Include="ai\Monsters\Pseudodog\pseudodog_psi_effector.h">
-      <Filter>AI\AMonsters\monsters\PseudoDog</Filter>
-    </ClInclude>
     <ClInclude Include="ai\Monsters\Pseudodog\pseudodog_state_manager.h">
       <Filter>AI\AMonsters\monsters\PseudoDog</Filter>
     </ClInclude>
@@ -4341,12 +4335,6 @@
     <ClInclude Include="path_manager_level_flooder_inline.h">
       <Filter>AI\ANavigation\Pathfinding\PathManagers\path_manager_level\flooder</Filter>
     </ClInclude>
-    <ClInclude Include="path_manager_level_straight_line.h">
-      <Filter>AI\ANavigation\Pathfinding\PathManagers\path_manager_level\straight_line</Filter>
-    </ClInclude>
-    <ClInclude Include="path_manager_level_straight_line_inline.h">
-      <Filter>AI\ANavigation\Pathfinding\PathManagers\path_manager_level\straight_line</Filter>
-    </ClInclude>
     <ClInclude Include="path_manager_params.h">
       <Filter>AI\ANavigation\Pathfinding\PathManagers\path_manager_params</Filter>
     </ClInclude>
@@ -4414,9 +4402,6 @@
       <Filter>AI\AScript\ScriptClasses\ScriptActions\script_movement_action</Filter>
     </ClInclude>
     <ClInclude Include="patrol_path_params.h">
-      <Filter>AI\AScript\ScriptClasses\ScriptActions\script_movement_action\patrol_path_params</Filter>
-    </ClInclude>
-    <ClInclude Include="patrol_path_params_inline.h">
       <Filter>AI\AScript\ScriptClasses\ScriptActions\script_movement_action\patrol_path_params</Filter>
     </ClInclude>
     <ClInclude Include="script_watch_action.h">
@@ -7164,9 +7149,6 @@
       <Filter>AI\AMonsters\monsters\Flesh\Script</Filter>
     </ClCompile>
     <ClCompile Include="ai\Monsters\Pseudodog\pseudodog.cpp">
-      <Filter>AI\AMonsters\monsters\PseudoDog</Filter>
-    </ClCompile>
-    <ClCompile Include="ai\Monsters\Pseudodog\pseudodog_psi_effector.cpp">
       <Filter>AI\AMonsters\monsters\PseudoDog</Filter>
     </ClCompile>
     <ClCompile Include="ai\Monsters\Pseudodog\pseudodog_state_manager.cpp">

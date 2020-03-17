@@ -17,18 +17,15 @@
 
 TEMPLATE_SPECIALIZATION
 IC	CVertexPathBuilder::CDataStorage			(const u32 vertex_count)
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 CVertexPathBuilder::~CDataStorage				()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	void CVertexPathBuilder::init				()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	void CVertexPathBuilder::assign_parent	(CGraphVertex	&neighbour, CGraphVertex *parent)

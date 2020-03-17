@@ -11,7 +11,6 @@ struct SAuraSound {
 	ref_sound	right;
 };
 
-
 class CPPEffectorControllerAura : public CPPEffectorCustom {
 	typedef CPPEffectorCustom inherited;
 
@@ -42,12 +41,10 @@ class CControllerAura : public CPPEffectorCustomController<CPPEffectorController
 
 	u32					m_time_fake_aura;
 
-
 	u32					m_time_fake_aura_duration;
 	u32					m_time_fake_aura_delay;
 	float				m_fake_max_add_dist;
 	float				m_fake_min_add_dist;
-
 
 	// hits
 	enum {
@@ -60,7 +57,6 @@ class CControllerAura : public CPPEffectorCustomController<CPPEffectorController
 	u32					m_pmt_hit_delay;
 	u32					m_pmt_pp_hit_delay;
 
-
 public:
 					CControllerAura			(CController *monster) : m_object(monster){}
 	virtual void	load					(LPCSTR section);
@@ -69,5 +65,3 @@ public:
 			void	update_schedule			();
 			void	update_frame			();
 };
-
-

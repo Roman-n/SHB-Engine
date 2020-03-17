@@ -28,7 +28,6 @@ CStateManagerFlesh::CStateManagerFlesh(CAI_Flesh *monster) : inherited(monster)
 	add_state(eStateHitted,					xr_new<CStateMonsterHitted<CAI_Flesh> >				(monster));
 	add_state(eStateControlled,				xr_new<CStateMonsterControlled<CAI_Flesh> >			(monster));
 	add_state(eStateHearHelpSound,			xr_new<CStateMonsterHearHelpSound<CAI_Flesh> >		(monster));
-
 }
 
 void CStateManagerFlesh::execute()

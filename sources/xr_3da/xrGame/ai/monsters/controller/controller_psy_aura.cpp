@@ -18,7 +18,6 @@ CPPEffectorControllerAura::CPPEffectorControllerAura(const SPPInfo &ppi, u32 tim
 
 	m_snd_left.play_at_pos	(Actor(), Fvector().set(-1.f, 0.f, 1.f), sm_Looped | sm_2D);
 	m_snd_right.play_at_pos	(Actor(), Fvector().set(-1.f, 0.f, 1.f), sm_Looped | sm_2D);
-
 }
 
 void CPPEffectorControllerAura::switch_off()
@@ -26,7 +25,6 @@ void CPPEffectorControllerAura::switch_off()
 	m_effector_state		= eStateFadeOut;		
 	m_time_state_started	= Device.dwTimeGlobal;
 }
-
 
 BOOL CPPEffectorControllerAura::update()
 {
@@ -68,7 +66,6 @@ BOOL CPPEffectorControllerAura::update()
 #define	FAKE_AURA_DELAY		8000
 #define FAKE_MAX_ADD_DIST	90.f
 #define FAKE_MIN_ADD_DIST	20.f
-
 
 void CControllerAura::update_schedule()
 {
@@ -130,7 +127,6 @@ void CControllerAura::update_schedule()
 			} else {
 			}
 		}
-		
 	}
 
 	if (active()) {
@@ -197,5 +193,3 @@ void CControllerAura::load(LPCSTR section)
 	m_pmt_hit_delay				= READ_IF_EXISTS(pSettings,r_u32,section,"PsyAura_HitDelay", 1000);
 	m_pmt_pp_hit_delay			= READ_IF_EXISTS(pSettings,r_u32,section,"PsyAura_PPHitDelay", 300);
 }
-
-

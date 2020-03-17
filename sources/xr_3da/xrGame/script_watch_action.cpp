@@ -21,8 +21,7 @@ CScriptWatchAction::CScriptWatchAction		()
 }
 
 CScriptWatchAction::~CScriptWatchAction	()
-{
-}
+{ }
 
 void CScriptWatchAction::SetWatchObject	(CScriptGameObject *tpObjectToWatch)
 {

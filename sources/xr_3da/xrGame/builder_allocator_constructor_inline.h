@@ -18,13 +18,11 @@ TEMPLATE_SPECIALIZATION
 IC	CConstructorBuilderAllocator::CDataStorage	(const u32 vertex_count) :
 	CDataStorageBase			(vertex_count),
 	CDataStorageAllocator		()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 CConstructorBuilderAllocator::~CDataStorage		()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	void CConstructorBuilderAllocator::init		()

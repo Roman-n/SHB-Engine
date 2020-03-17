@@ -28,14 +28,12 @@ void CStateControlMoveOutAbstract::initialize()
 TEMPLATE_SPECIALIZATION
 void CStateControlMoveOutAbstract::execute()
 {
-	
 	update_target_point						();
 
 	object->path().set_target_point			(m_target_position, m_target_node);	
 	object->path().set_rebuild_time			(20000);
 	object->path().set_distance_to_end		(0.f);
 	object->path().set_use_covers			(false);
-
 
 	object->anim().m_tAction				= ACT_STEAL;
 	object->anim().accel_deactivate			();
@@ -87,7 +85,6 @@ void CStateControlMoveOutAbstract::update_target_point()
 		m_target_position	= ai().level_graph().vertex_position				(m_target_node);
 	}
 }
-
 
 TEMPLATE_SPECIALIZATION
 void CStateControlMoveOutAbstract::update_look_point()

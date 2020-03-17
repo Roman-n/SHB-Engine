@@ -74,7 +74,6 @@ void CAI_PseudoDog::Load(LPCSTR section)
 	SVelocityParam &velocity_steal		= move().get_velocity(MonsterMovement::eVelocityParameterSteal);
 	SVelocityParam &velocity_drag		= move().get_velocity(MonsterMovement::eVelocityParameterDrag);
 
-
 	// define animation set
 	anim().AddAnim(eAnimStandIdle,		"stand_idle_",			-1, &velocity_none,		PS_STAND);
 	anim().AddAnim(eAnimStandTurnLeft,	"stand_turn_ls_",		-1, &velocity_turn,		PS_STAND);
@@ -106,7 +105,6 @@ void CAI_PseudoDog::Load(LPCSTR section)
 	anim().AddAnim(eAnimRunTurnLeft,	"stand_run_turn_left_",	-1, &velocity_run,		PS_STAND);
 	anim().AddAnim(eAnimRunTurnRight,	"stand_run_turn_right_",-1, &velocity_run,		PS_STAND);
 
-
 	// define transitions
 	// order : 1. [anim -> anim]	2. [anim->state]	3. [state -> anim]		4. [state -> state]
 	anim().AddTransition(eAnimLieIdle,	eAnimSleep,	eAnimLieToSleep,	false);
@@ -136,7 +134,6 @@ void CAI_PseudoDog::Load(LPCSTR section)
 
 }
 
-
 void CAI_PseudoDog::reload(LPCSTR section)
 {
 	inherited::reload			(section);
@@ -148,7 +145,6 @@ void CAI_PseudoDog::reload(LPCSTR section)
 	
 	// load jump params
 	com_man().load_jump_data			(0,"run_jamp_0", "run_jamp_1", "run_jamp_2", MonsterMovement::eVelocityParameterRunNormal,MonsterMovement::eVelocityParameterRunNormal,0);
-
 }
 
 void CAI_PseudoDog::CheckSpecParams(u32 spec_params)
@@ -162,13 +158,11 @@ void CAI_PseudoDog::CheckSpecParams(u32 spec_params)
 	}
 }
 
-
 void CAI_PseudoDog::HitEntityInJump		(const CEntity *pEntity) 
 {
 	SAAParam &params	= anim().AA_GetParams("run_jamp_1");
 	HitEntity			(pEntity, params.hit_power, params.impulse, params.impulse_dir);
 }
-
 
 #ifdef _DEBUG
 void CAI_PseudoDog::debug_on_key(int key)
@@ -180,4 +174,3 @@ IStateManagerBase *CAI_PseudoDog::create_state_manager()
 {
 	return xr_new<CStateManagerPseudodog>(this);
 }
-

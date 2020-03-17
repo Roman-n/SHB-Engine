@@ -52,5 +52,4 @@ IC	void CScriptObjectAction::SetQueueSize		(u32 dwQueueSize)
 }
 
 IC	void CScriptObjectAction::initialize		()
-{
-}
+{ }

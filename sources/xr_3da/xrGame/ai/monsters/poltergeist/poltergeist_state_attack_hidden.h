@@ -13,11 +13,9 @@ protected:
 		u32		node;
 	} m_target;
 
-
 public:
 					CStatePoltergeistAttackHidden	(_Object *obj) : inherited(obj) {}
 	virtual			~CStatePoltergeistAttackHidden	() {}
-
 
 	virtual void	initialize				();
 	virtual void	execute					();

@@ -16,5 +16,4 @@ IC	CParticleParams::CParticleParams	(const Fvector &tPositionOffset, const Fvect
 }
 
 IC	void CParticleParams::initialize	()
-{
-}
+{ }

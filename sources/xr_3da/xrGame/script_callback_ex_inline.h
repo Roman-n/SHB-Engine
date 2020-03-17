@@ -13,13 +13,11 @@
 
 TEMPLATE_SPECIALIZATION
 IC	CSScriptCallbackEx::CScriptCallbackEx_				() 
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	CSScriptCallbackEx::~CScriptCallbackEx_				()
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 IC	void CSScriptCallbackEx::clear						()

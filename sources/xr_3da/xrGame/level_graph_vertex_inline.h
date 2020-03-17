@@ -588,4 +588,3 @@ float CLevelGraph::vertex_cover_angle(u32 vertex_id, float inc_angle, _predicate
 
 	return best_angle;
 }
-

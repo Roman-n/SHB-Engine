@@ -30,8 +30,7 @@ CStateManagerPoltergeist::CStateManagerPoltergeist(CPoltergeist *obj) : inherite
 }
 
 CStateManagerPoltergeist::~CStateManagerPoltergeist()
-{
-}
+{ }
 
 void CStateManagerPoltergeist::reinit()
 {
@@ -40,7 +39,6 @@ void CStateManagerPoltergeist::reinit()
 	time_next_flame_attack	= 0;
 	time_next_tele_attack	= 0;
 	time_next_scare_attack	= 0;
-
 }
 
 void CStateManagerPoltergeist::execute()
