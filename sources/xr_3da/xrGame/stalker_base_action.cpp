@@ -18,8 +18,7 @@ using namespace StalkerSpace;
 
 CStalkerActionBase::CStalkerActionBase		(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionBase::initialize			()
 {

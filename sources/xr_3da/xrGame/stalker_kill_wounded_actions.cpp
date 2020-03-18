@@ -69,8 +69,7 @@ bool should_process	(CAI_Stalker &object, const CEntityAlive *enemy)
 
 CStalkerActionReachWounded::CStalkerActionReachWounded		(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object, action_name)
-{
-}
+{ }
 
 void CStalkerActionReachWounded::initialize					()
 {
@@ -151,8 +150,7 @@ void CStalkerActionReachWounded::execute					()
 
 CStalkerActionAimWounded::CStalkerActionAimWounded	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object, action_name)
-{
-}
+{ }
 
 void CStalkerActionAimWounded::initialize				()
 {
@@ -216,8 +214,7 @@ void CStalkerActionAimWounded::finalize					()
 
 CStalkerActionPrepareWounded::CStalkerActionPrepareWounded	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object, action_name)
-{
-}
+{ }
 
 void CStalkerActionPrepareWounded::initialize				()
 {
@@ -272,8 +269,7 @@ void CStalkerActionPrepareWounded::execute					()
 
 CStalkerActionKillWounded::CStalkerActionKillWounded		(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object, action_name)
-{
-}
+{ }
 
 void CStalkerActionKillWounded::initialize					()
 {
@@ -333,8 +329,7 @@ void CStalkerActionKillWounded::execute					()
 
 CStalkerActionPauseAfterKill::CStalkerActionPauseAfterKill	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object, action_name)
-{
-}
+{ }
 
 void CStalkerActionPauseAfterKill::initialize	()
 {

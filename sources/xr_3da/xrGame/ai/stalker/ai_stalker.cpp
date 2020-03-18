@@ -377,7 +377,6 @@ BOOL CAI_Stalker::net_Spawn			(CSE_Abstract* DC)
 
 	setEnabled						(TRUE);
 
-
 	if (!Level().CurrentViewEntity())
 		Level().SetEntity(this);
 
@@ -411,7 +410,6 @@ BOOL CAI_Stalker::net_Spawn			(CSE_Abstract* DC)
 	static float novice_rank_dispersion			= pSettings->r_float("ranks_properties", "dispersion_novice_k");
 	static float expirienced_rank_dispersion	= pSettings->r_float("ranks_properties", "dispersion_experienced_k");
 
-	
 	CHARACTER_RANK_VALUE rank = Rank();
 	clamp(rank, 0, 100);
 	float rank_k = float(rank)/100.f;
@@ -516,7 +514,6 @@ void CAI_Stalker::net_Export		(NET_Packet& P)
 	P.w_u8							(u8(g_Team()));
 	P.w_u8							(u8(g_Squad()));
 	P.w_u8							(u8(g_Group()));
-	
 
 	float					f1 = 0;
 	GameGraph::_GRAPH_ID		l_game_vertex_id = ai_location().game_vertex_id();
@@ -563,7 +560,6 @@ void CAI_Stalker::net_Import		(NET_Packet& P)
 	id_Team							= P.r_u8();
 	id_Squad						= P.r_u8();
 	id_Group						= P.r_u8();
-
 
 	GameGraph::_GRAPH_ID				graph_vertex_id = movement().game_dest_vertex_id();
 	P.r								(&graph_vertex_id,		sizeof(GameGraph::_GRAPH_ID));
@@ -990,7 +986,6 @@ DLL_Pure *CAI_Stalker::_construct			()
 	CObjectHandler::_construct			();
 	CStepManager::_construct			();
 
-	
 	m_actor_relation_flags.zero			();
 	m_animation_manager					= xr_new<CStalkerAnimationManager>();
 	m_brain								= xr_new<CStalkerPlanner>();
@@ -1038,7 +1033,7 @@ void CAI_Stalker::save (NET_Packet &packet)
 	brain().save			(packet);
 }
 
-void CAI_Stalker::load (IReader &packet)		
+void CAI_Stalker::load (IReader &packet)
 {
 	inherited::load			(packet);
 	CInventoryOwner::load	(packet);

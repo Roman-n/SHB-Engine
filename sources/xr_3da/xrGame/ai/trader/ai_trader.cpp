@@ -67,7 +67,6 @@ void CAI_Trader::reload	(LPCSTR section)
 	sound().reload			(section);
 }
 
-
 bool CAI_Trader::bfAssignSound(CScriptEntityAction *tpEntityAction)
 {
 	if (!CScriptEntity::bfAssignSound(tpEntityAction)) {
@@ -258,8 +257,7 @@ void CAI_Trader::g_fireParams(const CHudItem* pHudItem, Fvector& P, Fvector& D)
 }
 
 void CAI_Trader::Think()
-{
-}
+{ }
 
 void CAI_Trader::Die (CObject* who)
 {
@@ -301,7 +299,6 @@ void CAI_Trader::OnStopTrade()
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-
 bool CAI_Trader::can_attach				(const CInventoryItem *inventory_item) const
 {
 	return				(false);
@@ -318,18 +315,17 @@ void CAI_Trader::spawn_supplies			()
 	CInventoryOwner::spawn_supplies	();
 }
 
-
 void CAI_Trader::save (NET_Packet &output_packet)
 {
 	inherited::save(output_packet);
 	CInventoryOwner::save(output_packet);
 }
-void CAI_Trader::load (IReader &input_packet)		
+
+void CAI_Trader::load (IReader &input_packet)
 {
 	inherited::load(input_packet);
 	CInventoryOwner::load(input_packet);
 }
-
 
 //проверяет список артефактов в заказах
 u32 CAI_Trader::ArtefactPrice (CArtefact* pArtefact)

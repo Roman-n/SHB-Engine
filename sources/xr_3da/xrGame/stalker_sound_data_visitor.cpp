@@ -19,8 +19,7 @@
 #include "danger_manager.h"
 
 CStalkerSoundDataVisitor::~CStalkerSoundDataVisitor	()
-{
-}
+{ }
 
 void CStalkerSoundDataVisitor::visit				(CStalkerSoundData *data)
 {

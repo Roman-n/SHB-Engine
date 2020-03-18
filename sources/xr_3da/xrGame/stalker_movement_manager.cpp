@@ -142,8 +142,7 @@ CStalkerMovementManager::CStalkerMovementManager	(CAI_Stalker *object) :
 }
 
 CStalkerMovementManager::~CStalkerMovementManager	()
-{
-}
+{ }
 
 void CStalkerMovementManager::Load					(LPCSTR section)
 {

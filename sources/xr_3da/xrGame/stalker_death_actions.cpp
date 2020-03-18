@@ -27,8 +27,7 @@ using namespace StalkerDecisionSpace;
 
 CStalkerActionDead::CStalkerActionDead	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited							(object,action_name)
-{
-}
+{ }
 
 bool CStalkerActionDead::fire			() const
 {

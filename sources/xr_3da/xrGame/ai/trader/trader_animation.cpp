@@ -4,11 +4,9 @@
 #include "../../script_callback_ex.h"
 #include "../../game_object_space.h"
 
-
 /////////////////////////////////////////////////////////////////////////////////////////
 // Startup
 /////////////////////////////////////////////////////////////////////////////////////////
-
 void CTraderAnimation::reinit() {
 	m_motion_head.invalidate	();
 	m_motion_global.invalidate	();
@@ -19,17 +17,16 @@ void CTraderAnimation::reinit() {
 	m_anim_head					= 0;
 }
 
-
 /////////////////////////////////////////////////////////////////////////////////////////
 // Animation Callbacks
 /////////////////////////////////////////////////////////////////////////////////////////
-void  CTraderAnimation::global_callback(CBlend* B)
+void CTraderAnimation::global_callback(CBlend* B)
 {
 	CTraderAnimation *trader			= (CTraderAnimation*)B->CallbackParam;
 	trader->m_motion_global.invalidate	();
 }
 
-void  CTraderAnimation::head_callback(CBlend* B)
+void CTraderAnimation::head_callback(CBlend* B)
 {
 	CTraderAnimation *trader			= (CTraderAnimation*)B->CallbackParam;
 	trader->m_motion_head.invalidate	();
@@ -83,7 +80,7 @@ void CTraderAnimation::remove_sound()
 }
 
 //////////////////////////////////////////////////////////////////////////
-// Update 
+// Update
 //////////////////////////////////////////////////////////////////////////
 void CTraderAnimation::update_frame()
 {
@@ -92,7 +89,6 @@ void CTraderAnimation::update_frame()
 		remove_sound		();
 	}
 
-	
 	if (!m_motion_global) {
 		m_trader->callback(GameObject::eTraderGlobalAnimationRequest)();
 		if (m_anim_global) m_motion_head.invalidate();
@@ -107,7 +103,7 @@ void CTraderAnimation::update_frame()
 }
 
 //////////////////////////////////////////////////////////////////////////
-// External sound support 
+// External sound support
 //////////////////////////////////////////////////////////////////////////
 void CTraderAnimation::external_sound_start(LPCSTR phrase)
 {
@@ -122,7 +118,6 @@ void CTraderAnimation::external_sound_start(LPCSTR phrase)
 
 void CTraderAnimation::external_sound_stop()
 {
-	if (m_sound)			remove_sound();	
+	if (m_sound)			remove_sound();
 }
 //////////////////////////////////////////////////////////////////////////
-

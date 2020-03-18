@@ -526,9 +526,6 @@
     <Filter Include="AI\AMonsters\common\monster states\Steal">
       <UniqueIdentifier>{4dca020a-2d0e-4015-a1aa-f69b7e1fac72}</UniqueIdentifier>
     </Filter>
-    <Filter Include="AI\AMonsters\common\monster states\Hunt">
-      <UniqueIdentifier>{e1205c53-2834-453a-a86f-70e98fa5a934}</UniqueIdentifier>
-    </Filter>
     <Filter Include="AI\AMonsters\common\monster states\Controlled">
       <UniqueIdentifier>{9990566a-a1d7-4ed5-8b05-58c4de1a8f18}</UniqueIdentifier>
     </Filter>
@@ -591,9 +588,6 @@
     </Filter>
     <Filter Include="AI\AMonsters\common\components\Event Handler\Custom Events">
       <UniqueIdentifier>{4e1952b3-f6fd-4340-8f9d-6609c6c459e8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="AI\AMonsters\common\components\Debug">
-      <UniqueIdentifier>{ae2637c2-d80c-49eb-aa6a-9563908b5167}</UniqueIdentifier>
     </Filter>
     <Filter Include="AI\AMonsters\common\components\Melee Checker">
       <UniqueIdentifier>{5d8bde6e-fa41-47ec-910d-6a62d756edad}</UniqueIdentifier>
@@ -2298,9 +2292,6 @@
     <ClInclude Include="damage_manager.h">
       <Filter>AI\AComponents\DamageManager</Filter>
     </ClInclude>
-    <ClInclude Include="damage_manager_inline.h">
-      <Filter>AI\AComponents\DamageManager</Filter>
-    </ClInclude>
     <ClInclude Include="DamageSource.h">
       <Filter>AI\AComponents\DamageManager</Filter>
     </ClInclude>
@@ -2338,9 +2329,6 @@
       <Filter>AI\AComponents\DecisionManagement\ActionManagement\ActionPlanner</Filter>
     </ClInclude>
     <ClInclude Include="script_action_planner_wrapper.h">
-      <Filter>AI\AComponents\DecisionManagement\ActionManagement\ActionPlanner\ScriptActionPlannerWrapper</Filter>
-    </ClInclude>
-    <ClInclude Include="script_action_planner_wrapper_inline.h">
       <Filter>AI\AComponents\DecisionManagement\ActionManagement\ActionPlanner\ScriptActionPlannerWrapper</Filter>
     </ClInclude>
     <ClInclude Include="action_planner_script.h">
@@ -2476,9 +2464,6 @@
       <Filter>AI\AComponents\MemoryManager\raw_data_managers\VisualMemoryManager\vision_client</Filter>
     </ClInclude>
     <ClInclude Include="movement_manager.h">
-      <Filter>AI\AComponents\MovementManager</Filter>
-    </ClInclude>
-    <ClInclude Include="movement_manager_impl.h">
       <Filter>AI\AComponents\MovementManager</Filter>
     </ClInclude>
     <ClInclude Include="movement_manager_inline.h">
@@ -2856,22 +2841,13 @@
     <ClInclude Include="alife_simulator.h">
       <Filter>AI\ALife</Filter>
     </ClInclude>
-    <ClInclude Include="alife_simulator_inline.h">
-      <Filter>AI\ALife</Filter>
-    </ClInclude>
     <ClInclude Include="alife_space.h">
       <Filter>AI\ALife</Filter>
     </ClInclude>
     <ClInclude Include="alife_interaction_manager.h">
       <Filter>AI\ALife\interaction_manager</Filter>
     </ClInclude>
-    <ClInclude Include="alife_interaction_manager_inline.h">
-      <Filter>AI\ALife\interaction_manager</Filter>
-    </ClInclude>
     <ClInclude Include="alife_communication_manager.h">
-      <Filter>AI\ALife\interaction_manager\communication_manager</Filter>
-    </ClInclude>
-    <ClInclude Include="alife_communication_manager_inline.h">
       <Filter>AI\ALife\interaction_manager\communication_manager</Filter>
     </ClInclude>
     <ClInclude Include="alife_communication_space.h">
@@ -4008,9 +3984,6 @@
     <ClInclude Include="stalker_animation_state.h">
       <Filter>AI\AMonsters\humans\stalker\AnimationManager\state</Filter>
     </ClInclude>
-    <ClInclude Include="stalker_animation_state_inline.h">
-      <Filter>AI\AMonsters\humans\stalker\AnimationManager\state</Filter>
-    </ClInclude>
     <ClInclude Include="cover_evaluators.h">
       <Filter>AI\AMonsters\humans\stalker\CoverEvaluators</Filter>
     </ClInclude>
@@ -4050,9 +4023,6 @@
     <ClInclude Include="stalker_combat_actions.h">
       <Filter>AI\AMonsters\humans\stalker\DecisionMaker\actions\combat\actions</Filter>
     </ClInclude>
-    <ClInclude Include="stalker_combat_actions_inline.h">
-      <Filter>AI\AMonsters\humans\stalker\DecisionMaker\actions\combat\actions</Filter>
-    </ClInclude>
     <ClInclude Include="stalker_combat_action_base.h">
       <Filter>AI\AMonsters\humans\stalker\DecisionMaker\actions\combat\actions\base</Filter>
     </ClInclude>
@@ -4063,9 +4033,6 @@
       <Filter>AI\AMonsters\humans\stalker\DecisionMaker\actions\combat\kill_wounded\actions</Filter>
     </ClInclude>
     <ClInclude Include="stalker_danger_planner.h">
-      <Filter>AI\AMonsters\humans\stalker\DecisionMaker\actions\danger</Filter>
-    </ClInclude>
-    <ClInclude Include="stalker_danger_planner_inline.h">
       <Filter>AI\AMonsters\humans\stalker\DecisionMaker\actions\danger</Filter>
     </ClInclude>
     <ClInclude Include="stalker_danger_unknown_planner.h">
@@ -4102,9 +4069,6 @@
       <Filter>AI\AMonsters\humans\stalker\DecisionMaker\actions\death\actions</Filter>
     </ClInclude>
     <ClInclude Include="stalker_property_evaluators.h">
-      <Filter>AI\AMonsters\humans\stalker\DecisionMaker\properties</Filter>
-    </ClInclude>
-    <ClInclude Include="stalker_property_evaluators_inline.h">
       <Filter>AI\AMonsters\humans\stalker\DecisionMaker\properties</Filter>
     </ClInclude>
     <ClInclude Include="stalker_movement_manager.h">
@@ -5602,9 +5566,6 @@
       <Filter>Core\Server\Games\client\mp_script</Filter>
     </ClInclude>
     <ClInclude Include="game_sv_base.h">
-      <Filter>Core\Server\Games\server</Filter>
-    </ClInclude>
-    <ClInclude Include="game_sv_base_console_vars.h">
       <Filter>Core\Server\Games\server</Filter>
     </ClInclude>
     <ClInclude Include="game_sv_event_queue.h">
@@ -8679,9 +8640,6 @@
       <Filter>Core\Server\Games\client\mp_script</Filter>
     </ClCompile>
     <ClCompile Include="game_sv_base.cpp">
-      <Filter>Core\Server\Games\server</Filter>
-    </ClCompile>
-    <ClCompile Include="game_sv_base_console_vars.cpp">
       <Filter>Core\Server\Games\server</Filter>
     </ClCompile>
     <ClCompile Include="game_sv_base_script.cpp">

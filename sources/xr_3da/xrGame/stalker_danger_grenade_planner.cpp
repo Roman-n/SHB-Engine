@@ -18,8 +18,7 @@ using namespace StalkerDecisionSpace;
 
 CStalkerDangerGrenadePlanner::CStalkerDangerGrenadePlanner	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object,action_name)
-{
-}
+{ }
 
 void CStalkerDangerGrenadePlanner::setup					(CAI_Stalker *object, CPropertyStorage *storage)
 {

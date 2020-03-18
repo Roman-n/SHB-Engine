@@ -169,9 +169,9 @@ public:
 
 public:
 			void						init								();
-	virtual void						Load								(LPCSTR	section );				
+	virtual void						Load								(LPCSTR	section );
 	virtual	void						reinit								();
-	virtual void						reload								(LPCSTR	section );				
+	virtual void						reload								(LPCSTR	section );
 	virtual void						LoadSounds							(LPCSTR section );
 	
 	virtual BOOL						net_Spawn							(CSE_Abstract* DC);
@@ -503,7 +503,6 @@ public:
 			void						dbg_draw_visibility_rays			();
 #endif
 
-
 	//////////////////////////////////////////////////////////////////////////
 	// Critical Wounds
 	//////////////////////////////////////////////////////////////////////////	
@@ -551,6 +550,7 @@ private:
 public:
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
+
 add_to_type_list(CAI_Stalker)
 #undef script_type_list
 #define script_type_list save_type_list(CAI_Stalker)

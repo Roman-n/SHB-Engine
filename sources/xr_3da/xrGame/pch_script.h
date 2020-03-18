@@ -11,7 +11,6 @@
 
 #include "stdafx.h"
 
-
 extern "C" {
 #include "..\..\xrLua\src\lua.h"
 #include "..\..\xrLua\src\lualib.h"

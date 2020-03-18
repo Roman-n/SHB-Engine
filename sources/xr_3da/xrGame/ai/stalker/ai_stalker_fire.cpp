@@ -731,12 +731,10 @@ void CAI_Stalker::on_weapon_shot_start		(CWeapon *weapon)
 }
 
 void CAI_Stalker::on_weapon_shot_stop		(CWeapon *weapon)
-{
-}
+{ }
 
 void CAI_Stalker::on_weapon_hide			(CWeapon *weapon)
-{
-}
+{ }
 
 void CAI_Stalker::notify_on_wounded_or_killed	(CObject *object)
 {

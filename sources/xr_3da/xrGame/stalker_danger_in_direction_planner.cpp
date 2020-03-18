@@ -20,8 +20,7 @@ using namespace StalkerDecisionSpace;
 
 CStalkerDangerInDirectionPlanner::CStalkerDangerInDirectionPlanner	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object,action_name)
-{
-}
+{ }
 
 void CStalkerDangerInDirectionPlanner::setup						(CAI_Stalker *object, CPropertyStorage *storage)
 {

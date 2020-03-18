@@ -38,8 +38,7 @@ extern float current_cover	(CAI_Stalker *object);
 
 CStalkerActionDangerInDirectionTakeCover::CStalkerActionDangerInDirectionTakeCover	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionDangerInDirectionTakeCover::initialize						()
 {
@@ -180,8 +179,7 @@ void CStalkerActionDangerInDirectionLookOut::finalize							()
 
 CStalkerActionDangerInDirectionHoldPosition::CStalkerActionDangerInDirectionHoldPosition	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionDangerInDirectionHoldPosition::initialize					()
 {
@@ -242,8 +240,7 @@ void CStalkerActionDangerInDirectionHoldPosition::finalize						()
 
 CStalkerActionDangerInDirectionDetour::CStalkerActionDangerInDirectionDetour	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionDangerInDirectionDetour::initialize							()
 {
@@ -310,8 +307,7 @@ void CStalkerActionDangerInDirectionDetour::finalize							()
 
 CStalkerActionDangerInDirectionSearch::CStalkerActionDangerInDirectionSearch	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionDangerInDirectionSearch::initialize						()
 {

@@ -65,8 +65,7 @@ typedef CStalkerActionBase::_edge_value_type _edge_value_type;
 
 CStalkerActionGetItemToKill::CStalkerActionGetItemToKill	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionGetItemToKill::initialize	()
 {
@@ -119,8 +118,7 @@ void CStalkerActionGetItemToKill::execute	()
 
 CStalkerActionMakeItemKilling::CStalkerActionMakeItemKilling	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionMakeItemKilling::initialize	()
 {
@@ -176,8 +174,7 @@ void CStalkerActionMakeItemKilling::execute	()
 
 CStalkerActionRetreatFromEnemy::CStalkerActionRetreatFromEnemy	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionRetreatFromEnemy::initialize	()
 {
@@ -372,8 +369,7 @@ void CStalkerActionGetReadyToKill::execute		()
 
 CStalkerActionKillEnemy::CStalkerActionKillEnemy(CAI_Stalker *object, LPCSTR action_name) :
 	inherited(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionKillEnemy::initialize		()
 {
@@ -430,8 +426,7 @@ void CStalkerActionKillEnemy::execute			()
 
 CStalkerActionTakeCover::CStalkerActionTakeCover(CAI_Stalker *object, LPCSTR action_name) :
 	inherited(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionTakeCover::initialize		()
 {
@@ -642,8 +637,7 @@ void CStalkerActionLookOut::execute		()
 
 CStalkerActionHoldPosition::CStalkerActionHoldPosition(CAI_Stalker *object, LPCSTR action_name) :
 	inherited(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionHoldPosition::initialize		()
 {
@@ -720,8 +714,7 @@ void CStalkerActionHoldPosition::execute		()
 
 CStalkerActionDetourEnemy::CStalkerActionDetourEnemy(CAI_Stalker *object, LPCSTR action_name) :
 	inherited(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionDetourEnemy::initialize		()
 {
@@ -809,8 +802,7 @@ void CStalkerActionDetourEnemy::execute			()
 
 CStalkerActionSearchEnemy::CStalkerActionSearchEnemy(CAI_Stalker *object, LPCSTR action_name) :
 	inherited(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionSearchEnemy::initialize		()
 {
@@ -908,8 +900,7 @@ void CStalkerActionSearchEnemy::execute			()
 
 CStalkerActionPostCombatWait::CStalkerActionPostCombatWait	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object, action_name)
-{
-}
+{ }
 
 void CStalkerActionPostCombatWait::initialize		()
 {
@@ -954,8 +945,7 @@ void CStalkerActionPostCombatWait::finalize			()
 
 CStalkerActionGetDistance::CStalkerActionGetDistance	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object, action_name)
-{
-}
+{ }
 
 void CStalkerActionGetDistance::initialize				()
 {
@@ -1020,8 +1010,7 @@ void CStalkerActionGetDistance::finalize				()
 
 CStalkerActionHideFromGrenade::CStalkerActionHideFromGrenade	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object, action_name)
-{
-}
+{ }
 
 void CStalkerActionHideFromGrenade::initialize				()
 {
@@ -1103,8 +1092,7 @@ void CStalkerActionHideFromGrenade::finalize				()
 
 CStalkerActionSuddenAttack::CStalkerActionSuddenAttack		(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object, action_name)
-{
-}
+{ }
 
 void CStalkerActionSuddenAttack::initialize					()
 {
@@ -1200,8 +1188,7 @@ void CStalkerActionSuddenAttack::execute					()
 
 CStalkerActionKillEnemyIfPlayerOnThePath::CStalkerActionKillEnemyIfPlayerOnThePath(CAI_Stalker *object, LPCSTR action_name) :
 	inherited(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionKillEnemyIfPlayerOnThePath::initialize		()
 {
@@ -1255,8 +1242,7 @@ void CStalkerActionKillEnemyIfPlayerOnThePath::execute			()
 
 CStalkerActionCriticalHit::CStalkerActionCriticalHit		(CAI_Stalker *object, LPCSTR action_name) :
 	inherited(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionCriticalHit::initialize					()
 {

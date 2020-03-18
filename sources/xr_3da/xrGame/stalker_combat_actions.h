@@ -279,5 +279,3 @@ public:
 	virtual void		execute						();
 	virtual void		finalize					();
 };
-
-#include "stalker_combat_actions_inline.h"

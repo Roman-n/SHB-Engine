@@ -86,18 +86,17 @@ public:
 	virtual void			reload					(LPCSTR section);
 
 	static	void			BoneCallback			(CBoneInstance *B);
-	void			LookAtActor				(CBoneInstance *B);
+			void			LookAtActor				(CBoneInstance *B);
 
-	void			OnStartTrade			();
-	void			OnStopTrade				();
+			void			OnStartTrade			();
+			void			OnStopTrade				();
 
-	//игровое имя 
+	//игровое имя
 	virtual LPCSTR			Name					() const {return CInventoryOwner::Name();}
 
 	virtual	bool			can_attach				(const CInventoryItem *inventory_item) const;
 	virtual bool			use_bolts				() const;
 	virtual	void			spawn_supplies			();
-
 
 	virtual	bool			bfAssignSound			(CScriptEntityAction *tpEntityAction);
 
@@ -139,6 +138,7 @@ public:
 	CTraderAnimation	&animation					() {return (*AnimMan);}
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
+
 add_to_type_list(CAI_Trader)
 #undef script_type_list
 #define script_type_list save_type_list(CAI_Trader)

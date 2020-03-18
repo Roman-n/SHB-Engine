@@ -23,12 +23,10 @@ using namespace StalkerDecisionSpace;
 
 CStalkerKillWoundedPlanner::CStalkerKillWoundedPlanner	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited			(object,action_name)
-{
-}
+{ }
 
 CStalkerKillWoundedPlanner::~CStalkerKillWoundedPlanner	()
-{
-}
+{ }
 
 void CStalkerKillWoundedPlanner::setup					(CAI_Stalker *object, CPropertyStorage *storage)
 {

@@ -12,8 +12,7 @@
 #include "ai/stalker/ai_stalker.h"
 
 CStalkerSoundData::~CStalkerSoundData	()
-{
-}
+{ }
 
 void CStalkerSoundData::accept			(CSound_UserDataVisitor *visitor)
 {

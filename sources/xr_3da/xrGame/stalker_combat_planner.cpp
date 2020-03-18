@@ -39,8 +39,7 @@ using namespace StalkerDecisionSpace;
 
 CStalkerCombatPlanner::CStalkerCombatPlanner	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited									(object,action_name)
-{
-}
+{ }
 
 CStalkerCombatPlanner::~CStalkerCombatPlanner	()
 {

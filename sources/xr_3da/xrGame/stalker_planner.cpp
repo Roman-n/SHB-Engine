@@ -19,7 +19,6 @@
 #include "stalker_danger_planner.h"
 #include "stalker_alife_actions.h"
 #include "stalker_combat_planner.h"
-//#include "stalker_combat_planner_new.h"
 
 //#define GOAP_DEBUG
 
@@ -31,8 +30,7 @@ CStalkerPlanner::CStalkerPlanner	()
 }
 
 CStalkerPlanner::~CStalkerPlanner	()
-{
-}
+{ }
 
 #ifdef LOG_ACTION
 LPCSTR CStalkerPlanner::action2string	(const _action_id_type &action_id)

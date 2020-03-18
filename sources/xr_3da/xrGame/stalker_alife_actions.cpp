@@ -41,8 +41,7 @@ using namespace StalkerSpace;
 
 CStalkerActionNoALife::CStalkerActionNoALife	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionNoALife::initialize	()
 {
@@ -60,7 +59,6 @@ void CStalkerActionNoALife::initialize	()
 	m_stop_weapon_handling_time					= Device.dwTimeGlobal;
 	if (object().inventory().ActiveItem() && object().best_weapon() && (object().inventory().ActiveItem()->object().ID() == object().best_weapon()->object().ID()))
 		m_stop_weapon_handling_time				+= ::Random32.random(30000) + 30000;
-
 #else
 	object().movement().set_mental_state		(eMentalStateDanger);
 	object().movement().set_movement_type		(eMovementTypeStand);
@@ -110,8 +108,7 @@ void CStalkerActionNoALife::execute		()
 
 CStalkerActionGatherItems::CStalkerActionGatherItems	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionGatherItems::initialize	()
 {

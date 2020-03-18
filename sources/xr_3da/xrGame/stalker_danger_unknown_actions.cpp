@@ -35,8 +35,7 @@ const u32	DANGER_INTERVAL = 120000;
 
 CStalkerActionDangerUnknownTakeCover::CStalkerActionDangerUnknownTakeCover	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionDangerUnknownTakeCover::initialize						()
 {
@@ -94,8 +93,7 @@ void CStalkerActionDangerUnknownTakeCover::finalize							()
 
 CStalkerActionDangerUnknownLookAround::CStalkerActionDangerUnknownLookAround	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionDangerUnknownLookAround::initialize						()
 {
@@ -138,8 +136,7 @@ void CStalkerActionDangerUnknownLookAround::finalize							()
 
 CStalkerActionDangerUnknownSearch::CStalkerActionDangerUnknownSearch	(CAI_Stalker *object, LPCSTR action_name) :
 	inherited				(object,action_name)
-{
-}
+{ }
 
 void CStalkerActionDangerUnknownSearch::initialize						()
 {
