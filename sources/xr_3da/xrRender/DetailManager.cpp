@@ -5,7 +5,7 @@
 #include "stdafx.h"
 
 #include "DetailManager.h"
-#include "cl_intersect.h"
+#include "..\cl_intersect.h"
 
 #include "..\igame_persistent.h"
 #include "..\environment.h"

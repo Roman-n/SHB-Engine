@@ -1,9 +1,6 @@
 // xrXRC.cpp: implementation of the xrXRC class.
-//
-//////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include "xrXRC.h"
 
 ENGINE_API xrXRC XRC;
 
@@ -11,12 +8,8 @@ ENGINE_API xrXRC XRC;
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-xrXRC::xrXRC()
-{
+xrXRC::xrXRC( )
+{ }
 
-}
-
-xrXRC::~xrXRC()
-{
-
-}
+xrXRC::~xrXRC( )
+{ }

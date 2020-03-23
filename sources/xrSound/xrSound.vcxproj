@@ -146,7 +146,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="cl_intersect.h" />
     <ClInclude Include="OpenALDeviceList.h" />
     <ClInclude Include="Sound.h" />
     <ClInclude Include="SoundRender.h" />
@@ -170,7 +169,7 @@
       </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="OpenALDeviceList.cpp" />
-    <ClCompile Include="sound.cpp" />
+    <ClCompile Include="Sound.cpp" />
     <ClCompile Include="SoundRender_Cache.cpp" />
     <ClCompile Include="SoundRender_Core.cpp" />
     <ClCompile Include="SoundRender_CoreA.cpp" />

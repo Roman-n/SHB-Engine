@@ -9,9 +9,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cl_raypick.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
     <ClCompile Include="Frustum.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
@@ -230,10 +227,5 @@
     <ClInclude Include="stdafx.h">
       <Filter>Kernel</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="ReadMe.txt">
-      <Filter>Opcode</Filter>
-    </Text>
   </ItemGroup>
 </Project>

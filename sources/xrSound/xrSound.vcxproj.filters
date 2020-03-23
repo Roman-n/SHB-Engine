@@ -30,9 +30,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cl_intersect.h">
-      <Filter>Kernel</Filter>
-    </ClInclude>
     <ClInclude Include="Sound.h">
       <Filter>Kernel</Filter>
     </ClInclude>
@@ -78,9 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="guids.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="sound.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
@@ -139,6 +133,9 @@
     </ClCompile>
     <ClCompile Include="SoundRender_Cache.cpp">
       <Filter>Cache</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Kernel</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
