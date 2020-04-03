@@ -78,7 +78,7 @@
       <WarningLevel>Level4</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\third-party\xiph\include;..\third-party\eax\Include;..\third-party\OpenAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\third-party\xiph\include;..\third-party\eax\Include;..\third-party\OpenAL\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalOptions>/NODEFAULTLIB:LIBCMTD %(AdditionalOptions)</AdditionalOptions>
@@ -127,7 +127,7 @@
       <BrowseInformation />
       <WarningLevel>Level4</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>..\third-party\xiph\include;..\third-party\eax\Include;..\third-party\OpenAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\third-party\xiph\include;..\third-party\eax\Include;..\third-party\OpenAL\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>vorbisfile_static.lib;ogg_static.lib;OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
