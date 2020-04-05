@@ -97,6 +97,12 @@
     <Filter Include="config\gameplay\info_portions">
       <UniqueIdentifier>{224ebd71-8893-484c-9561-c164b37526bf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="config\gameplay\encyclopedia">
+      <UniqueIdentifier>{97b69b9a-f961-4517-9f46-213e798d0e49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="config\gameplay\encyclopedia\storyline">
+      <UniqueIdentifier>{688b4be3-ec79-4fb8-8021-3923b8caf06a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="config\creatures\actor.ltx">
@@ -3053,31 +3059,7 @@
     <Xml Include="config\gameplay\dialogs_yantar.xml">
       <Filter>config\gameplay</Filter>
     </Xml>
-    <Xml Include="config\gameplay\encyclopedia_equipment.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\encyclopedia_infos.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\encyclopedia_mutants.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\encyclopedia_new.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\encyclopedia_social.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\encyclopedia_tutorial.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
     <Xml Include="config\gameplay\encyclopedia_vehicles.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\encyclopedia_weapons.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\encyclopedia_zone.xml">
       <Filter>config\gameplay</Filter>
     </Xml>
     <Xml Include="config\gameplay\game_tasks.xml">
@@ -3087,51 +3069,6 @@
       <Filter>config\gameplay</Filter>
     </Xml>
     <Xml Include="config\gameplay\npc_profile.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\stories.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\storyline_info_aes.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\storyline_info_agroprom.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\storyline_info_bar.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\storyline_info_darkvalley.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\storyline_info_deadcity.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\storyline_info_escape.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\storyline_info_garbage.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\storyline_info_military.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\storyline_info_pripyat.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\storyline_info_radar.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\storyline_info_sarcofag.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\storyline_info_taskmanager.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\storyline_info_to_diary.xml">
-      <Filter>config\gameplay</Filter>
-    </Xml>
-    <Xml Include="config\gameplay\storyline_info_yantar.xml">
       <Filter>config\gameplay</Filter>
     </Xml>
     <Xml Include="config\gameplay\tasks_aes.xml">
@@ -4339,6 +4276,69 @@
     </Xml>
     <Xml Include="config\gameplay\info_stories.xml">
       <Filter>config\gameplay\info_portions</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\storyline_info_escape.xml">
+      <Filter>config\gameplay\encyclopedia\storyline</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\storyline_info_garbage.xml">
+      <Filter>config\gameplay\encyclopedia\storyline</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\storyline_info_agroprom.xml">
+      <Filter>config\gameplay\encyclopedia\storyline</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\storyline_info_bar.xml">
+      <Filter>config\gameplay\encyclopedia\storyline</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\storyline_info_darkvalley.xml">
+      <Filter>config\gameplay\encyclopedia\storyline</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\storyline_info_deadcity.xml">
+      <Filter>config\gameplay\encyclopedia\storyline</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\storyline_info_military.xml">
+      <Filter>config\gameplay\encyclopedia\storyline</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\storyline_info_radar.xml">
+      <Filter>config\gameplay\encyclopedia\storyline</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\storyline_info_aes.xml">
+      <Filter>config\gameplay\encyclopedia\storyline</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\storyline_info_pripyat.xml">
+      <Filter>config\gameplay\encyclopedia\storyline</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\storyline_info_sarcofag.xml">
+      <Filter>config\gameplay\encyclopedia\storyline</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\storyline_info_yantar.xml">
+      <Filter>config\gameplay\encyclopedia\storyline</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\storyline_info_taskmanager.xml">
+      <Filter>config\gameplay\encyclopedia\storyline</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\storyline_info_to_diary.xml">
+      <Filter>config\gameplay\encyclopedia\storyline</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\stories.xml">
+      <Filter>config\gameplay\encyclopedia\storyline</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\encyclopedia_weapons.xml">
+      <Filter>config\gameplay\encyclopedia</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\encyclopedia_mutants.xml">
+      <Filter>config\gameplay\encyclopedia</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\encyclopedia_zone.xml">
+      <Filter>config\gameplay\encyclopedia</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\encyclopedia_social.xml">
+      <Filter>config\gameplay\encyclopedia</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\encyclopedia_equipment.xml">
+      <Filter>config\gameplay\encyclopedia</Filter>
+    </Xml>
+    <Xml Include="config\gameplay\encyclopedia_tutorial.xml">
+      <Filter>config\gameplay\encyclopedia</Filter>
     </Xml>
   </ItemGroup>
 </Project>

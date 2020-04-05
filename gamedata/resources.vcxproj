@@ -1087,9 +1087,7 @@
     <Xml Include="config\gameplay\dialogs_test.xml" />
     <Xml Include="config\gameplay\dialogs_yantar.xml" />
     <Xml Include="config\gameplay\encyclopedia_equipment.xml" />
-    <Xml Include="config\gameplay\encyclopedia_infos.xml" />
     <Xml Include="config\gameplay\encyclopedia_mutants.xml" />
-    <Xml Include="config\gameplay\encyclopedia_new.xml" />
     <Xml Include="config\gameplay\encyclopedia_social.xml" />
     <Xml Include="config\gameplay\encyclopedia_tutorial.xml" />
     <Xml Include="config\gameplay\encyclopedia_vehicles.xml" />
