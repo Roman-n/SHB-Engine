@@ -699,7 +699,6 @@
     <ClInclude Include="dijkstra_inline.h" />
     <ClInclude Include="DisablingParams.h" />
     <ClInclude Include="doug_lea_memory_allocator.h" />
-    <ClInclude Include="DrawUtils.h" />
     <CustomBuild Include="dRayMotions.h" />
     <ClInclude Include="DummyArtifact.h" />
     <ClInclude Include="DynamicHeightMap.h" />
@@ -1069,7 +1068,6 @@
     <ClInclude Include="problem_solver_inline.h" />
     <ClInclude Include="profiler.h" />
     <ClInclude Include="profiler_inline.h" />
-    <ClInclude Include="PropertiesListHelper.h" />
     <ClInclude Include="PropertiesListTypes.h" />
     <ClInclude Include="property_evaluator.h" />
     <ClInclude Include="property_evaluator_const.h" />
@@ -1528,7 +1526,6 @@
     <ClInclude Include="visual_memory_manager_inline.h" />
     <ClInclude Include="visual_memory_params.h" />
     <ClInclude Include="wallmark_manager.h" />
-    <ClInclude Include="WaveForm.h" />
     <ClInclude Include="Weapon.h" />
     <ClInclude Include="WeaponAK74.h" />
     <ClInclude Include="WeaponAmmo.h" />
@@ -2537,9 +2534,6 @@
     <ClCompile Include="level_graph_vertex.cpp" />
     <ClCompile Include="Level_input.cpp" />
     <ClCompile Include="Level_load.cpp" />
-    <ClCompile Include="level_map_locations.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="Level_network.cpp">
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">pch_script.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(ProjectName)_script.pch</PrecompiledHeaderOutputFile>

@@ -82,20 +82,20 @@ void CHWCaps::Update()
 	else												bScissor	= FALSE;
 
 	// Stencil relative caps
-    u32 dwStencilCaps = caps.StencilCaps;
-    if( (!(dwStencilCaps & D3DSTENCILCAPS_INCR) && !(dwStencilCaps & D3DSTENCILCAPS_INCRSAT))
-       ||(!(dwStencilCaps & D3DSTENCILCAPS_DECR) && !(dwStencilCaps & D3DSTENCILCAPS_DECRSAT)))
-    {
+	u32 dwStencilCaps = caps.StencilCaps;
+	if( (!(dwStencilCaps & D3DSTENCILCAPS_INCR) && !(dwStencilCaps & D3DSTENCILCAPS_INCRSAT))
+	   ||(!(dwStencilCaps & D3DSTENCILCAPS_DECR) && !(dwStencilCaps & D3DSTENCILCAPS_DECRSAT)))
+	{
 		soDec = soInc = D3DSTENCILOP_KEEP;
 		dwMaxStencilValue = 0;
-    }
-    else
-    {
-        // Prefer sat ops that cap at 0/max, but can use other ones as long as enough stencil bits
-        soInc=(dwStencilCaps & D3DSTENCILCAPS_INCRSAT)? D3DSTENCILOP_INCRSAT:D3DSTENCILOP_INCR;
-        soDec=(dwStencilCaps & D3DSTENCILCAPS_DECRSAT)? D3DSTENCILOP_DECRSAT:D3DSTENCILOP_DECR;
-	    dwMaxStencilValue=(1<<8)-1;
-    }
+	}
+	else
+	{
+		// Prefer sat ops that cap at 0/max, but can use other ones as long as enough stencil bits
+		soInc=(dwStencilCaps & D3DSTENCILCAPS_INCRSAT)? D3DSTENCILOP_INCRSAT:D3DSTENCILOP_INCR;
+		soDec=(dwStencilCaps & D3DSTENCILCAPS_DECRSAT)? D3DSTENCILOP_DECRSAT:D3DSTENCILOP_DECR;
+		dwMaxStencilValue=(1<<8)-1;
+	}
 
 	// DEV INFO
 }

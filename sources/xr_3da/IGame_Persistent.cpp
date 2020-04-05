@@ -46,8 +46,7 @@ void IGame_Persistent::OnAppDeactivate		()
 
 void IGame_Persistent::OnAppStart	()
 {
-	if(!g_dedicated_server)
-		Environment().load				();
+	Environment().load				();
 }
 
 void IGame_Persistent::OnAppEnd		()

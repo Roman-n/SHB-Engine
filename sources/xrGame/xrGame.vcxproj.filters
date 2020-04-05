@@ -5496,19 +5496,10 @@
     <ClInclude Include="xrServer_Space.h">
       <Filter>Core\Server</Filter>
     </ClInclude>
-    <ClInclude Include="DrawUtils.h">
-      <Filter>Core\Server\Editor</Filter>
-    </ClInclude>
     <ClInclude Include="FastDelegate.h">
       <Filter>Core\Server\Editor</Filter>
     </ClInclude>
     <ClInclude Include="ItemListTypes.h">
-      <Filter>Core\Server\Editor</Filter>
-    </ClInclude>
-    <ClInclude Include="PropertiesListHelper.h">
-      <Filter>Core\Server\Editor</Filter>
-    </ClInclude>
-    <ClInclude Include="WaveForm.h">
       <Filter>Core\Server\Editor</Filter>
     </ClInclude>
     <ClInclude Include="xrEProps.h">
@@ -5642,9 +5633,6 @@
     </ClInclude>
     <ClInclude Include="id_generator.h">
       <Filter>Core\Server\ID_Generator</Filter>
-    </ClInclude>
-    <ClInclude Include="PropertiesListTypes.h">
-      <Filter>Core\Server\ServerEntities</Filter>
     </ClInclude>
     <ClInclude Include="ShapeData.h">
       <Filter>Core\Server\ServerEntities</Filter>
@@ -6491,6 +6479,9 @@
     </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertiesListTypes.h">
+      <Filter>Core\Server\Editor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -7791,9 +7782,6 @@
       <Filter>Core\Client\Level</Filter>
     </ClCompile>
     <ClCompile Include="Level_load.cpp">
-      <Filter>Core\Client\Level</Filter>
-    </ClCompile>
-    <ClCompile Include="level_map_locations.cpp">
       <Filter>Core\Client\Level</Filter>
     </ClCompile>
     <ClCompile Include="Level_network.cpp">

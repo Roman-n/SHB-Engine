@@ -342,7 +342,6 @@ void	CGameSpy_Browser::ReadServerInfo	(ServerInfo* pServerInfo, void* pServer)
 	pServerInfo->m_ServerNumTeams = (s16)xrGS_SBServerGetIntValue(pServer, m_pQR2->xrGS_RegisteredKey(NUMTEAMS_KEY), 0);
 	pServerInfo->m_Port		= (s16)xrGS_SBServerGetIntValue(pServer, m_pQR2->xrGS_RegisteredKey(HOSTPORT_KEY), 0);
 	pServerInfo->m_HPort	= (s16)xrGS_SBServerGetPublicQueryPort(pServer);
-	pServerInfo->m_bDedicated	= (xrGS_SBServerGetBoolValue(pServer, m_pQR2->xrGS_RegisteredKey(DEDICATED_KEY), SBFalse)) == SBTrue;
 	pServerInfo->m_GameType = (u8)xrGS_SBServerGetIntValue(pServer, m_pQR2->xrGS_RegisteredKey(GAMETYPE_NAME_KEY), 0);
 	if (pServerInfo->m_GameType == 0)
 	{

@@ -26,7 +26,7 @@ public:
 
 	CHW()
 	{
-    	hD3D9		= NULL;
+		hD3D9		= NULL;
 		pD3D		= NULL;
 		pDevice		= NULL;
 		pBaseRT		= NULL;

@@ -240,7 +240,6 @@
     <ClInclude Include="ParticleCustom.h" />
     <ClInclude Include="perlin.h" />
     <ClInclude Include="Properties.h" />
-    <ClInclude Include="psystem.h" />
     <ClInclude Include="PS_instance.h" />
     <ClInclude Include="pure.h" />
     <ClInclude Include="pure_relcase.h" />

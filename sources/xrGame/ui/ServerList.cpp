@@ -409,7 +409,6 @@ bool CServerList::IsValidItem(ServerInfo& item)
 		result &= m_sf.with_battleye	? (/*m_sf.with_battleye	== */item.m_bBattlEye)										: true;
 	}
 #endif // BATTLEYE
-	result &= !m_sf.listen_servers	? (m_sf.listen_servers	!= item.m_bDedicated)										: true;
 
 	return result;
 }
@@ -690,7 +689,6 @@ void CServerList::SrvInfo2LstSrvInfo(const ServerInfo* pServerInfo)
 	m_itemInfo.info.ping.sprintf	("%d", pServerInfo->m_Ping);
 	m_itemInfo.info.version			= pServerInfo->m_ServerVersion;
 	m_itemInfo.info.icons.pass		= pServerInfo->m_bPassword;
-	m_itemInfo.info.icons.dedicated	= pServerInfo->m_bDedicated;
 	m_itemInfo.info.icons.punkbuster= false;//	= pServerInfo->m_bPunkBuster;
 	m_itemInfo.info.icons.user_pass	= pServerInfo->m_bUserPass;
 

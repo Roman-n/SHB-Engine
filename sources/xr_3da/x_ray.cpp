@@ -140,8 +140,6 @@ void InitConsole	()
 void InitInput		()
 {
 	BOOL bCaptureInput			= !strstr(Core.Params,"-i");
-	if(g_dedicated_server)
-		bCaptureInput			= FALSE;
 
 	pInput						= xr_new<CInput>		(bCaptureInput);
 }
@@ -458,8 +456,6 @@ XRCORE_API DUMMY_STUFF	*g_temporary_stuff;
 #include "trivial_encryptor.h"
 
 //#define RUSSIAN_BUILD
-
-ENGINE_API	bool g_dedicated_server	= false;
 
 int APIENTRY WinMain_impl(HINSTANCE hInstance,
                      HINSTANCE hPrevInstance,
@@ -848,10 +844,7 @@ void CApplication::LoadDraw		()
 
 	if(!Device.Begin () )		return;
 
-	if	(g_dedicated_server)
-		Console->OnRender			();
-	else
-		load_draw_internal			();
+	load_draw_internal			();
 
 	Device.End					();
 }

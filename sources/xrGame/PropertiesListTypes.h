@@ -2,7 +2,7 @@
 #ifndef PropertiesListTypesH
 #define PropertiesListTypesH
 
-#include "WaveForm.H"
+#include "..\XR_3DA\WaveForm.H"
 
 //---------------------------------------------------------------------------
 enum EPropType{
@@ -30,7 +30,7 @@ enum EPropType{
 	PROP_CTEXT,
 	PROP_CLIST,
     PROP_SH_TOKEN,
-	PROP_TEXTURE2,
+	PROP_TEXTURE2
 };
 // refs
 struct 	xr_token;        

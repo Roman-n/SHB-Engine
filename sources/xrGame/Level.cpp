@@ -53,8 +53,6 @@
 #	include "physicobject.h"
 #endif
 
-ENGINE_API bool g_dedicated_server;
-
 extern BOOL	g_bDebugDumpPhysicsStep;
 
 CPHWorld	*ph_world			= 0;
@@ -86,10 +84,7 @@ CLevel::CLevel():IPureClient	(Device.GetTimerGlobal())
 
 	m_pBulletManager			= xr_new<CBulletManager>();
 
-	if(!g_dedicated_server)
-		m_map_manager				= xr_new<CMapManager>();
-	else
-		m_map_manager				= NULL;
+	m_map_manager				= xr_new<CMapManager>();
 
 //	m_pFogOfWarMngr				= xr_new<CFogOfWarMngr>();
 //----------------------------------------------------
@@ -102,32 +97,16 @@ CLevel::CLevel():IPureClient	(Device.GetTimerGlobal())
 	physics_step_time_callback	= (PhysicsStepTimeCallback*) &PhisStepsCallback;
 	m_seniority_hierarchy_holder= xr_new<CSeniorityHierarchyHolder>();
 
-	if(!g_dedicated_server)
-	{
-		m_level_sound_manager		= xr_new<CLevelSoundManager>();
-		m_space_restriction_manager = xr_new<CSpaceRestrictionManager>();
-		m_client_spawn_manager		= xr_new<CClientSpawnManager>();
-		m_autosave_manager			= xr_new<CAutosaveManager>();
+	m_level_sound_manager		= xr_new<CLevelSoundManager>();
+	m_space_restriction_manager = xr_new<CSpaceRestrictionManager>();
+	m_client_spawn_manager		= xr_new<CClientSpawnManager>();
+	m_autosave_manager			= xr_new<CAutosaveManager>();
 
-	#ifdef DEBUG
-		m_debug_renderer			= xr_new<CDebugRenderer>();
-		m_level_debug				= xr_new<CLevelDebug>();
-	#endif
+#ifdef DEBUG
+	m_debug_renderer			= xr_new<CDebugRenderer>();
+	m_level_debug				= xr_new<CLevelDebug>();
+#endif
 
-	}else
-	{
-		m_level_sound_manager		= NULL;
-		m_client_spawn_manager		= NULL;
-		m_autosave_manager			= NULL;
-		m_space_restriction_manager = NULL;
-	#ifdef DEBUG
-		m_debug_renderer			= NULL;
-		m_level_debug				= NULL;
-	#endif
-	}
-
-
-	
 	m_ph_commander				= xr_new<CPHCommander>();
 	m_ph_commander_scripts		= xr_new<CPHCommander>();
 
@@ -239,8 +218,7 @@ CLevel::~CLevel()
 	xr_delete					(m_debug_renderer);
 #endif
 
-	if (!g_dedicated_server)
-		ai().script_engine().remove_script_process(ScriptEngine::eScriptProcessorLevel);
+	ai().script_engine().remove_script_process(ScriptEngine::eScriptProcessorLevel);
 
 	xr_delete					(game);
 	xr_delete					(game_events);
@@ -479,13 +457,12 @@ void CLevel::OnFrame	()
 
 	if (m_bNeed_CrPr)					make_NetCorrectionPrediction();
 
-	if(!g_dedicated_server)
-		MapManager().Update		();
+	MapManager().Update		();
 	// Inherited update
 	inherited::OnFrame		();
 
 	// Draw client/server stats
-	if ( !g_dedicated_server && psDeviceFlags.test(rsStatistic))
+	if (psDeviceFlags.test(rsStatistic))
 	{
 		CGameFont* F = HUD().Font().pFontDI;
 		if (!psNET_direct_connect) 
@@ -550,8 +527,7 @@ void CLevel::OnFrame	()
 	g_pGamePersistent->Environment().SetGameTime	(GetEnvironmentGameDayTimeSec(),GetGameTimeFactor());
 
 	//Device.Statistic->cripting.Begin	();
-	if (!g_dedicated_server)
-		ai().script_engine().script_process	(ScriptEngine::eScriptProcessorLevel)->update();
+	ai().script_engine().script_process	(ScriptEngine::eScriptProcessorLevel)->update();
 	//Device.Statistic->Scripting.End	();
 	m_ph_commander->update				();
 	m_ph_commander_scripts->update		();
@@ -563,19 +539,15 @@ void CLevel::OnFrame	()
 	Device.Statistic->TEST0.End			();
 
 	// update static sounds
-	if(!g_dedicated_server)
-	{
-		if (g_mt_config.test(mtLevelSounds)) 
-			Device.seqParallel.push_back	(fastdelegate::FastDelegate0<>(m_level_sound_manager,&CLevelSoundManager::Update));
-		else								
-			m_level_sound_manager->Update	();
-	}
+	if (g_mt_config.test(mtLevelSounds)) 
+		Device.seqParallel.push_back	(fastdelegate::FastDelegate0<>(m_level_sound_manager,&CLevelSoundManager::Update));
+	else								
+		m_level_sound_manager->Update	();
+
 	// deffer LUA-GC-STEP
-	if (!g_dedicated_server)
-	{
-		if (g_mt_config.test(mtLUA_GC))	Device.seqParallel.push_back	(fastdelegate::FastDelegate0<>(this,&CLevel::script_gc));
-		else							script_gc	()	;
-	}
+	if (g_mt_config.test(mtLUA_GC))	Device.seqParallel.push_back	(fastdelegate::FastDelegate0<>(this,&CLevel::script_gc));
+	else							script_gc	()	;
+
 	//-----------------------------------------------------
 	if (pStatGraphR)
 	{	

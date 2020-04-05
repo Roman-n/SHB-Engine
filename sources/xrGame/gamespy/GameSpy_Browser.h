@@ -40,7 +40,6 @@ struct ServerInfo{
 	s16						m_ServerNumPlayers;
 	s16						m_ServerMaxPlayers;
 	s16						m_ServerNumTeams;
-	bool					m_bDedicated;
 	bool					m_bFFire;
 	s16						m_s16FFire;
 	bool					m_bPassword;

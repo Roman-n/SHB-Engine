@@ -262,8 +262,7 @@ IPureServer::_Recieve( const void* data, u32 data_size, u32 param )
 
 //==============================================================================
 
-IPureServer::IPureServer	(CTimer* timer, BOOL	Dedicated)
-	:	m_bDedicated(Dedicated)
+IPureServer::IPureServer	(CTimer* timer)
 {
 	device_timer			= timer;
 	stats.clear				();
@@ -408,7 +407,7 @@ if(!psNET_direct_connect)
     dpAppDesc.dwFlags			= DPNSESSION_CLIENT_SERVER | DPNSESSION_NODPNSVR;
     dpAppDesc.guidApplication	= NET_GUID;
     dpAppDesc.pwszSessionName	= SessionNameUNICODE;
-	dpAppDesc.dwMaxPlayers		= (m_bDedicated) ? (dwMaxPlayers+2) : (dwMaxPlayers+1);
+	dpAppDesc.dwMaxPlayers		= (dwMaxPlayers+1);
 	dpAppDesc.pvApplicationReservedData	= session_options;
 	dpAppDesc.dwApplicationReservedDataSize = xr_strlen(session_options)+1;
 

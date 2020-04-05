@@ -1,9 +1,6 @@
 // Level.h: interface for the CLevel class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_LEVEL_H__38F63863_DB0C_494B_AFAB_C495876EC671__INCLUDED_)
-#define AFX_LEVEL_H__38F63863_DB0C_494B_AFAB_C495876EC671__INCLUDED_
 #pragma once
 
 #include "..\XR_3DA\igame_level.h"
@@ -113,7 +110,7 @@ public:
 public:
 	////////////// network ////////////////////////
 	u32							GetInterpolationSteps	();
-	void						SetInterpolationSteps	(u32 InterpSteps);
+//--	void						SetInterpolationSteps	(u32 InterpSteps);
 	bool						InterpolationDisabled	();
 	void						ReculcInterpolationSteps();
 	u32							GetNumCrSteps			() const	{return m_dwNumSteps; };
@@ -414,6 +411,3 @@ IC bool					OnClient()	{ return Level().IsClient();}
 class  CPHWorld;
 extern CPHWorld*				ph_world;
 extern BOOL						g_bDebugEvents;
-
-
-#endif // !defined(AFX_LEVEL_H__38F63863_DB0C_494B_AFAB_C495876EC671__INCLUDED_)
