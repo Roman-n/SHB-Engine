@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding="windows-1251"?>
 
 <xml>
-<!------------------------- STALKER ------------------------>
-<!-------------------------- DOCTOR ------------------------>
+<!-- STALKER -->
+<!-- DOCTOR -->
     <specific_character id="cit_doctor" team_default = "1">
         <name>cit_doctor_name</name>
         <icon>ui_npc_u_izgoy</icon>
@@ -30,8 +30,8 @@
 #include "gameplay\character_dialogs.xml"
     </specific_character>
 
-<!----------------------------- KILLERS ------------------------->
-<!----------------------------- GENERAL ------------------------->
+<!-- KILLERS -->
+<!-- GENERAL -->
 	<specific_character id="cit_killer_general1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon x="18" y="8"></icon>
@@ -90,7 +90,7 @@
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
 
-<!----------------------------- VETERAN ------------------------->
+<!-- VETERAN -->
 	<specific_character id="cit_killer_veteran1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon x="18" y="8"></icon>
@@ -148,7 +148,7 @@
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
 
-<!------------------------------ NAUCHNIY ----------------------->
+<!-- NAUCHNIY -->
 	<specific_character id="cit_killer_nauchniy" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon x="14" y="0"></icon>
@@ -178,7 +178,7 @@
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
 
-<!------------------------------ EXO ----------------------->
+<!-- EXO -->
 	<specific_character id="cit_killer_exo" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon x="30" y="6"></icon>
@@ -239,7 +239,7 @@
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
 
-<!---------------------------- LEADER ---------------------->
+<!-- LEADER -->
 	<specific_character id="cit_killer_leader" team_default = "1">
 		<name>cit_killers_leader_name</name>
 		<icon x="18" y="6"></icon>
@@ -273,8 +273,8 @@
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
 
-<!-------------------------- BANDITS ----------------------->
-<!--------------------------- DRUNK ------------------------>
+<!-- BANDITS -->
+<!-- DRUNK -->
     <specific_character id="cit_bandit_drunk" team_default = "1">
         <name>GENERATE_NAME_stalker</name>
         <icon x="24" y="10"></icon>
@@ -301,7 +301,7 @@
 		<start_dialog>hello_dialog</start_dialog>
     </specific_character>
 
-<!---------------------------BANDIT GENERAL---------------------->
+<!--BANDIT GENERAL-->
 	<specific_character id="cit_bandit_general_defaul1t" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon x="14" y="4"></icon>
@@ -415,7 +415,7 @@
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
 	
-<!---------------------------BANDIT VETERAN---------------------->
+<!--BANDIT VETERAN-->
 	<specific_character id="cit_bandit_veteran_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon x="22" y="14"></icon>
@@ -501,7 +501,7 @@
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
 
-<!-------------------------- VETERAN BEST ----------------------->
+<!-- VETERAN BEST -->
 	<specific_character id="cit_bandit_veteran_best" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon x="22" y="14"></icon>
@@ -531,7 +531,7 @@
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
 
-<!-------------------------- LEADER ----------------------->
+<!-- LEADER -->
 	<specific_character id="cit_bandit_leader" team_default = "1">
 		<name>cit_bandits_leader_name</name>
 		<icon x="22" y="14"></icon>
@@ -561,7 +561,7 @@
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
 
-<!----------------------- Василий Петрович ---------------------->
+<!-- Василий Петрович -->
 	<specific_character id="cit_vp" team_default = "1">
 		<name>cit_vp_name</name>
 		<icon x="24" y="4"></icon>

@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding="windows-1251"?>
 
 <xml>
-<!---------------------------SVOBODA PROFILES----------------------->
+<!--SVOBODA PROFILES-->
 
-<!---------------------------SVOBODA SPECNAZ----------------------->
+<!--SVOBODA SPECNAZ-->
 	<specific_character id="mil_Svoboda_specnaz" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_sv_hood_9</icon>
@@ -37,7 +37,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-<!---------------------------SVOBODA ENGINEER----------------------->
+<!--SVOBODA ENGINEER-->
 	<specific_character id="mil_Svoboda_engineer" team_default = "1">
 		<name>mil_Svoboda_engineer_name</name>
 		<icon>ui_npc_u_stalker_sv_rukzak_3</icon>
@@ -74,7 +74,7 @@
 #include "gameplay\character_dialogs.xml"		
 	</specific_character>
 
-<!---------------------------SVOBODA REGULAR----------------------->
+<!--SVOBODA REGULAR-->
 	<specific_character id="mil_Svoboda_regular" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_sv_rukzak_1_1</icon>
@@ -108,7 +108,7 @@
 #include "gameplay\character_criticals_5.xml"
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
-<!---------------------------SVOBODA SNIPER---------------------->
+<!--SVOBODA SNIPER-->
 	<specific_character id="mil_Svoboda_sniper" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_sv_rukzak_3_1</icon>
@@ -141,7 +141,7 @@
 #include "gameplay\character_criticals_5.xml"
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
-<!---------------------------SVOBODA SPECNAZ STUKACH---------------------->
+<!--SVOBODA SPECNAZ STUKACH-->
 	<specific_character id="mil_Svoboda_stukach" team_default = "1">
 		<name>mil_Svoboda_stukach_name</name>
 		<icon>ui_npc_u_stalker_sv_rukzak_1</icon>
@@ -175,7 +175,7 @@
 #include "gameplay\character_criticals_5.xml"	
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
-<!---------------------------SVOBODA ZONEGUARD---------------------->
+<!--SVOBODA ZONEGUARD-->
 	<specific_character id="mil_Svoboda_zoneguard" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_sv_exoskeleton</icon>
@@ -212,7 +212,7 @@
 		<actor_dialog>mil_zoneguard_common2</actor_dialog>
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
-<!---------------------------SVOBODA BODYGUARD---------------------->
+<!--SVOBODA BODYGUARD-->
 	<specific_character id="mil_Svoboda_bodyguard" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_sv_exoskeleton</icon>
@@ -247,7 +247,7 @@
 	</specific_character>
 	
 
-<!---------------------------SVOBODA LEADER---------------------->
+<!--SVOBODA LEADER-->
 	<specific_character id="mil_Svoboda_leader" team_default = "1">
 		<name>mil_Svoboda_leader_name</name>
 		<icon>ui_npc_u_stalker_sv_leader</icon>
@@ -283,7 +283,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>	
 
-<!---------------------------SVOBODA TRADER----------------------->
+<!--SVOBODA TRADER-->
 	<specific_character id="mil_Svoboda_trader" team_default = "1">
 		<name>mil_Svoboda_trader_name</name>
 		<icon>ui_npc_u_stalker_sv_balon_1</icon>
@@ -315,7 +315,7 @@
 		<start_dialog>mil_trader_dialog</start_dialog>
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
-<!---------------------------SVOBODA MASTER MAX----------------------->
+<!--SVOBODA MASTER MAX-->
 	<specific_character id="mil_Svoboda_master_Max" team_default = "1">
 		<name>mil_Svoboda_master_Max_name</name>
 		<icon>ui_npc_u_stalker_sv_max</icon>
@@ -352,7 +352,7 @@
 		<start_dialog>mil_max_dialog</start_dialog>
 #include "gameplay\character_dialogs.xml"		
 	</specific_character>
-<!---------------------------SVOBODA MASTER----------------------->
+<!--SVOBODA MASTER-->
 	<specific_character id="mil_Svoboda_master" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_sv_rukzak_1_1</icon>
@@ -385,7 +385,7 @@
 #include "gameplay\character_criticals_5.xml"
 #include "gameplay\character_dialogs.xml"			
 	</specific_character>
-<!---------------------------SVOBODA COOK----------------------->
+<!--SVOBODA COOK-->
 	<specific_character id="mil_Svoboda_cook" team_default = "1">
 		<name>mil_Svoboda_cook_name</name>		
 		<icon>ui_npc_u_stalker_sv_cook</icon>
@@ -432,7 +432,7 @@
 #include "gameplay\character_dialogs.xml"        
 
 	</specific_character>
-<!---------------------------SVOBODA BLOCKPOST LEADER---------------------->
+<!--SVOBODA BLOCKPOST LEADER-->
 	<specific_character id="mil_Svoboda_blockpost_leader" team_default = "1">
 		<name>mil_Svoboda_blockpost_leader_name</name>
 		<icon>ui_npc_u_stalker_sv_balon_10</icon>
@@ -467,7 +467,7 @@
 
 		<actor_dialog>mil_freedom_commander_common2</actor_dialog>
 	</specific_character>
-<!---------------------------SVOBODA MASTER UGRUMIY----------------------->
+<!--SVOBODA MASTER UGRUMIY-->
 	<specific_character id="mil_Svoboda_master_Ugrumiy" team_default = "1">
 		<name>mil_Svoboda_master_Ugrumiy_name</name>		
 		<icon>ui_npc_u_stalker_sv_nauchniy</icon>
@@ -505,8 +505,8 @@
 
 
 	
-<!---------------------------DOLG PROFILES----------------------->
-<!---------------------------DOLG SPECNAZ---------------------->
+<!--DOLG PROFILES-->
+<!--DOLG SPECNAZ-->
 	<specific_character id="mil_Dolg_specnaz" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_do_antigas</icon>
@@ -539,7 +539,7 @@
 #include "gameplay\character_criticals_6.xml"
 #include "gameplay\character_dialogs.xml"			
 	</specific_character>
-<!---------------------------DOLG SPECNAZ SILENCE---------------------->
+<!--DOLG SPECNAZ SILENCE-->
 	<specific_character id="mil_Dolg_specnaz_silence" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_do_exoskeleton</icon>
@@ -572,7 +572,7 @@
 #include "gameplay\character_criticals_2.xml"
 #include "gameplay\character_dialogs.xml"				
 	</specific_character>	
-<!---------------------------DOLG SPECNAZ CHEREP---------------------->
+<!--DOLG SPECNAZ CHEREP-->
 	<specific_character id="mil_Dolg_specnaz_cherep" team_default = "1">
 		<name>mil_Dolg_specnaz_cherep_name</name>
 		<icon>ui_npc_u_stalker_do_exoskeleton</icon>
@@ -609,8 +609,8 @@
 	</specific_character>	
 	
 	
-<!---------------------------KILLERS PROFILES----------------------->
-<!---------------------------KILLER IHFORMATOR---------------------->
+<!--KILLERS PROFILES-->
+<!--KILLER IHFORMATOR-->
 	<specific_character id="mil_Killer_informator" team_default = "1">
 		<name>mil_Killer_informator_name</name>
 		<icon>ui_npc_u_stalker_ki_informator</icon>
@@ -644,7 +644,7 @@
 				
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
-<!---------------------------KILLER SPECNAZ---------------------->
+<!--KILLER SPECNAZ-->
 	<specific_character id="mil_Killer_specnaz" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_ki_antigas</icon>
@@ -677,7 +677,7 @@
 #include "gameplay\character_dialogs.xml"					
 	</specific_character>
 
-<!---------------------------KILLER SNIPER---------------------->
+<!--KILLER SNIPER-->
 	<specific_character id="mil_killer_sniper" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_ki_mask</icon>
@@ -711,7 +711,7 @@
 	#include "gameplay\character_dialogs.xml"				
 	</specific_character>
 
-<!---------------------------KILLER MASTER----------------------->
+<!--KILLER MASTER-->
 	<specific_character id="mil_killer_master" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_ki_exoskeleton</icon>
@@ -750,8 +750,8 @@
 
 	
 	
-<!---------------------------NEUTRAL PROFILES----------------------->
-<!---------------------------STALKER MASTER----------------------->
+<!--NEUTRAL PROFILES-->
+<!--STALKER MASTER-->
 	<specific_character id="mil_Stalker_master" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_neytral_exoskeleton</icon>
@@ -783,7 +783,7 @@
 #include "gameplay\character_criticals_2.xml"
 #include "gameplay\character_dialogs.xml"						
 	</specific_character>
-<!---------------------------STALKER VETERAN---------------------->
+<!--STALKER VETERAN-->
 	<specific_character id="mil_Stalker_veteran" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_neytral_nauchniy</icon>
@@ -816,8 +816,8 @@
 #include "gameplay\character_dialogs.xml"			
 	</specific_character>
 	
-<!---------------------------SOME PROFILES----------------------->
-<!---------------------------SVOBODA CRAZY STALKER----------------------->
+<!--SOME PROFILES-->
+<!--SVOBODA CRAZY STALKER-->
         <specific_character id="mil_Svoboda_zombi_stalker" team_default = "1">
                 <name>mil_Svoboda_zombi_stalker_name</name>
                 <icon>ui_npc_u_stalker_zombie5</icon>
@@ -846,7 +846,7 @@
 #include "gameplay\character_criticals_1.xml"
 #include "gameplay\character_dialogs.xml"
         </specific_character> 
-<!---------------------------MONOLIT REGULAR----------------------->
+<!--MONOLIT REGULAR-->
   <specific_character id="mil_Monolit_regular" team_default = "1">
     <name>GENERATE_NAME_stalker</name>
     <icon>ui_npc_u_stalker_mo_hood_9</icon>
@@ -879,7 +879,7 @@
 		<start_dialog>hello_dialog</start_dialog>
   </specific_character>
 
-<!---------------------------MONOLIT MASTER----------------------->
+<!--MONOLIT MASTER-->
   <specific_character id="mil_Monolit_master" team_default = "1">
     <name>GENERATE_NAME_stalker</name>
     <icon>ui_npc_u_stalker_mo_exo</icon>

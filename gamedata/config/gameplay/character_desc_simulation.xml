@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding="windows-1251"?>
 
 <xml>
-    <!---------------------------BANDITS PROFILES-------------------->
+    <!--BANDITS PROFILES-->
 
-	<!---------------------------BANDIT NOVICE----------------------->
+	<!--BANDIT NOVICE-->
 	<specific_character id="sim_bandit_novice_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_bandit_3</icon>
@@ -93,7 +93,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
- <!---------------------------BANDIT GENERAL---------------------->
+ <!--BANDIT GENERAL-->
 
 	<specific_character id="sim_bandit_general_defaul1t" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
@@ -216,7 +216,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-<!---------------------------BANDIT VETERAN---------------------->
+<!--BANDIT VETERAN-->
 	<specific_character id="sim_bandit_veteran_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_bandit_master</icon>
@@ -311,7 +311,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-<!---------------------------BANDIT MASTER----------------------->
+<!--BANDIT MASTER-->
 	<specific_character id="sim_bandit_master_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_bandit_master</icon>
@@ -408,9 +408,9 @@
 	</specific_character>
 
 
-  <!-----------------------------Neutral STALKERS--------------------->
+  <!--Neutral STALKERS-->
 
-	<!---------------------------STALKER NOVICE----------------------->
+	<!--STALKER NOVICE-->
 	
 	<specific_character id="sim_stalker_novice_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
@@ -640,7 +640,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-	<!---------------------------STALKER GENERAL---------------------->
+	<!--STALKER GENERAL-->
 
 		<specific_character id="sim_stalker_general_default1" team_default = "1">
 			<name>GENERATE_NAME_stalker</name>
@@ -829,7 +829,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-<!---------------------------STALKER VETERAN---------------------->
+<!--STALKER VETERAN-->
 	<specific_character id="sim_stalker_veteran_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_neytral_hood_9</icon>
@@ -985,7 +985,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-<!---------------------------STALKER MASTER---------------------->
+<!--STALKER MASTER-->
 
 	<specific_character id="sim_stalker_master_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
@@ -1050,7 +1050,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-<!-------------------------------Stalker SNIPER------------------------->
+<!--Stalker SNIPER-->
 
 	<specific_character id="sim_stalker_sniper_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
@@ -1086,9 +1086,9 @@
 
 
 
-<!--------------------------- DOLG ------------------------------->
+<!-- DOLG -->
 
-<!---------------------------DOLG REGULAR----------------------->
+<!--DOLG REGULAR-->
 	<specific_character id="sim_dolg_regular_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_do_mask</icon>
@@ -1182,7 +1182,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>	
 
-<!---------------------------DOLG SPECNAZ---------------------->
+<!--DOLG SPECNAZ-->
 	<specific_character id="sim_dolg_veteran_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_do_nauchniy</icon>
@@ -1306,7 +1306,7 @@
 	</specific_character>
 
 
-<!---------------------------DOLG MASTER----------------------->
+<!--DOLG MASTER-->
 	<specific_character id="sim_dolg_master_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_do_exoskeleton</icon>
@@ -1368,7 +1368,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-<!---------------------------DOLG SNIPER---------------------->
+<!--DOLG SNIPER-->
 	<specific_character id="sim_dolg_sniper_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_do_balon_8</icon>
@@ -1464,9 +1464,9 @@
 
 
 
-  <!--------------------------FREEDOM STALKERS------------------------>
+  <!--FREEDOM STALKERS-->
 
-<!---------------------------SVOBODA REGULAR----------------------->
+<!--SVOBODA REGULAR-->
 	<specific_character id="sim_Svoboda_regular" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_sv_rukzak_1_1</icon>
@@ -1501,7 +1501,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-<!---------------------------SVOBODA SPECNAZ----------------------->
+<!--SVOBODA SPECNAZ-->
 	<specific_character id="sim_Svoboda_specnaz" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_sv_hood_9</icon>
@@ -1535,7 +1535,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-<!---------------------------SVOBODA MASTER----------------------->
+<!--SVOBODA MASTER-->
 	<specific_character id="sim_Svoboda_master" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_sv_exoskeleton</icon>
@@ -1569,7 +1569,7 @@
 #include "gameplay\character_dialogs.xml"			
 	</specific_character>
 
-<!---------------------------SVOBODA SNIPER---------------------->
+<!--SVOBODA SNIPER-->
 	<specific_character id="sim_Svoboda_sniper" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_sv_rukzak_3_1</icon>
@@ -1604,9 +1604,9 @@
 
   
 
-<!----------------------KILLERS--------------------------------->
+<!--KILLERS-->
 
-<!----------------------------- KILLER GENERAL ------------------------->
+<!-- KILLER GENERAL -->
 	<specific_character id="sim_killer_general1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_ki_head_1</icon>
@@ -1667,7 +1667,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-<!-----------------------------KILLER VETERAN ------------------------->
+<!--KILLER VETERAN -->
 	<specific_character id="sim_killer_veteran1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_ki_head_1</icon>
@@ -1728,7 +1728,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-<!------------------------------ KILLER MASTER ----------------------->
+<!-- KILLER MASTER -->
 	<specific_character id="sim_killer_master1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_ki_nauchniy</icon>
@@ -1790,7 +1790,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-<!-----------------------KILLER SNIPER------------------------->
+<!--KILLER SNIPER-->
 
 	<specific_character id="sim_killer_sniper" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
@@ -1822,9 +1822,9 @@
 	</specific_character>
 
 
-<!---------------------------MONOLIT STALKERS------------------------------->
+<!--MONOLIT STALKERS-->
 
-<!-------------------------- MONOLIT REGULAR ----------------------->
+<!-- MONOLIT REGULAR -->
     <specific_character id="sim_monolith_regular_default1" team_default = "1">
         <name>GENERATE_NAME_stalker</name>
         <icon>ui_npc_u_stalker_mo_head_1</icon>
@@ -1941,7 +1941,7 @@
 #include "gameplay\character_dialogs.xml"
     </specific_character>
 
-<!-------------------------- MONOLIT SPECNAZ ----------------------->
+<!-- MONOLIT SPECNAZ -->
     <specific_character id="sim_monolith_specnaz_default1" team_default = "1">
         <name>GENERATE_NAME_stalker</name>
         <icon>ui_npc_u_stalker_mo_hood_9</icon>
@@ -2002,7 +2002,7 @@
 #include "gameplay\character_dialogs.xml"
     </specific_character>
 
-<!---------------------------- MONOLIT MASTER ------------------------->
+<!-- MONOLIT MASTER -->
     <specific_character id="sim_monolith_master_default1" team_default = "1">
         <name>GENERATE_NAME_stalker</name>
         <icon>ui_npc_u_stalker_mo_exo</icon>
@@ -2063,7 +2063,7 @@
 #include "gameplay\character_dialogs.xml"
     </specific_character>
 
-<!-----------------------------MONOLIT SNIPER-------------------->
+<!--MONOLIT SNIPER-->
 
     <specific_character id="sim_monolith_sniper" team_default = "1">
         <name>GENERATE_NAME_stalker</name>
@@ -2097,9 +2097,9 @@
 
 
 
-  <!-------------------------ECOLOG------------------------------>
+  <!--ECOLOG-->
 
-   <!---------------------------ECOLOG GENERAL------------------------>
+   <!--ECOLOG GENERAL-->
 	<specific_character id="sim_ecolog_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_ecolog</icon>
@@ -2159,9 +2159,9 @@
 
 
 
-<!---------------------------ZOMBIED STALKER--------------------------->
+<!--ZOMBIED STALKER-->
 
-<!---------------------------ZOMBIED NOVICE----------------------->
+<!--ZOMBIED NOVICE-->
 	<specific_character id="sim_zombied_novice_default1" team_default = "1">
 		<name>zombie_name</name>
 		<icon>ui_npc_u_stalker_zombie1</icon>
@@ -2337,7 +2337,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-<!---------------------------ZOMBIED VETERANS----------------------->
+<!--ZOMBIED VETERANS-->
 	<specific_character id="sim_zombied_veteran_default1" team_default = "1">
 		<name>zombie_name</name>
 		<icon>ui_npc_u_stalker_zombie2</icon>
@@ -2467,7 +2467,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-<!---------------------------ZOMBIED MASTER----------------------->
+<!--ZOMBIED MASTER-->
 	<specific_character id="sim_zombied_master_1" team_default = "1">
 		<name>zombie_name</name>
 		<icon>ui_npc_u_zombie_exoskeleton</icon>
@@ -2493,7 +2493,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-<!---------------------------FRESH ZOMBIED STALKERS----------------------->
+<!--FRESH ZOMBIED STALKERS-->
 	<specific_character id="sim_fresh_Zombied_stalker_1" team_default = "1">
 		<name>zombie_name</name>
 		<icon>ui_npc_u_zombie_fresh_0</icon>
@@ -2574,9 +2574,9 @@
 
 
 
-<!---------------------------SOLDIER STALKERS------------------------>
+<!--SOLDIER STALKERS-->
 
-<!---------------------------SOLDIER REGULAR----------------------->
+<!--SOLDIER REGULAR-->
 	<specific_character id="sim_soldier_regular_default1" team_default = "1">
 		<name>GENERATE_NAME_private</name>
 		<icon>ui_npc_u_soldier_bandana</icon>
@@ -2738,7 +2738,7 @@
 	</specific_character>
 
 
-	<!---------------------------SOLDIER SPECNAZ---------------------->
+	<!--SOLDIER SPECNAZ-->
 
 	<specific_character id="sim_soldier_specnaz_default1" team_default = "1">
 		<name>GENERATE_NAME_sergeant</name>
@@ -2805,7 +2805,7 @@
 		<start_dialog>hello_dialog</start_dialog>		
 	</specific_character>
 
-	<!--------------------------- SOLDIER COMMANDERS ----------------------->
+	<!-- SOLDIER COMMANDERS -->
 	
 	<specific_character id="sim_soldier_commander1" team_default = "1">
 		<name>GENERATE_NAME_lieutenant</name>
@@ -2870,7 +2870,7 @@
 		<start_dialog>hello_dialog</start_dialog>		
 	</specific_character>
 
-<!---------------------------SOLDIER SNIPER---------------------->
+<!--SOLDIER SNIPER-->
 	<specific_character id="sim_soldier_sniper_default1" team_default = "1">
 		<name>GENERATE_NAME_sergeant</name>
 		<icon>ui_npc_u_soldier_obichniy</icon>
@@ -2967,7 +2967,7 @@
 		
 	</specific_character>
 
-<!---------------------------SOLDIER MASTER----------------------->
+<!--SOLDIER MASTER-->
 	<specific_character id="sim_Soldier_master" team_default = "1">
 		<name>GENERATE_NAME_captain</name>
 		<icon>ui_npc_u_stalker_militari_antigas_2</icon>
@@ -3006,7 +3006,7 @@
 
 
 ;----------------------Stalkers Quest Profiles-----------------------
-<!---------------------------Oleg Gusarov---------------------->
+<!--Oleg Gusarov-->
 	<specific_character id="sim_stalker_veteran_gusarov" team_default = "1">
 		<name>sim_stalker_veteran_gusarov_name</name>
 		<icon>ui_npc_u_stalker_neytral_hood_9</icon>
@@ -3537,7 +3537,7 @@
 	
 ;------------------------ARENA-----------------------------------
 
-<!---------------------------STALKER 1---------------------->
+<!--STALKER 1-->
 	<specific_character id="bar_arena_stalker_1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_green_stalker_2</icon>
@@ -4115,7 +4115,7 @@
 		
 #include "gameplay\character_criticals_2.xml"
 	</specific_character>
-	<!---------------------------Test profiles for level selo_face----------------------->
+	<!--Test profiles for level selo_face-->
 
 	<specific_character id="sim_test_000" team_default = "1">
 		<class>sim_test_000</class>

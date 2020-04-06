@@ -44,7 +44,7 @@ extern "C"
 #define GS_SSL_HANDSHAKE_FINISHED           (20) 
 
 // the largest payload for a single SSL packet, RFC const
-// ----> RFC includes MAC and any padding, actual user data must be less
+// --> RFC includes MAC and any padding, actual user data must be less
 #define GS_SSL_MAX_CONTENTLENGTH ((0x4000) - (0xFF))
 
 #ifndef HAVE_CIPHER_SUITES

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding="windows-1251" ?>
 <xml>
-	<!--------------------------- BANDITS ----------------------->
-	<!---------------------------- BOROV ------------------------>
+	<!-- BANDITS -->
+	<!-- BOROV -->
 	<specific_character id="val_bandit_borov" team_default="1">
 		<name>val_borov_name</name>
 		<icon>ui_npc_u_stalker_bandit_borov</icon>
@@ -33,7 +33,7 @@
 					
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
-	<!---------------------------- BODYGUARD ------------------------>
+	<!-- BODYGUARD -->
 	<specific_character id="val_bandit_bodyguard" team_default="1">
 		<name>GENERATE_NAME_bandit</name>
 		<icon>ui_npc_u_stalker_bandit_8</icon>
@@ -60,7 +60,7 @@
 					
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
-	<!--------------------------- BANDIT NOVICE ----------------------->
+	<!-- BANDIT NOVICE -->
 	<specific_character id="val_bandit_novice_default1" team_default="1">
 		<name>GENERATE_NAME_bandit</name>
 		<icon>ui_npc_u_stalker_bandit_3</icon>
@@ -180,7 +180,7 @@
 					
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
-	<!----------------------------- HALFDEAD ------------------------>
+	<!-- HALFDEAD -->
 	<specific_character id="val_escort_halfdead" team_default="1">
 		<name>GENERATE_NAME_bandit</name>
 		<icon>ui_npc_u_stalker_bandit_4</icon>
@@ -202,7 +202,7 @@
 					
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
-	<!---------------------------BANDIT GENERAL---------------------->
+	<!--BANDIT GENERAL-->
 	<specific_character id="val_bandit_general_defaul1t" team_default="1">
 		<name>GENERATE_NAME_bandit</name>
 		<icon>ui_npc_u_stalker_bandit_3</icon>
@@ -324,7 +324,7 @@
 					
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
-	<!---------------------------BANDIT VETERAN---------------------->
+	<!--BANDIT VETERAN-->
 	<specific_character id="val_bandit_veteran_default1" team_default="1">
 		<name>GENERATE_NAME_bandit</name>
 		<icon>ui_npc_u_stalker_bandit_master</icon>
@@ -416,7 +416,7 @@
 					
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
-	<!-------------------------- WATCHTOWER BANDIT ----------------------->
+	<!-- WATCHTOWER BANDIT -->
 	<specific_character id="val_watchtower_bandit_guard1" team_default="1">
 		<name>GENERATE_NAME_bandit</name>
 		<icon>ui_npc_u_stalker_bandit_veteran</icon>
@@ -477,8 +477,8 @@
 					
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
-	<!---------------------------- DOLG ------------------------>
-	<!-------------------------- REGULAR ----------------------->
+	<!-- DOLG -->
+	<!-- REGULAR -->
 	<specific_character id="val_dolg_regular_default1" team_default="1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_do_antigas</icon>
@@ -588,7 +588,7 @@
 		<actor_dialog>bar_dolg_base_guard_acces</actor_dialog>	
 #include "gameplay\character_dialogs.xml"		
 	</specific_character>
-	<!------------------------- PRISONER ----------------------->
+	<!-- PRISONER -->
 	<specific_character id="val_dolg_prisoner" team_default="1">
 		<name>val_prisoner_name</name>
 		<icon>ui_npc_u_stalker_do_mask_1</icon>
@@ -619,7 +619,7 @@
 		<actor_dialog>bar_dolg_base_guard_acces</actor_dialog>	
 #include "gameplay\character_dialogs.xml"		
 	</specific_character>
-	<!--------------------------- NAP1 ------------------------->
+	<!-- NAP1 -->
 	<specific_character id="val_escort_nap1" team_default="1">
 		<name>val_pulia_name</name>
 		<icon>ui_npc_u_stalker_do_mask_1</icon>
@@ -655,7 +655,7 @@
 		<actor_dialog>bar_dolg_base_guard_acces</actor_dialog>	
 #include "gameplay\character_dialogs.xml"		
 	</specific_character>
-	<!---------------------------- CAPTIVE -------------------------->
+	<!-- CAPTIVE -->
 	<specific_character id="val_escort_captive" team_default="1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_do_mask_1</icon>
@@ -686,8 +686,8 @@
 		<actor_dialog>bar_dolg_base_guard_acces</actor_dialog>	
 #include "gameplay\character_dialogs.xml"		
 	</specific_character>
-	<!------------------------- MONOLITH ----------------------->
-	<!-------------------------- REGULAR ----------------------->
+	<!-- MONOLITH -->
+	<!-- REGULAR -->
 	<specific_character id="val_monolith_regular_default1" team_default="3">
         <name>GENERATE_NAME_stalker</name>
         <icon>ui_npc_u_stalker_mo_hood_9</icon>
@@ -746,8 +746,8 @@
 					
 		<start_dialog>hello_dialog</start_dialog>
     </specific_character>
-	<!-------------------------- SOLDIER ----------------------->
-	<!-------------------------- REGULAR ----------------------->
+	<!-- SOLDIER -->
+	<!-- REGULAR -->
 	<specific_character id="val_soldier_regular_default1" team_default="1">
 		<name>GENERATE_NAME_sergeant</name>
 		<icon>ui_npc_u_soldier_bandana</icon>
@@ -868,7 +868,7 @@
 					
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
-	<!------------------------- SPECNAZ ------------------------>
+	<!-- SPECNAZ -->
 	<specific_character id="val_soldier_specnaz_default1" team_default="1">
 		<name>GENERATE_NAME_lieutenant</name>
 		<icon>ui_npc_u_soldier_spetsnaz</icon>
@@ -990,8 +990,8 @@
 					
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
-	<!-------------------------- STALKER ----------------------->
-	<!-------------------------- NOVICE ------------------------>
+	<!-- STALKER -->
+	<!-- NOVICE -->
 	<specific_character id="val_stalker_novice_default2" team_default="1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_green_stalker_2</icon>
@@ -1178,7 +1178,7 @@
 			
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
-	<!-------------------------- GENERAL ----------------------->
+	<!-- GENERAL -->
 	<specific_character id="val_stalker_general_default1" team_default="1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_neytral_hood_9</icon>

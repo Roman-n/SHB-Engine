@@ -44,7 +44,8 @@
 		<bio>sim_stalker_novice_bio</bio>
 
 		<class>bar_stalker_white_novice</class>
-		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<community>stalker</community>
+		<terrain_sect>stalker_terrain</terrain_sect>
 		<money min="200" max="600" infinitive="0"></money>
 		
 		<rank>98</rank>
@@ -72,7 +73,8 @@
 		<bio>sim_stalker_novice_bio</bio>
 
 		<class>bar_stalker_white_novice</class>
-		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<community>stalker</community>
+		<terrain_sect>stalker_terrain</terrain_sect>
 		<money min="200" max="600" infinitive="0"></money>
 		
 		<rank>112</rank>
@@ -100,7 +102,8 @@
 		<bio>sim_stalker_novice_bio</bio>
 
 		<class>bar_stalker_brown_novice</class>
-		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<community>stalker</community>
+		<terrain_sect>stalker_terrain</terrain_sect>
 		<money min="200" max="600" infinitive="0"></money>
 		
 		<rank>75</rank>
@@ -128,7 +131,8 @@
 		<bio>sim_stalker_novice_bio</bio>
 
 		<class>bar_stalker_brown_novice</class>
-		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<community>stalker</community>
+		<terrain_sect>stalker_terrain</terrain_sect>
 		<money min="200" max="600" infinitive="0"></money>
 		
 		<rank>83</rank>
@@ -156,7 +160,8 @@
 		<bio>sim_stalker_general_bio</bio>
 
 		<class>bar_stalker_general</class>
-		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<community>stalker</community>
+		<terrain_sect>stalker_terrain</terrain_sect>
 		<money min="600" max="2000" infinitive="0"></money>
 		
 		<rank>324</rank>
@@ -184,7 +189,8 @@
 		<bio>sim_stalker_general_bio</bio>
 
 		<class>bar_stalker_general</class>
-		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<community>stalker</community>
+		<terrain_sect>stalker_terrain</terrain_sect>
 		<money min="600" max="2000" infinitive="0"></money>
 		
 		<rank>410</rank>
@@ -212,7 +218,8 @@
 		<bio>sim_dolg_regular_bio</bio>
 
 		<class>bar_stalker_dolg</class>
-		<community>dolg</community> <terrain_sect>stalker_dolg_terrain</terrain_sect>
+		<community>dolg</community>
+		<terrain_sect>stalker_dolg_terrain</terrain_sect>
 		<money min="200" max="600" infinitive="0"></money>
 		
 		<rank>307</rank>
@@ -242,7 +249,8 @@
 		<bio>sim_bandit_general_bio</bio>
 
 		<class>bar_stalker_bandit</class>
-		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<community>stalker</community>
+		<terrain_sect>stalker_terrain</terrain_sect>
 		<money min="600" max="2000" infinitive="0"></money>
 		
 		<rank>376</rank>
@@ -270,7 +278,8 @@
 		<bio>sim_killer_veteran_bio</bio>
 
 		<class>bar_stalker_killer</class>
-		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<community>stalker</community>
+		<terrain_sect>stalker_terrain</terrain_sect>
 		<money min="600" max="2000" infinitive="0"></money>
 		
 		<rank>423</rank>
@@ -298,7 +307,8 @@
 		<bio>bar_bar_guard_bio</bio>
 
 		<class>bar_stalker_guard</class>
-		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<community>stalker</community>
+		<terrain_sect>stalker_terrain</terrain_sect>
 		<money min="200" max="600" infinitive="0"></money>
 
 		<rank>247</rank>
@@ -325,7 +335,8 @@
 		<bio>bar_bar_guard2_bio</bio>
 
 		<class>bar_stalker_guard2</class>
-		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<community>stalker</community>
+		<terrain_sect>stalker_terrain</terrain_sect>
 		<money min="200" max="600" infinitive="0"></money>
 
 		<rank>180</rank>
@@ -345,7 +356,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-	<!---------------------------BAR OSVEDOMITEL---------------------->
+	<!-- BAR OSVEDOMITEL -->
 	<specific_character id="bar_bar_osvedomitel" team_default = "1">
 		<name>bar_informer_name</name>
 		<icon>ui_npc_u_stalker_bandit_master</icon>
@@ -353,7 +364,8 @@
 		<bio>bar_informer_bio</bio>
 
 		<class>bar_stalker_osvedomitel</class>
-		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<community>stalker</community>
+		<terrain_sect>stalker_terrain</terrain_sect>
 		<money min="600" max="2000" infinitive="0"></money>
 		
 		<rank>485</rank>
@@ -375,10 +387,9 @@
 		<actor_dialog>bar_bar_osvedomitel_trade_info</actor_dialog>
 		<actor_dialog>tm_mercenary_dialog</actor_dialog>
 		<actor_dialog>tm_mercenary_reward</actor_dialog>
-				
 	</specific_character>	
 
-	<!---------------------------BAR HUNTER---------------------->
+	<!-- BAR HUNTER -->
 	<specific_character id="bar_bar_hunter" team_default = "1">
 		<name>bar_hunter_name</name>
 		<icon>ui_npc_u_green_stalker_3</icon>
@@ -386,7 +397,8 @@
 		<bio>Добродушный весельчак, единственная его проблема это то, что умеет стрелять только из охотничьего ружья. Остальное даже не пробует. Недавно попал в передрягу на Дикой территории и потерял там свое фамильное ружье. Теперь околачивается в баре, надеется, что кто-то вернет ему его ружье.</bio>
 
 		<class>bar_stalker_hunter</class>
-		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<community>stalker</community>
+		<terrain_sect>stalker_terrain</terrain_sect>
 		<money min="200" max="600" infinitive="0"></money>
 		
 		<rank>64</rank>
@@ -410,7 +422,7 @@
 		<actor_dialog>tm_hunter_reward</actor_dialog>		
 	</specific_character>	
 
-	<!---------------------------BAR DRUNK DOLG---------------------->
+	<!--BAR DRUNK DOLG-->
 	<specific_character id="bar_bar_drunk_dolg" team_default = "1">
 		<name>bar_drunk_name</name>
 		<icon>ui_npc_u_stalker_do_balon_4</icon>
@@ -418,7 +430,8 @@
 		<bio>bar_drunk_bio</bio>
 		
 		<class>bar_stalker_drunk_dolg</class>
-		<community>stalker</community> <terrain_sect>stalker_dolg_terrain</terrain_sect>
+		<community>stalker</community>
+		<terrain_sect>stalker_dolg_terrain</terrain_sect>
 		<money min="600" max="2000" infinitive="0"></money>
 		
 		<rank>417</rank>
@@ -437,11 +450,10 @@
 		
 		<start_dialog>bar_bar_drunk_dolg_start</start_dialog>
 		<actor_dialog>tm_drunk_dolg_dialog</actor_dialog>	
-		<actor_dialog>tm_drunk_dolg_reward</actor_dialog>	
-		
+		<actor_dialog>tm_drunk_dolg_reward</actor_dialog>
 	</specific_character>	
 
-	<!---------------------------BAR LISIY---------------------->
+	<!-- BAR LISIY -->
 	<specific_character id="bar_bar_lisiy" team_default = "1">
 		<name>bar_lisiy_name</name>
 		<icon>ui_npc_u_stalker_neytral_balon_4</icon>
@@ -449,7 +461,8 @@
 		<bio>sim_stalker_general_bio</bio>
 
 		<class>bar_stalker_lisiy</class>
-		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<community>stalker</community>
+		<terrain_sect>stalker_terrain</terrain_sect>
 		<money min="600" max="2000" infinitive="0"></money>
 		
 		<rank>388</rank>
@@ -478,7 +491,8 @@
 		<bio>bar_ryaboy_bio</bio>
 
 		<class>Bar_psih</class>
-		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<community>stalker</community>
+		<terrain_sect>stalker_terrain</terrain_sect>
 		<money min="600" max="2000" infinitive="0"></money>
 		
 		<rank>404</rank>
@@ -499,10 +513,7 @@
 		<actor_dialog>bar_bar_psih_talk_pain</actor_dialog>
 		<actor_dialog>bar_bar_psih_give_medkit</actor_dialog>
 		<actor_dialog>bar_bar_psih_talk_gorbun</actor_dialog>
-		<actor_dialog>bar_bar_psih_talk_lisiy</actor_dialog>
-		
-		
-		
+		<actor_dialog>bar_bar_psih_talk_lisiy</actor_dialog>		
 	</specific_character>
 
 	<!-- ******************* ARENA ********************** -->
@@ -513,7 +524,8 @@
 		<bio>bar_arny_bio</bio>
 
 		<class>bar_arena_manager</class>
-		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<community>stalker</community>
+		<terrain_sect>stalker_terrain</terrain_sect>
 		<money min="600" max="2000" infinitive="0"></money>
 		
 		<rank>531</rank>
@@ -544,7 +556,8 @@
 		<bio>bar_lelik_bio</bio>
 
 		<class>bar_arena_guard</class>
-		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
+		<community>stalker</community>
+		<terrain_sect>stalker_terrain</terrain_sect>
 		<money min="200" max="600" infinitive="0"></money>
 		
 		<rank>232</rank>
@@ -593,7 +606,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-	<!---------------------------DOLG LEADER---------------------->
+	<!--DOLG LEADER-->
 	<specific_character id="bar_dolg_leader" team_default = "1">
 		<name>bar_voronin_name</name>
 		<icon>ui_npc_u_stalker_do_komandir</icon>
@@ -631,7 +644,7 @@
 		<actor_dialog>tm_dolg_reward</actor_dialog>
 	</specific_character>
 
-	<!---------------------------DOLG PETRENKO---------------------->
+	<!--DOLG PETRENKO-->
 	<specific_character id="bar_dolg_petrenko" team_default = "1">
 		<name>bar_petrenko_name</name>
 		<icon>ui_npc_u_stalker_do_balon_3</icon>
@@ -668,7 +681,7 @@
 
 </specific_character>	
 
-	<!---------------------------DOLG IVANCOV---------------------->
+	<!--DOLG IVANCOV-->
 	<specific_character id="bar_dolg_ivancov" team_default = "1">
 		<name>bar_ivancov_name</name>
 		<icon>ui_npc_u_stalker_do_balon_5</icon>
@@ -702,7 +715,7 @@
 		#include "gameplay\character_dialogs.xml"
 	</specific_character>	
 
-	<!---------------------------DOLG Начальник Охраны---------------------->
+	<!--DOLG Начальник Охраны-->
 	<specific_character id="bar_dolg_guard_commander" team_default = "1">
 		<name>bar_plichko_name</name>
 		<icon>ui_npc_u_stalker_do_balon_1</icon>
@@ -1000,7 +1013,7 @@
 	
 
 
-<!---------------------------DOLG REGULAR----------------------->
+<!--DOLG REGULAR-->
 	<specific_character id="bar_dolg_regular_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_do_mask</icon>
@@ -1103,7 +1116,7 @@
 		<actor_dialog>bar_dolg_base_guard_acces</actor_dialog>
 	</specific_character>
 
-<!---------------------------DOLG SNIPER---------------------->
+<!--DOLG SNIPER-->
 	<specific_character id="bar_dolg_sniper_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_do_balon_8</icon>
@@ -1200,7 +1213,7 @@
 #include "gameplay\character_dialogs.xml"
 		</specific_character>
 
-<!---------------------------DOLG SPECNAZ---------------------->
+<!--DOLG SPECNAZ-->
 	<specific_character id="bar_dolg_veteran_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_do_nauchniy</icon>
@@ -1331,7 +1344,7 @@
 		
 	</specific_character>
 	
-<!---------------------------DOLG MASTER----------------------->
+<!--DOLG MASTER-->
 	<specific_character id="bar_dolg_master_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_do_exoskeleton</icon>
@@ -1398,7 +1411,7 @@
 	</specific_character>
 
 
-<!---------------------------STALKER NOVICE----------------------->
+<!--STALKER NOVICE-->
 	<specific_character id="bar_stalker_novice_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_green_stalker_2</icon>
@@ -1632,7 +1645,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-<!---------------------------STALKER GENERAL---------------------->
+<!--STALKER GENERAL-->
 	<specific_character id="bar_stalker_general_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_neytral_hood_uzor</icon>
@@ -1794,7 +1807,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 	
-<!---------------------------STALKER VETERAN---------------------->
+<!--STALKER VETERAN-->
 	<specific_character id="bar_stalker_veteran_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_neytral_hood_9</icon>
@@ -1961,7 +1974,7 @@
 	</specific_character>
 
 
-<!---------------------------ECOLOG GUARD------------------------>
+<!--ECOLOG GUARD-->
 	<specific_character id="bar_ecolog_guard_default1" team_default = "1">
 		<name>GENERATE_NAME_science</name>
 		<icon>ui_npc_u_stalker_ecolog</icon>
@@ -2021,7 +2034,7 @@
 	</specific_character>
 
 
-<!---------------------------KILLER REGULAR----------------------->
+<!--KILLER REGULAR-->
 	<specific_character id="bar_killer_regular_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_ki_head_1</icon>
@@ -2112,7 +2125,7 @@
 		
 	</specific_character>
 		
-<!---------------------------KILLER SNIPER---------------------->
+<!--KILLER SNIPER-->
 	<specific_character id="bar_killer_sniper_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_ki_mask</icon>
@@ -2202,7 +2215,7 @@
 		
 	</specific_character>
 	
-<!---------------------------KILLER SPECNAZ---------------------->
+<!--KILLER SPECNAZ-->
 	<specific_character id="bar_killer_specnaz_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_ki_nauchniy</icon>
@@ -2324,7 +2337,7 @@
 #include "gameplay\character_criticals_4.xml"
 #include "gameplay\character_dialogs.xml"		
 	</specific_character>
-<!-----------DELME:only for presentation--------------------->
+<!--DELME:only for presentation-->
 	<specific_character id="bar_arena_respawner_default1" team_default = "1">
 		<name>GENERATE_NAME_bandit</name>
 		<icon>ui_npc_u_stalker_bandit_3</icon>

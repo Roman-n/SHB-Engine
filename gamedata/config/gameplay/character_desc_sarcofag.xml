@@ -154,7 +154,7 @@
     
     
 
-<!---------------------------- EXO ------------------------->   
+<!-- EXO -->   
     <specific_character id="sar_monolith_exo_default2" team_default = "1">
         <name>GENERATE_NAME_stalker</name>
         <icon>ui_npc_u_stalker_mo_exo</icon>

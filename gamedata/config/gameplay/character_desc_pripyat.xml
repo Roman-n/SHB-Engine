@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding="windows-1251"?>
 
 <xml>
-<!------------------------- MONOLITH ----------------------->
-<!-------------------------- AMBUSH ------------------------>
+<!-- MONOLITH -->
+<!-- AMBUSH -->
     <specific_character id="pri_monolith_ambush_default1" team_default = "1">
         <name>GENERATE_NAME_stalker</name>
         <icon>ui_npc_u_stalker_mo_head_1</icon>
@@ -65,7 +65,7 @@
 		<start_dialog>hello_dialog</start_dialog>
     </specific_character>
 
-<!---------------------- AMBUSH SPECNAZ -------------------->
+<!-- AMBUSH SPECNAZ -->
     <specific_character id="pri_monolith_ambush_specnaz_default1" team_default = "1">
         <name>GENERATE_NAME_stalker</name>
         <icon>ui_npc_u_stalker_mo_hood_9</icon>
@@ -127,7 +127,7 @@
 		<start_dialog>hello_dialog</start_dialog>
     </specific_character>
 
-<!------------------------ AMBUSH EXO ---------------------->
+<!-- AMBUSH EXO -->
     <specific_character id="pri_monolith_ambush_exo_default1" team_default = "1">
         <name>GENERATE_NAME_stalker</name>
         <icon>ui_npc_u_stalker_mo_exo</icon>
@@ -189,7 +189,7 @@
 		<start_dialog>hello_dialog</start_dialog>
     </specific_character>
 
-<!-------------------------- REGULAR ----------------------->
+<!-- REGULAR -->
     <specific_character id="pri_monolith_regular_default1" team_default = "1">
         <name>GENERATE_NAME_stalker</name>
         <icon>ui_npc_u_stalker_mo_head_1</icon>
@@ -310,7 +310,7 @@
 		<start_dialog>hello_dialog</start_dialog>
     </specific_character>
 
-<!-------------------------- SPECNAZ ----------------------->
+<!-- SPECNAZ -->
     <specific_character id="pri_monolith_specnaz_default1" team_default = "1">
         <name>GENERATE_NAME_stalker</name>
         <icon>ui_npc_u_stalker_mo_hood_9</icon>
@@ -373,7 +373,7 @@
 		<start_dialog>hello_dialog</start_dialog>
     </specific_character>
 
-<!---------------------------- EXO ------------------------->
+<!-- EXO -->
     <specific_character id="pri_monolith_exo_default1" team_default = "1">
         <name>GENERATE_NAME_stalker</name>
         <icon>ui_npc_u_stalker_mo_exo</icon>
@@ -436,7 +436,7 @@
 		<start_dialog>hello_dialog</start_dialog>
     </specific_character>
 
-<!-------------------------- LEADER ------------------------>
+<!-- LEADER -->
     <specific_character id="pri_monolith_leader" team_default = "1">
         <name>pri_monolith_leader_name</name>
         <icon>ui_npc_u_stalker_mo_exo</icon>
@@ -468,8 +468,8 @@
 		<start_dialog>hello_dialog</start_dialog>
     </specific_character>
 
-<!-------------------------- STALKER ----------------------->
-<!------------------------- FOLLOWERS ---------------------->
+<!-- STALKER -->
+<!-- FOLLOWERS -->
 	<specific_character id="pri_followers_bomber" team_default = "1">
 		<name>pri_followers_bomber_name</name>
 		<icon>ui_npc_u_stalker_neytral_exoskeleton</icon>
@@ -704,8 +704,8 @@
 #include "gameplay\character_dialogs.xml"		
 	</specific_character>
 
-<!-------------------------- SOLDIER ----------------------->
-<!-------------------------- SUICIDE ----------------------->
+<!-- SOLDIER -->
+<!-- SUICIDE -->
 	<specific_character id="pri_soldier_suicide_default1" team_default = "1">
 		<name>pri_zombied_soldier_name</name>
 		<icon>ui_npc_u_soldier_spetsnaz</icon>
@@ -758,7 +758,7 @@
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
 
-<!---------------------- ZOMBIED ----------------------------->
+<!-- ZOMBIED -->
 	<specific_character id="pri_zombied_suicide_default1" team_default = "1">
 		<name>pri_zombied_stalker_name</name>
 		<icon>ui_npc_u_stalker_zombie_specnaz</icon>
@@ -815,7 +815,7 @@
 		<start_dialog>hello_dialog</start_dialog>
 	</specific_character>
 
-<!--------------------------- VETERANS----------------------->
+<!-- VETERANS-->
 	<specific_character id="pri_zombied_veteran_default1" team_default = "1">
 		<name>pri_zombied_stalker_name</name>
 		<icon>ui_npc_u_stalker_zombie_specnaz</icon>

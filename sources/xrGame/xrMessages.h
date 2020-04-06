@@ -145,7 +145,7 @@ enum {
 };
 
 
-enum EGameMessages {  //game_cl <----> game_sv messages
+enum EGameMessages {  //game_cl <--> game_sv messages
 	GAME_EVENT_PLAYER_READY,	
 	GAME_EVENT_PLAYER_KILL,			//player wants to die
 	GAME_EVENT_PLAYER_BUY_FINISHED,	//player end to buy items

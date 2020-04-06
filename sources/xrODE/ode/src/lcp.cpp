@@ -44,7 +44,7 @@ diagram. each line segment corresponds to one index set :
       |                   :           |state[i]=1
       |                   :           |
       |                   :           |
-      +-------|-----------|-----------|----------> x(i)
+      +-------|-----------|-----------|--> x(i)
              lo           0           hi
 
 the Dantzig algorithm proceeds as follows:
