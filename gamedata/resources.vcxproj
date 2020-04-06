@@ -1084,7 +1084,6 @@
     <Xml Include="config\gameplay\dialogs_military.xml" />
     <Xml Include="config\gameplay\dialogs_pripyat.xml" />
     <Xml Include="config\gameplay\dialogs_radar.xml" />
-    <Xml Include="config\gameplay\dialogs_test.xml" />
     <Xml Include="config\gameplay\dialogs_yantar.xml" />
     <Xml Include="config\gameplay\encyclopedia_equipment.xml" />
     <Xml Include="config\gameplay\encyclopedia_mutants.xml" />
