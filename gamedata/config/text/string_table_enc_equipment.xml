@@ -7,10 +7,8 @@
 		<text ln="rus">Ёкипировка</text>
 	</string>
 
-    <!-->
-    <!-- Items -->
-    <!-->
 
+    <!-- Items -->
 
 	<string id="Items">
 		<text>Items</text>
@@ -168,9 +166,8 @@
 
 
 
-    <!-->
     <!-- Armors -->
-    <!-->
+
 
 
 	<string id="Armors">

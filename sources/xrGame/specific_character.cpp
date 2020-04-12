@@ -1,10 +1,10 @@
 #include "stdafx.h"
+
 #include "specific_character.h"
 
 #ifdef  XRGAME_EXPORTS
 #include "PhraseDialog.h"
 #include "string_table.h"
-
 
 SSpecificCharacterData::SSpecificCharacterData()
 {
@@ -13,7 +13,6 @@ SSpecificCharacterData::SSpecificCharacterData()
 	m_sVisual.clear			();
 	m_sSupplySpawn.clear	();
 	m_sNpcConfigSect.clear	();
-
 
 	m_StartDialog			= NULL;
 	m_ActorDialogs.clear	(); 
@@ -24,14 +23,12 @@ SSpecificCharacterData::SSpecificCharacterData()
 	m_bNoRandom				= false;
 	m_bDefaultForCommunity	= false;
 	m_fPanic_threshold		= 0.0f;
-	m_fHitProbabilityFactor	= 1.f;
+	m_fHitProbabilityFactor	= 1.0f;
 	m_crouch_type			= 0;
 }
 
 SSpecificCharacterData::~SSpecificCharacterData()
-{
-}
-
+{ }
 #endif
 
 CSpecificCharacter::CSpecificCharacter()
@@ -39,20 +36,21 @@ CSpecificCharacter::CSpecificCharacter()
 	m_OwnId = NULL;
 }
 
-
 CSpecificCharacter::~CSpecificCharacter()
-{
-}
-
+{ }
 
 void CSpecificCharacter::InitXmlIdToIndex()
 {
-	if(!id_to_index::tag_name)
+	if (!id_to_index::tag_name)
+	{
 		id_to_index::tag_name = "specific_character";
-	if(!id_to_index::file_str)
-		id_to_index::file_str = pSettings->r_string("profiles", "specific_characters_files");
-}
+	}
 
+	if (!id_to_index::file_str)
+	{
+		id_to_index::file_str = pSettings->r_string("profiles", "specific_characters_files");
+	}
+}
 
 void CSpecificCharacter::Load(shared_str id)
 {
@@ -61,51 +59,55 @@ void CSpecificCharacter::Load(shared_str id)
 	inherited_shared::load_shared(m_OwnId, NULL);
 }
 
-
-void CSpecificCharacter::load_shared	(LPCSTR)
+void CSpecificCharacter::load_shared(const char*)
 {
+
 #if 0
 	CTimer			timer;
 	timer.Start		();
 #endif
-	const ITEM_DATA& item_data = *id_to_index::GetById(m_OwnId);
 
-	CUIXml*		pXML = item_data._xml;
+	const ITEM_DATA& item_data	= *id_to_index::GetById(m_OwnId);
 
-	pXML->SetLocalRoot		(pXML->GetRoot());
+	CUIXml* pXML				= item_data._xml;
+	pXML->SetLocalRoot			(pXML->GetRoot());
 
+	XML_NODE* item_node			= pXML->NavigateToNode(id_to_index::tag_name, item_data.pos_in_file);
+	R_ASSERT3					(item_node, "specific_character id=", *item_data.id);
+	pXML->SetLocalRoot			(item_node);
 
-	XML_NODE* item_node = pXML->NavigateToNode(id_to_index::tag_name, item_data.pos_in_file);
-	R_ASSERT3(item_node, "specific_character id=", *item_data.id);
-
-	pXML->SetLocalRoot(item_node);
-
-
-
-	int norandom = pXML->ReadAttribInt(item_node, "no_random", 0);
-	if (1 == norandom) 
-		data()->m_bNoRandom = true;
+	int norandom				= pXML->ReadAttribInt(item_node, "no_random", 0);
+	if (1 == norandom)
+	{
+		data()->m_bNoRandom		= true;
+	}
 	else
-		data()->m_bNoRandom = false;
+	{
+		data()->m_bNoRandom		= false;
+	}
 
-	int team_default = pXML->ReadAttribInt(item_node, "team_default", 0);
-	if (1 == team_default) 
+	int team_default			= pXML->ReadAttribInt(item_node, "team_default", 0);
+	if (1 == team_default)
+	{
 		data()->m_bDefaultForCommunity = true;
+	}
 	else
+	{
 		data()->m_bDefaultForCommunity = false;
+	}
 
-	R_ASSERT3(!(data()->m_bNoRandom && data()->m_bDefaultForCommunity), 
-		"cannot set 'no_random' and 'team_default' flags simultaneously, profile id", *shared_str(item_data.id));
+	R_ASSERT3(!(data()->m_bNoRandom && data()->m_bDefaultForCommunity), "cannot set 'no_random' and 'team_default' flags simultaneously, profile id", *shared_str(item_data.id));
 	
-#ifdef  XRGAME_EXPORTS
-
+#ifdef XRGAME_EXPORTS
 	LPCSTR start_dialog = pXML->Read("start_dialog", 0, NULL);
-	if(start_dialog)
+	if (start_dialog)
 	{
 		data()->m_StartDialog	= start_dialog;
 	}
 	else
-		data()->m_StartDialog	= NULL;
+	{
+		data()->m_StartDialog = NULL;
+	}
 
 	int dialogs_num = pXML->GetNodesNum(pXML->GetLocalRoot(), "actor_dialog");
 	data()->m_ActorDialogs.clear();
@@ -116,7 +118,6 @@ void CSpecificCharacter::load_shared	(LPCSTR)
 	}
 
 	data()->m_icon_name		= pXML->Read("icon", 0, "ui_npc_u_barman");
-		
 
 	//игровое имя персонажа
 	data()->m_sGameName		= pXML->Read("name", 0, "");

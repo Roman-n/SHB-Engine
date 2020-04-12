@@ -7,10 +7,8 @@
 	</string>
 
 
-    <!-->
-    <!-- Military -->
-    <!-->
 
+    <!-- Military -->
 
 	<string id="Military">
 		<text>Military</text>
@@ -59,10 +57,7 @@
 
 
 
-    <!-->
     <!-- Scientists -->
-    <!-->
-
 
 	<string id="Scientists">
 		<text>Scientists</text>
@@ -103,10 +98,7 @@
 
 
 
-    <!-->
     <!-- Stalker-clans -->
-    <!-->
-
 
 	<string id="Stalker-clans">
 		<text>Stalker-clans</text>
@@ -278,9 +270,9 @@ a.	Анархистской группировкой «Свобода»
 
 
 
-    <!-->
+
     <!-- Stalkers -->
-    <!-->
+
 
 
 	<string id="Stalkers">
@@ -323,10 +315,7 @@ a.	Анархистской группировкой «Свобода»
 
 
 
-    <!-->
     <!-- Traders -->
-    <!-->
-
 
 	<string id="Traders">
 		<text>Traders</text>

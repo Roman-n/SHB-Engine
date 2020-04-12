@@ -75,7 +75,7 @@ void CCharacterInfo::InitSpecificCharacter (shared_str new_id)
 
 #endif
 
-void CCharacterInfo::load_shared	(LPCSTR)
+void CCharacterInfo::load_shared	(const char*)
 {
 	const ITEM_DATA& item_data = *id_to_index::GetById(m_ProfileId);
 

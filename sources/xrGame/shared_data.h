@@ -93,7 +93,7 @@ public:
 		CSharedObj<SHARED_TYPE, KEY_TYPE>::DestroySingleton();
 	}
 
-	void			load_shared		(KEY_TYPE key, LPCSTR section) {
+	void			load_shared		(KEY_TYPE key, const char* section) {
 		_sd = pSharedObj->get_shared(key);
 
 		if (!get_sd()->IsLoaded()) {
@@ -102,7 +102,7 @@ public:
 		}
 	}
 
-	virtual void	load_shared	(LPCSTR section) {}
+	virtual void	load_shared	(const char* section) {}
 
 	SHARED_TYPE				*get_sd			()			{return _sd;}
 	const SHARED_TYPE		*get_sd			() const	{return _sd;}
@@ -140,7 +140,7 @@ public:
 //	}
 //	
 //	//4. load shared data
-//	virtual void load_shared	(LPCSTR section) {
+//	virtual void load_shared	(const char* section) {
 //		a = pSettings->r_u8(section, "smth1");
 //		b = pSettings->r_u8(section, "smth2");
 //	}

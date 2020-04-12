@@ -187,7 +187,7 @@ void CPhraseDialog::Load(shared_str dialog_id)
 #include "script_engine.h"
 #include "ai_space.h"
 
-void CPhraseDialog::load_shared	(LPCSTR)
+void CPhraseDialog::load_shared	(const char*)
 {
 	const ITEM_DATA& item_data = *id_to_index::GetById(m_DialogId);
 

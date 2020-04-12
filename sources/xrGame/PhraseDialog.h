@@ -123,7 +123,7 @@ protected:
 	SPhraseDialogData*		data		()			{ VERIFY(inherited_shared::get_sd()); return inherited_shared::get_sd();}
 
 	//загрузка диалога из XML файла
-	virtual void			load_shared	(LPCSTR);
+	virtual void			load_shared	(const char*);
 	
 	//рекурсивное добавление фраз в граф
 	void					AddPhrase	(CUIXml* pXml, XML_NODE* phrase_node, const shared_str& phrase_id, const shared_str& prev_phrase_id);

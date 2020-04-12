@@ -261,25 +261,28 @@ void CGamePersistent::WeathersUpdate()
 
 void CGamePersistent::start_logo_intro		()
 {
-#if 1//def DEBUG
-	if (0!=strstr(Core.Params,"-nointro")){
+	// пока отключил
+//	/*
+//#if 1//def DEBUG
+//	if (0!=strstr(Core.Params,"-nointro")){
 		m_intro_event			= 0;
 		Console->Show			();
 		Console->Execute		("main_menu on");
 		return;
-	}
-#endif
-	if (Device.dwPrecacheFrame==0)
-	{
-		m_intro_event.bind		(this,&CGamePersistent::update_logo_intro);
-		if (0==xr_strlen(m_game_params.m_game_or_spawn) && NULL==g_pGameLevel)
-		{
-			VERIFY				(NULL==m_intro);
-			m_intro				= xr_new<CUISequencer>();
-			m_intro->Start		("intro_logo");
-			Console->Hide		();
-		}
-	}
+//	}
+//#endif
+//	if (Device.dwPrecacheFrame==0)
+//	{
+//		m_intro_event.bind		(this,&CGamePersistent::update_logo_intro);
+//		if (0==xr_strlen(m_game_params.m_game_or_spawn) && NULL==g_pGameLevel)
+//		{
+//			VERIFY				(NULL==m_intro);
+//			m_intro				= xr_new<CUISequencer>();
+//			m_intro->Start		("intro_logo");
+//			Console->Hide		();
+//		}
+//	}
+//*/
 }
 void CGamePersistent::update_logo_intro			()
 {
@@ -292,21 +295,24 @@ void CGamePersistent::update_logo_intro			()
 
 void CGamePersistent::start_game_intro		()
 {
-#if 1//def DEBUG
-	if (0!=strstr(Core.Params,"-nointro")){
+	// пока отключил
+///*
+//#if 1//def DEBUG
+//	if (0!=strstr(Core.Params,"-nointro")){
 		m_intro_event			= 0;
 		return;
-	}
-#endif
-	if (g_pGameLevel && g_pGameLevel->bReady && Device.dwPrecacheFrame<=2){
-		m_intro_event.bind		(this,&CGamePersistent::update_game_intro);
-		if (0==stricmp(m_game_params.m_new_or_load,"new")){
-			VERIFY				(NULL==m_intro);
-			m_intro				= xr_new<CUISequencer>();
-			m_intro->Start		("intro_game");
-			Log("Intro start",Device.dwFrame);
-		}
-	}
+//	}
+//#endif
+//	if (g_pGameLevel && g_pGameLevel->bReady && Device.dwPrecacheFrame<=2){
+//		m_intro_event.bind		(this,&CGamePersistent::update_game_intro);
+//		if (0==stricmp(m_game_params.m_new_or_load,"new")){
+//			VERIFY				(NULL==m_intro);
+//			m_intro				= xr_new<CUISequencer>();
+//			m_intro->Start		("intro_game");
+//			Log("Intro start",Device.dwFrame);
+//		}
+//	}
+//	*/
 }
 void CGamePersistent::update_game_intro			()
 {

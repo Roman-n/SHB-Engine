@@ -70,6 +70,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_4.xml"
+
 #include "gameplay\character_dialogs.xml"
 		<actor_dialog>agr_swamp_ratcatcher_talks</actor_dialog>
 	</specific_character>
@@ -104,6 +105,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_5.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -139,6 +141,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_4.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -173,6 +176,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_4.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -207,6 +211,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_4.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -241,6 +246,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_4.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -275,6 +281,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_4.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -309,6 +316,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_4.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -343,6 +351,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_5.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -376,6 +385,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_5.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -409,6 +419,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_5.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -442,6 +453,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_5.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -475,6 +487,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_5.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -509,6 +522,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_6.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -542,6 +556,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_6.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -576,6 +591,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_5.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -609,6 +625,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_5.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -643,6 +660,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_5.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -676,6 +694,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_5.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -709,6 +728,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_5.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -744,6 +764,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_3.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
@@ -778,6 +799,7 @@
 		</supplies>
 
 #include "gameplay\character_criticals_3.xml"
+
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 

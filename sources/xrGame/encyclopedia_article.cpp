@@ -51,7 +51,7 @@ void CEncyclopediaArticle::Load	(shared_str  id)
 }
 
 
-void CEncyclopediaArticle::load_shared	(LPCSTR)
+void CEncyclopediaArticle::load_shared	(const char*)
 {
 	const ITEM_DATA& item_data = *id_to_index::GetById(m_ArticleId);
 
