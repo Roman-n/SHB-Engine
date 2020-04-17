@@ -1,6 +1,5 @@
 //---------------------------------------------------------------------------
-#ifndef ParticleGroupH
-#define ParticleGroupH
+#pragma once
 
 #include "..\XR_3DA\ParticleCustom.h"
 
@@ -129,6 +128,4 @@ namespace PS
 #define PGD_CHUNK_TIME_LIMIT	0x0005
 #define PGD_CHUNK_OWNER			0x0006
 #define PGD_CHUNK_EFFECTS2		0x0007
-
 //---------------------------------------------------------------------------
-#endif

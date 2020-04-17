@@ -76,7 +76,7 @@ IRender_Visual*	CModelPool::Instance_Duplicate	(IRender_Visual* V)
 	return N;
 }
 
-IRender_Visual*	CModelPool::Instance_Load		(const char* N, BOOL allow_register)
+IRender_Visual*	CModelPool::Instance_Load		(LPCSTR N, BOOL allow_register)
 {
 	IRender_Visual	*V;
 	string_path		fn;
@@ -197,7 +197,7 @@ IRender_Visual* CModelPool::Instance_Find(LPCSTR N)
 	return Model;
 }
 
-IRender_Visual* CModelPool::Create(const char* name, IReader* data)
+IRender_Visual* CModelPool::Create(LPCSTR name, IReader* data)
 {
 	string_path low_name;	VERIFY	(xr_strlen(name)<sizeof(low_name));
 	strcpy(low_name,name);	strlwr	(low_name);

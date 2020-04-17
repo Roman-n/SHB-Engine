@@ -49,8 +49,8 @@ public:
 	IC void			w_s16	(s16 d)					{	w(&d,sizeof(s16));	}
 	IC void			w_s8	(s8 d)					{	w(&d,sizeof(s8));	}
 	IC void			w_float	(float d)				{	w(&d,sizeof(float));}
-	IC void			w_string(const char *p)			{	w(p,(u32)xr_strlen(p));w_u8(13);w_u8(10);	}
-	IC void			w_stringZ(const char *p)		{	w(p,(u32)xr_strlen(p)+1);					}
+	IC void			w_string(LPCSTR p)			{	w(p,(u32)xr_strlen(p));w_u8(13);w_u8(10);	}
+	IC void			w_stringZ(LPCSTR p)		{	w(p,(u32)xr_strlen(p)+1);					}
 	IC void			w_stringZ(const shared_str& p) 	{	w(*p?*p:"",p.size());w_u8(0);		}
 	IC void			w_stringZ(shared_str& p)		{	w(*p?*p:"",p.size());w_u8(0);		}
 	IC void			w_stringZ(const xr_string& p)	{	w(p.c_str()?p.c_str():"",(u32)p.size());w_u8(0);	}
@@ -79,7 +79,7 @@ public:
 	IC void 		w_angle8	(float a)		    {	w_float_q8	(angle_normalize(a),0,PI_MUL_2);}
 	IC void 		w_dir		(const Fvector& D) 	{	w_u16(pvCompress(D));	}
 	void 			w_sdir		(const Fvector& D);
-	void	__cdecl	w_printf	(const char* format, ...);
+	void	__cdecl	w_printf	(LPCSTR format, ...);
 
 	// generalized chunking
 	u32				align		();
@@ -290,6 +290,6 @@ class XRCORE_API CVirtualFileRW : public IReader
 private:
 	void	*hSrcFile, *hSrcMap;
 public:
-			CVirtualFileRW		(const char *cFileName);
+			CVirtualFileRW		(LPCSTR cFileName);
 	virtual ~CVirtualFileRW		();
 };

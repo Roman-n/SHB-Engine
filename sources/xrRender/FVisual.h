@@ -1,8 +1,6 @@
 // FVisual.h: interface for the FVisual class.
 //
 //////////////////////////////////////////////////////////////////////
-#ifndef FVisualH
-#define FVisualH
 #pragma once
 
 #include "..\XR_3DA\fbasicvisual.h"
@@ -20,5 +18,3 @@ public:
 	Fvisual();
 	virtual ~Fvisual();
 };
-
-#endif 

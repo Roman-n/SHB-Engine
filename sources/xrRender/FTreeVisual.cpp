@@ -29,7 +29,7 @@ void FTreeVisual::Release	()
 	IRender_Visual::Release	();
 }
 
-void FTreeVisual::Load		(const char* N, IReader *data, u32 dwFlags)
+void FTreeVisual::Load		(LPCSTR N, IReader *data, u32 dwFlags)
 {
 	IRender_Visual::Load		(N,data,dwFlags);
 
@@ -176,7 +176,7 @@ void FTreeVisual_ST::Release	()
 {
 	inherited::Release			();
 }
-void FTreeVisual_ST::Load		(const char* N, IReader *data, u32 dwFlags)
+void FTreeVisual_ST::Load		(LPCSTR N, IReader *data, u32 dwFlags)
 {
 	inherited::Load				(N,data,dwFlags);
 }
@@ -207,7 +207,7 @@ void FTreeVisual_PM::Release	()
 {
 	inherited::Release			();
 }
-void FTreeVisual_PM::Load		(const char* N, IReader *data, u32 dwFlags)
+void FTreeVisual_PM::Load		(LPCSTR N, IReader *data, u32 dwFlags)
 {
 	inherited::Load				(N,data,dwFlags);
 	R_ASSERT					(data->find_chunk(OGF_SWICONTAINER));
@@ -236,4 +236,3 @@ void FTreeVisual_PM::Copy		(IRender_Visual *pSrc)
 	FTreeVisual_PM	*pFrom		= dynamic_cast<FTreeVisual_PM*> (pSrc);
 	PCOPY						(pSWI);
 }
-

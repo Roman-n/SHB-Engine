@@ -336,4 +336,3 @@ void CParticleEffect::Render(float )
 		}
 	}
 }
-

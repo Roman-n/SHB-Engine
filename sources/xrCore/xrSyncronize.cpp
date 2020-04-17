@@ -13,7 +13,7 @@ xrCriticalSection::~xrCriticalSection	()
 }
 
 #ifdef DEBUG
-	extern void OutputDebugStackTrace	(const char *header);
+	extern void OutputDebugStackTrace	(LPCSTR header);
 #endif // DEBUG
 
 void	xrCriticalSection::Enter	()

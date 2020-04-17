@@ -1,5 +1,4 @@
-#ifndef VERTEX_CACHE_H
-#define VERTEX_CACHE_H
+#pragma once
 
 class VertexCache
 {
@@ -37,7 +36,6 @@ IC bool VertexCache::InCache(int entry)
 	return returnVal;
 }
 
-
 IC int VertexCache::AddEntry(int entry)
 {
 	int removed;
@@ -54,6 +52,3 @@ IC int VertexCache::AddEntry(int entry)
 
 	return removed;
 }
-
-
-#endif

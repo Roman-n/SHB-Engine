@@ -373,7 +373,7 @@ void CLocatorAPI::ProcessArchive(LPCSTR _path, LPCSTR base_path)
 		g_temporary_stuff		= g_temporary_stuff_subst;
 }
 
-void CLocatorAPI::ProcessOne	(const char* path, void* _F)
+void CLocatorAPI::ProcessOne	(LPCSTR path, void* _F)
 {
 	_finddata_t& F	= *((_finddata_t*)_F);
 
@@ -403,7 +403,7 @@ IC bool pred_str_ff(const _finddata_t& x, const _finddata_t& y)
 }
 
 
-bool ignore_name(const char* _name)
+bool ignore_name(LPCSTR _name)
 {
 	// ignore processing ".svn" folders
 	return ( _name[0]=='.' && _name[1]=='s' && _name[2]=='v' && _name[3]=='n' && _name[4]==0);
@@ -413,7 +413,7 @@ bool ignore_name(const char* _name)
 // because Unicode file names can 
 // be interpolated by FindNextFile()
 
-bool ignore_path(const char* _path){
+bool ignore_path(LPCSTR _path){
 	HANDLE h = CreateFile( _path, 0, 0, NULL, OPEN_EXISTING,
 		FILE_ATTRIBUTE_READONLY | FILE_FLAG_NO_BUFFERING, NULL);
 
@@ -426,7 +426,7 @@ bool ignore_path(const char* _path){
 		return true;
 }
 
-bool CLocatorAPI::Recurse		(const char* path)
+bool CLocatorAPI::Recurse		(LPCSTR path)
 {
     _finddata_t		sFile;
     intptr_t		hFile;
@@ -707,13 +707,13 @@ void CLocatorAPI::_destroy		()
     archives.clear	();
 }
 
-const CLocatorAPI::file* CLocatorAPI::exist			(const char* fn)
+const CLocatorAPI::file* CLocatorAPI::exist			(LPCSTR fn)
 {
 	files_it it		= file_find_it(fn);
 	return (it!=files.end())?&(*it):0;
 }
 
-const CLocatorAPI::file* CLocatorAPI::exist			(const char* path, const char* name)
+const CLocatorAPI::file* CLocatorAPI::exist			(LPCSTR path, LPCSTR name)
 {
 	string_path		temp;       
     update_path		(temp,path,name);
@@ -734,7 +734,7 @@ const CLocatorAPI::file* CLocatorAPI::exist			(string_path& fn, LPCSTR path, LPC
 	return			exist(fn);
 }
 
-xr_vector<char*>* CLocatorAPI::file_list_open			(const char* initial, const char* folder, u32 flags)
+xr_vector<char*>* CLocatorAPI::file_list_open			(LPCSTR initial, LPCSTR folder, u32 flags)
 {
 	string_path		N;
 	R_ASSERT		(initial&&initial[0]);
@@ -742,7 +742,7 @@ xr_vector<char*>* CLocatorAPI::file_list_open			(const char* initial, const char
 	return			file_list_open(N,flags);
 }
 
-xr_vector<char*>* CLocatorAPI::file_list_open			(const char* _path, u32 flags)
+xr_vector<char*>* CLocatorAPI::file_list_open			(LPCSTR _path, u32 flags)
 {
 	R_ASSERT		(_path);
 	VERIFY			(flags);
@@ -768,12 +768,12 @@ xr_vector<char*>* CLocatorAPI::file_list_open			(const char* _path, u32 flags)
 	{
 		const file& entry = *I;
 		if (0!=strncmp(entry.name,N,base_len))	break;	// end of list
-		const char* end_symbol = entry.name+xr_strlen(entry.name)-1;
+		LPCSTR end_symbol = entry.name+xr_strlen(entry.name)-1;
 		if ((*end_symbol) !='\\')	{
 			// file
 			if ((flags&FS_ListFiles) == 0)	continue;
 
-			const char* entry_begin = entry.name+base_len;
+			LPCSTR entry_begin = entry.name+base_len;
 			if ((flags&FS_RootOnly)&&strstr(entry_begin,"\\"))	continue;	// folder in folder
 			dest->push_back			(xr_strdup(entry_begin));
             LPSTR fname 			= dest->back();
@@ -781,7 +781,7 @@ xr_vector<char*>* CLocatorAPI::file_list_open			(const char* _path, u32 flags)
 		} else {
 			// folder
 			if ((flags&FS_ListFolders) == 0)continue;
-			const char* entry_begin = entry.name+base_len;
+			LPCSTR entry_begin = entry.name+base_len;
 			
 			if ((flags&FS_RootOnly)&&(strstr(entry_begin,"\\")!=end_symbol))	continue;	// folder in folder
 			
@@ -1250,9 +1250,9 @@ BOOL CLocatorAPI::dir_delete(LPCSTR path,LPCSTR nm,BOOL remove_files)
             const file& entry 	= *cur_item;
             I					= cur_item; I++;
             if (0!=strncmp(entry.name,fpath,base_len))	break;	// end of list
-			const char* end_symbol = entry.name+xr_strlen(entry.name)-1;
+			LPCSTR end_symbol = entry.name+xr_strlen(entry.name)-1;
 			if ((*end_symbol) !='\\'){
-//		        const char* entry_begin = entry.name+base_len;
+//		        LPCSTR entry_begin = entry.name+base_len;
 				if (!remove_files) return FALSE;
 		    	unlink		(entry.name);
 				files.erase	(cur_item);
@@ -1264,7 +1264,7 @@ BOOL CLocatorAPI::dir_delete(LPCSTR path,LPCSTR nm,BOOL remove_files)
     // remove folders
     files_set::reverse_iterator r_it = folders.rbegin();
     for (;r_it!=folders.rend();r_it++){
-	    const char* end_symbol = r_it->name+xr_strlen(r_it->name)-1;
+		LPCSTR end_symbol = r_it->name+xr_strlen(r_it->name)-1;
     	if ((*end_symbol) =='\\'){
         	_rmdir		(r_it->name);
             files.erase	(*r_it);
@@ -1417,7 +1417,7 @@ void CLocatorAPI::rescan_path(LPCSTR full_path, BOOL bRecurse)
     	I					= cur_item; I++;
 		if (0!=strncmp(entry.name,full_path,base_len))	break;	// end of list
 		if (entry.vfs!=0xFFFFFFFF)						continue;
-		const char* entry_begin = entry.name+base_len;
+		LPCSTR entry_begin = entry.name+base_len;
         if (!bRecurse&&strstr(entry_begin,"\\"))		continue;
         // erase item
 		char* str		= LPSTR(cur_item->name);

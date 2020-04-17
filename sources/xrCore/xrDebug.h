@@ -22,15 +22,15 @@ public:
 
 	LPCSTR			error2string		(long  code	);
 
-	void			fail				(const char *e1, const char *file, int line, const char *function, bool &ignore_always);
-	void			fail				(const char *e1, const std::string &e2, const char *file, int line, const char *function, bool &ignore_always);
-	void			fail				(const char *e1, const char *e2, const char *file, int line, const char *function, bool &ignore_always);
-	void			fail				(const char *e1, const char *e2, const char *e3, const char *file, int line, const char *function, bool &ignore_always);
-	void			fail				(const char *e1, const char *e2, const char *e3, const char *e4, const char *file, int line, const char *function, bool &ignore_always);
-	void			error				(long  code, const char* e1, const char *file, int line, const char *function, bool &ignore_always);
-	void			error				(long  code, const char* e1, const char* e2, const char *file, int line, const char *function, bool &ignore_always);
-	void _cdecl		fatal				(const char *file, int line, const char *function, const char* F,...);
-	void			backend				(const char* reason, const char* expression, const char *argument0, const char *argument1, const char* file, int line, const char *function, bool &ignore_always);
+	void			fail				(LPCSTR e1, LPCSTR file, int line, LPCSTR unction, bool &ignore_always);
+	void			fail				(LPCSTR e1, const std::string &e2, LPCSTR file, int line, LPCSTR function, bool &ignore_always);
+	void			fail				(LPCSTR e1, LPCSTR e2, LPCSTR file, int line, LPCSTR function, bool &ignore_always);
+	void			fail				(LPCSTR e1, LPCSTR e2, LPCSTR e3, LPCSTR file, int line, LPCSTR function, bool &ignore_always);
+	void			fail				(LPCSTR e1, LPCSTR e2, LPCSTR e3, LPCSTR e4, LPCSTR file, int line, LPCSTR function, bool &ignore_always);
+	void			error				(long  code, LPCSTR e1, LPCSTR file, int line, LPCSTR function, bool &ignore_always);
+	void			error				(long  code, LPCSTR e1, LPCSTR e2, LPCSTR file, int line, LPCSTR function, bool &ignore_always);
+	void _cdecl		fatal				(LPCSTR file, int line, LPCSTR function, LPCSTR F,...);
+	void			backend				(LPCSTR reason, LPCSTR expression, LPCSTR argument0, LPCSTR argument1, LPCSTR file, int line, LPCSTR function, bool &ignore_always);
 	void			do_exit				(const std::string &message);
 };
 

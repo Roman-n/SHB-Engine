@@ -30,7 +30,7 @@ public:
 	struct				mdbg {
 		void*			_p;
 		size_t 			_size;
-		const char*		_name;
+		LPCSTR		_name;
 		u32				_dummy;
 	};
 public:
@@ -50,7 +50,7 @@ public:
 	u32					stat_calls;
 	s32					stat_counter;
 public:
-	void				dbg_register	(void* _p,	size_t _size, const char* _name);
+	void				dbg_register	(void* _p,	size_t _size, LPCSTR _name);
 	void				dbg_unregister	(void* _p);
 	void				dbg_check		();
 
@@ -61,8 +61,8 @@ public:
 
 #ifdef DEBUG_MEMORY_NAME
 	void				mem_statistic	(LPCSTR fn);
-	void*				mem_alloc		(size_t	size				, const char* _name);
-	void*				mem_realloc		(void*	p, size_t size		, const char* _name);
+	void*				mem_alloc		(size_t	size				, LPCSTR _name);
+	void*				mem_realloc		(void*	p, size_t size		, LPCSTR _name);
 #else // DEBUG_MEMORY_NAME
 	void*				mem_alloc		(size_t	size				);
 	void*				mem_realloc		(void*	p, size_t size		);
@@ -103,7 +103,7 @@ extern XRCORE_API	xrMemory	Memory;
 	IC void*	xr_realloc	(void* P, size_t size)	{	return Memory.mem_realloc(P,size);				}
 #endif // DEBUG_MEMORY_NAME
 
-XRCORE_API	char* 	xr_strdup	(const char* string);
+XRCORE_API	char* 	xr_strdup	(LPCSTR string);
 
 #ifdef DEBUG_MEMORY_NAME
 // Global new/delete override

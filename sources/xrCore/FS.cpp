@@ -108,10 +108,10 @@ void*  FileDownload(LPCSTR fn, u32* pdwSize)
 }
 
 typedef char MARK[9];
-IC void mk_mark(MARK& M, const char* S)
+IC void mk_mark(MARK& M, LPCSTR S)
 {	strncpy(M,S,8); }
 
-void  FileCompress	(const char *fn, const char* sign, void* data, u32 size)
+void  FileCompress	(LPCSTR fn, LPCSTR sign, void* data, u32 size)
 {
 	MARK M; mk_mark(M,sign);
 
@@ -122,7 +122,7 @@ void  FileCompress	(const char *fn, const char* sign, void* data, u32 size)
 	_close	(H);
 }
 
-void*  FileDecompress	(const char *fn, const char* sign, u32* size)
+void*  FileDecompress	(LPCSTR fn, LPCSTR sign, u32* size)
 {
 	MARK M,F; mk_mark(M,sign);
 
@@ -240,7 +240,7 @@ void 	IWriter::w_sdir	(const Fvector& D)
 	w_dir	(C);
 	w_float (mag);
 }
-void	IWriter::w_printf(const char* format, ...)
+void	IWriter::w_printf(LPCSTR format, ...)
 {
 	va_list mark;
 	char buf[1024];
@@ -384,7 +384,7 @@ CPackReader::~CPackReader()
 };
 //---------------------------------------------------
 // file stream
-CFileReader::CFileReader(const char *name)
+CFileReader::CFileReader(LPCSTR name)
 {
     data	= (char *)FileDownload(name,(u32 *)&Size);
     Pos		= 0;
@@ -393,7 +393,7 @@ CFileReader::~CFileReader()
 {	xr_free(data);	};
 //---------------------------------------------------
 // compressed stream
-CCompressedReader::CCompressedReader(const char *name, const char *sign)
+CCompressedReader::CCompressedReader(LPCSTR name, LPCSTR sign)
 {
     data	= (char *)FileDecompress(name,sign,(u32*)&Size);
     Pos		= 0;
@@ -402,7 +402,7 @@ CCompressedReader::~CCompressedReader()
 {	xr_free(data);	};
 
 
-CVirtualFileRW::CVirtualFileRW(const char *cFileName) 
+CVirtualFileRW::CVirtualFileRW(LPCSTR cFileName)
 {
 	// Open the file
 	hSrcFile		= CreateFile(cFileName, GENERIC_READ|GENERIC_WRITE, FILE_SHARE_READ, 0, OPEN_EXISTING, 0, 0);
@@ -432,7 +432,7 @@ CVirtualFileRW::~CVirtualFileRW()
 	CloseHandle		(hSrcFile);
 }
 
-CVirtualFileReader::CVirtualFileReader(const char *cFileName) 
+CVirtualFileReader::CVirtualFileReader(LPCSTR cFileName)
 {
 	// Open the file
 	hSrcFile		= CreateFile(cFileName, GENERIC_READ, FILE_SHARE_READ|FILE_SHARE_WRITE, 0, OPEN_EXISTING, 0, 0);

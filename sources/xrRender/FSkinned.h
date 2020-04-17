@@ -1,14 +1,11 @@
 // SkeletonX.h: interface for the CSkeletonX class.
 //
 //////////////////////////////////////////////////////////////////////
+#pragma once
 
-#ifndef		FSkinnedH
-#define		FSkinnedH
-#pragma		once
-
-#include	"FVisual.h"
-#include	"FProgressive.h"
-#include	"..\XR_3DA\SkeletonX.h"
+#include "FVisual.h"
+#include "FProgressive.h"
+#include "..\XR_3DA\SkeletonX.h"
 
 struct	SEnumVerticesCallback;
 class		CSkeletonX_ext	: public CSkeletonX	// shared code for SkeletonX derivates
@@ -36,7 +33,7 @@ public:
 							CSkeletonX_ST	()	{}
 	virtual					~CSkeletonX_ST	()	{}
 	virtual void			Render			(float LOD);
-	virtual void			Load			(const char* N, IReader *data, u32 dwFlags);
+	virtual void			Load			(LPCSTR N, IReader *data, u32 dwFlags);
 	virtual void			Copy			(IRender_Visual *pFrom);
 	virtual void			Release			();
 	virtual void			AfterLoad		(CKinematics* parent, u16 child_idx);
@@ -57,7 +54,7 @@ public:
 							CSkeletonX_PM	()	{}
 	virtual					~CSkeletonX_PM	()	{}
 	virtual void			Render			(float LOD);
-	virtual void			Load			(const char* N, IReader *data, u32 dwFlags);
+	virtual void			Load			(LPCSTR N, IReader *data, u32 dwFlags);
 	virtual void			Copy			(IRender_Visual *pFrom);
 	virtual void			Release			();
 	virtual void			AfterLoad		(CKinematics* parent, u16 child_idx);
@@ -68,5 +65,3 @@ private:
 	CSkeletonX_PM				(const CSkeletonX_PM& other);
 	void	operator=			( const CSkeletonX_PM& other);
 };
-
-#endif // FSkinnedH

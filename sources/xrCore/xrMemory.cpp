@@ -244,7 +244,7 @@ void	xrMemory::mem_statistic	(LPCSTR fn)
 #endif // DEBUG_MEMORY_MANAGER
 
 // xr_strdup
-char*			xr_strdup		(const char* string)
+char*			xr_strdup		(LPCSTR string)
 {	
 	VERIFY	(string);
 	u32		len			= u32(xr_strlen(string))+1	;

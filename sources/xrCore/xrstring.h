@@ -66,7 +66,7 @@ public:
 	u32					size		()						const	{	if (0==p_) return 0; else return p_->dwLength;	}
 	void				swap		(shared_str & rhs)				{	str_value* tmp = p_; p_ = rhs.p_; rhs.p_ = tmp;	}
 	bool				equal		(const shared_str & rhs) const	{	return (p_ == rhs.p_);							}
-    shared_str& __cdecl	sprintf		(const char* format, ...)		{
+    shared_str& __cdecl	sprintf		(LPCSTR format, ...)		{
 		string4096 	buf;
 		va_list		p;
 		va_start	(p,format);
@@ -93,8 +93,8 @@ IC bool operator	>	(shared_str const & a, shared_str const & b)		{ return a._get
 // externally visible standart functionality
 IC void swap			(shared_str & lhs, shared_str & rhs)				{ lhs.swap(rhs);		}
 IC u32	xr_strlen		(shared_str & a)									{ return a.size();		}
-IC int	xr_strcmp		(const shared_str & a, const char* b)				{ return xr_strcmp(*a,b);	}
-IC int	xr_strcmp		(const char* a, const shared_str & b)				{ return xr_strcmp(a,*b);	}
+IC int	xr_strcmp		(const shared_str & a, LPCSTR b)				{ return xr_strcmp(*a,b);	}
+IC int	xr_strcmp		(LPCSTR a, const shared_str & b)				{ return xr_strcmp(a,*b);	}
 IC int	xr_strcmp		(const shared_str & a, const shared_str & b)		{ 
 	if (a.equal(b))		return 0;
 	else				return xr_strcmp(*a,*b);

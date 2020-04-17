@@ -231,9 +231,6 @@
     <ClInclude Include="r2_rendertarget.h">
       <Filter>Core_Target</Filter>
     </ClInclude>
-    <ClInclude Include="r2_rendertarget_wallmarks.h">
-      <Filter>Core_Target</Filter>
-    </ClInclude>
     <ClInclude Include="..\xrRender\DetailFormat.h">
       <Filter>Details</Filter>
     </ClInclude>

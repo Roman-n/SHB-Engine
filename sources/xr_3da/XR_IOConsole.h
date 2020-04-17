@@ -20,7 +20,7 @@ class ENGINE_API CConsole  :
 public:
 	//t-defs
 	struct str_pred : public std::binary_function<char*, char*, bool> {	
-		IC bool operator()(const char* x, const char* y) const
+		IC bool operator()(LPCSTR x, LPCSTR y) const
 		{	return xr_strcmp(x,y)<0;	}
 	};
 	typedef xr_map<LPCSTR,IConsole_Command*,str_pred>	vecCMD;

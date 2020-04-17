@@ -29,9 +29,9 @@ XRCORE_API	xrDebug		Debug;
 
 static bool	error_after_dialog = false;
 
-extern void copy_to_clipboard	(const char *string);
+extern void copy_to_clipboard	(LPCSTR string);
 
-void copy_to_clipboard	(const char *string)
+void copy_to_clipboard	(LPCSTR string)
 {
 	if (IsDebuggerPresent())
 		return;
@@ -53,7 +53,7 @@ void copy_to_clipboard	(const char *string)
 	CloseClipboard		();
 }
 
-void update_clipboard	(const char *string)
+void update_clipboard	(LPCSTR string)
 {
 #ifdef DEBUG
 	if (IsDebuggerPresent())
@@ -91,7 +91,7 @@ void LogStackTrace	(LPCSTR header)
 	if (!shared_str_initialized)
 		return;
 
-	BuildStackTrace	();		
+	BuildStackTrace	();
 
 	Msg				("%s",header);
 
@@ -99,7 +99,7 @@ void LogStackTrace	(LPCSTR header)
 		Msg			("%s",g_stackTrace[i]);
 }
 
-void gather_info		(const char *expression, const char *description, const char *argument0, const char *argument1, const char *file, int line, const char *function, LPSTR assertion_info)
+void gather_info		(LPCSTR expression, LPCSTR description, LPCSTR argument0, LPCSTR argument1, LPCSTR file, int line, LPCSTR function, LPSTR assertion_info)
 {
 	LPSTR				buffer = assertion_info;
 	LPCSTR				endline = "\n";
@@ -186,7 +186,7 @@ void xrDebug::do_exit	(const std::string &message)
 	TerminateProcess	(GetCurrentProcess(),1);
 }
 
-void xrDebug::backend	(const char *expression, const char *description, const char *argument0, const char *argument1, const char *file, int line, const char *function, bool &ignore_always)
+void xrDebug::backend	(LPCSTR expression, LPCSTR description, LPCSTR argument0, LPCSTR argument1, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
 {
 	static xrCriticalSection CS;
 
@@ -262,42 +262,42 @@ LPCSTR xrDebug::error2string	(long code)
 	return		result	;
 }
 
-void xrDebug::error		(long hr, const char* expr, const char *file, int line, const char *function, bool &ignore_always)
+void xrDebug::error		(long hr, LPCSTR expr, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
 {
 	backend		(error2string(hr),expr,0,0,file,line,function,ignore_always);
 }
 
-void xrDebug::error		(long hr, const char* expr, const char* e2, const char *file, int line, const char *function, bool &ignore_always)
+void xrDebug::error		(long hr, LPCSTR expr, LPCSTR e2, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
 {
 	backend		(error2string(hr),expr,e2,0,file,line,function,ignore_always);
 }
 
-void xrDebug::fail		(const char *e1, const char *file, int line, const char *function, bool &ignore_always)
+void xrDebug::fail		(LPCSTR e1, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
 {
 	backend		("assertion failed",e1,0,0,file,line,function,ignore_always);
 }
 
-void xrDebug::fail		(const char *e1, const std::string &e2, const char *file, int line, const char *function, bool &ignore_always)
+void xrDebug::fail		(LPCSTR e1, const std::string &e2, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
 {
 	backend		(e1,e2.c_str(),0,0,file,line,function,ignore_always);
 }
 
-void xrDebug::fail		(const char *e1, const char *e2, const char *file, int line, const char *function, bool &ignore_always)
+void xrDebug::fail		(LPCSTR e1, LPCSTR e2, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
 {
 	backend		(e1,e2,0,0,file,line,function,ignore_always);
 }
 
-void xrDebug::fail		(const char *e1, const char *e2, const char *e3, const char *file, int line, const char *function, bool &ignore_always)
+void xrDebug::fail		(LPCSTR e1, LPCSTR e2, LPCSTR e3, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
 {
 	backend		(e1,e2,e3,0,file,line,function,ignore_always);
 }
 
-void xrDebug::fail		(const char *e1, const char *e2, const char *e3, const char *e4, const char *file, int line, const char *function, bool &ignore_always)
+void xrDebug::fail		(LPCSTR e1, LPCSTR e2, LPCSTR e3, LPCSTR e4, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
 {
 	backend		(e1,e2,e3,e4,file,line,function,ignore_always);
 }
 
-void __cdecl xrDebug::fatal(const char *file, int line, const char *function, const char* F,...)
+void __cdecl xrDebug::fatal(LPCSTR file, int line, LPCSTR function, LPCSTR F,...)
 {
 	string1024	buffer;
 

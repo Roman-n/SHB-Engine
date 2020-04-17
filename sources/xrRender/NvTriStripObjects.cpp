@@ -1381,4 +1381,3 @@ int NvStripifier::CountRemainingTris(	xr_list<NvStripInfo*>::iterator		iter,
 	}
 	return count;
 }
-

@@ -214,7 +214,7 @@ public:
 
 	// General "Visual" stuff
 	virtual void				Copy			(IRender_Visual *pFrom);
-	virtual void				Load			(const char* N, IReader *data, u32 dwFlags);
+	virtual void				Load			(LPCSTR N, IReader *data, u32 dwFlags);
 	virtual void				Release			();
 	virtual void				Spawn			();
 	virtual	CKinematicsAnimated*	dcast_PKinematicsAnimated	()				{ return this;	}

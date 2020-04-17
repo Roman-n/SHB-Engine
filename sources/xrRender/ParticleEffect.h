@@ -1,7 +1,5 @@
 //---------------------------------------------------------------------------
-#ifndef ParticleEffectH
-#define ParticleEffectH
-//---------------------------------------------------------------------------
+#pragma once
 
 #include "ParticleEffectDef.h"
 
@@ -34,17 +32,14 @@ namespace PS
 		};
 		Flags8				m_RT_Flags;
 	protected:
-		BOOL 				SaveActionList		(IWriter& F);
-		BOOL 				LoadActionList		(IReader& F);
-
 		void				RefreshShader		();
+
 	public:
 							CParticleEffect		();
 		virtual 			~CParticleEffect	();
 
 		void	 			OnFrame				(u32 dt);
 
-		u32					RenderTO			();
 		virtual void		Render				(float LOD);
 		virtual void		Copy				(IRender_Visual* pFrom);
 
@@ -81,4 +76,3 @@ namespace PS
 	extern const float		fDT_STEP;
 }
 //---------------------------------------------------------------------------
-#endif

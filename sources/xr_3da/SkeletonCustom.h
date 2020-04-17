@@ -271,7 +271,7 @@ public:
 
 	// General "Visual" stuff
     virtual void				Copy				(IRender_Visual *pFrom);
-	virtual void				Load				(const char* N, IReader *data, u32 dwFlags);
+	virtual void				Load				(LPCSTR N, IReader *data, u32 dwFlags);
 	virtual void 				Spawn				();
 	virtual void				Depart				();
     virtual void 				Release				();

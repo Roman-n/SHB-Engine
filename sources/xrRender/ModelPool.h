@@ -1,7 +1,5 @@
 // ModelPool.h: interface for the CModelPool class.
 //////////////////////////////////////////////////////////////////////
-#ifndef ModelPoolH
-#define ModelPoolH
 #pragma once
 
 // refs
@@ -69,4 +67,3 @@ public:
 
 	void					dump 				();
 };
-#endif //ModelPoolH

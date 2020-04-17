@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #ifndef DEBUG_MEMORY_MANAGER
-void	xrMemory::dbg_register		(void* _p, size_t _size, const char* _name)	{ }
+void	xrMemory::dbg_register		(void* _p, size_t _size, LPCSTR _name)	{ }
 void	xrMemory::dbg_unregister	(void* _p)									{ }
 void	xrMemory::dbg_check			()											{ }
 
@@ -30,7 +30,7 @@ void	dbg_header			(xrMemory::mdbg& dbg, bool _debug)
 	R_ASSERT2			(t1==t2,"CorePanic: Memory block header corrupted");
 }
 
-void	xrMemory::dbg_register		(void* _p, size_t _size, const char* _name)
+void	xrMemory::dbg_register		(void* _p, size_t _size, LPCSTR _name)
 {
 #ifdef DEBUG_MEMORY_LEAK
 	if ((_size == MEMORY_LEAK_SIZE) && _name &&!xr_strcmp(MEMORY_LEAK_DESCRIPTION,_name)) {

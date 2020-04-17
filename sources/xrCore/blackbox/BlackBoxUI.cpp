@@ -71,7 +71,7 @@ void BuildStackTrace	()
 }
 
 __declspec(noinline)
-void OutputDebugStackTrace	(const char *header)
+void OutputDebugStackTrace	(LPCSTR header)
 {
 	BuildStackTrace			();		
 

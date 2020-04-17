@@ -12,7 +12,7 @@ class occTri
 {
 public:	
 	occTri*			adjacent	[3];
-	Fvector			raster		[3];		
+	Fvector			raster		[3];
 	Fplane			plane;
 	float			area;
 	u32				flags;

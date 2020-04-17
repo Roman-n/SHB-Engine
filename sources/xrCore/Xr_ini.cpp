@@ -4,7 +4,7 @@
 
 XRCORE_API CInifile *pSettings	= NULL;
 
-CInifile* CInifile::Create(const char* szFileName, BOOL ReadOnly)
+CInifile* CInifile::Create(LPCSTR szFileName, BOOL ReadOnly)
 {	return xr_new<CInifile>(szFileName,ReadOnly); }
 
 void CInifile::Destroy(CInifile* ini)
@@ -479,7 +479,7 @@ int		CInifile::r_token	( LPCSTR S, LPCSTR L, const xr_token *token_list)
 			return token_list[i].id;
 	return 0;
 }
-BOOL	CInifile::r_line( LPCSTR S, int L, const char** N, const char** V )
+BOOL	CInifile::r_line( LPCSTR S, int L, LPCSTR* N, LPCSTR* V )
 {
 	Sect&	SS = r_section(S);
 	if (L>=(int)SS.Data.size() || L<0 ) return FALSE;
@@ -491,7 +491,7 @@ BOOL	CInifile::r_line( LPCSTR S, int L, const char** N, const char** V )
 		}
 	return FALSE;
 }
-BOOL	CInifile::r_line( const shared_str& S, int L, const char** N, const char** V )
+BOOL	CInifile::r_line( const shared_str& S, int L, LPCSTR* N, LPCSTR* V )
 {
 	return r_line(*S,L,N,V);
 }

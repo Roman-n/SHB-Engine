@@ -17,15 +17,11 @@
 #include "resource.h"
 #include "LightAnimLibrary.h"
 #include "ispatial.h"
-#include "Text_Console.h"
 #include <process.h>
 
 //---------------------------------------------------------------------
 ENGINE_API CInifile* pGameIni		= NULL;
 BOOL	g_bIntroFinished			= FALSE;
-extern	void	Intro				( void* fn );
-extern	void	Intro_DSHOW			( void* fn );
-extern	int PASCAL IntroDSHOW_wnd	(HINSTANCE hInstC, HINSTANCE hInstP, LPSTR lpCmdLine, int nCmdShow);
 int		max_load_stage = 0;
 
 // computing build id
@@ -75,10 +71,7 @@ void compute_build_id	()
 	for (int i=0; i<start_month-1; ++i)
 		build_id		-= days_in_month[i];
 }
-//---------------------------------------------------------------------
-// 2446363
-// umbt@ukr.net
-//////////////////////////////////////////////////////////////////////////
+
 struct _SoundProcessor	: public pureFrame
 {
 	virtual void OnFrame	( )
@@ -123,6 +116,7 @@ void InitSettings	()
 	pGameIni					= xr_new<CInifile>	(fname,TRUE);
 	CHECK_OR_EXIT				(!pGameIni->sections().empty(),make_string("Cannot find file %s.\nReinstalling application may fix this problem.",fname));
 }
+
 void InitConsole	()
 {
 	Console						= xr_new<CConsole>	();
@@ -143,30 +137,34 @@ void InitInput		()
 
 	pInput						= xr_new<CInput>		(bCaptureInput);
 }
+
 void destroyInput	()
 {
 	xr_delete					( pInput		);
 }
+
 void InitSound		()
 {
 	CSound_manager_interface::_create					(u64(Device.m_hWnd));
-//	Msg				("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-//	ref_sound*	x	= 
 }
+
 void destroySound	()
 {
 	CSound_manager_interface::_destroy				( );
 }
+
 void destroySettings()
 {
 	xr_delete					( pSettings		);
 	xr_delete					( pGameIni		);
 }
+
 void destroyConsole	()
 {
 	Console->Destroy			( );
 	xr_delete					(Console);
 }
+
 void destroyEngine	()
 {
 	Device.Destroy				( );
@@ -180,6 +178,7 @@ void execUserScript				( )
 	Console->Execute			("unbindall");
 	Console->ExecuteScript		(Console->ConfigFile);
 }
+
 void slowdownthread	( void* )
 {
 //	Sleep		(30*1000);
@@ -192,6 +191,7 @@ void slowdownthread	( void* )
 		if (0==pApp)				return;
 	}
 }
+
 void CheckPrivilegySlowdown		( )
 {
 #ifdef DEBUG
@@ -279,73 +279,7 @@ static BOOL CALLBACK logDlgProc( HWND hw, UINT msg, WPARAM wp, LPARAM lp )
 	}
 	return TRUE;
 }
-/*
-void	test_rtc	()
-{
-	CStatTimer		tMc,tM,tC,tD;
-	u32				bytes=0;
-	tMc.FrameStart	();
-	tM.FrameStart	();
-	tC.FrameStart	();
-	tD.FrameStart	();
-	::Random.seed	(0x12071980);
-	for		(u32 test=0; test<10000; test++)
-	{
-		u32			in_size			= ::Random.randI(1024,256*1024);
-		u32			out_size_max	= rtc_csize		(in_size);
-		u8*			p_in			= xr_alloc<u8>	(in_size);
-		u8*			p_in_tst		= xr_alloc<u8>	(in_size);
-		u8*			p_out			= xr_alloc<u8>	(out_size_max);
-		for (u32 git=0; git<in_size; git++)			p_in[git] = (u8)::Random.randI	(8);	// garbage
-		bytes		+= in_size;
 
-		tMc.Begin	();
-		memcpy		(p_in_tst,p_in,in_size);
-		tMc.End		();
-
-		tM.Begin	();
-		CopyMemory(p_in_tst,p_in,in_size);
-		tM.End		();
-
-		tC.Begin	();
-		u32			out_size		= rtc_compress	(p_out,out_size_max,p_in,in_size);
-		tC.End		();
-
-		tD.Begin	();
-		u32			in_size_tst		= rtc_decompress(p_in_tst,in_size,p_out,out_size);
-		tD.End		();
-
-		// sanity check
-		R_ASSERT	(in_size == in_size_tst);
-		for (u32 tit=0; tit<in_size; tit++)			R_ASSERT(p_in[tit] == p_in_tst[tit]);	// garbage
-
-		xr_free		(p_out);
-		xr_free		(p_in_tst);
-		xr_free		(p_in);
-	}
-	tMc.FrameEnd	();	float rMc		= 1000.f*(float(bytes)/tMc.result)/(1024.f*1024.f);
-	tM.FrameEnd		(); float rM		= 1000.f*(float(bytes)/tM.result)/(1024.f*1024.f);
-	tC.FrameEnd		(); float rC		= 1000.f*(float(bytes)/tC.result)/(1024.f*1024.f);
-	tD.FrameEnd		(); float rD		= 1000.f*(float(bytes)/tD.result)/(1024.f*1024.f);
-	Msg				("* memcpy:        %5.2f M/s (%3.1f%%)",rMc,100.f*rMc/rMc);
-	Msg				("* mm-memcpy:     %5.2f M/s (%3.1f%%)",rM,100.f*rM/rMc);
-	Msg				("* compression:   %5.2f M/s (%3.1f%%)",rC,100.f*rC/rMc);
-	Msg				("* decompression: %5.2f M/s (%3.1f%%)",rD,100.f*rD/rMc);
-}
-*/
-extern void	testbed	(void);
-
-// video
-/*
-static	HINSTANCE	g_hInstance		;
-static	HINSTANCE	g_hPrevInstance	;
-static	int			g_nCmdShow		;
-void	__cdecl		intro_dshow_x	(void*)
-{
-	IntroDSHOW_wnd		(g_hInstance,g_hPrevInstance,"GameData\\Stalker_Intro.avi",g_nCmdShow);
-	g_bIntroFinished	= TRUE	;
-}
-*/
 #define dwStickyKeysStructSize sizeof( STICKYKEYS )
 #define dwFilterKeysStructSize sizeof( FILTERKEYS )
 #define dwToggleKeysStructSize sizeof( TOGGLEKEYS )
@@ -439,7 +373,6 @@ struct damn_keys_filter {
 			ToggleKeysStruct.dwFlags = dwToggleKeysFlags;
 			SystemParametersInfo( SPI_SETTOGGLEKEYS , dwToggleKeysStructSize , ( PVOID ) &ToggleKeysStruct , 0 );
 		}
-
 	}
 };
 
@@ -462,10 +395,6 @@ int APIENTRY WinMain_impl(HINSTANCE hInstance,
                      char *    lpCmdLine,
                      int       nCmdShow)
 {
-	// Check for virtual memory
-//	if ( ( strstr( lpCmdLine , "--skipmemcheck" ) == NULL ))
-//		return 0;
-
 	// Check for another instance
 #ifdef NO_MULTI_INSTANCES
 	#define STALKER_PRESENCE_MUTEX "STALKER-SoC"
@@ -545,8 +474,7 @@ int APIENTRY WinMain_impl(HINSTANCE hInstance,
 			int l_res = doLauncher();
 			if (l_res != 0)
 				return 0;
-		};
-		
+		};		
 
 		if(strstr(Core.Params,"-r2a"))	
 			Console->Execute			("renderer renderer_r2a");
@@ -559,7 +487,6 @@ int APIENTRY WinMain_impl(HINSTANCE hInstance,
 			pTmp->Execute				(Console->ConfigFile);
 			xr_delete					(pTmp);
 		}
-
 
 		InitInput					( );
 		Engine.External.Initialize	( );
@@ -677,7 +604,6 @@ void _InitializeFont(CGameFont*& F, LPCSTR section, u32 flags)
 	}
 	if (pSettings->line_exist(section,"interval"))
 		F->SetInterval(pSettings->r_fvector2(section,"interval"));
-
 }
 
 CApplication::CApplication()
@@ -720,7 +646,6 @@ CApplication::~CApplication()
 	Device.seqFrameMT.Remove	(&SoundProcessor);
 	Device.seqFrame.Remove		(&SoundProcessor);
 	Device.seqFrame.Remove		(this);
-
 
 	// events
 	Engine.Event.Handler_Detach	(eDisconnect,this);
@@ -959,7 +884,6 @@ int CApplication::Level_ID(LPCSTR name)
 	return -1;
 }
 
-
 //launcher stuff----------------------------
 extern "C"{
 	typedef int	 __cdecl LauncherFunc	(int);
@@ -1036,7 +960,6 @@ void doBenchmark(LPCSTR name)
 			InitEngine();
 		}
 
-
 		Engine.External.Initialize	( );
 
 		strcpy_s						(Console->ConfigFile,"user.ltx");
@@ -1049,6 +972,7 @@ void doBenchmark(LPCSTR name)
 		Startup	 				();
 	}
 }
+
 #pragma optimize("g", off)
 void CApplication::load_draw_internal()
 {
@@ -1105,8 +1029,6 @@ void CApplication::load_draw_internal()
 
 		back_text_coords.lt.x/=tsz.x; back_text_coords.lt.y/=tsz.y; back_text_coords.rb.x/=tsz.x; back_text_coords.rb.y/=tsz.y;
 
-
-
 		u32 v_cnt					= 40;
 		pv							= (FVF::TL*)RCache.Vertex.Lock	(2*(v_cnt+1),ll_hGeom2.stride(),Offset);
 		FVF::TL* _pv				= pv;
@@ -1125,7 +1047,6 @@ void CApplication::load_draw_internal()
 		RCache.set_Geometry			(ll_hGeom2);
 		RCache.Render				(D3DPT_TRIANGLESTRIP, Offset, 2*v_cnt);
 
-
 		// Draw title
 		VERIFY						(pFontSystem);
 		pFontSystem->Clear			();
@@ -1133,7 +1054,6 @@ void CApplication::load_draw_internal()
 		pFontSystem->SetAligment	(CGameFont::alCenter);
 		pFontSystem->OutI			(0.f,0.815f,app_title);
 		pFontSystem->OnRender		();
-
 
 //draw level-specific screenshot
 		if(hLevelLogo){
@@ -1155,14 +1075,12 @@ void CApplication::load_draw_internal()
 			RCache.set_Geometry			(ll_hGeom);
 			RCache.Render				(D3DPT_TRIANGLELIST,Offset,0,4,0,2);
 		}
-
 }
 
 u32 calc_progress_color(u32 idx, u32 total, int stage, int max_stage)
 {
 	if(idx>(total/2)) 
 		idx	= total-idx;
-
 
 	float kk			= (float(stage+1)/float(max_stage))*(total/2.0f);
 	float f				= 1/(exp((float(idx)-kk)*0.5f)+1.0f);

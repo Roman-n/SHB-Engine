@@ -83,7 +83,7 @@ void CPSLibrary::RenamePGD(PS::CPGDef* src, LPCSTR new_name)
 	src->SetName(new_name);
 }
 
-void CPSLibrary::Remove(const char* nm)
+void CPSLibrary::Remove(LPCSTR nm)
 {
 	PS::PEDIt it = FindPEDIt(nm);
 	if (it!=m_PEDs.end()){
@@ -100,7 +100,7 @@ void CPSLibrary::Remove(const char* nm)
 }
 //----------------------------------------------------
 
-bool CPSLibrary::Load(const char* nm)
+bool CPSLibrary::Load(LPCSTR nm)
 {
 	IReader*	F			= FS.r_open(nm);
 	bool bRes 				= true;

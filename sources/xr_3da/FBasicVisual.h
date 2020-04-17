@@ -50,7 +50,7 @@ public:
 	ref_shader					shader		;				// pipe state, shared
 
 	virtual void				Render						(float LOD)		{};		// LOD - Level Of Detail  [0..1], Ignored
-	virtual void				Load						(const char* N, IReader *data, u32 dwFlags);
+	virtual void				Load						(LPCSTR N, IReader *data, u32 dwFlags);
 	virtual void				Release						();						// Shared memory release
 	virtual void				Copy						(IRender_Visual* from);
 	virtual void				Spawn						()				{};
