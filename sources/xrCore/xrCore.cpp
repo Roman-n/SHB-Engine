@@ -73,8 +73,6 @@ void xrCore::_initialize	(LPCSTR _ApplicationName, LogCallback cb, BOOL init_fs,
 		InitLog				();
 		_initialize_cpu		();
 
-//		Debug._initialize	();
-
 		rtc_initialize		();
 
 		xr_FS				= xr_new<CLocatorAPI>	();
@@ -107,9 +105,6 @@ void xrCore::_initialize	(LPCSTR _ApplicationName, LogCallback cb, BOOL init_fs,
 	init_counter++;
 }
 
-#include "compression_ppmd_stream.h"
-extern compression::ppmd::stream	*trained_model;
-
 void xrCore::_destroy		()
 {
 	--init_counter;
@@ -118,12 +113,6 @@ void xrCore::_destroy		()
 		EFS._destroy		();
 		xr_delete			(xr_FS);
 		xr_delete			(xr_EFS);
-
-		if (trained_model) {
-			void			*buffer = trained_model->buffer();
-			xr_free			(buffer);
-			xr_delete		(trained_model);
-		}
 
 		Memory._destroy		();
 	}

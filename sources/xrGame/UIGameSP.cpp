@@ -81,46 +81,59 @@ bool CUIGameSP::IR_OnKeyboardPress(int dik)
 	if(!pActor)								return false;
 	if( pActor && !pActor->g_Alive() )		return false;
 
-	switch ( get_binded_action(dik) )
+	switch (get_binded_action(dik))
 	{
-	case kINVENTORY: 
-		if( !MainInputReceiver() || MainInputReceiver()==InventoryMenu){
-			m_game->StartStopMenu(InventoryMenu,true);
+	case kINVENTORY:
+		if (!MainInputReceiver() || MainInputReceiver() == InventoryMenu)
+		{
+			m_game->StartStopMenu(InventoryMenu, true);
 			return true;
-		}break;
+		}
+		break;
 
 	case kACTIVE_JOBS:
-		if( !MainInputReceiver() || MainInputReceiver()==PdaMenu){
+		if (!MainInputReceiver() || MainInputReceiver() == PdaMenu)
+		{
 			PdaMenu->SetActiveSubdialog(eptQuests);
-			m_game->StartStopMenu(PdaMenu,true);
+			m_game->StartStopMenu(PdaMenu, true);
 			return true;
-		}break;
+		}
+		break;
 
 	case kMAP:
-		if( !MainInputReceiver() || MainInputReceiver()==PdaMenu){
+		if (!MainInputReceiver() || MainInputReceiver() == PdaMenu)
+		{
 			PdaMenu->SetActiveSubdialog(eptMap);
-			m_game->StartStopMenu(PdaMenu,true);
+			m_game->StartStopMenu(PdaMenu, true);
 			return true;
-		}break;
+		}
+		break;
 
 	case kCONTACTS:
-		if( !MainInputReceiver() || MainInputReceiver()==PdaMenu){
+		if (!MainInputReceiver() || MainInputReceiver() == PdaMenu)
+		{
 			PdaMenu->SetActiveSubdialog(eptContacts);
-			m_game->StartStopMenu(PdaMenu,true);
+			m_game->StartStopMenu(PdaMenu, true);
 			return true;
-		}break;
+		}
+		break;
 
 	case kSCORES:
+	{
+		SDrawStaticStruct* ss = AddCustomStatic("main_task", true);
+		SGameTaskObjective* o = pActor->GameTaskManager().ActiveObjective();
+		if (!o)
 		{
-			SDrawStaticStruct* ss	= AddCustomStatic("main_task", true);
-			SGameTaskObjective* o	= pActor->GameTaskManager().ActiveObjective();
-			if(!o)
-				ss->m_static->SetTextST	("st_no_active_task");
-			else
-				ss->m_static->SetTextST	(*(o->description));
+			ss->m_static->SetTextST("st_no_active_task");
+		}
+		else
+		{
+			ss->m_static->SetTextST(*(o->description));
+		}
 
-		}break;
+	}break;
 	}
+
 	return false;
 }
 
