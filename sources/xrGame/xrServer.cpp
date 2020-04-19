@@ -68,15 +68,6 @@ xrServer::~xrServer()
 	m_aDelayedPackets.clear();
 }
 
-bool  xrServer::HasBattlEye()
-{
-#ifdef BATTLEYE
-	return (g_pGameLevel && Level().battleye_system.server)? true : false;
-#else
-	return false;
-#endif // BATTLEYE
-}
-
 //--------------------------------------------------------------------
 
 CSE_Abstract*	xrServer::ID_to_entity		(u16 ID)
@@ -323,11 +314,11 @@ void xrServer::SendUpdatesToAll()
 
 		if (m_aUpdatePackets[0].B.count != 0) //not a first client in update cycle
 		{
-			m_aUpdatePackets[0].w_seek(0, Packet.B.data, Packet.B.count);			
+			m_aUpdatePackets[0].w_seek(0, Packet.B.data, Packet.B.count);
 		}
 		else
 		{
-			m_aUpdatePackets[0].w(Packet.B.data, Packet.B.count);				
+			m_aUpdatePackets[0].w(Packet.B.data, Packet.B.count);
 
 			if (g_Dump_Update_Write) 
 			{
@@ -336,10 +327,8 @@ void xrServer::SendUpdatesToAll()
 				else
 					Msg("---- UPDATE_Write to %s --- ", *(Client->name));
 			}
-			
-	
 
-			NET_Packet						tmpPacket;			
+			NET_Packet						tmpPacket;
 
 			xrS_entities::iterator I	= entities.begin();
 			xrS_entities::iterator E	= entities.end();
@@ -403,8 +392,6 @@ void xrServer::SendUpdatesToAll()
 				SendTo			(Client->ID,ToSend,net_flags(FALSE,TRUE));
 			}
 		}
-
-
 	};	// for each client
 #ifdef DEBUG
 	g_sv_SendUpdate = 0;
@@ -413,13 +400,6 @@ void xrServer::SendUpdatesToAll()
 	if (game->sv_force_sync)	Perform_game_export();
 
 	VERIFY						(verify_entities());
-
-#ifdef BATTLEYE
-	if ( g_pGameLevel )
-	{
-		Level().battleye_system.UpdateServer( this );
-	}
-#endif // BATTLEYE
 }
 
 xr_vector<shared_str>	_tmp_log;
@@ -458,7 +438,7 @@ u32 xrServer::OnDelayedMessage	(NET_Packet& P, ClientID sender)			// Non-Zero me
 				Console->Execute	(buff);
 				SetLogCB			(NULL);
 
-				NET_Packet			P_answ;			
+				NET_Packet			P_answ;
 				for(u32 i=0; i<_tmp_log.size(); ++i)
 				{
 					P_answ.w_begin		(M_REMOTE_CONTROL_CMD);
@@ -467,7 +447,7 @@ u32 xrServer::OnDelayedMessage	(NET_Packet& P, ClientID sender)			// Non-Zero me
 				}
 			}else
 			{
-				NET_Packet			P_answ;			
+				NET_Packet			P_answ;
 				P_answ.w_begin		(M_REMOTE_CONTROL_CMD);
 				P_answ.w_stringZ	("you dont have admin rights");
 				SendTo				(CL->ID,P_answ,net_flags(TRUE,TRUE));
@@ -567,13 +547,6 @@ u32 xrServer::OnMessage	(NET_Packet& P, ClientID sender)			// Non-Zero means bro
 				CL->ps->DeathTime = Device.dwTimeGlobal;
 				game->OnPlayerConnectFinished(sender);
 				CL->ps->setName( CL->name.c_str() );
-				
-#ifdef BATTLEYE
-				if ( g_pGameLevel && Level().battleye_system.server )
-				{
-					Level().battleye_system.server->AddConnected_OnePlayer( CL );
-				}
-#endif // BATTLEYE
 			};
 			game->signal_Syncronize	();
 			VERIFY					(verify_entities());
@@ -679,15 +652,6 @@ u32 xrServer::OnMessage	(NET_Packet& P, ClientID sender)			// Non-Zero means bro
 		{
 			AddDelayedPacket(P, sender);
 		}break;
-	case M_BATTLEYE:
-		{
-#ifdef BATTLEYE
-			if ( g_pGameLevel )
-			{
-				Level().battleye_system.ReadPacketServer( sender.value(), &P );
-			}
-#endif // BATTLEYE
-		}
 	}
 
 	VERIFY							(verify_entities());

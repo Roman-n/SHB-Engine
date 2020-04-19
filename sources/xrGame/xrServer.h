@@ -10,7 +10,6 @@
 #include "../../xrNetServer/net_server.h"
 #include "game_sv_base.h"
 #include "id_generator.h"
-#include "battleye.h"
 
 #ifdef DEBUG
 //. #define SLOW_VERIFY_ENTITIES
@@ -202,7 +201,6 @@ public:
 	virtual void			Assign_ServerType	( string512& res ) {};
 	virtual bool			HasPassword			()	{ return false; }
 	virtual bool			HasProtected		()	{ return false; }
-			bool			HasBattlEye			();
 
 	virtual void			GetServerInfo		( CServerInfo* si );
 public:
