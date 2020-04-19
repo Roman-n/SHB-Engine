@@ -36,7 +36,7 @@ BOOL CLevel::net_Start	( LPCSTR op_server, LPCSTR op_client )
 			strcpy_s(tmpstr, op_client);
 			*(strstr(tmpstr, "name=")+5) = 0;
 			strcat_s(tmpstr, xr_strlen(Core.UserName) ? Core.UserName : Core.CompName);
-			const char* ptmp = strstr(strstr(op_client, "name="), "/");
+			LPCSTR ptmp = strstr(strstr(op_client, "name="), "/");
 			if (ptmp)
 				strcat_s(tmpstr, ptmp);
 			m_caClientOptions = tmpstr;
@@ -108,7 +108,7 @@ bool CLevel::net_start1				()
 		if (xr_strcmp(p.m_alife,"alife"))
 		{
 			string64			l_name = "";
-			const char* SOpts = *m_caServerOptions;
+			LPCSTR SOpts = *m_caServerOptions;
 			strncpy(l_name, *m_caServerOptions, strchr(SOpts, '/') - SOpts);
 			// Activate level
 			if (strchr(l_name,'/'))
@@ -167,7 +167,7 @@ bool CLevel::net_start3				()
 		if (strstr(m_caServerOptions.c_str(), "psw=") && !strstr(m_caClientOptions.c_str(), "psw="))
 		{
 			string64	PasswordStr = "";
-			const char* PSW = strstr(m_caServerOptions.c_str(), "psw=") + 4;
+			LPCSTR PSW = strstr(m_caServerOptions.c_str(), "psw=") + 4;
 			if (strchr(PSW, '/')) 
 				strncpy(PasswordStr, PSW, strchr(PSW, '/') - PSW);
 			else
@@ -182,7 +182,7 @@ bool CLevel::net_start3				()
 	if (strstr(m_caClientOptions.c_str(), "/cdkey="))
 	{
 		string64 CDKey;
-		const char* start = strstr(m_caClientOptions.c_str(),"/cdkey=") +xr_strlen("/cdkey=");
+		LPCSTR start = strstr(m_caClientOptions.c_str(),"/cdkey=") +xr_strlen("/cdkey=");
 		sscanf			(start, "%[^/]",CDKey);
 		string128 cmd;
 		sprintf_s(cmd, "cdkey %s", _strupr(CDKey));

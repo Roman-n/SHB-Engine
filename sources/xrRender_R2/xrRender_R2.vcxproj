@@ -154,6 +154,7 @@
     <ClInclude Include="..\xrRender\FTreeVisual.h" />
     <ClInclude Include="..\xrRender\FVisual.h" />
     <ClInclude Include="..\xrRender\HOM.h" />
+    <ClInclude Include="..\xrRender\light.h" />
     <ClInclude Include="..\xrRender\LightTrack.h" />
     <ClInclude Include="..\xrRender\Light_DB.h" />
     <ClInclude Include="..\xrRender\Light_Package.h" />
@@ -189,7 +190,6 @@
     <ClInclude Include="blender_luminance.h" />
     <ClInclude Include="doug_lea_memory_allocator.h" />
     <ClInclude Include="du_sphere_part.h" />
-    <ClInclude Include="light.h" />
     <ClInclude Include="light_gi.h" />
     <ClInclude Include="Light_Render_Direct.h" />
     <ClInclude Include="light_smapvis.h" />

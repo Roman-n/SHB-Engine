@@ -11,21 +11,21 @@ class CUIOptionsManager{
 public:	
 	CUIOptionsManager();
 
-	void SeveBackupValues(const char* group);
-	void SetCurrentValues(const char* group);
-	void SaveValues(const char* group);
-	bool IsGroupChanged(const char* group);
-	void UndoGroup(const char* group);
+	void SeveBackupValues(LPCSTR group);
+	void SetCurrentValues(LPCSTR group);
+	void SaveValues(LPCSTR group);
+	bool IsGroupChanged(LPCSTR group);
+	void UndoGroup(LPCSTR group);
 
 	void OptionsPostAccept();
 	void DoVidRestart();
 	void DoSndRestart();
 
-	void SendMessage2Group(const char* group, const char* message);
+	void SendMessage2Group(LPCSTR group, LPCSTR message);
 
 protected:	
-	void RegisterItem(CUIOptionsItem* item, const char* group);
-	void UnRegisterGroup(const char* group);
+	void RegisterItem(CUIOptionsItem* item, LPCSTR group);
+	void UnRegisterGroup(LPCSTR group);
 	void UnRegisterItem(CUIOptionsItem* item);
 
 

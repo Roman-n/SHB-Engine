@@ -394,7 +394,7 @@ void CUICustomEdit::SetText(LPCSTR str)
 	CUILinesOwner::SetText(str);
 }
 
-const char* CUICustomEdit::GetText(){
+LPCSTR CUICustomEdit::GetText(){
 	return CUILinesOwner::GetText();
 }
 

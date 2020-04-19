@@ -6,13 +6,13 @@ class CUICDkey : public CUIEditBox {
 public:
 						CUICDkey		();
 	virtual	void		SetText			(LPCSTR str) {}
-	virtual	const char* GetText			();
+	virtual	LPCSTR	 GetText			();
 	// CUIOptionsItem
 	virtual void	SetCurrentValue();
 	virtual void	SaveValue();
 	virtual bool	IsChanged();
 	
-			void	CreateCDKeyEntry();			
+			void	CreateCDKeyEntry();
 
 	virtual void	Draw();
 	virtual void	AddChar(char c);

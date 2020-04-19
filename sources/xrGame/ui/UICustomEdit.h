@@ -26,7 +26,7 @@ public:
 
 			void	CaptureFocus	(bool bCapture) { m_bInputFocus = bCapture; }
 	virtual	void	SetText			(LPCSTR str);
-	virtual const char* GetText();
+	virtual LPCSTR GetText();
 			void	SetMaxCharCount	(u32 cnt)			{m_max_symb_count = cnt;}
 	virtual void	Enable			(bool status);
 			void	SetNumbersOnly	(bool status);

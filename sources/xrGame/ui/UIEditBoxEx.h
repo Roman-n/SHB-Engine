@@ -13,7 +13,7 @@ public:
 	virtual void	Init(float x, float y, float width, float heigt);
 
 	// CUIMultiTextureOwner
-	virtual void	InitTexture(const char* texture);
+	virtual void	InitTexture(LPCSTR texture);
 protected:
 	CUIFrameWindow*	m_pFrameWindow;
 };

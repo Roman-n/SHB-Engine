@@ -90,9 +90,9 @@ CUIMultiTextStatic::SPh::SPh()
 
 //////////////////////////////////////////////////////////////////////////
 
-void CUIMultiTextStatic::SPh::SetText(const char *fmt, ...)
+void CUIMultiTextStatic::SPh::SetText(LPCSTR fmt, ...)
 {
-	va_list		Print;                                                                  
+	va_list		Print;
 	string256	msg;
 	xr_string	buf;
 

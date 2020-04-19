@@ -19,7 +19,7 @@ public:
 
 						CUIFrameRect	();
 	virtual void		Init			(LPCSTR base_name, float x, float y, float w, float h);//, DWORD align);
-	virtual void		InitTexture		(const char* texture);
+	virtual void		InitTexture		(LPCSTR texture);
 	virtual void		Draw			();
 	virtual void		Draw			(float x, float y);
 	virtual void		SetWndPos		(float x, float y);

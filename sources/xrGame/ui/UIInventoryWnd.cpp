@@ -372,7 +372,7 @@ void CUIInventoryWnd::AttachAddon(PIItem item_to_upgrade)
 	SetCurrentItem								(NULL);
 }
 
-void CUIInventoryWnd::DetachAddon(const char* addon_name)
+void CUIInventoryWnd::DetachAddon(LPCSTR addon_name)
 {
 	PlaySnd										(eInvDetachAddon);
 	if (OnClient())

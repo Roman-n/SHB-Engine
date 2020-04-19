@@ -10,8 +10,8 @@ public:
 	CUIMapInfo();
 	~CUIMapInfo();
     virtual void Init(float x, float y, float width, float height);
-			void InitMap(const char* map_name);
-	const char*	 GetLargeDesc();
+			void InitMap(LPCSTR map_name);
+			LPCSTR	 GetLargeDesc();
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 protected:
 	CUIScrollView*	m_view;

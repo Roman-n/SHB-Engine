@@ -615,7 +615,7 @@ void CMainMenu::OnDeviceReset()
 }
 
 extern	void	GetCDKey(char* CDKeyStr);
-//extern	int VerifyClientCheck(const char *key, unsigned short cskey);
+//extern	int VerifyClientCheck(LPCSTR key, unsigned short cskey);
 
 bool CMainMenu::IsCDKeyIsValid()
 {

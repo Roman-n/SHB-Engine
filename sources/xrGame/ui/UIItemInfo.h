@@ -9,7 +9,7 @@ class CUIProgressBar;
 class CUIWpnParams;
 class CUIArtefactParams;
 
-extern const char * const 		fieldsCaptionColor;
+extern LPCSTR const 		fieldsCaptionColor;
 
 class CUIItemInfo: public CUIWindow
 {

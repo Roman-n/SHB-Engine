@@ -36,7 +36,7 @@ void CUIFrameLine::Init(LPCSTR base_name, float x, float y, float size, bool hor
 	InitTexture(base_name);
 }
 
-void CUIFrameLine::InitTexture(const char* texture){
+void CUIFrameLine::InitTexture(LPCSTR texture){
 	string256		buf;
 
 	CUITextureMaster::InitTexture(strconcat(sizeof(buf),buf,texture,"_back"),	&elements[flBack]);

@@ -40,7 +40,7 @@ void CUIListItem::InitTexture(LPCSTR tex_name){
 }
 
 
-void CUIListItem::Init(const char* str, float x, float y, float width, float height)
+void CUIListItem::Init(LPCSTR str, float x, float y, float width, float height)
 {
 	Init(x,y,width, height);
 	SetTextST(str);	

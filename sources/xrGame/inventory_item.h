@@ -79,7 +79,7 @@ public:
 	virtual bool				Attach				(PIItem pIItem, bool b_send_event) {return false;}
 	virtual bool				Detach				(PIItem pIItem) {return false;}
 	//при детаче спаунится новая вещь при заданно названии секции
-	virtual bool				Detach				(const char* item_section_name, bool b_spawn_item);
+	virtual bool				Detach				(LPCSTR item_section_name, bool b_spawn_item);
 	virtual bool				CanAttach			(PIItem pIItem) {return false;}
 	virtual bool				CanDetach			(LPCSTR item_section_name) {return false;}
 

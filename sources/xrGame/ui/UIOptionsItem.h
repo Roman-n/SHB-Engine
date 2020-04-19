@@ -6,7 +6,7 @@ class CUIOptionsItem
 	friend class CUIOptionsManager;
 public:
 	virtual					~CUIOptionsItem		();
-	virtual void			Register			(const char* entry, const char* group);
+	virtual void			Register			(LPCSTR entry, LPCSTR group);
 	static CUIOptionsManager* GetOptionsManager	() {return &m_optionsManager;}
 protected:
 	virtual void			SetCurrentValue		()	=0;	
@@ -16,13 +16,13 @@ protected:
 	virtual void			SeveBackUpValue		()	{};
 	virtual void			Undo				()				{SetCurrentValue();};
 			
-			void			SendMessage2Group	(const char* group, const char* message);
-	virtual	void			OnMessage			(const char* message);
+			void			SendMessage2Group	(LPCSTR group, LPCSTR message);
+	virtual	void			OnMessage			(LPCSTR message);
 
 
 			// string
 			LPCSTR			GetOptStringValue	();
-			void			SaveOptStringValue	(const char* val);
+			void			SaveOptStringValue	(LPCSTR val);
 			// integer
 			void			GetOptIntegerValue	(int& val, int& min, int& max);
 			void			SaveOptIntegerValue	(int val);
@@ -35,7 +35,7 @@ protected:
 			// token
 			char*			GetOptTokenValue	();
 			xr_token*		GetOptToken			();
-			void			SaveOptTokenValue	(const char* val);
+			void			SaveOptTokenValue	(LPCSTR val);
 
 	xr_string		m_entry;
 

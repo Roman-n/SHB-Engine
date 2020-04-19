@@ -25,6 +25,6 @@ void CUIEditBoxEx::Init(float x, float y, float width, float height){
 	CUICustomEdit::Init(x,y,width,height);
 }
 
-void CUIEditBoxEx::InitTexture(const char* texture){
+void CUIEditBoxEx::InitTexture(LPCSTR texture){
 	m_pFrameWindow->InitTexture(texture);
 }

@@ -3,7 +3,7 @@
 #include "Level.h"
 #include "game_cl_base_weapon_usage_statistic.h"
 
-const char * const STATS_XML = "statisticwnd.xml";
+LPCSTR const STATS_XML = "statisticwnd.xml";
 
 CUIDMStatisticWnd::CUIDMStatisticWnd					() :
 	CUIStatsWnd(STATS_XML)

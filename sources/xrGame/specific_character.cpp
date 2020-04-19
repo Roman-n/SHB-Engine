@@ -59,7 +59,7 @@ void CSpecificCharacter::Load(shared_str id)
 	inherited_shared::load_shared(m_OwnId, NULL);
 }
 
-void CSpecificCharacter::load_shared(const char*)
+void CSpecificCharacter::load_shared(LPCSTR)
 {
 
 #if 0

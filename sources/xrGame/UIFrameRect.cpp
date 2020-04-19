@@ -22,7 +22,7 @@ void CUIFrameRect::Init(LPCSTR texture, float x, float y, float w, float h)//, D
 	InitTexture(texture);
 }
 
-void CUIFrameRect::InitTexture(const char* texture){
+void CUIFrameRect::InitTexture(LPCSTR texture){
 	string_path		fn,buf;
 	strcpy			(buf,texture); if (strext(buf)) *strext(buf)=0;
 

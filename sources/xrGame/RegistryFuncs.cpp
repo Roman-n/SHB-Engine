@@ -110,7 +110,7 @@ void	ReadRegistry_StrValue	(LPCSTR rKeyName, char* value )
 	ReadRegistryValue(rKeyName, REG_SZ, value);
 }
 
-void	WriteRegistry_StrValue	(LPCSTR rKeyName, const char* value )
+void	WriteRegistry_StrValue	(LPCSTR rKeyName, LPCSTR value )
 {
 	WriteRegistryValue(rKeyName, REG_SZ, value);
 }

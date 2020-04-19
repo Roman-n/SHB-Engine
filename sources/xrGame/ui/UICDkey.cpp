@@ -78,7 +78,7 @@ void CUICDkey::Draw()
 	}
 }
 
-const char* CUICDkey::GetText			()
+LPCSTR CUICDkey::GetText			()
 {
 	return AddHyphens(CUIEditBox::GetText());
 }

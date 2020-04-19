@@ -82,7 +82,7 @@ protected:
 
 
 	//загрузка из XML файла
-	virtual void				load_shared			(const char*);
+	virtual void				load_shared			(LPCSTR);
 
 	//индекс загруженного профиля
 	shared_str					m_ProfileId;

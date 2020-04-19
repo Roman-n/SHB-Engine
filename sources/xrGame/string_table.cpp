@@ -91,7 +91,7 @@ STRING_VALUE CStringTable::ParseLine(LPCSTR str, LPCSTR skey, bool bFirst)
 //	LPCSTR str = "1 $$action_left$$ 2 $$action_right$$ 3 $$action_left$$ 4";
 	xr_string			res;
 	int k = 0;
-	const char*			b;
+	LPCSTR			b;
 	#define ACTION_STR "$$ACTION_"
 
 //.	int LEN				= (int)xr_strlen(ACTION_STR);
@@ -106,7 +106,7 @@ STRING_VALUE CStringTable::ParseLine(LPCSTR str, LPCSTR skey, bool bFirst)
 		buff[0]				= 0;
 		srcbuff[0]			= 0;
 		res.append			(str+k, b-str-k);
-		const char* e		= strstr( b+LEN,"$$" );
+		LPCSTR e		= strstr( b+LEN,"$$" );
 
 		int len				= (int)(e-b-LEN);
 

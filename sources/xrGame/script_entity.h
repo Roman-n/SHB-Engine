@@ -88,7 +88,7 @@ public:
 	virtual	bool				GetScriptControl		() const;
 	virtual	LPCSTR				GetScriptControlName	() const;
 	virtual bool				CheckObjectVisibility	(const CGameObject	*tpObject);
-	virtual bool				CheckTypeVisibility		(const char* section_name);
+	virtual bool				CheckTypeVisibility		(LPCSTR section_name);
 	virtual bool				CheckIfCompleted		() const										{return false;};
 	virtual	CScriptEntityAction	*GetCurrentAction		();
 	virtual	void				AddAction				(const CScriptEntityAction*tpEntityAction, bool bHighPriority = false);

@@ -10,18 +10,18 @@ CUIOptionsItem::~CUIOptionsItem()
 	m_optionsManager.UnRegisterItem(this);
 }
 
-void CUIOptionsItem::Register(const char* entry, const char* group)
+void CUIOptionsItem::Register(LPCSTR entry, LPCSTR group)
 {
 	m_optionsManager.RegisterItem	(this, group);
 	m_entry							= entry;	
 }
 
-void CUIOptionsItem::SendMessage2Group(const char* group, const char* message)
+void CUIOptionsItem::SendMessage2Group(LPCSTR group, LPCSTR message)
 {
 	m_optionsManager.SendMessage2Group(group,message);
 }
 
-void CUIOptionsItem::OnMessage(const char* message)
+void CUIOptionsItem::OnMessage(LPCSTR message)
 {
 	// do nothing
 }
@@ -31,7 +31,7 @@ LPCSTR CUIOptionsItem::GetOptStringValue()
 	return Console->GetString(m_entry.c_str());
 }
 
-void CUIOptionsItem::SaveOptStringValue(const char* val)
+void CUIOptionsItem::SaveOptStringValue(LPCSTR val)
 {
 	xr_string command	= m_entry;
 	command				+= " ";
@@ -87,16 +87,16 @@ xr_token* CUIOptionsItem::GetOptToken()
 	return Console->GetXRToken(m_entry.c_str());
 }
 
-void CUIOptionsItem::SaveOptTokenValue(const char* val){
+void CUIOptionsItem::SaveOptTokenValue(LPCSTR val){
 	SaveOptStringValue(val);
 }
 
 void CUIOptionsItem::SaveValue(){
-	if (	m_entry == "vid_mode"		|| 
-			m_entry == "_preset"		|| 
-			m_entry == "rs_fullscreen" 	||	
+	if (	m_entry == "vid_mode"		||
+			m_entry == "_preset"		||
+			m_entry == "rs_fullscreen" 	||
 			m_entry == "rs_fullscreen"	||
-			m_entry == "r__supersample"	|| 
+			m_entry == "r__supersample"	||
 			m_entry == "rs_refresh_60hz"||
 			m_entry == "rs_no_v_sync"	||
 			m_entry == "texture_lod")

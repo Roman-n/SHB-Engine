@@ -38,7 +38,7 @@ void CUIMapInfo::Init(float x, float y, float width, float height){
 						st->AdjustHeightToText();											\
 						m_view->AddWindow(st, true)											\
 
-void CUIMapInfo::InitMap(const char* map_name){
+void CUIMapInfo::InitMap(LPCSTR map_name){
 	m_view->Clear();
 	if (NULL == map_name)
 		return;
@@ -143,6 +143,6 @@ void CUIMapInfo::InitMap(const char* map_name){
 //.       m_large_desc = str_tbl.translate("no_desc_for_this_map");
 }
 
-const char*	 CUIMapInfo::GetLargeDesc(){
+LPCSTR	 CUIMapInfo::GetLargeDesc(){
 	return *m_large_desc;
 }

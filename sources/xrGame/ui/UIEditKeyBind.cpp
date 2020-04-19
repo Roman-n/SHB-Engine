@@ -49,7 +49,7 @@ u32 cut_string_by_length(CGameFont* pFont, LPCSTR src, LPSTR dst, u32 dst_size, 
 	}
 }
 
-void CUIEditKeyBind::SetText(const char* text)
+void CUIEditKeyBind::SetText(LPCSTR text)
 {
 	if (!text || 0 == xr_strlen(text))
 		CUILabel::SetText("---");
@@ -143,7 +143,7 @@ void CUIEditKeyBind::Update()
 	
 }
 
-void CUIEditKeyBind::Register(const char* entry, const char* group)
+void CUIEditKeyBind::Register(LPCSTR entry, LPCSTR group)
 {
 	CUIOptionsItem::Register				(entry, group);
 	m_action		= action_name_to_ptr	(entry);
@@ -195,7 +195,7 @@ bool CUIEditKeyBind::IsChanged(){
 	return m_bChanged;
 }
 
-void CUIEditKeyBind::OnMessage(const char* message){
+void CUIEditKeyBind::OnMessage(LPCSTR message){
 	// message = "command=key"
 	int eq	= (int)strcspn(message,"=");
 	

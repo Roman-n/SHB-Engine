@@ -12,7 +12,7 @@ CUIOptionsManager::CUIOptionsManager(){
 	m_b_vid_restart = false;
 }
 
-void CUIOptionsManager::RegisterItem(CUIOptionsItem* item, const char* group){
+void CUIOptionsManager::RegisterItem(CUIOptionsItem* item, LPCSTR group){
 	groups_it it = m_groups.find(group);
 
 	if (m_groups.end() != it)
@@ -29,7 +29,7 @@ void CUIOptionsManager::RegisterItem(CUIOptionsItem* item, const char* group){
 	}
 }
 
-void CUIOptionsManager::UnRegisterGroup(const char* group){
+void CUIOptionsManager::UnRegisterGroup(LPCSTR group){
 	groups_it it = m_groups.find(group);
 
 	if (it != m_groups.end())
@@ -44,7 +44,7 @@ void CUIOptionsManager::UnRegisterItem(CUIOptionsItem* item){
 	}
 }
 
-void CUIOptionsManager::SendMessage2Group(const char* group, const char* message){
+void CUIOptionsManager::SendMessage2Group(LPCSTR group, LPCSTR message){
 	groups_it it = m_groups.find(group);
 
 	R_ASSERT2(m_groups.end() != it, "invalid group name");
@@ -53,7 +53,7 @@ void CUIOptionsManager::SendMessage2Group(const char* group, const char* message
 		(*it).second[i]->OnMessage(message);
 }
 
-void CUIOptionsManager::SeveBackupValues(const char* group)
+void CUIOptionsManager::SeveBackupValues(LPCSTR group)
 {
 	groups_it it = m_groups.find(group);
 
@@ -64,7 +64,7 @@ void CUIOptionsManager::SeveBackupValues(const char* group)
 	}
 }
 
-void CUIOptionsManager::SetCurrentValues(const char* group){
+void CUIOptionsManager::SetCurrentValues(LPCSTR group){
 	groups_it it = m_groups.find(group);
 
 	R_ASSERT3(m_groups.end() != it, "invalid group name",group);
@@ -75,7 +75,7 @@ void CUIOptionsManager::SetCurrentValues(const char* group){
 	}
 }
 
-void CUIOptionsManager::SaveValues(const char* group){
+void CUIOptionsManager::SaveValues(LPCSTR group){
 	groups_it it = m_groups.find(group);
 
 	R_ASSERT3(m_groups.end() != it, "invalid group name",group);
@@ -86,7 +86,7 @@ void CUIOptionsManager::SaveValues(const char* group){
 	}
 }
 
-bool CUIOptionsManager::IsGroupChanged(const char* group){
+bool CUIOptionsManager::IsGroupChanged(LPCSTR group){
 	groups_it it = m_groups.find(group);	
 	R_ASSERT2(m_groups.end() != it, "invalid group name");
 
@@ -99,7 +99,7 @@ bool CUIOptionsManager::IsGroupChanged(const char* group){
 	return false;
 }
 
-void CUIOptionsManager::UndoGroup(const char* group){
+void CUIOptionsManager::UndoGroup(LPCSTR group){
 	groups_it it = m_groups.find(group);	
 	R_ASSERT2(m_groups.end() != it, "invalid group name");
 

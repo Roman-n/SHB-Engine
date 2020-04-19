@@ -174,12 +174,12 @@ void	CInventoryItem::Hit					(SHit* pHDS)
 	ChangeCondition(-hit_power);
 }
 
-const char* CInventoryItem::Name() 
+LPCSTR CInventoryItem::Name()
 {
 	return *m_name;
 }
 
-const char* CInventoryItem::NameShort() 
+LPCSTR CInventoryItem::NameShort()
 {
 	return *m_nameShort;
 }
@@ -292,7 +292,7 @@ void CInventoryItem::OnEvent (NET_Packet& P, u16 type)
 //процесс отсоединения вещи заключается в спауне новой вещи 
 //в инвентаре и установке соответствующих флагов в родительском
 //объекте, поэтому функция должна быть переопределена
-bool CInventoryItem::Detach(const char* item_section_name, bool b_spawn_item) 
+bool CInventoryItem::Detach(LPCSTR item_section_name, bool b_spawn_item)
 {
 	if (OnClient()) return true;
 	if(b_spawn_item)

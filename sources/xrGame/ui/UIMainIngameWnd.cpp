@@ -1008,7 +1008,7 @@ void CUIMainIngameWnd::SetFlashIconState_(EFlashingIcons type, bool enable)
 
 void CUIMainIngameWnd::InitFlashingIcons(CUIXml* node)
 {
-	const char * const flashingIconNodeName = "flashing_icon";
+	LPCSTR const flashingIconNodeName = "flashing_icon";
 	int staticsCount = node->GetNodesNum("", 0, flashingIconNodeName);
 
 	CUIXmlInit xml_init;

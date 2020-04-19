@@ -1345,7 +1345,7 @@ void CUIBuyWnd::AttachAddon(CInventoryItem* item_to_upgrade)
 	SetCurrentItem								(NULL);
 }
 
-void CUIBuyWnd::DetachAddon(const char* addon_name)
+void CUIBuyWnd::DetachAddon(LPCSTR addon_name)
 {
 	if (CurrentIItem()->Detach(addon_name, true) )
 	{

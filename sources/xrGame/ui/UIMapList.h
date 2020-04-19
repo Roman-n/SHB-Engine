@@ -23,7 +23,7 @@ public:
 	virtual void	Init(float x, float y, float width, float height);
 	virtual void	Update();
 	virtual void	SendMessage(CUIWindow* pWnd, s16 msg, void* pData  = NULL);
-			void	InitFromXml(CUIXml& xml_doc, const char* path);	
+			void	InitFromXml(CUIXml& xml_doc, LPCSTR path);
 
 			void	SetWeatherSelector(CUIComboBox* ws);
 			void	SetModeSelector(CUISpinText* ms);
@@ -34,15 +34,15 @@ public:
 			void	OnListItemClicked();
 			void	LoadMapList();
 			void	SaveMapList();
-	const char*		GetCommandLine(LPCSTR player_name);
+			LPCSTR		GetCommandLine(LPCSTR player_name);
 		EGameTypes	GetCurGameType();
 			void	StartDedicatedServer();
 			bool	IsEmpty();
 	const shared_str& GetMapNameInt(EGameTypes _type, u32 idx);
 
 private:
-	const char*		GetCLGameModeName(); // CL - command line
-			void	UpdateMapList(EGameTypes GameType);						
+	LPCSTR		GetCLGameModeName(); // CL - command line
+			void	UpdateMapList(EGameTypes GameType);	
 			void	SaveRightList();
 
 			void	OnBtnLeftClick();

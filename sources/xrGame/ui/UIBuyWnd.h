@@ -118,7 +118,7 @@ protected:
 	bool				ClearSlot_ifTooExpensive	(int slot);
 	bool				SlotToSection				(int slot);
 	void				AttachAddon					(CInventoryItem* item_to_upgrade);
-	void				DetachAddon					(const char* addon_name);
+	void				DetachAddon					(LPCSTR addon_name);
 	void				ProcessPropertiesBoxClicked	();
 	void				UpdateOutfit				();
 	void				Highlight					(int slot);

@@ -16,20 +16,20 @@ public:
 					CUIEditKeyBind			(bool bPrim);
 	virtual			~CUIEditKeyBind			();
 	// options item
-	virtual void	Register				(const char* entry, const char* group);
+	virtual void	Register				(LPCSTR entry, LPCSTR group);
 	virtual void	SetCurrentValue			();
 	virtual void	SaveValue				();
-	virtual	void	OnMessage				(const char* message);
+	virtual	void	OnMessage				(LPCSTR message);
 	virtual bool	IsChanged				();
 
 	// CUIWindow methods
-	virtual void	Init					(float x, float y, float width, float height);	
+	virtual void	Init					(float x, float y, float width, float height);
 	virtual void	Update					();
 	virtual bool	OnMouseDown				(int mouse_btn);
 	virtual void	OnFocusLost				();
 	virtual bool	OnKeyboard				(int dik, EUIMessages keyboard_action);
 	// IUITextControl
-	virtual void	SetText					(const char* text);
+	virtual void	SetText					(LPCSTR text);
 
 protected:
 	void			BindAction2Key			();

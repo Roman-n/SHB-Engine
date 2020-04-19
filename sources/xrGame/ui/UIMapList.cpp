@@ -133,7 +133,7 @@ void CUIMapList::OnModeChange()
 	UpdateMapList(GetCurGameType());
 }
 
-const char* CUIMapList::GetCLGameModeName(){
+LPCSTR CUIMapList::GetCLGameModeName(){
 	return get_token_name(game_types, GetCurGameType() );
 }
 
@@ -155,7 +155,7 @@ EGameTypes CUIMapList::GetCurGameType()
 #endif
 }
 
-const char* CUIMapList::GetCommandLine(LPCSTR player_name){
+LPCSTR CUIMapList::GetCommandLine(LPCSTR player_name){
 	string16		buf;
 
 	CUIListBoxItem* itm				= m_pList2->GetItemByIDX(0);
@@ -276,7 +276,7 @@ void CUIMapList::AddWeather(const shared_str& WeatherType, const shared_str& Wea
 	m_mapWeather.back().weather_time = w_time;
 }
 
-void CUIMapList::InitFromXml(CUIXml& xml_doc, const char* path){
+void CUIMapList::InitFromXml(CUIXml& xml_doc, LPCSTR path){
 	CUIXmlInit::InitWindow(xml_doc, path, 0, this);
 	string256 buf;
 	CUIXmlInit::InitLabel		(xml_doc, strconcat(sizeof(buf),buf, path, ":header_1"),	0, m_pLbl1);

@@ -152,7 +152,7 @@ bool CScriptEntity::CheckObjectVisibility(const CGameObject *tpObject)
 
 //определяет видимость определенного типа объектов, 
 //заданного через section_name
-bool CScriptEntity::CheckTypeVisibility(const char* section_name)
+bool CScriptEntity::CheckTypeVisibility(LPCSTR section_name)
 {
 	if (!m_monster)
 		return			(false);

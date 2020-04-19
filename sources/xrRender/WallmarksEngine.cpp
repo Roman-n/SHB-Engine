@@ -23,8 +23,6 @@ namespace WallmarksEngine {
 	};
 }
 
-// #include "xr_effsun.h"
-
 const float W_DIST_FADE		= 15.f;
 const float	W_DIST_FADE_SQR	= W_DIST_FADE*W_DIST_FADE;
 const float I_DIST_FADE_SQR	= 1.f/W_DIST_FADE_SQR;
@@ -389,7 +387,7 @@ void CWallmarksEngine::Render()
 			}
 
 #ifdef DEBUG
-			if(W->used_in_render != Device.dwFrame)			
+			if(W->used_in_render != Device.dwFrame)
 			{
 				Log("W->used_in_render",W->used_in_render);
 				Log("Device.dwFrame",Device.dwFrame);

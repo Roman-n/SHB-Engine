@@ -48,7 +48,7 @@ public:
 	virtual				~CUICharacterInfo();
 
 	void				Init					(float x, float y, float width, float height, CUIXml* xml_doc);
-	void				Init					(float x, float y, float width, float height, const char* xml_name);
+	void				Init					(float x, float y, float width, float height, LPCSTR xml_name);
 	void				InitCharacter			(u16 id);
 	void				ClearInfo				();
 

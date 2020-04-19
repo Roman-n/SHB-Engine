@@ -109,7 +109,7 @@ protected:
 	SSpecificCharacterData*					data					( )			{ VERIFY(inherited_shared::get_sd()); return inherited_shared::get_sd(); }
 
 	//загрузка из XML файла
-	virtual void							load_shared				(const char*);
+	virtual void							load_shared				(LPCSTR);
 	static void								InitXmlIdToIndex		( );
 
 	shared_str								m_OwnId;
@@ -117,7 +117,7 @@ protected:
 public:
 
 #ifdef XRGAME_EXPORTS
-	const char*								Name					( ) const;
+	LPCSTR									Name					( ) const;
 	shared_str								Bio						( ) const;
 	const CHARACTER_COMMUNITY&				Community				( ) const;
 	SSpecificCharacterData::SMoneyDef&		MoneyDef				( )			{ return data()->money_def; }
@@ -125,16 +125,16 @@ public:
 
 	CHARACTER_RANK_VALUE					Rank					( ) const;
 	CHARACTER_REPUTATION_VALUE				Reputation				( ) const;
-	const char*								Visual					( ) const;
+	LPCSTR									Visual					( ) const;
 
 #ifdef XRGAME_EXPORTS
-	const char*								SupplySpawn				( ) const;
-	const char*								NpcConfigSect			( ) const;
-	const char*								sound_voice_prefix		( ) const;
+	LPCSTR									SupplySpawn				( ) const;
+	LPCSTR									NpcConfigSect			( ) const;
+	LPCSTR									sound_voice_prefix		( ) const;
 	float									panic_threshold			( ) const;
 	float									hit_probability_factor	( ) const;
 	int										crouch_type				( ) const;
-	const char*								critical_wound_weights	( ) const;
+	LPCSTR									critical_wound_weights	( ) const;
 
 	const shared_str&						IconName				( ) const	{ return data()->m_icon_name; };
 #endif

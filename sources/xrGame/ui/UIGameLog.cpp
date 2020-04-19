@@ -13,7 +13,7 @@
 #include "UIPdaKillMessage.h"
 #include "UILines.h"
 
-const char * const	CHAT_LOG_ITEMS_ANIMATION	= "ui_main_msgs_short";
+LPCSTR const	CHAT_LOG_ITEMS_ANIMATION	= "ui_main_msgs_short";
 
 CUIGameLog::CUIGameLog()
 {

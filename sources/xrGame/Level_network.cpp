@@ -518,7 +518,7 @@ void				CLevel::net_OnChangeSelfName			(NET_Packet* P)
 		strcpy_s(tmpstr, *m_caClientOptions);
 		*(strstr(tmpstr, "name=")+5) = 0;
 		strcat_s(tmpstr, NewName);
-		const char* ptmp = strstr(strstr(*m_caClientOptions, "name="), "/");
+		LPCSTR ptmp = strstr(strstr(*m_caClientOptions, "name="), "/");
 		if (ptmp)
 			strcat_s(tmpstr, ptmp);
 		m_caClientOptions = tmpstr;

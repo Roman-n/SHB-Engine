@@ -152,7 +152,7 @@ void print_class						(lua_State *L, luabind::detail::class_rep *crep)
 	// print class properties
 	{
 #ifndef USE_NATIVE_LUA_STRINGS
-		typedef std::map<const char*, luabind::detail::class_rep::callback, luabind::detail::ltstr> PROPERTIES;
+		typedef std::map<LPCSTR, luabind::detail::class_rep::callback, luabind::detail::ltstr> PROPERTIES;
 #else
 		typedef luabind::detail::class_rep::callback_map PROPERTIES;
 #endif

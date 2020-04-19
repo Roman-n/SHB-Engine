@@ -387,10 +387,11 @@ void		xrRender_initconsole	()
 void	xrRender_apply_tf		()
 {
 	Console->Execute	("r__tf_aniso"	);
+
 #if RENDER==R_R1
 	Console->Execute	("r1_tf_mipbias");
 #else
 	Console->Execute	("r2_tf_mipbias");
 #endif
-}
 
+}

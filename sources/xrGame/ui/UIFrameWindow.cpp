@@ -32,7 +32,7 @@ void CUIFrameWindow::Init(LPCSTR base_name, Frect* pRect)
 				pRect->bottom - pRect->top);
 }
 
-void CUIFrameWindow::InitTexture(const char* texture){
+void CUIFrameWindow::InitTexture(LPCSTR texture){
 	m_UIWndFrame.InitTexture	(texture);
 	m_bTextureVisible			= true;
 }

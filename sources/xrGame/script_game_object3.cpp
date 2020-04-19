@@ -131,7 +131,7 @@ CScriptGameObject *CScriptGameObject::GetCorpse() const
 	}
 }
 
-bool CScriptGameObject::CheckTypeVisibility(const char *section_name)
+bool CScriptGameObject::CheckTypeVisibility(LPCSTR section_name)
 {
 	CCustomMonster		*l_tpCustomMonster = smart_cast<CCustomMonster*>(&object());
 	if (l_tpCustomMonster)

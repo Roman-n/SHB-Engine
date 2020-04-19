@@ -27,7 +27,7 @@ public:
 		CUITextBanner				effect;
 		shared_str						str;
 
-		void						SetText	(const char *fmt, ...);
+		void						SetText	(LPCSTR fmt, ...);
 
 		// Ctor		
 		SPh							();

@@ -28,7 +28,7 @@ public:
 	virtual bool	IsChanged();
 
 	// CUIMultiTextureOwner
-	virtual void	InitTexture(const char* texture);
+	virtual void	InitTexture(LPCSTR texture);
 protected:
 	CUIFrameLineWnd	m_frameLine;
 	DECLARE_SCRIPT_REGISTER_FUNCTION

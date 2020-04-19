@@ -4,23 +4,23 @@
 
 using namespace luabind;
 
-void CUIOptionsManagerScript::SetCurrentValues(const char* group){
+void CUIOptionsManagerScript::SetCurrentValues(LPCSTR group){
 	CUIOptionsItem::GetOptionsManager()->SetCurrentValues(group);
 }
 
-void CUIOptionsManagerScript::SaveBackupValues(const char* group){
+void CUIOptionsManagerScript::SaveBackupValues(LPCSTR group){
 	CUIOptionsItem::GetOptionsManager()->SeveBackupValues(group);
 }
 
-void CUIOptionsManagerScript::SaveValues(const char* group){
+void CUIOptionsManagerScript::SaveValues(LPCSTR group){
 	CUIOptionsItem::GetOptionsManager()->SaveValues(group);
 }
 
-bool CUIOptionsManagerScript::IsGroupChanged(const char* group){
+bool CUIOptionsManagerScript::IsGroupChanged(LPCSTR group){
 	return CUIOptionsItem::GetOptionsManager()->IsGroupChanged(group);
 }
 
-void CUIOptionsManagerScript::UndoGroup(const char* group){
+void CUIOptionsManagerScript::UndoGroup(LPCSTR group){
 	CUIOptionsItem::GetOptionsManager()->UndoGroup(group);
 }
 
@@ -28,7 +28,7 @@ void CUIOptionsManagerScript::OptionsPostAccept(){
 	CUIOptionsItem::GetOptionsManager()->OptionsPostAccept();
 }
 
-void CUIOptionsManagerScript::SendMessage2Group(const char* group, const char* message){
+void CUIOptionsManagerScript::SendMessage2Group(LPCSTR group, LPCSTR message){
 	CUIOptionsItem::GetOptionsManager()->SendMessage2Group(group, message);
 }
 
@@ -46,6 +46,5 @@ void CUIOptionsManagerScript::script_register(lua_State *L)
 			.def("UndoGroup",			&CUIOptionsManagerScript::UndoGroup )
 			.def("OptionsPostAccept",	&CUIOptionsManagerScript::OptionsPostAccept )
 			.def("SendMessage2Group",	&CUIOptionsManagerScript::SendMessage2Group )
-			
 		];
 }
