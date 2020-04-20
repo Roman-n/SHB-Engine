@@ -186,35 +186,14 @@ CLASS_ID game_GameState::getCLASS_ID(LPCSTR game_type_name, bool isServer)
 
 	return				(TEXT2CLSID(*clsid));
 
-	if (isServer) {
-		if (!xr_strcmp(game_type_name,"single"))
-			return			(TEXT2CLSID("SV_SINGL"));
+	if (isServer)
+		if (!xr_strcmp(game_type_name, "single"))
+			return TEXT2CLSID("SV_SINGL");
 
-		if (!xr_strcmp(game_type_name,"deathmatch"))
-			return			(TEXT2CLSID("SV_DM"));
+	if (!xr_strcmp(game_type_name, "single"))
+		return TEXT2CLSID("CL_SINGL");
 
-		if (!xr_strcmp(game_type_name,"teamdeathmatch"))
-			return			(TEXT2CLSID("SV_TDM"));
-
-		if (!xr_strcmp(game_type_name,"artefacthunt"))
-			return			(TEXT2CLSID("SV_AHUNT"));
-
-		return				(TEXT2CLSID(""));
-	}		
-
-	if (!xr_strcmp(game_type_name,"single"))
-		return				(TEXT2CLSID("CL_SINGL"));
-
-	if (!xr_strcmp(game_type_name,"deathmatch"))
-		return				(TEXT2CLSID("CL_DM"));
-
-	if (!xr_strcmp(game_type_name,"teamdeathmatch"))
-		return				(TEXT2CLSID("CL_TDM"));
-
-	if (!xr_strcmp(game_type_name,"artefacthunt"))
-		return				(TEXT2CLSID("CL_AHUNT"));
-
-	return					(TEXT2CLSID(""));
+	FATAL("Unsupportet game type!");
 }
 
 void game_GameState::switch_Phase		(u32 new_phase)

@@ -10,7 +10,6 @@
 #include "UIXmlInit.h"
 #include "UIColorAnimatorWrapper.h"
 #include "UIPdaMsgListItem.h"
-#include "UIPdaKillMessage.h"
 #include "UILines.h"
 
 LPCSTR const	CHAT_LOG_ITEMS_ANIMATION	= "ui_main_msgs_short";
@@ -56,38 +55,6 @@ u32 CUIGameLog::GetTextColor(){
 	return txt_color;
 }
 
-CUIPdaKillMessage* CUIGameLog::AddLogMessage(KillMessageStruct& msg){
-	CUIPdaKillMessage* pItem = pItem = xr_new<CUIPdaKillMessage>();	
-	pItem->SetFont(GetFont());
-	pItem->SetWidth(GetDesiredChildWidth());
-	pItem->SetHeight(kill_msg_height);
-	pItem->Init(msg);
-	pItem->SetClrAnimDelay(5000.0f);
-	pItem->SetClrLightAnim(CHAT_LOG_ITEMS_ANIMATION, false, true, true, true);
-	AddWindow(pItem, true);
-	return pItem;
-}
-
-void CUIGameLog::AddChatMessage(LPCSTR msg, LPCSTR author){
-	string256 fullLine;
-	sprintf_s(fullLine, "%s %s", author, msg);
-	_TrimRight	(fullLine);
-    
-	CUIStatic* pItem = NULL;
-
-	pItem = xr_new<CUIStatic>();
-	pItem->SetTextComplexMode		(true);
-	pItem->SetText(fullLine);
-    pItem->m_pLines->SetCutWordsMode(true);
-	pItem->SetFont(GetFont());
-	pItem->SetTextColor(txt_color);
-	pItem->SetClrAnimDelay(5000.0f);
-	pItem->SetClrLightAnim(CHAT_LOG_ITEMS_ANIMATION, false, true, true, true);	
-	pItem->SetWidth(this->GetDesiredChildWidth());
-	pItem->AdjustHeightToText();
-	AddWindow(pItem, true);	
-}
-
 void CUIGameLog::SetTextAtrib(CGameFont* pFont, u32 color){
 	SetFont(pFont);
 	txt_color = color;
@@ -125,28 +92,32 @@ void CUIGameLog::Update()
 		RecalcSize			();
 
 	toDelList.clear();
-	Frect visible_rect;
+	/*dsh: не могу понять, для чего это нужно.Но из - за этого, в
+		некоторых случаях, не показываются некоторые сообщения.
+
+		Frect visible_rect;
 	GetAbsoluteRect(visible_rect);
-	for(	WINDOW_LIST_it it = m_pad->GetChildWndList().begin(); 
-			m_pad->GetChildWndList().end()!=it; 
-			++it)
+	for (WINDOW_LIST_it it = m_pad->GetChildWndList( ).begin( );
+		 m_pad->GetChildWndList( ).end( ) != it;
+		 ++it)
 	{
 		Frect	r;
 		(*it)->GetAbsoluteRect(r);
-		if(! (visible_rect.in(r.x1, r.y1) && visible_rect.in(r.x2, r.y1) && visible_rect.in(r.x1, r.y2) && visible_rect.in(r.x2, r.y2)))
+		if (!(visible_rect.in(r.x1, r.y1) && visible_rect.in(r.x2, r.y1) && visible_rect.in(r.x1, r.y2) && visible_rect.in(r.x2, r.y2)))
 		{
-			toDelList.push_back(*it);			
+			toDelList.push_back(*it);
 		}
-			
+
 	}
 
 	// Delete elements
 	{
 		xr_vector<CUIWindow*>::iterator it;
-		for (it = toDelList.begin(); it != toDelList.end(); it++)
+		for (it = toDelList.begin( ); it != toDelList.end( ); it++)
 			RemoveWindow(*it);
 	}
 
-	if(m_flags.test	(eNeedRecalc) )
-		RecalcSize			();
+	if (m_flags.test(eNeedRecalc))
+		RecalcSize( );
+	*/
 }

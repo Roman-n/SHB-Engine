@@ -149,7 +149,6 @@ private:
 	u32							m_dwDeltaUpdate ;
 	u32							m_dwLastNetUpdateTime;
 	void						UpdateDeltaUpd					( u32 LastTime );
-	void						BlockCheatLoad					()				;
 
 	BOOL						Connect2Server					(LPCSTR options);
 private:
@@ -157,7 +156,10 @@ private:
 	bool						m_bConnectResult;
 	xr_string					m_sConnectResult;
 public:	
-	void						OnGameSpyChallenge				(NET_Packet* P);
+	void						OnGameSpyChallenge(NET_Packet* P) //KRodin: удалить, если не вызывается!
+	{
+		Msg("!!Called OnGameSpyChallenge!");
+	}
 	void						OnBuildVersionChallenge			();
 	void						OnConnectResult					(NET_Packet* P);
 public:

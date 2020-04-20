@@ -28,15 +28,6 @@
     <Filter Include="config\models\weapons">
       <UniqueIdentifier>{03e5ca79-d6b2-47fc-8c7b-6cc1b7f0ba92}</UniqueIdentifier>
     </Filter>
-    <Filter Include="config\mp">
-      <UniqueIdentifier>{daced6c3-e61c-46d6-8f2b-ce83a5af2918}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="config\mp\soundmessages">
-      <UniqueIdentifier>{b04c8b25-570d-4aab-ad5b-64096fea1f40}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="config\mp\weapons_mp">
-      <UniqueIdentifier>{84d7eb83-d596-4362-bc62-18e470842762}</UniqueIdentifier>
-    </Filter>
     <Filter Include="config\prefetch">
       <UniqueIdentifier>{183bbc75-72b1-44cb-9094-3fc00013f830}</UniqueIdentifier>
     </Filter>
@@ -639,76 +630,10 @@
     <None Include="config\models\objects\wood_fence.ltx">
       <Filter>config\models\objects</Filter>
     </None>
-    <None Include="config\mp\artefacthunt_game.ltx">
-      <Filter>config\mp</Filter>
-    </None>
-    <None Include="config\mp\deathmatch_game.ltx">
-      <Filter>config\mp</Filter>
-    </None>
-    <None Include="config\mp\laststanding_game.ltx">
-      <Filter>config\mp</Filter>
-    </None>
-    <None Include="config\mp\lzo-dict.bin">
-      <Filter>config\mp</Filter>
-    </None>
-    <None Include="config\mp\map_list.ltx">
-      <Filter>config\mp</Filter>
-    </None>
-    <None Include="config\mp\mp_actor.ltx">
-      <Filter>config\mp</Filter>
-    </None>
-    <None Include="config\mp\mp_bonuses.ltx">
-      <Filter>config\mp</Filter>
-    </None>
-    <None Include="config\mp\mp_ranks.ltx">
-      <Filter>config\mp</Filter>
-    </None>
-    <None Include="config\mp\team_logo.ltx">
-      <Filter>config\mp</Filter>
-    </None>
-    <None Include="config\mp\teamdeathmatch_game.ltx">
-      <Filter>config\mp</Filter>
-    </None>
-    <None Include="config\mp\weapons_mp\ammo_mp.ltx">
-      <Filter>config\mp\weapons_mp</Filter>
-    </None>
-    <None Include="config\mp\weapons_mp\items_mp.ltx">
-      <Filter>config\mp\weapons_mp</Filter>
-    </None>
-    <None Include="config\mp\weapons_mp\outfit_mp.ltx">
-      <Filter>config\mp\weapons_mp</Filter>
-    </None>
-    <None Include="config\mp\weapons_mp\w_knife_mp.ltx">
-      <Filter>config\mp\weapons_mp</Filter>
-    </None>
-    <None Include="config\mp\weapons_mp\weapons_mp.ltx">
-      <Filter>config\mp\weapons_mp</Filter>
-    </None>
-    <None Include="config\mp\soundmessages\ahunt_snd_messages.ltx">
-      <Filter>config\mp\soundmessages</Filter>
-    </None>
-    <None Include="config\mp\soundmessages\dm_snd_messages.ltx">
-      <Filter>config\mp\soundmessages</Filter>
-    </None>
-    <None Include="config\mp\soundmessages\mp_snd_messages.ltx">
-      <Filter>config\mp\soundmessages</Filter>
-    </None>
-    <None Include="config\mp\soundmessages\tdm_snd_messages.ltx">
-      <Filter>config\mp\soundmessages</Filter>
-    </None>
-    <None Include="config\prefetch\old_variant_prefetch_globals.ltx">
-      <Filter>config\prefetch</Filter>
-    </None>
-    <None Include="config\prefetch\old_variant_prefetch_single.ltx">
-      <Filter>config\prefetch</Filter>
-    </None>
     <None Include="config\prefetch\prefetch.ltx">
       <Filter>config\prefetch</Filter>
     </None>
     <None Include="config\prefetch\prefetch_globals.ltx">
-      <Filter>config\prefetch</Filter>
-    </None>
-    <None Include="config\prefetch\prefetch_mp.ltx">
       <Filter>config\prefetch</Filter>
     </None>
     <None Include="config\prefetch\prefetch_single.ltx">
@@ -1545,9 +1470,6 @@
     <None Include="config\game_levels_music.ltx">
       <Filter>config</Filter>
     </None>
-    <None Include="config\game_maps_mp.ltx">
-      <Filter>config</Filter>
-    </None>
     <None Include="config\game_maps_single.ltx">
       <Filter>config</Filter>
     </None>
@@ -1558,9 +1480,6 @@
       <Filter>config</Filter>
     </None>
     <None Include="config\localization.ltx">
-      <Filter>config</Filter>
-    </None>
-    <None Include="config\prefetch.ltx">
       <Filter>config</Filter>
     </None>
     <None Include="config\rspec_default.ltx">
@@ -2583,15 +2502,6 @@
     <None Include="scripts\ui_main_new_tab.script">
       <Filter>scripts</Filter>
     </None>
-    <None Include="scripts\ui_mm_mp_join.script">
-      <Filter>scripts</Filter>
-    </None>
-    <None Include="scripts\ui_mm_mp_options.script">
-      <Filter>scripts</Filter>
-    </None>
-    <None Include="scripts\ui_mm_mp_server.script">
-      <Filter>scripts</Filter>
-    </None>
     <None Include="scripts\ui_mm_opt_controls.script">
       <Filter>scripts</Filter>
     </None>
@@ -2608,39 +2518,6 @@
       <Filter>scripts</Filter>
     </None>
     <None Include="scripts\ui_mm_opt_video_adv.script">
-      <Filter>scripts</Filter>
-    </None>
-    <None Include="scripts\ui_mp_main.script">
-      <Filter>scripts</Filter>
-    </None>
-    <None Include="scripts\ui_multiplayer_base.script">
-      <Filter>scripts</Filter>
-    </None>
-    <None Include="scripts\ui_multiplayer_base_tab.script">
-      <Filter>scripts</Filter>
-    </None>
-    <None Include="scripts\ui_multiplayer_create.script">
-      <Filter>scripts</Filter>
-    </None>
-    <None Include="scripts\ui_multiplayer_create_base_tab.script">
-      <Filter>scripts</Filter>
-    </None>
-    <None Include="scripts\ui_multiplayer_create_map_tab.script">
-      <Filter>scripts</Filter>
-    </None>
-    <None Include="scripts\ui_multiplayer_dialog.script">
-      <Filter>scripts</Filter>
-    </None>
-    <None Include="scripts\ui_multiplayer_find.script">
-      <Filter>scripts</Filter>
-    </None>
-    <None Include="scripts\ui_multiplayer_gametype_tab.script">
-      <Filter>scripts</Filter>
-    </None>
-    <None Include="scripts\ui_multiplayer_map_tab.script">
-      <Filter>scripts</Filter>
-    </None>
-    <None Include="scripts\ui_multiplayer_options_tab.script">
       <Filter>scripts</Filter>
     </None>
     <None Include="scripts\ui_numpad.script">
@@ -3752,12 +3629,6 @@
     <Xml Include="config\ui\motion_icon_16.xml">
       <Filter>config\ui</Filter>
     </Xml>
-    <Xml Include="config\ui\mp_buy_menu.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\mp_buy_menu_buttons.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
     <Xml Include="config\ui\news.xml">
       <Filter>config\ui</Filter>
     </Xml>
@@ -3798,12 +3669,6 @@
       <Filter>config\ui</Filter>
     </Xml>
     <Xml Include="config\ui\scroll_bar.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\skin_selector.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\skin_selector_16.xml">
       <Filter>config\ui</Filter>
     </Xml>
     <Xml Include="config\ui\sleep_dialog.xml">
@@ -3878,25 +3743,7 @@
     <Xml Include="config\ui\ui_custom_msgs.xml">
       <Filter>config\ui</Filter>
     </Xml>
-    <Xml Include="config\ui\ui_game_ahunt.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\ui_game_ahunt_16.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\ui_game_dm.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\ui_game_dm_16.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
     <Xml Include="config\ui\ui_game_over.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\ui_game_tdm.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\ui_game_tdm_16.xml">
       <Filter>config\ui</Filter>
     </Xml>
     <Xml Include="config\ui\ui_hud.xml">
@@ -3938,40 +3785,13 @@
     <Xml Include="config\ui\ui_mm_main.xml">
       <Filter>config\ui</Filter>
     </Xml>
-    <Xml Include="config\ui\ui_mm_mp.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\ui_mm_mp_gs_ext.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\ui_mm_mp_gs_ext_16.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\ui_mm_mp_tabclient.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\ui_mm_mp_taboptions.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\ui_mm_mp_tabserver.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
     <Xml Include="config\ui\ui_mm_opt.xml">
       <Filter>config\ui</Filter>
     </Xml>
     <Xml Include="config\ui\ui_mm_save_dlg.xml">
       <Filter>config\ui</Filter>
     </Xml>
-    <Xml Include="config\ui\ui_models_multiplayer.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
     <Xml Include="config\ui\ui_movies.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\ui_mp_icon_rank.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\ui_mp_main.xml">
       <Filter>config\ui</Filter>
     </Xml>
     <Xml Include="config\ui\ui_npc_monster.xml">
@@ -3995,22 +3815,10 @@
     <Xml Include="config\ui\ui_statistics.xml">
       <Filter>config\ui</Filter>
     </Xml>
-    <Xml Include="config\ui\ui_team_logo.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\ui_team_logo_small.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
     <Xml Include="config\ui\ui_videoplayer.xml">
       <Filter>config\ui</Filter>
     </Xml>
     <Xml Include="config\ui\video_templ.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\voting_category.xml">
-      <Filter>config\ui</Filter>
-    </Xml>
-    <Xml Include="config\ui\voting_category_16.xml">
       <Filter>config\ui</Filter>
     </Xml>
     <Xml Include="config\ui\zone_map.xml">

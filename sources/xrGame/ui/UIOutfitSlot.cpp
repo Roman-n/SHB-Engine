@@ -35,32 +35,6 @@ void CUIOutfitDragDropList::SetOutfit(CUICellItem* itm)
 	
 	m_background->SetStretchTexture		(true);
 
-
-	if ((GameID() != GAME_SINGLE) && !itm)
-	{
-		CObject *pActor = NULL;
-
-        pActor = smart_cast<CActor*>(Level().CurrentEntity());
-
-		xr_string a;
-		if (pActor)
-			a = *pActor->cNameVisual();
-		else
-			a = *m_default_outfit;
-
-		xr_string::iterator it = std::find(a.rbegin(), a.rend(), '\\').base(); 
-
-		// Cut leading full path
-		if (it != a.begin())
-			a.erase(a.begin(), it);
-		// Cut trailing ".ogf"
-		R_ASSERT(xr_strlen(a.c_str()) > 4);
-		if ('.' == a[a.size() - 4])
-			a.erase(a.size() - 4);
-
-		m_background->InitTexture(a.c_str());
-	}
-	else {
 		if(itm)
 		{
 			PIItem _iitem	= (PIItem)itm->m_pData;
@@ -82,7 +56,7 @@ void CUIOutfitDragDropList::SetOutfit(CUICellItem* itm)
 		m_background->SetShader				(InventoryUtilities::GetCharIconsShader());
         m_background->SetOriginalRect		(r);
 		*/
-	}
+	
 
 	m_background->TextureAvailable		(true);
 	m_background->TextureOn				();
@@ -118,7 +92,6 @@ CUICellItem* CUIOutfitDragDropList::RemoveItem(CUICellItem* itm, bool force_root
 	SetOutfit							(NULL);
 	return								ci;
 }
-
 
 void CUIOutfitDragDropList::Draw()
 {

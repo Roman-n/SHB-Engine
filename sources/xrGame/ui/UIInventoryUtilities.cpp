@@ -15,22 +15,22 @@
 #include "../game_base_space.h"
 #include "../actor.h"
 
-#define BUY_MENU_TEXTURE "ui\\ui_mp_buy_menu"
+//#define BUY_MENU_TEXTURE "ui\\ui_mp_buy_menu"
 #define EQUIPMENT_ICONS  "ui\\ui_icon_equipment"
-#define CHAR_ICONS		 "ui\\ui_icons_npc"
-#define MAP_ICONS		 "ui\\ui_icons_map"
-#define MP_CHAR_ICONS	 "ui\\ui_models_multiplayer"
+//#define CHAR_ICONS		 "ui\\ui_icons_npc"
+//#define MAP_ICONS		 "ui\\ui_icons_map"
+//#define MP_CHAR_ICONS	 "ui\\ui_models_multiplayer"
 
 const LPCSTR relationsLtxSection	= "game_relations";
 const LPCSTR ratingField			= "rating_names";
 const LPCSTR reputationgField		= "reputation_names";
 const LPCSTR goodwillField			= "goodwill_names";
 
-ref_shader	g_BuyMenuShader			= NULL;
+//ref_shader	g_BuyMenuShader			= NULL;
 ref_shader	g_EquipmentIconsShader	= NULL;
-ref_shader	g_MPCharIconsShader		= NULL;
-ref_shader	g_tmpWMShader			= NULL;
-static CUIStatic*	GetUIStatic				();
+//ref_shader	g_MPCharIconsShader		= NULL;
+//ref_shader	g_tmpWMShader			= NULL;
+//static CUIStatic*	GetUIStatic				();
 
 typedef				std::pair<CHARACTER_RANK_VALUE, shared_str>	CharInfoStringID;
 DEF_MAP				(CharInfoStrings, CHARACTER_RANK_VALUE, shared_str);
@@ -41,15 +41,15 @@ CharInfoStrings		*charInfoGoodwillStrings	= NULL;
 
 void InventoryUtilities::CreateShaders()
 {
-	g_tmpWMShader.create("effects\\wallmark",  "wm\\wm_grenade");
+//	g_tmpWMShader.create("effects\\wallmark",  "wm\\wm_grenade");
 }
 
 void InventoryUtilities::DestroyShaders()
 {
-	g_BuyMenuShader.destroy			();
+//	g_BuyMenuShader.destroy			();
 	g_EquipmentIconsShader.destroy	();
-	g_MPCharIconsShader.destroy		();
-	g_tmpWMShader.destroy			();
+//	g_MPCharIconsShader.destroy		();
+//	g_tmpWMShader.destroy			();
 }
 
 bool InventoryUtilities::GreaterRoomInRuck(PIItem item1, PIItem item2)
@@ -154,16 +154,6 @@ bool InventoryUtilities::FreeRoom_inBelt	(TIItemContainer& item_list, PIItem _it
 	return true;
 }
 
-ref_shader& InventoryUtilities::GetBuyMenuShader()
-{	
-	if(!g_BuyMenuShader)
-	{
-		g_BuyMenuShader.create("hud\\default", BUY_MENU_TEXTURE);
-	}
-
-	return g_BuyMenuShader;
-}
-
 ref_shader& InventoryUtilities::GetEquipmentIconsShader()
 {	
 	if(!g_EquipmentIconsShader)
@@ -172,16 +162,6 @@ ref_shader& InventoryUtilities::GetEquipmentIconsShader()
 	}
 
 	return g_EquipmentIconsShader;
-}
-
-ref_shader&	InventoryUtilities::GetMPCharIconsShader()
-{
-	if(!g_MPCharIconsShader)
-	{
-		g_MPCharIconsShader.create("hud\\default",  MP_CHAR_ICONS);
-	}
-
-	return g_MPCharIconsShader;
 }
 
 
@@ -453,8 +433,6 @@ LPCSTR InventoryUtilities::GetGoodwillAsText(CHARACTER_GOODWILL goodwill)
 // (для tutorial)
 void InventoryUtilities::SendInfoToActor(LPCSTR info_id)
 {
-	if (GameID() != GAME_SINGLE) return;
-	
 	CActor* actor = smart_cast<CActor*>(Level().CurrentEntity());
 	if(actor)
 	{

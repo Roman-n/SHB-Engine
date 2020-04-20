@@ -343,16 +343,6 @@ void game_sv_GameState::Create					(shared_str &options)
 				//u16 res					= 
 				O->r_u8	();
 
-				if (GameType != rpgtGameAny)
-				{
-					if ((GameType == rpgtGameDeathmatch && Type() != GAME_DEATHMATCH) ||
-						(GameType == rpgtGameTeamDeathmatch && Type() != GAME_TEAMDEATHMATCH)	||
-						(GameType == rpgtGameArtefactHunt && Type() != GAME_ARTEFACTHUNT)
-						)
-					{
-						continue;
-					};
-				};
 				switch (type)
 				{
 				case rptActorSpawn:
@@ -550,7 +540,7 @@ void game_sv_GameState::Update		()
 {
 	for (u32 it=0; it<m_server->client_Count(); ++it) {
 		xrClientData*	C			= (xrClientData*)	m_server->client_Get(it);
-		C->ps->ping					= u16(C->stats.getPing());
+		C->ps->ping					= u16(0);
 	}
 
 	if (Level().game) {
@@ -655,13 +645,9 @@ void game_sv_GameState::OnEvent (NET_Packet &tNetPacket, u16 type, u32 time, Cli
 			u16     id_src				= tNetPacket.r_u16();
 			CSE_Abstract*	e_src		= get_entity_from_eid	(id_src	);
 
-			if(!e_src)  // && !IsGameTypeSingle() added by andy because of Phantom does not have server entity
+			if(!e_src)  // added by andy because of Phantom does not have server entity
 			{
-				if( IsGameTypeSingle() ) break;
-
-				game_PlayerState* ps	= get_eid(id_src);
-				if (!ps)				break;
-				id_src					= ps->GameID;
+				break;
 			}
 
 			OnHit(id_src, id_dest, tNetPacket);

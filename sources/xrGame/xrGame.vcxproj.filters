@@ -7400,9 +7400,6 @@
     <ClCompile Include="Level_start.cpp">
       <Filter>Core\Client\Level</Filter>
     </ClCompile>
-    <ClCompile Include="LevelGameDef.cpp">
-      <Filter>Core\Client\Level</Filter>
-    </ClCompile>
     <ClCompile Include="LevelFogOfWar.cpp">
       <Filter>Core\Client\Level\Map Fog Of War</Filter>
     </ClCompile>
@@ -8153,9 +8150,6 @@
     <ClCompile Include="game_cl_base_weapon_usage_statistic.cpp">
       <Filter>Core\Server\Games\client\base</Filter>
     </ClCompile>
-    <ClCompile Include="game_cl_base_weapon_usage_statistic_save.cpp">
-      <Filter>Core\Server\Games\client\base</Filter>
-    </ClCompile>
     <ClCompile Include="game_sv_base.cpp">
       <Filter>Core\Server\Games\server</Filter>
     </ClCompile>
@@ -8232,9 +8226,6 @@
       <Filter>Core\Server\ServerEntities\objects_alife_monsters</Filter>
     </ClCompile>
     <ClCompile Include="xrServer_Objects_ALife_Monsters_script2.cpp">
-      <Filter>Core\Server\ServerEntities\objects_alife_monsters</Filter>
-    </ClCompile>
-    <ClCompile Include="xrserver_objects_alife_monsters_script3.cpp">
       <Filter>Core\Server\ServerEntities\objects_alife_monsters</Filter>
     </ClCompile>
     <ClCompile Include="xrServer_Objects_ALife_Monsters_script4.cpp">
@@ -8932,6 +8923,9 @@
     </ClCompile>
     <ClCompile Include="ui\UIGameLog.cpp">
       <Filter>UI\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="xrserver_objects_Alife_Monsters_script3.cpp">
+      <Filter>Core\Server\ServerEntities\objects_alife_monsters</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

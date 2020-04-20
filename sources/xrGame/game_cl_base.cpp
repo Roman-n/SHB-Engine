@@ -12,8 +12,6 @@
 #include "string_table.h"
 #include "game_cl_base_weapon_usage_statistic.h"
 
-#include "game_sv_mp_vote_flags.h"
-
 game_cl_GameState::game_cl_GameState()
 {
 	m_WeaponUsageStatistic		= xr_new<WeaponUsageStatistic>();
@@ -58,10 +56,11 @@ void	game_cl_GameState::net_import_GameTime		(NET_Packet& P)
 	float			EnvironmentTimeFactor;
 	P.r_float		(EnvironmentTimeFactor);
 
-	u64 OldTime = Level().GetEnvironmentGameTime();
+// KRodin: закомментировано из-за бага с резкой сменой погоды при кручении таймфактора.
+//	u64 OldTime = Level().GetEnvironmentGameTime();
 	Level().SetEnvironmentGameTimeFactor	(GameEnvironmentTime,EnvironmentTimeFactor);
-	if (OldTime > GameEnvironmentTime)
-		GamePersistent().Environment().Invalidate();
+//	if (OldTime > GameEnvironmentTime)
+//		GamePersistent().Environment().Invalidate();
 }
 
 void	game_cl_GameState::net_import_state	(NET_Packet& P)
@@ -102,25 +101,13 @@ void	game_cl_GameState::net_import_state	(NET_Packet& P)
 		if( I!=players.end() )
 		{
 			IP = I->second;
-			//***********************************************
-			u16 OldFlags = IP->flags__;
-			u8 OldVote = IP->m_bCurrentVoteAgreed;
-			//-----------------------------------------------
 			IP->net_Import(P);
-			//-----------------------------------------------
-			if (OldFlags != IP->flags__)
-				if (Type() != GAME_SINGLE) OnPlayerFlagsChanged(IP);
-			if (OldVote != IP->m_bCurrentVoteAgreed)
-				OnPlayerVoted(IP);
-			//***********************************************
 
 			players_new.insert(mk_pair(ID,IP));
 			players.erase(I);
 		}else{
 			IP = createPlayerState();
 			IP->net_Import		(P);
-
-			if (Type() != GAME_SINGLE) OnPlayerFlagsChanged(IP);
 
 			players_new.insert(mk_pair(ID,IP));
 		}
@@ -148,24 +135,12 @@ void	game_cl_GameState::net_import_update(NET_Packet& P)
 	if (players.end()!=I)
 	{
 		game_PlayerState* IP		= I->second;
-//		CopyMemory	(&IP,&PS,sizeof(PS));		
-		//***********************************************
-		u16 OldFlags = IP->flags__;
-		u8 OldVote = IP->m_bCurrentVoteAgreed;
-		//-----------------------------------------------
 		IP->net_Import(P);
-		//-----------------------------------------------
-		if (OldFlags != IP->flags__)
-			if (Type() != GAME_SINGLE) OnPlayerFlagsChanged(IP);
-		if (OldVote != IP->m_bCurrentVoteAgreed)
-			OnPlayerVoted(IP);
-		//***********************************************
 	}
 	else
 	{
 		game_PlayerState*	PS = createPlayerState();
 		PS->net_Import		(P);
-		if (Type() != GAME_SINGLE) OnPlayerFlagsChanged(PS);
 		xr_delete(PS);
 	};
 
@@ -282,18 +257,6 @@ void game_cl_GameState::shedule_Update		(u32 dt)
 		if( HUD().GetUI() )
 			m_game_ui_custom = HUD().GetUI()->UIGame();
 	} 
-	//---------------------------------------
-	switch (Phase())
-	{
-	case GAME_PHASE_INPROGRESS:
-		{
-			if (!IsGameTypeSingle())
-				m_WeaponUsageStatistic->Update();
-		}break;
-	default:
-		{
-		}break;
-	};
 };
 
 void game_cl_GameState::StartStopMenu(CUIDialogWnd* pDialog, bool bDoHideIndicators)

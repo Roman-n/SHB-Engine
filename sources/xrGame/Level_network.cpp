@@ -21,7 +21,6 @@ extern bool	g_b_ClearGameCaptions;
 
 void CLevel::remove_objects	()
 {
-	if (!IsGameTypeSingle()) Msg("CLevel::remove_objects - Start");
 	BOOL						b_stored = psDeviceFlags.test(rsDisableObjectsAsCrows);
 
 	Game().reset_ui				();
@@ -33,7 +32,6 @@ void CLevel::remove_objects	()
 	
 	snd_Events.clear			();
 	for (int i=0; i<6; ++i) {
-		psNET_Flags.set			(NETFLAG_MINIMIZEUPDATES,FALSE);
 		// ugly hack for checks that update is twice on frame
 		// we need it since we do updates for checking network messages
 		++(Device.dwFrame);
@@ -82,7 +80,6 @@ void CLevel::remove_objects	()
 
 //.	xr_delete									(m_seniority_hierarchy_holder);
 //.	m_seniority_hierarchy_holder				= xr_new<CSeniorityHierarchyHolder>();
-	if (!IsGameTypeSingle()) Msg("CLevel::remove_objects - End");
 }
 
 #ifdef DEBUG
@@ -116,11 +113,6 @@ void CLevel::net_Stop		()
 
 void CLevel::ClientSend()
 {
-	if (GameID() == GAME_SINGLE || OnClient())
-	{
-		if ( !net_HasBandwidth() ) return;
-	};
-
 	NET_Packet				P;
 	u32						start	= 0;
 	//----------- for E3 -----------------------------
@@ -133,8 +125,6 @@ void CLevel::ClientSend()
 			if (!pObj->getDestroy() && pObj->net_Relevant())
 			{				
 				P.w_begin		(M_CL_UPDATE);
-				
-
 				P.w_u16			(u16(pObj->ID())	);
 				P.w_u32			(0);	//reserved place for client's ping
 
@@ -159,7 +149,7 @@ void CLevel::ClientSend()
 	};
 	if (OnClient()) 
 	{
-		Flush_Send_Buffer();
+		FATAL(""); //Это не должно быть вызвано
 		return;
 	}
 	//-------------------------------------------------
@@ -234,22 +224,9 @@ void CLevel::Send		(NET_Packet& P, u32 dwFlags, u32 dwTimeout)
 {
 	if (IsDemoPlay() && m_bDemoStarted) return;
 	// optimize the case when server located in our memory
-	if(psNET_direct_connect){
-		ClientID	_clid;
-		_clid.set	(1);
-		Server->OnMessage	(P,	_clid );
-	}else
-	if (Server && game_configured && OnServer() )
-	{
-		Server->OnMessage	(P,Game().local_svdpnid	);
-	}else											
-		IPureClient::Send	(P,dwFlags,dwTimeout	);
-
-	if (g_pGameLevel && Level().game && GameID() != GAME_SINGLE && !g_SV_Disable_Auth_Check)		{
-		// anti-cheat
-		phTimefactor		= 1.f					;
-		psDeviceFlags.set	(rsConstantFPS,FALSE)	;	
-	}
+	ClientID	_clid;
+	_clid.set	(1);
+	Server->OnMessage	(P,	_clid );
 }
 
 void CLevel::net_Update	()
@@ -287,7 +264,7 @@ BOOL			CLevel::Connect2Server				(LPCSTR options)
 	m_bConnectResult			= true	;
 	if (!Connect(options))		return	FALSE;
 	//---------------------------------------------------------------------------
-	if(psNET_direct_connect) m_bConnectResultReceived = true;
+	m_bConnectResultReceived = true;
 	u32 EndTime = GetTickCount() + ConnectionTimeOut;
 	while	(!m_bConnectResultReceived)		{ 
 		ClientReceive	();
@@ -306,11 +283,11 @@ BOOL			CLevel::Connect2Server				(LPCSTR options)
 			P.w_u8(0);
 			P.w_stringZ("Data verification failed. Cheater? [1]");
 
-			OnConnectResult(&P);			
+			OnConnectResult(&P);
 		}
 		if (net_isFails_Connect())
 		{
-			OnConnectRejected	();	
+			OnConnectRejected	();
 			Disconnect		()	;
 			return	FALSE;
 		}
@@ -319,19 +296,12 @@ BOOL			CLevel::Connect2Server				(LPCSTR options)
 	Msg							("%c client : connection %s - <%s>", m_bConnectResult ?'*':'!', m_bConnectResult ? "accepted" : "rejected", m_sConnectResult.c_str());
 	if		(!m_bConnectResult) 
 	{
-		OnConnectRejected	();	
+		OnConnectRejected	();
 		Disconnect		()	;
 		return FALSE		;
 	};
 
-	
-	if(psNET_direct_connect)
-		net_Syncronised = TRUE;
-	else
-		net_Syncronize	();
-
-	while (!net_IsSyncronised()) {
-	};
+	net_Syncronised = TRUE;
 
 	//---------------------------------------------------------------------------
 	P.w_begin	(M_CLIENT_REQUEST_CONNECTION_DATA);
@@ -359,28 +329,7 @@ void			CLevel::OnConnectResult				(NET_Packet*	P)
 	P->r_stringZ(ResultStr)		;
 	if (!result)				
 	{
-		m_bConnectResult	= false			;	
-		switch (res1)
-		{
-		case 0:		//Standart error
-			{
-				if (!xr_strcmp(ResultStr, "Data verification failed. Cheater? [2]"))
-					MainMenu()->SetErrorDialog(CMainMenu::ErrDifferentVersion);
-			}break;
-		case 1:		//GameSpy CDKey
-			{
-				if (!xr_strcmp(ResultStr, "Invalid CD Key"))
-					MainMenu()->SetErrorDialog(CMainMenu::ErrCDKeyInvalid);//, ResultStr);
-				if (!xr_strcmp(ResultStr, "CD Key in use"))
-					MainMenu()->SetErrorDialog(CMainMenu::ErrCDKeyInUse);//, ResultStr);
-				if (!xr_strcmp(ResultStr, "Your CD Key is disabled. Contact customer service."))
-					MainMenu()->SetErrorDialog(CMainMenu::ErrCDKeyDisabled);//, ResultStr);
-			}break;		
-		case 2:		//login+password
-			{
-				MainMenu()->SetErrorDialog(CMainMenu::ErrInvalidPassword);
-			}break;		
-		}
+		m_bConnectResult	= false			;
 	};	
 	m_sConnectResult			= ResultStr;
 	
@@ -468,31 +417,17 @@ void			CLevel::ClearAllObjects				()
 };
 
 void				CLevel::OnInvalidHost			()
-{
-	IPureClient::OnInvalidHost();
-	if (MainMenu()->GetErrorDialogType() == CMainMenu::ErrNoError)
-		MainMenu()->SetErrorDialog(CMainMenu::ErrInvalidHost);
-};
+{};
 
 void				CLevel::OnInvalidPassword		()
-{
-	IPureClient::OnInvalidPassword();
-	MainMenu()->SetErrorDialog(CMainMenu::ErrInvalidPassword);
-};
+{};
 
 void				CLevel::OnSessionFull			()
-{
-	IPureClient::OnSessionFull();
-	if (MainMenu()->GetErrorDialogType() == CMainMenu::ErrNoError)
-		MainMenu()->SetErrorDialog(CMainMenu::ErrSessionFull);
-}
+{}
 
 void				CLevel::OnConnectRejected		()
 {
 	IPureClient::OnConnectRejected();
-
-//	if (MainMenu()->GetErrorDialogType() != CMainMenu::ErrNoError)
-//		MainMenu()->SetErrorDialog(CMainMenu::ErrServerReject);
 };
 
 void				CLevel::net_OnChangeSelfName			(NET_Packet* P)

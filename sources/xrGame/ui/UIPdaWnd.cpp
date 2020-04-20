@@ -95,9 +95,7 @@ void CUIPdaWnd::Init()
 	UIMapWnd				= xr_new<CUIMapWnd>();
 	UIMapWnd->Init			("pda_map.xml","map_wnd");
 
-	if( IsGameTypeSingle() )
-	{
-		// Oкно коммуникaции
+	// Oкно коммуникaции
 		UIPdaContactsWnd		= xr_new<CUIPdaContactsWnd>();
 		UIPdaContactsWnd->Init	();
 
@@ -120,7 +118,7 @@ void CUIPdaWnd::Init()
 
 		UIEventsWnd				= xr_new<CUIEventsWnd>();
 		UIEventsWnd->Init		();
-	}
+
 	// Tab control
 	UITabControl				= xr_new<CUITabControl>(); UITabControl->SetAutoDelete(true);
 	UIMainPdaFrame->AttachChild	(UITabControl);

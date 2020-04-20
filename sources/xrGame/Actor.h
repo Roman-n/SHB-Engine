@@ -670,7 +670,7 @@ protected:
 		Fvector							m_AutoPickUp_AABB_Offset;
 
 		void							Check_for_AutoPickUp			();
-		void							SelectBestWeapon				(CObject* O);
+
 public:
 		void							SetWeaponHideState				(u32 State, bool bSet);
 		virtual CCustomOutfit*			GetOutfit() const;
@@ -700,11 +700,6 @@ protected:
 	virtual		bool			Check_for_BackStab_Bone			(u16 element);
 public:
 	virtual void				SetHitInfo						(CObject* who, CObject* weapon, s16 element, Fvector Pos, Fvector Dir);
-
-	virtual	void				OnHitHealthLoss					(float NewHealth);	
-	virtual	void				OnCriticalHitHealthLoss			();
-	virtual	void				OnCriticalWoundHealthLoss		();
-	virtual void				OnCriticalRadiationHealthLoss	();
 
 	virtual	bool				InventoryAllowSprint			();
 	virtual void				OnNextWeaponSlot				();

@@ -16,7 +16,6 @@
 
 void CLevel::ClientReceive()
 {
-
 	Demo_StartFrame();
 
 	Demo_Update();
@@ -35,20 +34,6 @@ void CLevel::ClientReceive()
 		P->r_begin	(m_type);
 		switch (m_type)
 		{
-		case M_MAP_SYNC:
-			{
-				shared_str map_name;
-				P->r_stringZ(map_name);
-
-				shared_str _name		= net_Hosts.size() ? net_Hosts.front().dpSessionName:"";
-
-				if(_name.size() && _name!=map_name && OnClient())
-				{
-					Msg("!!! map sync failed. current is[%s] server is[%s]",m_name.c_str(), map_name.c_str());
-					Engine.Event.Defer	("KERNEL:disconnect");
-					Engine.Event.Defer	("KERNEL:start",m_caServerOptions.size() ? size_t( xr_strdup(*m_caServerOptions)) : 0, m_caClientOptions.size() ? size_t(xr_strdup(*m_caClientOptions)) : 0);
-				}
-			}break;
 		case M_SPAWN:			
 			{
 				if (!m_bGameConfigStarted || !bReady) 
@@ -92,26 +77,8 @@ void CLevel::ClientReceive()
 				// они досылаются через M_UPDATE_OBJECTS
 		case M_UPDATE_OBJECTS:
 			{
-				Objects.net_Import		(P);
-
-				if (OnClient()) UpdateDeltaUpd(timeServer());
-				IClientStatistic pStat = Level().GetStatistic();
-				u32 dTime = 0;
-				
-				if ((Level().timeServer() + pStat.getPing()) < P->timeReceive)
-				{
-					dTime = pStat.getPing();
-				}
-				else
-					dTime = Level().timeServer() - P->timeReceive + pStat.getPing();
-
-				u32 NumSteps = ph_world->CalcNumSteps(dTime);
-				SetNumCrSteps(NumSteps);
+			FATAL(""); //Это не должно быть вызвано
 			}break;
-//		case M_UPDATE_OBJECTS:
-//			{
-//				Objects.net_Import		(P);
-//			}break;
 		//----------- for E3 -----------------------------
 		case M_CL_UPDATE:
 			{
@@ -241,7 +208,7 @@ void CLevel::ClientReceive()
 			}break;
 		case M_GAMESPY_CDKEY_VALIDATION_CHALLENGE:
 			{
-				OnGameSpyChallenge(P);
+			OnGameSpyChallenge(P); //Убрать это если не вызывается!
 			}break;
 		case M_AUTH_CHALLENGE:
 			{
@@ -303,24 +270,8 @@ void CLevel::ClientReceive()
 			{
 				net_OnChangeSelfName(P);
 			}break;
-		case M_BULLET_CHECK_RESPOND:
-			{
-				if (!game) break;
-				if (GameID() != GAME_SINGLE)
-					Game().m_WeaponUsageStatistic->On_Check_Respond(P);
-			}break;
-		case M_STATISTIC_UPDATE:
-			{
-				if (!game) break;
-				if (GameID() != GAME_SINGLE)
-					Game().m_WeaponUsageStatistic->OnUpdateRequest(P);
-			}break;
-		case M_STATISTIC_UPDATE_RESPOND:
-			{
-				if (!game) break;
-				if (GameID() != GAME_SINGLE)
-					Game().m_WeaponUsageStatistic->OnUpdateRespond(P);
-			}break;
+		default:
+			break;
 		}
 
 		net_msg_Release();
@@ -345,8 +296,6 @@ void				CLevel::OnMessage				(void* data, u32 size)
 		{
 //			NET_Packet *P = &(m_aDemoData.front());
 			DemoDataStruct *P = &(m_aDemoData.front());
-			u32 CurTime = timeServer_Async();
-			timeServer_UserDelta(P->m_dwTimeReceive - CurTime);
 			m_bDemoStarted = TRUE;
 			Msg("! ------------- Demo Started ------------");
 			m_dwCurDemoFrame = P->m_dwFrame;

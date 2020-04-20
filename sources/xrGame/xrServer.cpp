@@ -12,13 +12,7 @@
 #include "..\XR_3DA\IGame_Persistent.h"
 
 #include "..\XR_3DA\XR_IOConsole.h"
-//#include "script_engine.h"
 #include "ui/UIInventoryUtilities.h"
-
-#pragma warning(push)
-#pragma warning(disable:4995)
-#include <malloc.h>
-#pragma warning(pop)
 
 xrClientData::xrClientData	():IClient(Device.GetTimerGlobal())
 {
@@ -91,44 +85,11 @@ void		xrServer::client_Replicate	()
 IClient*	xrServer::client_Find_Get	(ClientID ID)
 {
 	ip_address				cAddress;
-	DWORD	dwPort			= 0;
 
-	if ( !psNET_direct_connect )
-		GetClientAddress( ID, cAddress, &dwPort );
-	else
-		cAddress.set( "127.0.0.1" );
-
-	if ( !psNET_direct_connect )
-	{		
-		for ( u32 i = 0; i < net_Players_disconnected.size(); ++i )
-		{
-			IClient* CLX	= net_Players_disconnected[i];
-
-			if ( CLX->m_cAddress == cAddress )
-			{				
-				net_Players_disconnected.erase( net_Players_disconnected.begin()+i );
-
-				CLX->m_dwPort				= dwPort;
-				CLX->flags.bReconnect		= TRUE;
-				
-				csPlayers.Enter();
-				net_Players.push_back( CLX );
-				net_Players.back()->server = this;
-				csPlayers.Leave();
-
-				Msg							( "# Player found" );
-				return						CLX;
-			};
-		};
-	};
+	cAddress.set( "127.0.0.1" );
 
 	IClient* newCL = client_Create();
 	newCL->ID = ID;
-	if(!psNET_direct_connect)
-	{
-		newCL->m_cAddress	= cAddress;	
-		newCL->m_dwPort		= dwPort;
-	}
 	
 	csPlayers.Enter();
 	net_Players.push_back( newCL );
@@ -198,7 +159,7 @@ void		xrServer::client_Destroy	(IClient* C)
 			else
 			{
 				C->dwTime_LastUpdate = Device.dwTimeGlobal;
-				net_Players_disconnected.push_back(C);				
+				net_Players_disconnected.push_back(C);
 				((xrClientData*)C)->Clear();
 			};
 			net_Players.erase	(net_Players.begin()+I);
@@ -269,13 +230,7 @@ void xrServer::Update	()
 
 	PerformCheckClientsForMaxPing	();
 
-	Flush_Clients_Buffers			();
 	csPlayers.Leave					();
-	
-	if( 0==(Device.dwFrame%100) )//once per 100 frames
-	{
-		UpdateBannedList();
-	}
 }
 
 void xrServer::SendUpdatesToAll()
@@ -290,12 +245,13 @@ void xrServer::SendUpdatesToAll()
 		// Initialize process and check for available bandwidth
 		xrClientData*	Client			= (xrClientData*) net_Players	[client];
 		if (!Client->net_Ready)			continue;
-		if ( !HasBandwidth(Client) 
+		if ( false
 
 #ifdef DEBUG
 			&& !g_sv_SendUpdate
 #endif
-			) continue;		
+
+			) continue;
 
 		// Send relevant entities to client
 		NET_Packet						Packet;
@@ -388,7 +344,6 @@ void xrServer::SendUpdatesToAll()
 				}
 //.#endif
 
-				
 				SendTo			(Client->ID,ToSend,net_flags(FALSE,TRUE));
 			}
 		}
@@ -511,7 +466,7 @@ u32 xrServer::OnMessage	(NET_Packet& P, ClientID sender)			// Non-Zero means bro
 			if (!CL->net_PassUpdates)
 				break;
 			//-------------------------------------------------------------------
-			u32 ClientPing = CL->stats.getPing();
+			u32 ClientPing = 0;
 			P.w_seek(P.r_tell()+2, &ClientPing, 4);
 			//-------------------------------------------------------------------
 			if (SV_Client) 
@@ -699,7 +654,7 @@ void xrServer::SendTo_LL			(ClientID ID, void* data, u32 size, u32 dwFlags, u32 
 		IClient* pClient = ID_to_client(ID);
 		if (!pClient) return;
 
-		IPureServer::SendTo_Buf(ID,data,size,dwFlags,dwTimeout);
+		FATAL(""); //Это не должно быть вызвано
 	}
 }
 
@@ -771,8 +726,7 @@ void			xrServer::Server_Client_Check	( IClient* CL )
 
 bool		xrServer::OnCL_QueryHost		() 
 {
-	if (game->Type() == GAME_SINGLE) return false;
-	return (client_Count() != 0); 
+	return false;
 };
 
 CSE_Abstract*	xrServer::GetEntity			(u32 Num)
@@ -916,7 +870,6 @@ void xrServer::PerformCheckClientsForMaxPing()
 
 			if(Client->m_ping_warn.m_maxPingWarnings >= g_sv_maxPingWarningsCount)
 			{  //kick
-				Level().Server->DisconnectClient		(Client);
 			}else
 			{ //send warning
 				NET_Packet		P;	
@@ -932,11 +885,6 @@ void xrServer::PerformCheckClientsForMaxPing()
 	};
 }
 
-extern	s32		g_sv_dm_dwFragLimit;
-extern  s32		g_sv_ah_dwArtefactsNum;
-extern	s32		g_sv_dm_dwTimeLimit;
-extern	int		g_sv_ah_iReinforcementTime;
-
 xr_token game_types[];
 void xrServer::GetServerInfo( CServerInfo* si )
 {
@@ -948,32 +896,12 @@ void xrServer::GetServerInfo( CServerInfo* si )
 	si->AddItem( "Uptime", time, RGB(255,228,0) );
 
 	strcpy_s( tmp256, get_token_name(game_types, game->Type() ) );
-	if ( game->Type() == GAME_DEATHMATCH || game->Type() == GAME_TEAMDEATHMATCH )
-	{
-		strcat_s( tmp256, " [" );
-		strcat_s( tmp256, itoa( g_sv_dm_dwFragLimit, tmp, 10 ) );
-		strcat_s( tmp256, "] " );
-	}
-	else if ( game->Type() == GAME_ARTEFACTHUNT )
-	{
-		strcat_s( tmp256, " [" );
-		strcat_s( tmp256, itoa( g_sv_ah_dwArtefactsNum, tmp, 10 ) );
-		strcat_s( tmp256, "] " );
-		g_sv_ah_iReinforcementTime;
-	}
 	
 	//if ( g_sv_dm_dwTimeLimit > 0 )
 	{
 		strcat_s( tmp256, " time limit [" );
-		strcat_s( tmp256, itoa( g_sv_dm_dwTimeLimit, tmp, 10 ) );
 		strcat_s( tmp256, "] " );
 	}
-	if ( game->Type() == GAME_ARTEFACTHUNT )
-	{
-		strcat_s( tmp256, " RT [" );
-		strcat_s( tmp256, itoa( g_sv_ah_iReinforcementTime, tmp, 10 ) );
-		strcat_s( tmp256, "]" );
-	}
+
 	si->AddItem( "Game type", tmp256, RGB(128,255,255) );
 }
-

@@ -108,10 +108,7 @@ void CLevel::IR_OnKeyboardPress	(int key)
 	case kPAUSE:
 		if(!g_block_pause)
 		{
-			if ( IsGameTypeSingle() )
-			{
-				Device.Pause(!Device.Paused(), TRUE, TRUE, "li_pause_key");
-			}
+			Device.Pause(!Device.Paused(), TRUE, TRUE, "li_pause_key");
 		}
 		return;
 		break;
@@ -127,12 +124,12 @@ void CLevel::IR_OnKeyboardPress	(int key)
 
 	if ( game && Game().IR_OnKeyboardPress(key) ) return;
 
-	if(_curr == kQUICK_SAVE && IsGameTypeSingle())
+	if(_curr == kQUICK_SAVE)
 	{
 		Console->Execute			("save");
 		return;
 	}
-	if(_curr == kQUICK_LOAD && IsGameTypeSingle())
+	if(_curr == kQUICK_LOAD)
 	{
 #ifdef DEBUG
 		FS.get_path					("$game_config$")->m_Flags.set(FS_Path::flNeedRescan, TRUE);

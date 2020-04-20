@@ -33,7 +33,7 @@ enum {
 
 	mtSound							= (1ul<<14ul),
 	mtPhysics						= (1ul<<15ul),
-	mtNetwork						= (1ul<<16ul),
+
 	mtParticles						= (1ul<<17ul),
 
 	rsCameraPos						= (1ul<<18ul),

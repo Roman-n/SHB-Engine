@@ -447,37 +447,6 @@ void	CActor::Hit							(SHit* pHDS)
 	bool bPlaySound = true;
 	if (!g_Alive()) bPlaySound = false;
 
-	if (!IsGameTypeSingle())
-	{
-		game_PlayerState* ps = Game().GetPlayerByGameID(ID());
-		if (ps && ps->testFlag(GAME_PLAYER_FLAG_INVINCIBLE))
-		{
-			bPlaySound = false;
-			if (Device.dwFrame != last_hit_frame &&
-				HDS.bone() != BI_NONE)
-			{		
-				// вычислить позицию и направленность партикла
-				Fmatrix pos; 
-
-				CParticlesPlayer::MakeXFORM(this,HDS.bone(),HDS.dir,HDS.p_in_bone_space,pos);
-
-				// установить particles
-				CParticlesObject* ps = NULL;
-
-				if (eacFirstEye == cam_active && this == Level().CurrentEntity())
-					ps = CParticlesObject::Create(invincibility_fire_shield_1st,TRUE);
-				else
-					ps = CParticlesObject::Create(invincibility_fire_shield_3rd,TRUE);
-
-				ps->UpdateParent(pos,Fvector().set(0.f,0.f,0.f));
-				GamePersistent().ps_needtoplay.push_back(ps);
-			};
-		};
-		 
-
-		last_hit_frame = Device.dwFrame;
-	};
-
 	if(!sndHit[HDS.hit_type].empty()			&& 
 		(ALife::eHitTypeTelepatic != HDS.hit_type))
 	{
@@ -703,15 +672,7 @@ void CActor::Die(CObject* who)
 			{
 				if((*I).m_pIItem)
 				{
-					if (IsGameTypeSingle())
-						(*I).m_pIItem->SetDropManual(TRUE);
-					else
-					{
-						if ((*I).m_pIItem->object().CLS_ID!=CLSID_OBJECT_W_KNIFE && slot_idx!=GRENADE_SLOT)
-						{
-							(*I).m_pIItem->SetDropManual(TRUE);
-						}							
-					}
+					(*I).m_pIItem->SetDropManual(TRUE);
 				};
 			continue;
 			}
@@ -728,31 +689,7 @@ void CActor::Die(CObject* who)
 		///!!! чистка пояса
 		TIItemContainer &l_blist = inventory().m_belt;
 		while (!l_blist.empty())	
-			inventory().Ruck(l_blist.front());
-
-		if (!IsGameTypeSingle())
-		{
-			//if we are on server and actor has PDA - destroy PDA
-			TIItemContainer &l_rlist	= inventory().m_ruck;
-			for(TIItemContainer::iterator l_it = l_rlist.begin(); l_rlist.end() != l_it; ++l_it)
-			{
-				if (GameID() == GAME_ARTEFACTHUNT)
-				{
-					CArtefact* pArtefact = smart_cast<CArtefact*> (*l_it);
-					if (pArtefact)
-					{
-						(*l_it)->SetDropManual(TRUE);
-						continue;
-					};
-				};
-
-				if ((*l_it)->object().CLS_ID == CLSID_OBJECT_PLAYERS_BAG)
-				{
-					(*l_it)->SetDropManual(TRUE);
-					continue;
-				};
-			};
-		};
+			inventory().Ruck(l_blist.front());		
 	};
 
 	cam_Set					(eacFreeLook);
@@ -764,10 +701,8 @@ void CActor::Die(CObject* who)
 	m_HeavyBreathSnd.stop	();
 	m_BloodSnd.stop			();		
 
-	if(IsGameTypeSingle())
-	{
-		start_tutorial		("game_over");
-	}
+	start_tutorial		("game_over");
+
 	xr_delete				(m_sndShockEffector);
 }
 

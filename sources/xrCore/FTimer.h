@@ -101,12 +101,12 @@ public:
 		return			(result);
 	}
 
-	IC	u32				GetElapsed_ms	() const
+	u32				GetElapsed_ms	() const
 	{
 		return			(u32(GetElapsed_ticks()*u64(1000)/CPU::qpc_freq));
 	}
 	
-	IC	float			GetElapsed_sec	() const
+	float			GetElapsed_sec	() const
 	{
 		FPU::m64r		();
         
@@ -117,7 +117,7 @@ public:
 		return			(result);
 	}
 
-	IC	void			Dump			() const
+	void			Dump			() const
 	{
 		Msg				("* Elapsed time (sec): %f",GetElapsed_sec());
 	}

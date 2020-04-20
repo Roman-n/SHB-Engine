@@ -56,7 +56,7 @@
 		<command id="ui_mm_save_game"				exe="quick_save"/>
 		<command id="ui_mm_load_game"				exe="quick_load"/>
 	</group>
-	<group name="kb_grp_multiplayer">
+<!--	<group name="kb_grp_multiplayer">
 		<command id="kb_artefact"					exe="artefact"/>
 		<command id="kb_scores"						exe="scores"/>
 		<command id="kb_chat"						exe="chat"/>
@@ -70,5 +70,5 @@
 		<command id="kb_vote_no"					exe="vote_no"/>
 		<command id="speech_menu_group"				exe="speech_menu_0"/>
 		<command id="speech_menu_personal"			exe="speech_menu_1"/>
-	</group>
+	</group>-->
 </keybingidg>

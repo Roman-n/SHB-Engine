@@ -526,7 +526,6 @@ void CCC_Register()
 
 	CMD3(CCC_Mask,		"mt_sound",				&psDeviceFlags,			mtSound);
 	CMD3(CCC_Mask,		"mt_physics",			&psDeviceFlags,			mtPhysics);
-	CMD3(CCC_Mask,		"mt_network",			&psDeviceFlags,			mtNetwork);
 	
 	// Events
 	CMD1(CCC_E_Dump,	"e_list"				);

@@ -144,8 +144,6 @@ void CActor::IR_OnKeyboardPress(int cmd)
 	case kUSE_BANDAGE:
 	case kUSE_MEDKIT:
 		{
-			if(IsGameTypeSingle())
-			{
 				PIItem itm = inventory().item((cmd==kUSE_BANDAGE)?  CLSID_IITEM_BANDAGE:CLSID_IITEM_MEDKIT );	
 				if(itm)
 				{
@@ -156,7 +154,7 @@ void CActor::IR_OnKeyboardPress(int cmd)
 					strconcat					(sizeof(str),str,*CStringTable().translate("st_item_used"),": ", itm->Name());
 					_s->wnd()->SetText			(str);
 				}
-			}
+			
 		}break;
 	}
 }

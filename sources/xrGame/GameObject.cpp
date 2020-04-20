@@ -651,7 +651,6 @@ CObject::SavedPosition CGameObject::ps_Element(u32 ID) const
 {
 	VERIFY(ID<ps_Size());
 	inherited::SavedPosition	SP	=	PositionStack[ID];
-	SP.dwTime					+=	Level().timeServer_Delta();
 	return SP;
 }
 
@@ -786,16 +785,6 @@ void CGameObject::DestroyObject()
 
 void CGameObject::shedule_Update	(u32 dt)
 {
-	//уничтожить
-	if(!IsGameTypeSingle() && OnServer() && NeedToDestroyObject())
-	{
-#ifdef DEBUG
-		Msg("--NeedToDestroyObject for [%d][%d]", ID(), Device.dwFrame);
-#endif
-		DestroyObject			();
-
-	}
-
 	// Msg							("-SUB-:[%x][%s] CGameObject::shedule_Update",smart_cast<void*>(this),*cName());
 	inherited::shedule_Update	(dt);
 	
