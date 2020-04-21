@@ -157,7 +157,7 @@ namespace ALife {
 	}
 xr_token							hit_types_token							[ ];
 
-	IC LPCSTR g_cafHitType2String(EHitType tHitType)
+	IC const char* g_cafHitType2String(EHitType tHitType)
 	{
 		return get_token_name(hit_types_token, tHitType);
 	}

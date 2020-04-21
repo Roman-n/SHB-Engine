@@ -1,5 +1,3 @@
-#ifndef FBasicVisualH
-#define FBasicVisualH
 #pragma once
 
 #include "vis_common.h"
@@ -63,5 +61,3 @@ public:
 	IRender_Visual				();
 	virtual ~IRender_Visual		();
 };
-
-#endif // !FBasicVisualH

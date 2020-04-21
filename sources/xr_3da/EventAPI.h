@@ -25,16 +25,16 @@ private:
 	xr_vector<Deferred>		Events_Deferred;
 	xrCriticalSection		CS;
 public:
-	EVENT	Create			(LPCSTR N);
+	EVENT	Create			(const char* N);
 	void	Destroy			(EVENT& E);
 
-	EVENT	Handler_Attach	(LPCSTR N, IEventReceiver* H);
+	EVENT	Handler_Attach	(const char* N, IEventReceiver* H);
 	void	Handler_Detach	(EVENT& E, IEventReceiver* H);
 
 	void	Signal			(EVENT	E, u64 P1=0, u64 P2=0);
-	void	Signal			(LPCSTR E, u64 P1=0, u64 P2=0);
+	void	Signal			(const char* E, u64 P1=0, u64 P2=0);
 	void	Defer			(EVENT	E, u64 P1=0, u64 P2=0);
-	void	Defer			(LPCSTR E, u64 P1=0, u64 P2=0);
+	void	Defer			(const char* E, u64 P1=0, u64 P2=0);
 
 	void	OnFrame			();
 	void	Dump			();

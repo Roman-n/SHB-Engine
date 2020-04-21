@@ -1,5 +1,5 @@
-#ifndef PHDEFS_H
-#define PHDEFS_H
+#pragma once
+
 class CPHElement;
 class CPHJoint;
 class CPhysicsShell;
@@ -81,4 +81,3 @@ typedef		xr_vector<CPHElement*>::reverse_iterator	ELEMENT_RI;
 typedef		xr_vector<element_fracture>::reverse_iterator	ELEMENT_PAIR_RI;
 DEFINE_VECTOR(CPHFracture,FRACTURE_STORAGE,FRACTURE_I)
 typedef		xr_vector<CPHFracture>::reverse_iterator	FRACTURE_RI;
-#endif

@@ -1,5 +1,4 @@
-#ifndef __XR_COLLIDE_FORM_H__
-#define __XR_COLLIDE_FORM_H__
+#pragma once
 
 #include "xr_collide_defs.h"
 
@@ -192,5 +191,3 @@ public:
 	BOOL			Contact			( CObject* O	);
 	xr_vector<shape_def>& Shapes	(){return shapes;}
 };
-
-#endif //__XR_COLLIDE_FORM_H__

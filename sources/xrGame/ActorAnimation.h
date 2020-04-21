@@ -1,5 +1,3 @@
-#ifndef _Actor_Animation_H
-#define _Actor_Animation_H
 #pragma once
 
 // animation state constants
@@ -42,6 +40,3 @@
 #define _ACrchBackRStr	(mcCrouch|mcAccel|mcBack|mcRStrafe)
 
 #define _Jump			(mcJump)
-//-------------------------------------------------------------------------------
-
-#endif //_Actor_Animation_H

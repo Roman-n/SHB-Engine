@@ -41,7 +41,7 @@ void SGameMtl::Load(IReader& fs)
 void CGameMtlLibrary::Load()
 {
 	string_path			name;
-	if (!FS.exist(name,	_game_data_,GAMEMTL_FILENAME)){
+	if (!FS.exist(name, "$game_data$",GAMEMTL_FILENAME)){
     	Log				("! Can't find game material file: ",name);
     	return;
     }

@@ -1,9 +1,8 @@
-#ifndef PHYSICS_GAME_PARS_H
-#define PHYSICS_GAME_PARS_H
+#pragma once
+
 extern float object_damage_factor;
 extern float collide_volume_max;
 extern float collide_volume_min;
-
 
 struct EffectPars
 {
@@ -20,4 +19,3 @@ struct CharacterEffectPars
 };
 
 void	LoadPhysicsGameParams	()	;
-#endif

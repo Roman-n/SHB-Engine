@@ -1,9 +1,6 @@
 // Rain.h: interface for the CRain class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#ifndef ThunderboltH
-#define ThunderboltH
 #pragma once
 
 //refs
@@ -99,5 +96,3 @@ public:
 
 	int							AppendDef			(CInifile* pIni, LPCSTR sect);
 };
-
-#endif //ThunderboltH

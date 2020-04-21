@@ -1,7 +1,9 @@
-#ifndef PH_CONTACT_BODY_EFFECTOR_H
-#define PH_CONTACT_BODY_EFFECTOR_H
+#pragma once
+
 #include "PHBaseBodyEffector.h"
+
 struct SGameMtl;
+
 class CPHContactBodyEffector : public CPHBaseBodyEffector
 {
 dContact m_contact;
@@ -12,4 +14,3 @@ void	Init(dBodyID body,const dContact& contact,SGameMtl* material);
 void	Merge(const dContact& contact, SGameMtl* material);
 void	Apply();
 };
-#endif	//PH_CONTACT_BODY_EFFECTOR_H

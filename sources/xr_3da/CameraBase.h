@@ -1,9 +1,6 @@
 // CameraBase.h: interface for the CCameraBase class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_CAMERABASE_H__B11F8AE1_1213_11D4_B4E3_4854E82A090D__INCLUDED_)
-#define AFX_CAMERABASE_H__B11F8AE1_1213_11D4_B4E3_4854E82A090D__INCLUDED_
 #pragma once
 
 #include "CameraDefs.h"
@@ -58,5 +55,3 @@ public:
 	virtual float	CheckLimPitch	( );
 	virtual float	CheckLimRoll	( );
 };
-
-#endif // !defined(AFX_CAMERABASE_H__B11F8AE1_1213_11D4_B4E3_4854E82A090D__INCLUDED_)

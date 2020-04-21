@@ -1,5 +1,3 @@
-#ifndef r_backendH
-#define r_backendH
 #pragma once
 
 //#define RBackend_PGO
@@ -232,5 +230,3 @@ public:
 extern ENGINE_API CBackend			RCache;
 
 #include "D3DUtils.h"
-
-#endif

@@ -1,9 +1,6 @@
 // GameObject.h: interface for the CGameObject class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_GAMEOBJECT_H__3DA72D03_C759_4688_AEBB_89FA812AA873__INCLUDED_)
-#define AFX_GAMEOBJECT_H__3DA72D03_C759_4688_AEBB_89FA812AA873__INCLUDED_
 #pragma once
 
 #include <depr/dplay8.h>// раньше небыло
@@ -284,5 +281,3 @@ public:
 
 	virtual	void			On_B_NotCurrentEntity () {};
 };
-
-#endif // !defined(AFX_GAMEOBJECT_H__3DA72D03_C759_4688_AEBB_89FA812AA873__INCLUDED_)

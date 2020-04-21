@@ -1,6 +1,5 @@
 //----------------------------------------------------
-#ifndef BoneH
-#define BoneH
+#pragma once
 
 // refs
 class CBone;
@@ -225,5 +224,3 @@ public:
     void			    ResetData		();
     void			    CopyData		(CBone* bone);
 };
-
-#endif

@@ -1,5 +1,4 @@
-#ifndef ParticlesObjectH
-#define ParticlesObjectH
+#pragma once
 
 #include "..\XR_3DA\PS_instance.h"
 
@@ -62,5 +61,3 @@ public:
 		}
 	}
 };
-
-#endif /*ParticlesObjectH*/

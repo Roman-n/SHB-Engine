@@ -1,6 +1,4 @@
-
-#ifndef CHARACTER_PHYSICS_SUPPORT
-#define CHARACTER_PHYSICS_SUPPORT
+#pragma once
 
 #include "alife_space.h"
 #include "PHSkeleton.h"
@@ -168,4 +166,3 @@ IC		void							UpdateDeathAnims				();
 IC		void							CalculateTimeDelta				();
 IC		bool							DoCharacterShellCollide			();
 };
-#endif  //CHARACTER_PHYSICS_SUPPORT

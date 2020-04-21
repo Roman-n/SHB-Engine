@@ -1,5 +1,4 @@
-#ifndef _MB_HELPERS_H_INCLUDED
-#define _MB_HELPERS_H_INCLUDED
+#pragma once
 
 #define MAX_MB_CHARS 4096
 
@@ -69,6 +68,3 @@ __inline BOOL IsAlphaCharacter( wide_char wc )
 		( ( wc >= 0xFF41 ) && ( wc <= 0xFF5A ) )
 	);
 }
-
-
-#endif // _MB_HELPERS_H_INCLUDED

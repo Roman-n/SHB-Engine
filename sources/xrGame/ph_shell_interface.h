@@ -4,4 +4,3 @@ interface IPhysicShellCreator {
 public:
 	virtual void CreatePhysicsShell() = 0;
 };
-

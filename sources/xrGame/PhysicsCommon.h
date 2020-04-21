@@ -1,5 +1,4 @@
-#ifndef PHYSICS_COMMON_H
-#define PHYSICS_COMMON_H
+#pragma once
 
 #include "DisablingParams.h"
 #include "ode_include.h"
@@ -61,11 +60,8 @@ typedef	void	ObjectContactCallbackFun(bool& do_colide,bool bo1,dContact& c,SGame
 
 typedef void	BoneCallbackFun(CBoneInstance* B);
 
-
-
 extern ContactCallbackFun *ContactShotMark;
 extern ContactCallbackFun *CharacterContactShotMark;
 
 typedef	void	PhysicsStepTimeCallback		(u32	step_start,u32	step_end);
 extern			PhysicsStepTimeCallback		*physics_step_time_callback;
-#endif  //PHYSICS_COMMON_H

@@ -1,16 +1,6 @@
-// File:        UIComboBox.h
-// Description: guess :)
-// Created:     10.12.2004
-// Author:      Serhiy O. Vynnychenko
-// Mail:        narrator@gsc-game.kiev.ua
-// 
-// Copyright 2004 GSC Game World
-//
-
 #pragma once
+
 #include "UIEditBox.h"
-//.#include "UI3tButton.h"
-//#include "UIListWnd.h"
 #include "UIListBox.h"
 #include "UIInteractiveBackground.h"
 #include "UIOptionsItem.h"

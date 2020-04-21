@@ -1,6 +1,5 @@
 //---------------------------------------------------------------------------
-#ifndef SkeletonAnimatedH
-#define SkeletonAnimatedH
+#pragma once
 
 #include		"skeletoncustom.h"
 #include		"skeletonmotions.h"
@@ -233,5 +232,3 @@ public:
 	}
 };
 IC CKinematicsAnimated* PKinematicsAnimated(IRender_Visual* V) { return V?V->dcast_PKinematicsAnimated():0; }
-//---------------------------------------------------------------------------
-#endif

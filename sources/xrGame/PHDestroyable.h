@@ -1,5 +1,4 @@
-#ifndef PH_DESTROYABLE
-#define PH_DESTROYABLE
+#pragma once
 
 #include "hit.h"
 
@@ -72,6 +71,3 @@ private:
 			void						NotificatePart				(CPHDestroyableNotificate *dn)																				;
 			void						PhysicallyRemovePart		(CPHDestroyableNotificate *dn)																				;																											;
 };
-
-
-#endif

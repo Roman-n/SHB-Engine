@@ -2,7 +2,7 @@
 
 // refs
 class	CInifile;
-struct	xr_token;
+struct xr_token;
 
 
 //-----------------------------------------------------------------------------------------------------------
@@ -108,7 +108,7 @@ public:
 	Fvector4	r_fvector4		( const shared_str& S, LPCSTR L )				{ return r_fvector4(*S,L);		}
 	BOOL		r_bool			( LPCSTR S, LPCSTR L );
 	BOOL		r_bool			( const shared_str& S, LPCSTR L )				{ return r_bool(*S,L);			}
-	int			r_token			( LPCSTR S, LPCSTR L,	const xr_token *token_list);
+	int			r_token			(const char* S, const char* L, const xr_token* token_list);
 	BOOL		r_line			( LPCSTR S, int L,	LPCSTR* N, LPCSTR* V );
 	BOOL		r_line			( const shared_str& S, int L,	LPCSTR* N, LPCSTR* V );
 

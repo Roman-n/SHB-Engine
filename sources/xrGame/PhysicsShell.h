@@ -1,5 +1,3 @@
-#ifndef PhysicsShellH
-#define PhysicsShellH
 #pragma once
 
 #include "PHDefs.h"
@@ -350,4 +348,3 @@ CPhysicsShell*				P_build_Shell				(CGameObject* obj,bool not_active_state,BONE_
 CPhysicsShell*				P_build_SimpleShell			(CGameObject* obj,float mass,bool not_active_state)									;
 		void				ApplySpawnIniToPhysicShell	(CInifile* ini,CPhysicsShell* physics_shell,bool fixed)								;
 		void				fix_bones					(LPCSTR	fixed_bones,CPhysicsShell* shell )											;
-#endif // PhysicsShellH

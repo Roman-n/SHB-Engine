@@ -1,5 +1,3 @@
-#ifndef ObjectAnimatorH
-#define ObjectAnimatorH
 #pragma once
 
 #include "motion.h"
@@ -43,5 +41,3 @@ public:
 	void				Update			(float dt);
     void				DrawPath		();
 };
-
-#endif //ObjectAnimatorH

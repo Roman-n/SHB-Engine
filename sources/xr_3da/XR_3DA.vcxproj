@@ -331,10 +331,6 @@
     <ClCompile Include="du_cylinder.cpp" />
     <ClCompile Include="du_sphere.cpp" />
     <ClCompile Include="du_sphere_part.cpp" />
-    <ClCompile Include="Effector.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="EffectorPP.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="EngineAPI.cpp" />
@@ -428,10 +424,6 @@
     <ClCompile Include="xrTheora_Surface_mmx.cpp" />
     <ClCompile Include="xrXRC.cpp" />
     <ClCompile Include="xr_area.cpp" />
-    <ClCompile Include="xr_area_query.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="xr_area_raypick.cpp" />
     <ClCompile Include="xr_collide_form.cpp" />
     <ClCompile Include="xr_effgamma.cpp" />

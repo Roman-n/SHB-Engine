@@ -1,5 +1,3 @@
-#ifndef r_constants_cacheH
-#define r_constants_cacheH
 #pragma once
 
 #include "r_constants.h"
@@ -172,4 +170,3 @@ public:
 		if (a_pixel.b_dirty || a_vertex.b_dirty)	flush_cache();
 	}
 };
-#endif

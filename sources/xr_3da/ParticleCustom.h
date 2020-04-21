@@ -1,6 +1,5 @@
 //---------------------------------------------------------------------------
-#ifndef ParticleCustomH
-#define ParticleCustomH
+#pragma once
 //---------------------------------------------------------------------------
 class ENGINE_API	IParticleCustom		: public IRender_Visual
 {
@@ -29,7 +28,3 @@ public:
 
 	virtual IParticleCustom*	dcast_ParticleCustom	()				{ return this;	}
 };
-
-//---------------------------------------------------------------------------
-#endif //ParticleCustomH
- 

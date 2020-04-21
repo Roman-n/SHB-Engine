@@ -1,7 +1,5 @@
 //---------------------------------------------------------------------------
-
-#ifndef LightAnimLibraryH
-#define LightAnimLibraryH
+#pragma once
 //---------------------------------------------------------------------------
 
 class ENGINE_API CLAItem				{
@@ -56,5 +54,3 @@ public:
 };
 
 extern ENGINE_API ELightAnimLibrary LALib;
-
-#endif

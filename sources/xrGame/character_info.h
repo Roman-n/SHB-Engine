@@ -3,7 +3,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////
 
-#pragma		once
+#pragma	once
 
 #include "character_info_defs.h"
 #include "shared_data.h"

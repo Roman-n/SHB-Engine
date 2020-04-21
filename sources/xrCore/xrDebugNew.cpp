@@ -565,13 +565,8 @@ _CRTIMP _PNH	__cdecl _set_new_handler( _PNH );
 			"Unexpected application termination",
 			0,
 			0,
-	#ifdef _ANONYMOUS_BUILD
-			"",
-			0,
-	#else
 			__FILE__,
 			__LINE__,
-	#endif
 			__FUNCTION__,
 			assertion_info
 		);

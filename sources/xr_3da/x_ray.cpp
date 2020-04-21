@@ -28,7 +28,6 @@ int		max_load_stage = 0;
 XRCORE_API	LPCSTR	build_date;
 XRCORE_API	u32		build_id;
 
-//#define NO_SINGLE
 #define NO_MULTI_INSTANCES
 
 static LPSTR month_id[12] = {
@@ -88,10 +87,9 @@ struct _SoundProcessor	: public pureFrame
 ENGINE_API	CApplication*	pApp			= NULL;
 static		HWND			logoWindow		= NULL;
 
-			int				doLauncher		();
 			void			doBenchmark		(LPCSTR name);
 ENGINE_API	bool			g_bBenchmark	= false;
-string512	g_sBenchmarkName;
+			string512		g_sBenchmarkName;
 
 
 ENGINE_API	string512		g_sLaunchOnExit_params;
@@ -117,17 +115,18 @@ void InitSettings	()
 	CHECK_OR_EXIT				(!pGameIni->sections().empty(),make_string("Cannot find file %s.\nReinstalling application may fix this problem.",fname));
 }
 
-void InitConsole	()
+void InitConsole( )
 {
-	Console						= xr_new<CConsole>	();
+	Console						= xr_new<CConsole>( );
 
 	Console->Initialize			( );
 
-	strcpy_s						(Console->ConfigFile,"user.ltx");
-	if (strstr(Core.Params,"-ltx ")) {
+	strcpy_s					(Console->ConfigFile, "user.ltx");
+	if (strstr(Core.Params, "-ltx "))
+	{
 		string64				c_name;
-		sscanf					(strstr(Core.Params,"-ltx ")+5,"%[^ ] ",c_name);
-		strcpy_s					(Console->ConfigFile,c_name);
+		sscanf					(strstr(Core.Params, "-ltx ") + 5, "%[^ ] ", c_name);
+		strcpy_s				(Console->ConfigFile, c_name);
 	}
 }
 
@@ -469,13 +468,6 @@ int APIENTRY WinMain_impl(HINSTANCE hInstance,
 			return 0;
 		}
 
-		if (strstr(lpCmdLine,"-launcher")) 
-		{
-			int l_res = doLauncher();
-			if (l_res != 0)
-				return 0;
-		};		
-
 		if(strstr(Core.Params,"-r2a"))	
 			Console->Execute			("renderer renderer_r2a");
 		else
@@ -675,16 +667,8 @@ void CApplication::OnEvent(EVENT E, u64 P1, u64 P2)
 		R_ASSERT	(0==g_pGameLevel);
 		R_ASSERT	(0!=g_pGamePersistent);
 
-#ifdef NO_SINGLE
-		Console->Execute("main_menu on");
-		if (	op_server == NULL					||
-				strstr(op_server, "/deathmatch")	||
-				strstr(op_server, "/teamdeathmatch")||
-				strstr(op_server, "/artefacthunt")
-			)
-#endif	
 		{		
-			Console->Execute("main_menu off");
+			Console->Execute				("main_menu off");
 			Console->Hide();
 			Device.Reset					(false);
 			//-----------------------------------------------------------
@@ -725,15 +709,15 @@ extern	ENGINE_API BOOL			g_appLoaded = FALSE;
 void CApplication::LoadBegin	()
 {
 	ll_dwReference++;
-	if (1==ll_dwReference)	{
-
+	if (1==ll_dwReference)
+	{
 		g_appLoaded			= FALSE;
 
 		_InitializeFont		(pFontSystem,"ui_font_graffiti19_russian",0);
 
 		ll_hGeom.create		(FVF::F_TL, RCache.Vertex.Buffer(), RCache.QuadIB);
 		sh_progress.create	("hud\\default","ui\\ui_load");
-		ll_hGeom2.create		(FVF::F_TL, RCache.Vertex.Buffer(),NULL);
+		ll_hGeom2.create	(FVF::F_TL, RCache.Vertex.Buffer(),NULL);
 
 		phase_timer.Start	();
 		load_stage			= 0;
@@ -743,12 +727,12 @@ void CApplication::LoadBegin	()
 void CApplication::LoadEnd		()
 {
 	ll_dwReference--;
-	if (0==ll_dwReference)		{
+	if (0==ll_dwReference)
+	{
 		Msg						("* phase time: %d ms",phase_timer.GetElapsed_ms());
 		Msg						("* phase cmem: %d K", Memory.mem_usage()/1024);
 		Console->Execute		("stat_memory");
 		g_appLoaded				= TRUE;
-//		DUMP_PHASE;
 	}
 }
 
@@ -765,7 +749,6 @@ void CApplication::LoadDraw		()
 {
 	if(g_appLoaded)				return;
 	Device.dwFrame				+= 1;
-
 
 	if(!Device.Begin () )		return;
 
@@ -793,16 +776,6 @@ void CApplication::LoadTitleInt(LPCSTR str)
 
 	LoadDraw					();
 }
-
-void CApplication::LoadSwitch	()
-{
-}
-
-void CApplication::SetLoadLogo			(ref_shader NewLoadLogo)
-{
-//	hLevelLogo = NewLoadLogo;
-//	R_ASSERT(0);
-};
 
 // Sequential
 void CApplication::OnFrame	( )
@@ -862,7 +835,6 @@ void CApplication::Level_Set(u32 L)
 	Level_Current = L;
 	FS.get_path	("$level$")->_set	(Levels[L].folder);
 
-
 	string_path					temp;
 	string_path					temp2;
 	strconcat					(sizeof(temp),temp,"intro\\intro_",Levels[L].folder);
@@ -882,59 +854,6 @@ int CApplication::Level_ID(LPCSTR name)
 		if (0==stricmp(buffer,Levels[I].folder))	return int(I);
 	}
 	return -1;
-}
-
-//launcher stuff----------------------------
-extern "C"{
-	typedef int	 __cdecl LauncherFunc	(int);
-}
-HMODULE			hLauncher		= NULL;
-LauncherFunc*	pLauncher		= NULL;
-
-void InitLauncher(){
-	if(hLauncher)
-		return;
-	hLauncher	= LoadLibrary	("xrLauncher.dll");
-	if (0==hLauncher)	R_CHK	(GetLastError());
-	R_ASSERT2		(hLauncher,"xrLauncher DLL raised exception during loading or there is no xrLauncher.dll at all");
-
-	pLauncher = (LauncherFunc*)GetProcAddress(hLauncher,"RunXRLauncher");
-	R_ASSERT2		(pLauncher,"Cannot obtain RunXRLauncher function from xrLauncher.dll");
-};
-
-void FreeLauncher(){
-	if (hLauncher)	{ 
-		FreeLibrary(hLauncher); 
-		hLauncher = NULL; pLauncher = NULL; };
-}
-
-int doLauncher()
-{
-/*
-	execUserScript();
-	InitLauncher();
-	int res = pLauncher(0);
-	FreeLauncher();
-	if(res == 1) // do benchmark
-		g_bBenchmark = true;
-
-	if(g_bBenchmark){ //perform benchmark cycle
-		doBenchmark();
-	
-		// InitLauncher	();
-		// pLauncher	(2);	//show results
-		// FreeLauncher	();
-
-		Core._destroy			();
-		return					(1);
-
-	};
-	if(res==8){//Quit
-		Core._destroy			();
-		return					(1);
-	}
-*/
-	return 0;
 }
 
 void doBenchmark(LPCSTR name)

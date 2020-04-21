@@ -1267,12 +1267,6 @@
     <Filter Include="Core\Client\Effectors\Weapon">
       <UniqueIdentifier>{b912d31e-de05-43ec-83db-eb35fcb152b5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Client\Effects">
-      <UniqueIdentifier>{2f3a9090-b2ef-46e0-8042-c45549b5dcd6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Client\Effects\Core">
-      <UniqueIdentifier>{460d67bc-53f0-4bf9-b726-2e521408084c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core\Client\Game Materials">
       <UniqueIdentifier>{782db296-69e6-4aed-9301-30bfa0a68acc}</UniqueIdentifier>
     </Filter>
@@ -1281,9 +1275,6 @@
     </Filter>
     <Filter Include="Core\Client\Level">
       <UniqueIdentifier>{3c7a58dd-2cff-42ef-a89e-43991f4e15dd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Client\Level\Map Fog Of War">
-      <UniqueIdentifier>{767bd698-dcc4-4ce1-90dd-d70eaea0052f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Core\Client\Level\Bullet Manager">
       <UniqueIdentifier>{12094e24-301b-4d52-ba37-827dd08b113b}</UniqueIdentifier>
@@ -4515,9 +4506,6 @@
     <ClInclude Include="EffectorZoomInertion.h">
       <Filter>Core\Client\Effectors\Weapon</Filter>
     </ClInclude>
-    <ClInclude Include="DynamicHeightMap.h">
-      <Filter>Core\Client\Effects\Core</Filter>
-    </ClInclude>
     <ClInclude Include="GameMtlLib.h">
       <Filter>Core\Client\Game Materials</Filter>
     </ClInclude>
@@ -4532,9 +4520,6 @@
     </ClInclude>
     <ClInclude Include="LevelGameDef.h">
       <Filter>Core\Client\Level</Filter>
-    </ClInclude>
-    <ClInclude Include="LevelFogOfWar.h">
-      <Filter>Core\Client\Level\Map Fog Of War</Filter>
     </ClInclude>
     <ClInclude Include="Level_Bullet_Manager.h">
       <Filter>Core\Client\Level\Bullet Manager</Filter>
@@ -4615,9 +4600,6 @@
       <Filter>Core\Client\Objects\actor\base</Filter>
     </ClInclude>
     <ClInclude Include="ActorCondition.h">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClInclude>
-    <ClInclude Include="ActorFollowers.h">
       <Filter>Core\Client\Objects\actor\base</Filter>
     </ClInclude>
     <ClInclude Include="actor_memory.h">
@@ -5491,9 +5473,6 @@
       <Filter>Physics\Base\Objects\Disabling</Filter>
     </ClInclude>
     <ClInclude Include="PHActorCharacter.h">
-      <Filter>Physics\Base\Objects\PhyMove\ActorCaracter</Filter>
-    </ClInclude>
-    <ClInclude Include="PHActorCharacterInline.h">
       <Filter>Physics\Base\Objects\PhyMove\ActorCaracter</Filter>
     </ClInclude>
     <ClInclude Include="PHAICharacter.h">
@@ -7349,9 +7328,6 @@
     <ClCompile Include="EffectorZoomInertion.cpp">
       <Filter>Core\Client\Effectors\Weapon</Filter>
     </ClCompile>
-    <ClCompile Include="DynamicHeightMap.cpp">
-      <Filter>Core\Client\Effects\Core</Filter>
-    </ClCompile>
     <ClCompile Include="GameMtlLib.cpp">
       <Filter>Core\Client\Game Materials</Filter>
     </ClCompile>
@@ -7399,9 +7375,6 @@
     </ClCompile>
     <ClCompile Include="Level_start.cpp">
       <Filter>Core\Client\Level</Filter>
-    </ClCompile>
-    <ClCompile Include="LevelFogOfWar.cpp">
-      <Filter>Core\Client\Level\Map Fog Of War</Filter>
     </ClCompile>
     <ClCompile Include="Level_Bullet_Manager.cpp">
       <Filter>Core\Client\Level\Bullet Manager</Filter>
@@ -7479,9 +7452,6 @@
       <Filter>Core\Client\Objects\actor\base</Filter>
     </ClCompile>
     <ClCompile Include="ActorCondition.cpp">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClCompile>
-    <ClCompile Include="ActorFollowers.cpp">
       <Filter>Core\Client\Objects\actor\base</Filter>
     </ClCompile>
     <ClCompile Include="ActorInput.cpp">

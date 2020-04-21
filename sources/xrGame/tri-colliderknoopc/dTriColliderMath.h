@@ -1,5 +1,4 @@
-#ifndef D_TRI_COLLIDER_MATH_H
-#define D_TRI_COLLIDER_MATH_H
+#pragma once
 #include "__aabb_tri.h"
 #include "../ode_include.h"
 #include "../mathutils.h"
@@ -110,4 +109,3 @@ inline bool  TriPlaneContainPoint(const dReal* v0,const dReal* v1,const dReal* v
 	 InitTriangle(XTri,triangle,VRT);
 	 triangle.dist=dDOT(pos,triangle.norm)-triangle.pos;
  }
- #endif

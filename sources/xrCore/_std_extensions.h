@@ -26,33 +26,39 @@
 #endif
 
 // token type definition
+// ----------------------------------------------------------------------------
 struct XRCORE_API xr_token
 {
-	LPCSTR	name;
-	int 	id;
+	const char*		name;
+	int				id;
 };
-
-IC LPCSTR get_token_name(xr_token* tokens, int key)
+// ----------------------------------------------------------------------------
+IC const char* get_token_name(xr_token* tokens, int key)
 {
-    for (int k=0; tokens[k].name; k++)
-    	if (key==tokens[k].id) return tokens[k].name;
-    return "";
+	for (int k = 0; tokens[k].name; k++)
+	{
+		if (key == tokens[k].id)
+		{
+			return tokens[k].name;
+		}
+	}
+
+	return "";
 }
-
-IC int get_token_id(xr_token* tokens, LPCSTR key)
+// ----------------------------------------------------------------------------
+IC int get_token_id(xr_token* tokens, const char* key)
 {
-    for (int k=0; tokens[k].name; k++)
-    	if ( stricmp(tokens[k].name,key)==0 ) 
+	for (int k = 0; tokens[k].name; k++)
+	{
+		if (stricmp(tokens[k].name, key) == 0)
+		{
 			return tokens[k].id;
-    return -1;
-}
+		}
+	}
 
-struct XRCORE_API xr_token2
-{
-	LPCSTR	name;
-	LPCSTR	info;
-	int 	id;
-};
+	return -1;
+}
+// ----------------------------------------------------------------------------
 
 // generic
 template <class T>	IC T		_min	(T a, T b)	{ return a<b?a:b;	}

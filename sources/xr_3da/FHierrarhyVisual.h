@@ -1,10 +1,6 @@
 // FHierrarhyVisual.h: interface for the FHierrarhyVisual class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#ifndef FHierrarhyVisualH
-#define FHierrarhyVisualH
-
 #pragma once
 
 #include "fbasicvisual.h"
@@ -22,5 +18,3 @@ public:
 	virtual void	Copy			(IRender_Visual *pFrom);
 	virtual void	Release			();
 };
-
-#endif //FHierrarhyVisualH

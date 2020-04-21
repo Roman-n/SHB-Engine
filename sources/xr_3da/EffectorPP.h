@@ -20,5 +20,4 @@ public:
 	IC bool				FreeOnRemove	()	const					{return bFreeOnRemove;}
 	IC void				SetType			(EEffectorPPType t)			{eType=t;}
 	virtual void		Stop            (float speed)				{fLifeTime=0.0f;};
-
 };

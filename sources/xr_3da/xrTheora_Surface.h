@@ -1,5 +1,3 @@
-#ifndef xrTheora_SurfaceH
-#define xrTheora_SurfaceH
 #pragma once
 
 // refs
@@ -38,5 +36,3 @@ public:
 	u32					Width				(bool bRealSize);
 	u32					Height				(bool bRealSize);
 };
-
-#endif //xrTheora_SurfaceH

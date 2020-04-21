@@ -1,9 +1,7 @@
-#ifndef xrLevelH
-#define xrLevelH
-
 #pragma once
 
-struct xrGUID {
+struct xrGUID
+{
 	u64	g[2];
 
 	ICF	bool operator==	(const xrGUID &o) const
@@ -17,7 +15,8 @@ struct xrGUID {
 	}
 };
 
-enum fsL_Chunks			{
+enum fsL_Chunks
+{
 	fsL_HEADER			=1,		//*
 	fsL_SHADERS			=2,		//*
 	fsL_VISUALS			=3,		//*
@@ -28,20 +27,25 @@ enum fsL_Chunks			{
 	fsL_VB				=9,		//*		- Static geometry
 	fsL_IB				=10,	//*
 	fsL_SWIS			=11,	//*		- collapse info, usually for trees
-    fsL_forcedword		= 0xFFFFFFFF
+	fsL_forcedword		= 0xFFFFFFFF
 };
-enum fsESectorChunks	{
+
+enum fsESectorChunks
+{
 	fsP_Portals = 1,	// - portal polygons
 	fsP_Root,			// - geometry root
 	fsP_forcedword = u32(-1)
 };
-enum fsSLS_Chunks		{
+
+enum fsSLS_Chunks
+{
 	fsSLS_Description	= 1,	// Name of level
 	fsSLS_ServerState,
 	fsSLS_forcedword = u32(-1)
 };
 
-enum EBuildQuality{
+enum EBuildQuality
+{
 	ebqDraft			= 0,
 	ebqHigh,
 	ebqCustom,
@@ -100,7 +104,8 @@ public:
 	friend struct	CNodePositionConverter;
 };
 
-struct NodeCompressed {
+struct NodeCompressed
+{
 public:
 	u8				data[12];
 private:
@@ -189,18 +194,16 @@ public:
 	friend class	CRenumbererConverter;
 };									// 2+2+5+12 = 21b
 
-struct SNodePositionOld {
+struct SNodePositionOld
+{
 	s16				x;
 	u16				y;
 	s16				z;
 };
 #pragma pack	(pop)
 
-const u32 XRCL_CURRENT_VERSION		=	17;	// input
-const u32 XRCL_PRODUCTION_VERSION	=	14;	// output 
-const u32 CFORM_CURRENT_VERSION		=	4;
-const u32 MAX_NODE_BIT_COUNT		=	23;
+const u32 XRCL_PRODUCTION_VERSION	= 14;	// output 
+const u32 CFORM_CURRENT_VERSION		= 4;
+const u32 MAX_NODE_BIT_COUNT		= 23;
 
-const u32 XRAI_CURRENT_VERSION	=	8;
-
-#endif // xrLevelH
+const u32 XRAI_CURRENT_VERSION		= 8;

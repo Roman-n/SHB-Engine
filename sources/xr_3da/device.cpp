@@ -150,9 +150,6 @@ void CRenderDevice::PreCache	(u32 amount)
 	}
 }
 
-
-int g_svDedicateServerUpdateReate = 100;
-
 ENGINE_API xr_list<LOADING_EVENT>			g_loading_events;
 
 void CRenderDevice::Run			()

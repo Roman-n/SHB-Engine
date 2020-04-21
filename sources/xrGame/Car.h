@@ -1,4 +1,5 @@
 #pragma once
+
 #include "entity.h"
 #include "PHDynamicData.h"
 #include "PhysicsShell.h"
@@ -16,6 +17,7 @@
 #include "Explosive.h"
 #include "PHDestroyable.h"
 #include "DelayedActionFuse.h"
+
 // refs
 class ENGINE_API			CBoneInstance;
 class						CActor;

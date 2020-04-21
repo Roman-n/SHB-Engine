@@ -1,6 +1,3 @@
-#ifndef	STDAFX_3DA
-#define STDAFX_3DA
-
 #pragma once
 
 #include "../xrCore/xrCore.h"
@@ -57,6 +54,3 @@ extern ENGINE_API CInifile *pGameIni;
 	namespace boost {	ENGINE_API	void throw_exception(const std::exception &A);	};
 #endif
 #define LUABIND_DONT_COPY_STRINGS
-
-
-#endif // !defined STDAFX_3DA

@@ -471,14 +471,21 @@ CLASS_ID CInifile::r_clsid( LPCSTR S, LPCSTR L)
 	LPCSTR		C = r_string(S,L);
 	return		TEXT2CLSID(C);
 }
-int		CInifile::r_token	( LPCSTR S, LPCSTR L, const xr_token *token_list)
+
+int CInifile::r_token(const char* S, const char* L, const xr_token* token_list)
 {
-	LPCSTR		C = r_string(S,L);
-	for( int i=0; token_list[i].name; i++ )
-		if( !stricmp(C,token_list[i].name) )
+	const char* C = r_string(S, L);
+	for (int i = 0; token_list[i].name; i++)
+	{
+		if (!stricmp(C, token_list[i].name))
+		{
 			return token_list[i].id;
+		}
+	}
+
 	return 0;
 }
+
 BOOL	CInifile::r_line( LPCSTR S, int L, LPCSTR* N, LPCSTR* V )
 {
 	Sect&	SS = r_section(S);

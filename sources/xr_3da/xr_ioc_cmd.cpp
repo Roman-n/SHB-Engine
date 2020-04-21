@@ -55,30 +55,6 @@ public:
 	}
 };
 //-----------------------------------------------------------------------
-#ifdef DEBUG_MEMORY_MANAGER
-class CCC_MemStat : public IConsole_Command
-{
-public:
-	CCC_MemStat(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = TRUE; };
-	virtual void Execute(LPCSTR args) {
-		string_path fn;
-		if (args&&args[0])	sprintf_s	(fn,sizeof(fn),"%s.dump",args);
-		else				strcpy_s_s	(fn,sizeof(fn),"x:\\$memory$.dump");
-		Memory.mem_statistic				(fn);
-//		g_pStringContainer->dump			();
-//		g_pSharedMemoryContainer->dump		();
-	}
-};
-#endif // DEBUG_MEMORY_MANAGER
-
-#ifdef DEBUG_MEMORY_MANAGER
-class CCC_DbgMemCheck : public IConsole_Command
-{
-public:
-	CCC_DbgMemCheck(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = TRUE; };
-	virtual void Execute(LPCSTR args) { if (Memory.debug_mode){ Memory.dbg_check();}else{Msg("~ Run with -mem_debug options.");} }
-};
-#endif // DEBUG_MEMORY_MANAGER
 
 class CCC_DbgStrCheck : public IConsole_Command
 {
@@ -374,8 +350,6 @@ public :
 	{	
 		strcpy_s(I,sizeof(I),"change screen resolution WxH");
 	}
-
-
 };
 //-----------------------------------------------------------------------
 class CCC_SND_Restart : public IConsole_Command
@@ -450,8 +424,6 @@ public:
 	virtual void	Save	(IWriter *F)	{};
 };
 
-
-
 ENGINE_API BOOL r2_sun_static = TRUE;
 
 u32				renderer_value=0;
@@ -494,7 +466,6 @@ extern float		r__dtex_range;
 
 extern int			g_ErrorLineCount;
 
-
 ENGINE_API int			ps_r__Supersample			= 1;
 void CCC_Register()
 {
@@ -512,11 +483,6 @@ void CCC_Register()
 	CMD1(CCC_MotionsStat,	"stat_motions"		);
 	CMD1(CCC_TexturesStat,	"stat_textures"		);
 #endif
-
-#ifdef DEBUG_MEMORY_MANAGER
-	CMD1(CCC_MemStat,		"dbg_mem_dump"		);
-	CMD1(CCC_DbgMemCheck,	"dbg_mem_check"		);
-#endif // DEBUG_MEMORY_MANAGER
 
 #ifdef DEBUG
 	CMD3(CCC_Mask,		"mt_particles",			&psDeviceFlags,			mtParticles);
@@ -631,8 +597,5 @@ if(strstr(Core.Params,"designer"))
 	CMD1(CCC_DumpResources,		"dump_resources");
 	CMD1(CCC_DumpOpenFiles,		"dump_open_files");
 //#endif
-
-	extern int g_svDedicateServerUpdateReate;
-	CMD4(CCC_Integer, "sv_dedicated_server_update_rate", &g_svDedicateServerUpdateReate, 1, 1000);
 };
  

@@ -6,10 +6,6 @@
 //  Статик контрол на котором можно выводить множество надписей различными
 //	шрифтами, цветами и даже с анимацией
 //=============================================================================
-
-#ifndef UI_MULTITEXT_STATIC_H_
-#define UI_MULTITEXT_STATIC_H_
-
 #pragma once
 
 #include "UITextBanner.h"
@@ -66,4 +62,3 @@ public:
 	void				setCaption(const shared_str& msg_name, LPCSTR message_to_out, u32 color=0, bool replaceColor=false);
 	void				removeCustomMessage(const shared_str& msg_name);
 };
-#endif	//UI_MULTITEXT_STATIC_H_

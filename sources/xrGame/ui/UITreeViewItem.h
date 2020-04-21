@@ -5,10 +5,6 @@
 //	---------------------------------------------------------------------------
 //  TreeView Item class
 //=============================================================================
-
-#ifndef UI_TREE_VIEW_ITEM_H_
-#define UI_TREE_VIEW_ITEM_H_
-
 #pragma once
 
 #include "UIListItem.h"
@@ -124,5 +120,3 @@ DEF_VECTOR(GroupTree, shared_str);
 
 void CreateTreeBranch(shared_str nestingTree, shared_str leafName, CUIListWnd *pListToAdd, int leafProperty,
 					  CGameFont *pRootFont, u32 rootColor, CGameFont *pLeafFont, u32 leafColor, bool markRead);
-
-#endif	//UI_TREE_VIEW_ITEM_H_

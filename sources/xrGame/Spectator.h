@@ -1,6 +1,3 @@
-#ifndef __SPECTATOR_H__
-#define __SPECTATOR_H__
-
 #pragma once
 
 #include "..\XR_3DA\feel_touch.h"
@@ -64,5 +61,3 @@ public:
 	virtual void			net_Relcase				(CObject *O);
 			void			GetSpectatorString		(string1024& pStr);
 };
-
-#endif // __SPECTATOR_H__

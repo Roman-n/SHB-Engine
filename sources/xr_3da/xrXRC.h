@@ -1,5 +1,4 @@
 // xrXRC.h: interface for the xrXRC class.
-
 #pragma once
 
 #include "../xrCDB/xrCDB.h"

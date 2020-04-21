@@ -1,6 +1,4 @@
 #pragma once
-#ifndef CPHMOVEMENT_CONTROL_H
-#define CPHMOVEMENT_CONTROL_H
 
 #include "PHCharacter.h"
 #include "MathUtils.h"
@@ -276,4 +274,3 @@ public:
 	CPHMovementControl(CObject* parent);
 	~CPHMovementControl(void);
 };
-#endif

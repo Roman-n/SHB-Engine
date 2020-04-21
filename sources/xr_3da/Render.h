@@ -1,5 +1,4 @@
-#ifndef _RENDER_H_
-#define _RENDER_H_
+#pragma once
 
 #include "frustum.h"
 #include "vis_common.h"
@@ -248,5 +247,3 @@ public:
 };
 
 extern ENGINE_API	IRender_interface*	Render;
-
-#endif

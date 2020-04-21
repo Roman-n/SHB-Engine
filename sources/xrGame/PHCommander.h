@@ -1,5 +1,5 @@
-#ifndef PH_COMMANDER_H
-#define PH_COMMANDER_H
+#pragma once
+
 class CPHReqBase;
 class CPHReqComparerV;
 
@@ -101,4 +101,3 @@ IC	void				remove_call					(CPHReqComparerV* cmp_condition,CPHReqComparerV* cmp_
 IC	void				remove_calls				(CPHReqComparerV* cmp_object,PHCALL_STORAGE& cs)								;
 	
 };
-#endif

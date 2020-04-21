@@ -1,17 +1,12 @@
 // PHDynamicData.h: interface for the PHDynamicData class.
 //
 //////////////////////////////////////////////////////////////////////
-
+#pragma once
 
 #include "ode_include.h"
 #include "PHInterpolation.h"
 #include "MathUtils.h"
-#if !defined(AFX_PHDynamicData_H__ACC01646_B581_4639_B78C_30311432021B__INCLUDED_)
-#define AFX_PHDynamicData_H__ACC01646_B581_4639_B78C_30311432021B__INCLUDED_
 
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
 class PHDynamicData;
 
 class PHDynamicData  
@@ -149,5 +144,3 @@ public:
 	bool SetTransform(dGeomID ageom);
 #endif // #if 0
 };
-
-#endif // !defined(AFX_PHDynamicData_H__ACC01646_B581_4639_B78C_30311432021B__INCLUDED_)

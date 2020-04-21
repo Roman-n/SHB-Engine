@@ -1,5 +1,5 @@
-
 #pragma once
+
 #include "../script_export_space.h"
 
 class CUIOptionsManagerScript {

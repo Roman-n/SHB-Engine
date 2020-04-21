@@ -1,5 +1,4 @@
-#ifndef PHJOINT_DESTROY_INFO_H
-#define PHJOINT_DESTROY_INFO_H
+#pragma once
 
 #include "ode_include.h"
 
@@ -20,6 +19,3 @@ IC  dJointFeedback*		JointFeedback			(){return &m_joint_feedback;}
 IC	bool				Breaked					(){return m_breaked;};
 	bool				Update					();
 };
-
-
-#endif PHJOINT_DESTROY_INFO_H

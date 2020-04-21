@@ -1,5 +1,4 @@
-#ifndef __XR_OBJECT_H__
-#define __XR_OBJECT_H__
+#pragma once
 
 #include "ispatial.h"
 #include "isheduled.h"
@@ -193,5 +192,3 @@ public:
 };
 
 #pragma pack(pop)
-
-#endif //__XR_OBJECT_H__

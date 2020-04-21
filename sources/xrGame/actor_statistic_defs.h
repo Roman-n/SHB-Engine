@@ -1,8 +1,6 @@
 #pragma once
+
 #include "alife_abstract_registry.h"
-
-extern xr_token actor_stats_token[];
-
 
 struct SStatDetailBData: public IPureSerializeObject<IReader,IWriter>
 {
@@ -14,7 +12,6 @@ struct SStatDetailBData: public IPureSerializeObject<IReader,IWriter>
 	virtual void save								(IWriter &stream);
 	virtual void load								(IReader &stream);
 };
-
 
 typedef xr_vector<SStatDetailBData>	vStatDetailData;
 

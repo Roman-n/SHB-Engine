@@ -1,6 +1,4 @@
-#ifndef D_TRI_COLLIDER_COMMON
-#define D_TRI_COLLIDER_COMMON
-
+#pragma once
 #include "../Level.h"
 #include "../ode_include.h"
 #include "../ExtendedGeom.h"
@@ -17,4 +15,3 @@ extern xr_vector<int>::iterator		I,E,B				;
 
 #define M_SIN_PI_3		REAL(0.8660254037844386467637231707529362)
 #define M_COS_PI_3		REAL(0.5000000000000000000000000000000000)
-#endif

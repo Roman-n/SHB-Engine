@@ -6,8 +6,6 @@
 #include "PSLibrary.h"
 #include "ParticleEffect.h"
 
-#define _game_data_			"$game_data$"
-
 bool ped_sort_pred	(const PS::CPEDef* a, 	const PS::CPEDef* b)	{	return xr_strcmp(a->Name(),b->Name())<0;}
 bool pgd_sort_pred	(const PS::CPGDef* a, 	const PS::CPGDef* b)	{	return xr_strcmp(a->m_Name,b->m_Name)<0;}
 
@@ -17,7 +15,7 @@ bool pgd_find_pred	(const PS::CPGDef* a, 	LPCSTR b)				{	return xr_strcmp(a->m_N
 void CPSLibrary::OnCreate()
 {
 	string_path fn;
-    FS.update_path(fn,_game_data_,PSLIB_FILENAME);
+    FS.update_path(fn, "$game_data$",PSLIB_FILENAME);
 	if (FS.exist(fn)){
     	if (!Load(fn)) Msg("PS Library: Unsupported version.");
     }else{

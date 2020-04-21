@@ -1,5 +1,5 @@
-#ifndef EXTENDED_GEOM
-#define EXTENDED_GEOM
+#pragma once
+
 #include "PHObject.h"
 #include "ode_include.h"
 #include "physicscommon.h"
@@ -273,4 +273,3 @@ IC void dGeomUserDataClearCashedTries(dxGeom* geom)
 	P->cashed_tries.clear();
 	P->last_aabb_size.set(0.f,0.f,0.f);
 }
-#endif

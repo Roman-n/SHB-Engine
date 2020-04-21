@@ -5,9 +5,7 @@
 //	Author		: Dmitriy Iassenev
 //	Description : precompiled header for lua and luabind users
 ////////////////////////////////////////////////////////////////////////////
-
-#ifndef PCH_SCRIPT_H
-#define PCH_SCRIPT_H
+#pragma once
 
 #include "stdafx.h"
 
@@ -32,5 +30,3 @@ extern "C" {
 #include <luabind/iterator_policy.hpp>
 
 #include <depr/dplay8.h>// раньше небыло
-
-#endif // PCH_SCRIPT_H

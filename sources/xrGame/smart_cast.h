@@ -5,9 +5,7 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Smart dynamic cast
 ////////////////////////////////////////////////////////////////////////////
-
-#ifndef SMART_CAST_H
-#define SMART_CAST_H
+#pragma once
 
 #ifdef DEBUG
 #	define PURE_DYNAMIC_CAST
@@ -312,5 +310,3 @@
 #		include "smart_cast_impl1.h"
 #	endif
 #endif
-
-#endif //SMART_CAST_H

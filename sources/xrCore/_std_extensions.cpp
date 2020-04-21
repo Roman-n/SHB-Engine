@@ -3,9 +3,6 @@
 #ifdef BREAK_AT_STRCMP
 int								xr_strcmp				(LPCSTR S1, LPCSTR S2 )
 {
-#ifdef DEBUG_MEMORY_MANAGER
-	Memory.stat_strcmp	++;
-#endif // DEBUG_MEMORY_MANAGER
 	int res				= (int)strcmp(S1,S2);
 	return				res;
 }

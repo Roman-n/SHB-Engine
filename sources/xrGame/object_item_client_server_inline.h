@@ -5,10 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Object item client and server class inline functions
 ////////////////////////////////////////////////////////////////////////////
-
-#ifndef object_item_client_server_inlineH
-#define object_item_client_server_inlineH
-
 #pragma once
 
 #define TEMPLATE_SPECIALIZATION template <typename _client_type, typename _server_type>
@@ -73,5 +69,3 @@ ObjectFactory::SERVER_BASE_CLASS *CSObjectItemClientServer::server_object	(LPCST
 #	undef CSObjectItemClientServerSingleMp
 
 #endif // NO_XR_GAME
-
-#endif

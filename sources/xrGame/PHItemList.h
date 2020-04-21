@@ -1,5 +1,4 @@
-#ifndef PH_ITEM_LIST_H
-#define PH_ITEM_LIST_H
+#pragma once
 /*
 #define DECLARE_PHLIST_ITEM(class_name)			public:\
 												class CPHListItem\
@@ -100,4 +99,3 @@ template<class T>
 	};
 #define DEFINE_PHITEM_LIST(T,N,I)		typedef CPHItemList<T>	N; typedef CPHItemList<T>::iterator I;
 #define DEFINE_PHITEM_STACK(T,N,I)		typedef CPHItemStack<T>	N; typedef CPHItemStack<T>::iterator I;
-#endif

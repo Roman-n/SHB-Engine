@@ -1,5 +1,4 @@
-#ifndef PH_SYNCHRONIZE_H
-#define PH_SYNCHRONIZE_H
+#pragma once
 
 #include "PHNetState.h"
 
@@ -17,7 +16,3 @@ public:
 protected:
 private:
 };
-
-
-
-#endif

@@ -584,16 +584,10 @@
     <ClCompile Include="CameraManager.cpp">
       <Filter>Game API\Cameras</Filter>
     </ClCompile>
-    <ClCompile Include="Effector.cpp">
-      <Filter>Game API\Cameras</Filter>
-    </ClCompile>
     <ClCompile Include="EffectorPP.cpp">
       <Filter>Game API\Cameras</Filter>
     </ClCompile>
     <ClCompile Include="xr_area.cpp">
-      <Filter>Game API\Collision</Filter>
-    </ClCompile>
-    <ClCompile Include="xr_area_query.cpp">
       <Filter>Game API\Collision</Filter>
     </ClCompile>
     <ClCompile Include="xr_area_raypick.cpp">

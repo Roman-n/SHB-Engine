@@ -1,9 +1,6 @@
 // XR_IOConsole.h: interface for the CConsole class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#if !defined(AFX_XR_IOCONSOLE_H__ADEEFD61_7731_11D3_83D8_00C02610C34E__INCLUDED_)
-#define AFX_XR_IOCONSOLE_H__ADEEFD61_7731_11D3_83D8_00C02610C34E__INCLUDED_
 #pragma once
 
 #include "iinputreceiver.h"
@@ -24,7 +21,7 @@ public:
 		{	return xr_strcmp(x,y)<0;	}
 	};
 	typedef xr_map<LPCSTR,IConsole_Command*,str_pred>	vecCMD;
-	typedef vecCMD::iterator						vecCMD_IT;
+	typedef vecCMD::iterator							vecCMD_IT;
 	enum			{ MAX_LEN = 1024 };
 private:
 	u32				last_mm_timer;
@@ -35,7 +32,7 @@ private:
 	int				cmd_delta;
 	int				old_cmd_delta;
 	
-	char			*editor_last;
+	char*			editor_last;
 	BOOL			bShift;
 	
 	BOOL			bRepeat;
@@ -45,9 +42,9 @@ protected:
 	char			editor[MAX_LEN];
 	BOOL			bCursor;
 
-	CGameFont		*pFont;
+	CGameFont*		pFont;
 public:
-	virtual ~CConsole(){};
+	virtual			~CConsole			(){};
 	string64		ConfigFile;
 	BOOL			bVisible;
 	vecCMD			Commands;
@@ -91,5 +88,3 @@ public:
 };
 
 ENGINE_API extern CConsole* Console;
-
-#endif // !defined(AFX_XR_IOCONSOLE_H__ADEEFD61_7731_11D3_83D8_00C02610C34E__INCLUDED_)

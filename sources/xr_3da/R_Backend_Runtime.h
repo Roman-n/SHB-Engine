@@ -1,5 +1,3 @@
-#ifndef R_BACKEND_RUNTIMEH
-#define R_BACKEND_RUNTIMEH
 #pragma once
 
 #include "sh_texture.h"
@@ -238,5 +236,3 @@ ICF void	CBackend::set_CullMode		(u32 _mode)
 {
 	if (cull_mode		!= _mode)		{ cull_mode = _mode;			CHK_DX(HW.pDevice->SetRenderState	( D3DRS_CULLMODE,			_mode				)); }
 }
-
-#endif

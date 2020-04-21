@@ -1,5 +1,3 @@
-#ifndef r_DStreamsH
-#define r_DStreamsH
 #pragma once
 
 enum
@@ -81,4 +79,3 @@ public:
 	_IndexStream()				{ _clear();		};
 	~_IndexStream()				{ Destroy();	};
 };
-#endif

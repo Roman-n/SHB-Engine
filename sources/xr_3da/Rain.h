@@ -1,17 +1,12 @@
 // Rain.h: interface for the CRain class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#ifndef RainH
-#define RainH
 #pragma once
 
 #include "xr_collide_defs.h"
 
 //refs
 class ENGINE_API IRender_DetailModel;
-
-
 //
 class ENGINE_API CEffect_Rain
 {
@@ -85,5 +80,3 @@ public:
 	void							Render			();
 	void							OnFrame			();
 };
-
-#endif //RainH

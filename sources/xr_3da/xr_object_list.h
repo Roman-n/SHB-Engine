@@ -1,5 +1,4 @@
-#ifndef __XR_OBJECT_LIST_H__
-#define __XR_OBJECT_LIST_H__
+#pragma once
 
 // refs
 class	ENGINE_API	CObject;
@@ -80,5 +79,3 @@ public:
 			bool				registered_object_to_destroy(const CObject *object_to_destroy) const;
 #endif // DEBUG
 };
-
-#endif //__XR_OBJECT_LIST_H__

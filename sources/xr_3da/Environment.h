@@ -1,5 +1,4 @@
-#ifndef EnvironmentH
-#define EnvironmentH
+#pragma once
 
 // refs
 class ENGINE_API	IRender_Visual;
@@ -189,7 +188,7 @@ protected:
 
 	float					fGameTime;
 public:
-	float					wind_strength_factor;	
+	float					wind_strength_factor;
 	float					wind_gust_factor;
 	// Environments
 	CEnvDescriptorMixer		CurrentEnv;
@@ -222,9 +221,8 @@ public:
 	ref_texture				tonemap;
 	ref_texture				tsky0,tsky1;
 
-    void					SelectEnvs			(float gt);
+	void					SelectEnvs			(float gt);
 
-	void					UpdateAmbient		();
 	CEnvAmbient*			AppendEnvAmb		(const shared_str& sect);
 
 	void					Invalidate			();
@@ -257,5 +255,3 @@ public:
 
 ENGINE_API extern Flags32	psEnvFlags;
 ENGINE_API extern float		psVisDistance;
-
-#endif //EnvironmentH

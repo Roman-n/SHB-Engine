@@ -10,7 +10,7 @@
 
 #include "script_export_space.h"
 #include "base_client_classes.h"
-#include "..\XR_3DA\engineapi.h"
+#include "..\XR_3DA\EngineAPI.h"
 #include "..\XR_3DA\ispatial.h"
 #include "..\XR_3DA\isheduled.h"
 #include "..\XR_3DA\irenderable.h"

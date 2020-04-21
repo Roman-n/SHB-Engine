@@ -2,14 +2,11 @@
 // SleepEffector.h:		эффектор, который запускается во время сна
 //						актера                           
 //////////////////////////////////////////////////////////////////////
-
-
 #pragma once
 
 #include "..\XR_3DA\effectorPP.h"
 #include "..\XR_3DA\effector.h"
 #include "..\XR_3DA\cameramanager.h"
-
 
 #define SLEEP_EFFECTOR_TYPE_ID 8
 

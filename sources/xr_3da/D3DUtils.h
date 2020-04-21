@@ -1,9 +1,8 @@
 //----------------------------------------------------
 // file: D3DUtils.h
 //----------------------------------------------------
+#pragma once
 
-#ifndef D3DUtilsH
-#define D3DUtilsH
 #include "DrawUtils.h"
 //----------------------------------------------------
 
@@ -144,6 +143,3 @@ public:
 	virtual void 			OnRender		();
 };
 extern CDrawUtilities DU;
-//----------------------------------------------------
-#endif /*_INCDEF_D3DUtils_H_*/
-

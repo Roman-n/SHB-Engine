@@ -1,9 +1,12 @@
 #pragma once
+
 #include "physicsshellholder.h"
+
 class CPHLeaderGeomShell;
 class CPHCharacter;
 struct dContact;
 struct SGameMtl;
+
 class CClimableObject: public CPhysicsShellHolder 
 #ifdef DEBUG
 ,public pureRender

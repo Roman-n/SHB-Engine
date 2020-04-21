@@ -6,20 +6,7 @@
 #	define DEBUG_MEMORY_NAME
 #endif // USE_MEMORY_MONITOR
 
-#if 0//def DEBUG
-#	define DEBUG_MEMORY_MANAGER
-#endif // DEBUG
-
-#ifdef DEBUG_MEMORY_MANAGER
-	XRCORE_API	extern BOOL	g_bMEMO;
-#	ifndef DEBUG_MEMORY_NAME
-#		define DEBUG_MEMORY_NAME
-#	endif // DEBUG_MEMORY_NAME
-	extern XRCORE_API	void dump_phase	();
-#	define DUMP_PHASE	do {dump_phase();} while (0)
-#else // DEBUG_MEMORY_MANAGER
-#	define DUMP_PHASE	do {} while (0)
-#endif // DEBUG_MEMORY_MANAGER
+#define DUMP_PHASE	do {} while (0)
 
 #include "xrMemory_pso.h"
 #include "xrMemory_POOL.h"
@@ -37,15 +24,6 @@ public:
 	xrMemory			();
 	void				_initialize		(BOOL _debug_mode=FALSE);
 	void				_destroy		();
-
-#ifdef DEBUG_MEMORY_MANAGER
-	BOOL				debug_mode;
-	xrCriticalSection	debug_cs;
-	std::vector<mdbg>	debug_info;
-	u32					debug_info_update;
-	u32					stat_strcmp		;
-	u32					stat_strdock	;
-#endif // DEBUG_MEMORY_MANAGER
 
 	u32					stat_calls;
 	s32					stat_counter;
@@ -116,7 +94,7 @@ XRCORE_API	char* 	xr_strdup	(LPCSTR string);
 	IC void		operator delete		(void *p)			{	xr_free(p);											}
 	IC void*	operator new[]		(size_t size)		{	return Memory.mem_alloc(size?size:1);				}
 	IC void		operator delete[]	(void* p)			{	xr_free(p);											}
-#endif // DEBUG_MEMORY_MANAGER
+#endif // DEBUG_MEMORY_NAME
 
 // POOL-ing
 const		u32			mem_pools_count			=	54;

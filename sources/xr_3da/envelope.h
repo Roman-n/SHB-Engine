@@ -1,5 +1,4 @@
-#ifndef EnvelopeH
-#define EnvelopeH
+#pragma once
 
 // refs
 class IWriter;
@@ -137,5 +136,3 @@ public:
 
     void		Optimize	();
 };
-
-#endif //_ENVELOPE_H_

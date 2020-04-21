@@ -1,6 +1,7 @@
-#ifndef I_COLLISION_DAMAGE_INFO_H
-#define I_COLLISION_DAMAGE_INFO_H
+#pragma once
+
 struct SCollisionHitCallback;
+
 class ICollisionDamageInfo
 {
 public:		
@@ -13,4 +14,3 @@ public:
 		virtual SCollisionHitCallback	*HitCallback				()				const						=0;
 		virtual void					Reinit						()											=0;
 };
-#endif

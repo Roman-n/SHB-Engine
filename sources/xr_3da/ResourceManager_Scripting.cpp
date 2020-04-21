@@ -100,9 +100,9 @@ void LuaError(lua_State* L)
 	else
 #	ifdef DEBUG_MEMORY_NAME
 		return Memory.mem_realloc		(ptr, nsize, "LUA:Render");
-#	else // DEBUG_MEMORY_MANAGER
+#	else // DEBUG_MEMORY_NAME
 		return Memory.mem_realloc		(ptr, nsize);
-#	endif // DEBUG_MEMORY_MANAGER
+#	endif // DEBUG_MEMORY_NAME
 	}
 #else // USE_DL_ALLOCATOR
 #	include "doug_lea_memory_allocator.h"

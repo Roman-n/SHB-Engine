@@ -1,5 +1,4 @@
-#ifndef		D_TRI_BOX_H
-#define		D_TRI_BOX_H
+#pragma once
 
 #include "TriPrimitiveCollideClassDef.h"
 #include "../ode_include.h"
@@ -377,7 +376,3 @@ return depth2;
 
 }
 */
-
-
-
-#endif

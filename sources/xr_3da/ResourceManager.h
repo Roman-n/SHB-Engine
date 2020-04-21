@@ -1,9 +1,6 @@
 // TextureManager.h: interface for the CTextureManager class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#ifndef ResourceManagerH
-#define ResourceManagerH
 #pragma once
 
 #include	"shader.h"
@@ -171,5 +168,3 @@ public:
 	void			DestroyNecessaryTextures();
 	void			Dump					(bool bBrief);
 };
-
-#endif //ResourceManagerH

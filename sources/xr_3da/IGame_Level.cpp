@@ -29,7 +29,7 @@ IGame_Level::~IGame_Level	()
 {
 	if(strstr(Core.Params,"-nes_texture_storing") )
 		Device.Resources->StoreNecessaryTextures();
-//.	DEL_INSTANCE				( pHUD			);
+
 	xr_delete					( pLevel		);
 
 	// Render-level unload
@@ -77,11 +77,8 @@ BOOL IGame_Level::Load			(u32 dwNum)
 	// CForms
 	g_pGamePersistent->LoadTitle	("st_loading_cform");
 	ObjectSpace.Load			();
-	pApp->LoadSwitch			();
-
 
 	// HUD + Environment
-//.	pHUD						= (CCustomHUD*)NEW_INSTANCE	(CLSID_HUDMANAGER);
 	if(g_hud)
 		pHUD					= g_hud;
 	else

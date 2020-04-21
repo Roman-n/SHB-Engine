@@ -1,5 +1,5 @@
-#ifndef GEOMETRY_H
-#define GEOMETRY_H 
+#pragma once
+
 #include "PhysicsCommon.h"
 #include "ExtendedGeom.h"
 
@@ -165,4 +165,3 @@ virtual const	Fvector&	local_center		()																	;
 	virtual		dGeomID		create				()																	;
 	virtual		void		set_position		(const Fvector& ref_point)											;
 };
-#endif //GEOMETRY_H

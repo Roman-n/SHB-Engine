@@ -7,12 +7,10 @@
 //					поднимает в воздух и качает там какое-то
 //					время
 //////////////////////////////////////////////////////////////////////////
-
 #pragma once
+
 #include "customzone.h"
 #include "ai/monsters/telekinesis.h"
-
-
 
 class CBaseGraviZone : public CCustomZone
 {

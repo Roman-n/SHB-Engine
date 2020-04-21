@@ -5,10 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Object item client or server class
 ////////////////////////////////////////////////////////////////////////////
-
-#ifndef object_item_singleH
-#define object_item_singleH
-
 #pragma once
 
 #include "object_factory_space.h"
@@ -43,5 +39,3 @@ public:
 #endif
 
 #include "object_item_single_inline.h"
-
-#endif

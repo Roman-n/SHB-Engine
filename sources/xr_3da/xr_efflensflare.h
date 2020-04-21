@@ -1,5 +1,4 @@
-#ifndef xr_efflensflareH
-#define xr_efflensflareH
+#pragma once
 
 #include "xr_collide_defs.h"
 
@@ -104,5 +103,3 @@ public:
 
 	void				Invalidate		(){m_State=lfsNone;}
 };
-
-#endif // xr_efflensflareH

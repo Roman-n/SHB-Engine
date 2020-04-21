@@ -1,7 +1,7 @@
-//#include "stdafx.h"
-#ifndef __DCTRILISTCOLLIDER_INCLUDED__
-#define __DCTRILISTCOLLIDER_INCLUDED__
+#pragma once
+
 #include "dcTriangle.h"
+
 struct	dxGeom;
 struct	dxTriList;
 enum{
@@ -157,6 +157,3 @@ IC	void dcTriListCollider::SideToGlClTriState(u32 v0,u32 v1,CDB::TRI*       T_ar
 		if(verts[2]==v1&&verts[0]==v0)state.set(fl_engaged_s2,TRUE);
 	}
 }
-
-
-#endif	//__DCTRILISTCOLLIDER_INCLUDED__(

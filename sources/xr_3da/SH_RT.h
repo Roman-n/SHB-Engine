@@ -1,5 +1,3 @@
-#ifndef SH_RT_H
-#define SH_RT_H
 #pragma once
 
 //////////////////////////////////////////////////////////////////////////
@@ -58,5 +56,3 @@ struct ENGINE_API		resptrcode_crtc	: public resptr_base<CRTC>
 	void				destroy			()	{ _set(NULL);		}
 };
 typedef	resptr_core<CRTC,resptrcode_crtc>		ref_rtc;
-
-#endif // SH_RT_H

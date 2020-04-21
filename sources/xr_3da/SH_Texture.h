@@ -1,5 +1,3 @@
-#ifndef SH_TEXTURE_H
-#define SH_TEXTURE_H
 #pragma once
 
 #include "..\xrCore\xr_resource.h"
@@ -77,5 +75,3 @@ struct ENGINE_API		resptrcode_texture	: public resptr_base<CTexture>
 };
 typedef	resptr_core<CTexture,resptrcode_texture >	
 	ref_texture;
-
-#endif

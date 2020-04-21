@@ -1,5 +1,5 @@
-#ifndef D_TRI_CYLINDER_H
-#define D_TRI_CYLINDER_H
+#pragma once
+
 #include "../dCylinder/dCylinder.h"
 #include "TriPrimitiveCollideClassDef.h"
 #include "dcTriListCollider.h"
@@ -22,6 +22,3 @@ IC float dcTriListCollider::	dCylProj(dxGeom* cylinder,const dReal* normal)
 	//////////////////////////////
 	return cos1*hlz+sin1*radius;
 }
-
-
-#endif

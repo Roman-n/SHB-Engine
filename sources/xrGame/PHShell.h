@@ -1,10 +1,10 @@
 ///////////////////////////////////////////////////////////////////////
 
-#ifndef PH_SHELL
-#define PH_SHELL
+#pragma once
 
 class CPHShell;
 class CPHShellSplitterHolder;
+
 #include "PHJoint.h"
 #include "PHElement.h"
 #include "PHDefs.h"
@@ -262,4 +262,3 @@ private:
 				void				ExplosionHit					(const Fvector& pos, const Fvector& dir, float val,const u16 id)				;
 				void				ClearBreakInfo					();
 };
-#endif

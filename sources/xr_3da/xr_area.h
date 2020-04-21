@@ -1,5 +1,4 @@
-#ifndef __XR_AREA_H__
-#define __XR_AREA_H__
+#pragma once
 
 #include "xr_collide_form.h"
 #include "xr_collide_defs.h"
@@ -68,5 +67,3 @@ public:
 	ref_shader							dbgGetShader		()	{ return sh_debug;	}
 #endif
 };
-
-#endif //__XR_AREA_H__

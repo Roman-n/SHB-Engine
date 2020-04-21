@@ -1,5 +1,5 @@
-#ifndef PHSHELL_SPLITTER_H
-#define PHSHELL_SPLITTER_H
+#pragma once
+
 #include "PHDefs.h"
 #include "PHObject.h"
 
@@ -59,7 +59,3 @@ IC		bool					isEmpty						()																					{return m_splitters.empty()	;}
 		void					SetBreakable				()																												;
 		bool					IsUnbreakable				()																					{return m_unbreakable		;}					
 };
-
-
-
-#endif

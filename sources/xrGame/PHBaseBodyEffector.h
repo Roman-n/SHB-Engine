@@ -1,5 +1,4 @@
-#ifndef PH_BASE_BODY_EFFECTOR_H
-#define PH_BASE_BODY_EFFECTOR_H
+#pragma once
 
 #include "ode_include.h"
 
@@ -13,4 +12,3 @@ public:
 			m_body=body;
 		}
 };
-#endif

@@ -1,5 +1,3 @@
-#ifndef __XR_WEAPON_LR300_H__
-#define __XR_WEAPON_LR300_H__
 #pragma once
 
 #include "WeaponMagazined.h"
@@ -26,5 +24,3 @@ public:
 add_to_type_list(CWeaponLR300)
 #undef script_type_list
 #define script_type_list save_type_list(CWeaponLR300)
-
-#endif //__XR_WEAPON_LR300_H__

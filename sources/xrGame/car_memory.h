@@ -5,9 +5,7 @@
 //	Author		: Dmitriy Iassenev
 //	Description : car memory
 ////////////////////////////////////////////////////////////////////////////
-
-#ifndef CAR_MEMORY_H
-#define CAR_MEMORY_H
+#pragma once
 
 #include "vision_client.h"
 
@@ -47,5 +45,3 @@ public:
 						const Fvector &normal
 					);
 };
-
-#endif // CAR_MEMORY_H

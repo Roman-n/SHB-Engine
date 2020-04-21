@@ -1,7 +1,6 @@
-#include "CycleConstStorage.h"
-#ifndef PHINTERPOLATON_H
-#define PHINTERPOLATON_H
+#pragma once
 
+#include "CycleConstStorage.h"
 #include "ode_include.h"
 
 class CPHInterpolation {
@@ -25,4 +24,3 @@ private:
 	CCycleConstStorage<Fvector,PH_INTERPOLATION_POINTS>				qPositions;
 	CCycleConstStorage<Fquaternion,PH_INTERPOLATION_POINTS>			qRotations;
 };
-#endif

@@ -1,6 +1,4 @@
-//---------------------------------------------------------------------------
-#ifndef SkeletonCustomH
-#define SkeletonCustomH
+#pragma once
 
 #include		"fhierrarhyvisual.h"
 #include		"bone.h"
@@ -291,5 +289,3 @@ public:
 	}
 };
 IC CKinematics* PKinematics		(IRender_Visual* V)		{ return V?V->dcast_PKinematics():0; }
-//---------------------------------------------------------------------------
-#endif

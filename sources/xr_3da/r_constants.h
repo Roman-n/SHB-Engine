@@ -1,5 +1,3 @@
-#ifndef r_constantsH
-#define r_constantsH
 #pragma once
 
 #include "..\xrCore\xr_resource.h"
@@ -95,5 +93,3 @@ public:
 	BOOL					empty		()						{	return 0==table.size();	}
 };
 typedef	resptr_core<R_constant_table,resptr_base<R_constant_table> >				ref_ctable;
-
-#endif

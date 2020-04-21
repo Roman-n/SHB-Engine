@@ -1,5 +1,4 @@
-#ifndef CYCLE_CONST_STORAGE_H
-#define CYCLE_CONST_STORAGE_H
+#pragma once
 
 template<class T,int size> 
 class CCycleConstStorage
@@ -25,4 +24,3 @@ public:
 		return array[(first+i)%size];
 	}
 };
-#endif

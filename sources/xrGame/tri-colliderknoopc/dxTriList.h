@@ -1,13 +1,6 @@
-//#include "stdafx.h"
-#ifndef __DXTRILIST_INCLUDED__
-
-#define __DXTRILIST_INCLUDED__
-
+#pragma once
 
 #include "../ode_include.h"
-
-
-
 
 struct dcVector3{
 
@@ -469,7 +462,3 @@ template<class T> const T& dcMIN(const T& x, const T& y){
 	return x < y ? x : y;
 
 }
-
-
-
-#endif	//__DXTRILIST_INCLUDED__

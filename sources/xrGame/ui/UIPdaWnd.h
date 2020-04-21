@@ -15,9 +15,7 @@ class CUIDiaryWnd;
 class CUIActorInfoWnd;
 class CUIStalkersRankingWnd;
 class CUIEventsWnd;
-class CUIPdaContactsWnd;
-
- 
+class CUIPdaContactsWnd; 
 
 class CUIPdaWnd: public CUIDialogWnd
 {

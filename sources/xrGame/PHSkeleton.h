@@ -1,13 +1,14 @@
-#ifndef PH_SKELETON_H
-#define PH_SKELETON_H
+#pragma once
 
 #include "PHDefs.h"
 #include "PHDestroyableNotificate.h"
+
 class CPhysicsShellHolder;
 class CSE_ALifePHSkeletonObject;
 class CSE_Abstract;
 class CSE_PHSkeleton;
 class NET_Packet;
+
 class CPHSkeleton :
  public CPHDestroyableNotificate
 {
@@ -59,5 +60,3 @@ IC			bool	IsRemoving			(){return b_removing;}
 					CPHSkeleton			()																		;
 	virtual			~CPHSkeleton		()																		;
 };
-
-#endif

@@ -1,5 +1,5 @@
-#ifndef PH_GEOMETRY_OWNER_H
-#define PH_GEOMETRY_OWNER_H
+#pragma once
+
 #include "Geometry.h"
 #include "gamemtllib.h"
 
@@ -72,5 +72,3 @@ protected:
 virtual								~CPHGeometryOwner						();
 private:
 };
-
-#endif

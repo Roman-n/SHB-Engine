@@ -1,5 +1,3 @@
-#ifndef xrCPU_PipeH
-#define xrCPU_PipeH
 #pragma once
 
 // Forward references
@@ -64,4 +62,3 @@ struct xrDispatchTable
 typedef void	__cdecl	xrBinder	(xrDispatchTable* T, u32 dwFeatures);
 
 #undef MATRIX
-#endif

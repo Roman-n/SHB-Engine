@@ -1,5 +1,3 @@
-#ifndef __XR_WEAPON_MAG_H__
-#define __XR_WEAPON_MAG_H__
 #pragma once
 
 #include "weapon.h"
@@ -186,7 +184,4 @@ protected:
 	virtual void	StartIdleAnim		();
 	virtual	int		ShotsFired			() { return m_iShotNum; }
 	virtual float	GetWeaponDeterioration	();
-
 };
-
-#endif //__XR_WEAPON_MAG_H__

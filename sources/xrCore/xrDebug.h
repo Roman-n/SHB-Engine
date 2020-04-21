@@ -11,7 +11,6 @@ private:
 
 public:
 	void			_initialize			(const bool &dedicated);
-	void			_destroy			();
 	
 public:
 	crashhandler*	get_crashhandler	()							{ return handler;	};

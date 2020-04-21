@@ -8,11 +8,11 @@
 
 class ENGINE_API	IConsole_Command
 {
-public		:
+public:
 	friend class	CConsole;
 	typedef char	TInfo	[256];
 	typedef char	TStatus	[256];
-protected	:
+protected:
 	LPCSTR			cName;
 	bool			bEnabled;
 	bool			bLowerCaseArgs;
@@ -215,10 +215,10 @@ public		:
 
 class ENGINE_API	CCC_Integer : public IConsole_Command
 {
-protected	:
+protected:
 	int*			value;
 	int				min,max;
-public		:
+public:
 	  const int GetValue	() const {return *value;};
 	  const int GetMin		() const {return min;};
 	  const int GetMax		() const {return max;};

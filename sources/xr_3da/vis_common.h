@@ -1,5 +1,3 @@
-#ifndef vis_commonH
-#define vis_commonH
 #pragma once
 
 #pragma pack(push,4)
@@ -24,4 +22,3 @@ struct	vis_data
 	}
 };
 #pragma pack(pop)
-#endif

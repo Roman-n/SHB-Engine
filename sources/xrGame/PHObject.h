@@ -1,16 +1,19 @@
 #pragma once
-#ifndef CPHOBJECT
-#define CPHOBJECT
+
 #include "..\XR_3DA\ispatial.h"
 #include "PHItemList.h"
 #include "PHIsland.h"
+
 typedef u32	CLClassBits;
 typedef u32	CLBits;
+
 DEFINE_VECTOR(ISpatial*,qResultVec,qResultIt)
+
 class CPHObject;
 class CPHUpdateObject;
 class CPHMoveStorage;
 class CPHSynchronize;
+
 typedef void CollideCallback(CPHObject* obj1,CPHObject* obj2, dGeomID o1, dGeomID o2);
 
 class CPHObject :
@@ -137,4 +140,3 @@ IC	bool			IsActive		()																{return b_activated;}
 
 DEFINE_PHITEM_LIST(CPHObject,PH_OBJECT_STORAGE,PH_OBJECT_I)
 DEFINE_PHITEM_LIST(CPHUpdateObject,PH_UPDATE_OBJECT_STORAGE,PH_UPDATE_OBJECT_I)
-#endif//CPHOBJECT

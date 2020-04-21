@@ -8,10 +8,6 @@
 //	ширины. ¬ качестве исходных материалов необходимо 3 текстуры: права€(нижн€€),
 //	лева€(верхн€€) и центральна€
 //=============================================================================
-
-#ifndef UI_FRAME_LINE_H_
-#define UI_FRAME_LINE_H_
-
 #pragma once
 
 #include "../UIStaticItem.h"
@@ -52,5 +48,3 @@ public:
 	IC void		SetOrientation	(bool bIsHorizontal)	{ bHorizontalOrientation = bIsHorizontal; uFlags &=~ flValidSize; }
 	void		Render			();
 };
-
-#endif	// UI_FRAME_LINE_H_

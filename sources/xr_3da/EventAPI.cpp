@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "eventapi.h"
+#include "EventAPI.h"
 #include "xr_ioconsole.h"
 
 extern	void msRead			();
@@ -119,7 +119,7 @@ void	CEventAPI::Signal(EVENT E, u64 P1, u64 P2)
 	E->Signal	(P1,P2);	
 	CS.Leave	();
 }
-void	CEventAPI::Signal(LPCSTR N, u64 P1, u64 P2)
+void	CEventAPI::Signal(const char* N, u64 P1, u64 P2)
 {
 	CS.Enter	();
 	EVENT		E = Create(N);
@@ -137,7 +137,7 @@ void	CEventAPI::Defer(EVENT E, u64 P1, u64 P2)
 	Events_Deferred.back().P2	= P2;
 	CS.Leave	();
 }
-void	CEventAPI::Defer(LPCSTR N, u64 P1, u64 P2)
+void	CEventAPI::Defer(const char* N, u64 P1, u64 P2)
 {
 	CS.Enter	();
 	EVENT	E	= Create(N);

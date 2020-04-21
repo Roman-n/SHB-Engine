@@ -1,6 +1,4 @@
-#ifndef MATH_UTILS_H
-#define MATH_UTILS_H
-
+#pragma once
 
 IC  float* cast_fp(Fvector& fv)
 {
@@ -468,5 +466,4 @@ const float				DET_CHECK_EPS =0.15f					;//scale -35%  !? ;)
 	}};
 #else
 #define	VERIFY_RMATRIX(M)	
-#endif
 #endif

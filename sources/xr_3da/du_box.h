@@ -1,7 +1,5 @@
 //---------------------------------------------------------------------------
-
-#ifndef du_boxH
-#define du_boxH
+#pragma once
 //---------------------------------------------------------------------------
 #define DU_BOX_NUMVERTEX	8
 #define DU_BOX_NUMFACES		12
@@ -13,4 +11,3 @@ extern WORD du_box_faces[];
 extern WORD du_box_lines[];
 
 extern Fvector du_box_vertices2[];
-#endif

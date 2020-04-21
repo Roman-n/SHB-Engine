@@ -1,5 +1,5 @@
-#ifndef SPACE_UTILS_H
-#define SPACE_UTILS_H
+#pragma once
+
 #pragma warning(disable:4995)
 #pragma warning(disable:4267)
 #include "../../xrODE/ode/src/collision_kernel.h"
@@ -18,4 +18,3 @@ IC void spatialParsFromDGeom(dGeomID d_space,Fvector& center,Fvector& AABB,float
 	AABB.x=dAABB[1]-center.x,AABB.y=dAABB[3]-center.y,AABB.z=dAABB[5]-center.z;
 	radius=_max(AABB.x,_max(AABB.y,AABB.z));
 }
-#endif

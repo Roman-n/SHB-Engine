@@ -1,9 +1,11 @@
 /////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-#ifndef PH_JOINT
-#define PH_JOINT
+#pragma once
+
 #include "PhysicsShell.h"
+
 class CPHJointDestroyInfo;
+
 class CPHJoint: public CPhysicsJoint{
 ///////////////////////////////////////////////////////
 				u16									m_bone_id																								;
@@ -235,4 +237,3 @@ IC void axis_angleA(const Fmatrix& m, const Fvector& axis,float& angle){
 	//if(angle>M_PI) angle=angle-2.f*M_PI;
 	//if(angle<-M_PI) angle=angle+2.f*M_PI;
 }
-#endif

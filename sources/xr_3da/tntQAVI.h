@@ -1,5 +1,4 @@
-#ifndef tntQAVIH
-#define tntQAVIH
+#pragma once
 
 #include <math.h>
 
@@ -99,4 +98,3 @@ public:
 	BOOL				NeedUpdate			( ) { return CalcFrame( ) != m_dwFrameCurrent; }
 	INT					SetSpeed			( INT nPercent );
 };
-#endif

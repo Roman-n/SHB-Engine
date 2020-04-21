@@ -1,6 +1,4 @@
 #pragma	 once
-#ifndef PH_CAPTURE_H
-#define PH_CAPTURE_H
 
 #include "phobject.h"
 #include "gameobject.h"
@@ -72,4 +70,3 @@ static void object_contactCallbackFun(bool& do_colide,bool bo1,dContact& c,SGame
 	virtual void PhTune(dReal step);
 
 };
-#endif

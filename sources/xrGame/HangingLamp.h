@@ -1,9 +1,6 @@
 // DummyObject.h: interface for the CHangingLamp class.
 //
 //////////////////////////////////////////////////////////////////////
-
-#ifndef HangingLampH
-#define HangingLampH
 #pragma once
 
 #include "gameobject.h"
@@ -69,8 +66,7 @@ public:
 	virtual float	Radius			()				const;
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
+
 add_to_type_list(CHangingLamp)
 #undef script_type_list
 #define script_type_list save_type_list(CHangingLamp)
-
-#endif //HangingLampH

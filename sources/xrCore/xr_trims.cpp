@@ -91,15 +91,20 @@ LPSTR _GetItems ( LPCSTR src, int idx_start, int idx_end, LPSTR dst, char separa
 	return dst;
 }
 
-u32 _ParseItem ( LPCSTR src, xr_token* token_list )
+u32 _ParseItem(const char* src, xr_token* token_list)
 {
-	for( int i=0; token_list[i].name; i++ )
-		if( !stricmp(src,token_list[i].name) )
+	for (int i = 0; token_list[i].name; i++)
+	{
+		if (!stricmp(src, token_list[i].name))
+		{
 			return token_list[i].id;
+		}
+	}
+
 	return u32(-1);
 }
 
-u32 _ParseItem ( LPSTR src, int ind, xr_token* token_list )
+u32 _ParseItem(const char* src, int ind, xr_token* token_list)
 {
 	char dst[128];
 	_GetItem(src, ind, dst);

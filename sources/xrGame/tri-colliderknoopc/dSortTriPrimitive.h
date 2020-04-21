@@ -1,5 +1,5 @@
-#ifndef D_SORT_TRI_PRIMITIVE_H
-#define D_SORT_TRI_PRIMITIVE_H
+#pragma once
+
 #include "dTriCollideK.h"
 #include "dTriColliderCommon.h"
 #include "dTriColliderMath.h"
@@ -345,4 +345,3 @@ IC int dcTriListCollider::dSortTriPrimitiveCollide (
 	dVectorSet(last_pos,p);
 	return ret;
 }
-#endif

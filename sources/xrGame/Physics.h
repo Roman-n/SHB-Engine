@@ -1,6 +1,4 @@
-#ifndef PHYSICS_H
-#define PHYSICS_H
-
+#pragma once
 
 #include "dCylinder/dCylinder.h"
 #include "PhysicsShell.h"
@@ -46,7 +44,3 @@ class CPHElement;
 class CPHShell;
 extern dJointGroupID ContactGroup;
 extern Fbox			 phBoundaries;
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
-#endif PHYSICS_H

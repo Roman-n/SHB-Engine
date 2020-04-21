@@ -1,22 +1,23 @@
-#ifndef ELEVATOR_STAETE
-#define ELEVATOR_STAETE
+#pragma once
+
 class CPHCharacter;
 struct dContact;
 struct SGameMtl;
 class CClimableObject;
+
 class CElevatorState
 {
 public:	
 	enum Estate
 	{
-		clbNone			=0	,				
-		clbNearUp			,			
-		clbNearDown			,		
-		clbClimbingUp		,		
-		clbClimbingDown		,	
+		clbNone			=0	,
+		clbNearUp			,
+		clbNearDown			,
+		clbClimbingUp		,
+		clbClimbingDown		,
 		clbDepart			,
 		clbNoLadder			,
-		clbNoState			
+		clbNoState
 	};
 private:
 	Estate m_state;
@@ -34,7 +35,7 @@ Fvector			m_start_position;//for depart state
 u32				m_start_time;
 public: 
 						CElevatorState					();
-			void		PhTune							(float step)																			;
+			void		PhTune							(float step);
 			void		SetCharacter					(CPHCharacter *character);
 			void		SetElevator						(CClimableObject* climable);
 			void		EvaluateState					();
@@ -52,8 +53,8 @@ IC			Estate		State							(){return m_state;}
 private:
 			void		NewState						();
 
-			void		PhDataUpdate					(float step)																			;
-			void		InitContact						(dContact* c,bool &do_collide,u16 /*material_idx_1*/,u16 /*material_2*/)		;
+			void		PhDataUpdate					(float step);
+			void		InitContact						(dContact* c,bool &do_collide,u16 /*material_idx_1*/,u16 /*material_2*/);
 			void		SwitchState						(Estate new_state);
 			bool		StateSwitchInertion				(Estate new_state);
 			void		UpdateStNone					();
@@ -63,9 +64,4 @@ private:
 			void		UpdateStClimbingDown			();
 			void		UpdateClimbingCommon			(const Fvector	&d_to_ax,float to_ax,const Fvector& control_accel,float ca);
 			void		UpdateDepart					();
-
-			
-
 };
-
-#endif

@@ -1,5 +1,3 @@
-#ifndef __XR_HITMARKER_H__
-#define __XR_HITMARKER_H__
 #pragma once
 
 class CUIStaticItem;
@@ -39,5 +37,3 @@ public:
 	void					Hit			(int id, const Fvector& dir);
 	void					InitShader	(LPCSTR tex_name);
 };
-
-#endif // __XR_HITMARKER_H__

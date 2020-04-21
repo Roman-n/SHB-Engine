@@ -1,5 +1,3 @@
-#ifndef GameFontH
-#define GameFontH
 #pragma once
 
 #include "MbHelpers.h"
@@ -111,5 +109,3 @@ public:
 	shared_str				m_font_name;
 #endif
 };
-
-#endif // _XR_GAMEFONT_H_

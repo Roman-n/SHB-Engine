@@ -5,10 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Object item client and server class
 ////////////////////////////////////////////////////////////////////////////
-
-#ifndef object_item_client_serverH
-#define object_item_client_serverH
-
 #pragma once
 
 #include "object_factory_space.h"
@@ -42,5 +38,3 @@ public:
 #endif // NO_XR_GAME
 
 #include "object_item_client_server_inline.h"
-
-#endif

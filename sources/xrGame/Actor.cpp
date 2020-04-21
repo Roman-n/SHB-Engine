@@ -1597,7 +1597,7 @@ void CActor::OnDifficultyChanged	()
 {
 	// immunities
 	VERIFY(g_SingleGameDifficulty>=egdNovice && g_SingleGameDifficulty<=egdMaster); 
-	LPCSTR diff_name				= get_token_name(difficulty_type_token, g_SingleGameDifficulty);
+	const char* diff_name			= get_token_name(difficulty_type_token, g_SingleGameDifficulty);
 	string128						tmp;
 	strconcat						(sizeof(tmp),tmp,"actor_immunities_",diff_name);
 	conditions().LoadImmunities		(tmp,pSettings);

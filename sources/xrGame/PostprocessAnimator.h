@@ -1,5 +1,3 @@
-#ifndef __ppanimator_included__
-#define __ppanimator_included__
 #pragma once
 
 #include "..\XR_3DA\envelope.h"
@@ -157,6 +155,3 @@ public:
 						CPostprocessAnimatorControlled		(CEffectorController* c);
 	virtual BOOL		Valid								();
 };
-
-
-#endif /*__ppanimator_included__*/

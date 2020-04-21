@@ -1,5 +1,4 @@
-#ifndef PH_VALIDE_VALUES
-#define PH_VALIDE_VALUES
+#pragma once
 
 class CSafeValue
 {
@@ -131,4 +130,3 @@ public:
 		}
 
 };
-#endif

@@ -1,4 +1,5 @@
 #pragma once
+
 #include "actor_statistic_defs.h"
 
 class CActorStatisticsWrapper;

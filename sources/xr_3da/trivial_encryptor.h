@@ -1,5 +1,4 @@
-#ifndef TRIVIAL_ENCRYPTOR_H
-#define TRIVIAL_ENCRYPTOR_H
+#pragma once
 
 // before including this file
 // you should define at least one of the following macro:
@@ -156,5 +155,3 @@ private:
 #ifdef TRIVIAL_ENCRYPTOR_DECODER
 	trivial_encryptor::type	trivial_encryptor::m_alphabet_back[trivial_encryptor::alphabet_size];
 #endif // TRIVIAL_ENCRYPTOR_DECODER
-
-#endif // TRIVIAL_ENCRYPTOR_H

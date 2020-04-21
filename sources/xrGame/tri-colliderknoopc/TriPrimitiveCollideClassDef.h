@@ -1,5 +1,4 @@
-#ifndef TRI_PRIMITIVE_COLIDE_CLASS_DEF
-#define TRI_PRIMITIVE_COLIDE_CLASS_DEF
+#pragma once
 
 #define TRI_PRIMITIVE_COLIDE_CLASS_DECLARE(primitive)				\
 class primitive##Tri\
@@ -48,4 +47,3 @@ public:\
 	{\
 	return m_tri_list.dSortedTri##primitive(triSideAx0,triSideAx1,triAx,T,dist,o1,o2,flags,contact,skip);\
 	}
-#endif

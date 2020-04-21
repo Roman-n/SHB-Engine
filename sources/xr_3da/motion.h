@@ -1,6 +1,5 @@
 //----------------------------------------------------
-#ifndef MotionH
-#define MotionH
+#pragma once
 
 #include "bone.h"
 
@@ -138,4 +137,3 @@ public:
 	virtual bool	Load	(IReader& F);
     bool			Equal	(CClip* c);
 };
-#endif

@@ -1,10 +1,7 @@
-#ifndef PHYSICSSHELL_HOLDER_H
-#define PHYSICSSHELL_HOLDER_H
+#pragma once
 
 #include "GameObject.h"
 #include "ParticlesPlayer.h"
-
-
 
 class CPHDestroyable;
 class CPHCollisionDamageReceiver;
@@ -14,6 +11,7 @@ class CPHSkeleton;
 class CCharacterPhysicsSupport;
 class ICollisionDamageInfo;
 class CIKLimbsController;
+
 struct SCollisionHitCallback
 {
 	typedef								void					CollisionHitCallbackFun		(CGameObject* obj,float min_cs,float max_cs,float &cs,float &hl,const ICollisionDamageInfo* di,SCollisionHitCallback* slf)		;
@@ -119,5 +117,3 @@ public:
 public:
 	virtual	void			on_physics_disable	();
 };
-
-#endif

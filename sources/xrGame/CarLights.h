@@ -1,5 +1,3 @@
-#ifndef	CAR_LIGHTS_H
-#define CAR_LIGHTS_H
 #pragma once
 
 #include "..\XR_3DA\Render.h"
@@ -12,7 +10,7 @@ struct SCarLight
 	ref_light				light_render;
 	ref_glow				glow_render;
 	u16						bone_id;
-	CCarLights*				m_holder;				
+	CCarLights*				m_holder;
 			SCarLight		();
 			~SCarLight		();
 	void	Switch			();
@@ -22,8 +20,6 @@ struct SCarLight
 	void	Init			(CCarLights* holder);
 	void	Update			();
 	void	ParseDefinitions(LPCSTR section);
-	
-
 };
 
 DEFINE_VECTOR(SCarLight*,LIGHTS_STORAGE,LIGHTS_I)
@@ -65,12 +61,5 @@ protected:
 	Ivector2		m_gabarites								;
 	Ivector2		m_door_gabarites						;
 */
-private:
+
 };
-
-
-
-
-
-
-#endif

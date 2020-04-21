@@ -196,7 +196,6 @@
     <ClInclude Include="ActorAnimation.h" />
     <ClInclude Include="ActorCondition.h" />
     <ClInclude Include="ActorEffector.h" />
-    <ClInclude Include="ActorFollowers.h" />
     <ClInclude Include="actor_anim_defs.h" />
     <ClInclude Include="actor_defs.h" />
     <ClInclude Include="Actor_Flags.h" />
@@ -695,7 +694,6 @@
     <ClInclude Include="doug_lea_memory_allocator.h" />
     <CustomBuild Include="dRayMotions.h" />
     <ClInclude Include="DummyArtifact.h" />
-    <ClInclude Include="DynamicHeightMap.h" />
     <ClInclude Include="eatable_item.h" />
     <ClInclude Include="eatable_item_object.h" />
     <ClInclude Include="edge_path.h" />
@@ -827,7 +825,6 @@
     <ClInclude Include="item_manager_inline.h" />
     <ClInclude Include="key_binding_registrator.h" />
     <ClInclude Include="Level.h" />
-    <ClInclude Include="LevelFogOfWar.h" />
     <ClInclude Include="LevelGameDef.h" />
     <ClInclude Include="Level_Bullet_Manager.h" />
     <ClInclude Include="level_changer.h" />
@@ -960,7 +957,6 @@
     <ClInclude Include="pda_space.h" />
     <ClInclude Include="PHActivationShape.h" />
     <ClInclude Include="PHActorCharacter.h" />
-    <ClInclude Include="PHActorCharacterInline.h" />
     <ClInclude Include="PHAICharacter.h" />
     <ClInclude Include="PHBaseBodyEffector.h" />
     <ClInclude Include="PHCapture.h" />
@@ -1534,7 +1530,6 @@
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">pch_script.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(ProjectName)_script.pch</PrecompiledHeaderOutputFile>
     </ClCompile>
-    <ClCompile Include="ActorFollowers.cpp" />
     <ClCompile Include="ActorInput.cpp" />
     <ClCompile Include="ActorMountedWeapon.cpp" />
     <ClCompile Include="ActorVehicle.cpp" />
@@ -2090,10 +2085,6 @@
     </ClCompile>
     <ClCompile Include="dRayMotions.cpp" />
     <ClCompile Include="DummyArtifact.cpp" />
-    <ClCompile Include="DynamicHeightMap.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="eatable_item.cpp" />
     <ClCompile Include="eatable_item_object.cpp" />
     <ClCompile Include="EffectorBobbing.cpp" />
@@ -2361,10 +2352,6 @@
       <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(ProjectName)_script.pch</PrecompiledHeaderOutputFile>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">pch_script.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(ProjectName)_script.pch</PrecompiledHeaderOutputFile>
-    </ClCompile>
-    <ClCompile Include="LevelFogOfWar.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Level_Bullet_Manager.cpp" />
     <ClCompile Include="Level_bullet_manager_firetrace.cpp" />

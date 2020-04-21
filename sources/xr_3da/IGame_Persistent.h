@@ -1,5 +1,3 @@
-#ifndef IGame_PersistentH
-#define IGame_PersistentH
 #pragma once
 
 #include "Environment.h"
@@ -103,4 +101,3 @@ public:
 };
 
 extern ENGINE_API	IGame_Persistent*	g_pGamePersistent;
-#endif //IGame_PersistentH
