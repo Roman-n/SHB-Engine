@@ -9,7 +9,7 @@
 	#define XRNETSERVER_API __declspec(dllexport)
 #else
 	#define XRNETSERVER_API __declspec(dllimport)
-	#pragma comment(lib,	"xrNetServer"	)
+	#pragma comment(lib,	"xrNetServer.lib"	)
 #endif
 
 
