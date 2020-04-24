@@ -2,17 +2,11 @@
 #include "../control_combase.h"
 #include "../../../..\XR_3DA\SkeletonAnimated.h"
 
-class CPsyHitEffectorCam;
-class CPsyHitEffectorPP;	
-
 class CControllerPsyHit : public CControl_ComCustom<> {
 	typedef CControl_ComCustom<> inherited;
 
 	MotionID			m_stage[4];
 	u8					m_current_index;
-
-	CPsyHitEffectorCam	*m_effector_cam;
-	CPsyHitEffectorPP	*m_effector_pp;
 
 	enum ESoundState{
 		ePrepare,
