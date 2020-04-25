@@ -258,8 +258,7 @@ void CActor::Load	(LPCSTR section )
 	CInventoryOwner::Load		(section);
 	m_location_manager->Load	(section);
 
-	if (GameID() == GAME_SINGLE)
-		OnDifficultyChanged		();
+	OnDifficultyChanged		();
 	//////////////////////////////////////////////////////////////////////////
 	ISpatial*		self			=	smart_cast<ISpatial*> (this);
 	if (self)	{
@@ -502,65 +501,21 @@ void	CActor::Hit							(SHit* pHDS)
 
 	HitMark			(HDS.damage(), HDS.dir, HDS.who, HDS.bone(), HDS.p_in_bone_space, HDS.impulse, HDS.hit_type);
 
-	switch (GameID())
+	float hit_power	= HitArtefactsOnBelt(HDS.damage(), HDS.hit_type);
+
+	if (GodMode())//psActorFlags.test(AF_GODMODE))
 	{
-	case GAME_SINGLE:
-		{
-			float hit_power	= HitArtefactsOnBelt(HDS.damage(), HDS.hit_type);
-
-			if (GodMode())//psActorFlags.test(AF_GODMODE))
-			{
-				HDS.power = 0.0f;
-//				inherited::Hit(0.f,dir,who,element,position_in_bone_space,impulse, hit_type);
-				inherited::Hit(&HDS);
-				return;
-			}
-			else 
-			{
-				//inherited::Hit		(hit_power,dir,who,element,position_in_bone_space, impulse, hit_type);
-				HDS.power = hit_power;
-				inherited::Hit(&HDS);
-			};
-		}
-		break;
-	default:
-		{
-			m_bWasBackStabbed = false;
-			if (HDS.hit_type == ALife::eHitTypeWound_2 && Check_for_BackStab_Bone(HDS.bone()))
-			{
-				// convert impulse into local coordinate system
-				Fmatrix					mInvXForm;
-				mInvXForm.invert		(XFORM());
-				Fvector					vLocalDir;
-				mInvXForm.transform_dir	(vLocalDir,HDS.dir);
-				vLocalDir.invert		();
-
-				Fvector a	= {0,0,1};
-				float res = a.dotproduct(vLocalDir);
-				if (res < -0.707)
-				{
-					game_PlayerState* ps = Game().GetPlayerByGameID(ID());
-					if (!ps || !ps->testFlag(GAME_PLAYER_FLAG_INVINCIBLE))						
-						m_bWasBackStabbed = true;
-				}
-			};
-			
-			float hit_power = 0;
-
-			if (m_bWasBackStabbed) hit_power = (HDS.damage() == 0) ? 0 : 100000.0f;
-			else hit_power	= HitArtefactsOnBelt(HDS.damage(), HDS.hit_type);
-
-			HDS.power			= hit_power;
-			inherited::Hit		(&HDS);
-
-			if(OnServer() && !g_Alive() && HDS.hit_type==ALife::eHitTypeExplosion)
-			{
-				game_PlayerState* ps							= Game().GetPlayerByGameID(ID());
-				Game().m_WeaponUsageStatistic->OnExplosionKill	(ps, HDS);
-			}
-		}		
-		break;
+		HDS.power = 0.0f;
+//		inherited::Hit(0.f,dir,who,element,position_in_bone_space,impulse, hit_type);
+		inherited::Hit(&HDS);
+		return;
 	}
+	else 
+	{
+//		inherited::Hit(hit_power,dir,who,element,position_in_bone_space, impulse, hit_type);
+		HDS.power = hit_power;
+		inherited::Hit(&HDS);
+	};
 }
 
 void CActor::HitMark	(float P, 
@@ -888,8 +843,7 @@ void CActor::shedule_Update	(u32 DT)
 
 	//обновление инвентаря
 	UpdateInventoryOwner			(DT);
-	if (GameID() == GAME_SINGLE)
-		GameTaskManager().UpdateTasks	();
+	GameTaskManager().UpdateTasks	();
 
 	if(m_holder || !getEnabled() || !Ready())
 	{
@@ -1071,35 +1025,38 @@ void CActor::shedule_Update	(u32 DT)
 		m_pVehicleWeLookingAt			= smart_cast<CHolderCustom*>(game_object);
 		CEntityAlive* pEntityAlive		= smart_cast<CEntityAlive*>(game_object);
 		
-		if (GameID() == GAME_SINGLE )
+		if (m_pUsableObject && m_pUsableObject->tip_text())
 		{
-			if (m_pUsableObject && m_pUsableObject->tip_text())
+			m_sDefaultObjAction = CStringTable().translate( m_pUsableObject->tip_text() );
+		}
+		else
+		{
+			if (m_pPersonWeLookingAt && pEntityAlive->g_Alive( ))
 			{
-				m_sDefaultObjAction = CStringTable().translate( m_pUsableObject->tip_text() );
+				m_sDefaultObjAction = m_sCharacterUseAction;
 			}
+			else if (pEntityAlive && !pEntityAlive->g_Alive())
+			{
+				bool b_allow_drag = !!pSettings->line_exist("ph_capture_visuals",pEntityAlive->cNameVisual());
+
+				if(b_allow_drag)
+					m_sDefaultObjAction = m_sDeadCharacterUseOrDragAction;
+				else
+					m_sDefaultObjAction = m_sDeadCharacterUseAction;
+			}
+			else if (m_pVehicleWeLookingAt)
+			{
+				m_sDefaultObjAction = m_sCarCharacterUseAction;
+			}
+			else if (inventory( ).m_pTarget && inventory( ).m_pTarget->CanTake( ))
+			{
+				m_sDefaultObjAction = m_sInventoryItemUseAction;
+			}
+//.			else if (m_pInvBoxWeLookingAt)
+//.				m_sDefaultObjAction = m_sInventoryBoxUseAction;
 			else
 			{
-				if (m_pPersonWeLookingAt && pEntityAlive->g_Alive())
-					m_sDefaultObjAction = m_sCharacterUseAction;
-
-				else if (pEntityAlive && !pEntityAlive->g_Alive())
-				{
-					bool b_allow_drag = !!pSettings->line_exist("ph_capture_visuals",pEntityAlive->cNameVisual());
-				
-					if(b_allow_drag)
-						m_sDefaultObjAction = m_sDeadCharacterUseOrDragAction;
-					else
-						m_sDefaultObjAction = m_sDeadCharacterUseAction;
-
-				}else if (m_pVehicleWeLookingAt)
-					m_sDefaultObjAction = m_sCarCharacterUseAction;
-
-				else if (inventory().m_pTarget && inventory().m_pTarget->CanTake() )
-					m_sDefaultObjAction = m_sInventoryItemUseAction;
-//.				else if (m_pInvBoxWeLookingAt)
-//.					m_sDefaultObjAction = m_sInventoryBoxUseAction;
-				else 
-					m_sDefaultObjAction = NULL;
+				m_sDefaultObjAction = NULL;
 			}
 		}
 	}
@@ -1322,7 +1279,6 @@ float CActor::Radius()const
 
 bool		CActor::use_bolts				() const
 {
-	if (GameID() != GAME_SINGLE) return false;
 	return CInventoryOwner::use_bolts();
 };
 

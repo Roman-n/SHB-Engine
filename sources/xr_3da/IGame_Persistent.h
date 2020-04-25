@@ -88,7 +88,7 @@ public:
 	virtual void					Statistics			(CGameFont* F) = 0;
 
 	virtual	void					LoadTitle			(LPCSTR str){}
-	virtual bool					CanBePaused			()		{ return true;}
+//	virtual bool					CanBePaused			()		{ return true;}
 };
 
 class IMainMenu

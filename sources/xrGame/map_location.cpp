@@ -162,7 +162,7 @@ Fvector2 CMapLocation::Position()
 
 	CObject* pObject =  Level().Objects.net_Find(m_objectID);
 	if(!pObject){
-		if(ai().get_alife())		
+		if(ai().get_alife())
 		{
 			CSE_ALifeDynamicObject* O = ai().alife().objects().object(m_objectID,true);
 			if(O){
@@ -170,9 +170,9 @@ Fvector2 CMapLocation::Position()
 				pos.set(m_position_global.x, m_position_global.z);
 			}
 		}
-	
-	}else{
-		//if (GameID() != GAME_SINGLE) Msg("CMapLocation::Position()[%d]", m_objectID);
+	}
+	else
+	{
 		m_position_global = pObject->Position();
 		pos.set(m_position_global.x, m_position_global.z);
 	}
@@ -259,17 +259,6 @@ bool CMapLocation::Update() //returns actual
 
 	CObject* pObject =  Level().Objects.net_Find(m_objectID);
 	
-	//mp
-	if ( GameID()!=GAME_SINGLE && (pObject) ){
-			m_cached.m_Actuality		= true;
-			Position					();
-			Direction					();
-			LevelName					();
-			m_cached.m_updatedFrame		= Device.dwFrame;
-			return						m_cached.m_Actuality;
-	}
-	
-	//single
 	if(pObject){
 			m_cached.m_Actuality		= true;
 			Position					();
@@ -279,7 +268,7 @@ bool CMapLocation::Update() //returns actual
 			return						m_cached.m_Actuality;
 	}
 
-	if(ai().get_alife())		
+	if(ai().get_alife())
 	{
 		m_cached.m_Actuality = ( NULL != ai().alife().objects().object(m_objectID,true) );
 		if(m_cached.m_Actuality){
@@ -346,7 +335,7 @@ void CMapLocation::UpdateSpot(CUICustomMap* map, CMapSpot* sp )
 			sp->SetClipRect( clip_rect );
 			map->AttachChild(sp);
 		}
-		if( GameID() == GAME_SINGLE && GetSpotPointer(sp) ){
+		if(GetSpotPointer(sp) ){
 			CMapSpot* s = GetSpotBorder(sp);
 			if(s){
 				s->SetWndPos(sp->GetWndPos());

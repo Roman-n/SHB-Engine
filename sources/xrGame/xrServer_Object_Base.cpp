@@ -362,12 +362,6 @@ Flags16&	CSE_Abstract::flags			()
 xr_token game_types[]={
 	{ "any game",		GAME_ANY		},
 	{ "single",			GAME_SINGLE		},
-//	{ "deathmatch",		GAME_DEATHMATCH },
-//	{ "CTF",			GAME_CTF		},
-//	{ "assault",		GAME_ASSAULT	},
-//	{ "counterstrike",	GAME_CS			},
-//	{ "teamdeathmatch",	GAME_TEAMDEATHMATCH },
-//	{ "artefacthunt",	GAME_ARTEFACTHUNT },
 	{ 0,				0				}
 };
 

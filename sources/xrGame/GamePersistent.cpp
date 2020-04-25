@@ -487,8 +487,3 @@ void CGamePersistent::LoadTitle(LPCSTR str)
 	sprintf_s				(buff, "%s...", CStringTable().translate(str).c_str());
 	pApp->LoadTitleInt	(buff);
 }
-
-bool CGamePersistent::CanBePaused()
-{
-	return IsGameTypeSingle	();
-}

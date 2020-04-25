@@ -125,15 +125,6 @@ void CUIPdaWnd::Init()
 	xml_init.InitTabControl		(uiXml, "tab", 0, UITabControl);
 	UITabControl->SetMessageTarget(this);
 
-	if(GameID()!=GAME_SINGLE){
-		UITabControl->GetButtonsVector()->at(0)->Enable(false);
-		UITabControl->GetButtonsVector()->at(2)->Enable(false);
-		UITabControl->GetButtonsVector()->at(3)->Enable(false);
-		UITabControl->GetButtonsVector()->at(4)->Enable(false);
-		UITabControl->GetButtonsVector()->at(5)->Enable(false);
-		UITabControl->GetButtonsVector()->at(6)->Enable(false);
-	}
-	
 	m_updatedSectionImage			= xr_new<CUIStatic>();
 	xml_init.InitStatic				(uiXml, "updated_section_static", 0, m_updatedSectionImage);
 

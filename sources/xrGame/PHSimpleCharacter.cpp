@@ -1746,7 +1746,7 @@ ALife::EHitType	CPHSimpleCharacter:: HitType	()const
 	if(GMLib.GetMaterialByIdx(LastMaterialIDX())->Flags.test(SGameMtl::flInjurious))
 		return ALife::eHitTypeRadiation;
 
-	return (GameID() == GAME_SINGLE) ? ALife::eHitTypeStrike : ALife::eHitTypePhysicStrike;
+	return ALife::eHitTypeStrike;
 }//
 CElevatorState*	CPHSimpleCharacter::ElevatorState()
 {

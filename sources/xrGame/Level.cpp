@@ -397,8 +397,6 @@ void CLevel::ProcessGameEvents		()
 			}			
 		}
 	}
-	if (OnServer() && GameID()!= GAME_SINGLE)
-		Game().m_WeaponUsageStatistic->Send_Check_Respond();
 }
 
 void CLevel::OnFrame	()
@@ -518,12 +516,6 @@ void CLevel::OnRender()
 			if (team_base_zone)
 				team_base_zone->OnRender();
 			
-			if (GameID() != GAME_SINGLE)
-			{
-				CInventoryItem* pIItem = smart_cast<CInventoryItem*>(_O);
-				if (pIItem) pIItem->OnRender();
-			}
-
 			
 			if (dbg_net_Draw_Flags.test(1<<11)) //draw skeleton
 			{
@@ -763,20 +755,7 @@ bool		CLevel::InterpolationDisabled	()
 
 void 		CLevel::PhisStepsCallback		( u32 Time0, u32 Time1 )
 {
-	if (GameID() == GAME_SINGLE)	return;
-
-//#pragma todo("Oles to all: highly inefficient and slow!!!")
-//fixed (Andy)
-	/*
-	for (xr_vector<CObject*>::iterator O=Level().Objects.objects.begin(); O!=Level().Objects.objects.end(); ++O) 
-	{
-		if( (*O)->CLS_ID == CLSID_OBJECT_ACTOR){
-			CActor* pActor = smart_cast<CActor*>(*O);
-			if (!pActor || pActor->Remote()) continue;
-				pActor->UpdatePosStack(Time0, Time1);
-		}
-	};
-	*/
+	return;
 };
 
 void				CLevel::SetNumCrSteps		( u32 NumSteps )
@@ -895,11 +874,6 @@ u32	GameID()
 }
 
 #include "..\XR_3DA\IGame_Persistent.h"
-
-bool	IsGameTypeSingle()
-{
-	return g_pGamePersistent->GameType()==GAME_SINGLE || g_pGamePersistent->GameType()==GAME_ANY;
-}
 
 GlobalFeelTouch::GlobalFeelTouch()
 {

@@ -10,7 +10,6 @@ struct SLuaWpnParams{
 	luabind::functor<float>		m_functorRPM;
 	luabind::functor<float>		m_functorAccuracy;
 	luabind::functor<float>		m_functorDamage;
-	luabind::functor<float>		m_functorDamageMP;
 	luabind::functor<float>		m_functorHandling;
 	SLuaWpnParams();
 	~SLuaWpnParams();
@@ -21,7 +20,6 @@ SLuaWpnParams::SLuaWpnParams()
 	bool	functor_exists;
 	functor_exists	= ai().script_engine().functor("ui_wpn_params.GetRPM" ,		m_functorRPM);			VERIFY(functor_exists);
 	functor_exists	= ai().script_engine().functor("ui_wpn_params.GetDamage" ,	m_functorDamage);		VERIFY(functor_exists);
-	functor_exists	= ai().script_engine().functor("ui_wpn_params.GetDamageMP" ,m_functorDamageMP);	VERIFY(functor_exists);
 	functor_exists	= ai().script_engine().functor("ui_wpn_params.GetHandling" ,m_functorHandling);	VERIFY(functor_exists);
 	functor_exists	= ai().script_engine().functor("ui_wpn_params.GetAccuracy" ,m_functorAccuracy);	VERIFY(functor_exists);
 }
@@ -83,10 +81,7 @@ void CUIWpnParams::SetInfo(const shared_str& wpn_section)
 
 	m_progressRPM.SetProgressPos		(g_lua_wpn_params->m_functorRPM(*wpn_section));
 	m_progressAccuracy.SetProgressPos	(g_lua_wpn_params->m_functorAccuracy(*wpn_section));
-	if (GameID() == GAME_SINGLE)
-        m_progressDamage.SetProgressPos	(g_lua_wpn_params->m_functorDamage(*wpn_section));
-	else
-		m_progressDamage.SetProgressPos	(g_lua_wpn_params->m_functorDamageMP(*wpn_section));
+	m_progressDamage.SetProgressPos	(g_lua_wpn_params->m_functorDamage(*wpn_section));
 	m_progressHandling.SetProgressPos	(g_lua_wpn_params->m_functorHandling(*wpn_section));
 }
 

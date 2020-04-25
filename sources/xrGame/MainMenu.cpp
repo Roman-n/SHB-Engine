@@ -83,7 +83,6 @@ void CMainMenu::ReadTextureInfo()
 }
 
 extern ENGINE_API BOOL	bShowPauseString;
-extern bool				IsGameTypeSingle();
 
 void CMainMenu::Activate	(bool bActivate)
 {
@@ -92,8 +91,6 @@ void CMainMenu::Activate	(bool bActivate)
 	if (	(m_screenshotFrame == Device.dwFrame)	||
 			(m_screenshotFrame == Device.dwFrame-1) ||
 			(m_screenshotFrame == Device.dwFrame+1))	return;
-
-	bool b_is_single		= IsGameTypeSingle();
 
 	if(bActivate)
 	{
@@ -115,28 +112,23 @@ void CMainMenu::Activate	(bool bActivate)
 
 		m_Flags.set					(flRestoreConsole,Console->bVisible);
 		
-		if(b_is_single)	m_Flags.set	(flRestorePause,Device.Paused());
+		m_Flags.set	(flRestorePause,Device.Paused());
 		
 		Console->Hide				();
 
 		m_Flags.set					(flRestoreCursor,GetUICursor()->IsVisible());
 
-		if(b_is_single)
-		{
-			m_Flags.set					(flRestorePauseStr, bShowPauseString);
-			bShowPauseString			= FALSE;
-			if(!m_Flags.test(flRestorePause))
-				Device.Pause			(TRUE, TRUE, FALSE, "mm_activate2");
-		}
+		m_Flags.set					(flRestorePauseStr, bShowPauseString);
+		bShowPauseString			= FALSE;
+		if(!m_Flags.test(flRestorePause))
+			Device.Pause			(TRUE, TRUE, FALSE, "mm_activate2");
 
 		m_startDialog->m_bWorkInPause		= true;
 		StartStopMenu						(m_startDialog,true);
 		
 		if(g_pGameLevel)
 		{
-			if(b_is_single){
-				Device.seqFrame.Remove		(g_pGameLevel);
-			}
+			Device.seqFrame.Remove			(g_pGameLevel);
 			Device.seqRender.Remove			(g_pGameLevel);
 			CCameraManager::ResetPP			();
 		};
@@ -163,22 +155,17 @@ void CMainMenu::Activate	(bool bActivate)
 		CleanInternals						();
 		if(g_pGameLevel)
 		{
-			if(b_is_single){
-				Device.seqFrame.Add			(g_pGameLevel);
-
-			}
+			Device.seqFrame.Add				(g_pGameLevel);
 			Device.seqRender.Add			(g_pGameLevel);
-		};
+		}
+
 		if(m_Flags.test(flRestoreConsole))
 			Console->Show			();
 
-		if(b_is_single)
-		{
-			if(!m_Flags.test(flRestorePause))
-				Device.Pause			(FALSE, TRUE, FALSE, "mm_deactivate1");
+		if(!m_Flags.test(flRestorePause))
+			Device.Pause			(FALSE, TRUE, FALSE, "mm_deactivate1");
 
-			bShowPauseString			= m_Flags.test(flRestorePauseStr);
-		}	
+		bShowPauseString			= m_Flags.test(flRestorePauseStr);
 	
 		if(m_Flags.test(flRestoreCursor))
 			GetUICursor()->Show			();

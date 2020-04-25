@@ -20,11 +20,9 @@
 #define MAX_SATIETY					1.0f
 #define START_SATIETY				0.5f
 
-BOOL	GodMode	()	
+BOOL	GodMode	()
 { 
-	if (GameID() == GAME_SINGLE) 
-		return psActorFlags.test(AF_GODMODE); 
-	return FALSE;	
+	return psActorFlags.test(AF_GODMODE); 
 }
 
 CActorCondition::CActorCondition(CActor *object) :

@@ -338,7 +338,7 @@ void CRenderDevice::Pause(BOOL bOn, BOOL bTimer, BOOL bSound, LPCSTR reason)
 		if(!Paused())						
 			bShowPauseString				= TRUE;
 
-		if( bTimer && g_pGamePersistent->CanBePaused() )
+		if( bTimer/*&& g_pGamePersistent->CanBePaused() */)
 			g_pauseMngr.Pause				(TRUE);
 	
 		if(bSound){
