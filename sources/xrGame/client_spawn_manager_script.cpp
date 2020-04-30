@@ -6,7 +6,9 @@
 //	Description : Client spawn manager script export
 ////////////////////////////////////////////////////////////////////////////
 
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "client_spawn_manager.h"
 
 using namespace luabind;

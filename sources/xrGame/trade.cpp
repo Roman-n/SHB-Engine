@@ -1,4 +1,6 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "trade.h"
 #include "actor.h"
 #include "ai/stalker/ai_stalker.h"

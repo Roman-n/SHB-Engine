@@ -1,4 +1,6 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "weaponusp45.h"
 
 CWeaponUSP45::CWeaponUSP45(void) : CWeaponPistol("USP")
@@ -8,8 +10,7 @@ CWeaponUSP45::CWeaponUSP45(void) : CWeaponPistol("USP")
 }
 
 CWeaponUSP45::~CWeaponUSP45(void)
-{
-}
+{ }
 
 using namespace luabind;
 

@@ -1,4 +1,6 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "InfoPortion.h"
 #include "gameobject.h"
 #include "encyclopedia_article.h"
@@ -23,28 +25,23 @@ void INFO_DATA::save (IWriter& stream)
 	save_data(receive_time, stream);
 }
 
-
 SInfoPortionData::SInfoPortionData ()
-{
-}
+{ }
+
 SInfoPortionData::~SInfoPortionData ()
-{
-}
+{ }
 
 CInfoPortion::CInfoPortion()
-{
-}
+{ }
 
 CInfoPortion::~CInfoPortion ()
-{
-}
+{ }
 
 void CInfoPortion::Load	(shared_str info_id)
 {
 	m_InfoId = info_id;
 	inherited_shared::load_shared(m_InfoId, NULL);
 }
-
 
 void CInfoPortion::load_shared	(LPCSTR)
 {
@@ -65,7 +62,6 @@ void CInfoPortion::load_shared	(LPCSTR)
 		shared_str dialog_name = pXML->Read(pNode, "dialog", i,"");
 		info_data()->m_DialogNames.push_back(dialog_name);
 	}
-
 	
 	//список названий порций информации, которые деактивируются,
 	//после получения этой порции
@@ -79,7 +75,6 @@ void CInfoPortion::load_shared	(LPCSTR)
 
 	//имена скриптовых функций
 	info_data()->m_PhraseScript.Load(pXML, pNode);
-
 
 	//индексы статей
 	info_data()->m_Articles.clear();

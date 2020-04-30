@@ -1,4 +1,6 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "Physics.h"
 #include "PHWorld.h"
 #include "PHCommander.h"

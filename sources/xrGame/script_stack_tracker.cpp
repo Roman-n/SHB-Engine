@@ -6,7 +6,9 @@
 //	Description : Script stack tracker
 ////////////////////////////////////////////////////////////////////////////
 
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "script_stack_tracker.h"
 #include "script_storage_space.h"
 #include "ai_space.h"

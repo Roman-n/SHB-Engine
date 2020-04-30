@@ -6,7 +6,9 @@
 //	Description : ALife monster detail path manager class script export
 ////////////////////////////////////////////////////////////////////////////
 
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "alife_monster_detail_path_manager.h"
 #include "alife_smart_terrain_task.h"
 

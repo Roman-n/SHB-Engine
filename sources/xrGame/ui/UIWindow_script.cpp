@@ -1,4 +1,6 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "UIWindow.h"
 #include "UIFrameWindow.h"
 #include "UIFrameLineWnd.h"

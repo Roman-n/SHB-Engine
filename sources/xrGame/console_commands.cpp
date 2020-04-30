@@ -1,4 +1,6 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "..\XR_3DA\xr_ioconsole.h"
 #include "..\XR_3DA\xr_ioc_cmd.h"
 #include "..\XR_3DA\customhud.h"

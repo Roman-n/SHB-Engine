@@ -6,7 +6,9 @@
 //	Description : XRay Script hit class script export
 ////////////////////////////////////////////////////////////////////////////
 
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "script_hit.h"
 #include "script_game_object.h"
 

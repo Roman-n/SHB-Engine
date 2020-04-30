@@ -6,7 +6,9 @@
 //	Description : Visual memory manager
 ////////////////////////////////////////////////////////////////////////////
 
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "visual_memory_manager.h"
 #include "ai/stalker/ai_stalker.h"
 #include "memory_space_impl.h"

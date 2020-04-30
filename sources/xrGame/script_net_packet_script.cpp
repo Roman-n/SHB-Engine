@@ -6,7 +6,9 @@
 //	Description : XRay Script net packet class script export
 ////////////////////////////////////////////////////////////////////////////
 
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "script_net_packet.h"
 #include "../../xrNetServer/net_utils.h"
 

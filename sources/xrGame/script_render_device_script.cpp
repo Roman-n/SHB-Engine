@@ -6,7 +6,9 @@
 //	Description : Script render device script export
 ////////////////////////////////////////////////////////////////////////////
 
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "script_render_device.h"
 
 using namespace luabind;

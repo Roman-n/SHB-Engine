@@ -1,4 +1,6 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "game_base.h"
 #include "xrServer_script_macroses.h"
 #include "../../xrNetServer/client_id.h"

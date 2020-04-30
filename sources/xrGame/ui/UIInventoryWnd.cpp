@@ -1,4 +1,6 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "UIInventoryWnd.h"
 
 #include "xrUIXmlParser.h"
@@ -21,7 +23,6 @@
 #include "UIInventoryUtilities.h"
 using namespace InventoryUtilities;
 
-
 #include "../InfoPortion.h"
 #include "../level.h"
 #include "../game_base_space.h"
@@ -36,8 +37,6 @@ using namespace InventoryUtilities;
 
 #define				INVENTORY_ITEM_XML		"inventory_item.xml"
 #define				INVENTORY_XML			"inventory_new.xml"
-
-
 
 CUIInventoryWnd*	g_pInvWnd = NULL;
 
@@ -80,7 +79,6 @@ void CUIInventoryWnd::Init()
 
 	AttachChild							(&UIDescrWnd);
 	xml_init.InitStatic					(uiXml, "descr_static", 0, &UIDescrWnd);
-
 
 	UIDescrWnd.AttachChild				(&UIItemInfo);
 	UIItemInfo.Init						(0, 0, UIDescrWnd.GetWidth(), UIDescrWnd.GetHeight(), INVENTORY_ITEM_XML);
@@ -216,12 +214,10 @@ void CUIInventoryWnd::Draw()
 	CUIWindow::Draw						();
 }
 
-
 void CUIInventoryWnd::Update()
 {
 	if(m_b_need_reinit)
 		InitInventory					();
-
 
 	CEntityAlive *pEntityAlive			= smart_cast<CEntityAlive*>(Level().CurrentEntity());
 
@@ -302,7 +298,6 @@ void CUIInventoryWnd::AttachAddon(PIItem item_to_upgrade)
 
 	item_to_upgrade->Attach						(CurrentIItem(), true);
 
-
 	//спрятать вещь из активного слота в инвентарь на время вызова менюшки
 	CActor *pActor								= smart_cast<CActor*>(Level().CurrentEntity());
 	if(pActor && item_to_upgrade == pActor->inventory().ActiveItem())
@@ -333,7 +328,6 @@ void CUIInventoryWnd::DetachAddon(LPCSTR addon_name)
 			pActor->inventory().Activate		(NO_ACTIVE_SLOT);
 	}
 }
-
 
 void	CUIInventoryWnd::SendEvent_ActivateSlot	(PIItem	pItem)
 {
@@ -394,7 +388,6 @@ void	CUIInventoryWnd::SendEvent_Item_Eat			(PIItem	pItem)
 	pItem->object().u_EventSend		(P);
 };
 
-
 void CUIInventoryWnd::BindDragDropListEnents(CUIDragDropListEx* lst)
 {
 	lst->m_f_item_drop				= CUIDragDropListEx::DRAG_DROP_EVENT(this,&CUIInventoryWnd::OnItemDrop);
@@ -403,7 +396,6 @@ void CUIInventoryWnd::BindDragDropListEnents(CUIDragDropListEx* lst)
 	lst->m_f_item_selected			= CUIDragDropListEx::DRAG_DROP_EVENT(this,&CUIInventoryWnd::OnItemSelected);
 	lst->m_f_item_rbutton_click		= CUIDragDropListEx::DRAG_DROP_EVENT(this,&CUIInventoryWnd::OnItemRButtonClick);
 }
-
 
 #include "../xr_level_controller.h"
 #include <dinput.h>

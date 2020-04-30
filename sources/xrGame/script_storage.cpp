@@ -6,7 +6,9 @@
 //	Description : XRay Script Storage
 ////////////////////////////////////////////////////////////////////////////
 
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "script_storage.h"
 #include "script_thread.h"
 #include <stdarg.h>

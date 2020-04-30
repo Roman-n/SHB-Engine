@@ -6,7 +6,9 @@
 //	Description : Base server game script export
 ////////////////////////////////////////////////////////////////////////////
 
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "game_sv_base.h"
 #include "xrMessages.h"
 #include "ui/UIInventoryUtilities.h"

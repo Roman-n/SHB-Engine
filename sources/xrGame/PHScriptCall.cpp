@@ -1,4 +1,6 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "PHCommander.h"
 #include "script_space_forward.h"
 #include "script_callback_ex.h"

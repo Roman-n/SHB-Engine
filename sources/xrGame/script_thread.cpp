@@ -6,7 +6,9 @@
 //	Description : Script thread class
 ////////////////////////////////////////////////////////////////////////////
 
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 extern "C" {
 	#include "..\..\xrLua\src\lstate.h"
 };

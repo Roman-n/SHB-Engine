@@ -1,4 +1,6 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "UIWpnParams.h"
 #include "UIXmlInit.h"
 #include "../level.h"
@@ -25,8 +27,7 @@ SLuaWpnParams::SLuaWpnParams()
 }
 
 SLuaWpnParams::~SLuaWpnParams()
-{
-}
+{ }
 
 SLuaWpnParams* g_lua_wpn_params = NULL;
 
@@ -49,8 +50,7 @@ CUIWpnParams::CUIWpnParams(){
 }
 
 CUIWpnParams::~CUIWpnParams()
-{
-}
+{ }
 
 void CUIWpnParams::InitFromXml(CUIXml& xml_doc){
 	if (!xml_doc.NavigateToNode("wpn_params", 0))	return;
@@ -70,12 +70,10 @@ void CUIWpnParams::InitFromXml(CUIXml& xml_doc){
 	m_progressDamage.SetRange		(0, 100);
 	m_progressHandling.SetRange		(0, 100);
 	m_progressRPM.SetRange			(0, 100);
-
 }
 
 void CUIWpnParams::SetInfo(const shared_str& wpn_section)
 {
-
 	if(!g_lua_wpn_params)
 		g_lua_wpn_params = xr_new<SLuaWpnParams>();
 
@@ -95,7 +93,7 @@ bool CUIWpnParams::Check(const shared_str& wpn_section){
         if (0==xr_strcmp(wpn_section, "mp_wpn_binoc"))
             return false;
 
-        return true;		
+        return true;
 	}
 	else
 		return false;

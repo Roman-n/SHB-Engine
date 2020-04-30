@@ -6,7 +6,9 @@
 //	Description : Script sound type script export
 ////////////////////////////////////////////////////////////////////////////
 
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "script_sound_type.h"
 #include "ai_sounds.h"
 

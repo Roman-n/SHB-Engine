@@ -1,4 +1,6 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "actor.h"
 #include "Actor_Flags.h"
 #include "inventory.h"

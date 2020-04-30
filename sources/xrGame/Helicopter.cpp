@@ -1,4 +1,6 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "helicopter.h"
 #include "xrserver_objects_alife.h"
 #include "PhysicsShell.h"

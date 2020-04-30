@@ -1,4 +1,6 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "PhraseScript.h"
 #include "script_engine.h"
 #include "ai_space.h"
@@ -11,11 +13,10 @@
 #include "actor.h"
 
 CPhraseScript::CPhraseScript	()
-{
-}
+{ }
+
 CPhraseScript::~CPhraseScript	()
-{
-}
+{ }
 
 //загрузка из XML файла
 void CPhraseScript::Load		(CUIXml* uiXml, XML_NODE* phrase_node)

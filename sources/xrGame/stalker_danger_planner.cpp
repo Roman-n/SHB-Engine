@@ -6,7 +6,9 @@
 //	Description : Stalker danger planner
 ////////////////////////////////////////////////////////////////////////////
 
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "stalker_danger_planner.h"
 #include "ai/stalker/ai_stalker.h"
 #include "ai/stalker/ai_stalker_space.h"

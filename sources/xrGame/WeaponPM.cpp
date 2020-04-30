@@ -1,4 +1,6 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "WeaponPM.h"
 
 //////////////////////////////////////////////////////////////////////
@@ -11,8 +13,7 @@ CWeaponPM::CWeaponPM() : CWeaponPistol("PM")
 }
 
 CWeaponPM::~CWeaponPM()
-{
-}
+{ }
 
 using namespace luabind;
 

@@ -1,4 +1,6 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 
 #include "WeaponHPSA.h"
 
@@ -6,9 +8,7 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 CWeaponHPSA::CWeaponHPSA() : CWeaponPistol("HPSA")
-{
-}
+{ }
 
 CWeaponHPSA::~CWeaponHPSA()
-{
-}
+{ }

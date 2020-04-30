@@ -1,4 +1,6 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "Helicopter.h"
 #include "level.h"
 #include "patrol_path.h"
@@ -7,11 +9,8 @@
 #include "game_object_space.h"
 #include "script_callback_ex.h"
 
-
 SHeliMovementState::~SHeliMovementState()
-{
-
-}
+{ }
 
 void SHeliMovementState::net_Destroy()
 {

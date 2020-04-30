@@ -1,4 +1,6 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "Explosive.h"
 
 using namespace luabind;
@@ -12,4 +14,3 @@ void CExplosive::script_register(lua_State *L)
 			.def("explode",					(&CExplosive::Explode))
 	];
 }
-

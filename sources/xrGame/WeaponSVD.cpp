@@ -1,13 +1,13 @@
-#include "pch_script.h"
+//#include "pch_script.h"
+#include "stdafx.h"
+
 #include "weaponsvd.h"
 
 CWeaponSVD::CWeaponSVD(void) : CWeaponCustomPistol("SVD")
-{
-}
+{ }
 
 CWeaponSVD::~CWeaponSVD(void)
-{
-}
+{ }
 
 void CWeaponSVD::switch2_Fire	()
 {
