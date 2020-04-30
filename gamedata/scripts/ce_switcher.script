@@ -85,7 +85,6 @@ function ce_switcher:OnStateChanged(old_state, new_state)
 	end
 end
 
-
 function ce_switcher:use(who)
 	printf("----ce_switcher used " )
 	

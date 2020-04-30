@@ -33,12 +33,8 @@ void CPHCollisionDamageReceiver::Init()
 			//R_ASSERT3(og, "collision damage bone has no physics collision", *item.first);
 			if(og)og->add_obj_contact_cb(CollisionCallback);
 		}
-		
 	}
 }
-
-
-
 
 void CPHCollisionDamageReceiver::CollisionCallback(bool& do_colide,bool bo1,dContact& c,SGameMtl* material_1,SGameMtl* material_2)
 {
@@ -71,13 +67,11 @@ void CPHCollisionDamageReceiver::CollisionCallback(bool& do_colide,bool bo1,dCon
 	Fvector pos;
 	pos.sub(*(Fvector*)c.geom.pos,*(Fvector*)dGeomGetPosition(bo1 ? c.geom.g1:c.geom.g2));//it is not true pos in bone space
 	dr->Hit(source_id,ud_self->bone_id,E_NL(b1,b2,c.geom.normal)*damager_material_factor/dfs,dir,pos);
-	
 }
 
 const static float hit_threthhold=5.f;
 void CPHCollisionDamageReceiver::Hit(u16 source_id,u16 bone_id,float power,const Fvector& dir,Fvector &pos )
 {
-
 	DAMAGE_BONES_I i=FindBone(bone_id);
 	if(i==m_controled_bones.end())return;
 	power*=i->second;
