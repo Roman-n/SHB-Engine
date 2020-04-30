@@ -93,9 +93,10 @@ SPPInfo& SPPInfo::lerp(const SPPInfo& def, const SPPInfo& to, float factor)
 
 CCameraManager::CCameraManager(bool bApplyOnUpdate)
 {
+
 #ifdef DEBUG
 	dbg_upd_frame					= 0;
-#endif
+#endif // DEBUG
 
 	m_bAutoApply					= bApplyOnUpdate;
 	vPosition.set					(0,0,0);
@@ -202,10 +203,12 @@ void CCameraManager::Update(const CCameraBase* C)
 }
 void CCameraManager::Update(const Fvector& P, const Fvector& D, const Fvector& N, float fFOV_Dest, float fASPECT_Dest, float fFAR_Dest, u32 flags)
 {
+
 #ifdef DEBUG
 	VERIFY(dbg_upd_frame!=Device.dwFrame);// already updated !!!
 	dbg_upd_frame			= Device.dwFrame;
-#endif
+#endif // DEBUG
+
 	// camera
 	if (flags&CCameraBase::flPositionRigid)
 		vPosition.set		(P);

@@ -89,4 +89,4 @@ public:
 			bool				get_dik_name				(int dik, LPSTR dest, int dest_sz);
 };
 
-extern ENGINE_API CInput *		pInput;
+extern ENGINE_API CInput*		pInput;

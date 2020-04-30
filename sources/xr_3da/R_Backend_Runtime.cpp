@@ -114,9 +114,11 @@ void CBackend::set_Textures			(STextureList* _T)
 			if (load_id>_last_ps)		_last_ps	=	load_id;
 			if (textures_ps[load_id]!=load_surf)	{
 				textures_ps[load_id]	= load_surf			;
+
 #ifdef DEBUG
 				stat.textures			++;
-#endif
+#endif // DEBUG
+
 				if (load_surf)			{
 					PGO					(Msg("PGO:tex%d:%s",load_id,load_surf->cName.c_str()));
 					load_surf->bind		(load_id);
@@ -129,9 +131,11 @@ void CBackend::set_Textures			(STextureList* _T)
 			if (load_id_remapped>_last_vs)	_last_vs	=	load_id_remapped;
 			if (textures_vs[load_id_remapped]!=load_surf)	{
 				textures_vs[load_id_remapped]	= load_surf			;
+
 #ifdef DEBUG
 				stat.textures	++;
-#endif
+#endif // DEBUG
+
 				if (load_surf)	{
 					PGO					(Msg("PGO:tex%d:%s",load_id,load_surf->cName.c_str()));
 					load_surf->bind		(load_id);

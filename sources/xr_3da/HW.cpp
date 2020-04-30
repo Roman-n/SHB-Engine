@@ -18,13 +18,15 @@ ENGINE_API CHW			HW;
 
 #ifdef DEBUG
 IDirect3DStateBlock9*	dwDebugSB = 0;
-#endif
+#endif // DEBUG
 
 void CHW::Reset		(HWND hwnd)
 {
+
 #ifdef DEBUG
 	_RELEASE			(dwDebugSB);
-#endif
+#endif // DEBUG
+
 	_RELEASE			(pBaseZB);
 	_RELEASE			(pBaseRT);
 
@@ -46,9 +48,10 @@ void CHW::Reset		(HWND hwnd)
 	}
 	R_CHK				(pDevice->GetRenderTarget			(0,&pBaseRT));
 	R_CHK				(pDevice->GetDepthStencilSurface	(&pBaseZB));
+
 #ifdef DEBUG
 	R_CHK				(pDevice->CreateStateBlock			(D3DSBT_ALL,&dwDebugSB));
-#endif
+#endif // DEBUG
 
 	updateWindowProps	(hwnd);
 }
@@ -112,10 +115,11 @@ void	CHW::DestroyDevice	()
 
 	_SHOW_REF				("refCount:pBaseRT",pBaseRT);
 	_RELEASE				(pBaseRT);
+
 #ifdef DEBUG
 	_SHOW_REF				("refCount:dwDebugSB",dwDebugSB);
 	_RELEASE				(dwDebugSB);
-#endif
+#endif // DEBUG
 
 	_SHOW_REF				("DeviceREF:",HW.pDevice);
 	_RELEASE				(HW.pDevice);
@@ -171,7 +175,7 @@ void		CHW::CreateDevice		(HWND m_hWnd)
 			break;
 		}
 	}
-//. #endif
+//. #endif // DEBUG
 
 
 	// Display the name of video board
@@ -314,9 +318,11 @@ void		CHW::CreateDevice		(HWND m_hWnd)
 	}
 
 	// Capture misc data
+
 #ifdef DEBUG
 	R_CHK	(pDevice->CreateStateBlock			(D3DSBT_ALL,&dwDebugSB));
-#endif
+#endif // DEBUG
+
 	R_CHK	(pDevice->GetRenderTarget			(0,&pBaseRT));
 	R_CHK	(pDevice->GetDepthStencilSurface	(&pBaseZB));
 	u32	memory									= pDevice->GetAvailableTextureMem	();
@@ -497,12 +503,15 @@ void	fill_vid_mode_list			(CHW* _hw)
 #ifdef DEBUG
 	Msg("Available video modes[%d]:",_tmp.size());
 #endif // DEBUG
+
 	for(i=0; i<_tmp.size();++i)
 	{
 		vid_mode_token[i].id		= i;
 		vid_mode_token[i].name		= _tmp[i];
+
 #ifdef DEBUG
 		Msg							("[%s]",_tmp[i]);
 #endif // DEBUG
+
 	}
 }

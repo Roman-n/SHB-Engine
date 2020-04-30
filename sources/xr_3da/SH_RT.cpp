@@ -75,6 +75,7 @@ void CRT::create	(LPCSTR Name, u32 w, u32 h,	D3DFORMAT f)
 #ifdef DEBUG
 	Msg			("* created RT(%s), %dx%d",Name,w,h);
 #endif // DEBUG
+
 	R_CHK		(pSurface->GetSurfaceLevel	(0,&pRT));
 	pTexture	= Device.Resources->_CreateTexture	(Name);
 	pTexture->surface_set	(pSurface);

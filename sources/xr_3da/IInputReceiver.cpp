@@ -33,8 +33,7 @@ void IInputReceiver::IR_OnDeactivate					(void)
 }
 
 void IInputReceiver::IR_OnActivate(void)
-{
-}
+{ }
 
 BOOL IInputReceiver::IR_GetKeyState(int dik)
 {
@@ -52,15 +51,18 @@ void	IInputReceiver::IR_GetMousePosScreen			(Ivector2& p)
 {
 	GetCursorPos((LPPOINT)&p);
 }
+
 void	IInputReceiver::IR_GetMousePosReal				(HWND hwnd, Ivector2 &p)
 {
 	IR_GetMousePosScreen(p);
 	if (hwnd) ScreenToClient(hwnd,(LPPOINT)&p);
 }
+
 void	IInputReceiver::IR_GetMousePosReal				(Ivector2 &p)
 {
 	IR_GetMousePosReal(Device.m_hWnd,p);
 }
+
 void	IInputReceiver::IR_GetMousePosIndependent		(Fvector2 &f)
 {
 	Ivector2 p;
@@ -70,6 +72,7 @@ void	IInputReceiver::IR_GetMousePosIndependent		(Fvector2 &f)
 		2.f*float(p.y)/float(Device.dwHeight)-1.f
 		);
 }
+
 void	IInputReceiver::IR_GetMousePosIndependentCrop	(Fvector2 &f)
 {
 	IR_GetMousePosIndependent(f);

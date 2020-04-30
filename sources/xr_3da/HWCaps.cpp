@@ -96,6 +96,5 @@ void CHWCaps::Update()
 		soDec=(dwStencilCaps & D3DSTENCILCAPS_DECRSAT)? D3DSTENCILOP_DECRSAT:D3DSTENCILOP_DECR;
 		dwMaxStencilValue=(1<<8)-1;
 	}
-
 	// DEV INFO
 }

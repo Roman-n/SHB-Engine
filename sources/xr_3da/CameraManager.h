@@ -108,9 +108,10 @@ class ENGINE_API CCameraManager
 	SPPInfo					pp_affected;
 	void					UpdateDeffered();
 public:
+
 #ifdef DEBUG	
 	u32						dbg_upd_frame;
-#endif
+#endif // DEBUG
 
 	void					Dump					(void);
 	CEffectorCam*			AddCamEffector			(CEffectorCam*			ef);

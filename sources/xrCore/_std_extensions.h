@@ -1,9 +1,10 @@
 #pragma once
 
 #define	BREAK_AT_STRCMP
+
 #ifndef DEBUG
-#undef  BREAK_AT_STRCMP
-#endif
+#undef BREAK_AT_STRCMP
+#endif // DEBUG
 
 #ifdef abs
 #undef abs

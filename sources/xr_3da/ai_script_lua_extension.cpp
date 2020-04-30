@@ -146,7 +146,7 @@ void Script::vfExportToLua(CLuaVirtualMachine *tpLuaVM)
 
 #ifdef DEBUG
 	lua_sethook					(tpLuaVM, LuaHookCall,	LUA_HOOKCALL | LUA_HOOKRET | LUA_HOOKLINE | LUA_HOOKTAILRET,	0);
-#endif
+#endif // DEBUG
 
 	vfLoadStandardScripts		(tpLuaVM);
 }
@@ -235,10 +235,12 @@ bool Script::bfLoadBuffer(CLuaVirtualMachine *tpLuaVM, LPCSTR caBuffer, size_t t
 		l_iErrorCode	= luaL_loadbuffer(tpLuaVM,caBuffer,tSize,caScriptName);
 
 	if (l_iErrorCode) {
+
 #ifdef DEBUG
 		if (!bfPrintOutput	(tpLuaVM,caScriptName,l_iErrorCode))
 			vfPrintError(tpLuaVM,l_iErrorCode);
-#endif
+#endif // DEBUG
+
 		return			(false);
 	}
 	return			(true);
@@ -262,10 +264,12 @@ bool bfDoFile(CLuaVirtualMachine *tpLuaVM, LPCSTR caScriptName, LPCSTR caNameSpa
 		lua_call	(tpLuaVM,0,0);
 //		int			l_iErrorCode = lua_pcall(tpLuaVM,0,0,0);
 //		if (l_iErrorCode) {
+
 //#ifdef DEBUG
 //			bfPrintOutput	(tpLuaVM,caScriptName,l_iErrorCode);
 //			vfPrintError	(tpLuaVM,l_iErrorCode);
-//#endif
+//#endif // DEBUG
+
 //			return	(false);
 //		}
 	}

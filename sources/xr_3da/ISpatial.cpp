@@ -241,6 +241,7 @@ void			ISpatial_DB::_insert	(ISpatial_NODE* N, Fvector& n_C, float n_R)
 void			ISpatial_DB::insert		(ISpatial* S)
 {
 	cs.Enter			();
+
 #ifdef DEBUG
 	stat_insert.Begin	();
 
@@ -255,7 +256,7 @@ void			ISpatial_DB::insert		(ISpatial* S)
 			else		Debug.fatal(DEBUG_INFO,"Invalid OTHER spatial position{%3.2f,%3.2f,%3.2f} or radius{%3.2f}",VPUSH(S->spatial.sphere.P),S->spatial.sphere.R);
 		}
 	}
-#endif
+#endif // DEBUG
 
 	if (verify_sp(S,m_center,m_bounds))
 	{
@@ -270,9 +271,11 @@ void			ISpatial_DB::insert		(ISpatial* S)
 		S->spatial.node_center.set	(m_center);
 		S->spatial.node_radius		=	m_bounds;
 	}
+
 #ifdef DEBUG
 	stat_insert.End		();
-#endif
+#endif // DEBUG
+
 	cs.Leave			();
 }
 
@@ -301,26 +304,32 @@ void			ISpatial_DB::_remove	(ISpatial_NODE* N, ISpatial_NODE* N_sub)
 void			ISpatial_DB::remove		(ISpatial* S)
 {
 	cs.Enter			();
+
 #ifdef DEBUG
 	stat_remove.Begin	();
-#endif
+#endif // DEBUG
+
 	ISpatial_NODE* N	= S->spatial.node_ptr;
 	N->_remove			(S);
 
 	// Recurse
 	if (N->_empty())					_remove(N->parent,N);
+
 #ifdef DEBUG
 	stat_remove.End		();
-#endif
+#endif // DEBUG
+
 	cs.Leave			();
 }
 
 void			ISpatial_DB::update		(u32 nodes/* =8 */)
 {
+
 #ifdef DEBUG
 	if (0==m_root)	return;
 	cs.Enter		();
 	VERIFY			(verify());
 	cs.Leave		();
-#endif
+#endif // DEBUG
+
 }

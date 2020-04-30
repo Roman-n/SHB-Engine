@@ -254,7 +254,6 @@
     <ClInclude Include="r_constants_cache.h" />
     <ClInclude Include="R_DStreams.h" />
     <ClInclude Include="Shader.h" />
-    <ClInclude Include="Shader_xrLC.h" />
     <ClInclude Include="SH_Atomic.h" />
     <ClInclude Include="SH_Constant.h" />
     <ClInclude Include="SH_Matrix.h" />

@@ -185,7 +185,7 @@ void CStats::Show()
 		F.OutNext	("  Query:     %2.2fms",	AI_Vis_Query.result);
 		F.OutNext	("  RayCast:   %2.2fms",	AI_Vis_RayTests.result);
 		F.OutSkip	();
-								   
+
 #undef  PPP
 #define PPP(a) (100.f*float(a)/float(RenderTOTAL.result))
 		F.OutNext	("*** RENDER:  %2.2fms",RenderTOTAL.result);

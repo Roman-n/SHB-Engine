@@ -15,7 +15,6 @@
 #include "game_cl_base.h"
 #include "..\XR_3DA\igame_persistent.h"
 
-
 #include "InventoryOwner.h"
 #include "relation_registry.h"
 #include "character_info.h"
@@ -30,14 +29,12 @@ u32 C_ON_ENEMY		D3DCOLOR_XRGB(0xff,0,0);
 u32 C_ON_NEUTRAL	D3DCOLOR_XRGB(0xff,0xff,0x80);
 u32 C_ON_FRIEND		D3DCOLOR_XRGB(0,0xff,0);
 
-
 #define C_DEFAULT	D3DCOLOR_XRGB(0xff,0xff,0xff)
 #define C_SIZE		0.025f
 #define NEAR_LIM	0.5f
 
 #define SHOW_INFO_SPEED		0.5f
 #define HIDE_INFO_SPEED		10.f
-
 
 IC	float	recon_mindist	()		{
 	return 2.f;

@@ -47,9 +47,10 @@ public:
 
 #ifdef DEBUG
 	void	Validate(void)	{	VERIFY(pDevice); VERIFY(pD3D); };
-#else
+#else // DEBUG
 	void	Validate(void)	{};
-#endif
+#endif // DEBUG
+
 };
 
 extern ENGINE_API CHW		HW;

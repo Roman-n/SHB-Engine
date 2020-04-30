@@ -8,7 +8,7 @@
 
 void*			FileDownload	(LPCSTR fn, u32* pdwSize=NULL);
 void			FileCompress	(LPCSTR fn, LPCSTR sign, void* data, u32 size);
-void * 			FileDecompress	(LPCSTR fn, LPCSTR sign, u32* size=NULL);
+void*			FileDecompress	(LPCSTR fn, LPCSTR sign, u32* size=NULL);
 
 class CFileWriter : public IWriter
 {

@@ -107,5 +107,6 @@ public:
 
 #ifdef DEBUG
 	shared_str				m_font_name;
-#endif
+#endif // DEBUG
+
 };

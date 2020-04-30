@@ -26,18 +26,20 @@ void register_file_mapping			(void *address, const u32 &size, LPCSTR file_name)
 
 	g_file_mapped_memory			+= size;
 	++g_file_mapped_count;
+
 #ifdef USE_MEMORY_MONITOR
 //	memory_monitor::monitor_alloc	(addres,size,"file mapping");
 	string512						temp;
 	sprintf_s						(temp, sizeof(temp),"file mapping: %s",file_name);
 	memory_monitor::monitor_alloc	(address,size,temp);
 #endif // USE_MEMORY_MONITOR
+
 }
 
-void unregister_file_mapping		(void *address, const u32 &size)
+void unregister_file_mapping(void* address, const u32& size)
 {
-	FILE_MAPPINGS::iterator			I = g_file_mappings.find(*(u32*)&address);
-	VERIFY							(I != g_file_mappings.end());
+	FILE_MAPPINGS::iterator			I = g_file_mappings.find(*(u32*) &address);
+	VERIFY(I != g_file_mappings.end	( ));
 //	VERIFY2							((*I).second.first == size,make_string("file mapping sizes are different: %d -> %d",(*I).second.first,size));
 	g_file_mapped_memory			-= (*I).second.first;
 	--g_file_mapped_count;
@@ -47,6 +49,7 @@ void unregister_file_mapping		(void *address, const u32 &size)
 #ifdef USE_MEMORY_MONITOR
 	memory_monitor::monitor_free	(address);
 #endif // USE_MEMORY_MONITOR
+
 }
 
 XRCORE_API void dump_file_mappings	()
@@ -64,22 +67,27 @@ XRCORE_API void dump_file_mappings	()
 		);
 }
 #endif // DEBUG
+
 //////////////////////////////////////////////////////////////////////
 // Tools
 //////////////////////////////////////////////////////////////////////
-//---------------------------------------------------
-void VerifyPath(LPCSTR path)
+void VerifyPath(const char* path)
 {
 	string1024 tmp;
-	for(int i=0;path[i];i++){
-		if( path[i]!='\\' || i==0 )
+	for (int i = 0; path[i]; i++)
+	{
+		if (path[i] != '\\' || i == 0)
+		{
 			continue;
-		CopyMemory( tmp, path, i );
+		}
+
+		CopyMemory(tmp, path, i);
 		tmp[i] = 0;
-        _mkdir(tmp);
+		_mkdir(tmp);
 	}
 }
-void*  FileDownload(LPCSTR fn, u32* pdwSize)
+
+void* FileDownload(LPCSTR fn, u32* pdwSize)
 {
 	int		hFile;
 	u32		size;
@@ -376,6 +384,7 @@ CTempReader::~CTempReader()
 // pack stream
 CPackReader::~CPackReader()
 {
+
 #ifdef DEBUG
 	unregister_file_mapping	(base_address,Size);
 #endif // DEBUG
@@ -386,9 +395,10 @@ CPackReader::~CPackReader()
 // file stream
 CFileReader::CFileReader(LPCSTR name)
 {
-    data	= (char *)FileDownload(name,(u32 *)&Size);
+    data	= (char*)FileDownload(name,(u32*)&Size);
     Pos		= 0;
 };
+
 CFileReader::~CFileReader()
 {	xr_free(data);	};
 //---------------------------------------------------
@@ -423,6 +433,7 @@ CVirtualFileRW::CVirtualFileRW(LPCSTR cFileName)
 
 CVirtualFileRW::~CVirtualFileRW() 
 {
+
 #ifdef DEBUG
 	unregister_file_mapping	(data,Size);
 #endif // DEBUG
@@ -453,6 +464,7 @@ CVirtualFileReader::CVirtualFileReader(LPCSTR cFileName)
 
 CVirtualFileReader::~CVirtualFileReader() 
 {
+
 #ifdef DEBUG
 	unregister_file_mapping	(data,Size);
 #endif // DEBUG

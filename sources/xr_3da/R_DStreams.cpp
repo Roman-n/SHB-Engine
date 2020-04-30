@@ -32,11 +32,12 @@ void _VertexStream::Destroy	()
 
 void* _VertexStream::Lock	( u32 vl_Count, u32 Stride, u32& vOffset )
 {
+
 #ifdef DEBUG
 	PGO					(Msg("PGO:VB_LOCK:%d",vl_Count));
 	VERIFY				(0==dbg_lock);
 	dbg_lock			++;
-#endif
+#endif // DEBUG
 
 	// Ensure there is enough space in the VB for this data
 	u32	bytes_need		= vl_Count*Stride;
@@ -70,11 +71,13 @@ void* _VertexStream::Lock	( u32 vl_Count, u32 Stride, u32& vOffset )
 
 void	_VertexStream::Unlock		( u32 Count, u32 Stride)
 {
+
 #ifdef DEBUG
 	PGO					(Msg("PGO:VB_UNLOCK:%d",Count));
 	VERIFY				(1==dbg_lock);
 	dbg_lock			--;
-#endif
+#endif // DEBUG
+
 	mPosition			+=	Count*Stride;
 
 	VERIFY				(pVB);

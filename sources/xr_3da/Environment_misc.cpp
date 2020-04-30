@@ -324,9 +324,11 @@ void CEnvironment::load		()
 						CEnvDescriptor*		D=xr_new<CEnvDescriptor>();
 						D->load				(exec_tm,sect_e,this);
 						WeatherCycles[weather].push_back	(D);
+
 #ifdef DEBUG
 						D->sect_name		= sect_e;
-#endif
+#endif // DEBUG
+
 					}
 				}
 			}
@@ -357,9 +359,11 @@ void CEnvironment::load		()
 						CEnvDescriptor*	D=xr_new<CEnvDescriptor>();
 						D->load			(exec_tm,sect_e,this);
 						env.push_back	(D);
+
 #ifdef DEBUG
 						D->sect_name		= sect_e;
-#endif
+#endif // DEBUG
+
 					}
 				}
 				env.push_back	(xr_new<CEnvDescriptor>()); env.back()->exec_time_loaded = DAY_LENGTH;

@@ -53,9 +53,11 @@ void CRenderDevice::Destroy	(void) {
 extern BOOL bNeed_re_create_env;
 void CRenderDevice::Reset		(bool precache)
 {
+
 #ifdef DEBUG
 	_SHOW_REF("*ref -CRenderDevice::ResetTotal: DeviceREF:",HW.pDevice);
 #endif // DEBUG
+
 	bool b_16_before	= (float)dwWidth/(float)dwHeight > (1024.0f/768.0f+0.01f);
 
 	ShowCursor				(TRUE);
@@ -96,4 +98,5 @@ void CRenderDevice::Reset		(bool precache)
 #ifdef DEBUG
 	_SHOW_REF("*ref +CRenderDevice::ResetTotal: DeviceREF:",HW.pDevice);
 #endif // DEBUG
+
 }

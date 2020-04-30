@@ -1,7 +1,6 @@
 #include "stdafx.h"
 
 #include "StatGraph.h"
-//---------------------------------------------
 
 CStatGraph::CStatGraph()
 {
@@ -116,8 +115,6 @@ void CStatGraph::RenderBack	()
     RCache.Vertex.Unlock	(dwCount,hGeomLine->vb_stride);
     RCache.set_Geometry		(hGeomLine);
     RCache.Render	   		(D3DPT_LINELIST,dwOffset,dwCount/2);
-
-
 };
 
 void CStatGraph::RenderBars(FVF::TL0uv** ppv, ElementsDeq* pelements)
@@ -189,22 +186,6 @@ void CStatGraph::RenderBarLines( FVF::TL0uv** ppv, ElementsDeq* pelements )
 		(*ppv)->set		(X1,Y1,it->color); (*ppv)++;
 	}
 };
-
-/*
-void CStatGraph::RenderPoints( FVF::TL0uv** ppv, ElementsDeq* pelements )
-{
-	float elem_offs		= float(rb.x-lt.x)/max_item_count;
-	float elem_factor	= float(rb.y-lt.y)/float(mx-mn);
-	float base_y		= float(rb.y)+(mn*elem_factor);
-
-	for (ElementsDeqIt it=pelements->begin()+1; it!=pelements->end(); it++)
-	{
-		float X1	= float(it-pelements->begin())*elem_offs+lt.x;
-		float Y1	= base_y-it->data*elem_factor;
-		(*ppv)->set		(X1,Y1,it->color); (*ppv)++;
-	}
-};
-*/
 
 void	CStatGraph::RenderMarkers	( FVF::TL0uv** ppv, MarkersDeq* pmarkers )
 {

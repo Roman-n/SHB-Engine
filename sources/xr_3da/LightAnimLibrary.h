@@ -1,6 +1,4 @@
-//---------------------------------------------------------------------------
 #pragma once
-//---------------------------------------------------------------------------
 
 class ENGINE_API CLAItem				{
 public:
@@ -32,6 +30,7 @@ public:
     int		 	    LastKeyFrame		(){return Keys.rbegin()->first;}
     u32*			GetKey				(int frame){KeyPairIt it=Keys.find(frame); return (it!=Keys.end())?&(it->second):0;}
 };
+
 DEFINE_VECTOR(CLAItem*,LAItemVec,LAItemIt);
 
 class ENGINE_API ELightAnimLibrary{
@@ -39,6 +38,7 @@ public:
     LAItemVec       Items;
     LAItemIt		FindItemI			(LPCSTR name);
     CLAItem*		FindItem			(LPCSTR name);
+
 public:
 					ELightAnimLibrary	();
 					~ELightAnimLibrary	();

@@ -7,7 +7,6 @@
 #include "clsid_game.h"
 #include "GamePersistent.h"
 
-
 CFontManager::CFontManager()
 {
 	Device.seqDeviceReset.Add(this,REG_PRIORITY_HIGH);
@@ -30,12 +29,10 @@ CFontManager::CFontManager()
 		(**it) = NULL;
 
 	InitializeFonts();
-
 }
 
 void CFontManager::InitializeFonts()
 {
-
 	InitializeFont(pFontMedium				,"hud_font_medium"				);
 	InitializeFont(pFontDI					,"hud_font_di",					CGameFont::fsGradient|CGameFont::fsDeviceIndependent);
 	InitializeFont(pFontArial14				,"ui_font_arial_14"				);
@@ -47,7 +44,6 @@ void CFontManager::InitializeFonts()
 	InitializeFont(pFontGraffiti50Russian	,"ui_font_graff_50"				);
 	InitializeFont(pFontLetterica25			,"ui_font_letter_25"			);
 	InitializeFont(pFontStat				,"stat_font",					CGameFont::fsDeviceIndependent);
-
 }
 
 LPCSTR CFontManager::GetFontTexName (LPCSTR section)
@@ -91,6 +87,7 @@ void CFontManager::InitializeFont(CGameFont*& F, LPCSTR section, u32 flags)
 #ifdef DEBUG
 	F->m_font_name = section;
 #endif
+
 	if (pSettings->line_exist(section,"size")){
 		float sz = pSettings->r_float(section,"size");
 		if (flags&CGameFont::fsDeviceIndependent)	F->SetHeightI(sz);
@@ -98,7 +95,6 @@ void CFontManager::InitializeFont(CGameFont*& F, LPCSTR section, u32 flags)
 	}
 	if (pSettings->line_exist(section,"interval"))
 	F->SetInterval(pSettings->r_fvector2(section,"interval"));
-
 }
 
 CFontManager::~CFontManager()
@@ -117,6 +113,7 @@ void CFontManager::Render()
 	for(;it!=it_e;++it)
 		(**it)->OnRender			();
 }
+
 void CFontManager::OnDeviceReset()
 {
 	InitializeFonts();
@@ -136,7 +133,6 @@ CHUDManager::~CHUDManager()
 	xr_delete			(m_pHUDTarget);
 	b_online			= false;
 }
-
 //--------------------------------------------------------------------
 
 void CHUDManager::Load()
@@ -149,6 +145,7 @@ void CHUDManager::Load()
 	pUI->Load			(NULL);
 	OnDisconnected		();
 }
+
 //--------------------------------------------------------------------
 void CHUDManager::OnFrame()
 {
@@ -197,6 +194,7 @@ void CHUDManager::Render_Last()
 	O->OnHUDDraw					(this);
 	::Render->set_HUD				(FALSE);
 }
+
 extern void draw_wnds_rects();
 extern ENGINE_API BOOL bShowPauseString;
 //отрисовка элементов интерфейса
@@ -230,12 +228,10 @@ void  CHUDManager::RenderUI()
 		pFont->Out			(_pos.x, _pos.y, _str);
 		pFont->OnRender		();
 	}
-
 }
 
 void CHUDManager::OnEvent(EVENT E, u64 P1, u64 P2)
-{
-}
+{ }
 
 collide::rq_result&	CHUDManager::GetCurrentRayQuery	() 
 {
@@ -252,7 +248,6 @@ void  CHUDManager::ShowCrosshair	(bool show)
 	m_pHUDTarget->m_bShowCrosshair = show;
 }
 
-
 void CHUDManager::Hit(int idx, float power, const Fvector& dir)	
 {
 	HitMarker.Hit(idx, dir);
@@ -262,6 +257,7 @@ void CHUDManager::SetHitmarkType		(LPCSTR tex_name)
 {
 	HitMarker.InitShader				(tex_name);
 }
+
 #include "ui\UIMainInGameWnd.h"
 void CHUDManager::OnScreenRatioChanged()
 {

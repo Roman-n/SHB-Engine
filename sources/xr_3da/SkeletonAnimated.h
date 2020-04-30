@@ -170,9 +170,9 @@ private:
 	void						IFXBlendSetup			(CBlend &B, MotionID motion_ID, float blendAccrue, float blendFalloff,float Power ,float Speed,u16 bone);
 //.	bool						LoadMotions				(LPCSTR N, IReader *data);
 public:
+
 #ifdef DEBUG
 	std::pair<LPCSTR,LPCSTR>	LL_MotionDefName_dbg	(MotionID	ID);
-//	LPCSTR						LL_MotionDefName_dbg	(LPVOID		ptr);
 #endif
 
 	u16							LL_MotionsSlotCount(){return (u16)m_Motions.size();}

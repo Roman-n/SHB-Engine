@@ -2,7 +2,7 @@
 
 #ifdef DEBUG
 	BOOL bDebug	= FALSE;
-#endif
+#endif // DEBUG
 
 // Video
 u32			psCurrentVidMode[2] = {1024,768};

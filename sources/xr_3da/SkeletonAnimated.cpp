@@ -62,23 +62,7 @@ std::pair<LPCSTR,LPCSTR> CKinematicsAnimated::LL_MotionDefName_dbg	(MotionID ID)
 	for (_I	= s_mots.motion_map()->begin(); _I!=_E; ++_I)	if (_I->second==ID.idx) return std::make_pair(*_I->first,*s_mots.id());
 	return std::make_pair((LPCSTR)0,(LPCSTR)0);
 }
-/*
-LPCSTR CKinematicsAnimated::LL_MotionDefName_dbg	(LPVOID ptr)
-{
-//.
-	// cycles
-	mdef::const_iterator I,E;
-	I = motions.cycle()->begin(); 
-	E = motions.cycle()->end(); 
-	for ( ; I != E; ++I) if (&(*I).second == ptr) return *(*I).first;
-	// fxs
-	I = motions.fx()->begin(); 
-	E = motions.fx()->end(); 
-	for ( ; I != E; ++I) if (&(*I).second == ptr) return *(*I).first;
-	return 0;
-}
-*/
-#endif
+#endif // DEBUG
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction

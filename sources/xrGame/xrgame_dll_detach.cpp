@@ -98,7 +98,6 @@ void clean_game_globals()
 	CHARACTER_REPUTATION::DeleteIdToIndexData		();
 	MONSTER_COMMUNITY::DeleteIdToIndexData			();
 
-
 	//static shader for blood
 	CEntityAlive::UnloadBloodyWallmarks				();
 	CEntityAlive::UnloadFireParticles				();

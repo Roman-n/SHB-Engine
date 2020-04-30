@@ -1,5 +1,5 @@
-// exxZERO Time Stamp AddIn. Document modified at : Thursday, March 07, 2002 14:12:50 , by user : Oles , from computer : OLES
 #include "stdafx.h"
+
 #include "HitMarker.h"
 #include "..\XR_3DA\render.h"
 #include "..\XR_3DA\LightAnimLibrary.h"
@@ -8,7 +8,6 @@
 static Fvector2			as_PC[5];
 static Fvector2			as_TC[5];
 const static u32		as_id[4*3] = {0,1,4,  1,2,4,  2,3,4,  3,0,4};
-
 
 //--------------------------------------------------------------------
 CHitMarker::CHitMarker()
@@ -45,7 +44,6 @@ void CHitMarker::Render()
 	HITMARKS::iterator it_e = m_HitMarks.end();
 	for(;it!=it_e;++it)
 		(*it)->Draw(-h1);
-
 }
 //--------------------------------------------------------------------
 
@@ -56,8 +54,6 @@ void CHitMarker::Hit(int id, const Fvector& dir){
 	m_HitMarks.push_back	(xr_new<SHitMark>(hShader2,hit_dir));
 }
 //--------------------------------------------------------------------
-
-
 
 SHitMark::SHitMark		(const ref_shader& sh, const Fvector& dir)
 {

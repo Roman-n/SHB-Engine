@@ -33,7 +33,6 @@ CUIGameCustom::~CUIGameCustom()
 	delete_data				(m_msgs_xml);
 }
 
-
 float CUIGameCustom::shedule_Scale		() 
 {
 	return 0.5f;
@@ -91,6 +90,7 @@ bool CUIGameCustom::IR_OnMouseMove(int dx,int dy)
 {
 	return false;
 }
+
 bool CUIGameCustom::IR_OnMouseWheel			(int direction)
 {
 	return false;
@@ -172,7 +172,6 @@ void CUIGameCustom::RemoveCustomStatic		(LPCSTR id)
 	}
 }
 
-
 #include "ui/UIGameTutorial.h"
 
 extern CUISequencer* g_tutorial;
@@ -192,6 +191,7 @@ void CUIGameCustom::reset_ui()
 		xr_delete(g_tutorial);
 	}
 }
+
 SDrawStaticStruct::SDrawStaticStruct	()
 {
 	m_static	= NULL;

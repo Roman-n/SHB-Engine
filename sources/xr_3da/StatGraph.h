@@ -1,6 +1,5 @@
-//---------------------------------------------------------------------------
 #pragma once
-//---------------------------------------------------------------------------
+
 class ENGINE_API CStatGraph	: public pureRender
 {
 public:
@@ -67,7 +66,6 @@ protected:
 	virtual void	RenderBars		( FVF::TL0uv** ppv, ElementsDeq* pelements );
 	virtual void	RenderLines		( FVF::TL0uv** ppv, ElementsDeq* pelements );
 	virtual void	RenderBarLines	( FVF::TL0uv** ppv, ElementsDeq* pelements );
-//	virtual void	RenderPoints	( FVF::TL0uv** ppv, ElementsDeq* pelements );
 	virtual	void	RenderMarkers	( FVF::TL0uv** ppv, MarkersDeq* pmarkers );
 public:
   					CStatGraph	();

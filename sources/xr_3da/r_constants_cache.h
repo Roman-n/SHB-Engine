@@ -62,11 +62,13 @@ public:
 			it[3].set			(A._14, A._24, A._34, A._44);
 			break;
 		default:
+
 #ifdef DEBUG
 			Debug.fatal		(DEBUG_INFO,"Invalid constant run-time-type for '%s'",*C->name);
-#else
+#else // DEBUG
 			NODEFAULT;
-#endif
+#endif // DEBUG
+
 		}
 	}
 
@@ -110,11 +112,13 @@ public:
 			it[3].set			(A._14, A._24, A._34, A._44);
 			break;
 		default:
+
 #ifdef DEBUG
 			Debug.fatal		(DEBUG_INFO,"Invalid constant run-time-type for '%s'",*C->name);
-#else
+#else // DEBUG
 			NODEFAULT;
-#endif
+#endif // DEBUG
+
 		}
 	}
 

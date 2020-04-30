@@ -38,9 +38,10 @@ CStatTimer						tscreate;
 
 void IRender_Visual::Load		(const char* N, IReader *data, u32 )
 {
+
 #ifdef DEBUG
 	dbg_name	= N;
-#endif
+#endif // DEBUG
 
 	// header
 	VERIFY		(data);
@@ -74,5 +75,6 @@ void	IRender_Visual::Copy(IRender_Visual *pFrom)
 
 #ifdef DEBUG
 	PCOPY(dbg_name);
-#endif
+#endif // DEBUG
+
 }

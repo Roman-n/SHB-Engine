@@ -28,7 +28,6 @@ struct SDrawStaticStruct :public IPureDestroyableObject{
 	}
 };
 
-
 typedef xr_vector<SDrawStaticStruct>	st_vec;
 #include "game_base_space.h"
 struct SGameTypeMaps
@@ -79,7 +78,6 @@ public:
 	virtual bool		IR_OnKeyboardRelease	(int dik);
 	virtual bool		IR_OnMouseMove			(int dx, int dy);
 	virtual bool		IR_OnMouseWheel			(int direction);
-
 
 	void				AddDialogToRender		(CUIWindow* pDialog);
 	void				RemoveDialogToRender	(CUIWindow* pDialog);

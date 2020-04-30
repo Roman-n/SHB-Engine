@@ -11,7 +11,7 @@
 	#define REGISTRY_PATH	"Software\\GSC Game World\\STALKER-SHOC\\"
 #endif
 
-
+/*
 bool	ReadRegistryValue(LPCSTR rKeyName, DWORD rKeyType, void* value )
 {	
 	HKEY hKey = 0;	
@@ -61,7 +61,9 @@ bool	ReadRegistryValue(LPCSTR rKeyName, DWORD rKeyType, void* value )
 	memcpy(value, rBuf, KeyValueSize);
 	return true;
 };
+*/
 
+/*
 bool	WriteRegistryValue	(LPCSTR rKeyName, DWORD rKeyType, const void* value)
 {
 	HKEY hKey;
@@ -104,22 +106,22 @@ bool	WriteRegistryValue	(LPCSTR rKeyName, DWORD rKeyType, const void* value)
 	if (hKey) RegCloseKey(hKey);
 	return true;
 };
+*/
+//void	ReadRegistry_StrValue	(LPCSTR rKeyName, char* value )
+//{
+//	ReadRegistryValue(rKeyName, REG_SZ, value);
+//}
 
-void	ReadRegistry_StrValue	(LPCSTR rKeyName, char* value )
-{
-	ReadRegistryValue(rKeyName, REG_SZ, value);
-}
+//void	WriteRegistry_StrValue	(LPCSTR rKeyName, LPCSTR value )
+//{
+//	WriteRegistryValue(rKeyName, REG_SZ, value);
+//}
 
-void	WriteRegistry_StrValue	(LPCSTR rKeyName, LPCSTR value )
-{
-	WriteRegistryValue(rKeyName, REG_SZ, value);
-}
-
-void	ReadRegistry_DWValue	(LPCSTR rKeyName, DWORD& value )
-{
-	ReadRegistryValue(rKeyName, REG_DWORD, &value);
-}
-void	WriteRegistry_DWValue	(LPCSTR rKeyName, const DWORD& value )
-{
-	WriteRegistryValue(rKeyName, REG_DWORD, &value);
-}
+//void	ReadRegistry_DWValue	(LPCSTR rKeyName, DWORD& value )
+//{
+//	ReadRegistryValue(rKeyName, REG_DWORD, &value);
+//}
+//void	WriteRegistry_DWValue	(LPCSTR rKeyName, const DWORD& value )
+//{
+//	WriteRegistryValue(rKeyName, REG_DWORD, &value);
+//}

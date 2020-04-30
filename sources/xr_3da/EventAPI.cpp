@@ -159,13 +159,15 @@ void msParse			(LPCSTR c)
 		Console->Execute	("quit");
 	}
 }
-#endif
+#endif // DEBUG
 
 void	CEventAPI::OnFrame	()
 {
+
 #ifdef DEBUG
 	msRead		();
-#endif
+#endif // DEBUG
+
 	CS.Enter	();
 	if (Events_Deferred.empty())	{ CS.Leave(); return; }
 	for (u32 I=0; I<Events_Deferred.size(); I++)

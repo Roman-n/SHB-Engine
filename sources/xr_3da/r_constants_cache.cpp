@@ -29,6 +29,7 @@ void R_constants::flush_cache()
 		{
 			u32		count		= F.r_hi()-F.r_lo();
 			if (count)			{
+
 #ifdef DEBUG
 				if (F.r_hi() > HW.Caps.geometry.dwRegisters)
 				{
@@ -37,7 +38,8 @@ void R_constants::flush_cache()
 						);
 				}
 				PGO		(Msg("PGO:V_CONST:%d",count));
-#endif				&
+#endif // DEBUG
+
 				CHK_DX	(HW.pDevice->SetVertexShaderConstantF	(F.r_lo(), (float*)F.access(F.r_lo()),count));
 				F.flush	();
 			}

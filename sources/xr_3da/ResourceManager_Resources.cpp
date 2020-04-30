@@ -515,7 +515,7 @@ void	CResourceManager::DBG_VerifyTextures	()
 		R_ASSERT(0==xr_strcmp(I->first,*I->second->cName));
 	}
 }
-#endif
+#endif // DEBUG
 
 //--------------------------------------------------------------------------------------------------------------
 CMatrix*	CResourceManager::_CreateMatrix	(LPCSTR Name)

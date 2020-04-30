@@ -1,10 +1,10 @@
 #pragma once
 
-#ifdef	DEBUG
+#ifdef DEBUG
 	ENGINE_API	extern BOOL			bDebug;
-#else
+#else // DEBUG
 	#define bDebug 0
-#endif
+#endif // DEBUG
 
 #define _RELEASE(x)			{ if(x) { (x)->Release();       (x)=NULL; } }
 #define _SHOW_REF(msg, x)   { if(x) { x->AddRef(); Log(msg,u32(x->Release()));}}

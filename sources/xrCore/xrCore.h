@@ -4,7 +4,7 @@
 #	ifdef _DEBUG
 #		define DEBUG
 #	endif
-#endif
+#endif // DEBUG
 
 #include "build defines.h"
 
@@ -66,7 +66,7 @@
 	#pragma inline_depth	( 254 )
 	#pragma inline_recursion( on )
 	#pragma intrinsic	(abs, fabs, fmod, sin, cos, tan, asin, acos, atan, sqrt, exp, log, log10, strcpy, strcat)
-#endif
+#endif // DEBUG
 
 #include <time.h>
 
@@ -82,6 +82,7 @@
 //#pragma warning (disable : 4530 )		// C++ exception handler used, but unwind semantics are not enabled
 #pragma warning (disable : 4345 )
 #pragma warning (disable : 4714 )		// __forceinline not inlined
+
 #ifndef DEBUG
 #pragma warning (disable : 4189 )		//  local variable is initialized but not refenced
 #endif									//	frequently in release code due to large amount of VERIFY

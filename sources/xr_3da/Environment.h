@@ -124,7 +124,8 @@ public:
 
 #ifdef DEBUG
 	shared_str			sect_name;
-#endif	
+#endif // DEBUG
+
 						CEnvDescriptor	();
 
 	void				load			(LPCSTR exec_tm, LPCSTR sect, CEnvironment* parent);

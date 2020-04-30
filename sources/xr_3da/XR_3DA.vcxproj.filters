@@ -19,9 +19,6 @@
     <Filter Include="Interfaces\Render">
       <UniqueIdentifier>{b1c2144a-8e9e-4375-a301-d8797f8917b2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Interfaces\SPATIAL">
-      <UniqueIdentifier>{38f79846-7206-4fcd-a98c-cb5ab22fd792}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Interfaces\Collidable">
       <UniqueIdentifier>{d003304f-1dca-4f26-9e73-027453a8164e}</UniqueIdentifier>
     </Filter>
@@ -133,6 +130,9 @@
     <Filter Include="Engine\Noise">
       <UniqueIdentifier>{705d1d62-a579-4175-944a-9ac240d170e8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Interfaces\Spatial">
+      <UniqueIdentifier>{38f79846-7206-4fcd-a98c-cb5ab22fd792}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_d3d_extensions.h">
@@ -175,7 +175,7 @@
       <Filter>Interfaces\Render</Filter>
     </ClInclude>
     <ClInclude Include="ISpatial.h">
-      <Filter>Interfaces\SPATIAL</Filter>
+      <Filter>Interfaces\Spatial</Filter>
     </ClInclude>
     <ClInclude Include="ICollidable.h">
       <Filter>Interfaces\Collidable</Filter>
@@ -332,9 +332,6 @@
     </ClInclude>
     <ClInclude Include="xr_effgamma.h">
       <Filter>Render\Execution &amp; 3D\Gamma</Filter>
-    </ClInclude>
-    <ClInclude Include="Shader_xrLC.h">
-      <Filter>Render\Execution &amp; 3D\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="WaveForm.h">
       <Filter>Render\Execution &amp; 3D\Shaders</Filter>
@@ -516,19 +513,19 @@
       <Filter>Interfaces\Render</Filter>
     </ClCompile>
     <ClCompile Include="ISpatial.cpp">
-      <Filter>Interfaces\SPATIAL</Filter>
+      <Filter>Interfaces\Spatial</Filter>
     </ClCompile>
     <ClCompile Include="ISpatial_q_box.cpp">
-      <Filter>Interfaces\SPATIAL</Filter>
+      <Filter>Interfaces\Spatial</Filter>
     </ClCompile>
     <ClCompile Include="ISpatial_q_frustum.cpp">
-      <Filter>Interfaces\SPATIAL</Filter>
+      <Filter>Interfaces\Spatial</Filter>
     </ClCompile>
     <ClCompile Include="ISpatial_q_ray.cpp">
-      <Filter>Interfaces\SPATIAL</Filter>
+      <Filter>Interfaces\Spatial</Filter>
     </ClCompile>
     <ClCompile Include="ISpatial_verify.cpp">
-      <Filter>Interfaces\SPATIAL</Filter>
+      <Filter>Interfaces\Spatial</Filter>
     </ClCompile>
     <ClCompile Include="ICollidable.cpp">
       <Filter>Interfaces\Collidable</Filter>

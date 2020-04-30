@@ -9,7 +9,7 @@ typedef	unsigned	short	u16;
 
 typedef	signed		int		s32;
 typedef	unsigned	int		u32;
-                                         
+
 typedef	signed		__int64	s64;
 typedef	unsigned	__int64	u64;
 

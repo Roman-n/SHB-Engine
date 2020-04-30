@@ -19,7 +19,6 @@ CHUDCrosshair::CHUDCrosshair	()
 	radius = 0;
 }
 
-
 CHUDCrosshair::~CHUDCrosshair	()
 {
 	hGeomLine.destroy			();
@@ -40,7 +39,6 @@ void CHUDCrosshair::Load		()
 	//max_radius = iFloor(0.5f + max_radius_perc*float(Device.dwWidth));
 
 	cross_color = pSettings->r_fcolor (HUD_CURSOR_SECTION, "cross_color").get();
-
 
 	radius_speed_perc = pSettings->r_float (HUD_CURSOR_SECTION, "radius_lerp_speed");
 }

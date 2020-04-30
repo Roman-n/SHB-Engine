@@ -78,7 +78,7 @@ public:
 	xr_vector		<fastdelegate::FastDelegate0<> >	seqParallel;
 
 	// Dependent classes
-	CResourceManager*						Resources;	  
+	CResourceManager*						Resources; 
 	CStats*									Statistic;
 	CGammaControl							Gamma;
 

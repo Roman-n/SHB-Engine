@@ -992,9 +992,9 @@ void CLocatorAPI::file_from_archive	(IReader *&R, LPCSTR fname, const file &desc
 	rtc_decompress				(dest,desc.size_real,ptr+ptr_offs,desc.size_compressed);
 	R							= xr_new<CTempReader>(dest,desc.size_real,0);
 	UnmapViewOfFile				(ptr);
-#	ifdef DEBUG
+#ifdef DEBUG
 	unregister_file_mapping		(ptr,sz);
-#	endif // DEBUG
+#endif // DEBUG
 #endif // 0
 }
 

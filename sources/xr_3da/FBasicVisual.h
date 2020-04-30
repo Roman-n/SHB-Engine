@@ -38,9 +38,11 @@ private:
 class	ENGINE_API				IRender_Visual
 {
 public:
+
 #ifdef DEBUG
 	shared_str					dbg_name	;
-#endif
+#endif // DEBUG
+
 public:
 	// Common data for rendering
 	u32							Type		;				// visual's type

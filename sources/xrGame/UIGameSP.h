@@ -1,13 +1,14 @@
 #pragma once
+
 #include "uigamecustom.h"
 #include "ui/UIDialogWnd.h"
 #include "../../xrNetServer/net_utils.h"
 #include "game_graph_space.h"
 
 class CUIInventoryWnd;
-class CUITradeWnd;			
-class CUIPdaWnd;			
-class CUITalkWnd;			
+class CUITradeWnd;
+class CUIPdaWnd;
+class CUITalkWnd;
 class CUICarBodyWnd;
 class CInventory;
 
@@ -46,7 +47,6 @@ public:
 	CUICarBodyWnd*		UICarBodyMenu;
 	CChangeLevelWnd*	UIChangeLevelWnd;
 };
-
 
 class CChangeLevelWnd :public CUIDialogWnd
 {

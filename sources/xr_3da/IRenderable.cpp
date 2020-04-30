@@ -22,7 +22,7 @@ IRenderable::~IRenderable()
 	renderable.pROS						= NULL;
 }
 
-IRender_ObjectSpecific*				IRenderable::renderable_ROS				()	
+IRender_ObjectSpecific*				IRenderable::renderable_ROS				()
 {
 	if (0==renderable.pROS && renderable.pROS_Allowed)		renderable.pROS	= Render->ros_create(this);
 	return renderable.pROS	;

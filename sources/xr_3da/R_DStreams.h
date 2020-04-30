@@ -15,9 +15,11 @@ private :
 	u32							mDiscardID;		// ID of discard - usually for caching
 public:
 	IDirect3DVertexBuffer9*		old_pVB;
+
 #ifdef DEBUG
 	u32							dbg_lock;
-#endif
+#endif // DEBUG
+
 private:
 	void						_clear			()
 	{
@@ -25,9 +27,11 @@ private:
 		mSize		= 0;
 		mPosition	= 0;
 		mDiscardID	= 0;
+
 #ifdef DEBUG
 		dbg_lock	= 0;
-#endif
+#endif // DEBUG
+
 	}
 public:
 	void						Create			();

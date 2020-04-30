@@ -60,9 +60,11 @@ ICF void	CBackend::set_States		(IDirect3DStateBlock9* _state)
 	if (state!=_state)
 	{
 		PGO				(Msg("PGO:state_block"));
+
 #ifdef DEBUG
 		stat.states		++;
-#endif
+#endif // DEBUG
+
 		state			= _state;
 		state->Apply	();
 	}
@@ -102,9 +104,11 @@ ICF void CBackend::set_Format			(IDirect3DVertexDeclaration9* _decl)
 	if (decl!=_decl)
 	{
 		PGO				(Msg("PGO:v_format:%x",_decl));
+
 #ifdef DEBUG
 		stat.decl		++;
-#endif
+#endif // DEBUG
+
 		decl			= _decl;
 		CHK_DX			(HW.pDevice->SetVertexDeclaration(decl));
 	}
@@ -118,9 +122,11 @@ ICF void CBackend::set_PS				(IDirect3DPixelShader9* _ps, LPCSTR _n)
 		stat.ps			++;
 		ps				= _ps;
 		CHK_DX			(HW.pDevice->SetPixelShader(ps));
+
 #ifdef DEBUG
 		ps_name			= _n;
-#endif
+#endif // DEBUG
+
 	}
 }
 
@@ -132,9 +138,11 @@ ICF void CBackend::set_VS				(IDirect3DVertexShader9* _vs, LPCSTR _n)
 		stat.vs			++;
 		vs				= _vs;
 		CHK_DX			(HW.pDevice->SetVertexShader(vs));
+
 #ifdef DEBUG
 		vs_name			= _n;
-#endif
+#endif // DEBUG
+
 	}
 }
 
@@ -143,9 +151,11 @@ ICF void CBackend::set_Vertices			(IDirect3DVertexBuffer9* _vb, u32 _vb_stride)
 	if ((vb!=_vb) || (vb_stride!=_vb_stride))
 	{
 		PGO				(Msg("PGO:VB:%x,%d",_vb,_vb_stride));
+
 #ifdef DEBUG
 		stat.vb			++;
-#endif
+#endif // DEBUG
+
 		vb				= _vb;
 		vb_stride		= _vb_stride;
 		CHK_DX			(HW.pDevice->SetStreamSource(0,vb,0,vb_stride));
@@ -157,9 +167,11 @@ ICF void CBackend::set_Indices			(IDirect3DIndexBuffer9* _ib)
 	if (ib!=_ib)
 	{
 		PGO				(Msg("PGO:IB:%x",_ib));
+
 #ifdef DEBUG
 		stat.ib			++;
-#endif
+#endif // DEBUG
+
 		ib				= _ib;
 		CHK_DX			(HW.pDevice->SetIndices(ib));
 	}

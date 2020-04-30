@@ -60,7 +60,6 @@ void CUIGameSP::HideShownDialogs()
 			)
 		)
 	mir->GetHolder()->StartStopMenu			(mir,true);
-
 }
 
 void CUIGameSP::SetClGame (game_cl_GameState* g)
@@ -69,7 +68,6 @@ void CUIGameSP::SetClGame (game_cl_GameState* g)
 	m_game = smart_cast<game_cl_Single*>(g);
 	R_ASSERT							(m_game);
 }
-
 
 bool CUIGameSP::IR_OnKeyboardPress(int dik) 
 {
@@ -147,7 +145,6 @@ bool CUIGameSP::IR_OnKeyboardRelease(int dik)
 	return false;
 }
 
-
 void CUIGameSP::StartTalk()
 {
 	m_game->StartStopMenu(TalkMenu,true);
@@ -159,6 +156,7 @@ void CUIGameSP::StartCarBody(CInventoryOwner* pOurInv, CInventoryOwner* pOthers)
 	UICarBodyMenu->InitCarBody		(pOurInv,  pOthers);
 	m_game->StartStopMenu			(UICarBodyMenu,true);
 }
+
 void CUIGameSP::StartCarBody(CInventoryOwner* pOurInv, CInventoryBox* pBox)
 {
 	if( MainInputReceiver() )		return;
@@ -174,7 +172,6 @@ void CUIGameSP::ReInitShownUI()
 		UICarBodyMenu->UpdateLists_delayed();
 	
 };
-
 
 extern ENGINE_API BOOL bShowPauseString;
 void CUIGameSP::ChangeLevel				(GameGraph::_GRAPH_ID game_vert_id, u32 level_vert_id, Fvector pos, Fvector ang, Fvector pos2, Fvector ang2, bool b)
@@ -211,6 +208,7 @@ CChangeLevelWnd::CChangeLevelWnd		()
 	m_messageBox->SetWndPos	(0.0f,0.0f);
 	SetWndSize				(m_messageBox->GetWndSize());
 }
+
 void CChangeLevelWnd::SendMessage(CUIWindow *pWnd, s16 msg, void *pData)
 {
 	if(pWnd==m_messageBox){
@@ -269,4 +267,3 @@ void CChangeLevelWnd::Hide()
 	g_block_pause							= false;
 	Device.Pause							(FALSE, TRUE, TRUE, "CChangeLevelWnd_hide");
 }
-

@@ -16,7 +16,6 @@ struct SHitMark{
 	void			Draw			(float dir);
 };
 
-
 class CHitMarker
 {
 public:

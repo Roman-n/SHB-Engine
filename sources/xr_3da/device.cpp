@@ -103,7 +103,6 @@ void CRenderDevice::End		(void)
 	//R_ASSERT2		(SUCCEEDED(_hr),	"Presentation failed. Driver upgrade needed?");
 }
 
-
 volatile u32	mt_Thread_marker		= 0x12345678;
 void 			mt_Thread	(void *ptr)	{
 	while (true) {
@@ -328,7 +327,6 @@ void CRenderDevice::Pause(BOOL bOn, BOOL bTimer, BOOL bSound, LPCSTR reason)
 
 	if (g_bBenchmark)	return;
 
-
 #ifdef DEBUG
 	Msg("pause [%s] timer=[%s] sound=[%s] reason=%s",bOn?"ON":"OFF", bTimer?"ON":"OFF", bSound?"ON":"OFF", reason);
 #endif // DEBUG
@@ -343,9 +341,11 @@ void CRenderDevice::Pause(BOOL bOn, BOOL bTimer, BOOL bSound, LPCSTR reason)
 	
 		if(bSound){
 			snd_emitters_ =					::Sound->pause_emitters(true);
+
 #ifdef DEBUG
 			Log("snd_emitters_[true]",snd_emitters_);
 #endif // DEBUG
+
 		}
 	}else
 	{
@@ -357,17 +357,20 @@ void CRenderDevice::Pause(BOOL bOn, BOOL bTimer, BOOL bSound, LPCSTR reason)
 			if(snd_emitters_>0) //avoid crash
 			{
 				snd_emitters_ =				::Sound->pause_emitters(false);
+
 #ifdef DEBUG
 				Log("snd_emitters_[false]",snd_emitters_);
 #endif // DEBUG
+
 			}else {
+
 #ifdef DEBUG
 				Log("Sound->pause_emitters underflow");
 #endif // DEBUG
+
 			}
 		}
 	}
-
 }
 
 BOOL CRenderDevice::Paused()
