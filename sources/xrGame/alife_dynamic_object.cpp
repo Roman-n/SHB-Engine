@@ -196,7 +196,7 @@ void CSE_InventoryBox::add_online	(const bool &update_registries)
 		CSE_Abstract			*l_tpAbstract = smart_cast<CSE_Abstract*>(l_tpALifeInventoryItem);
 		object->alife().server().entity_Destroy(l_tpAbstract);
 
-#ifdef DEBUG
+#ifdef GOING_ONLINE_LOG
 //		if (psAI_Flags.test(aiALife))
 //			Msg					("[LSS] Spawning item [%s][%s][%d]",l_tpALifeInventoryItem->base()->name_replace(),*l_tpALifeInventoryItem->base()->s_name,l_tpALifeDynamicObject->ID);
 		Msg						(
@@ -209,7 +209,7 @@ void CSE_InventoryBox::add_online	(const bool &update_registries)
 			name_replace(),
 			"*SERVER*"
 		);
-#endif
+#endif // GOING_ONLINE_LOG
 
 		l_tpALifeDynamicObject->o_Position		= object->o_Position;
 		l_tpALifeDynamicObject->m_tNodeID		= object->m_tNodeID;

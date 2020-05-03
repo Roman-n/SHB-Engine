@@ -200,9 +200,11 @@ void CObjectList::Update		(bool bForce)
 		{
 			CObject*		O	= destroy_queue[it];
 //			Msg				("Object [%x]", O);
-#ifdef DEBUG
+
+#ifdef DESTROYING_OBJECT_LOG
 			Msg				("Destroying object[%x] [%d][%s] frame[%d]",O, O->ID(),*O->cName(), Device.dwFrame);
-#endif // DEBUG
+#endif // DESTROYING_OBJECT_LOG
+
 			O->net_Destroy	( );
 			Destroy			(O);
 		}
@@ -315,9 +317,9 @@ void CObjectList::Unload	( )
 		Msg				("! [%x] s[%4d]-[%s]-[%s]", O, O->ID(), *O->cNameSect(), *O->cName());
 		O->setDestroy	( TRUE );
 		
-#ifdef DEBUG
+#ifdef DESTROYING_OBJECT_LOG
 		Msg				("Destroying object [%d][%s]",O->ID(),*O->cName());
-#endif
+#endif // DESTROYING_OBJECT_LOG
 		O->net_Destroy	(   );
 		Destroy			( O );
 	}
@@ -327,9 +329,10 @@ void CObjectList::Unload	( )
 		Msg				("! [%x] a[%4d]-[%s]-[%s]", O, O->ID(), *O->cNameSect(), *O->cName());
 		O->setDestroy	( TRUE );
 
-#ifdef DEBUG
+#ifdef DESTROYING_OBJECT_LOG
 		Msg				("Destroying object [%d][%s]",O->ID(),*O->cName());
-#endif
+#endif // DESTROYING_OBJECT_LOG
+
 		O->net_Destroy	(   );
 		Destroy			( O );
 	}

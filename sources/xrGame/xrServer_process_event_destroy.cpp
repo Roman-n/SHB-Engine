@@ -25,9 +25,10 @@ void xrServer::Process_event_destroy	(NET_Packet& P, ClientID sender, u32 time, 
 	u32								MODE = net_flags(TRUE,TRUE);
 	// Parse message
 	u16								id_dest	= ID;
-#ifdef DEBUG
+
+#ifdef SERVER_DESTROY_OBJECT_LOG
 	Msg								("sv destroy object %s [%d]", ent_name_safe(id_dest).c_str(), Device.dwFrame);
-#endif
+#endif //SERVER_DESTROY_OBJECT_LOG
 
 	CSE_Abstract*					e_dest = game->get_entity_from_eid	(id_dest);	// кто должен быть уничтожен
 	if (!e_dest) 

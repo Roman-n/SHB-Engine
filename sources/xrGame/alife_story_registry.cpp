@@ -21,9 +21,9 @@ void CALifeStoryRegistry::add				(ALife::_STORY_ID id, CSE_ALifeDynamicObject *o
 	if (id == INVALID_STORY_ID)
 		return;
 
-#ifdef DEBUG
+#ifdef ADDING_STORY_ITEM_ID_LOG
 	Msg("Adding Story item ID [%u], Object [%s] at level [%s]",id, object->name_replace(), *ai().game_graph().header().level(ai().game_graph().vertex(object->m_tGraphID)->level_id()).name());
-#endif
+#endif // ADDING_STORY_ITEM_ID_LOG
 
 	ALife::STORY_P_PAIR_IT	I = m_objects.find(id);
 	if (I != m_objects.end()) {

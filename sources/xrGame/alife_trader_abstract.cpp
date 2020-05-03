@@ -174,7 +174,7 @@ void add_online_impl						(CSE_ALifeDynamicObject *object, const bool &update_re
 		CSE_Abstract			*l_tpAbstract = smart_cast<CSE_Abstract*>(l_tpALifeInventoryItem);
 		object->alife().server().entity_Destroy(l_tpAbstract);
 
-#ifdef DEBUG
+#ifdef GOING_ONLINE_LOG
 //		if (psAI_Flags.test(aiALife))
 //			Msg					("[LSS] Spawning item [%s][%s][%d]",l_tpALifeInventoryItem->base()->name_replace(),*l_tpALifeInventoryItem->base()->s_name,l_tpALifeDynamicObject->ID);
 		Msg						(
@@ -187,7 +187,7 @@ void add_online_impl						(CSE_ALifeDynamicObject *object, const bool &update_re
 			object->name_replace(),
 			"*SERVER*"
 		);
-#endif
+#endif // GOING_ONLINE_LOG
 
 //		R_ASSERT3								(ai().level_graph().valid_vertex_id(l_tpALifeDynamicObject->m_tNodeID),"Invalid vertex for object ",l_tpALifeInventoryItem->name_replace());
 		l_tpALifeDynamicObject->o_Position		= object->o_Position;

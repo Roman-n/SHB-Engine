@@ -668,9 +668,11 @@ CSE_Abstract*	xrServer::entity_Create		(LPCSTR name)
 
 void			xrServer::entity_Destroy	(CSE_Abstract *&P)
 {
-#ifdef DEBUG
+
+#ifdef ENTITY_DESTROY_LOG
 	Msg							("xrServer::entity_Destroy : [%d][%s][%s]",P->ID,P->name(),P->name_replace());
-#endif
+#endif // ENTITY_DESTROY_LOG
+
 	R_ASSERT					(P);
 	entities.erase				(P->ID);
 	m_tID_Generator.vfFreeID	(P->ID,Device.TimerAsync());

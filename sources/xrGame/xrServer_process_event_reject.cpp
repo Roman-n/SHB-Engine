@@ -8,9 +8,10 @@ bool xrServer::Process_event_reject	(NET_Packet& P, const ClientID sender, const
 	CSE_Abstract*		e_parent	= game->get_entity_from_eid	(id_parent);
 	CSE_Abstract*		e_entity	= game->get_entity_from_eid	(id_entity);
 	
-#ifdef DEBUG
+#ifdef SERVER_REJECT_LOG
 	Msg("sv reject. id_parent %s id_entity %s [%d]",ent_name_safe(id_parent).c_str(),ent_name_safe(id_entity).c_str(), Device.dwFrame);
-#endif
+#endif // SERVER_REJECT_LOG
+
 	R_ASSERT			(e_parent && e_entity);
 	game->OnDetach		(id_parent,id_entity);
 
