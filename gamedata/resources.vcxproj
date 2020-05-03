@@ -107,8 +107,6 @@
     <None Include="config\creatures\helicopter.ltx" />
     <None Include="config\creatures\immunities.ltx" />
     <None Include="config\creatures\monsters.ltx" />
-    <None Include="config\creatures\m_army.ltx" />
-    <None Include="config\creatures\m_bandit.ltx" />
     <None Include="config\creatures\m_bloodsucker.ltx" />
     <None Include="config\creatures\m_boar.ltx" />
     <None Include="config\creatures\m_burer.ltx" />
@@ -117,9 +115,7 @@
     <None Include="config\creatures\m_controller.ltx" />
     <None Include="config\creatures\m_crow.ltx" />
     <None Include="config\creatures\m_dog.ltx" />
-    <None Include="config\creatures\m_dog_.ltx" />
     <None Include="config\creatures\m_flesh.ltx" />
-    <None Include="config\creatures\m_fraction.ltx" />
     <None Include="config\creatures\m_fracture.ltx" />
     <None Include="config\creatures\m_giant.ltx" />
     <None Include="config\creatures\m_person.ltx" />

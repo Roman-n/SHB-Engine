@@ -40,10 +40,10 @@ void CConsole::Reset()
 void CConsole::Initialize()
 {
 	scroll_delta	= cmd_delta = old_cmd_delta = 0;
-	editor[0]       = 0;
+	editor[0]		= 0;
 	bShift			= false;
 	RecordCommands	= false;
-	editor[0]       = 0;
+	editor[0]		= 0;
 	cur_time		= rep_time = 0;
 	fAccel			= 1.0f;
 	bVisible		= false;
@@ -223,7 +223,7 @@ void CConsole::OnPressKey(int dik, BOOL bHold)
 			if (I!=Commands.end()) {
 				IConsole_Command &O = *(I->second);
 				strcpy_s(editor+offset, sizeof(editor)-offset, O.Name());
-				strcat(editor+offset," ");
+				strcat(	editor+offset," ");
 			}
 		}
 		break;
