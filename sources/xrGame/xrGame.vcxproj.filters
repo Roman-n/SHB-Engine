@@ -5391,9 +5391,6 @@
     <ClInclude Include="PHDebug.h">
       <Filter>Physics\Base</Filter>
     </ClInclude>
-    <ClInclude Include="phvalide.h">
-      <Filter>Physics\Base</Filter>
-    </ClInclude>
     <ClInclude Include="PHWorld.h">
       <Filter>Physics\Base</Filter>
     </ClInclude>
@@ -6047,6 +6044,9 @@
     </ClInclude>
     <ClInclude Include="ui\UIGameLog.h">
       <Filter>UI\HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="PHValide.h">
+      <Filter>Physics\Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

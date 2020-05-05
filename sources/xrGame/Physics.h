@@ -9,7 +9,7 @@
 #include "PhysicsCommon.h"
 #include "PHWorld.h"
 #include "PHContactBodyEffector.h"
-#include "phvalide.h"
+#include "PHValide.h"
 //#define ODE_SLOW_SOLVER
 ///////////////////////////////////////////////////////////////////////////////
 

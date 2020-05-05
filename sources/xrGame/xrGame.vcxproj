@@ -993,7 +993,7 @@
     <ClInclude Include="PHSplitedShell.h" />
     <ClInclude Include="PHStaticGeomShell.h" />
     <ClInclude Include="PHSynchronize.h" />
-    <ClInclude Include="phvalide.h" />
+    <ClInclude Include="PHValide.h" />
     <ClInclude Include="PHValideValues.h" />
     <ClInclude Include="PHWorld.h" />
     <ClInclude Include="PhysicObject.h" />
