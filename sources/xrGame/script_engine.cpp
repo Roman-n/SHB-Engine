@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : XRay Script Engine
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "script_engine.h"

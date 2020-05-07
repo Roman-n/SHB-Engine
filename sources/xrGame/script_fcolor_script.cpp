@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Script float vector script export
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "script_fcolor.h"

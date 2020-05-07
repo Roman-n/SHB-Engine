@@ -5,7 +5,6 @@
 #include "alife_space.h"
 #include "script_export_space.h"
 
-
 class CPhysicsJoint;
 class CPhysicsElement;
 class CPhysicsShell;
@@ -19,9 +18,11 @@ class NET_Packet;
 struct SBoneShape;
 class  CPHShellSplitterHolder;
 class CKinematics;
+
 typedef u32	CLClassBits;
 typedef u32	CLBits;
 typedef u32	CGID;
+
 struct physicsBone
 {
 	CPhysicsJoint* joint;
@@ -32,8 +33,10 @@ struct physicsBone
 		element=NULL;
 	}
 };
+
 DEFINE_MAP	(u16,	physicsBone,	BONE_P_MAP,	BONE_P_PAIR_IT);
 typedef const  BONE_P_MAP :: iterator			BONE_P_PAIR_CIT;
+
 // ABSTRACT:
 class	CPhysicsBase
 {
@@ -219,15 +222,13 @@ public:
 	virtual		void 					GetAnchorDynamic			(Fvector& anchor)												  				=0;
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
+
 add_to_type_list(CPhysicsJoint)
 #undef script_type_list
 #define script_type_list save_type_list(CPhysicsJoint)
+
 // ABSTRACT: 
 class CPHIsland;
-
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-	class CPhysicsShellAnimator;
-#endif
 
 class CPhysicsShell			: public CPhysicsBase
 {
@@ -239,10 +240,6 @@ public:
 #endif
 public:
 IC					CKinematics					*PKinematics								()																{return m_pKinematics		;}
-
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-	virtual			CPhysicsShellAnimator*		PPhysicsShellAnimator						()																							= 0;
-#endif
 					void						set_Kinematics								(CKinematics* p)														{m_pKinematics=p	;}
 	virtual			void						set_JointResistance							(float force)																				= 0;
 	virtual			void						add_Element									(CPhysicsElement* E)																		= 0;
@@ -256,13 +253,6 @@ IC					CKinematics					*PKinematics								()																{return m_pKinemati
 	virtual			void						SetIgnoreDynamic							()																							= 0;
 	virtual			void						SetRagDoll									()																							= 0;
 	virtual			void						SetIgnoreRagDoll							()																							= 0;
-
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-	virtual			void						SetAnimated									()																							= 0;
-	virtual			void						SetIgnoreAnimated							()																							= 0;
-	virtual			bool						Animated									()																							= 0;
-#endif
-
 	virtual			void						SetSmall									()																							= 0;
 	virtual			void						SetIgnoreSmall								()																							= 0;
 	virtual			bool						isFractured									()																							= 0;
@@ -329,7 +319,8 @@ IC					CKinematics					*PKinematics								()																{return m_pKinemati
 	virtual										~CPhysicsShell								()																							;
 	//build_FromKinematics		in returns elements  & joint pointers according bone IDs;
 	DECLARE_SCRIPT_REGISTER_FUNCTION
-	};
+};
+
 add_to_type_list(CPhysicsShell)
 #undef script_type_list
 #define script_type_list save_type_list(CPhysicsShell)

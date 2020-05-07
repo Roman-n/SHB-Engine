@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Visual memory manager
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "visual_memory_manager.h"

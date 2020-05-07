@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Stalker kill wounded action classes
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "stalker_kill_wounded_actions.h"

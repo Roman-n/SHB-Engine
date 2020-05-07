@@ -5,8 +5,6 @@
 //	Author		: Serge Zhem
 //	Description : Visibility and look for all the biting monsters
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "base_monster.h"

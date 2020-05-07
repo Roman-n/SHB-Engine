@@ -13,29 +13,12 @@
 #include "..\XR_3DA\skeletoncustom.h"
 #include "PHCollideValidator.h"
 #include "game_object_space.h"
-//#pragma warning(disable:4995)
-//#pragma warning(disable:4267)
-//#include "../../xrODE/ode/src/collision_kernel.h"
-//#pragma warning(default:4995)
-//#pragma warning(default:4267)
-///////////////////////////////////////////////////////////////
-///#pragma warning(disable:4995)
-
-//#include "../../xrODE/ode/src/joint.h"
-//#include "../../xrODE/ode/src/objects.h"
-
-//#pragma warning(default:4995)
-///////////////////////////////////////////////////////////////////
 
 #include "ExtendedGeom.h"
 #include "PHElement.h"
 #include "PHShell.h"
 #include "PHCollideValidator.h"
 #include "PHElementInline.h"
-
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-	#include "PhysicsShellAnimator.h"
-#endif
 
 IC		bool	PhOutOfBoundaries			(const Fvector& v)
 {
@@ -69,11 +52,6 @@ CPHShell::CPHShell()
 	m_spliter_holder=NULL;
 	m_object_in_root.identity();
 	m_active_count=0;
-
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-	m_pPhysicsShellAnimatorC=NULL;
-#endif
-
 }
 
 void CPHShell::EnableObject(CPHObject* obj)
@@ -1566,33 +1544,6 @@ void CPHShell::SetIgnoreRagDoll()
 {
 	CPHCollideValidator::SetRagDollClassNotCollide(*this);
 }
-
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-	//Делает данный физический объек анимированным 
-	void CPHShell::SetAnimated()
-	{	
-		//Для фильтра коллизий относим данный объект к классу анимированных
-		CPHCollideValidator::SetAnimatedClass(*this);
-		m_pPhysicsShellAnimatorC=xr_new<CPhysicsShellAnimator>(this);
-		//m_pPhysicsShellAnimatorC->ResetCallbacks();
-	}
-
-	//Настраивает фильтр коллизий на игнорирование столкновенний данного
-	//физического объекта с анимированным физическим объектом
-	void CPHShell::SetIgnoreAnimated()
-	{
-		//Для фильтра коллизий указываем, что данный
-		//физический объект игнорирует анимированные физические тела
-		
-		CPHCollideValidator::SetAnimatedClassNotCollide(*this);
-	}
-
-	//Выдает информацию о том является ли данный объект анимированным
-	bool CPHShell::Animated()
-	{
-		return	CPHCollideValidator::IsAnimatedObject(*this);
-	}
-#endif
 
 void	CPHShell::				SetSmall()
 {

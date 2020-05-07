@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : ALife smart terrain task
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "alife_smart_terrain_task.h"

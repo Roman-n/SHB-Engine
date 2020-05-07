@@ -18,14 +18,14 @@ class CUIMessageBox;
 class CInventoryBox;
 class CInventoryOwner;
 
-class CUIGameSP : public CUIGameCustom
+class CUIGame : public CUIGameCustom
 {
 private:
 	game_cl_Single*		m_game;
 	typedef CUIGameCustom inherited;
 public:
-	CUIGameSP									();
-	virtual				~CUIGameSP				();
+	CUIGame									();
+	virtual				~CUIGame				();
 
 	virtual	void		reset_ui				();
 	virtual	void		shedule_Update			(u32 dt);

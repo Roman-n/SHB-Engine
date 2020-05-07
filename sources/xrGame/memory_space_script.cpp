@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Memory space script export
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "memory_space.h"

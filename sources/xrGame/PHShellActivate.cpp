@@ -9,23 +9,11 @@
 #include "Level.h"
 #include "physicsshellholder.h"
 
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-	#include "PhysicsShellAnimator.h"
-#endif
-
-///////////////////////////////////////////////////////////////
-///#pragma warning(disable:4995)
-//#include "../../xrODE/ode/src/collision_kernel.h"
-//#include "../../xrODE/ode/src/joint.h"
-//#include "../../xrODE/ode/src/objects.h"
-
-//#pragma warning(default:4995)
-///////////////////////////////////////////////////////////////////
-
 #include "ExtendedGeom.h"
 
 #include "PHElement.h"
 #include "PHShell.h"
+
 void CPHShell::activate(bool disable)
 {
 	PresetActive();
@@ -220,14 +208,6 @@ void CPHShell::PresetActive()
 
 
 void CPHShell::Deactivate(){
-
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-	if (m_pPhysicsShellAnimatorC)
-	{
-		xr_delete<CPhysicsShellAnimator>(m_pPhysicsShellAnimatorC); 
-	}
-#endif
-
 	if(!isActive())return;
 	R_ASSERT2(!ph_world->Processing(),"can not deactivate physics shell during physics processing!!!");
 	R_ASSERT2(!ph_world->IsFreezed(),"can not deactivate physics shell when ph world is freezed!!!");

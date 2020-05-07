@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Script object binder wrapper
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "script_binder_object_wrapper.h"

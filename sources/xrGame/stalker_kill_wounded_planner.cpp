@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Stalker kill wounded planner
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "stalker_kill_wounded_planner.h"

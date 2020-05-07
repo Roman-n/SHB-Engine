@@ -1,4 +1,3 @@
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "uigamesp.h"
@@ -21,7 +20,7 @@
 #include "ui/UICarBodyWnd.h"
 #include "ui/UIMessageBox.h"
 
-CUIGameSP::CUIGameSP()
+CUIGame::CUIGame()
 {
 	m_game			= NULL;
 	
@@ -32,7 +31,7 @@ CUIGameSP::CUIGameSP()
 	UIChangeLevelWnd= xr_new<CChangeLevelWnd>		();
 }
 
-CUIGameSP::~CUIGameSP() 
+CUIGame::~CUIGame() 
 {
 	delete_data(InventoryMenu);
 	delete_data(PdaMenu);	
@@ -41,7 +40,7 @@ CUIGameSP::~CUIGameSP()
 	delete_data(UIChangeLevelWnd);
 }
 
-void CUIGameSP::shedule_Update(u32 dt)
+void CUIGame::shedule_Update(u32 dt)
 {
 	inherited::shedule_Update			(dt);
 	CActor *pActor = smart_cast<CActor*>(Level().CurrentEntity());
@@ -51,7 +50,7 @@ void CUIGameSP::shedule_Update(u32 dt)
 	HideShownDialogs						();
 }
 
-void CUIGameSP::HideShownDialogs()
+void CUIGame::HideShownDialogs()
 {
 	CUIDialogWnd* mir				= MainInputReceiver();
 	if( mir			&&
@@ -64,14 +63,14 @@ void CUIGameSP::HideShownDialogs()
 	mir->GetHolder()->StartStopMenu			(mir,true);
 }
 
-void CUIGameSP::SetClGame (game_cl_GameState* g)
+void CUIGame::SetClGame (game_cl_GameState* g)
 {
 	inherited::SetClGame				(g);
 	m_game = smart_cast<game_cl_Single*>(g);
 	R_ASSERT							(m_game);
 }
 
-bool CUIGameSP::IR_OnKeyboardPress(int dik) 
+bool CUIGame::IR_OnKeyboardPress(int dik) 
 {
 	if(inherited::IR_OnKeyboardPress(dik)) return true;
 
@@ -137,7 +136,7 @@ bool CUIGameSP::IR_OnKeyboardPress(int dik)
 	return false;
 }
 
-bool CUIGameSP::IR_OnKeyboardRelease(int dik) 
+bool CUIGame::IR_OnKeyboardRelease(int dik) 
 {
 	if(inherited::IR_OnKeyboardRelease(dik)) return true;
 
@@ -147,26 +146,26 @@ bool CUIGameSP::IR_OnKeyboardRelease(int dik)
 	return false;
 }
 
-void CUIGameSP::StartTalk()
+void CUIGame::StartTalk()
 {
 	m_game->StartStopMenu(TalkMenu,true);
 }
 
-void CUIGameSP::StartCarBody(CInventoryOwner* pOurInv, CInventoryOwner* pOthers)
+void CUIGame::StartCarBody(CInventoryOwner* pOurInv, CInventoryOwner* pOthers)
 {
 	if( MainInputReceiver() )		return;
 	UICarBodyMenu->InitCarBody		(pOurInv,  pOthers);
 	m_game->StartStopMenu			(UICarBodyMenu,true);
 }
 
-void CUIGameSP::StartCarBody(CInventoryOwner* pOurInv, CInventoryBox* pBox)
+void CUIGame::StartCarBody(CInventoryOwner* pOurInv, CInventoryBox* pBox)
 {
 	if( MainInputReceiver() )		return;
 	UICarBodyMenu->InitCarBody		(pOurInv,  pBox);
 	m_game->StartStopMenu			(UICarBodyMenu,true);
 }
 
-void CUIGameSP::ReInitShownUI() 
+void CUIGame::ReInitShownUI() 
 { 
 	if (InventoryMenu->IsShown()) 
 		InventoryMenu->InitInventory_delayed(); 
@@ -176,7 +175,7 @@ void CUIGameSP::ReInitShownUI()
 };
 
 extern ENGINE_API BOOL bShowPauseString;
-void CUIGameSP::ChangeLevel				(GameGraph::_GRAPH_ID game_vert_id, u32 level_vert_id, Fvector pos, Fvector ang, Fvector pos2, Fvector ang2, bool b)
+void CUIGame::ChangeLevel				(GameGraph::_GRAPH_ID game_vert_id, u32 level_vert_id, Fvector pos, Fvector ang, Fvector pos2, Fvector ang2, bool b)
 {
 	if( !MainInputReceiver() || MainInputReceiver()!=UIChangeLevelWnd)
 	{
@@ -191,7 +190,7 @@ void CUIGameSP::ChangeLevel				(GameGraph::_GRAPH_ID game_vert_id, u32 level_ver
 	}
 }
 
-void CUIGameSP::reset_ui()
+void CUIGame::reset_ui()
 {
 	inherited::reset_ui				();
 	InventoryMenu->Reset			();

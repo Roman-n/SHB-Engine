@@ -1,4 +1,3 @@
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "base_monster.h"
@@ -20,7 +19,6 @@
 
 #include "../../../patrol_path_manager.h"
 #include "../../../patrol_path_manager_space.h"
-
 
 using namespace MonsterSpace;
 using namespace MonsterSound;

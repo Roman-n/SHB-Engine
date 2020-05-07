@@ -1,4 +1,3 @@
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "WeaponAK74.h"

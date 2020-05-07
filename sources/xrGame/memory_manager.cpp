@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Memory manager
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "memory_manager.h"

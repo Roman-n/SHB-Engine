@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Space restrictor
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "space_restrictor.h"

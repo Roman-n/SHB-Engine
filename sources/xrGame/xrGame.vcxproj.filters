@@ -1894,9 +1894,6 @@
     <Filter Include="Physics\Base\Objects\BaseShell">
       <UniqueIdentifier>{1579e46a-5c4f-4be6-b3be-bd50a00c4110}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Physics\Base\Objects\BaseShell\PhysicsShellAnimator">
-      <UniqueIdentifier>{c918a6a1-9a7e-48a3-8fb0-656045a978e0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Physics\Base\Objects\BaseShell\animation_movement_controller">
       <UniqueIdentifier>{dc838021-e3b3-4533-bdd2-6f07e3eaa31d}</UniqueIdentifier>
     </Filter>
@@ -5493,12 +5490,6 @@
     <ClInclude Include="PhysicsShell.h">
       <Filter>Physics\Base\Objects\BaseShell</Filter>
     </ClInclude>
-    <ClInclude Include="PhysicsShellAnimator.h">
-      <Filter>Physics\Base\Objects\BaseShell\PhysicsShellAnimator</Filter>
-    </ClInclude>
-    <ClInclude Include="PhysicsShellAnimatorBoneData.h">
-      <Filter>Physics\Base\Objects\BaseShell\PhysicsShellAnimator</Filter>
-    </ClInclude>
     <ClInclude Include="animation_movement_controller.h">
       <Filter>Physics\Base\Objects\BaseShell\animation_movement_controller</Filter>
     </ClInclude>
@@ -6821,9 +6812,6 @@
     <ClCompile Include="Ai\Trader\ai_trader.cpp">
       <Filter>AI\AMonsters\humans\trader</Filter>
     </ClCompile>
-    <ClCompile Include="ai\trader\ai_trader_script.cpp">
-      <Filter>AI\AMonsters\humans\trader</Filter>
-    </ClCompile>
     <ClCompile Include="ai\trader\trader_animation.cpp">
       <Filter>AI\AMonsters\humans\trader</Filter>
     </ClCompile>
@@ -7151,19 +7139,10 @@
     <ClCompile Include="script_hit.cpp">
       <Filter>AI\AScript\ScriptClasses\ScriptHit</Filter>
     </ClCompile>
-    <ClCompile Include="script_hit_script.cpp">
-      <Filter>AI\AScript\ScriptClasses\ScriptHit</Filter>
-    </ClCompile>
     <ClCompile Include="script_ini_file.cpp">
       <Filter>AI\AScript\ScriptClasses\ScriptIniFile</Filter>
     </ClCompile>
-    <ClCompile Include="script_ini_file_script.cpp">
-      <Filter>AI\AScript\ScriptClasses\ScriptIniFile</Filter>
-    </ClCompile>
     <ClCompile Include="script_token_list.cpp">
-      <Filter>AI\AScript\ScriptClasses\ScriptIniFile\ScriptTokenList</Filter>
-    </ClCompile>
-    <ClCompile Include="script_token_list_script.cpp">
       <Filter>AI\AScript\ScriptClasses\ScriptIniFile\ScriptTokenList</Filter>
     </ClCompile>
     <ClCompile Include="script_rtoken_list_script.cpp">
@@ -7179,9 +7158,6 @@
       <Filter>AI\AScript\ScriptClasses\ScriptRenderDevice</Filter>
     </ClCompile>
     <ClCompile Include="script_sound.cpp">
-      <Filter>AI\AScript\ScriptClasses\ScriptSound</Filter>
-    </ClCompile>
-    <ClCompile Include="script_sound_script.cpp">
       <Filter>AI\AScript\ScriptClasses\ScriptSound</Filter>
     </ClCompile>
     <ClCompile Include="script_sound_info_script.cpp">
@@ -7218,9 +7194,6 @@
       <Filter>AI\AScript\ScriptClasses\ScriptFcolor</Filter>
     </ClCompile>
     <ClCompile Include="script_particles.cpp">
-      <Filter>AI\AScript\ScriptClasses\ScriptParticles</Filter>
-    </ClCompile>
-    <ClCompile Include="script_particles_script.cpp">
       <Filter>AI\AScript\ScriptClasses\ScriptParticles</Filter>
     </ClCompile>
     <ClCompile Include="script_callStack.cpp">
@@ -7524,9 +7497,6 @@
       <Filter>Core\Client\Objects\tasks_info_dialogs</Filter>
     </ClCompile>
     <ClCompile Include="GameTask.cpp">
-      <Filter>Core\Client\Objects\tasks_info_dialogs\game tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="GameTask_script.cpp">
       <Filter>Core\Client\Objects\tasks_info_dialogs\game tasks</Filter>
     </ClCompile>
     <ClCompile Include="GametaskManager.cpp">
@@ -8312,9 +8282,6 @@
     <ClCompile Include="PhysicsShellScript.cpp">
       <Filter>Physics\Base\Objects\BaseShell</Filter>
     </ClCompile>
-    <ClCompile Include="PhysicsShellAnimator.cpp">
-      <Filter>Physics\Base\Objects\BaseShell\PhysicsShellAnimator</Filter>
-    </ClCompile>
     <ClCompile Include="animation_movement_controller.cpp">
       <Filter>Physics\Base\Objects\BaseShell\animation_movement_controller</Filter>
     </ClCompile>
@@ -8606,9 +8573,6 @@
     <ClCompile Include="ui\UICharacterInfo.cpp">
       <Filter>UI\Common\CharacterInfo</Filter>
     </ClCompile>
-    <ClCompile Include="ui\IUWpnParams.cpp">
-      <Filter>UI\Common\ItemInfo</Filter>
-    </ClCompile>
     <ClCompile Include="ui\ui_af_params.cpp">
       <Filter>UI\Common\ItemInfo</Filter>
     </ClCompile>
@@ -8881,6 +8845,9 @@
     </ClCompile>
     <ClCompile Include="xrserver_objects_Alife_Monsters_script3.cpp">
       <Filter>Core\Server\ServerEntities\objects_alife_monsters</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\UIWpnParams.cpp">
+      <Filter>UI\Common\ItemInfo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

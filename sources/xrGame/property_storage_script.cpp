@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Property storage class script export
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "property_storage.h"

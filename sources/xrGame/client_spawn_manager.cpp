@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Seniority hierarchy holder
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "client_spawn_manager.h" 

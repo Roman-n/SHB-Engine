@@ -337,8 +337,8 @@ void CActor::ActorUse()
 	
 	if(m_pInvBoxWeLookingAt && m_pInvBoxWeLookingAt->nonscript_usable())
 	{
-		CUIGameSP* pGameSP = smart_cast<CUIGameSP*>(HUD().GetUI()->UIGame());
-		if(pGameSP) pGameSP->StartCarBody(this, m_pInvBoxWeLookingAt );
+		CUIGame* pGame = smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
+		if(pGame) pGame->StartCarBody(this, m_pInvBoxWeLookingAt );
 		return;
 	}
 
@@ -359,8 +359,8 @@ void CActor::ActorUse()
 			else  if(!Level().IR_GetKeyState(DIK_LSHIFT))
 			{
 				//только если находимся в режиме single
-				CUIGameSP* pGameSP = smart_cast<CUIGameSP*>(HUD().GetUI()->UIGame());
-				if(pGameSP)pGameSP->StartCarBody(this, m_pPersonWeLookingAt );
+				CUIGame* pGame = smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
+				if(pGame)pGame->StartCarBody(this, m_pPersonWeLookingAt );
 			}
 		}
 

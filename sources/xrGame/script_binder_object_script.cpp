@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Script object binder script export
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "script_binder_object.h"

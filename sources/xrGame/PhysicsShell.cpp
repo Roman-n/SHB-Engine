@@ -184,11 +184,7 @@ void ApplySpawnIniToPhysicShell(CInifile* ini,CPhysicsShell* physics_shell,bool 
 		}
 		if(ini->section_exist("collide"))
 		{
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-			if((ini->line_exist("collide","ignore_static")&&fixed)||(ini->line_exist("collide","ignore_static")&&ini->section_exist("animated_object")))
-#else
 			if(ini->line_exist("collide","ignore_static")&&fixed)
-#endif
 			{
 				physics_shell->SetIgnoreStatic();
 			}
@@ -204,28 +200,7 @@ void ApplySpawnIniToPhysicShell(CInifile* ini,CPhysicsShell* physics_shell,bool 
 			{
 				physics_shell->SetIgnoreRagDoll();
 			}
-
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-			//If need, then show here that it is needed to ignore collisions with "animated_object"
-			if (ini->line_exist("collide","ignore_animated_objects"))
-			{
-				physics_shell->SetIgnoreAnimated();
-			}
-#endif
-
 		}
-
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-		//If next section is available then given "PhysicShell" is classified
-		//as animated and we read options for his animation
-		
-		if (ini->section_exist("animated_object"))
-		{
-			//Show that given "PhysicShell" animated
-			physics_shell->SetAnimated();
-		}
-#endif
-	
 }
 
 void	get_box(CPhysicsShell*	shell,const	Fmatrix& form,	Fvector&	sz,Fvector&	c)

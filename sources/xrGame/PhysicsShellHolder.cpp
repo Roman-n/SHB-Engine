@@ -1,4 +1,3 @@
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "PhysicsShellHolder.h"
@@ -15,6 +14,7 @@
 #include "phworld.h"
 #include "phactivationshape.h"
 #include "phvalide.h"
+
 CPhysicsShellHolder::CPhysicsShellHolder()
 {
 	init();

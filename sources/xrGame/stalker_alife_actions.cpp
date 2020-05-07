@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Stalker alife action classes
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "stalker_alife_actions.h"

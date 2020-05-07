@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Script zone object
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "script_zone.h"

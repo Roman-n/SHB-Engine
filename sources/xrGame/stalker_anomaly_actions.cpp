@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Stalker anomaly action classes
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "stalker_anomaly_actions.h"

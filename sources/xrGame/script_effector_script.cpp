@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : XRay Script effector class script export
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "script_effector.h"

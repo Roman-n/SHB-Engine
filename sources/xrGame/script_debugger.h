@@ -58,11 +58,11 @@ public:
 					CScriptDebugger		();
 	virtual			~CScriptDebugger	();
 
-	void			Go					();
-	void			StepInto			();
-	void			StepOver			();
-	void			StepOut				();
-	void			RunToCursor			();
+//	void			Go					();
+//	void			StepInto			();
+//	void			StepOver			();
+//	void			StepOut				();
+//	void			RunToCursor			();
 
 	void			ClearThreads		();
 	void			AddThread			(SScriptThread&);

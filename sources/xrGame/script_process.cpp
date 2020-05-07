@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Script process class
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "script_engine.h"

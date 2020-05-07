@@ -1,4 +1,3 @@
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "actor.h"
@@ -69,7 +68,7 @@ void CActor::AddEncyclopediaArticle	 (const CInfoPortion* info_portion) const
 		callback(GameObject::eArticleInfo)(lua_game_object(), g, n, _atype);
 
 		if( HUD().GetUI() ){
-			CUIGameSP* pGameSP = smart_cast<CUIGameSP*>(HUD().GetUI()->UIGame());
+			CUIGame* pGame = smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
 			pda_section::part p = pda_section::encyclopedia;
 			switch (article.data()->articleType){
 				case ARTICLE_DATA::eEncyclopediaArticle:	p = pda_section::encyclopedia;	break;
@@ -78,13 +77,10 @@ void CActor::AddEncyclopediaArticle	 (const CInfoPortion* info_portion) const
 				case ARTICLE_DATA::eTaskArticle:			p = pda_section::quests;		break;
 				default: NODEFAULT;
 			};
-			pGameSP->PdaMenu->PdaContentsChanged			(p);
+			pGame->PdaMenu->PdaContentsChanged			(p);
 		}
-
 	}
-
 }
-
 
 void CActor::AddGameTask			 (const CInfoPortion* info_portion) const
 {
@@ -98,22 +94,19 @@ void CActor::AddGameTask			 (const CInfoPortion* info_portion) const
 	}
 }
 
-
 void  CActor::AddGameNews			 (GAME_NEWS_DATA& news_data)
 {
-
 	GAME_NEWS_VECTOR& news_vector	= game_news_registry->registry().objects();
 	news_data.receive_time			= Level().GetGameTime();
 	news_vector.push_back			(news_data);
 
 	if(HUD().GetUI()){
 		HUD().GetUI()->UIMainIngameWnd->ReceiveNews(&news_data);
-		CUIGameSP* pGameSP = smart_cast<CUIGameSP*>(HUD().GetUI()->UIGame());
-		if(pGameSP) 
-			pGameSP->PdaMenu->PdaContentsChanged	(pda_section::news);
+		CUIGame* pGame = smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
+		if(pGame) 
+			pGame->PdaMenu->PdaContentsChanged	(pda_section::news);
 	}
 }
-
 
 bool CActor::OnReceiveInfo(shared_str info_id) const
 {
@@ -131,18 +124,16 @@ bool CActor::OnReceiveInfo(shared_str info_id) const
 	if(!HUD().GetUI())
 		return false;
 	//только если находимся в режиме single
-	CUIGameSP* pGameSP = smart_cast<CUIGameSP*>(HUD().GetUI()->UIGame());
-	if(!pGameSP) return false;
+	CUIGame* pGame = smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
+	if(!pGame) return false;
 
-	if(pGameSP->TalkMenu->IsShown())
+	if(pGame->TalkMenu->IsShown())
 	{
-		pGameSP->TalkMenu->NeedUpdateQuestions();
+		pGame->TalkMenu->NeedUpdateQuestions();
 	}
-
 
 	return true;
 }
-
 
 void CActor::OnDisableInfo(shared_str info_id) const
 {
@@ -152,21 +143,21 @@ void CActor::OnDisableInfo(shared_str info_id) const
 		return;
 
 	//только если находимся в режиме single
-	CUIGameSP* pGameSP = smart_cast<CUIGameSP*>(HUD().GetUI()->UIGame());
-	if(!pGameSP) return;
+	CUIGame* pGame = smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
+	if(!pGame) return;
 
-	if(pGameSP->TalkMenu->IsShown())
-		pGameSP->TalkMenu->NeedUpdateQuestions();
+	if(pGame->TalkMenu->IsShown())
+		pGame->TalkMenu->NeedUpdateQuestions();
 }
 
 void  CActor::ReceivePhrase		(DIALOG_SHARED_PTR& phrase_dialog)
 {
 	//только если находимся в режиме single
-	CUIGameSP* pGameSP = smart_cast<CUIGameSP*>(HUD().GetUI()->UIGame());
-	if(!pGameSP) return;
+	CUIGame* pGame = smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
+	if(!pGame) return;
 
-	if(pGameSP->TalkMenu->IsShown())
-		pGameSP->TalkMenu->NeedUpdateQuestions();
+	if(pGame->TalkMenu->IsShown())
+		pGame->TalkMenu->NeedUpdateQuestions();
 
 	CPhraseDialogManager::ReceivePhrase(phrase_dialog);
 }
@@ -216,12 +207,12 @@ void CActor::RunTalkDialog(CInventoryOwner* talk_partner)
 	{	
 		StartTalk(talk_partner);
 		//только если находимся в режиме single
-		CUIGameSP* pGameSP = smart_cast<CUIGameSP*>(HUD().GetUI()->UIGame());
-		if(pGameSP)
+		CUIGame* pGame = smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
+		if(pGame)
 		{
-			if(pGameSP->MainInputReceiver())
-				Game().StartStopMenu(pGameSP->MainInputReceiver(),true);
-			pGameSP->StartTalk();
+			if(pGame->MainInputReceiver())
+				Game().StartStopMenu(pGame->MainInputReceiver(),true);
+			pGame->StartTalk();
 		}
 	}
 }
@@ -262,10 +253,10 @@ void CActor::NewPdaContact		(CInventoryOwner* pInvOwner)
 	Level().MapManager().AddRelationLocation		( pInvOwner );
 
 	if( HUD().GetUI() ){
-		CUIGameSP* pGameSP = smart_cast<CUIGameSP*>(HUD().GetUI()->UIGame());
+		CUIGame* pGame = smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
 
-		if(pGameSP)
-			pGameSP->PdaMenu->PdaContentsChanged	(pda_section::contacts);
+		if(pGame)
+			pGame->PdaMenu->PdaContentsChanged	(pda_section::contacts);
 	}
 }
 
@@ -282,12 +273,11 @@ void CActor::LostPdaContact		(CInventoryOwner* pInvOwner)
 	};
 
 	if( HUD().GetUI() ){
-		CUIGameSP* pGameSP = smart_cast<CUIGameSP*>(HUD().GetUI()->UIGame());
-		if(pGameSP){
-			pGameSP->PdaMenu->PdaContentsChanged	(pda_section::contacts);
+		CUIGame* pGame = smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
+		if(pGame){
+			pGame->PdaMenu->PdaContentsChanged	(pda_section::contacts);
 		}
 	}
-
 }
 
 void CActor::AddGameNews_deffered	 (GAME_NEWS_DATA& news_data, u32 delay)
@@ -299,6 +289,7 @@ void CActor::AddGameNews_deffered	 (GAME_NEWS_DATA& news_data, u32 delay)
 	m_defferedMessages.back().time = Device.dwTimeGlobal+delay;
 	std::sort(m_defferedMessages.begin(), m_defferedMessages.end() );
 }
+
 void CActor::UpdateDefferedMessages()
 {
 	while( m_defferedMessages.size() ){
@@ -320,6 +311,7 @@ bool CActor::OnDialogSoundHandlerStart(CInventoryOwner *inv_owner, LPCSTR phrase
 	trader->dialog_sound_start(phrase);
 	return true;
 }
+
 bool CActor::OnDialogSoundHandlerStop(CInventoryOwner *inv_owner)
 {
 	CAI_Trader *trader = smart_cast<CAI_Trader*>(inv_owner);

@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Evaluation functions storage class
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "ef_storage.h"

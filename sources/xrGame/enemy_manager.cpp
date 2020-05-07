@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Enemy manager
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "enemy_manager.h"

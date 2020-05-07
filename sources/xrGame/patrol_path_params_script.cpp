@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Patrol path parameters class script export
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "patrol_path_params.h"

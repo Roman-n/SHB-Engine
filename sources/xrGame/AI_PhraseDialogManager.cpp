@@ -70,8 +70,8 @@ void CAI_PhraseDialogManager::AnswerPhrase (DIALOG_SHARED_PTR& phrase_dialog)
 
 		shared_str phrase_id = phrase_dialog->PhraseList()[phrase_num]->GetID();
 		
-		CUIGameSP* pGameSP				= smart_cast<CUIGameSP*>(HUD().GetUI()->UIGame());
-		pGameSP->TalkMenu->AddAnswer	(phrase_dialog->GetPhraseText(phrase_id), pInvOwner->Name());
+		CUIGame* pGame				= smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
+		pGame->TalkMenu->AddAnswer	(phrase_dialog->GetPhraseText(phrase_id), pInvOwner->Name());
 
 		CPhraseDialogManager::SayPhrase(phrase_dialog, phrase_id);
 	}

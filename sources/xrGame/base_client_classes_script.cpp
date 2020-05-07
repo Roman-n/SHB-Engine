@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : XRay base client classes script export
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "base_client_classes.h"

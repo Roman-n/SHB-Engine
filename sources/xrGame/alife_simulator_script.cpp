@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : ALife Simulator script export
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "alife_simulator.h"

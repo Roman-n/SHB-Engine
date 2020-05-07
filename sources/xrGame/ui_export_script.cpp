@@ -1,6 +1,4 @@
-//#include "pch_script.h"
 #include "stdafx.h"
-
 
 #include "script_ui_registrator.h"
 #include "UI\UIMultiTextStatic.h"
@@ -8,14 +6,13 @@
 
 using namespace luabind;
 
-CMainMenu*	MainMenu();
+CMainMenu* MainMenu();
 
 #pragma optimize("s",on)
 void UIRegistrator::script_register(lua_State *L)
 {
 	module(L)
 	[
-
 		class_<CGameFont>("CGameFont")
 			.enum_("EAligment")
 			[
@@ -35,5 +32,4 @@ void UIRegistrator::script_register(lua_State *L)
 	[
 		def("get_main_menu",				&MainMenu)
 	];
-
 }

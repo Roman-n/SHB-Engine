@@ -1,4 +1,3 @@
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "physicobject.h"
@@ -8,10 +7,6 @@
 #include "..\XR_3DA\skeletonanimated.h"
 #include "..\XR_3DA\xr_collide_form.h"
 #include "game_object_space.h"
-
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-	#include "PhysicsShellAnimator.h"
-#endif
 
 
 CPhysicObject::CPhysicObject(void) 
@@ -51,13 +46,6 @@ BOOL CPhysicObject::net_Spawn(CSE_Abstract* DC)
 	if (!PPhysicsShell()->isBreakable()&&!CScriptBinder::object()&&!CPHSkeleton::IsRemoving())
 		SheduleUnregister();
 
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-	if (PPhysicsShell()->Animated())
-	{
-		processing_activate();
-	}
-#endif
-
 	return TRUE;
 }
 
@@ -89,13 +77,6 @@ void CPhysicObject::RunStartupAnim(CSE_Abstract *D)
 }
 void CPhysicObject::net_Destroy()
 {
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-	if (PPhysicsShell()->Animated())
-	{
-		processing_deactivate();
-	}
-#endif
-
 	inherited::net_Destroy	();
 	CPHSkeleton::RespawnInit();
 }
@@ -137,15 +118,6 @@ void CPhysicObject::shedule_Update		(u32 dt)
 void CPhysicObject::UpdateCL()
 {
 	inherited::UpdateCL();
-
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-	//Если наш физический объект анимированный, то 
-	//двигаем объект за анимацией
-	if (m_pPhysicsShell->PPhysicsShellAnimator())
-	{
-		m_pPhysicsShell->PPhysicsShellAnimator()->OnFrame();
-	}
-#endif
 
 	PHObjectPositionUpdate();
 }

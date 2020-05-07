@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Script world property script export
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "script_world_property.h"

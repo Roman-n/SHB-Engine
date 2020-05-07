@@ -1,8 +1,6 @@
 // xrServer.cpp: implementation of the xrServer class.
 //
 //////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "xrServer.h"

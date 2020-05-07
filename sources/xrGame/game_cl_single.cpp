@@ -1,4 +1,3 @@
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "game_cl_single.h"
@@ -25,7 +24,7 @@ game_cl_Single::game_cl_Single()
 CUIGameCustom* game_cl_Single::createGameUI()
 {
 	CLASS_ID clsid			= CLSID_GAME_UI_SINGLE;
-	CUIGameSP*			pUIGame	= smart_cast<CUIGameSP*> ( NEW_INSTANCE ( clsid ) );
+	CUIGame*			pUIGame	= smart_cast<CUIGame*> ( NEW_INSTANCE ( clsid ) );
 	R_ASSERT(pUIGame);
 	pUIGame->SetClGame(this);
 	pUIGame->Init();

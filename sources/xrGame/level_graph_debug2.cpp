@@ -5,10 +5,7 @@
 //	Author		: Oles Shihkovtsov, Dmitriy Iassenev
 //	Description : Level graph debug functions
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
-
 
 #ifdef DEBUG
 #include "level_graph.h"

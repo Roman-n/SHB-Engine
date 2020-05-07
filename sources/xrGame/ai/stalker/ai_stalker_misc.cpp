@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Miscellaneous functions for monster "Stalker"
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "ai_stalker.h"

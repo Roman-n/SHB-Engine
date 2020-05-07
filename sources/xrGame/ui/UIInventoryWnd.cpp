@@ -1,4 +1,3 @@
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "UIInventoryWnd.h"
@@ -21,6 +20,7 @@
 #include "../inventory.h"
 
 #include "UIInventoryUtilities.h"
+
 using namespace InventoryUtilities;
 
 #include "../InfoPortion.h"

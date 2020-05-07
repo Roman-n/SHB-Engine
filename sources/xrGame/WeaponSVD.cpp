@@ -1,4 +1,3 @@
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "weaponsvd.h"
@@ -16,7 +15,6 @@ void CWeaponSVD::switch2_Fire	()
 	m_bPending					= true;
 	m_iShotNum					= 0;
 	m_bStopedAfterQueueFired	= false;
-
 }
 
 void CWeaponSVD::OnAnimationEnd(u32 state) 

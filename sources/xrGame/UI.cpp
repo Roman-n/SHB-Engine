@@ -100,9 +100,9 @@ bool CUI::Render()
 		}
 		else
 		{  //hack - draw messagess wnd in scope mode
-			CUIGameSP* gSP = smart_cast<CUIGameSP*>(HUD().GetUI()->UIGame());
-			if (gSP){
-				if (!gSP->PdaMenu->GetVisible())
+			CUIGame* pGame = smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
+			if (pGame){
+				if (!pGame->PdaMenu->GetVisible())
 					m_pMessagesWnd->Draw();
 			}
 			else

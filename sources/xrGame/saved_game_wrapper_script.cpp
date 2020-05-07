@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : saved game wrapper class script export
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "saved_game_wrapper.h"

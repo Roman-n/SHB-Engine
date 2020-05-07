@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Danger manager
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "danger_manager.h"

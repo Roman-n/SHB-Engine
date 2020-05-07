@@ -1,4 +1,3 @@
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "InventoryOwner.h"
@@ -263,7 +262,7 @@ void CInventoryOwner::StopTalk()
 
 	GetTrade()->StopTrade	();
 
-	CUIGameSP* ui_sp = smart_cast<CUIGameSP*>(HUD().GetUI()->UIGame());
+	CUIGame* ui_sp = smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
 	if(ui_sp && ui_sp->TalkMenu->IsShown())
 		ui_sp->TalkMenu->Stop();
 }

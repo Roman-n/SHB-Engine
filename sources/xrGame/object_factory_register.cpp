@@ -169,7 +169,7 @@ void CObjectFactory::register_classes	()
 	add<game_cl_Single>											(CLSID_CL_GAME_SINGLE			,"game_cl_single");
 
 	//Game UI type
-	add<CUIGameSP>												(CLSID_GAME_UI_SINGLE			,"game_ui_single");
+	add<CUIGame>												(CLSID_GAME_UI_SINGLE			,"game_ui_single");
 
 	ADD(CActor					,CSE_ALifeCreatureActor			,CLSID_OBJECT_ACTOR				,"actor");
 

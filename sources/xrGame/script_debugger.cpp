@@ -19,7 +19,7 @@ void CScriptDebugger::SendMessageToIde	(CMailSlotMsg& msg)
 
 }
 
-LRESULT CScriptDebugger::_SendMessage(u32 message, WPARAM wParam, LPARAM lParam)
+LRESULT CScriptDebugger::_SendMessage(UINT message, WPARAM wParam, LPARAM lParam)
 {
 //	if ( (m_pDebugger)&&(m_pDebugger->Active())&&(message >= _DMSG_FIRST_MSG && message <= _DMSG_LAST_MSG) )
 //		return m_pDebugger->DebugMessage(message, wParam, lParam);

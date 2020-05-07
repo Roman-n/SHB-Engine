@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Server objects for ALife simulator, script export, the third part
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "xrServer_Objects_ALife_Monsters.h"

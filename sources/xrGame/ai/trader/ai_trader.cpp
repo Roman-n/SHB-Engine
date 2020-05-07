@@ -5,8 +5,6 @@
 //	Author		: Jim
 //	Description : AI Behaviour for monster "Trader"
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "ai_trader.h"
@@ -387,4 +385,15 @@ void CAI_Trader::dialog_sound_start(LPCSTR phrase)
 void CAI_Trader::dialog_sound_stop()
 {
 	animation().external_sound_stop();
+}
+using namespace luabind;
+
+#pragma optimize("s",on)
+void CAI_Trader::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CAI_Trader, CGameObject>("CAI_Trader")
+			.def(constructor<>( ))
+		];
 }

@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Patrol path manager
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "gameobject.h"

@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Movement manager
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "movement_manager.h"

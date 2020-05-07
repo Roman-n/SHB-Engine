@@ -1001,8 +1001,6 @@
     <ClInclude Include="PhysicsCommon.h" />
     <ClInclude Include="PhysicsGamePars.h" />
     <ClInclude Include="PhysicsShell.h" />
-    <ClInclude Include="PhysicsShellAnimator.h" />
-    <ClInclude Include="PhysicsShellAnimatorBoneData.h" />
     <ClInclude Include="PhysicsShellHolder.h" />
     <ClInclude Include="PhysicsSkeletonObject.h" />
     <ClInclude Include="physic_item.h" />
@@ -1652,7 +1650,6 @@
     <ClCompile Include="Ai\Stalker\ai_stalker_script.cpp" />
     <ClCompile Include="ai\stalker\ai_stalker_script_entity.cpp" />
     <ClCompile Include="Ai\Trader\ai_trader.cpp" />
-    <ClCompile Include="ai\trader\ai_trader_script.cpp" />
     <ClCompile Include="ai\trader\trader_animation.cpp" />
     <ClCompile Include="AI_PhraseDialogManager.cpp" />
     <ClCompile Include="ai_sounds.cpp" />
@@ -1829,7 +1826,6 @@
     <ClCompile Include="GamePersistent.cpp" />
     <ClCompile Include="GameTask.cpp" />
     <ClCompile Include="GametaskManager.cpp" />
-    <ClCompile Include="GameTask_script.cpp" />
     <ClCompile Include="game_base.cpp" />
     <ClCompile Include="game_base_script.cpp" />
     <ClCompile Include="game_cl_base.cpp" />
@@ -2016,7 +2012,6 @@
     <ClCompile Include="Physics.cpp" />
     <ClCompile Include="PhysicsGamePars.cpp" />
     <ClCompile Include="PhysicsShell.cpp" />
-    <ClCompile Include="PhysicsShellAnimator.cpp" />
     <ClCompile Include="PhysicsShellHolder.cpp" />
     <ClCompile Include="PhysicsShellScript.cpp" />
     <ClCompile Include="PhysicsSkeletonObject.cpp" />
@@ -2095,9 +2090,7 @@
     <ClCompile Include="script_game_object_use.cpp" />
     <ClCompile Include="script_game_object_use2.cpp" />
     <ClCompile Include="script_hit.cpp" />
-    <ClCompile Include="script_hit_script.cpp" />
     <ClCompile Include="script_ini_file.cpp" />
-    <ClCompile Include="script_ini_file_script.cpp" />
     <ClCompile Include="script_lanim.cpp" />
     <ClCompile Include="script_lua_helper.cpp" />
     <ClCompile Include="script_monster_action.cpp" />
@@ -2110,7 +2103,6 @@
     <ClCompile Include="script_object_action.cpp" />
     <ClCompile Include="script_object_action_script.cpp" />
     <ClCompile Include="script_particles.cpp" />
-    <ClCompile Include="script_particles_script.cpp" />
     <ClCompile Include="script_particle_action.cpp" />
     <ClCompile Include="script_particle_action_script.cpp" />
     <ClCompile Include="script_process.cpp" />
@@ -2122,7 +2114,6 @@
     <ClCompile Include="script_sound_action.cpp" />
     <ClCompile Include="script_sound_action_script.cpp" />
     <ClCompile Include="script_sound_info_script.cpp" />
-    <ClCompile Include="script_sound_script.cpp" />
     <ClCompile Include="script_sound_type_script.cpp" />
     <ClCompile Include="script_stack_tracker.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -2130,7 +2121,6 @@
     <ClCompile Include="script_storage.cpp" />
     <ClCompile Include="script_thread.cpp" />
     <ClCompile Include="script_token_list.cpp" />
-    <ClCompile Include="script_token_list_script.cpp" />
     <ClCompile Include="script_watch_action.cpp" />
     <ClCompile Include="script_watch_action_script.cpp" />
     <ClCompile Include="script_world_property_script.cpp" />
@@ -2267,7 +2257,7 @@
     <ClCompile Include="UIGame_custom_script.cpp" />
     <ClCompile Include="UIStaticItem.cpp" />
     <ClCompile Include="UIZoneMap.cpp" />
-    <ClCompile Include="ui\IUWpnParams.cpp" />
+    <ClCompile Include="ui\UIWpnParams.cpp" />
     <ClCompile Include="ui\map_hint.cpp" />
     <ClCompile Include="ui\MMSound.cpp" />
     <ClCompile Include="ui\UI3tButton.cpp" />

@@ -2,8 +2,6 @@
 // inventory_owner_info.h:	для работы с сюжетной информацией
 //
 //////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "InventoryOwner.h"

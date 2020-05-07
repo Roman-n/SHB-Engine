@@ -11,10 +11,6 @@ class CPHShellSplitterHolder;
 #include "PHShellSplitter.h"
 #include "phmovestorage.h"
 
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-	class CPhysicsShellAnimator;
-#endif
-
 class CPHShell: public CPhysicsShell,public CPHObject {
 
 	friend class CPHShellSplitterHolder;
@@ -30,10 +26,6 @@ class CPHShell: public CPhysicsShell,public CPHObject {
 	JOINT_STORAGE			joints;
 	CPHShellSplitterHolder	*m_spliter_holder;
 	CPHMoveStorage			m_traced_geoms;
-
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-	CPhysicsShellAnimator*	m_pPhysicsShellAnimatorC;
-#endif
 
 protected:
 	dSpaceID			    m_space;
@@ -77,10 +69,6 @@ public:
 	virtual void			Activate				(bool disable=false);
 	virtual void			Activate				(const Fmatrix& start_from, bool disable=false){};
 
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-	virtual	CPhysicsShellAnimator*	PPhysicsShellAnimator(){return	m_pPhysicsShellAnimatorC;};
-#endif
-
 private:
 			void			activate				(bool disable);	
 public:
@@ -99,13 +87,6 @@ public:
 	virtual			void	SetIgnoreDynamic		()											;
 	virtual			void	SetRagDoll				()											;
 	virtual			void	SetIgnoreRagDoll		()											;
-
-#ifdef ANIMATED_PHYSICS_OBJECT_SUPPORT
-	virtual			void	SetAnimated				()											;
-	virtual			void	SetIgnoreAnimated		()											;
-	virtual			bool	Animated				()											;
-#endif
-
 	virtual			void	SetSmall				()											;
 	virtual			void	SetIgnoreSmall			()											;
 	virtual void			setMass					(float M)									;

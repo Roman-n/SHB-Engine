@@ -1,8 +1,6 @@
 // CustomMonster.cpp: implementation of the CCustomMonster class.
 //
 //////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "ai_debug.h"

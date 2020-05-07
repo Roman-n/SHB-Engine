@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Script entity class
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "script_entity.h"

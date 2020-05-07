@@ -5,8 +5,6 @@
 //	Author		: Dmitriy Iassenev
 //	Description : Server objects script export
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "xrServer_Objects.h"

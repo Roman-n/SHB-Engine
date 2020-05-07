@@ -61,21 +61,21 @@ void CActor::OnEvent		(NET_Packet& P, u16 type)
 
 				inventory().Take(_GO, false, true);
 
-				CUIGameSP* pGameSP = NULL;
+				CUIGame* pGame = NULL;
 				CUI* ui = HUD().GetUI();
 				if( ui&&ui->UIGame() )
 				{
-					pGameSP = smart_cast<CUIGameSP*>(HUD().GetUI()->UIGame());
+					pGame = smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
 					if (Level().CurrentViewEntity() == this)
 							HUD().GetUI()->UIGame()->ReInitShownUI();
 				};
 				
 				//добавить отсоединенный аддон в инвентарь
-				if(pGameSP)
+				if(pGame)
 				{
-					if(pGameSP->MainInputReceiver() == pGameSP->InventoryMenu)
+					if(pGame->MainInputReceiver() == pGame->InventoryMenu)
 					{
-						pGameSP->InventoryMenu->AddItemToBag(smart_cast<CInventoryItem*>(O));
+						pGame->InventoryMenu->AddItemToBag(smart_cast<CInventoryItem*>(O));
 					}
 				}
 			} 

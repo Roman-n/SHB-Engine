@@ -1,8 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////
 // script_game_object_inventory_owner.сpp :	функции для inventory owner
 //////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "script_game_object.h"
@@ -65,11 +63,11 @@ void  CScriptGameObject::AddIconedTalkMessage		(LPCSTR text, LPCSTR texture_name
 
 void _AddIconedTalkMessage(LPCSTR text, LPCSTR texture_name, const Frect& tex_rect, LPCSTR templ_name)
 {
-	CUIGameSP* pGameSP = smart_cast<CUIGameSP*>(HUD().GetUI()->UIGame());
-	if(!pGameSP) return;
+	CUIGame* pGame = smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
+	if(!pGame) return;
 
-	if(pGameSP->TalkMenu->IsShown())
-		pGameSP->TalkMenu->AddIconedMessage(text, texture_name, tex_rect, templ_name?templ_name:"iconed_answer_item" );
+	if(pGame->TalkMenu->IsShown())
+		pGame->TalkMenu->AddIconedMessage(text, texture_name, tex_rect, templ_name?templ_name:"iconed_answer_item" );
 }
 
 bool _give_news	(LPCSTR news, LPCSTR texture_name, const Frect& tex_rect, int delay, int show_time);
@@ -577,12 +575,12 @@ void  CScriptGameObject::SwitchToTrade		()
 	CActor* pActor = smart_cast<CActor*>(&object());	if(!pActor) return;
 
 	//только если находимся в режиме single
-	CUIGameSP* pGameSP = smart_cast<CUIGameSP*>(HUD().GetUI()->UIGame());
-	if(!pGameSP) return;
+	CUIGame* pGame = smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
+	if(!pGame) return;
 
-	if(pGameSP->TalkMenu->IsShown())
+	if(pGame->TalkMenu->IsShown())
 	{
-		pGameSP->TalkMenu->SwitchToTrade();
+		pGame->TalkMenu->SwitchToTrade();
 	}
 }
 

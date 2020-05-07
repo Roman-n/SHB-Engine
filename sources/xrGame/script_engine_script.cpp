@@ -5,14 +5,11 @@
 //	Author		: Dmitriy Iassenev
 //	Description : ALife Simulator script engine export
 ////////////////////////////////////////////////////////////////////////////
-
-//#include "pch_script.h"
 #include "stdafx.h"
 
 #include "script_engine.h"
 #include "ai_space.h"
 #include "script_debugger.h"
-//#include <ostream>
 
 using namespace luabind;
 
