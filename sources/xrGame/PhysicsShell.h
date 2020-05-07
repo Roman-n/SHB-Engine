@@ -16,7 +16,7 @@ class CPhysicsShellHolder;
 class CGameObject;
 class NET_Packet;
 struct SBoneShape;
-class  CPHShellSplitterHolder;
+class CPHShellSplitterHolder;
 class CKinematics;
 
 typedef u32	CLClassBits;
