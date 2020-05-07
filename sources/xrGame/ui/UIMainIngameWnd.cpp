@@ -2,9 +2,9 @@
 
 #include <functional>// раньше не было
 
-#include "UIMainIngameWnd.h"
-#include "UIMessagesWindow.h"
-#include "../UIZoneMap.h"
+#include "UIMainIngameWnd.h"//
+#include "UIMessagesWindow.h"//
+#include "../UIZoneMap.h"//
 
 
 #include <dinput.h>
@@ -29,17 +29,16 @@
 #include "../xrServer_Objects_ALife_Monsters.h"
 #include "../..\XR_3DA\LightAnimLibrary.h"
 
-#include "UIInventoryUtilities.h"
-
+#include "UIInventoryUtilities.h"//
 
 #include "UIXmlInit.h"
-#include "UIPdaMsgListItem.h"
+#include "UIPdaMsgListItem.h"//
 #include "../alife_registry_wrappers.h"
 #include "../actorcondition.h"
 
 #include "../string_table.h"
 #include "../clsid_game.h"
-#include "UIArtefactPanel.h"
+#include "UIArtefactPanel.h"//
 
 #ifdef DEBUG
 #	include "../attachable_item.h"
@@ -47,8 +46,8 @@
 #endif
 
 #include "UIScrollView.h"
-#include "map_hint.h"
-#include "UIColorAnimatorWrapper.h"
+#include "UIMapHint.h"//
+#include "UIColorAnimatorWrapper.h"//
 #include "../game_news.h"
 
 #ifdef DEBUG

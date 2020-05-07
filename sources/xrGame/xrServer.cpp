@@ -12,7 +12,7 @@
 #include "..\XR_3DA\IGame_Persistent.h"
 
 #include "..\XR_3DA\XR_IOConsole.h"
-#include "ui/UIInventoryUtilities.h"
+#include "ui/UIInventoryUtilities.h"//
 
 xrClientData::xrClientData	():IClient(Device.GetTimerGlobal())
 {

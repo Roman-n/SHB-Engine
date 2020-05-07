@@ -5,7 +5,7 @@
 #include "level.h"
 
 #include "game_cl_Single.h"
-#include "ui/UIPdaAux.h"
+#include "ui/UIPdaAux.h"//
 #include "xr_level_controller.h"
 #include "actorcondition.h"
 #include "..\XR_3DA\xr_ioconsole.h"
@@ -13,11 +13,11 @@
 #include "GameTaskManager.h"
 #include "GameTask.h"
 
-#include "ui/UIInventoryWnd.h"
+#include "ui/UIInventoryWnd.h"//
 #include "ui/UITradeWnd.h"
-#include "ui/UIPdaWnd.h"
+#include "ui/UIPdaWnd.h"//
 #include "ui/UITalkWnd.h"
-#include "ui/UICarBodyWnd.h"
+#include "ui/UICarBodyWnd.h"//
 #include "ui/UIMessageBox.h"
 
 CUIGame::CUIGame()

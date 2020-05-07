@@ -23,7 +23,7 @@
 #include "script_engine_space.h"
 #include "script_process.h"
 #include "xrServer_Objects.h"
-#include "ui/UIMainIngameWnd.h"
+#include "ui/UIMainIngameWnd.h"//
 #include "PhysicsGamePars.h"
 #include "phworld.h"
 #include "string_table.h"
@@ -43,7 +43,7 @@
 
 #ifdef DEBUG
 #	include "PHDebug.h"
-#	include "ui/UIDebugFonts.h" 
+#	include "ui/UIDebugFonts.h"//
 #	include "game_graph.h"
 #endif // DEBUG
 

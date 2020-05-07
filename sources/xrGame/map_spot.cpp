@@ -1,9 +1,9 @@
 #include "stdafx.h"
-#include "map_spot.h"
+#include "map_spot.h"//
 #include "map_location.h"
 
 #include "ui/UIXmlInit.h"
-#include "ui/UIMApWnd.h"
+#include "ui/UIMapWnd.h"//
 #include "level.h"
 #include "..\XR_3DA\xr_object.h"
 #include "object_broker.h"

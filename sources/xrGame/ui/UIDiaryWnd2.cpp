@@ -1,8 +1,8 @@
 #include "stdafx.h"
-#include "UIDiaryWnd.h"
+#include "UIDiaryWnd.h"//
 #include "UIFrameWindow.h"
 #include "UIFrameLineWnd.h"
-#include "UINewsWnd.h"
+#include "UINewsWnd.h"//
 #include "UIAnimatedStatic.h"
 #include "UIXmlInit.h"
 #include "../object_broker.h"
@@ -10,13 +10,13 @@
 #include "UIScrollView.h"
 #include "UIListWnd.h"
 #include "UITreeViewItem.h"
-#include "UIEncyclopediaArticleWnd.h"
+#include "UIEncyclopediaArticleWnd.h"//
 #include "../level.h"
 #include "../actor.h"
 #include "../alife_registry_wrappers.h"
 #include "../encyclopedia_article.h"
 //#include "UIVideoPlayerWnd.h"
-#include "UIPdaAux.h"
+#include "UIPdaAux.h"//
 
 extern u32			g_pda_info_state;
 

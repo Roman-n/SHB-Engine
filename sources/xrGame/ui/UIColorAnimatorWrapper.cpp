@@ -11,7 +11,7 @@
 //=============================================================================
 
 #include "stdafx.h"
-#include "UIColorAnimatorWrapper.h"
+#include "UIColorAnimatorWrapper.h"//
 #include "../..\XR_3DA\LightAnimLibrary.h"
 
 //////////////////////////////////////////////////////////////////////////

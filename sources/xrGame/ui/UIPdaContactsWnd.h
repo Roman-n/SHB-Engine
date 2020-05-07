@@ -1,6 +1,7 @@
 #pragma once
 
 #include "UIWindow.h"
+#include "UIPdaListItem.h"//
 
 class CUIFrameWindow;
 class CUIFrameLineWnd;
@@ -44,7 +45,6 @@ protected:
 	CUIAnimatedStatic*			UIAnimation;
 };
 
-#include "UIPdaListItem.h"
 class CUIPdaContactItem :public CUIPdaListItem, public CUISelectable
 {
 	CUIPdaContactsWnd*			m_cw;

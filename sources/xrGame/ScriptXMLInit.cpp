@@ -11,11 +11,11 @@
 #include "ui\UITabControl.h"
 #include "ui\UIFrameWindow.h"
 #include "ui\UILabel.h"
-#include "ui\UIKeyBinding.h"
+#include "ui\UIKeyBinding.h"//
 #include "ui\UIEditBox.h"
 #include "ui\UIAnimatedStatic.h"
 #include "ui\UITrackBar.h"
-#include "ui\UIMMShniaga.h"
+#include "ui\UIMMShniaga.h"//
 #include "ui\UIScrollView.h"
 #include "ui\UIProgressBar.h"
 

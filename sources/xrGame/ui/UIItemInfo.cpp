@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "uiiteminfo.h"
+#include "UIItemInfo.h"//
 #include "uistatic.h"
 #include "UIXmlInit.h"
 
@@ -10,10 +10,10 @@
 
 #include "../string_table.h"
 #include "../Inventory_Item.h"
-#include "UIInventoryUtilities.h"
+#include "UIInventoryUtilities.h"//
 #include "../PhysicsShellHolder.h"
-#include "UIWpnParams.h"
-#include "ui_af_params.h"
+#include "UIWpnParams.h"//
+#include "UIArtefactParams.h"//
 
 CUIItemInfo::CUIItemInfo()
 {

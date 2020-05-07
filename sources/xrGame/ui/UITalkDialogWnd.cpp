@@ -6,6 +6,7 @@
 #include "UIScrollView.h"
 #include "UI3tButton.h"
 #include "../UI.h"
+#include "UIInventoryUtilities.h"//
 
 
 #define				TALK_XML				"talk.xml"
@@ -94,8 +95,6 @@ void CUITalkDialogWnd::Init(float x, float y, float width, float height)
 	AddCallback					("trade_btn",BUTTON_CLICKED,CUIWndCallback::void_function(this, &CUITalkDialogWnd::OnTradeClicked));
 }
 
-#include "UIInventoryUtilities.h"
-	
 void CUITalkDialogWnd::Show()
 {
 	InventoryUtilities::SendInfoToActor				("ui_talk");

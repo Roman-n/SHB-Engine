@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
-#include "UIEditKeyBind.h"
-#include "UIColorAnimatorWrapper.h"
+#include "UIEditKeyBind.h"//
+#include "UIColorAnimatorWrapper.h"//
 #include "../xr_level_controller.h"
 #include "../object_broker.h"
 

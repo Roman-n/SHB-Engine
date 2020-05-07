@@ -7,7 +7,7 @@
 #include "../HUDManager.h"
 #include "../GamePersistent.h"
 #include "UILabel.h"
-#include "UIMMShniaga.h"
+#include "UIMMShniaga.h"//
 #include "UITextureMaster.h"
 #include "UIScrollView.h"
 

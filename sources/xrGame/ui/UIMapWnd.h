@@ -3,7 +3,6 @@
 #include "UIWindow.h"
 #include "UIWndCallback.h"
 
-
 class CUICustomMap;
 class CUIGlobalMap;
 class CUIFrameWindow;
@@ -18,7 +17,6 @@ class CUIMapHint;
 class CMapLocation;
 
 DEFINE_MAP(shared_str,CUICustomMap*,GameMaps,GameMapsPairIt);
-
 
 class CUIMapWnd: public CUIWindow, public CUIWndCallback
 {

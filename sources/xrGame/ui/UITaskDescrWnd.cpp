@@ -1,10 +1,10 @@
 #include "stdafx.h"
-#include "UITaskDescrWnd.h"
+#include "UITaskDescrWnd.h"//
 #include "UIXmlInit.h"
 #include "UIFrameWindow.h"
 #include "UIFrameLineWnd.h"
 #include "UIScrollView.h"
-#include "UIEncyclopediaArticleWnd.h"
+#include "UIEncyclopediaArticleWnd.h"//
 #include "../encyclopedia_article.h"
 
 

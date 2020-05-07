@@ -10,10 +10,10 @@
 #include "../UIGameSp.h"
 #include "../HUDManager.h"
 #include "../level.h"
-#include "UIPdaWnd.h"
-#include "UIInventoryWnd.h"
+#include "UIPdaWnd.h"//
+#include "UIInventoryWnd.h"//
 #include "UITalkWnd.h"
-#include "UICarBodyWnd.h"
+#include "UICarBodyWnd.h"//
 
 extern ENGINE_API BOOL bShowPauseString;
 

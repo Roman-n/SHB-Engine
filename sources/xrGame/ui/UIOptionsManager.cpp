@@ -3,8 +3,8 @@
 ///////////////////////////////////
 
 #include "stdafx.h"
-#include "UIOptionsManager.h"
-#include "UIOptionsItem.h"
+#include "UIOptionsManager.h"//
+#include "UIOptionsItem.h"//
 #include "../..\XR_3DA\xr_ioconsole.h"
 
 CUIOptionsManager::CUIOptionsManager(){

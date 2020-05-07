@@ -1,10 +1,10 @@
 #include "stdafx.h"
-#include "UIPdaWnd.h"
+#include "UIPdaWnd.h"//
 #include "../Pda.h"
 
 #include "xrUIXmlParser.h"
 #include "UIXmlInit.h"
-#include "UIInventoryUtilities.h"
+#include "UIInventoryUtilities.h"//
 
 #include "../HUDManager.h"
 #include "../level.h"
@@ -13,18 +13,17 @@
 #include "UIStatic.h"
 #include "UIFrameWindow.h"
 #include "UITabControl.h"
-//#include "UIPdaCommunication.h"
-#include "UIPdaContactsWnd.h"
-#include "UIMapWnd.h"
-#include "UIDiaryWnd.h"
+#include "UIPdaContactsWnd.h"//
+#include "UIMapWnd.h"//
+#include "UIDiaryWnd.h"//
 #include "UIFrameLineWnd.h"
-#include "UIEncyclopediaWnd.h"
+#include "UIEncyclopediaWnd.h"//
 #include "UIStalkersRankingWnd.h"
 #include "UIActorInfo.h"
-#include "UIEventsWnd.h"
+#include "UIEventsWnd.h"//
 #include "../object_broker.h"
-#include "UIMessagesWindow.h"
-#include "UIMainIngameWnd.h"
+#include "UIMessagesWindow.h"//
+#include "UIMainIngameWnd.h"//
 #include "UITabButton.h"
 
 #define		PDA_XML					"pda.xml"

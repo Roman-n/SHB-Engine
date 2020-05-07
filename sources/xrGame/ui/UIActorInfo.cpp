@@ -1,18 +1,18 @@
 #include "stdafx.h"
 #include "UIActorInfo.h"
 #include "UIXmlInit.h"
-#include "UIPdaAux.h"
+#include "UIPdaAux.h"//
 #include "../Level.h"
 #include "../actor.h"
 
-#include "UIInventoryUtilities.h"
+#include "UIInventoryUtilities.h"//
 #include "UIFrameWindow.h"
 #include "UIFrameLineWnd.h"
 #include "UIAnimatedStatic.h"
 #include "UIScrollView.h"
-#include "UICharacterInfo.h"
+#include "UICharacterInfo.h"//
 #include "UI3tButton.h"
-#include "UIInventoryUtilities.h"
+#include "UIInventoryUtilities.h"//
 #include "../actor_statistic_mgr.h"
 #include "../character_community.h"
 #include "../character_reputation.h"

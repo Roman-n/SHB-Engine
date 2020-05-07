@@ -19,9 +19,9 @@
 #include "xrServer_Objects_ALife_Monsters.h"
 #include "alife_registry_wrappers.h"
 #include "map_manager.h"
-#include "ui/UIMainIngameWnd.h"
-#include "ui/UIPdaWnd.h"
-#include "ui/UIDiaryWnd.h"
+#include "ui/UIMainIngameWnd.h"//
+#include "ui/UIPdaWnd.h"//
+#include "ui/UIDiaryWnd.h"//
 #include "ui/UITalkWnd.h"
 #include "game_object_space.h"
 #include "script_callback_ex.h"

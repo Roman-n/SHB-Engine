@@ -20,7 +20,7 @@
 #include "xrserver_objects_alife_items.h"
 #include "..\XR_3DA\skeletonanimated.h"
 #include "level.h"
-#include "ui/UIMainIngameWnd.h"
+#include "ui/UIMainIngameWnd.h"//
 #include "CarWeapon.h"
 #include "game_object_space.h"
 #include "GameMtlLib.h"

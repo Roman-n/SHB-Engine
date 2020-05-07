@@ -1,8 +1,8 @@
 #include "stdafx.h"
 
-#include "UIInventoryUtilities.h"
+#include "UIInventoryUtilities.h"//
 
-#include "uicharacterinfo.h"
+#include "UICharacterInfo.h"//
 #include "../actor.h"
 #include "../level.h"
 #include "../character_info.h"
@@ -150,7 +150,7 @@ void CUICharacterInfo::Init(float x, float y, float width, float height, CUIXml*
 	}
 }
 
-void CUICharacterInfo::Init(float x, float y, float width, float height, LPCSTR xml_name)
+void CUICharacterInfo::Init(float x, float y, float width, float height, const char* xml_name)
 {
 	CUIXml							uiXml;
 	bool xml_result					= uiXml.Init(CONFIG_PATH, UI_PATH, xml_name);
@@ -177,7 +177,6 @@ void CUICharacterInfo::InitCharacter(u16 id)
 		sprintf_s(str, "%s", *stbl.translate(GetRankAsText(chInfo.Rank().value())));
 		m_icons[eUIRank]->SetText(str);
 	}
-
 
 	if(m_icons[eUIReputation]){
 		sprintf_s(str, "%s", *stbl.translate(GetReputationAsText(chInfo.Reputation().value())));
@@ -264,7 +263,6 @@ void CUICharacterInfo::Update()
 {
 	inherited::Update();
 
-
 	if(hasOwner() && (m_bForceUpdate||(Device.dwFrame%100==0))  ){
 		m_bForceUpdate = false;
 		CSE_ALifeTraderAbstract* T = ch_info_get_from_id	(m_ownerID);
@@ -295,4 +293,3 @@ void CUICharacterInfo::ClearInfo()
 	for(int i = eUIName; i<eMaxCaption; ++i)
 		if(m_icons[i])m_icons[i]->Show(false);
 }
-

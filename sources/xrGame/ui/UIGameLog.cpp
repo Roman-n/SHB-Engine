@@ -8,8 +8,8 @@
 #include "stdafx.h"
 #include "UIGameLog.h"
 #include "UIXmlInit.h"
-#include "UIColorAnimatorWrapper.h"
-#include "UIPdaMsgListItem.h"
+#include "UIColorAnimatorWrapper.h"//
+#include "UIPdaMsgListItem.h"//
 #include "UILines.h"
 
 LPCSTR const	CHAT_LOG_ITEMS_ANIMATION	= "ui_main_msgs_short";

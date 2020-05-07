@@ -1,18 +1,18 @@
 #include "stdafx.h"
 
-#include "UICarBodyWnd.h"
+#include "UICarBodyWnd.h"//
 #include "xrUIXmlParser.h"
 #include "UIXmlInit.h"
 #include "../HUDManager.h"
 #include "../level.h"
-#include "UICharacterInfo.h"
+#include "UICharacterInfo.h"//
 #include "UIDragDropListEx.h"
 #include "UIFrameWindow.h"
-#include "UIItemInfo.h"
+#include "UIItemInfo.h"//
 #include "UIPropertiesBox.h"
 #include "../ai/monsters/BaseMonster/base_monster.h"
 #include "../inventory.h"
-#include "UIInventoryUtilities.h"
+#include "UIInventoryUtilities.h"//
 #include "UICellItem.h"
 #include "UICellItemFactory.h"
 #include "../WeaponMagazined.h"
@@ -210,8 +210,6 @@ void CUICarBodyWnd::UpdateLists_delayed()
 {
 		m_b_need_update = true;
 }
-
-#include "UIInventoryUtilities.h"
 
 void CUICarBodyWnd::Hide()
 {

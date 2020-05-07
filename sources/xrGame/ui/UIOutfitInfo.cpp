@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "UIOutfitInfo.h"
+#include "UIOutfitInfo.h"//
 #include "UIXmlInit.h"
 #include "UIStatic.h"
 #include "UIScrollView.h"

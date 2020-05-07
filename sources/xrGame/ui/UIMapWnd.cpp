@@ -1,10 +1,10 @@
 #include "stdafx.h"
-#include "UIMapWnd.h"
-#include "UIMap.h"
+#include "UIMapWnd.h"//
+#include "UIMap.h"//
 #include "UIXmlInit.h"
 
 #include "../map_manager.h"
-#include "UIInventoryUtilities.h"
+#include "UIInventoryUtilities.h"//
 #include "../map_location.h"
 
 #include "UIScrollBar.h"
@@ -12,9 +12,9 @@
 #include "UIFrameLineWnd.h"
 #include "UITabControl.h"
 #include "UI3tButton.h"
-#include "UIMapWndActions.h"
-#include "UIMapWndActionsSpace.h"
-#include "map_hint.h"
+#include "UIMapWndActions.h"//
+#include "UIMapWndActionsSpace.h"//
+#include "UIMapHint.h"
 
 #include "../HUDManager.h"
 

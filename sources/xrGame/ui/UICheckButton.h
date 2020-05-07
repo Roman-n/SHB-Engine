@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ui3tbutton.h"
-#include "UIOptionsItem.h"
+#include "UIOptionsItem.h"//
 
 class CUICheckButton : public CUI3tButton, public CUIOptionsItem {
 public:

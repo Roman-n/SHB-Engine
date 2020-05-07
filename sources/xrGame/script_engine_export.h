@@ -75,7 +75,7 @@
 #	include "UI/UITabControl.h"
 #	include "UI/UIListWnd.h"
 #   include "UI/UIComboBox.h"
-#	include "ui/UIOptionsManagerScript.h"
+#	include "ui/UIOptionsManagerScript.h"//
 #	include "ScriptXmlInit.h"
 #	include "script_ui_registrator.h"
 #	include "key_binding_registrator.h"

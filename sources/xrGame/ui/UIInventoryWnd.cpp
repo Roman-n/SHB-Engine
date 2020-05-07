@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "UIInventoryWnd.h"
+#include "UIInventoryWnd.h"//
 
 #include "xrUIXmlParser.h"
 #include "UIXmlInit.h"
@@ -19,7 +19,7 @@
 #include "../eatable_item.h"
 #include "../inventory.h"
 
-#include "UIInventoryUtilities.h"
+#include "UIInventoryUtilities.h"//
 
 using namespace InventoryUtilities;
 
@@ -32,7 +32,7 @@ using namespace InventoryUtilities;
 #include "UISleepWnd.h"
 #include "../ActorCondition.h"
 #include "UIDragDropListEx.h"
-#include "UIOutfitSlot.h"
+#include "UIOutfitSlot.h"//
 #include "UI3tButton.h"
 
 #define				INVENTORY_ITEM_XML		"inventory_item.xml"

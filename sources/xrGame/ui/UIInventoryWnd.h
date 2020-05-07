@@ -8,10 +8,10 @@ class CInventory;
 #include "UIProgressBar.h"
 
 #include "UIPropertiesBox.h"
-#include "UIOutfitSlot.h"
+#include "UIOutfitSlot.h"//
 
-#include "UIOutfitInfo.h"
-#include "UIItemInfo.h"
+#include "UIOutfitInfo.h"//
+#include "UIItemInfo.h"//
 #include "../inventory_space.h"
 
 class CArtefact;

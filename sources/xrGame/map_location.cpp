@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "map_location.h"
-#include "map_spot.h"
+#include "map_spot.h"//
 #include "map_manager.h"
 
 #include "level.h"
@@ -10,7 +10,7 @@
 #include "xrServer.h"
 #include "xrServer_Objects_ALife_Monsters.h"
 #include "ui/UIXmlInit.h"
-#include "ui/UIMap.h"
+#include "ui/UIMap.h"//
 #include "alife_simulator.h"
 #include "graph_engine.h"
 #include "actor.h"

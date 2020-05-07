@@ -1,8 +1,8 @@
 #include "stdafx.h"
 
-#include "UIPdaListItem.h"
+#include "UIPdaListItem.h"//
 #include "../actor.h"
-#include "UIInventoryUtilities.h"
+#include "UIInventoryUtilities.h"//
 #include "../string_table.h"
 
 #include "xrUIXmlParser.h"
@@ -12,7 +12,7 @@
 
 #include "UIFrameWindow.h"
 #include "..\InventoryOwner.h"
-#include "UICharacterInfo.h"
+#include "UICharacterInfo.h"//
 #include "UIStatic.h"
 
 #define			PDA_CONTACT_CHAR		"pda_character.xml"

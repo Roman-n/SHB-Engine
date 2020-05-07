@@ -1981,9 +1981,6 @@
     <Filter Include="UI\Common\CarBodyWnd">
       <UniqueIdentifier>{e01666ac-49ac-42ca-aa59-ff09cd837694}</UniqueIdentifier>
     </Filter>
-    <Filter Include="UI\Common\Diary">
-      <UniqueIdentifier>{9405ff7b-7cc6-4814-92c1-49c04bf991b5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="UI\Common\MainIngame">
       <UniqueIdentifier>{1bf5f9e3-576c-4e33-96fb-729db4eba9a3}</UniqueIdentifier>
     </Filter>
@@ -1992,9 +1989,6 @@
     </Filter>
     <Filter Include="UI\Common\Statistics">
       <UniqueIdentifier>{fd3cf1ef-091c-41f5-8f75-75526c16ffed}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="UI\Common\_Debug Fonts">
-      <UniqueIdentifier>{f6d300c4-e603-4f8a-9483-9ddb79bcedd2}</UniqueIdentifier>
     </Filter>
     <Filter Include="UI\Common\OptionsItem">
       <UniqueIdentifier>{daae5ae9-055e-4bfc-a015-92583e4e7877}</UniqueIdentifier>
@@ -2127,6 +2121,12 @@
     </Filter>
     <Filter Include="UI\Tutorial">
       <UniqueIdentifier>{c1ba675d-0da1-4e88-b370-6f7d8b4c34bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Common\DebugFonts">
+      <UniqueIdentifier>{f6d300c4-e603-4f8a-9483-9ddb79bcedd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Common\DiaryWnd">
+      <UniqueIdentifier>{9405ff7b-7cc6-4814-92c1-49c04bf991b5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -5670,9 +5670,6 @@
     <ClInclude Include="ui\UIPdaWnd.h">
       <Filter>UI\Common\PdaWnd</Filter>
     </ClInclude>
-    <ClInclude Include="ui\map_hint.h">
-      <Filter>UI\Common\MapWnd</Filter>
-    </ClInclude>
     <ClInclude Include="map_spot.h">
       <Filter>UI\Common\MapWnd</Filter>
     </ClInclude>
@@ -5698,19 +5695,19 @@
       <Filter>UI\Common\CarBodyWnd</Filter>
     </ClInclude>
     <ClInclude Include="ui\UIDiaryWnd.h">
-      <Filter>UI\Common\Diary</Filter>
+      <Filter>UI\Common\DiaryWnd</Filter>
     </ClInclude>
     <ClInclude Include="ui\UIEncyclopediaArticleWnd.h">
-      <Filter>UI\Common\Diary</Filter>
+      <Filter>UI\Common\DiaryWnd</Filter>
     </ClInclude>
     <ClInclude Include="ui\UIEncyclopediaWnd.h">
-      <Filter>UI\Common\Diary</Filter>
+      <Filter>UI\Common\DiaryWnd</Filter>
     </ClInclude>
     <ClInclude Include="ui\UINewsItemWnd.h">
-      <Filter>UI\Common\Diary</Filter>
+      <Filter>UI\Common\DiaryWnd</Filter>
     </ClInclude>
     <ClInclude Include="ui\UINewsWnd.h">
-      <Filter>UI\Common\Diary</Filter>
+      <Filter>UI\Common\DiaryWnd</Filter>
     </ClInclude>
     <ClInclude Include="ui\UIArtefactPanel.h">
       <Filter>UI\Common\MainIngame</Filter>
@@ -5749,7 +5746,7 @@
       <Filter>UI\Common\Statistics</Filter>
     </ClInclude>
     <ClInclude Include="ui\UIDebugFonts.h">
-      <Filter>UI\Common\_Debug Fonts</Filter>
+      <Filter>UI\Common\DebugFonts</Filter>
     </ClInclude>
     <ClInclude Include="ui\UIOptionsItem.h">
       <Filter>UI\Common\OptionsItem</Filter>
@@ -5783,9 +5780,6 @@
     </ClInclude>
     <ClInclude Include="ui\UICharacterInfo.h">
       <Filter>UI\Common\CharacterInfo</Filter>
-    </ClInclude>
-    <ClInclude Include="ui\ui_af_params.h">
-      <Filter>UI\Common\ItemInfo</Filter>
     </ClInclude>
     <ClInclude Include="ui\UIItemInfo.h">
       <Filter>UI\Common\ItemInfo</Filter>
@@ -6038,6 +6032,12 @@
     </ClInclude>
     <ClInclude Include="PHValide.h">
       <Filter>Physics\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\UIArtefactParams.h">
+      <Filter>UI\Common\ItemInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\UIMapHint.h">
+      <Filter>UI\Common\MapWnd</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -8438,9 +8438,6 @@
     <ClCompile Include="ui\UIInventoryWnd.cpp">
       <Filter>UI\Common\InventoryWnd</Filter>
     </ClCompile>
-    <ClCompile Include="ui\uiinventorywnd2.cpp">
-      <Filter>UI\Common\InventoryWnd</Filter>
-    </ClCompile>
     <ClCompile Include="ui\UIInventoryWnd3.cpp">
       <Filter>UI\Common\InventoryWnd</Filter>
     </ClCompile>
@@ -8461,9 +8458,6 @@
     </ClCompile>
     <ClCompile Include="ui\UIPdaWnd.cpp">
       <Filter>UI\Common\PdaWnd</Filter>
-    </ClCompile>
-    <ClCompile Include="ui\map_hint.cpp">
-      <Filter>UI\Common\MapWnd</Filter>
     </ClCompile>
     <ClCompile Include="map_spot.cpp">
       <Filter>UI\Common\MapWnd</Filter>
@@ -8487,19 +8481,19 @@
       <Filter>UI\Common\CarBodyWnd</Filter>
     </ClCompile>
     <ClCompile Include="ui\UIDiaryWnd2.cpp">
-      <Filter>UI\Common\Diary</Filter>
+      <Filter>UI\Common\DiaryWnd</Filter>
     </ClCompile>
     <ClCompile Include="ui\UIEncyclopediaArticleWnd.cpp">
-      <Filter>UI\Common\Diary</Filter>
+      <Filter>UI\Common\DiaryWnd</Filter>
     </ClCompile>
     <ClCompile Include="ui\UIEncyclopediaWnd.cpp">
-      <Filter>UI\Common\Diary</Filter>
+      <Filter>UI\Common\DiaryWnd</Filter>
     </ClCompile>
     <ClCompile Include="ui\UINewsItemWnd.cpp">
-      <Filter>UI\Common\Diary</Filter>
+      <Filter>UI\Common\DiaryWnd</Filter>
     </ClCompile>
     <ClCompile Include="ui\UINewsWnd.cpp">
-      <Filter>UI\Common\Diary</Filter>
+      <Filter>UI\Common\DiaryWnd</Filter>
     </ClCompile>
     <ClCompile Include="ui\UIArtefactPanel.cpp">
       <Filter>UI\Common\MainIngame</Filter>
@@ -8538,7 +8532,7 @@
       <Filter>UI\Common\Statistics</Filter>
     </ClCompile>
     <ClCompile Include="ui\UIDebugFonts.cpp">
-      <Filter>UI\Common\_Debug Fonts</Filter>
+      <Filter>UI\Common\DebugFonts</Filter>
     </ClCompile>
     <ClCompile Include="ui\UIOptionsItem.cpp">
       <Filter>UI\Common\OptionsItem</Filter>
@@ -8572,9 +8566,6 @@
     </ClCompile>
     <ClCompile Include="ui\UICharacterInfo.cpp">
       <Filter>UI\Common\CharacterInfo</Filter>
-    </ClCompile>
-    <ClCompile Include="ui\ui_af_params.cpp">
-      <Filter>UI\Common\ItemInfo</Filter>
     </ClCompile>
     <ClCompile Include="ui\UIItemInfo.cpp">
       <Filter>UI\Common\ItemInfo</Filter>
@@ -8848,6 +8839,15 @@
     </ClCompile>
     <ClCompile Include="ui\UIWpnParams.cpp">
       <Filter>UI\Common\ItemInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\UIInventoryWnd2.cpp">
+      <Filter>UI\Common\InventoryWnd</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\UIArtefactParams.cpp">
+      <Filter>UI\Common\ItemInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\UIMapHint.cpp">
+      <Filter>UI\Common\MapWnd</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

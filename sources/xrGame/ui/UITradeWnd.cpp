@@ -10,7 +10,7 @@
 #include "../Actor.h"
 #include "../Trade.h"
 #include "../UIGameSP.h"
-#include "UIInventoryUtilities.h"
+#include "UIInventoryUtilities.h"//
 #include "../inventoryowner.h"
 #include "../eatable_item.h"
 #include "../inventory.h"
@@ -19,9 +19,9 @@
 #include "../character_info.h"
 #include "UIMultiTextStatic.h"
 #include "UI3tButton.h"
-#include "UIItemInfo.h"
+#include "UIItemInfo.h"//
 
-#include "UICharacterInfo.h"
+#include "UICharacterInfo.h"//
 #include "UIDragDropListEx.h"
 #include "UICellItem.h"
 #include "UICellItemFactory.h"
@@ -247,7 +247,6 @@ void CUITradeWnd::Update()
 	}
 }
 
-#include "UIInventoryUtilities.h"
 void CUITradeWnd::Show()
 {
 	InventoryUtilities::SendInfoToActor("ui_trade");

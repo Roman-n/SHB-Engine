@@ -9,7 +9,7 @@
 #include "UsableScriptObject.h"
 #include "customzone.h"
 #include "GameMtlLib.h"
-#include "ui/UIMainIngameWnd.h"
+#include "ui/UIMainIngameWnd.h"//
 #include "Grenade.h"
 #include "clsid_game.h"
 

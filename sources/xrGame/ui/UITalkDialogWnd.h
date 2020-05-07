@@ -6,8 +6,8 @@
 
 #include "../InfoPortion.h"
 
-#include "UICharacterInfo.h"
-#include "UIItemInfo.h"
+#include "UICharacterInfo.h"//
+#include "UIItemInfo.h"//
 
 #include "UIWndCallback.h"
 

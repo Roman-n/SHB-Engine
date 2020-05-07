@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
-#include "UIOptionsItem.h"
-#include "UIOptionsManagerScript.h"
+#include "UIOptionsItem.h"//
+#include "UIOptionsManagerScript.h"//
 
 using namespace luabind;
 

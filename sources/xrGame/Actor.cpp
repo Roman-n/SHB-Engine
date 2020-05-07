@@ -54,8 +54,8 @@
 #include "CharacterPhysicsSupport.h"
 #include "material_manager.h"
 #include "IColisiondamageInfo.h"
-#include "ui/UIMainIngameWnd.h"
-#include "ui/UIArtefactPanel.h"
+#include "ui/UIMainIngameWnd.h"//
+#include "ui/UIArtefactPanel.h"//
 #include "map_manager.h"
 #include "GameTaskManager.h"
 #include "actor_memory.h"

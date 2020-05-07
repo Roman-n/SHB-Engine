@@ -9,7 +9,7 @@
 
 #include "game_sv_base.h"
 #include "xrMessages.h"
-#include "ui/UIInventoryUtilities.h"
+#include "ui/UIInventoryUtilities.h"//
 #include "xr_time.h"
 #include "../../xrNetServer/net_utils.h"
 #include "UI/UIGameTutorial.h"

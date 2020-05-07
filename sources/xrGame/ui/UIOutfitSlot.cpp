@@ -1,10 +1,10 @@
 #include "stdafx.h"
-#include "UIOutfitSlot.h"
+#include "UIOutfitSlot.h"//
 #include "UIStatic.h"
 #include "UICellItem.h"
 #include "../CustomOutfit.h"
 #include "../actor.h"
-#include "UIInventoryUtilities.h"
+#include "UIInventoryUtilities.h"//
 
 CUIOutfitDragDropList::CUIOutfitDragDropList()
 {

@@ -6,6 +6,7 @@
 #include "..\XR_3DA\igame_level.h"
 #include "clsid_game.h"
 #include "GamePersistent.h"
+#include "ui\UIMainInGameWnd.h"//
 
 CFontManager::CFontManager()
 {
@@ -258,7 +259,6 @@ void CHUDManager::SetHitmarkType		(LPCSTR tex_name)
 	HitMarker.InitShader				(tex_name);
 }
 
-#include "ui\UIMainInGameWnd.h"
 void CHUDManager::OnScreenRatioChanged()
 {
 	xr_delete							(pUI->UIMainIngameWnd);

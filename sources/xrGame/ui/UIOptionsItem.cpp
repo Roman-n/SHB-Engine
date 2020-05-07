@@ -1,6 +1,6 @@
 #include "stdafx.h"
-#include "UIOptionsItem.h"
-#include "UIOptionsManager.h"
+#include "UIOptionsItem.h"//
+#include "UIOptionsManager.h"//
 #include "../..\XR_3DA\xr_ioconsole.h"
 
 CUIOptionsManager CUIOptionsItem::m_optionsManager;

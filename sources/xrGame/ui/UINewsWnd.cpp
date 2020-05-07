@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "UINewsWnd.h"
+#include "UINewsWnd.h"//
 #include "xrUIXmlParser.h"
 #include "UIXmlInit.h"
 #include "../UI.h"
@@ -9,8 +9,8 @@
 #include "../game_news.h"
 #include "../actor.h"
 #include "../alife_registry_wrappers.h"
-#include "UIInventoryUtilities.h"
-#include "UINewsItemWnd.h"
+#include "UIInventoryUtilities.h"//
+#include "UINewsItemWnd.h"//
 #include "UIScrollView.h"
 
 #define				NEWS_XML			"news.xml"

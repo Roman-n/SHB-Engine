@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "UIInventoryWnd.h"
+#include "UIInventoryWnd.h"//
 #include "../actor.h"
 #include "../silencer.h"
 #include "../scope.h"
@@ -15,7 +15,6 @@
 #include "UICellItem.h"
 #include "UIListBoxItem.h"
 #include "../CustomOutfit.h"
-
 
 void CUIInventoryWnd::EatItem(PIItem itm)
 {

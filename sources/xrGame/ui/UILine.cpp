@@ -10,7 +10,7 @@
 #include "stdafx.h"
 #include "UILine.h"
 #include "uilinestd.h"
-#include "UIColorAnimatorWrapper.h"
+#include "UIColorAnimatorWrapper.h"//
 
 CUIColorAnimatorWrapper CUILine::m_animation;
 

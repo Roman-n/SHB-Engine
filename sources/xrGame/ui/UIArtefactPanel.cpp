@@ -1,6 +1,6 @@
 #include "stdafx.h"
-#include "UIArtefactPanel.h"
-#include "UIInventoryUtilities.h"
+#include "UIArtefactPanel.h"//
+#include "UIInventoryUtilities.h"//
 #include "UIXmlInit.h"
 
 #include "../artifact.h"

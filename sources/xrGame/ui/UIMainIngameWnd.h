@@ -9,8 +9,8 @@
 
 #include "../alife_space.h"
 
-#include "UICarPanel.h"
-#include "UIMotionIcon.h"
+#include "UICarPanel.h"//
+#include "UIMotionIcon.h"//
 #include "../hudsound.h"
 //для режима настройки HUD
 extern int				g_bHudAdjustMode;

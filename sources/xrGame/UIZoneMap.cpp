@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "uizonemap.h"
+#include "UIZoneMap.h"//
 
 #include "hudmanager.h"
 
@@ -15,7 +15,7 @@
 #include "ai_space.h"
 #include "game_graph.h"
 
-#include "ui/UIMap.h"
+#include "ui/UIMap.h"//
 #include "ui/UIXmlInit.h"
 //////////////////////////////////////////////////////////////////////////
 

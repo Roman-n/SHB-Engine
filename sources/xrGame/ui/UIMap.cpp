@@ -3,9 +3,9 @@
 //.#include "../LevelFogOfWar.h"
 #include "../map_location.h"
 #include "../map_manager.h"
-#include "../map_spot.h"
-#include "UIMap.h"
-#include "UIMapWnd.h"
+#include "../map_spot.h"//
+#include "UIMap.h"//
+#include "UIMapWnd.h"//
 #include "../..\XR_3DA\xr_input.h"		//remove me !!!
 
 const u32			activeLocalMapColor			= 0xffffffff;//0xffc80000;

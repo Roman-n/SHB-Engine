@@ -10,9 +10,9 @@
 #include "HUDManager.h"
 #include "actor.h"
 #include "UIGameSP.h"
-#include "ui/UIPDAWnd.h"
+#include "ui/UIPdaWnd.h"//
 #include "encyclopedia_article.h"
-#include "ui/UIEventsWnd.h"
+#include "ui/UIEventsWnd.h"//
 
 #pragma warning(push)
 #pragma warning(disable:4995)

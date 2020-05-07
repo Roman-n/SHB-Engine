@@ -5,7 +5,7 @@
 #include "trade.h"
 #include "weapon.h"
 
-#include "ui/UIInventoryUtilities.h"
+#include "ui/UIInventoryUtilities.h"//
 
 #include "eatable_item.h"
 #include "script_engine.h"

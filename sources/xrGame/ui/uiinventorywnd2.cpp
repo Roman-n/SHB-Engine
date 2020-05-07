@@ -1,12 +1,12 @@
 #include "stdafx.h"
-#include "UIInventoryWnd.h"
+#include "UIInventoryWnd.h"//
 #include "UISleepWnd.h"
 #include "../level.h"
 #include "../actor.h"
 #include "../ActorCondition.h"
 #include "../hudmanager.h"
 #include "../inventory.h"
-#include "UIInventoryUtilities.h"
+#include "UIInventoryUtilities.h"//
 
 #include "UICellItem.h"
 #include "UICellItemFactory.h"

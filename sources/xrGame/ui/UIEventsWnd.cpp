@@ -1,13 +1,13 @@
 #include "stdafx.h"
 
-#include "UIEventsWnd.h"
+#include "UIEventsWnd.h"//
 #include "UIFrameWindow.h"
 #include "UIFrameLineWnd.h"
 #include "UIAnimatedStatic.h"
-#include "UIMapWnd.h"
+#include "UIMapWnd.h"//
 #include "UIScrollView.h"
 #include "UITabControl.h"
-#include "UITaskDescrWnd.h"
+#include "UITaskDescrWnd.h"//
 #include "UI3tButton.h"
 #include "../HUDManager.h"
 #include "../level.h"
@@ -17,7 +17,7 @@
 #include "../map_manager.h"
 #include "../map_location.h"
 #include "../string_table.h"
-#include "UITaskItem.h"
+#include "UITaskItem.h"//
 #include "../alife_registry_wrappers.h"
 #include "../encyclopedia_article.h"
 

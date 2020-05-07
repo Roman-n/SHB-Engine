@@ -11,7 +11,7 @@
 #include "../../../level.h"
 #include "../../../sound_player.h"
 #include "../../../ai_monster_space.h"
-//#include "../../../ui/UIMainIngameWnd.h"
+//#include "../../../ui/UIMainIngameWnd.h"//
 #include "../../../UIGameCustom.h"
 #include "../../../ui/UIStatic.h"
 
