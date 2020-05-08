@@ -12,6 +12,10 @@
 #include "character_info.h"
 #include "gameobject.h"
 #include "relation_registry.h"
+#include "UIGameSP.h"//
+#include "HUDManager.h"//
+#include "level.h"
+#include "ui/UItalkWnd.h"//
 
 CAI_PhraseDialogManager::CAI_PhraseDialogManager	(void)
 {
@@ -27,10 +31,6 @@ void CAI_PhraseDialogManager::ReceivePhrase (DIALOG_SHARED_PTR& phrase_dialog)
 	AnswerPhrase(phrase_dialog);
 	CPhraseDialogManager::ReceivePhrase(phrase_dialog);
 }
-#include "uigamesp.h"
-#include "hudmanager.h"
-#include "level.h"
-#include "ui/UItalkWnd.h"
 
 void CAI_PhraseDialogManager::AnswerPhrase (DIALOG_SHARED_PTR& phrase_dialog)
 {

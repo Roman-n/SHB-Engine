@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "UITalkDialogWnd.h"
+#include "UITalkDialogWnd.h"//
 
 #include "xrUIXmlParser.h"
 #include "UIXmlInit.h"

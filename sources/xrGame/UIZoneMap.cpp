@@ -1,8 +1,7 @@
 #include "stdafx.h"
 #include "UIZoneMap.h"//
 
-#include "hudmanager.h"
-
+#include "HUDManager.h"//
 
 #include "InfoPortion.h"
 #include "Pda.h"

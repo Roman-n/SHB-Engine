@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 #include "stdafx.h"
 #include "UIWindow.h"
-#include "../UICursor.h"
+#include "../UICursor.h"//
 #include "../MainMenu.h"
 
 poolSS< _12b, 128>	ui_allocator;

@@ -11,7 +11,7 @@
 #include "../../../actor.h"
 #include "../../../ActorEffector.h"
 #include "../ai_monster_effector.h"
-#include "../../../hudmanager.h"
+#include "../../../HUDManager.h"//
 #include "../../../clsid_game.h"
 #include "../../../..\XR_3DA\skeletonanimated.h"
 #include "../../../sound_player.h"
@@ -21,7 +21,7 @@
 #include "../../../game_object_space.h"
 #include "../../../ai_monster_space.h"
 #include "../control_animation_base.h"
-#include "../../../UIGameCustom.h"
+#include "../../../UIGameCustom.h"//
 #include "../../../UI/UIStatic.h"
 #include "../../../ai_object_location.h"
 #include "../../../profiler.h"

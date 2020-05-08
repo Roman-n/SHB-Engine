@@ -13,8 +13,8 @@
 #include "actor.h"
 #include "level.h"
 #include "date_time.h"
-#include "uigamesp.h"
-#include "hudmanager.h"
+#include "UIGameSP.h"//
+#include "HUDManager.h"//
 #include "restricted_object.h"
 #include "script_engine.h"
 #include "attachable_item.h"
@@ -27,8 +27,8 @@
 #include "actorcondition.h"
 #include "level_graph.h"
 #include "huditem.h"
-#include "ui/UItalkWnd.h"
-#include "ui/UITradeWnd.h"
+#include "ui/UItalkWnd.h"//
+#include "ui/UITradeWnd.h"//
 #include "inventory.h"
 #include "infoportion.h"
 #include "AI/Monsters/BaseMonster/base_monster.h"

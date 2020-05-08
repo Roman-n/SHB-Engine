@@ -3,7 +3,7 @@
 #include "UICarBodyWnd.h"//
 #include "xrUIXmlParser.h"
 #include "UIXmlInit.h"
-#include "../HUDManager.h"
+#include "../HUDManager.h"//
 #include "../level.h"
 #include "UICharacterInfo.h"//
 #include "UIDragDropListEx.h"

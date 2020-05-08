@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "map_location.h"
-#include "map_spot.h"//
+#include "MapSpot.h"//
 #include "map_manager.h"
 
 #include "level.h"

@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "UIActorInfo.h"
+#include "UIActorInfo.h"//
 #include "UIXmlInit.h"
 #include "UIPdaAux.h"//
 #include "../Level.h"

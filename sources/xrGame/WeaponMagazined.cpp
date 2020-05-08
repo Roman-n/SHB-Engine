@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #include "WeaponHUD.h"
 #include "WeaponMagazined.h"
 #include "entity.h"

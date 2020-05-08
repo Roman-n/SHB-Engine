@@ -9,7 +9,7 @@
 
 #ifdef DEBUG
 #include "ai_stalker.h"
-#include "../../hudmanager.h"
+#include "../../HUDManager.h"//
 #include "../../memory_manager.h"
 #include "../../visual_memory_manager.h"
 #include "../../sound_memory_manager.h"

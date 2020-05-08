@@ -12,7 +12,7 @@
 #include "level_graph.h"
 #include "level.h"
 #include "game_base_space.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #include "xrserver_objects_alife_monsters.h"
 #include "alife_simulator.h"
 #include "alife_graph_registry.h"

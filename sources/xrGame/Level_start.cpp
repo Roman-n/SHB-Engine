@@ -9,6 +9,7 @@
 #include "..\XR_3DA\IGame_Persistent.h"
 #include "..\XR_3DA\xr_ioconsole.h"
 #include "MainMenu.h"
+#include "HUDManager.h"//
 
 BOOL CLevel::net_Start	( LPCSTR op_server, LPCSTR op_client )
 {
@@ -209,7 +210,7 @@ bool CLevel::net_start5				()
 	};
 	return true;
 }
-#include "hudmanager.h"
+
 BOOL				g_start_total_res		= TRUE;
 xrServer::EConnect	g_connect_server_err	= xrServer::ErrConnect;
 

@@ -5670,9 +5670,6 @@
     <ClInclude Include="ui\UIPdaWnd.h">
       <Filter>UI\Common\PdaWnd</Filter>
     </ClInclude>
-    <ClInclude Include="map_spot.h">
-      <Filter>UI\Common\MapWnd</Filter>
-    </ClInclude>
     <ClInclude Include="ui\UIMap.h">
       <Filter>UI\Common\MapWnd</Filter>
     </ClInclude>
@@ -6037,6 +6034,9 @@
       <Filter>UI\Common\ItemInfo</Filter>
     </ClInclude>
     <ClInclude Include="ui\UIMapHint.h">
+      <Filter>UI\Common\MapWnd</Filter>
+    </ClInclude>
+    <ClInclude Include="MapSpot.h">
       <Filter>UI\Common\MapWnd</Filter>
     </ClInclude>
   </ItemGroup>
@@ -8459,9 +8459,6 @@
     <ClCompile Include="ui\UIPdaWnd.cpp">
       <Filter>UI\Common\PdaWnd</Filter>
     </ClCompile>
-    <ClCompile Include="map_spot.cpp">
-      <Filter>UI\Common\MapWnd</Filter>
-    </ClCompile>
     <ClCompile Include="ui\UIMap.cpp">
       <Filter>UI\Common\MapWnd</Filter>
     </ClCompile>
@@ -8847,6 +8844,9 @@
       <Filter>UI\Common\ItemInfo</Filter>
     </ClCompile>
     <ClCompile Include="ui\UIMapHint.cpp">
+      <Filter>UI\Common\MapWnd</Filter>
+    </ClCompile>
+    <ClCompile Include="MapSpot.cpp">
       <Filter>UI\Common\MapWnd</Filter>
     </ClCompile>
   </ItemGroup>

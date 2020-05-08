@@ -1,13 +1,14 @@
 #include "stdafx.h"
 
-#include "UIGameCustom.h"
+#include "UIGameCustom.h"//
 #include "ui.h"
 #include "level.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #include "ui/UIMultiTextStatic.h"
 #include "ui/UIXmlInit.h"
 #include "object_broker.h"
 #include "string_table.h"
+#include "ui/UIGameTutorial.h"
 
 struct predicate_remove_stat {
 	bool	operator() (SDrawStaticStruct& s) {
@@ -172,8 +173,6 @@ void CUIGameCustom::RemoveCustomStatic		(LPCSTR id)
 		m_custom_statics.erase(it);
 	}
 }
-
-#include "ui/UIGameTutorial.h"
 
 extern CUISequencer* g_tutorial;
 extern CUISequencer* g_tutorial2;

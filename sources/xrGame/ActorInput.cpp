@@ -10,8 +10,8 @@
 #include "hit.h"
 #include "PHDestroyable.h"
 #include "Car.h"
-#include "HudManager.h"
-#include "UIGameSP.h"
+#include "HUDManager.h"//
+#include "UIGameSP.h"//
 #include "inventory.h"
 #include "level.h"
 #include "game_cl_base.h"

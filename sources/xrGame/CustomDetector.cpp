@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "customdetector.h"
 #include "customzone.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #include "artifact.h"
 #include "inventory.h"
 #include "level.h"

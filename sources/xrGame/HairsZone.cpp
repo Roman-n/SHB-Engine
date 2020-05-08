@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "HairsZone.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #include "level.h"
 #include "PhysicsShellHolder.h"
 #include "entity_alive.h"

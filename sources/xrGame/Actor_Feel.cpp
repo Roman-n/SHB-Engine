@@ -3,7 +3,7 @@
 #include "weapon.h"
 #include "mercuryball.h"
 #include "inventory.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #include "character_info.h"
 #include "xr_level_controller.h"
 #include "UsableScriptObject.h"

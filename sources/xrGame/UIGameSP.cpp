@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "uigamesp.h"
+#include "UIGameSP.h"//
 #include "actor.h"
 #include "level.h"
 
@@ -14,9 +14,9 @@
 #include "GameTask.h"
 
 #include "ui/UIInventoryWnd.h"//
-#include "ui/UITradeWnd.h"
+#include "ui/UITradeWnd.h"//
 #include "ui/UIPdaWnd.h"//
-#include "ui/UITalkWnd.h"
+#include "ui/UITalkWnd.h"//
 #include "ui/UICarBodyWnd.h"//
 #include "ui/UIMessageBox.h"
 

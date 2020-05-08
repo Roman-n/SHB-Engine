@@ -18,7 +18,7 @@
 #include "../../../phdestroyable.h"
 #include "../../../..\XR_3DA\skeletoncustom.h"
 #include "../../../detail_path_manager.h"
-#include "../../../hudmanager.h"
+#include "../../../HUDManager.h"//
 #include "../../../memory_manager.h"
 #include "../../../visual_memory_manager.h"
 #include "../monster_velocity_space.h"

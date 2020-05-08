@@ -9,12 +9,12 @@
 
 #include <dinput.h>
 #include "../actor.h"
-#include "../HUDManager.h"
+#include "../HUDManager.h"//
 #include "../PDA.h"
 #include "../WeaponHUD.h"
 #include "../character_info.h"
 #include "../inventory.h"
-#include "../UIGameSP.h"
+#include "../UIGameSP.h"//
 #include "../weaponmagazined.h"
 #include "../missile.h"
 #include "../Grenade.h"

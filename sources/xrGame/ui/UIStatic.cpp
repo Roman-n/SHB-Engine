@@ -3,7 +3,7 @@
 #include "UIXmlInit.h"
 #include "UITextureMaster.h"
 #include "uiframewindow.h"
-#include "../HUDManager.h"
+#include "../HUDManager.h"//
 #include "../..\XR_3DA\LightAnimLibrary.h"
 #include "uilines.h"
 #include "../string_table.h"

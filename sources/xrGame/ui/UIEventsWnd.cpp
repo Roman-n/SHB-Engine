@@ -9,7 +9,7 @@
 #include "UITabControl.h"
 #include "UITaskDescrWnd.h"//
 #include "UI3tButton.h"
-#include "../HUDManager.h"
+#include "../HUDManager.h"//
 #include "../level.h"
 #include "../actor.h"
 #include "../gametaskmanager.h"

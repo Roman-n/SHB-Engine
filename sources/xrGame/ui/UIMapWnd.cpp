@@ -16,7 +16,7 @@
 #include "UIMapWndActionsSpace.h"//
 #include "UIMapHint.h"
 
-#include "../HUDManager.h"
+#include "../HUDManager.h"//
 
 #include <dinput.h>				//remove me !!!
 #include "../..\XR_3DA\xr_input.h"		//remove me !!!

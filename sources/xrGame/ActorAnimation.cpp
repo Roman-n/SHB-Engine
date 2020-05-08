@@ -3,7 +3,7 @@
 //#include "ActorAnimation.h"
 #include "actor_anim_defs.h"
 
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #include "UI.h"
 #include "weapon.h"
 #include "inventory.h"
@@ -22,6 +22,7 @@
 #include "..\XR_3DA\motion.h"
 #include "artifact.h"
 #include "IKLimbsController.h"
+
 static const float y_spin0_factor		= 0.0f;
 static const float y_spin1_factor		= 0.4f;
 static const float y_shoulder_factor	= 0.4f;

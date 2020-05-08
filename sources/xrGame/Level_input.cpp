@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include <dinput.h>
-#include "HUDmanager.h"
+#include "HUDManager.h"//
 #include "..\XR_3DA\xr_ioconsole.h"
 #include "entity_alive.h"
 #include "game_sv_single.h"

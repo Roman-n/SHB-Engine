@@ -4,7 +4,7 @@
 #include "UIFrameWindow.h"
 #include "UIFrameLineWnd.h"
 #include "UIDialogWnd.h"
-#include "../HUDManager.h"
+#include "../HUDManager.h"//
 #include "../GamePersistent.h"
 #include "UILabel.h"
 #include "UIMMShniaga.h"//

@@ -7,7 +7,7 @@
 #include "PHObject.h"
 #include "ExtendedGeom.h"
 #include "Level.h"
-#include "Hudmanager.h"
+#include "HUDManager.h"//
 
 #include "debug_renderer.h"
 

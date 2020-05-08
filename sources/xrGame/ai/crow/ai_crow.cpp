@@ -9,7 +9,7 @@
 #include "stdafx.h"
 #include "../../physicsshell.h"
 #include "ai_crow.h"
-#include "../../hudmanager.h"
+#include "../../HUDManager.h"//
 #include "../../level.h"
 #include "../../..\XR_3DA\skeletonanimated.h"
 

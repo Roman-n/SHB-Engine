@@ -4,8 +4,8 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include "hudtarget.h"
-#include "hudmanager.h"
+#include "HUDTarget.h"//
+#include "HUDManager.h"//
 #include "GameMtlLib.h"
 
 #include "..\XR_3DA\Environment.h"

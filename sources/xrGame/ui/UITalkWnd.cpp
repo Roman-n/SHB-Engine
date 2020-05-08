@@ -1,12 +1,12 @@
 #include "stdafx.h"
-#include "UITalkWnd.h"
+#include "UITalkWnd.h"//
 
-#include "UITradeWnd.h"
-#include "UITalkDialogWnd.h"
+#include "UITradeWnd.h"//
+#include "UITalkDialogWnd.h"//
 
 #include "../actor.h"
-#include "../HUDManager.h"
-#include "../UIGameSP.h"
+#include "../HUDManager.h"//
+#include "../UIGameSP.h"//
 #include "../PDA.h"
 #include "../character_info.h"
 #include "../level.h"

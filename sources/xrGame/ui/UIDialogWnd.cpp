@@ -5,7 +5,7 @@
 
 #include "stdafx.h"
 #include "uidialogwnd.h"
-#include "../hudmanager.h"
+#include "../HUDManager.h"//
 #include "../xr_level_controller.h"
 #include "../..\XR_3DA\xr_ioconsole.h"
 #include "../level.h"

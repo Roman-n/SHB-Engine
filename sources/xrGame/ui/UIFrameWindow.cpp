@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "UIFrameWindow.h"
-#include "../HUDManager.h"
+#include "../HUDManager.h"//
 #include "UITextureMaster.h"
 #include "UIXmlInit.h"
 #include "UIStatic.h"

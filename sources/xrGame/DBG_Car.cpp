@@ -8,7 +8,7 @@
 #include "hit.h"
 #include "PHDestroyable.h"
 #include "Car.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #include "Level.h"
 
 void CCar::InitDebug()

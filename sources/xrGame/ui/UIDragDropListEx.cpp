@@ -3,6 +3,7 @@
 #include "UIScrollBar.h"
 #include "../object_broker.h"
 #include "UICellItem.h"
+#include "../HUDManager.h"//
 
 CUIDragItem* CUIDragDropListEx::m_drag_item = NULL;
 
@@ -228,8 +229,6 @@ void CUIDragDropListEx::Compact()
 	}
 }
 
-
-#include "../HUDManager.h"
 void CUIDragDropListEx::Draw()
 {
 	inherited::Draw				();
@@ -243,7 +242,6 @@ void CUIDragDropListEx::Draw()
 		Ivector2			pt = m_container->PickCell(GetUICursor()->GetCursorPosition());
 		F->OutNext			("%d-%d",pt.x, pt.y);
 	};
-
 }
 
 void CUIDragDropListEx::Update()

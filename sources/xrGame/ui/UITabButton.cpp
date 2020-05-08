@@ -9,7 +9,7 @@
 
 #include "stdafx.h"
 #include "UITabButton.h"
-#include "../HUDManager.h"
+#include "../HUDManager.h"//
 
 CUITabButton::CUITabButton(){
 //.	this->m_pAssociatedWindow = NULL;

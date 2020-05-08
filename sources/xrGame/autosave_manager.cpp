@@ -12,7 +12,10 @@
 #include "ai_space.h"
 #include "level.h"
 #include "xrMessages.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
+#include "UIGameCustom.h"//
+#include "Actor.h"
+#include "MainMenu.h"
 
 extern LPCSTR alife_section;
 
@@ -44,10 +47,6 @@ float CAutosaveManager::shedule_Scale		()
 {
 	return						(.5f);
 }
-
-#include "UIGameCustom.h"
-#include "Actor.h"
-#include "MainMenu.h"
 
 void CAutosaveManager::shedule_Update		(u32 dt)
 {

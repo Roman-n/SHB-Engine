@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "actor.h"
 #include "customdetector.h"
-#include "uigamesp.h"
-#include "hudmanager.h"
+#include "UIGameSP.h"//
+#include "HUDManager.h"//
 #include "weapon.h"
 #include "artifact.h"
 #include "scope.h"

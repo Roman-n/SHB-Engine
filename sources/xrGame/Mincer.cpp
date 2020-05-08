@@ -3,7 +3,7 @@
 #include "hit.h"
 #include "PHDestroyable.h"
 #include "mincer.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #include "xrmessages.h"
 #include "level.h"
 #include "CustomZone.h"

@@ -1,10 +1,11 @@
 #include "stdafx.h"
 #include "UIDialogHolder.h"
 #include "ui\UIDialogWnd.h"
-#include "UICursor.h"
+#include "UICursor.h"//
 #include "level.h"
 #include "actor.h"
 #include "xr_level_controller.h"
+#include "HUDManager.h"//
 
 dlgItem::dlgItem(CUIWindow* pWnd)
 {
@@ -45,7 +46,6 @@ CDialogHolder::~CDialogHolder()
 	shedule_unregister();
 	Device.seqFrame.Remove		(this);
 }
-#include "HUDManager.h"
 
 void CDialogHolder::StartMenu (CUIDialogWnd* pDialog, bool bDoHideIndicators)
 {

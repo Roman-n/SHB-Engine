@@ -18,7 +18,7 @@
 #	include "..\XR_3DA\std_classes.h"
 #	include "level.h"
 #	include "gamepersistent.h"
-#	include "hudmanager.h"
+#	include "HUDManager.h"//
 #	include "actor.h"
 #	include "spectator.h"
 
@@ -145,10 +145,9 @@
 #	include "DestroyablePhysicsObject.h"
 
 #	include "game_sv_single.h"
-
 #	include "game_cl_single.h"
 
-#	include "UIGameSP.h"
+#	include "UIGameSP.h"//
 #	include	"climableobject.h"
 #	include "space_restrictor.h"
 #	include "smart_zone.h"

@@ -4,7 +4,7 @@
 #include "hit.h"
 #include "PHDestroyable.h"
 #include "actor.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #include "ParticlesObject.h"
 #include "xrserver_objects_alife_monsters.h"
 #include "..\XR_3DA\LightAnimLibrary.h"

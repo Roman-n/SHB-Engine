@@ -1,6 +1,6 @@
 #include "stdafx.h"
-#include "HUDManager.h"
-#include "hudtarget.h"
+#include "HUDManager.h"//
+#include "HUDTarget.h"//
 
 #include "actor.h"
 #include "..\XR_3DA\igame_level.h"

@@ -10,7 +10,7 @@
 
 #include "UIDebugFonts.h"//
 #include <dinput.h>
-#include "../hudmanager.h"
+#include "../HUDManager.h"//
 #include "../string_table.h"
 
 CUIDebugFonts::CUIDebugFonts( )

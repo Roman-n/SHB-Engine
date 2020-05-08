@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Level.h"
-#include "HUDManager.h"
+#include "HUDManager.h"//
 #include "xrServer.h"
 
 #define DEMO_DATA_SIZE	65536

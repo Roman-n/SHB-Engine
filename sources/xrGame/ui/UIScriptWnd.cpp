@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "UIScriptWnd.h"
-#include "../HudManager.h"
+#include "../HUDManager.h"//
 #include "../object_broker.h"
 #include "../callback_info.h"
 

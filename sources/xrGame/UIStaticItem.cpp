@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "uistaticitem.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 
 ref_geom		hGeom_fan = NULL;	
 

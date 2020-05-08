@@ -1,9 +1,9 @@
 #include "stdafx.h"
-#include "uicursor.h"
+#include "UICursor.h"//
 
 #include "..\XR_3DA\CustomHUD.h"
-#include "UI.h"
-#include "HUDManager.h"
+//#include "UI.h"
+#include "HUDManager.h"//
 #include "ui/UIStatic.h"
 
 

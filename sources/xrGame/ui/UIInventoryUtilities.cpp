@@ -5,7 +5,7 @@
 #include "UIStatic.h"
 #include "../eatable_item.h"
 #include "../Level.h"
-#include "../HUDManager.h"
+#include "../HUDManager.h"//
 #include "../date_time.h"
 #include "../string_table.h"
 #include "../Inventory.h"

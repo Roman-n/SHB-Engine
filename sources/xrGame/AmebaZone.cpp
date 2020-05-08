@@ -5,10 +5,11 @@
 #include "PHObject.h"
 #include "PHMovementControl.h"
 #include "AmebaZone.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #include "level.h"
 #include "entity_alive.h"
 #include "CharacterPhysicsSupport.h"
+
 CAmebaZone::CAmebaZone()
 {
 	m_fVelocityLimit=1.f;

@@ -1,8 +1,8 @@
 #include "stdafx.h"
 
-#include "UIGameCustom.h"
+#include "UIGameCustom.h"//
 #include "level.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #include "ui/uistatic.h"
 
 using namespace luabind;

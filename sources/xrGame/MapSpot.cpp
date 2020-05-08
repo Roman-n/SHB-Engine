@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "map_spot.h"//
+#include "MapSpot.h"//
 #include "map_location.h"
 
 #include "ui/UIXmlInit.h"

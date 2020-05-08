@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "..\XR_3DA\resourcemanager.h"
-#include "HUDmanager.h"
+#include "HUDManager.h"//
 #include "PHdynamicdata.h"
 #include "Physics.h"
 #include "level.h"

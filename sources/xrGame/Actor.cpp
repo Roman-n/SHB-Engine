@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "Actor_Flags.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #ifdef DEBUG
 #	include "ode_include.h"
 #	include "..\XR_3DA\StatGraph.h"
@@ -23,7 +23,7 @@
 #include "character_info.h"
 #include "CustomOutfit.h"
 #include "actorcondition.h"
-#include "UIGameCustom.h"
+#include "UIGameCustom.h"//
 #include "game_cl_base_weapon_usage_statistic.h"
 
 // breakpoints

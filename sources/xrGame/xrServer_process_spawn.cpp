@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "xrServer.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #include "xrserver_objects.h"
 
 #ifdef DEBUG

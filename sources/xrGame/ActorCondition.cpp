@@ -18,6 +18,9 @@
 #include "object_broker.h"
 #include "weapon.h"
 
+//#include "UI.h"
+#include "HUDManager.h"//
+
 #define MAX_SATIETY					1.0f
 #define START_SATIETY				0.5f
 
@@ -98,9 +101,6 @@ void CActorCondition::LoadCondition(LPCSTR entity_section)
 
 
 //вычисление параметров с ходом времени
-#include "UI.h"
-#include "HUDManager.h"
-
 void CActorCondition::UpdateCondition()
 {
 	if (GodMode())				return;

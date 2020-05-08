@@ -7,16 +7,11 @@
 #include "UIXmlInit.h"
 #include "UIButton.h"
 
-CUISleepWnd::CUISleepWnd()
-	: m_Hours		(0),
-	  m_Minutes		(0)
-{
-}
+CUISleepWnd::CUISleepWnd() : m_Hours(0), m_Minutes(0)
+{ }
 
 CUISleepWnd::~CUISleepWnd()
-{
-}
-
+{ }
 
 void CUISleepWnd::Init()
 {

@@ -1,10 +1,10 @@
 #include "stdafx.h"
 
 #include "actor.h"
-#include "UIGameSP.h"
-#include "UI.h"
+#include "UIGameSP.h"//
+//#include "UI.h"
 #include "PDA.h"
-#include "HUDManager.h"
+#include "HUDManager.h"//
 #include "level.h"
 #include "string_table.h"
 #include "PhraseDialog.h"
@@ -22,7 +22,7 @@
 #include "ui/UIMainIngameWnd.h"//
 #include "ui/UIPdaWnd.h"//
 #include "ui/UIDiaryWnd.h"//
-#include "ui/UITalkWnd.h"
+#include "ui/UITalkWnd.h"//
 #include "game_object_space.h"
 #include "script_callback_ex.h"
 #include "encyclopedia_article.h"

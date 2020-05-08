@@ -7,8 +7,8 @@
 #include "../string_table.h"
 
 #include "../actor.h"
-#include "../uigamesp.h"
-#include "../hudmanager.h"
+#include "../UIGameSP.h"//
+#include "../HUDManager.h"//
 
 #include "../CustomOutfit.h"
 
@@ -29,7 +29,7 @@ using namespace InventoryUtilities;
 #include "../entitycondition.h"
 
 #include "../game_cl_base.h"
-#include "UISleepWnd.h"
+//#include "UISleepWnd.h"
 #include "../ActorCondition.h"
 #include "UIDragDropListEx.h"
 #include "UIOutfitSlot.h"//

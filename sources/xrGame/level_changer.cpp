@@ -17,8 +17,8 @@
 #include "level_graph.h"
 #include "game_level_cross_table.h"
 
-#include "HudManager.h"
-#include "UIGameSP.h"
+#include "HUDManager.h"//
+#include "UIGameSP.h"//
 
 xr_vector<CLevelChanger*>	g_lchangers;
 

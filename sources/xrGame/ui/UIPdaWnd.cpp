@@ -6,7 +6,7 @@
 #include "UIXmlInit.h"
 #include "UIInventoryUtilities.h"//
 
-#include "../HUDManager.h"
+#include "../HUDManager.h"//
 #include "../level.h"
 #include "../game_cl_base.h"
 
@@ -18,8 +18,8 @@
 #include "UIDiaryWnd.h"//
 #include "UIFrameLineWnd.h"
 #include "UIEncyclopediaWnd.h"//
-#include "UIStalkersRankingWnd.h"
-#include "UIActorInfo.h"
+#include "UIStalkersRankingWnd.h"//
+#include "UIActorInfo.h"//
 #include "UIEventsWnd.h"//
 #include "../object_broker.h"
 #include "UIMessagesWindow.h"//

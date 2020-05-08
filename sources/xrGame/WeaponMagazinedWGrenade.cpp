@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "weaponmagazinedwgrenade.h"
 #include "WeaponHUD.h"
-#include "HUDManager.h"
+#include "HUDManager.h"//
 #include "entity.h"
 #include "ParticlesObject.h"
 #include "GrenadeLauncher.h"

@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "radioactivezone.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #include "level.h"
 #include "xrmessages.h"
 #include "..\XR_3DA\bone.h"

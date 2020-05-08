@@ -838,7 +838,7 @@
     <ClInclude Include="map_location.h" />
     <ClInclude Include="map_location_defs.h" />
     <ClInclude Include="map_manager.h" />
-    <ClInclude Include="map_spot.h" />
+    <ClInclude Include="MapSpot.h" />
     <ClInclude Include="material_manager.h" />
     <ClInclude Include="material_manager_inline.h" />
     <ClInclude Include="MathUtils.h" />
@@ -1394,7 +1394,10 @@
     <ClInclude Include="ui\UIScrollBar.h" />
     <ClInclude Include="ui\UIScrollBox.h" />
     <ClInclude Include="ui\UIScrollView.h" />
-    <ClInclude Include="ui\UISleepWnd.h" />
+    <ClInclude Include="ui\UISleepWnd.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="ui\UISpinNum.h" />
     <ClInclude Include="ui\UISpinText.h" />
     <ClInclude Include="ui\UIStalkersRankingWnd.h" />
@@ -1408,7 +1411,10 @@
     <ClInclude Include="ui\UITaskItem.h" />
     <ClInclude Include="ui\UITextBanner.h" />
     <ClInclude Include="ui\UITextureMaster.h" />
-    <ClInclude Include="ui\UITimeWnd.h" />
+    <ClInclude Include="ui\UITimeWnd.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="ui\UITrackBar.h" />
     <ClInclude Include="ui\UITrackButton.h" />
     <ClInclude Include="ui\UITradeWnd.h" />
@@ -1927,7 +1933,7 @@
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="map_location.cpp" />
     <ClCompile Include="map_manager.cpp" />
-    <ClCompile Include="map_spot.cpp" />
+    <ClCompile Include="MapSpot.cpp" />
     <ClCompile Include="material_manager.cpp" />
     <ClCompile Include="MathUtils.cpp" />
     <ClCompile Include="medkit.cpp" />

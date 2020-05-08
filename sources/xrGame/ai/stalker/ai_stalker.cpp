@@ -23,7 +23,7 @@
 #include "../../cover_evaluators.h"
 #include "../../xrserver.h"
 #include "../../xr_level_controller.h"
-#include "../../hudmanager.h"
+#include "../../HUDManager.h"//
 #include "../../clsid_game.h"
 #include "../../..\XR_3DA\skeletoncustom.h"
 #include "../../character_info.h"

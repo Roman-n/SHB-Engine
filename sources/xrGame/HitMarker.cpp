@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "HitMarker.h"
+#include "HitMarker.h"//
 #include "..\XR_3DA\render.h"
 #include "..\XR_3DA\LightAnimLibrary.h"
 #include "UIStaticItem.h"

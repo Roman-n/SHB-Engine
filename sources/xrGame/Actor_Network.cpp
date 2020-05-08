@@ -29,7 +29,7 @@
 #include "actor_anim_defs.h"
 
 #include "map_manager.h"
-#include "HUDManager.h"
+#include "HUDManager.h"//
 #include "ui/UIArtefactPanel.h"//
 #include "ui/UIMainIngameWnd.h"//
 #include "gamepersistent.h"

@@ -12,7 +12,7 @@
 #include "net_queue.h"
 #include "game_cl_base.h"
 #include "entity_alive.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #include "ai_space.h"
 #include "ai_debug.h"
 #include "PHdynamicdata.h"

@@ -200,9 +200,8 @@ continue_loop:
 }
 
 #ifdef DEBUG
-
 #include "customzone.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 
 extern	Flags32	dbg_net_Draw_Flags;
 

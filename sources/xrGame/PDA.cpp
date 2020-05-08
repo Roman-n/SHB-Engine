@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "pda.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #include "PhysicsShell.h"
 #include "Entity.h"
 #include "actor.h"

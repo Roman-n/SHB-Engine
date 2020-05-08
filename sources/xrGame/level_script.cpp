@@ -21,13 +21,15 @@
 #include "level_graph.h"
 #include "PHCommander.h"
 #include "PHScriptCall.h"
-#include "HUDManager.h"
+#include "HUDManager.h"//
 #include "script_engine.h"
 #include "game_cl_single.h"
 
 #include "map_manager.h"
 #include "map_location.h"
 #include "phworld.h"
+
+#include "UIGameCustom.h"//
 
 using namespace luabind;
 
@@ -252,7 +254,7 @@ CUIDialogWnd* main_input_receiver()
 {
 	return HUD().GetUI()->MainInputReceiver();
 }
-#include "UIGameCustom.h"
+
 void hide_indicators()
 {
 	HUD().GetUI()->UIGame()->HideShownDialogs();

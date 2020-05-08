@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "mosquitobald.h"
-#include "hudmanager.h"
+#include "HUDManager.h"//
 #include "ParticlesObject.h"
 #include "level.h"
 #include "physicsshellholder.h"
