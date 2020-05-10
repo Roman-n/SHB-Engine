@@ -15,7 +15,7 @@
 #include "client_spawn_manager.h"
 #include "..\XR_3DA\igame_persistent.h"
 #include "game_cl_base.h"
-#include "ui/UIDialogWnd.h"
+#include "ui/UIDialogWnd.h"//
 #include "date_time.h"
 #include "ai_space.h"
 #include "level_graph.h"
@@ -29,7 +29,7 @@
 #include "map_location.h"
 #include "phworld.h"
 
-#include "UIGameCustom.h"//
+#include "ui/UIGameCustom.h"//
 
 using namespace luabind;
 

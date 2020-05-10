@@ -10,13 +10,13 @@
 #include "../level.h"
 #include "../game_cl_base.h"
 
-#include "UIStatic.h"
-#include "UIFrameWindow.h"
-#include "UITabControl.h"
+#include "UIStatic.h"//
+#include "UIFrameWindow.h"//
+#include "UITabControl.h"//
 #include "UIPdaContactsWnd.h"//
 #include "UIMapWnd.h"//
 #include "UIDiaryWnd.h"//
-#include "UIFrameLineWnd.h"
+#include "UIFrameLineWnd.h"//
 #include "UIEncyclopediaWnd.h"//
 #include "UIStalkersRankingWnd.h"//
 #include "UIActorInfo.h"//
@@ -24,7 +24,7 @@
 #include "../object_broker.h"
 #include "UIMessagesWindow.h"//
 #include "UIMainIngameWnd.h"//
-#include "UITabButton.h"
+#include "UITabButton.h"//
 
 #define		PDA_XML					"pda.xml"
 u32			g_pda_info_state		= 0;

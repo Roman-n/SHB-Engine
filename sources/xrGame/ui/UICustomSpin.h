@@ -7,13 +7,13 @@
 // copyright 2005 GSC Game World
 
 #pragma once
-#include "UIWindow.h"
+
+#include "UIWindow.h"//
 #include "UIOptionsItem.h"//
 
 class CUI3tButton;
 class CUIFrameLineWnd;
 class CUILines;
-
 
 class CUICustomSpin : public CUIWindow, public CUIOptionsItem 
 {

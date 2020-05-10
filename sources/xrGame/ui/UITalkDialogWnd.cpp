@@ -3,9 +3,9 @@
 
 #include "xrUIXmlParser.h"
 #include "UIXmlInit.h"
-#include "UIScrollView.h"
-#include "UI3tButton.h"
-#include "../UI.h"
+#include "UIScrollView.h"//
+#include "UI3tButton.h"//
+#include "UI.h"
 #include "UIInventoryUtilities.h"//
 
 

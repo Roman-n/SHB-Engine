@@ -1,4 +1,4 @@
-// File:		UI_IB_Static.h
+// File:		UI_IB_Static.cpp
 // Description:	Inheritance of UIInteractiveBackground template class with some
 //				CUIStatic features
 // Created:		09.02.2005
@@ -8,7 +8,8 @@
 // Copyright 2005 GSC Game World
 
 #include "stdafx.h"
-#include "UI_IB_Static.h"
+
+#include "UI_IB_Static.h"//
 
 void CUI_IB_Static::SetTextureOffset(float x, float y){
 	if (m_stateCurrent)

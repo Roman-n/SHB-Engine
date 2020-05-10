@@ -10,7 +10,7 @@
 
 #include "UIMessagesWindow.h"//
 #include "../level.h"
-#include "UIGameLog.h"
+#include "UIGameLog.h"//
 #include "xrUIXmlParser.h"
 #include "UIXmlInit.h"
 #include "UIPdaMsgListItem.h"//

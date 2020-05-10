@@ -9,12 +9,10 @@
 //
 // Copyright 2004 GSC Game World
 //
-
 #pragma once
 
-
-#include "UIFrameWindow.h"
-#include "UIFrameLineWnd.h"
+#include "UIFrameWindow.h"//
+#include "UIFrameLineWnd.h"//
 
 enum UIState{
 	S_Enabled,

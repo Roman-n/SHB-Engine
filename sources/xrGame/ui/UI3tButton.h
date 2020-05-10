@@ -8,8 +8,8 @@
 //
 
 #pragma once
-#include "UIButton.h"
-#include "UI_IB_Static.h"
+#include "UIButton.h"//
+#include "UI_IB_Static.h"//
 
 class CUI3tButton : public CUIButton 
 {

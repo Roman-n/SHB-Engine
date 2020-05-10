@@ -8,7 +8,7 @@
 //
 
 #include "stdafx.h"
-#include "UI3tButton.h"
+#include "UI3tButton.h"//
 #include "UIXmlInit.h"
 
 CUI3tButton::CUI3tButton(){

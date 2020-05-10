@@ -7,9 +7,9 @@ class CUIMessageBoxEx;
 
 #include "..\XR_3DA\IInputReceiver.h"
 #include "..\XR_3DA\IGame_Persistent.h"
-#include "UIDialogHolder.h"
+#include "ui/UIDialogHolder.h"
 #include "ui/UIWndCallback.h"
-#include "ui_base.h"
+#include "ui/ui_base.h"
 
 class CMainMenu :
 	public IMainMenu,
@@ -20,7 +20,6 @@ class CMainMenu :
 	public CDeviceResetNotifier
 {
 	CUIDialogWnd*		m_startDialog;
-	
 
 	enum{
 		flRestoreConsole	= (1<<0),

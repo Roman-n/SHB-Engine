@@ -1,10 +1,11 @@
 #include "stdafx.h"
+
 #include "WeaponBinoculars.h"
 
 #include "xr_level_controller.h"
 
 #include "level.h"
-#include "ui\UIFrameWindow.h"
+#include "ui\UIFrameWindow.h"//
 #include "WeaponBinocularsVision.h"
 #include "object_broker.h"
 #include "HUDManager.h"//

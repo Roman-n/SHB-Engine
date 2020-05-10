@@ -8,9 +8,11 @@
 //
 
 #include "stdafx.h"
-#include "UIComboBox.h"
+
+#include "UIComboBox.h"//
 #include "UITextureMaster.h"
-#include "UIScrollBar.h"
+#include "UIScrollBar.h"//
+#include "UIListBoxItem.h"//
 
 #define CB_HEIGHT 23.0f
 #define BTN_SIZE  23.0f
@@ -82,7 +84,6 @@ void CUIComboBox::Init(float x, float y, float width, float height)
 	this->Init		(x, y, width);
 }
 
-#include "uilistboxitem.h"
 CUIListBoxItem* CUIComboBox::AddItem_(LPCSTR str, int _data)
 {
     R_ASSERT2			(m_bInited, "Can't add item to ComboBox before Initialization");
@@ -90,7 +91,6 @@ CUIListBoxItem* CUIComboBox::AddItem_(LPCSTR str, int _data)
 	itm->SetData		((void*)(__int64)_data);
 	return				itm;
 }
-
 
 void CUIComboBox::OnListItemSelect()
 {
@@ -297,3 +297,23 @@ void CUIComboBox::Undo()
 	SetCurrentValue		();
 }
 
+using namespace luabind;
+
+#pragma optimize("s",on)
+void CUIComboBox::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CUIComboBox, CUIWindow>("CUIComboBox")
+			.def(constructor<>( ))
+		.def("Init", (void (CUIComboBox::*)(float, float, float)) & CUIComboBox::Init)
+		.def("Init", (void (CUIComboBox::*)(float, float, float, float)) & CUIComboBox::Init)
+		.def("SetVertScroll", &CUIComboBox::SetVertScroll)
+		.def("SetListLength", &CUIComboBox::SetListLength)
+		.def("CurrentID", &CUIComboBox::CurrentID)
+		.def("SetCurrentID", &CUIComboBox::SetItem)
+
+//		.def("AddItem",				(void (CUIComboBox::*)(LPCSTR, bool)) CUIComboBox::AddItem)
+//		.def("AddItem",				(void (CUIComboBox::*)(LPCSTR)) CUIComboBox::AddItem)
+		];
+}

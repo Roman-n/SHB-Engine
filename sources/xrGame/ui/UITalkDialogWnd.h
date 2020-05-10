@@ -1,8 +1,8 @@
 #pragma once
 
-#include "UIStatic.h"
-#include "UI3tButton.h"
-#include "UIFrameLineWnd.h"
+#include "UIStatic.h"//
+#include "UI3tButton.h"//
+#include "UIFrameLineWnd.h"//
 
 #include "../InfoPortion.h"
 

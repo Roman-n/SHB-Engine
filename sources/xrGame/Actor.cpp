@@ -23,7 +23,7 @@
 #include "character_info.h"
 #include "CustomOutfit.h"
 #include "actorcondition.h"
-#include "UIGameCustom.h"//
+#include "ui/UIGameCustom.h"//
 #include "game_cl_base_weapon_usage_statistic.h"
 
 // breakpoints

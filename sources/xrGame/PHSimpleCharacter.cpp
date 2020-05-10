@@ -6,7 +6,7 @@
 #include "tri-colliderKNoOPC\__aabb_tri.h"
 #include "PHSimpleCharacter.h"
 #include "PHContactBodyEffector.h"
-#include "ui/uistatic.h"
+#include "ui/UIStatic.h"//
 #include "SpaceUtils.h"
 #include "PhysicsGamePars.h"
 #include "MathUtils.h" 

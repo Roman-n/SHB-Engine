@@ -12,7 +12,7 @@
 #include "ui/UIInventoryUtilities.h"//
 #include "xr_time.h"
 #include "../../xrNetServer/net_utils.h"
-#include "UI/UIGameTutorial.h"
+#include "ui/UIGameTutorial.h"//
 #include "string_table.h"
 #include "object_broker.h"
 

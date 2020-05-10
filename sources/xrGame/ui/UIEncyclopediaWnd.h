@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "UIWindow.h"
+#include "UIWindow.h"//
 #include "../encyclopedia_article_defs.h"
 
 class CEncyclopediaArticle;

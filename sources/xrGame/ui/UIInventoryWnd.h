@@ -2,10 +2,10 @@
 
 class CInventory;
 
-#include "UIDialogWnd.h"
-#include "UIStatic.h"
+#include "UIDialogWnd.h"//
+#include "UIStatic.h"//
 
-#include "UIProgressBar.h"
+#include "UIProgressBar.h"//
 
 #include "UIPropertiesBox.h"
 #include "UIOutfitSlot.h"//

@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "UIInventoryWnd.h"//
 //#include "UISleepWnd.h"
 #include "../level.h"
@@ -8,10 +9,10 @@
 #include "../inventory.h"
 #include "UIInventoryUtilities.h"//
 
-#include "UICellItem.h"
-#include "UICellItemFactory.h"
-#include "UIDragDropListEx.h"
-#include "UI3tButton.h"
+#include "UICellItem.h"//
+#include "UICellItemFactory.h"//
+#include "UIDragDropListEx.h"//
+#include "UI3tButton.h"//
 
 CUICellItem* CUIInventoryWnd::CurrentItem()
 {

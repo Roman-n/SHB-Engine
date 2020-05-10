@@ -1,12 +1,12 @@
 #include "stdafx.h"
 
 #include "UIItemInfo.h"//
-#include "uistatic.h"
+#include "UIStatic.h"//
 #include "UIXmlInit.h"
 
-#include "UIListWnd.h"
-#include "UIProgressBar.h"
-#include "UIScrollView.h"
+#include "UIListWnd.h"//
+#include "UIProgressBar.h"//
+#include "UIScrollView.h"//
 
 #include "../string_table.h"
 #include "../Inventory_Item.h"

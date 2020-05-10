@@ -3,7 +3,7 @@
 #pragma warning (disable : 4511 )
 #pragma warning (disable : 4512 )
 
-#include "../ui_base.h"
+#include "ui_base.h"
 #include <boost/noncopyable.hpp>
 
 typedef CGameFont::EAligment ETextAlignment;
@@ -31,7 +31,6 @@ public:
 	virtual void SetText(LPCSTR text)								= 0;
 	virtual LPCSTR GetText()										= 0;
 };
-
 
 // Texture controls
 class IUISimpleTextureControl{
@@ -160,6 +159,7 @@ protected:
 	Fvector2				m_wndSize;
 	EWindowAlignment		m_alignment;
 };
+
 class CUISelectable{
 protected:
 	bool m_bSelected;

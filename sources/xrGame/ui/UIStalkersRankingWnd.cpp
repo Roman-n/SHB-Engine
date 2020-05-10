@@ -1,12 +1,13 @@
 #include "stdafx.h"
+
 #include "UIStalkersRankingWnd.h"//
 #include "UIXmlInit.h"
 #include "UIPdaAux.h"//
-#include "UIFrameWindow.h"
-#include "UIFrameLineWnd.h"
+#include "UIFrameWindow.h"//
+#include "UIFrameLineWnd.h"//
 #include "UIPdaListItem.h"
-#include "UIAnimatedStatic.h"
-#include "UIScrollView.h"
+#include "UIAnimatedStatic.h"//
+#include "UIScrollView.h"//
 #include "UICharacterInfo.h"//
 #include "../InventoryOwner.h"
 #include "../Level.h"

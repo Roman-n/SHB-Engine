@@ -7,7 +7,7 @@
 #include "../string_table.h"
 
 #include "../actor.h"
-#include "../UIGameSP.h"//
+#include "UIGameSP.h"//
 #include "../HUDManager.h"//
 
 #include "../CustomOutfit.h"
@@ -31,9 +31,9 @@ using namespace InventoryUtilities;
 #include "../game_cl_base.h"
 //#include "UISleepWnd.h"
 #include "../ActorCondition.h"
-#include "UIDragDropListEx.h"
+#include "UIDragDropListEx.h"//
 #include "UIOutfitSlot.h"//
-#include "UI3tButton.h"
+#include "UI3tButton.h"//
 
 #define				INVENTORY_ITEM_XML		"inventory_item.xml"
 #define				INVENTORY_XML			"inventory_new.xml"

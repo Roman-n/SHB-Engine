@@ -1,34 +1,35 @@
 #include "stdafx.h"
+
 #include "UIXmlInit.h"
 #include "../HUDManager.h"//
-#include "../UI.h"
+#include "UI.h"
 #include "../level.h"
-#include "../UICustomItem.h"
+#include "UICustomItem.h"//
 
 #include "../string_table.h"
-#include "UIFrameWindow.h"
-#include "UIStatic.h"
-#include "UICheckButton.h"
-#include "UICustomSpin.h"
-#include "UIRadioButton.h"
-#include "UIProgressBar.h"
-#include "UIProgressShape.h"
-#include "UIListWnd.h"
-#include "UITabControl.h"
-#include "UILabel.h"
-#include "UIEditBox.h"
-#include "UIEditBoxEx.h"
-#include "UITextBanner.h"
-#include "UIMultiTextStatic.h"
-#include "UIAnimatedStatic.h"
+#include "UIFrameWindow.h"//
+#include "UIStatic.h"//
+#include "UICheckButton.h"//
+#include "UICustomSpin.h"//
+#include "UIRadioButton.h"//
+#include "UIProgressBar.h"//
+#include "UIProgressShape.h"//
+#include "UIListWnd.h"//
+#include "UITabControl.h"//
+#include "UILabel.h"//
+#include "UIEditBox.h"//
+#include "UIEditBoxEx.h"//
+#include "UITextBanner.h"//
+#include "UIMultiTextStatic.h"//
+#include "UIAnimatedStatic.h"//
 #include "uixmlinit.h"
-#include "UIListBox.h" //#include "UIScrollView.h"
-#include "UIComboBox.h"
-#include "UITrackBar.h"
+#include "UIListBox.h"//
+#include "UIComboBox.h"//
+#include "UITrackBar.h"//
 #include "../game_base_space.h"
 
 #include "UITextureMaster.h"
-#include "UIDragDropListEx.h"
+#include "UIDragDropListEx.h"//
 
 extern int keyname_to_dik(LPCSTR);
 

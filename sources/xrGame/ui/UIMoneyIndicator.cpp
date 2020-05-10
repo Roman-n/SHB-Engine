@@ -3,7 +3,7 @@
 #include "UIColorAnimatorWrapper.h"//
 #include "xrUIXmlParser.h"
 #include "UIXmlInit.h"
-#include "UIGameLog.h"
+#include "UIGameLog.h"//
 
 CUIMoneyIndicator::CUIMoneyIndicator(){
 	AttachChild(&m_back);

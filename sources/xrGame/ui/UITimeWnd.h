@@ -9,7 +9,7 @@
 
 #pragma once
 /*
-#include "UIStatic.h"
+#include "UIStatic.h"//
 
 class CUITimeWnd : public CUIStatic {
 	using CUIStatic::Init;

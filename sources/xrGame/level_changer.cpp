@@ -18,7 +18,7 @@
 #include "game_level_cross_table.h"
 
 #include "HUDManager.h"//
-#include "UIGameSP.h"//
+#include "ui/UIGameSP.h"//
 
 xr_vector<CLevelChanger*>	g_lchangers;
 

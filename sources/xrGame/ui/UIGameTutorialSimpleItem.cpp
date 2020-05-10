@@ -1,13 +1,13 @@
 #include "stdafx.h"
 
-#include "UIGameTutorial.h"
-#include "UIWindow.h"
-#include "UIStatic.h"
+#include "UIGameTutorial.h"//
+#include "UIWindow.h"//
+#include "UIStatic.h"//
 #include "UIXmlInit.h"
 #include "../object_broker.h"
 #include "../..\XR_3DA\xr_input.h"
 #include "../xr_level_controller.h"
-#include "../UIGameSp.h"//
+#include "UIGameSp.h"//
 #include "../HUDManager.h"//
 #include "../level.h"
 #include "UIPdaWnd.h"//

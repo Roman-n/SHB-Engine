@@ -1,6 +1,7 @@
 #include "stdafx.h"
-#include "UISpinText.h"
-#include "UILines.h"
+
+#include "UISpinText.h"//
+#include "UILines.h"//
 #include "../string_table.h"
 
 CUISpinText::CUISpinText(){

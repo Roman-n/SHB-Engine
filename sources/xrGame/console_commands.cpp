@@ -47,7 +47,7 @@
 #	include "game_graph.h"
 #endif // DEBUG
 
-#include "UIGameCustom.h"//
+#include "ui/UIGameCustom.h"//
 #include "HUDManager.h"//
 
 string_path		g_last_saved_game;

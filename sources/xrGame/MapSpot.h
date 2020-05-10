@@ -1,5 +1,6 @@
 #pragma once
-#include "ui/UIStatic.h"
+
+#include "ui/UIStatic.h"//
 
 class CMapLocation;
 class CUIXml;

@@ -3,7 +3,8 @@
 //=============================================================================
 
 #include "stdafx.h"
-#include "UITextBanner.h"
+
+#include "UITextBanner.h"//
 
 CUITextBanner::CUITextBanner()
 	:	m_bAnimate			(true),

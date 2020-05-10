@@ -4,8 +4,7 @@
 
 #include "UIMainIngameWnd.h"//
 #include "UIMessagesWindow.h"//
-#include "../UIZoneMap.h"//
-
+#include "UIZoneMap.h"//
 
 #include <dinput.h>
 #include "../actor.h"
@@ -14,7 +13,7 @@
 #include "../WeaponHUD.h"
 #include "../character_info.h"
 #include "../inventory.h"
-#include "../UIGameSP.h"//
+#include "UIGameSP.h"//
 #include "../weaponmagazined.h"
 #include "../missile.h"
 #include "../Grenade.h"
@@ -45,10 +44,11 @@
 #	include "../..\XR_3DA\xr_input.h"
 #endif
 
-#include "UIScrollView.h"
+#include "UIScrollView.h"//
 #include "UIMapHint.h"//
 #include "UIColorAnimatorWrapper.h"//
 #include "../game_news.h"
+#include "UIProgressShape.h"//
 
 #ifdef DEBUG
 #	include "../debug_renderer.h"
@@ -58,6 +58,7 @@ void test_key	(int dik);
 void test_update();
 #endif
 
+#include "UIFrameWindow.h"//
 
 using namespace InventoryUtilities;
 
@@ -92,7 +93,6 @@ CUIMainIngameWnd::CUIMainIngameWnd()
 	m_pMPLogWnd					= NULL;	
 }
 
-#include "UIProgressShape.h"
 extern CUIProgressShape* g_MissileForceShape;
 
 CUIMainIngameWnd::~CUIMainIngameWnd()
@@ -1147,7 +1147,7 @@ CUIGameTutorial* g_tut = NULL;
 //#include "UIVotingCategory.h"
 
 //CUIVotingCategory* v = NULL;
-#include "UIFrameWindow.h"
+
 CUIFrameWindow*		pUIFrame = NULL;
 
 void test_update()

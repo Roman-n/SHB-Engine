@@ -7,14 +7,15 @@
 //=============================================================================
 
 #include "stdafx.h"
+
 #include "UIEncyclopediaWnd.h"//
 #include "UIXmlInit.h"
-#include "UIFrameWindow.h"
-#include "UIFrameLineWnd.h"
-#include "UIAnimatedStatic.h"
-#include "UIListWnd.h"
-#include "UIScrollView.h"
-#include "UITreeViewItem.h"
+#include "UIFrameWindow.h"//
+#include "UIFrameLineWnd.h"//
+#include "UIAnimatedStatic.h"//
+#include "UIListWnd.h"//
+#include "UIScrollView.h"//
+#include "UITreeViewItem.h"//
 #include "UIPdaAux.h"//
 #include "UIEncyclopediaArticleWnd.h"//
 #include "../encyclopedia_article.h"

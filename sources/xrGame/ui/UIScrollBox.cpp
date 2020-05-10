@@ -1,6 +1,7 @@
 #include "stdafx.h"
-#include "uiscrollbox.h"
-#include "..\UICursor.h"//
+
+#include "UIScrollBox.h"//
+#include "UICursor.h"//
 
 CUIScrollBox::CUIScrollBox()
 {

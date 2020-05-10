@@ -3,7 +3,7 @@
 #include "HitMarker.h"//
 #include "..\XR_3DA\render.h"
 #include "..\XR_3DA\LightAnimLibrary.h"
-#include "UIStaticItem.h"
+#include "ui/UIStaticItem.h"//
 
 static Fvector2			as_PC[5];
 static Fvector2			as_TC[5];

@@ -8,7 +8,8 @@
 // Copyright: 2004 GSC Game World
 
 #include "stdafx.h"
-#include "UITabButton.h"
+
+#include "UITabButton.h"//
 #include "../HUDManager.h"//
 
 CUITabButton::CUITabButton(){

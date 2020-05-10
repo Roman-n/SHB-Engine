@@ -7,8 +7,8 @@
 //=============================================================================
 #pragma once
 
-#include "UIDialogWnd.h"
-#include "UIScrollView.h"
+#include "UIDialogWnd.h"//
+#include "UIScrollView.h"//
 
 class CUIXml;
 class CUIPdaMsgListItem;

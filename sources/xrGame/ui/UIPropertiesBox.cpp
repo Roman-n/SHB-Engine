@@ -1,8 +1,9 @@
 #include "stdafx.h"
+
 #include "UIPropertiesBox.h"
 #include "../HUDManager.h"//
 #include "../level.h"
-#include "UIListBoxItem.h"
+#include "UIListBoxItem.h"//
 #include "UIXmlInit.h"
 
 #define OFFSET_X (5)

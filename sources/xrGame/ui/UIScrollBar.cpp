@@ -1,10 +1,11 @@
 #include "stdafx.h"
-#include "uiscrollbar.h"
-#include "UI3tButton.h"
-#include "UIScrollBox.h"
+
+#include "UIScrollBar.h"//
+#include "UI3tButton.h"//
+#include "UIScrollBox.h"//
 #include "UIXmlInit.h"
 #include "UITextureMaster.h"
-#include "..\UICursor.h"//
+#include "UICursor.h"//
 
 CUIScrollBar::CUIScrollBar()
 {

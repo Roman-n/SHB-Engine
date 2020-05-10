@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
-#include "UIMessageBox.h"
-#include "UIMessageBoxEx.h"
+#include "UIMessageBox.h"//
+#include "UIMessageBoxEx.h"//
 
 using namespace luabind;
 

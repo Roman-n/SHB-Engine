@@ -2,12 +2,12 @@
 
 #include "UITaskItem.h"//
 #include "UIXmlInit.h"
-#include "UI3tButton.h"
+#include "UI3tButton.h"//
 #include "../gametask.h"
 #include "../string_table.h"
 #include "UIEventsWnd.h"//
-#include "UIEditBoxEx.h"
-#include "UIEditBox.h"
+#include "UIEditBoxEx.h"//
+#include "UIEditBox.h"//
 #include "UIInventoryUtilities.h"//
 #include "../map_location.h"
 #include "../map_manager.h"

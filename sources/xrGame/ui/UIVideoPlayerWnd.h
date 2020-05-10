@@ -1,5 +1,6 @@
 #pragma once
-#include "UIDialogWnd.h"
+
+#include "UIDialogWnd.h"//
 #include "UIWndCallback.h"
 
 class CUITabControl;

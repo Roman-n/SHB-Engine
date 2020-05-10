@@ -1,7 +1,8 @@
 #include "stdafx.h"
+
 #include "MainMenu.h"
-#include "UI/UIDialogWnd.h"
-#include "ui/UIMessageBoxEx.h"
+#include "ui/UIDialogWnd.h"//
+#include "ui/UIMessageBoxEx.h"//
 #include "..\XR_3DA\xr_IOConsole.h"
 #include "..\XR_3DA\IGame_Level.h"
 #include "..\XR_3DA\CameraManager.h"
@@ -10,7 +11,7 @@
 #include "ui\UIXmlInit.h"
 #include <dinput.h>
 #include "ui\UIBtnHint.h"
-#include "UICursor.h"//
+#include "ui/UICursor.h"//
 #include "string_table.h"
 
 #include "object_broker.h"

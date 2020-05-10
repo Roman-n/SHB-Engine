@@ -3,9 +3,10 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include ".\uicheckbutton.h"
+
+#include "UICheckButton.h"//
 #include "../HUDManager.h"//
-#include "UILines.h"
+#include "UILines.h"//
 
 CUICheckButton::CUICheckButton(void)
 {	

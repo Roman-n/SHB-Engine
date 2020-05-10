@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "actor.h"
-#include "UIGameSP.h"//
+#include "ui/UIGameSP.h"//
 //#include "UI.h"
 #include "PDA.h"
 #include "HUDManager.h"//

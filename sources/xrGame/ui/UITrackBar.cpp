@@ -1,9 +1,9 @@
 #include "stdafx.h"
 
-#include "UITrackBar.h"
+#include "UITrackBar.h"//
 //.#include "UITrackButton.h"
-#include "UIFrameLineWnd.h"
-#include "UI3tButton.h"
+#include "UIFrameLineWnd.h"//
+#include "UI3tButton.h"//
 #include "UITextureMaster.h"
 #include "../..\XR_3DA\xr_input.h"
 

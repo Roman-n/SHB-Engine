@@ -8,8 +8,8 @@
 
 #pragma once
 
-#include "UILine.h"
-#include "../UI.h"
+#include "UILine.h"//
+#include "UI.h"
 #include "uiabstract.h"
 
 class CUILines : public IUITextControl,

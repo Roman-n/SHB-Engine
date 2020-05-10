@@ -12,9 +12,8 @@
 #include "xrUIXmlParser.h"
 #include "UIXmlInit.h"
 
-#include "uistatic.h"
-#include "UIScrollView.h"
-
+#include "UIStatic.h"//
+#include "UIScrollView.h"//
 
 #include "../alife_simulator.h"
 #include "../ai_space.h"

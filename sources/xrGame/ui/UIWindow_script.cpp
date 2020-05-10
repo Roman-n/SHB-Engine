@@ -1,15 +1,15 @@
 #include "stdafx.h"
 
-#include "UIWindow.h"
-#include "UIFrameWindow.h"
-#include "UIFrameLineWnd.h"
-#include "UIDialogWnd.h"
+#include "UIWindow.h"//
+#include "UIFrameWindow.h"//
+#include "UIFrameLineWnd.h"//
+#include "UIDialogWnd.h"//
 #include "../HUDManager.h"//
 #include "../GamePersistent.h"
-#include "UILabel.h"
+#include "UILabel.h"//
 #include "UIMMShniaga.h"//
 #include "UITextureMaster.h"
-#include "UIScrollView.h"
+#include "UIScrollView.h"//
 
 CFontManager& mngr(){
 	return *(UI()->Font());

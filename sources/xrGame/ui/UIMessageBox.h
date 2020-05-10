@@ -1,6 +1,6 @@
 #pragma once
 
-#include "UIStatic.h"
+#include "UIStatic.h"//
 #include "../script_export_space.h"
 
 class CUI3tButton;

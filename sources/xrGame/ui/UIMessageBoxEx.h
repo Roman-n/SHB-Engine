@@ -1,8 +1,8 @@
 #pragma once
 
-#include "UIDialogWnd.h"
+#include "UIDialogWnd.h"//
 #include "UIWndCallback.h"
-//#include "UIMessageBox.h"
+//#include "UIMessageBox.h"//
 
 class CUIMessageBox;
 

@@ -8,8 +8,9 @@
 // Copyright: 2004 GSC Game World
 
 #pragma once
-#include "UI3tButton.h"
-//.#include "UIFrameWindow.h"
+
+#include "UI3tButton.h"//
+//.#include "UIFrameWindow.h"//
 
 class CUITabButton : public CUI3tButton {
 	typedef CUI3tButton inherited;

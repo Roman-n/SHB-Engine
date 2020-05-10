@@ -10,10 +10,10 @@
 
 #include "../character_info.h"
 
-#include "UIFrameWindow.h"
+#include "UIFrameWindow.h"//
 #include "..\InventoryOwner.h"
 #include "UICharacterInfo.h"//
-#include "UIStatic.h"
+#include "UIStatic.h"//
 
 #define			PDA_CONTACT_CHAR		"pda_character.xml"
 

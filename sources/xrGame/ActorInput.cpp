@@ -11,7 +11,7 @@
 #include "PHDestroyable.h"
 #include "Car.h"
 #include "HUDManager.h"//
-#include "UIGameSP.h"//
+#include "ui/UIGameSP.h"//
 #include "inventory.h"
 #include "level.h"
 #include "game_cl_base.h"
@@ -21,7 +21,7 @@
 #include "actorcondition.h"
 #include "actor_input_handler.h"
 #include "string_table.h"
-#include "UI/UIStatic.h"
+#include "ui/UIStatic.h"//
 #include "CharacterPhysicsSupport.h"
 #include "InventoryBox.h"
 

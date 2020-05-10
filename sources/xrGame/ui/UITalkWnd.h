@@ -1,12 +1,11 @@
 #pragma once
 
-#include "UIDialogWnd.h"
-#include "UIStatic.h"
-#include "UIButton.h"
-#include "UIEditBox.h"
-#include "UIListWnd.h"
-#include "UIFrameWindow.h"
-
+#include "UIDialogWnd.h"//
+#include "UIStatic.h"//
+#include "UIButton.h"//
+#include "UIEditBox.h"//
+#include "UIListWnd.h"//
+#include "UIFrameWindow.h"//
 
 #include "../PhraseDialogDefs.h"
 

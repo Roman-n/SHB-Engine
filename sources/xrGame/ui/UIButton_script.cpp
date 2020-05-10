@@ -1,12 +1,12 @@
 #include "stdafx.h"
 
-#include "UIButton.h"
-#include "UI3tButton.h"
-#include "UICheckButton.h"
-#include "UIRadioButton.h"
-#include "UISpinNum.h"
-#include "UISpinText.h"
-#include "UITrackBar.h"
+#include "UIButton.h"//
+#include "UI3tButton.h"//
+#include "UICheckButton.h"//
+#include "UIRadioButton.h"//
+#include "UISpinNum.h"//
+#include "UISpinText.h"//
+#include "UITrackBar.h"//
 
 using namespace luabind;
 

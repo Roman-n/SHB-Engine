@@ -1,8 +1,8 @@
 #include "stdafx.h"
 
-#include "UIMessageBox.h"
-#include "UIMessageBoxEx.h"
-#include "../UIDialogHolder.h"
+#include "UIMessageBox.h"//
+#include "UIMessageBoxEx.h"//
+#include "UIDialogHolder.h"
 
 CUIMessageBoxEx::CUIMessageBoxEx(){
 	m_pMessageBox = xr_new<CUIMessageBox>();

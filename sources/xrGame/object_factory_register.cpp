@@ -147,7 +147,7 @@
 #	include "game_sv_single.h"
 #	include "game_cl_single.h"
 
-#	include "UIGameSP.h"//
+#	include "ui/UIGameSP.h"//
 #	include	"climableobject.h"
 #	include "space_restrictor.h"
 #	include "smart_zone.h"

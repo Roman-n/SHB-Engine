@@ -5,11 +5,10 @@
 // Mail:		narrator@gsc-game.kiev.ua
 //
 // Copyright 2005 GSC Game World
-
-
 #include "stdafx.h"
-#include "UILine.h"
-#include "uilinestd.h"
+
+#include "UILine.h"//
+#include "UILinestd.h"//
 #include "UIColorAnimatorWrapper.h"//
 
 CUIColorAnimatorWrapper CUILine::m_animation;

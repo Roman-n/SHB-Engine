@@ -4,12 +4,12 @@
 #include "game_cl_base.h"
 #include "level.h"
 #include "GamePersistent.h"
-#include "UIGameCustom.h"//
+#include "ui/UIGameCustom.h"//
 #include "script_engine.h"
 #include "xr_Level_controller.h"
 #include "ui/UIMainIngameWnd.h"//
-#include "UI/UIGameTutorial.h"
-#include "UI/UIMessagesWindow.h"//
+#include "ui/UIGameTutorial.h"//
+#include "ui/UIMessagesWindow.h"//
 #include "string_table.h"
 #include "game_cl_base_weapon_usage_statistic.h"
 

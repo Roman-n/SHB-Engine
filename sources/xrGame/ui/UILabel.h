@@ -1,7 +1,8 @@
 #pragma once
 
-#include "UIFrameLineWnd.h"
-#include "UILines.h"
+#include "UIFrameLineWnd.h"//
+#include "UILines.h"//
+
 class CLAItem;
 
 class CUILabel : public CUIFrameLineWnd, public CUILinesOwner //IUITextControl 

@@ -1,7 +1,7 @@
 #pragma once
 
-#include "UIWindow.h"
-#include "UIStatic.h"
+#include "UIWindow.h"//
+#include "UIStatic.h"//
 
 class CUIXml;
 class CUIColorAnimatorWrapper;

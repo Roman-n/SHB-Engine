@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#include "UIProgressShape.h"
 
-#include "UIStatic.h"
+#include "UIProgressShape.h"//
+#include "UIStatic.h"//
 
 CUIProgressShape::CUIProgressShape(){
 	m_pBackground	= NULL;

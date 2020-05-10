@@ -8,10 +8,10 @@
 
 #include "stdafx.h"
 
-#include "UILines.h"
+#include "UILines.h"//
 #include "../HUDmanager.h"//
 #include "UIXmlInit.h"
-#include "uilinestd.h"
+#include "UILinestd.h"//
 
 
 CUILines::CUILines()

@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "UIArtefactParams.h"//
-#include "UIStatic.h"
+#include "UIStatic.h"//
 #include "../object_broker.h"
 #include "UIXmlInit.h"
 

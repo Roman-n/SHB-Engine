@@ -1,8 +1,9 @@
 #include "stdafx.h"
+
 #include "UIOutfitInfo.h"//
 #include "UIXmlInit.h"
-#include "UIStatic.h"
-#include "UIScrollView.h"
+#include "UIStatic.h"//
+#include "UIScrollView.h"//
 #include "../actor.h"
 #include "../CustomOutfit.h"
 #include "../string_table.h"

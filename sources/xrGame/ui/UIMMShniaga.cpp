@@ -1,8 +1,8 @@
 #include "stdafx.h"
 
 #include "UIMMShniaga.h"//
-#include "UIStatic.h"
-#include "UIScrollView.h"
+#include "UIStatic.h"//
+#include "UIScrollView.h"//
 #include "UIXmlInit.h"
 #include "MMsound.h"//
 #include "../HUDManager.h"//

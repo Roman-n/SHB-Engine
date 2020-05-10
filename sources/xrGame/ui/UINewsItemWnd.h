@@ -1,6 +1,7 @@
 #pragma once
 
-#include "UIWindow.h"
+#include "UIWindow.h"//
+
 class CUIStatic;
 struct GAME_NEWS_DATA;
 

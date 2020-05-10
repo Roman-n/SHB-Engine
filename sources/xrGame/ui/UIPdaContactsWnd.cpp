@@ -1,13 +1,14 @@
 #include "stdafx.h"
+
 #include "UIPdaContactsWnd.h"//
 #include "UIPdaAux.h"//
 #include "../Pda.h"
 #include "UIXmlInit.h"
 #include "../actor.h"
-#include "UIFrameWindow.h"
-#include "UIFrameLineWnd.h"
-#include "UIAnimatedStatic.h"
-#include "UIScrollView.h"
+#include "UIFrameWindow.h"//
+#include "UIFrameLineWnd.h"//
+#include "UIAnimatedStatic.h"//
+#include "UIScrollView.h"//
 //#include "../actor.h"
 #include "../string_table.h"
 #include "UICharacterInfo.h"//

@@ -3,15 +3,14 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include "UIButton.h"
+
+#include "UIButton.h"//
 #include "../HUDManager.h"//
-#include "UILines.h"
+#include "UILines.h"//
 #include "UIBtnHint.h"
 
 #define PUSH_OFFSET_RIGHT 1
 #define PUSH_OFFSET_DOWN  1
-
-
 
 CUIButton:: CUIButton()
 {

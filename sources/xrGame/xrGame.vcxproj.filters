@@ -4338,9 +4338,6 @@
     <ClInclude Include="script_sound_type.h">
       <Filter>AI\AScript\ScriptClasses\ScriptSoundType</Filter>
     </ClInclude>
-    <ClInclude Include="script_ui_registrator.h">
-      <Filter>AI\AScript\ScriptClasses\UI</Filter>
-    </ClInclude>
     <ClInclude Include="ScriptXMLInit.h">
       <Filter>AI\AScript\ScriptClasses\UI</Filter>
     </ClInclude>
@@ -5640,15 +5637,6 @@
     <ClInclude Include="MainMenu.h">
       <Filter>UI</Filter>
     </ClInclude>
-    <ClInclude Include="UI.h">
-      <Filter>UI</Filter>
-    </ClInclude>
-    <ClInclude Include="ui_base.h">
-      <Filter>UI</Filter>
-    </ClInclude>
-    <ClInclude Include="UIDialogHolder.h">
-      <Filter>UI</Filter>
-    </ClInclude>
     <ClInclude Include="ui\UIInventoryWnd.h">
       <Filter>UI\Common\InventoryWnd</Filter>
     </ClInclude>
@@ -5728,9 +5716,6 @@
       <Filter>UI\Common\MainIngame</Filter>
     </ClInclude>
     <ClInclude Include="ui\UIPointerGage.h">
-      <Filter>UI\Common\MainIngame</Filter>
-    </ClInclude>
-    <ClInclude Include="UIZoneMap.h">
       <Filter>UI\Common\MainIngame</Filter>
     </ClInclude>
     <ClInclude Include="ui\UIColorAnimatorWrapper.h">
@@ -5832,16 +5817,10 @@
     <ClInclude Include="ui\UIAnimatedStatic.h">
       <Filter>UI\UIWindows\Static</Filter>
     </ClInclude>
-    <ClInclude Include="UICustomItem.h">
-      <Filter>UI\UIWindows\Static</Filter>
-    </ClInclude>
     <ClInclude Include="ui\UIMultiTextStatic.h">
       <Filter>UI\UIWindows\Static</Filter>
     </ClInclude>
     <ClInclude Include="ui\UIStatic.h">
-      <Filter>UI\UIWindows\Static</Filter>
-    </ClInclude>
-    <ClInclude Include="UIStaticItem.h">
       <Filter>UI\UIWindows\Static</Filter>
     </ClInclude>
     <ClInclude Include="ui\UITextBanner.h">
@@ -5913,13 +5892,7 @@
     <ClInclude Include="ui\UITrackBar.h">
       <Filter>UI\UIWindows\TrackBar</Filter>
     </ClInclude>
-    <ClInclude Include="ui\UITrackButton.h">
-      <Filter>UI\UIWindows\TrackBar</Filter>
-    </ClInclude>
     <ClInclude Include="ui\UIFrameLine.h">
-      <Filter>UI\UIWindows\Frames</Filter>
-    </ClInclude>
-    <ClInclude Include="UIFrameRect.h">
       <Filter>UI\UIWindows\Frames</Filter>
     </ClInclude>
     <ClInclude Include="ui\UIScrollView.h">
@@ -5935,9 +5908,6 @@
       <Filter>UI\UIWindows\Lines</Filter>
     </ClInclude>
     <ClInclude Include="ui\UILines.h">
-      <Filter>UI\UIWindows\Lines</Filter>
-    </ClInclude>
-    <ClInclude Include="ui\uilinestd.h">
       <Filter>UI\UIWindows\Lines</Filter>
     </ClInclude>
     <ClInclude Include="ui\UISubLine.h">
@@ -5997,22 +5967,10 @@
     <ClInclude Include="HUDManager.h">
       <Filter>UI\HUD</Filter>
     </ClInclude>
-    <ClInclude Include="UIGameCustom.h">
-      <Filter>UI\GameTypes\GameCustom</Filter>
-    </ClInclude>
-    <ClInclude Include="UIGameSP.h">
-      <Filter>UI\GameTypes\Single</Filter>
-    </ClInclude>
-    <ClInclude Include="UIGame_custom_script.h">
-      <Filter>UI\GameTypes\Game_custom_script</Filter>
-    </ClInclude>
     <ClInclude Include="HUDCrosshair.h">
       <Filter>UI\Cursor</Filter>
     </ClInclude>
     <ClInclude Include="HUDTarget.h">
-      <Filter>UI\Cursor</Filter>
-    </ClInclude>
-    <ClInclude Include="UICursor.h">
       <Filter>UI\Cursor</Filter>
     </ClInclude>
     <ClInclude Include="ui\UIGameTutorial.h">
@@ -6038,6 +5996,45 @@
     </ClInclude>
     <ClInclude Include="MapSpot.h">
       <Filter>UI\Common\MapWnd</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\UILinestd.h">
+      <Filter>UI\UIWindows\Lines</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\UI.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\ui_base.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\UIDialogHolder.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\UIZoneMap.h">
+      <Filter>UI\Common\MainIngame</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\UICursor.h">
+      <Filter>UI\Cursor</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\UIGame_custom_script.h">
+      <Filter>UI\GameTypes\Game_custom_script</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\UIGameCustom.h">
+      <Filter>UI\GameTypes\GameCustom</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\UIGameSP.h">
+      <Filter>UI\GameTypes\Single</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\UIFrameRect.h">
+      <Filter>UI\UIWindows\Frames</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\UICustomItem.h">
+      <Filter>UI\UIWindows\Static</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\UIStaticItem.h">
+      <Filter>UI\UIWindows\Static</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\script_ui_registrator.h">
+      <Filter>AI\AScript\ScriptClasses\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -7167,9 +7164,6 @@
       <Filter>AI\AScript\ScriptClasses\ScriptSoundType</Filter>
     </ClCompile>
     <ClCompile Include="ScriptXMLInit.cpp">
-      <Filter>AI\AScript\ScriptClasses\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="ui_export_script.cpp">
       <Filter>AI\AScript\ScriptClasses\UI</Filter>
     </ClCompile>
     <ClCompile Include="key_binding_registrator_script.cpp">
@@ -8426,15 +8420,6 @@
     <ClCompile Include="MainMenu.cpp">
       <Filter>UI</Filter>
     </ClCompile>
-    <ClCompile Include="UI.cpp">
-      <Filter>UI</Filter>
-    </ClCompile>
-    <ClCompile Include="ui_base.cpp">
-      <Filter>UI</Filter>
-    </ClCompile>
-    <ClCompile Include="UIDialogHolder.cpp">
-      <Filter>UI</Filter>
-    </ClCompile>
     <ClCompile Include="ui\UIInventoryWnd.cpp">
       <Filter>UI\Common\InventoryWnd</Filter>
     </ClCompile>
@@ -8514,9 +8499,6 @@
       <Filter>UI\Common\MainIngame</Filter>
     </ClCompile>
     <ClCompile Include="ui\UIPointerGage.cpp">
-      <Filter>UI\Common\MainIngame</Filter>
-    </ClCompile>
-    <ClCompile Include="UIZoneMap.cpp">
       <Filter>UI\Common\MainIngame</Filter>
     </ClCompile>
     <ClCompile Include="ui\UIColorAnimatorWrapper.cpp">
@@ -8612,9 +8594,6 @@
     <ClCompile Include="ui\UIAnimatedStatic.cpp">
       <Filter>UI\UIWindows\Static</Filter>
     </ClCompile>
-    <ClCompile Include="UICustomItem.cpp">
-      <Filter>UI\UIWindows\Static</Filter>
-    </ClCompile>
     <ClCompile Include="ui\UIMultiTextStatic.cpp">
       <Filter>UI\UIWindows\Static</Filter>
     </ClCompile>
@@ -8622,9 +8601,6 @@
       <Filter>UI\UIWindows\Static</Filter>
     </ClCompile>
     <ClCompile Include="ui\UIStatic_script.cpp">
-      <Filter>UI\UIWindows\Static</Filter>
-    </ClCompile>
-    <ClCompile Include="UIStaticItem.cpp">
       <Filter>UI\UIWindows\Static</Filter>
     </ClCompile>
     <ClCompile Include="ui\UITextBanner.cpp">
@@ -8660,9 +8636,6 @@
     <ClCompile Include="ui\UIProgressBar.cpp">
       <Filter>UI\UIWindows\ProgressBar</Filter>
     </ClCompile>
-    <ClCompile Include="ui\UIProgressBar_script.cpp">
-      <Filter>UI\UIWindows\ProgressBar</Filter>
-    </ClCompile>
     <ClCompile Include="ui\UIProgressShape.cpp">
       <Filter>UI\UIWindows\ProgressBar</Filter>
     </ClCompile>
@@ -8670,9 +8643,6 @@
       <Filter>UI\UIWindows\TabControl</Filter>
     </ClCompile>
     <ClCompile Include="ui\UITabControl.cpp">
-      <Filter>UI\UIWindows\TabControl</Filter>
-    </ClCompile>
-    <ClCompile Include="ui\UITabControl_script.cpp">
       <Filter>UI\UIWindows\TabControl</Filter>
     </ClCompile>
     <ClCompile Include="ui\UITreeViewItem.cpp">
@@ -8705,22 +8675,13 @@
     <ClCompile Include="ui\UIComboBox.cpp">
       <Filter>UI\UIWindows\ComboBox</Filter>
     </ClCompile>
-    <ClCompile Include="ui\UIComboBox_script.cpp">
-      <Filter>UI\UIWindows\ComboBox</Filter>
-    </ClCompile>
     <ClCompile Include="ui\UI_IB_Static.cpp">
       <Filter>UI\UIWindows\InteractiveBackground</Filter>
     </ClCompile>
     <ClCompile Include="ui\UITrackBar.cpp">
       <Filter>UI\UIWindows\TrackBar</Filter>
     </ClCompile>
-    <ClCompile Include="ui\UITrackButton.cpp">
-      <Filter>UI\UIWindows\TrackBar</Filter>
-    </ClCompile>
     <ClCompile Include="ui\UIFrameLine.cpp">
-      <Filter>UI\UIWindows\Frames</Filter>
-    </ClCompile>
-    <ClCompile Include="UIFrameRect.cpp">
       <Filter>UI\UIWindows\Frames</Filter>
     </ClCompile>
     <ClCompile Include="ui\UIScrollView.cpp">
@@ -8795,25 +8756,10 @@
     <ClCompile Include="HUDManager.cpp">
       <Filter>UI\HUD</Filter>
     </ClCompile>
-    <ClCompile Include="UIGameCustom.cpp">
-      <Filter>UI\GameTypes\GameCustom</Filter>
-    </ClCompile>
-    <ClCompile Include="UIGameCustom_script.cpp">
-      <Filter>UI\GameTypes\GameCustom</Filter>
-    </ClCompile>
-    <ClCompile Include="UIGameSP.cpp">
-      <Filter>UI\GameTypes\Single</Filter>
-    </ClCompile>
-    <ClCompile Include="UIGame_custom_script.cpp">
-      <Filter>UI\GameTypes\Game_custom_script</Filter>
-    </ClCompile>
     <ClCompile Include="HUDCrosshair.cpp">
       <Filter>UI\Cursor</Filter>
     </ClCompile>
     <ClCompile Include="HUDTarget.cpp">
-      <Filter>UI\Cursor</Filter>
-    </ClCompile>
-    <ClCompile Include="UICursor.cpp">
       <Filter>UI\Cursor</Filter>
     </ClCompile>
     <ClCompile Include="ui\UIGameTutorial.cpp">
@@ -8848,6 +8794,45 @@
     </ClCompile>
     <ClCompile Include="MapSpot.cpp">
       <Filter>UI\Common\MapWnd</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\UI.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\ui_base.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\UIDialogHolder.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\UIZoneMap.cpp">
+      <Filter>UI\Common\MainIngame</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\UICursor.cpp">
+      <Filter>UI\Cursor</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\UIGame_custom_script.cpp">
+      <Filter>UI\GameTypes\Game_custom_script</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\UIGameCustom.cpp">
+      <Filter>UI\GameTypes\GameCustom</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\UIGameCustom_script.cpp">
+      <Filter>UI\GameTypes\GameCustom</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\UIGameSP.cpp">
+      <Filter>UI\GameTypes\Single</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\UIFrameRect.cpp">
+      <Filter>UI\UIWindows\Frames</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\UICustomItem.cpp">
+      <Filter>UI\UIWindows\Static</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\UIStaticItem.cpp">
+      <Filter>UI\UIWindows\Static</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\ui_export_script.cpp">
+      <Filter>AI\AScript\ScriptClasses\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

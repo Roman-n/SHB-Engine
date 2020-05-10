@@ -8,7 +8,7 @@
 //=============================================================================
 #pragma once
 
-#include "UITextBanner.h"
+#include "UITextBanner.h"//
 
 class CUIMultiTextStatic: public CUIStatic
 {

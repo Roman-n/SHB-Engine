@@ -21,8 +21,8 @@
 #include "../../../game_object_space.h"
 #include "../../../ai_monster_space.h"
 #include "../control_animation_base.h"
-#include "../../../UIGameCustom.h"//
-#include "../../../UI/UIStatic.h"
+#include "../../../ui/UIGameCustom.h"//
+#include "../../../ui/UIStatic.h"//
 #include "../../../ai_object_location.h"
 #include "../../../profiler.h"
 #include "../../../ActorEffector.h"

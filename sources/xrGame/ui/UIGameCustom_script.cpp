@@ -3,7 +3,7 @@
 #include "UIGameCustom.h"//
 #include "level.h"
 #include "HUDManager.h"//
-#include "ui/uistatic.h"
+#include "ui/UIStatic.h"//
 
 using namespace luabind;
 

@@ -4,9 +4,8 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include ".\uiradiobutton.h"
-#include "UILines.h"
-
+#include "UIRadioButton.h"//
+#include "UILines.h"//
 
 void CUIRadioButton::Init(float x, float y, float width, float height){
 	if (!m_pLines)

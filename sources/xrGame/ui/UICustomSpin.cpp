@@ -7,10 +7,11 @@
 // copyright 2005 GSC Game World
 
 #include "stdafx.h"
-#include "UI3tButton.h"
-#include "UIFrameLineWnd.h"
-#include "UILines.h"
-#include "UICustomSpin.h"
+
+#include "UI3tButton.h"//
+#include "UIFrameLineWnd.h"//
+#include "UILines.h"//
+#include "UICustomSpin.h"//
 
 #define SPIN_HEIGHT 22
 #define BTN_SIZE 11

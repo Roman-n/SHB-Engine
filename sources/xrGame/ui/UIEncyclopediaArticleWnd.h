@@ -1,5 +1,6 @@
 #pragma once
-#include "UIWindow.h"
+
+#include "UIWindow.h"//
 
 class CUIStatic;
 class CEncyclopediaArticle;

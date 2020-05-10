@@ -7,7 +7,7 @@
 #include "..\XR_3DA\skeletoncustom.h"
 #include "profiler.h"
 #include "MainMenu.h"
-#include "UICursor.h"//
+#include "ui/UICursor.h"//
 #include "game_base_space.h"
 #include "level.h"
 #include "ParticlesObject.h"
@@ -25,6 +25,7 @@
 #endif // MASTER_GOLD
 
 #include "ai_debug.h"
+#include "UI/UIGameTutorial.h"//
 
 static void*	ode_alloc	(size_t size)								{ return xr_malloc(size);			}
 static void*	ode_realloc	(void *ptr, size_t oldsize, size_t newsize)	{ return xr_realloc(ptr,newsize);	}
@@ -173,7 +174,7 @@ void CGamePersistent::UpdateGameType			()
 	if (!xr_strcmp(m_game_params.m_game_type, "single"))
 		m_game_params.m_e_game_type = GAME_SINGLE;
 	else
-		FATAL("Unsupported game type [%s]", m_game_params.m_game_type);
+		FATAL("Unsupported game type [%s]");
 
 	g_current_keygroup = _sp;
 }
@@ -241,7 +242,7 @@ void CGamePersistent::WeathersUpdate()
 	}
 }
 
-#include "UI/UIGameTutorial.h"
+
 
 void CGamePersistent::start_logo_intro		()
 {

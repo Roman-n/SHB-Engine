@@ -4,7 +4,8 @@
 //////////////////////////////////////////////////////////////////////
 
 #pragma once
-#include "UIStatic.h"
+
+#include "UIStatic.h"//
 #include "..\InventoryOwner.h"
 
 class CUIPdaMsgListItem : public CUIStatic

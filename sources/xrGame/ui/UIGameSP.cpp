@@ -18,7 +18,7 @@
 #include "ui/UIPdaWnd.h"//
 #include "ui/UITalkWnd.h"//
 #include "ui/UICarBodyWnd.h"//
-#include "ui/UIMessageBox.h"
+#include "ui/UIMessageBox.h"//
 
 CUIGame::CUIGame()
 {

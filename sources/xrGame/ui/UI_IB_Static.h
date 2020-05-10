@@ -9,8 +9,8 @@
 
 #pragma once
 
-#include "UIInteractiveBackground.h"
-#include "UIStatic.h"
+#include "UIInteractiveBackground.h"//
+#include "UIStatic.h"//
 
 class CUI_IB_Static : public CUIInteractiveBackground<CUIStatic> {
 public:

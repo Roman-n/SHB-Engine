@@ -13,7 +13,7 @@
 #include "actor.h"
 #include "level.h"
 #include "date_time.h"
-#include "UIGameSP.h"//
+#include "ui/UIGameSP.h"//
 #include "HUDManager.h"//
 #include "restricted_object.h"
 #include "script_engine.h"

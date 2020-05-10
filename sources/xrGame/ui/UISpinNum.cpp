@@ -5,8 +5,9 @@
 //
 
 #include "stdafx.h"
-#include "UISpinNum.h"
-#include "UILines.h"
+
+#include "UISpinNum.h"//
+#include "UILines.h"//
 
 CUISpinNum::CUISpinNum()
 :	m_iVal(0),

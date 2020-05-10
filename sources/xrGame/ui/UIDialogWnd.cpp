@@ -2,9 +2,9 @@
 // разным менюшек путем вызова виртуальных Show() И Hide()
 //////////////////////////////////////////////////////////////////////
 
-
 #include "stdafx.h"
-#include "uidialogwnd.h"
+
+#include "UIDialogWnd.h"//
 #include "../HUDManager.h"//
 #include "../xr_level_controller.h"
 #include "../..\XR_3DA\xr_ioconsole.h"

@@ -12,7 +12,7 @@
 #include "character_info.h"
 #include "gameobject.h"
 #include "relation_registry.h"
-#include "UIGameSP.h"//
+#include "ui/UIGameSP.h"//
 #include "HUDManager.h"//
 #include "level.h"
 #include "ui/UItalkWnd.h"//

@@ -1,13 +1,14 @@
 #include "stdafx.h"
-#include "uistatic.h"
+
+#include "UIStatic.h"//
 #include "UIXmlInit.h"
 #include "UITextureMaster.h"
-#include "uiframewindow.h"
+#include "UIFrameWindow.h"//
 #include "../HUDManager.h"//
 #include "../..\XR_3DA\LightAnimLibrary.h"
-#include "uilines.h"
+#include "UILines.h"//
 #include "../string_table.h"
-#include "../ui_base.h"
+#include "ui_base.h"
 
 const char * const	clDefault	= "default";
 #define CREATE_LINES if (!m_pLines) {m_pLines = xr_new<CUILines>(); m_pLines->SetTextAlignment(CGameFont::alLeft);}

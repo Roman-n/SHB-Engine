@@ -1,12 +1,9 @@
 //////////////////////////////////////////////////////////////////////////
 // UIPointerGage.h:			цифровой прибор
 //////////////////////////////////////////////////////////////////////////
-
-
 #pragma once
 
-
-#include "UIStatic.h"
+#include "UIStatic.h"//
 
 class CUIPointerGage: public CUIStatic
 {
@@ -16,7 +13,6 @@ public:
 
 	CUIPointerGage	();
 	virtual ~CUIPointerGage	();
-
 
 	virtual void Init		(LPCSTR tex_name, 
 							float x, float y, float width, float height);

@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "actor.h"
 #include "customdetector.h"
-#include "UIGameSP.h"//
+#include "ui/UIGameSP.h"//
 #include "HUDManager.h"//
 #include "weapon.h"
 #include "artifact.h"

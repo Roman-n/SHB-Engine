@@ -1,8 +1,9 @@
 #pragma once
 
-#include "UIWindow.h"
+#include "UIWindow.h"//
 #include "UIWndCallback.h"
 #include "../encyclopedia_article_defs.h"
+
 class CUINewsWnd;
 class CUIFrameLineWnd;
 class CUIFrameWindow;

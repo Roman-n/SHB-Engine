@@ -1,8 +1,7 @@
 #include "stdafx.h"
-#include "UICellItemFactory.h"
-#include "UICellCustomItems.h"
 
-
+#include "UICellItemFactory.h"//
+#include "UICellCustomItems.h"//
 
 CUICellItem*	create_cell_item(CInventoryItem* itm)
 {

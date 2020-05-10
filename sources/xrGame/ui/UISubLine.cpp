@@ -7,9 +7,10 @@
 // Copyright 2005 GSC Game World
 
 #include "stdafx.h"
-#include "UISubLine.h"
-#include "uilinestd.h"
-#include "../ui_base.h"
+
+#include "UISubLine.h"//
+#include "UILinestd.h"//
+#include "ui_base.h"
 
 //#define LOG_ALL_LINES
 #ifdef LOG_ALL_LINES

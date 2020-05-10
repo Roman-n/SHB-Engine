@@ -8,8 +8,8 @@
 
 #pragma once
 
-#include "UIListWnd.h"
-#include "UIDialogWnd.h"
+#include "UIListWnd.h"//
+#include "UIDialogWnd.h"//
 
 class CUIDebugFonts : public CUIDialogWnd
 {

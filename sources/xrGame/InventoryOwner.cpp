@@ -30,7 +30,7 @@
 
 #include "CustomOutfit.h"
 
-#include "UIGameSP.h"//
+#include "ui/UIGameSP.h"//
 #include "HUDManager.h"//
 #include "ui\UITalkWnd.h"//
 

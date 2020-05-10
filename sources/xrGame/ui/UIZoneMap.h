@@ -1,12 +1,10 @@
 #pragma once
 
-
-#include "ui/UIStatic.h"
+#include "ui/UIStatic.h"//
 
 class CActor;
 class CUICustomMap;
 //////////////////////////////////////////////////////////////////////////
-
 
 class CUIZoneMap
 {

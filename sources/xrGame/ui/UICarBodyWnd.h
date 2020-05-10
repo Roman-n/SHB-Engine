@@ -1,7 +1,7 @@
 #pragma once
 
-#include "UIDialogWnd.h"
-#include "UIEditBox.h"
+#include "UIDialogWnd.h"//
+#include "UIEditBox.h"//
 #include "../inventory_space.h"
 
 class CUIDragDropListEx;

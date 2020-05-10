@@ -1,7 +1,7 @@
 #pragma once
 
-#include "UILines.h"
-#include "UIWindow.h"
+#include "UILines.h"//
+#include "UIWindow.h"//
 
 class CUICustomEdit : public CUIWindow, public CUILinesOwner {
 	u32				m_max_symb_count;

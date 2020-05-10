@@ -1,8 +1,8 @@
 #pragma once
 
-#include "UIFrameLine.h"
-#include "UIWindow.h"
-#include "UIStatic.h"
+#include "UIFrameLine.h"//
+#include "UIWindow.h"//
+#include "UIStatic.h"//
 
 class CUIFrameLineWnd: public CUIWindow
 {

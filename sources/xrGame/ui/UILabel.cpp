@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "UILabel.h"
+#include "UILabel.h"//
 #include "../..\XR_3DA\LightAnimLibrary.h"
 
 CUILabel::CUILabel()

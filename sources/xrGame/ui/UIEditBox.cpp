@@ -3,8 +3,9 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include <dinput.h>
-#include "uieditbox.h"
+#include "UIEditBox.h"//
 #include "../HUDManager.h"//
 #include "UIColorAnimatorWrapper.h"//
 

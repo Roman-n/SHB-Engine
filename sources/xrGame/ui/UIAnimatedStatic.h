@@ -1,6 +1,6 @@
 #pragma once
 
-#include "UIStatic.h"
+#include "UIStatic.h"//
 
 class CUIAnimatedStatic: public CUIStatic
 {

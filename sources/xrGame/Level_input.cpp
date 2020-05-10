@@ -19,7 +19,7 @@
 
 #include "actor.h"
 #include "huditem.h"
-#include "ui/UIDialogWnd.h"
+#include "ui/UIDialogWnd.h"//
 #include "clsid_game.h"
 #include "..\XR_3DA\xr_input.h"
 #include "saved_game_wrapper.h"

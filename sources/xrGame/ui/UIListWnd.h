@@ -1,12 +1,12 @@
 #pragma once
-#include "uiwindow.h"
-#include "uilistitem.h"
-#include "uiscrollbar.h"
+
+#include "UIWindow.h"//
+#include "UIListItem.h"//
+#include "UIScrollBar.h"//
 
 #include "../script_export_space.h"
 
 #define DEFAULT_ITEM_HEIGHT 30
-
 
 DEF_LIST (LIST_ITEM_LIST, CUIListItem*);
 class CUIScrollBar;
@@ -161,7 +161,7 @@ protected:
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
 
-#include "UIListWnd_inline.h"
+#include "UIListWnd_inline.h"//
 
 add_to_type_list(CUIListWnd)
 #undef script_type_list
