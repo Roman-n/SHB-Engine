@@ -23,7 +23,6 @@ public:
 
 	void						Init					();
 
-
 	virtual void				Update					();
 	virtual void				Reset					();
 
@@ -48,6 +47,7 @@ protected:
 class CUIPdaContactItem :public CUIPdaListItem, public CUISelectable
 {
 	CUIPdaContactsWnd*			m_cw;
+
 public:
 								CUIPdaContactItem		(CUIPdaContactsWnd* cw)		{m_cw = cw;}
 	virtual						~CUIPdaContactItem		();

@@ -1,9 +1,10 @@
 #include "stdafx.h"
+
 #include "UIPdaWnd.h"//
 #include "../Pda.h"
 
-#include "xrUIXmlParser.h"
-#include "UIXmlInit.h"
+#include "xrUIXmlParser.h"//
+#include "UIXmlInit.h"//
 #include "UIInventoryUtilities.h"//
 
 #include "../HUDManager.h"//

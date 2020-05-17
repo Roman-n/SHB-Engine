@@ -3,7 +3,7 @@
 #include "UIVideoPlayerWnd.h"//
 #include "UITabControl.h"//
 #include "UIStatic.h"//
-#include "UIXmlInit.h"
+#include "UIXmlInit.h"//
 #include "../level.h"
 #include "../HUDManager.h"//
 #include <dinput.h>

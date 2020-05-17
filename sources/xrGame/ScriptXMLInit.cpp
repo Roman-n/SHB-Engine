@@ -1,8 +1,8 @@
 #include "stdafx.h"
 
 #include "ScriptXmlInit.h"
-#include "ui\UIXmlInit.h"
-#include "ui\UITextureMaster.h"
+#include "ui\UIXmlInit.h"//
+#include "ui\UITextureMaster.h"//
 #include "ui\UICheckButton.h"//
 #include "ui\UISpinNum.h"//
 #include "ui\UISpinText.h"//

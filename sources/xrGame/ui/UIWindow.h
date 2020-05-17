@@ -30,23 +30,23 @@ public:
 	template<class _Other>	uialloc<T>&				operator=		(const uialloc<_Other>&)					{	return (*this);	}
 							pointer					allocate		(size_type n, const void* p=0) const	
 							{	VERIFY(1==n);
-								return (pointer) ui_allocator.create();	
+								return (pointer) ui_allocator.create();
 							};
-							char*			__charalloc		(size_type n)							
+							char*			__charalloc		(size_type n)
 							{	VERIFY	(1==n);
-								return	(char*) ui_allocator.create();	
+								return	(char*) ui_allocator.create();
 							};
-							void					deallocate		(pointer p, size_type n) const			
+							void					deallocate		(pointer p, size_type n) const
 							{	
 								VERIFY(1==n);
 								_12b* p_ = (_12b*)p;
-								ui_allocator.destroy	(p_);				
+								ui_allocator.destroy	(p_);
 							}
-							void					deallocate		(void* p, size_type n) const		
+							void					deallocate		(void* p, size_type n) const
 							{	
 								VERIFY(1==n);
 								_12b* p_ = (_12b*)p;
-								ui_allocator.destroy	(p_);				
+								ui_allocator.destroy	(p_);
 							}
 							void					construct		(pointer p, const T& _Val)				{	std::_Construct(p, _Val);	}
 							void					destroy			(pointer p)								{	std::_Destroy(p);			}
@@ -65,7 +65,6 @@ class	ui_list 		: public std::list<T,uialloc<T> >{ public: u32 size() const {ret
 #include "UIMessages.h"
 #include "../script_export_space.h"
 #include "uiabstract.h"
-
 
 class CUIWindow  : public CUISimpleWindow
 {
@@ -96,14 +95,11 @@ public:
 	CUIWindow*				GetCurrentMouseHandler();
 	CUIWindow*				GetChildMouseHandler();
 
-
 	//поднять на вершину списка выбранное дочернее окно
 	bool					BringToTop			(CUIWindow* pChild);
 
 	//поднять на вершину списка всех родителей окна и его самого
 	void					BringAllToTop		();
-	
-
 
 	virtual bool 			OnMouse				(float x, float y, EUIMessages mouse_action);
 	virtual void 			OnMouseMove			();
@@ -128,17 +124,13 @@ public:
 	//реакция на клавиатуру
 	virtual bool			OnKeyboard			(int dik, EUIMessages keyboard_action);
 	virtual bool			OnKeyboardHold		(int dik);
-	virtual void			SetKeyboardCapture	(CUIWindow* pChildWindow, bool capture_status);
-
-	
+	virtual void			SetKeyboardCapture	(CUIWindow* pChildWindow, bool capture_status);	
 	
 	//обработка сообщений не предусмотреных стандартными обработчиками
 	//ф-ция должна переопределяться
 	//pWnd - указатель на окно, которое послало сообщение
 	//pData - указатель на дополнительные данные, которые могут понадобиться
 	virtual void			SendMessage			(CUIWindow* pWnd, s16 msg, void* pData = NULL);
-	
-	
 
 	//запрещение/разрешение на ввод с клавиатуры
 	virtual void			Enable				(bool status)									{m_bIsEnabled=status;}
@@ -153,7 +145,6 @@ public:
 	IC void					GetAbsoluteRect		(Frect& r) ;
 	IC void					GetAbsolutePos		(Fvector2& p) 	{Frect abs; GetAbsoluteRect(abs); p.set(abs.x1,abs.y1);}
 
-
 			void			SetWndRect_script(float x, float y, float width, float height)		{CUISimpleWindow::SetWndRect(x,y,width,height);}
 			void			SetWndRect_script(Frect rect)										{CUISimpleWindow::SetWndRect(rect);}
 
@@ -163,14 +154,12 @@ public:
 	//обновление окна передпрорисовкой
 	virtual void			Update				();
 
-
 			void			SetPPMode			();
 			void			ResetPPMode			();
 	IC		bool			GetPPMode			()		{return m_bPP;};
 	//для перевода окна и потомков в исходное состояние
 	virtual void			Reset				();
 			void			ResetAll			();
-
 
 	//временно!!!! (а может уже и нет)
 	virtual void			SetFont				(CGameFont* pFont)			{ m_pFont = pFont;}
@@ -218,7 +207,6 @@ protected:
 
 	//кому шлем сообщения
 	CUIWindow*				m_pMessageTarget;
-
 
 	CGameFont*				m_pFont;
 

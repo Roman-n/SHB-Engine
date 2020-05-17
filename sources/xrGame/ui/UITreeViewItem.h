@@ -1,10 +1,6 @@
-//=============================================================================
 //  Filename:   UITreeViewItem.h
-//	Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua
-//	Copyright 2004. GSC Game World
-//	---------------------------------------------------------------------------
 //  TreeView Item class
-//=============================================================================
+
 #pragma once
 
 #include "UIListItem.h"//

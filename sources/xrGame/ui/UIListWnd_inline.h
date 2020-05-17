@@ -1,10 +1,6 @@
-//=============================================================================
 //  Filename:   UIListWnd_inline.h
-//	Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua
-//	Copyright 2004. GSC Game World
-//	---------------------------------------------------------------------------
 //  Реализация темплейтовых функций листбокса
-//=============================================================================
+
 #pragma once
 
 template <class Element>
@@ -26,7 +22,6 @@ bool CUIListWnd::AddItem(LPCSTR  str, const float shift, void* pData,
 
 	return AddItem<Element>(pItem, insertBeforeIdx);
 }
-
 
 template <class Element>
 bool CUIListWnd::AddItem(Element* pItem, int insertBeforeIdx)

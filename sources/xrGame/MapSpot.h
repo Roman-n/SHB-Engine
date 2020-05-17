@@ -22,7 +22,6 @@ public:
 	virtual		void		OnFocusLost						();
 };
 
-
 class CMapSpotPointer :public CMapSpot
 {
 	typedef CMapSpot inherited;

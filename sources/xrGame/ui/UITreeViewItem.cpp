@@ -1,10 +1,5 @@
-//=============================================================================
 //  Filename:   UITreeViewItem.cpp
-//	Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua
-//	Copyright 2004. GSC Game World
-//	---------------------------------------------------------------------------
 //  TreeView Item class
-//=============================================================================
 
 #include "stdafx.h"
 

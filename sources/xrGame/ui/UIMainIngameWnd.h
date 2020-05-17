@@ -12,6 +12,7 @@
 #include "UICarPanel.h"//
 #include "UIMotionIcon.h"//
 #include "../hudsound.h"
+
 //для режима настройки HUD
 extern int				g_bHudAdjustMode;
 extern float			g_fHudAdjustValue;
@@ -59,11 +60,11 @@ protected:
 	CUIStatic			UIWeaponSignAmmo;
 	CUIStatic			UIWeaponIcon;
 	Frect				UIWeaponIcon_rect;
+
 public:
 	CUIStatic*			GetPDAOnline					() { return &UIPdaOnline; };
+
 protected:
-
-
 	// 5 статиков для отображения иконок:
 	// - сломанного оружия
 	// - радиации
@@ -82,11 +83,11 @@ protected:
 	CUIScrollView*		m_UIIcons;
 	CUIWindow*			m_pMPChatWnd;
 	CUIWindow*			m_pMPLogWnd;
+
 public:	
 	CUIArtefactPanel*    m_artefactPanel;
 	
-public:
-	
+public:	
 	// Енумы соответсвующие предупреждающим иконкам 
 	enum EWarningIcons
 	{
@@ -153,6 +154,7 @@ public:
 	CUIMotionIcon&		MotionIcon							(){return UIMotionIcon;}
 	void				OnConnected							();
 	void				reset_ui							();
+
 protected:
 	CInventoryItem*		m_pPickUpItem;
 	CUIStatic			UIPickUpItemIcon;
@@ -163,6 +165,7 @@ protected:
 	float				m_iPickUpItemIconHeight;
 
 	void				UpdatePickUpItem();
+
 public:
 	void				SetPickUpItem	(CInventoryItem* PickUpItem);
 #ifdef DEBUG

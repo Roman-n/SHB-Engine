@@ -1,8 +1,8 @@
 #include "stdafx.h"
 
 #include "UIKeyBinding.h"//
-#include "UIXmlInit.h"
-#include "xrUIXmlParser.h"
+#include "UIXmlInit.h"//
+#include "xrUIXmlParser.h"//
 #include "UIEditKeyBind.h"//
 #include "UIScrollView.h"//
 #include "../xr_level_controller.h"

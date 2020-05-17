@@ -1,9 +1,9 @@
 #pragma once
 
 #include "UIGameCustom.h"//
-#include "ui/UIDialogWnd.h"//
+#include "UIDialogWnd.h"//
 #include "../../xrNetServer/net_utils.h"
-#include "game_graph_space.h"
+#include "..\game_graph_space.h"
 
 class CUIInventoryWnd;
 class CUITradeWnd;

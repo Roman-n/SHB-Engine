@@ -9,8 +9,8 @@
 #include "../string_table.h"
 #include "../relation_registry.h"
 
-#include "xrUIXmlParser.h"
-#include "UIXmlInit.h"
+#include "xrUIXmlParser.h"//
+#include "UIXmlInit.h"//
 
 #include "UIStatic.h"//
 #include "UIScrollView.h"//
@@ -223,9 +223,6 @@ void  CUICharacterInfo::SetRelation(ALife::ERelationType relation, CHARACTER_GOO
 
 	m_icons[eUIRelation]->SetText(str);
 }
-
-
-//////////////////////////////////////////////////////////////////////////
 
 void CUICharacterInfo::ResetAllStrings()
 {

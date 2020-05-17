@@ -9,7 +9,7 @@
 #include "stdafx.h"
 
 #include "UIEncyclopediaWnd.h"//
-#include "UIXmlInit.h"
+#include "UIXmlInit.h"//
 #include "UIFrameWindow.h"//
 #include "UIFrameLineWnd.h"//
 #include "UIAnimatedStatic.h"//
@@ -22,6 +22,7 @@
 #include "../alife_registry_wrappers.h"
 #include "../actor.h"
 #include "../object_broker.h"
+#include "../string_table.h"
 
 #define				ENCYCLOPEDIA_DIALOG_XML		"encyclopedia.xml"
 
@@ -34,7 +35,6 @@ CUIEncyclopediaWnd::~CUIEncyclopediaWnd()
 {
 	DeleteArticles();
 }
-
 
 void CUIEncyclopediaWnd::Init()
 {
@@ -55,7 +55,6 @@ void CUIEncyclopediaWnd::Init()
 	R_ASSERT(m_pTreeItemFont);
 	xml_init.InitFont(uiXml, "tree_root_font", 0, m_uTreeRootColor, m_pTreeRootFont);
 	R_ASSERT(m_pTreeRootFont);
-
 
 	UIEncyclopediaIdxHeader		= xr_new<CUIFrameLineWnd>(); UIEncyclopediaIdxHeader->SetAutoDelete(true);
 	UIEncyclopediaIdxBkg->AttachChild(UIEncyclopediaIdxHeader);
@@ -93,7 +92,6 @@ void CUIEncyclopediaWnd::Init()
 	xml_init.InitAutoStatic(uiXml, "right_auto_static", UIEncyclopediaIdxBkg);
 }
 
-#include "../string_table.h"
 void CUIEncyclopediaWnd::SendMessage(CUIWindow *pWnd, s16 msg, void* pData)
 {
 	if (UIIdxList == pWnd && LIST_ITEM_CLICKED == msg)
@@ -159,7 +157,6 @@ void CUIEncyclopediaWnd::ReloadArticles()
 	m_flags.set(eNeedReload, TRUE);
 }
 
-
 void CUIEncyclopediaWnd::Show(bool status)
 {
 	if (status)
@@ -167,7 +164,6 @@ void CUIEncyclopediaWnd::Show(bool status)
 
 	inherited::Show(status);
 }
-
 
 bool CUIEncyclopediaWnd::HasArticle(shared_str id)
 {
@@ -178,7 +174,6 @@ bool CUIEncyclopediaWnd::HasArticle(shared_str id)
 	}
 	return false;
 }
-
 
 void CUIEncyclopediaWnd::DeleteArticles()
 {
@@ -234,7 +229,6 @@ void CUIEncyclopediaWnd::AddArticle(shared_str article_id, bool bReaded)
 	CEncyclopediaArticle*& a = m_ArticlesDB.back();
 	a = xr_new<CEncyclopediaArticle>();
 	a->Load(article_id);
-
 
 	// “еперь создаем иерархию вещи по заданному пути
 

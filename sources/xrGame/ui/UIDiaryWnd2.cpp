@@ -5,7 +5,7 @@
 #include "UIFrameLineWnd.h"//
 #include "UINewsWnd.h"//
 #include "UIAnimatedStatic.h"//
-#include "UIXmlInit.h"
+#include "UIXmlInit.h"//
 #include "../object_broker.h"
 #include "UITabControl.h"//
 #include "UIScrollView.h"//
@@ -72,7 +72,6 @@ void CUIDiaryWnd::Init()
 	m_UIAnimation					= xr_new<CUIAnimatedStatic>(); m_UIAnimation->SetAutoDelete(true);
 	xml_init.InitAnimatedStatic		(uiXml, "main_wnd:left_frame:left_frame_header:anim_static", 0, m_UIAnimation);
 	m_UILeftHeader->AttachChild		(m_UIAnimation);
-
 
 	m_UILeftWnd						= xr_new<CUIWindow>(); m_UILeftWnd->SetAutoDelete(true);
 	xml_init.InitWindow				(uiXml, "main_wnd:left_frame:work_area", 0, m_UILeftWnd);
@@ -163,9 +162,7 @@ void CUIDiaryWnd::AddNews	()
 }
 
 void CUIDiaryWnd::MarkNewsAsRead (bool status)
-{
-
-}
+{ }
 
 void CUIDiaryWnd::UnloadJournalTab		()
 {
@@ -208,8 +205,8 @@ void CUIDiaryWnd::LoadJournalTab			(ARTICLE_DATA::EArticleType _type)
 			}
 		}
 	}
-	g_pda_info_state	&=	!pda_section::journal;
 
+	g_pda_info_state	&=	!pda_section::journal;
 }
 
 void CUIDiaryWnd::UnloadInfoTab	()
@@ -226,7 +223,6 @@ void CUIDiaryWnd::LoadInfoTab	()
 	LoadJournalTab				(ARTICLE_DATA::eInfoArticle);
 	g_pda_info_state			&= ~pda_section::info;
 }
-
 
 void CUIDiaryWnd::UnloadNewsTab	()
 {
@@ -272,8 +268,7 @@ void CUIDiaryWnd::Draw()
 	if(g_pda_info_state&pda_section::news)
 		draw_sign								(m_updatedSectionImage, pos);
 	else
-		draw_sign								(m_oldSectionImage, pos);
-	
+		draw_sign								(m_oldSectionImage, pos);	
 
 	pos		= m_sign_places[eJournal];
 	pos.add(tab_pos);

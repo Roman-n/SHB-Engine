@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "UIActorInfo.h"//
-#include "UIXmlInit.h"
+#include "UIXmlInit.h"//
 #include "UIPdaAux.h"//
 #include "../Level.h"
 #include "../actor.h"
@@ -23,10 +23,8 @@
 #define				ACTOR_STATISTIC_XML		"actor_statistic.xml"
 #define				ACTOR_CHARACTER_XML		"pda_dialog_character.xml"
 
-
 CUIActorInfoWnd::CUIActorInfoWnd()
 {}
-
 
 void CUIActorInfoWnd::Init()
 {
@@ -76,7 +74,6 @@ void CUIActorInfoWnd::Init()
 	//Элементы автоматического добавления
 	xml_init.InitAutoStatic					(uiXml, "right_auto_static", UICharIconFrame);
 	xml_init.InitAutoStatic					(uiXml, "left_auto_static",  UIInfoFrame);
-
 }
 
 void CUIActorInfoWnd::Show(bool status)
@@ -88,7 +85,6 @@ void CUIActorInfoWnd::Show(bool status)
 	UICharIconHeader->UITitleText.SetText	(Actor()->Name());
 	FillPointsInfo							();
 }
-
 
 void CUIActorInfoWnd::FillPointsInfo			()
 {
@@ -166,7 +162,6 @@ void CUIActorInfoWnd::FillMasterPart(CUIXml* xml, const shared_str& key_name)
 
 void CUIActorInfoWnd::FillPointsDetail(const shared_str& id)
 {
-
 	UIDetailList->Clear						();
 	CUIXml									uiXml;
 	uiXml.Init								(CONFIG_PATH, UI_PATH,ACTOR_STATISTIC_XML);
@@ -227,6 +222,7 @@ void CUIActorInfoWnd::FillPointsDetail(const shared_str& id)
 		UIDetailList->AddWindow				(itm, true);
 	}
 }
+
 void	CUIActorInfoWnd::Reset()
 {
 	inherited::Reset();
@@ -239,13 +235,11 @@ void	CUIActorInfoWnd::FillReputationDetails(CUIXml* xml, LPCSTR path)
 
 	CHARACTER_COMMUNITY						comm;
 
-
 	CHARACTER_REPUTATION					rep_actor, rep_neutral;
 	rep_actor.set							(Actor()->Reputation());
 	rep_neutral.set							(NEUTAL_REPUTATION);
 
 	CHARACTER_GOODWILL d_neutral			= CHARACTER_REPUTATION::relation(rep_actor.index(), rep_neutral.index());
-
 
 	string64 buff;
 	for(int i=0;i<cnt;++i)
@@ -269,11 +263,9 @@ void	CUIActorInfoWnd::FillReputationDetails(CUIXml* xml, LPCSTR path)
 	}
 }
 
-
 CUIActorStaticticHeader::CUIActorStaticticHeader(CUIActorInfoWnd* w)
 :m_actorInfoWnd(w)
 {}
-
 
 void CUIActorStaticticHeader::Init	(CUIXml* xml, LPCSTR path, int idx_in_xml)
 {
@@ -318,7 +310,6 @@ void CUIActorStaticticHeader::SetSelected(bool b)
 		m_actorInfoWnd->FillPointsDetail			(m_id);
 	}
 }
-
 
 void CUIActorStaticticDetail::Init		(CUIXml* xml, LPCSTR path, int idx)
 {

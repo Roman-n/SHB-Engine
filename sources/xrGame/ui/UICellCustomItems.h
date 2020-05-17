@@ -24,12 +24,13 @@ public:
 				CWeaponAmmo*	object						() {return (CWeaponAmmo*)m_pData;}
 };
 
-
 class CUIWeaponCellItem :public CUIInventoryCellItem
 {
 	typedef  CUIInventoryCellItem	inherited;
+
 public:
 	enum eAddonType{	eSilencer=0, eScope, eLauncher, eMaxAddon};
+
 protected:
 	CUIStatic*					m_addons					[eMaxAddon];
 	Fvector2					m_addon_offset				[eMaxAddon];
@@ -40,6 +41,7 @@ protected:
 	bool						is_scope					();
 	bool						is_silencer					();
 	bool						is_launcher					();
+
 public:
 								CUIWeaponCellItem			(CWeapon* itm);
 				virtual			~CUIWeaponCellItem			();
@@ -55,8 +57,8 @@ class CBuyItemCustomDrawCell :public ICustomDrawCell
 {
 	CGameFont*			m_pFont;
 	string16			m_string;
+
 public:
 						CBuyItemCustomDrawCell	(LPCSTR str, CGameFont* pFont);
 	virtual void		OnDraw					(CUICellItem* cell);
-
 };

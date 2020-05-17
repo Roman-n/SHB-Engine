@@ -2,7 +2,7 @@
 
 #include "UIItemInfo.h"//
 #include "UIStatic.h"//
-#include "UIXmlInit.h"
+#include "UIXmlInit.h"//
 
 #include "UIListWnd.h"//
 #include "UIProgressBar.h"//
@@ -64,6 +64,7 @@ void CUIItemInfo::Init(LPCSTR xml_name){
 		UIName->SetAutoDelete		(true);
 		xml_init.InitStatic			(uiXml, "static_name", 0,	UIName);
 	}
+
 	if(uiXml.NavigateToNode("static_weight",0))
 	{
 		UIWeight				= xr_new<CUIStatic>();	 
@@ -140,11 +141,13 @@ void CUIItemInfo::InitItem(CInventoryItem* pInvItem)
 	{
 		UIName->SetText		(pInvItem->Name());
 	}
+
 	if(UIWeight)
 	{
 		sprintf_s				(str, "%3.2f kg", pInvItem->Weight());
 		UIWeight->SetText	(str);
 	}
+
 	if(UICost)
 	{
 		sprintf_s				(str, "%d RU", pInvItem->Cost());		// will be owerwritten in multiplayer
@@ -177,6 +180,7 @@ void CUIItemInfo::InitItem(CInventoryItem* pInvItem)
 		}
 		UIDesc->ScrollToBegin				();
 	}
+
 	if(UIItemImage)
 	{
 		// Загружаем картинку

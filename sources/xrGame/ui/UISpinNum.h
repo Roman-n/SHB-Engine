@@ -1,8 +1,6 @@
 // file:		UISpinNum.h
 // description:	Spin Button with numerical data (unlike text data)
-// created:		15.06.2005
-// author:		Serge Vynnychenko
-//
+
 #pragma once
 
 #include "UICustomSpin.h"//

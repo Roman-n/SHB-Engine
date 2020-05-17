@@ -3,12 +3,7 @@
 //              there are 4 states: Enabled, Disabled, Hightlighted and Touched.
 //              As a rule you can use one of 3 background types:
 //              Normal Texture, String Texture, Frame Texture (CUIStatic, CUIFrameLineWnd, CUIFrameWindow)
-// Created:     29.12.2004
-// Author:      Serhiy 0. Vynnychenko
-// Mial:        narrator@gsc-game.kiev.ua
-//
-// Copyright 2004 GSC Game World
-//
+
 #pragma once
 
 #include "UIFrameWindow.h"//

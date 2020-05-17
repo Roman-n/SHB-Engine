@@ -17,6 +17,7 @@ CUIEditKeyBind::CUIEditKeyBind(bool bPrim)
 	m_keyboard					= NULL;
 	m_action					= NULL;
 }
+
 CUIEditKeyBind::~CUIEditKeyBind()
 {
 	delete_data(m_pAnimation);

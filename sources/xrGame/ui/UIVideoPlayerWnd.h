@@ -19,8 +19,8 @@ protected:
 	Flags8			m_flags;
 	enum			{eStoping=(1<<0),ePlaying=(1<<1),eLooped=(1<<2)};
 private:
-	void			OnBtnPlayClicked		();
-	void			OnBtnPauseClicked		();
+//	void			OnBtnPlayClicked		();
+//	void			OnBtnPauseClicked		();
 	void __stdcall	OnTabChanged			(CUIWindow* pWnd, void* pData);
 public:
 	void			Init					(CUIXml* doc, LPCSTR start_from);

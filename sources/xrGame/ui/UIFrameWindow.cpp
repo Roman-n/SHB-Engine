@@ -2,8 +2,8 @@
 
 #include "UIFrameWindow.h"//
 #include "../HUDManager.h"//
-#include "UITextureMaster.h"
-#include "UIXmlInit.h"
+#include "UITextureMaster.h"//
+#include "UIXmlInit.h"//
 #include "UIStatic.h"//
 
 CUIFrameWindow::CUIFrameWindow()

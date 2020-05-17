@@ -1,42 +1,42 @@
 // file:		UITextureMaster.h
 // description:	holds info about shared textures. able to initialize external
 //				through IUITextureControl interface
-// created:		11.05.2005
-// author:		Serge Vynnychenko
-// mail:		narrator@gsc-game.kiev.ua
-//
-// copyright 2005 GSC Game World
 
 #pragma once
 
 class IUISimpleTextureControl;
 
-struct TEX_INFO{
+struct TEX_INFO
+{
 	shared_str	file;
 	Frect		rect;
-	LPCSTR		get_file_name	()	{return *file;}
-	Frect		get_rect		()	{return rect;}
+	LPCSTR		get_file_name( )
+	{
+		return *file;
+	}
+	Frect		get_rect( )
+	{
+		return rect;
+	}
 };
 
-class CUITextureMaster{
+class CUITextureMaster
+{
 public:
+	static void			ParseShTexInfo(const char* xml_file);
 
-	static void ParseShTexInfo			(LPCSTR xml_file);
-
-	static void		InitTexture			(LPCSTR texture_name,		IUISimpleTextureControl* tc);
-	static void		InitTexture			(LPCSTR texture_name, const char* shader_name, IUISimpleTextureControl* tc);
-	static float	GetTextureHeight	(LPCSTR texture_name);
-	static float	GetTextureWidth		(LPCSTR texture_name);
-	static Frect	GetTextureRect		(LPCSTR texture_name);
-	static LPCSTR	GetTextureFileName	(LPCSTR texture_name);
-	static void		GetTextureShader	(LPCSTR texture_name, ref_shader& sh);
-	static TEX_INFO	FindItem			(LPCSTR texture_name, LPCSTR def_texture_name);
-	static void WriteLog();
+	static void			InitTexture(const char* texture_name, IUISimpleTextureControl* tc);
+	static void			InitTexture(const char* texture_name, const char* shader_name, IUISimpleTextureControl* tc);
+	static float		GetTextureHeight(const char* texture_name);
+	static float		GetTextureWidth(const char* texture_name);
+	static Frect		GetTextureRect(const char* texture_name);
+	static const char*	GetTextureFileName(const char* texture_name);
+	static void			GetTextureShader(const char* texture_name, ref_shader& sh);
+	static TEX_INFO		FindItem(const char* texture_name, const char* def_texture_name);
+	static void			WriteLog( );
 
 protected:
-	IC	static bool IsSh					(const char* texture_name);
-
-
+	IC	static bool IsSh(const char* texture_name);
 
 //	typedef xr_string region_name;
 //	typedef xr_string shader_name;

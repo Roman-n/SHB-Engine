@@ -1,9 +1,9 @@
 #include "stdafx.h"
 
 #include "UINewsWnd.h"//
-#include "xrUIXmlParser.h"
-#include "UIXmlInit.h"
-#include "UI.h"
+#include "xrUIXmlParser.h"//
+#include "UIXmlInit.h"//
+//#include "UI.h"//
 #include "../HUDManager.h"//
 #include "../level.h"
 #include "../game_news.h"
@@ -96,7 +96,6 @@ void CUINewsWnd::AddNewsItem(GAME_NEWS_DATA& news_data)
 	UIScrollWnd->AddWindow	(itm, true);
 }
 
-
 void CUINewsWnd::Show(bool status)
 {
 	if (status)
@@ -104,5 +103,4 @@ void CUINewsWnd::Show(bool status)
 	else
 		InventoryUtilities::SendInfoToActor("ui_pda_news_hide");
 	inherited::Show(status);
-
 }

@@ -89,7 +89,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4237;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>..\third-party;..\third-party\dxsdk\include;..\third-party\loki;.\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\third-party;..\third-party\dxsdk\include;..\third-party\loki</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -145,7 +145,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4237;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>..\third-party;..\third-party\dxsdk\include;..\third-party\loki;.\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\third-party;..\third-party\dxsdk\include;..\third-party\loki</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -2360,7 +2360,6 @@
     <ClCompile Include="ui\UIProgressBar.cpp" />
     <ClCompile Include="ui\UIProgressShape.cpp" />
     <ClCompile Include="ui\UIPropertiesBox.cpp" />
-    <ClCompile Include="ui\UIPropertiesBox_script.cpp" />
     <ClCompile Include="ui\UIRadioButton.cpp" />
     <ClCompile Include="ui\UIScriptWnd.cpp" />
     <ClCompile Include="ui\UIScriptWnd_script.cpp">

@@ -35,12 +35,10 @@ public:
 	void			SetVisiblePart				(CUIFrameRect::EFramePart p, BOOL b)	{m_UIWndFrame.SetVisiblePart(p,b);};
 
 protected:
-
 	CUIFrameRect	m_UIWndFrame;
 
 	void			FrameClip					(const Frect parentAbsR);
 	
 private:
 	inline void		ClampMax_Zero				(Frect &r);
-
 };

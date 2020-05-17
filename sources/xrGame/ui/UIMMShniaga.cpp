@@ -3,7 +3,7 @@
 #include "UIMMShniaga.h"//
 #include "UIStatic.h"//
 #include "UIScrollView.h"//
-#include "UIXmlInit.h"
+#include "UIXmlInit.h"//
 #include "MMsound.h"//
 #include "../HUDManager.h"//
 #include "../game_base_space.h"
@@ -159,13 +159,11 @@ void CUIMMShniaga::CreateList(xr_vector<CUIStatic*>& lst, CUIXml& xml_doc, LPCST
 		st->SetWindowName(xml_doc.ReadAttrib("btn", i, "name"));
 		st->SetMessageTarget(this);
 
-
 		lst.push_back(st);
 	}
+
 	xml_doc.SetLocalRoot(xml_doc.GetRoot());
-
 }
-
 
 void CUIMMShniaga::ShowMain(){
 	m_page = 0;
@@ -205,7 +203,6 @@ void CUIMMShniaga::SendMessage(CUIWindow* pWnd, s16 msg, void* pData){
 				SelectBtn(pWnd);
 				break;
 		}
-
 	}
 }
 
@@ -267,10 +264,7 @@ void CUIMMShniaga::Update(){
 	ProcessEvent(E_Update);
 		
 	CUIWindow::Update();
-
-	
 }
-
 
 bool CUIMMShniaga::OnMouse(float x, float y, EUIMessages mouse_action){
 	
@@ -317,7 +311,6 @@ bool CUIMMShniaga::OnKeyboard(int dik, EUIMessages keyboard_action){
 				return true;
 		}
 	}
-
 
 	return CUIWindow::OnKeyboard(dik, keyboard_action);
 }

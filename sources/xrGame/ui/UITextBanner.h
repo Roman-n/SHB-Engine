@@ -93,5 +93,4 @@ protected:
 
 	// Letters color
 	u32			m_Cl;
-
 };

@@ -1,24 +1,24 @@
 #include "stdafx.h"
 
 #include "UIGameSP.h"//
-#include "actor.h"
-#include "level.h"
+#include "..\actor.h"
+#include "..\level.h"
 
-#include "game_cl_Single.h"
-#include "ui/UIPdaAux.h"//
-#include "xr_level_controller.h"
-#include "actorcondition.h"
-#include "..\XR_3DA\xr_ioconsole.h"
-#include "object_broker.h"
-#include "GameTaskManager.h"
-#include "GameTask.h"
+#include "..\game_cl_Single.h"
+#include "UIPdaAux.h"//
+#include "..\xr_level_controller.h"
+#include "..\actorcondition.h"
+#include "..\..\XR_3DA\xr_ioconsole.h"
+#include "..\object_broker.h"
+#include "..\GameTaskManager.h"
+#include "..\GameTask.h"
 
-#include "ui/UIInventoryWnd.h"//
-#include "ui/UITradeWnd.h"//
-#include "ui/UIPdaWnd.h"//
-#include "ui/UITalkWnd.h"//
-#include "ui/UICarBodyWnd.h"//
-#include "ui/UIMessageBox.h"//
+#include "UIInventoryWnd.h"//
+#include "UITradeWnd.h"//
+#include "UIPdaWnd.h"//
+#include "UITalkWnd.h"//
+#include "UICarBodyWnd.h"//
+#include "UIMessageBox.h"//
 
 CUIGame::CUIGame()
 {
@@ -170,8 +170,7 @@ void CUIGame::ReInitShownUI()
 	if (InventoryMenu->IsShown()) 
 		InventoryMenu->InitInventory_delayed(); 
 	else if(UICarBodyMenu->IsShown())
-		UICarBodyMenu->UpdateLists_delayed();
-	
+		UICarBodyMenu->UpdateLists_delayed();	
 };
 
 extern ENGINE_API BOOL bShowPauseString;

@@ -1,7 +1,8 @@
 #include "stdafx.h"
+
 #include "string_table.h"
 
-#include "ui/xrUIXmlParser.h"
+#include "ui/xrUIXmlParser.h"//
 #include "xr_level_controller.h"
 
 STRING_TABLE_DATA* CStringTable::pData = NULL;

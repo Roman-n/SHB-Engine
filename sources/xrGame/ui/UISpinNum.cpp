@@ -1,8 +1,5 @@
 // file:		UISpinNum.cpp
 // description:	Spin Button with numerical data (unlike text data)
-// created:		15.06.2005
-// author:		Serge Vynnychenko
-//
 
 #include "stdafx.h"
 

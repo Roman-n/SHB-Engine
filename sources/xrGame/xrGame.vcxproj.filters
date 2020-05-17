@@ -8588,9 +8588,6 @@
     <ClCompile Include="ui\UIPropertiesBox.cpp">
       <Filter>UI\UIWindows\PropertiesBox</Filter>
     </ClCompile>
-    <ClCompile Include="ui\UIPropertiesBox_script.cpp">
-      <Filter>UI\UIWindows\PropertiesBox</Filter>
-    </ClCompile>
     <ClCompile Include="ui\UIAnimatedStatic.cpp">
       <Filter>UI\UIWindows\Static</Filter>
     </ClCompile>

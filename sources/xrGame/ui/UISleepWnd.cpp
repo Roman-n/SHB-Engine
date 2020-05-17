@@ -5,7 +5,7 @@
 
 #include "UISleepWnd.h"
 #include "../alife_space.h"
-#include "UIXmlInit.h"
+#include "UIXmlInit.h"//
 #include "UIButton.h"//
 
 CUISleepWnd::CUISleepWnd() : m_Hours(0), m_Minutes(0)

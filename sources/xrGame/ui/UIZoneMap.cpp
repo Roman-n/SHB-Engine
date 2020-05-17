@@ -1,51 +1,47 @@
 #include "stdafx.h"
+
 #include "UIZoneMap.h"//
 
-#include "HUDManager.h"//
+#include "..\HUDManager.h"//
 
-#include "InfoPortion.h"
-#include "Pda.h"
+#include "..\InfoPortion.h"
+#include "..\Pda.h"
 
-#include "Grenade.h"
-#include "level.h"
-#include "game_cl_base.h"
+#include "..\Grenade.h"
+#include "..\level.h"
+#include "..\game_cl_base.h"
 
-#include "actor.h"
-#include "ai_space.h"
-#include "game_graph.h"
+#include "..\actor.h"
+#include "..\ai_space.h"
+#include "..\game_graph.h"
 
-#include "ui/UIMap.h"//
-#include "ui/UIXmlInit.h"
+#include "UIMap.h"//
+#include "UIXmlInit.h"//
 //////////////////////////////////////////////////////////////////////////
 
 CUIZoneMap::CUIZoneMap()
-{}
+{ }
 
 CUIZoneMap::~CUIZoneMap()
-{
-	
-}
+{ }
 
 void CUIZoneMap::Init()
 {
-
 	CUIXml uiXml;
 	bool xml_result			= uiXml.Init(CONFIG_PATH, UI_PATH, "zone_map.xml");
 	R_ASSERT3(xml_result, "xml file not found", "zone_map.xml");
 
-	// load map backgroundwwwwwwwwwwwww
+	// load map background
 	CUIXmlInit xml_init;
 	xml_init.InitStatic			(uiXml, "minimap:background", 0, &m_background);
 
-		xml_init.InitStatic			(uiXml, "minimap:background:dist_text", 0, &m_pointerDistanceText);
-		m_background.AttachChild	(&m_pointerDistanceText);
-
+	xml_init.InitStatic			(uiXml, "minimap:background:dist_text", 0, &m_pointerDistanceText);
+	m_background.AttachChild	(&m_pointerDistanceText);
 
 	xml_init.InitStatic(uiXml, "minimap:level_frame", 0, &m_clipFrame);
 
 	xml_init.InitStatic(uiXml, "minimap:center", 0, &m_center);
-	
-	
+
 	m_activeMap						= xr_new<CUIMiniMap>();
 	m_clipFrame.AttachChild			(m_activeMap);
 	m_activeMap->SetAutoDelete		(true);
@@ -78,13 +74,13 @@ void CUIZoneMap::UpdateRadar		(Fvector pos)
 	m_background.Update();
 	m_activeMap->SetActivePoint( pos );
 
-		if(m_activeMap->GetPointerDistance()>0.5f){
-			string64	str;
-			sprintf_s		(str,"%.1f m.",m_activeMap->GetPointerDistance());
-			m_pointerDistanceText.SetText(str);
-		}else{
-			m_pointerDistanceText.SetText("");
-		}
+	if(m_activeMap->GetPointerDistance()>0.5f){
+		string64	str;
+		sprintf_s		(str,"%.1f m.",m_activeMap->GetPointerDistance());
+		m_pointerDistanceText.SetText(str);
+	}else{
+		m_pointerDistanceText.SetText("");
+	}
 }
 
 bool CUIZoneMap::ZoomIn()

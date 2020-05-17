@@ -45,7 +45,6 @@ void CUIButton::script_register(lua_State *L)
 //.		.def("SetColor",				(void(CUI3tButton::*)(int, int, int)) &CUI3tButton::SetColor)
 		,
 
-
 		class_<CUICheckButton, CUI3tButton>("CUICheckButton")
 		.def(							constructor<>())
 		.def("GetCheck",				&CUICheckButton::GetCheck)

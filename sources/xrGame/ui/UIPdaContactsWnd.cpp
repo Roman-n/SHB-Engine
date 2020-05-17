@@ -3,13 +3,12 @@
 #include "UIPdaContactsWnd.h"//
 #include "UIPdaAux.h"//
 #include "../Pda.h"
-#include "UIXmlInit.h"
+#include "UIXmlInit.h"//
 #include "../actor.h"
 #include "UIFrameWindow.h"//
 #include "UIFrameLineWnd.h"//
 #include "UIAnimatedStatic.h"//
 #include "UIScrollView.h"//
-//#include "../actor.h"
 #include "../string_table.h"
 #include "UICharacterInfo.h"//
 
@@ -30,7 +29,6 @@ void CUIPdaContactsWnd::Show(bool status)
 {
 	inherited::Show(status);
 	if(status) UIDetailsWnd->Clear();
-
 }
 
 void CUIPdaContactsWnd::Init()
@@ -46,7 +44,6 @@ void CUIPdaContactsWnd::Init()
 	UIFrameContacts						= xr_new<CUIFrameWindow>();UIFrameContacts->SetAutoDelete(true);
 	AttachChild							(UIFrameContacts);
 	xml_init.InitFrameWindow			(uiXml, "left_frame_window", 0, UIFrameContacts);
-
 
 	UIContactsHeader					= xr_new<CUIFrameLineWnd>();UIContactsHeader->SetAutoDelete(true);
 	UIFrameContacts->AttachChild		(UIContactsHeader);
@@ -70,13 +67,11 @@ void CUIPdaContactsWnd::Init()
 
 	UIDetailsWnd						= xr_new<CUIScrollView>();UIDetailsWnd->SetAutoDelete(true);
 	UIRightFrame->AttachChild			(UIDetailsWnd);
-	xml_init.InitScrollView				(uiXml, "detail_list", 0, UIDetailsWnd);
-	
+	xml_init.InitScrollView				(uiXml, "detail_list", 0, UIDetailsWnd);	
 
 	xml_init.InitAutoStatic				(uiXml, "left_auto_static", UIFrameContacts);
 	xml_init.InitAutoStatic				(uiXml, "right_auto_static", UIRightFrame);
 }
-
 
 void CUIPdaContactsWnd::Update()
 {
@@ -101,7 +96,6 @@ void CUIPdaContactsWnd::Update()
 void CUIPdaContactsWnd::AddContact(CPda* pda)
 {
 	VERIFY(pda);
-
 
 	CUIPdaContactItem* pItem		= NULL;
 	pItem							= xr_new<CUIPdaContactItem>(this);

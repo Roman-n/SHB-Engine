@@ -18,6 +18,7 @@ class CUICellItem :public CUIStatic
 {
 private:
 	typedef		CUIStatic	inherited;
+
 protected:
 	xr_vector<CUICellItem*> m_childs;
 
@@ -26,6 +27,7 @@ protected:
 	ICustomDrawCell*		m_custom_draw;
 	int						m_accelerator;
 	virtual void			UpdateItemText			();
+
 public:
 							CUICellItem				();
 	virtual					~CUICellItem			();
@@ -66,6 +68,7 @@ private:
 	CUICellItem*			m_pParent;
 	Fvector2				m_pos_offset;
 	CUIDragDropListEx*		m_back_list;
+
 public:
 							CUIDragItem(CUICellItem* parent);
 	virtual		void		Init(const ref_shader& sh, const Frect& rect, const Frect& text_rect);

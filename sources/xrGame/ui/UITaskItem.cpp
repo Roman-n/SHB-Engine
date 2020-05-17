@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "UITaskItem.h"//
-#include "UIXmlInit.h"
+#include "UIXmlInit.h"//
 #include "UI3tButton.h"//
 #include "../gametask.h"
 #include "../string_table.h"

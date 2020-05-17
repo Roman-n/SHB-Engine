@@ -1,19 +1,14 @@
 // CUIEditBox.h: ввод строки с клавиатуры
-// 
-//////////////////////////////////////////////////////////////////////
 
 #pragma once
+
 #include "UILabel.h"//
 #include "../script_export_space.h"
 #include "UIOptionsItem.h"//
 #include "UIColorAnimatorWrapper.h"//
 #include "UICustomEdit.h"//
 
-//////////////////////////////////////////////////////////////////////////
-
 class game_cl_GameState;
-
-//////////////////////////////////////////////////////////////////////////
 
 class CUIEditBox : public CUIMultiTextureOwner, public CUIOptionsItem, public CUICustomEdit{
 public:
@@ -29,8 +24,10 @@ public:
 
 	// CUIMultiTextureOwner
 	virtual void	InitTexture(LPCSTR texture);
+
 protected:
 	CUIFrameLineWnd	m_frameLine;
+
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
 

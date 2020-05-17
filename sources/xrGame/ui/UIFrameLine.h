@@ -1,18 +1,14 @@
-//=============================================================================
 //  Filename:   UIFrameLine.h
-//	Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua
-//	Copyright 2004. GSC Game World
-//	---------------------------------------------------------------------------
 //  Класс аналогичный UIFrameRect за исключением того, что он предназначен для
 //	отображения затекстурированного узкого прямоуголника произвольной длинны или
 //	ширины. В качестве исходных материалов необходимо 3 текстуры: правая(нижняя),
 //	левая(верхняя) и центральная
-//=============================================================================
+
 #pragma once
 
 #include "UIStaticItem.h"//
 
-class CUIFrameLine: public CUICustomItem
+class CUIFrameLine : public CUICustomItem
 {
 	friend class CUIFrameLineWnd;
 	enum
@@ -37,14 +33,24 @@ protected:
 	u8			uFlags;
 	bool		bHorizontalOrientation;
 
-	void		UpdateSize		();
+	void		UpdateSize( );
+
 public:
-				CUIFrameLine	();
-	void		Init			(LPCSTR base_name, float x, float y, float size, bool horizontal, DWORD align);
-	void		InitTexture		(LPCSTR texture);
-	void		SetColor		(u32 cl);
-	IC void		SetPos			(float left, float top)		{ iPos.set(left,top);	uFlags &=~ flValidSize; }
-	IC void		SetSize			(float size)				{ iSize = size;			uFlags &=~ flValidSize; }
-	IC void		SetOrientation	(bool bIsHorizontal)	{ bHorizontalOrientation = bIsHorizontal; uFlags &=~ flValidSize; }
-	void		Render			();
+	CUIFrameLine( );
+	void		Init(LPCSTR base_name, float x, float y, float size, bool horizontal, DWORD align);
+	void		InitTexture(LPCSTR texture);
+	void		SetColor(u32 cl);
+	IC void		SetPos(float left, float top)
+	{
+		iPos.set(left, top);	uFlags &= ~flValidSize;
+	}
+	IC void		SetSize(float size)
+	{
+		iSize = size;			uFlags &= ~flValidSize;
+	}
+	IC void		SetOrientation(bool bIsHorizontal)
+	{
+		bHorizontalOrientation = bIsHorizontal; uFlags &= ~flValidSize;
+	}
+	void		Render( );
 };

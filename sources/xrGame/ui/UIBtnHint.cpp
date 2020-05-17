@@ -1,8 +1,8 @@
 #include "stdafx.h"
 
-#include "UIBtnHint.h"
+#include "UIBtnHint.h"//
 #include "UIFrameLineWnd.h"//
-#include "UIXmlInit.h"
+#include "UIXmlInit.h"//
 
 CUIButtonHint*		g_btnHint = NULL;
 

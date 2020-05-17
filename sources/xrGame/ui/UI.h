@@ -1,7 +1,7 @@
 #pragma once
 
 #include "UICursor.h"//
-#include "UIDialogHolder.h"
+#include "UIDialogHolder.h"//
 
 // refs
 class CHUDManager;
@@ -11,7 +11,7 @@ class CUIMainIngameWnd;
 class CUIMessagesWindow;
 struct SDrawStaticStruct;
 
-class CUI			: public CDialogHolder
+class CUI : public CDialogHolder
 {
 	CUIGameCustom*			pUIGame;
 	bool					m_bShowGameIndicators;
@@ -20,6 +20,7 @@ public:
 	CHUDManager*			m_Parent;
 	CUIMainIngameWnd*		UIMainIngameWnd;
 	CUIMessagesWindow*		m_pMessagesWnd;
+
 public:
 							CUI						(CHUDManager* p);
 	virtual					~CUI					();
@@ -38,7 +39,6 @@ public:
 
 	CUIGameCustom*			UIGame					()					{return pUIGame;}
 
-
 	void					ShowGameIndicators		();
 	void					HideGameIndicators		();
 	bool					GameIndicatorsShown		()					{return m_bShowGameIndicators;};
@@ -50,4 +50,3 @@ public:
 	SDrawStaticStruct*		AddInfoMessage			(LPCSTR message);
 	void					OnConnected				();
 };
-

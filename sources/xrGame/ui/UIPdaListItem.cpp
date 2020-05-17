@@ -5,8 +5,8 @@
 #include "UIInventoryUtilities.h"//
 #include "../string_table.h"
 
-#include "xrUIXmlParser.h"
-#include "UIXmlInit.h"
+#include "xrUIXmlParser.h"//
+#include "UIXmlInit.h"//
 
 #include "../character_info.h"
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ui/uiabstract.h"
+#include "uiabstract.h"
 #include "UICustomItem.h"//
 
 void		CreateUIGeom		();
@@ -37,11 +37,8 @@ public:
 	virtual	void	SetOriginalRect	(const Frect& r)									{iOriginalRect = r; uFlags|=flValidOriginalRect;}
 	virtual void	SetOriginalRectEx(const Frect& r)									{iOriginalRect = r; uFlags|=flValidOriginalRect; SetRect(0,0,r.width(),r.height());}
 
-
 	void			Init			(LPCSTR tex, LPCSTR sh, float left, float top, u32 align);
-	
-	
-	
+
 	void			Render			();
 	void			Render			(float angle);
 
@@ -60,5 +57,4 @@ public:
 	IC ref_shader&	GetShader		()							{return hShader;}
 };
 
-extern ENGINE_API BOOL g_bRendering; 
-
+extern ENGINE_API BOOL g_bRendering;

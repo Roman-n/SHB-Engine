@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "UICustomItem.h"//
-#include "HUDManager.h"//
+#include "..\HUDManager.h"//
 
 CUICustomItem::CUICustomItem()
 {    
@@ -12,7 +12,6 @@ CUICustomItem::CUICustomItem()
 	eMirrorMode			= tmNone;
 	iHeadingPivot.set	(0,0); 
 }
-//--------------------------------------------------------------------
 
 CUICustomItem::~CUICustomItem()
 {

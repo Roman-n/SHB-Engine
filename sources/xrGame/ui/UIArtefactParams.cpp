@@ -1,8 +1,9 @@
 #include "stdafx.h"
+
 #include "UIArtefactParams.h"//
 #include "UIStatic.h"//
 #include "../object_broker.h"
-#include "UIXmlInit.h"
+#include "UIXmlInit.h"//
 
 CUIArtefactParams::CUIArtefactParams()
 {
@@ -61,6 +62,7 @@ LPCSTR af_actor_param_names[]={
 	"satiety_power_v",
 	"wound_incarnation_v",
 };
+
 void CUIArtefactParams::InitFromXml(CUIXml& xml_doc)
 {
 	LPCSTR _base				= "af_params";
@@ -83,10 +85,10 @@ bool CUIArtefactParams::Check(const shared_str& af_section)
 {
 	return !!pSettings->line_exist(af_section, "af_actor_properties");
 }
+
 #include "../string_table.h"
 void CUIArtefactParams::SetInfo(const shared_str& af_section)
 {
-
 	string128					_buff;
 	float						_h = 0.0f;
 	DetachAll					();
@@ -126,7 +128,6 @@ void CUIArtefactParams::SetInfo(const shared_str& af_section)
 
 		if(i==_item_bleeding_restore_speed || i==_item_radiation_restore_speed)
 			_color = (_val>0)?"%c[red]":"%c[green]";
-
 
 		sprintf_s					(	_buff, "%s %s %+.0f %s", 
 									CStringTable().translate(af_item_param_names[i]).c_str(), 

@@ -15,6 +15,7 @@ class CUIPdaListItem : public CUIWindow
 {
 private:
 	typedef CUIWindow inherited;
+
 public:
 					CUIPdaListItem		();
 	virtual			~CUIPdaListItem		();
@@ -22,6 +23,7 @@ public:
 	virtual void	InitCharacter		(CInventoryOwner* pInvOwner);
 	
 	void*					m_data;
+
 protected:
 	//информация о персонаже
 	CUIFrameWindow*			UIMask;

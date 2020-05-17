@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "../level.h"
 //.#include "../LevelFogOfWar.h"
 #include "../map_location.h"
@@ -11,7 +12,6 @@
 const u32			activeLocalMapColor			= 0xffffffff;//0xffc80000;
 const u32			inactiveLocalMapColor		= 0xffffffff;//0xff438cd1;
 const u32			ourLevelMapColor			= 0xffffffff;
-
 
 CUICustomMap::CUICustomMap ()
 {
@@ -34,10 +34,8 @@ void CUICustomMap::Update()
 	CUIStatic::Update		();
 }
 
-
 void CUICustomMap::Init	(shared_str name, CInifile& gameLtx, LPCSTR sh_name)
 {
-
 	m_name				= name;
 	LPCSTR tex;
 	Fvector4 tmp;
@@ -126,7 +124,6 @@ bool CUICustomMap::GetPointerTo(const Fvector2& src, float item_radius, Fvector2
 	res = f_clip_rect_local.Pick2(f_src,f_dir,f_intersect_point);
 	VERIFY(res);
 
-
 	heading = -f_dir.getH();
 
 	f_intersect_point.mad(f_intersect_point,f_dir,item_radius );
@@ -135,14 +132,12 @@ bool CUICustomMap::GetPointerTo(const Fvector2& src, float item_radius, Fvector2
 	return true;
 }
 
-
 void CUICustomMap::FitToWidth	(float width)
 {
 	float k			= m_BoundRect.width()/m_BoundRect.height();
 	float w			= width;
 	float h			= width/k;
 	SetWndRect		(0.0f,0.0f,w,h);
-	
 }
 
 void CUICustomMap::FitToHeight	(float height)
@@ -151,9 +146,7 @@ void CUICustomMap::FitToHeight	(float height)
 	float h			= height;
 	float w			= k*height;
 	SetWndRect		(0.0f,0.0f,w,h);
-	
 }
-
 
 void CUICustomMap::OptimalFit(const Frect& r)
 {
@@ -161,7 +154,6 @@ void CUICustomMap::OptimalFit(const Frect& r)
 		FitToHeight	(r.height());
 	else
 		FitToWidth	(r.width());
-
 }
 
 // try to positioning clipRect center to vNewPoint
@@ -228,7 +220,6 @@ bool CUIGlobalMap::OnMouse	(float x, float y, EUIMessages mouse_action)
 	return false;
 }
 
-
 CUIGlobalMap::CUIGlobalMap(CUIMapWnd*	pMapWnd)
 {
 	m_mapWnd				= pMapWnd;
@@ -238,8 +229,6 @@ CUIGlobalMap::CUIGlobalMap(CUIMapWnd*	pMapWnd)
 //	m_State					= stNone;
 	Show					(false);
 }
-
-
 
 CUIGlobalMap::~CUIGlobalMap()
 {
@@ -261,7 +250,6 @@ void CUIGlobalMap::Update()
 
 	inherited::Update();
 }
-
 
 void CUIGlobalMap::ClipByVisRect()
 {
@@ -357,7 +345,6 @@ void CUILevelMap::Draw()
 		}
 	}
 	inherited::Draw();
-
 }
 
 void CUILevelMap::Init	(shared_str name, CInifile& gameLtx, LPCSTR sh_name)
@@ -389,8 +376,6 @@ void CUILevelMap::Init	(shared_str name, CInifile& gameLtx, LPCSTR sh_name)
 	}
 */
 }
-
-
 
 void CUILevelMap::UpdateSpots		()
 {
@@ -454,7 +439,6 @@ void CUILevelMap::Update()
 
 		}
 	}
-
 }
 
 bool CUILevelMap::OnMouse	(float x, float y, EUIMessages mouse_action)
@@ -531,5 +515,4 @@ void CUIMiniMap::UpdateSpots()
 	for(Locations_it it=ls.begin(); it!=ls.end(); ++it){
 			(*it).location->UpdateMiniMap(this);
 	}
-
 }

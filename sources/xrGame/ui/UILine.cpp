@@ -1,10 +1,6 @@
 // File:		UILine.cpp
 // Description:	Single text line
-// Created:		05.04.2005
-// Author:		Serge Vynnycheko
-// Mail:		narrator@gsc-game.kiev.ua
-//
-// Copyright 2005 GSC Game World
+
 #include "stdafx.h"
 
 #include "UILine.h"//

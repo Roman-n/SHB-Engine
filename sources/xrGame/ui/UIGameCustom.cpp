@@ -1,14 +1,14 @@
 #include "stdafx.h"
 
 #include "UIGameCustom.h"//
-#include "ui.h"
-#include "level.h"
-#include "HUDManager.h"//
-#include "ui/UIMultiTextStatic.h"//
-#include "ui/UIXmlInit.h"
-#include "object_broker.h"
-#include "string_table.h"
-#include "ui/UIGameTutorial.h"//
+//#include "UI.h"//
+#include "..\level.h"
+#include "..\HUDManager.h"//
+#include "UIMultiTextStatic.h"//
+#include "UIXmlInit.h"//
+#include "..\object_broker.h"
+#include "..\string_table.h"
+#include "UIGameTutorial.h"//
 
 struct predicate_remove_stat {
 	bool	operator() (SDrawStaticStruct& s) {

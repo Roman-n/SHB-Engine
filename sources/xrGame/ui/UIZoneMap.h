@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ui/UIStatic.h"//
+#include "UIStatic.h"//
 
 class CActor;
 class CUICustomMap;
@@ -36,4 +36,3 @@ public:
 	CUIStatic&					Background		()									{return m_background;};
 	void						SetupCurrentMap	();
 };
-

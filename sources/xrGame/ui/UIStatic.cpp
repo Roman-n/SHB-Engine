@@ -1,22 +1,24 @@
 #include "stdafx.h"
 
 #include "UIStatic.h"//
-#include "UIXmlInit.h"
-#include "UITextureMaster.h"
+#include "UIXmlInit.h"//
+#include "UITextureMaster.h"//
 #include "UIFrameWindow.h"//
 #include "../HUDManager.h"//
 #include "../..\XR_3DA\LightAnimLibrary.h"
 #include "UILines.h"//
 #include "../string_table.h"
-#include "ui_base.h"
+#include "ui_base.h"//
 
 const char * const	clDefault	= "default";
+
 #define CREATE_LINES if (!m_pLines) {m_pLines = xr_new<CUILines>(); m_pLines->SetTextAlignment(CGameFont::alLeft);}
 #define LA_CYCLIC			(1<<0)
 #define LA_ONLYALPHA		(1<<1)
 #define LA_TEXTCOLOR		(1<<2)
 #define LA_TEXTURECOLOR		(1<<3)
 //(1<<4) registered !!!
+
 void lanim_cont::set_defaults()
 {
 	m_lanim					= NULL;	

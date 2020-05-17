@@ -20,7 +20,6 @@ enum EPdaTabs
 	eptNoActiveTab		= u16(-1)
 };
 
-
 extern const char* const ALL_PDA_HEADER_PREFIX;
 
 namespace pda_section{

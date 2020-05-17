@@ -1,7 +1,7 @@
 #pragma once
 
-#include "script_export_space.h"
-#include "object_interfaces.h"
+#include "..\script_export_space.h"
+#include "..\object_interfaces.h"
 
 // refs
 class CUI;
@@ -29,7 +29,7 @@ struct SDrawStaticStruct :public IPureDestroyableObject{
 };
 
 typedef xr_vector<SDrawStaticStruct>	st_vec;
-#include "game_base_space.h"
+#include "..\game_base_space.h"
 struct SGameTypeMaps
 {
 	shared_str				m_game_type_name;

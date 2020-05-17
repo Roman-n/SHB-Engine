@@ -1,11 +1,5 @@
 // File:        UITabButton.cpp
 // Description: 
-// Created:     19.11.2004
-// Last Change: 27.11.2004
-// Author:      Serhiy Vynnychenko
-// Mail:        narrator@gsc-game.kiev.ua
-//
-// Copyright: 2004 GSC Game World
 
 #include "stdafx.h"
 

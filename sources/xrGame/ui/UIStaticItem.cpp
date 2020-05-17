@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "UIStaticItem.h"//
-#include "HUDManager.h"//
+#include "..\HUDManager.h"//
 
 ref_geom		hGeom_fan = NULL;	
 

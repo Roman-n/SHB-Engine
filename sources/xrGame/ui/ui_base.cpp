@@ -1,8 +1,9 @@
 #include "stdafx.h"
-#include "ui_base.h"
-#include "GamePersistent.h"
+
+#include "ui_base.h"//
+#include "..\GamePersistent.h"
 #include "UICursor.h"//
-#include "HUDManager.h"//
+#include "..\HUDManager.h"//
 
 CUICursor*	GetUICursor		()	{return UI()->GetUICursor();};
 ui_core*	UI				()	{return GamePersistent().m_pUI_core;};
@@ -245,7 +246,7 @@ bool ui_core::is_16_9_mode()
 	return (Device.dwWidth)/float(Device.dwHeight) > (UI_BASE_WIDTH/UI_BASE_HEIGHT +0.01f);
 }
 
-shared_str	ui_core::get_xml_name(LPCSTR fn)
+shared_str	ui_core::get_xml_name(const char* fn)
 {
 	string_path				str;
 	if(!is_16_9_mode()){

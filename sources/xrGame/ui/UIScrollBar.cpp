@@ -3,8 +3,8 @@
 #include "UIScrollBar.h"//
 #include "UI3tButton.h"//
 #include "UIScrollBox.h"//
-#include "UIXmlInit.h"
-#include "UITextureMaster.h"
+#include "UIXmlInit.h"//
+#include "UITextureMaster.h"//
 #include "UICursor.h"//
 
 CUIScrollBar::CUIScrollBar()

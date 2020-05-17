@@ -157,7 +157,7 @@ bool CUICustomEdit::KeyPressed(int dik)
 	{
 	case DIK_LEFT:
 	case DIKEYBOARD_LEFT:
-		m_lines.DecCursorPos();		
+		m_lines.DecCursorPos();
 		break;
 	case DIK_RIGHT:
 	case DIKEYBOARD_RIGHT:
@@ -263,8 +263,6 @@ bool CUICustomEdit::KeyReleased(int dik)
 
 	return true;
 }
-
-
 
 void CUICustomEdit::AddChar(char c)
 {

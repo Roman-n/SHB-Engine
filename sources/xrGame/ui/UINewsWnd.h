@@ -22,7 +22,6 @@ public:
 
 	CUIScrollView*	UIScrollWnd;
 
-
 private:
 	void			LoadNews		();
 	void			AddNewsItem	(GAME_NEWS_DATA& news_data);

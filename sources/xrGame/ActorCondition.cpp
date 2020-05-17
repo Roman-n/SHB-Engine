@@ -18,7 +18,6 @@
 #include "object_broker.h"
 #include "weapon.h"
 
-//#include "UI.h"
 #include "HUDManager.h"//
 
 #define MAX_SATIETY					1.0f

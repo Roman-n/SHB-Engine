@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "UITaskDescrWnd.h"//
-#include "UIXmlInit.h"
+#include "UIXmlInit.h"//
 #include "UIFrameWindow.h"//
 #include "UIFrameLineWnd.h"//
 #include "UIScrollView.h"//

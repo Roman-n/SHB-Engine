@@ -3,7 +3,7 @@
 #include "UIGameTutorial.h"//
 #include "UIWindow.h"//
 #include "UIStatic.h"//
-#include "UIXmlInit.h"
+#include "UIXmlInit.h"//
 #include "../object_broker.h"
 #include "..\..\XR_3DA\xr_input.h"
 #include "../xr_level_controller.h"

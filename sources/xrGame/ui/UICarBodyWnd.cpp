@@ -1,8 +1,8 @@
 #include "stdafx.h"
 
 #include "UICarBodyWnd.h"//
-#include "xrUIXmlParser.h"
-#include "UIXmlInit.h"
+#include "xrUIXmlParser.h"//
+#include "UIXmlInit.h"//
 #include "../HUDManager.h"//
 #include "../level.h"
 #include "UICharacterInfo.h"//
@@ -26,6 +26,10 @@
 #include "../script_callback_ex.h"
 #include "../script_game_object.h"
 #include "../BottleItem.h"
+#include "../xr_level_controller.h"
+#include "../Medkit.h"
+#include "../Antirad.h"
+
 
 #define				CAR_BODY_XML		"carbody_new.xml"
 #define				CARBODY_ITEM_XML	"carbody_item.xml"
@@ -77,7 +81,6 @@ void CUICarBodyWnd::Init()
 	m_pUIOurIcon->AttachChild	(m_pUICharacterInfoLeft);
 	m_pUICharacterInfoLeft->Init(0,0, m_pUIOurIcon->GetWidth(), m_pUIOurIcon->GetHeight(), "trade_character.xml");
 
-
 	m_pUICharacterInfoRight			= xr_new<CUICharacterInfo>(); m_pUICharacterInfoRight->SetAutoDelete(true);
 	m_pUIOthersIcon->AttachChild	(m_pUICharacterInfoRight);
 	m_pUICharacterInfoRight->Init	(0,0, m_pUIOthersIcon->GetWidth(), m_pUIOthersIcon->GetHeight(), "trade_character.xml");
@@ -85,7 +88,6 @@ void CUICarBodyWnd::Init()
 	m_pUIOurBagWnd					= xr_new<CUIStatic>(); m_pUIOurBagWnd->SetAutoDelete(true);
 	AttachChild						(m_pUIOurBagWnd);
 	xml_init.InitStatic				(uiXml, "our_bag_static", 0, m_pUIOurBagWnd);
-
 
 	m_pUIOthersBagWnd				= xr_new<CUIStatic>(); m_pUIOthersBagWnd->SetAutoDelete(true);
 	AttachChild						(m_pUIOthersBagWnd);
@@ -99,7 +101,6 @@ void CUICarBodyWnd::Init()
 	m_pUIOthersBagWnd->AttachChild	(m_pUIOthersBagList);	
 	xml_init.InitDragDropListEx		(uiXml, "dragdrop_list_other", 0, m_pUIOthersBagList);
 
-
 	//информация о предмете
 	m_pUIDescWnd					= xr_new<CUIFrameWindow>(); m_pUIDescWnd->SetAutoDelete(true);
 	AttachChild						(m_pUIDescWnd);
@@ -112,7 +113,6 @@ void CUICarBodyWnd::Init()
 	m_pUIItemInfo					= xr_new<CUIItemInfo>(); m_pUIItemInfo->SetAutoDelete(true);
 	m_pUIDescWnd->AttachChild		(m_pUIItemInfo);
 	m_pUIItemInfo->Init				(0,0, m_pUIDescWnd->GetWidth(), m_pUIDescWnd->GetHeight(), CARBODY_ITEM_XML);
-
 
 	xml_init.InitAutoStatic			(uiXml, "auto_static", this);
 
@@ -130,8 +130,6 @@ void CUICarBodyWnd::Init()
 
 	BindDragDropListEnents			(m_pUIOurBagList);
 	BindDragDropListEnents			(m_pUIOthersBagList);
-
-
 }
 
 void CUICarBodyWnd::InitCarBody(CInventoryOwner* pOur, CInventoryBox* pInvBox)
@@ -148,12 +146,10 @@ void CUICarBodyWnd::InitCarBody(CInventoryOwner* pOur, CInventoryBox* pInvBox)
 	m_pUIPropertiesBox->Hide						();
 	EnableAll										();
 	UpdateLists										();
-
 }
 
 void CUICarBodyWnd::InitCarBody(CInventoryOwner* pOur, CInventoryOwner* pOthers)
 {
-
     m_pOurObject									= pOur;
 	m_pOthersObject									= pOthers;
 	m_pInventoryBox									= NULL;
@@ -239,7 +235,6 @@ void CUICarBodyWnd::UpdateLists()
 		m_pUIOurBagList->SetItem		(itm);
 	}
 
-
 	ruck_list.clear									();
 	if(m_pOthersObject)
 		m_pOthersObject->inventory().AddAvailableItems	(ruck_list, false);
@@ -296,7 +291,6 @@ void CUICarBodyWnd::Draw()
 	inherited::Draw	();
 }
 
-
 void CUICarBodyWnd::Update()
 {
 	if(	m_b_need_update||
@@ -304,15 +298,14 @@ void CUICarBodyWnd::Update()
 		(m_pOthersObject&&m_pOthersObject->inventory().ModifyFrame()==Device.dwFrame))
 
 		UpdateLists		();
-
 	
 	if(m_pOthersObject && (smart_cast<CGameObject*>(m_pOurObject))->Position().distance_to((smart_cast<CGameObject*>(m_pOthersObject))->Position()) > 3.0f)
 	{
 		GetHolder()->StartStopMenu(this,true);
 	}
+
 	inherited::Update();
 }
-
 
 void CUICarBodyWnd::Show() 
 { 
@@ -370,8 +363,7 @@ void CUICarBodyWnd::TakeAll()
 			else{
 				move_item		(m_pInventoryBox->ID(), tmp_id, _itm->object().ID());
 //.				Actor()->callback(GameObject::eInvBoxItemTake)( m_pInventoryBox->lua_game_object(), _itm->object().lua_game_object() );
-			}
-		
+			}		
 		}
 		PIItem itm		= (PIItem)(ci->m_pData);
 		if(m_pOthersObject)
@@ -380,12 +372,8 @@ void CUICarBodyWnd::TakeAll()
 			move_item		(m_pInventoryBox->ID(), tmp_id, itm->object().ID());
 //.			Actor()->callback(GameObject::eInvBoxItemTake)(m_pInventoryBox->lua_game_object(), itm->object().lua_game_object() );
 		}
-
 	}
 }
-
-
-#include "../xr_level_controller.h"
 
 bool CUICarBodyWnd::OnKeyboard(int dik, EUIMessages keyboard_action)
 {
@@ -398,9 +386,6 @@ bool CUICarBodyWnd::OnKeyboard(int dik, EUIMessages keyboard_action)
 	}
 	return false;
 }
-
-#include "../Medkit.h"
-#include "../Antirad.h"
 
 void CUICarBodyWnd::ActivatePropertiesBox()
 {
@@ -431,7 +416,6 @@ void CUICarBodyWnd::ActivatePropertiesBox()
 	}
 	if(_action)
 		m_pUIPropertiesBox->AddItem(_action,  NULL, INVENTORY_EAT_ACTION);
-
 
 	if(b_show){
 		m_pUIPropertiesBox->AutoUpdateSize	();
@@ -466,9 +450,7 @@ void CUICarBodyWnd::EatItem()
 	CGameObject::u_EventGen		(P, GEG_PLAYER_ITEM_EAT, Actor()->ID());
 	P.w_u16						(CurrentIItem()->object().ID());
 	CGameObject::u_EventSend	(P);
-
 }
-
 
 bool CUICarBodyWnd::OnItemDrop(CUICellItem* itm)
 {
@@ -500,7 +482,6 @@ bool CUICarBodyWnd::OnItemDrop(CUICellItem* itm)
 								bMoveDirection?m_pInventoryBox->ID():tmp_id,
 								bMoveDirection?tmp_id:m_pInventoryBox->ID(),
 								CurrentIItem()->object().ID());
-
 
 //		Actor()->callback		(GameObject::eInvBoxItemTake)(m_pInventoryBox->lua_game_object(), CurrentIItem()->object().lua_game_object() );
 
@@ -583,7 +564,6 @@ void move_item (u16 from_id, u16 to_id, u16 what_id)
 											);
 	P.w_u16									(what_id);
 	CGameObject::u_EventSend				(P);
-
 }
 
 bool CUICarBodyWnd::TransferItem(PIItem itm, CInventoryOwner* owner_from, CInventoryOwner* owner_to, bool b_check)

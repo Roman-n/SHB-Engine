@@ -30,7 +30,7 @@
 
 #include "UIInventoryUtilities.h"//
 
-#include "UIXmlInit.h"
+#include "UIXmlInit.h"//
 #include "UIPdaMsgListItem.h"//
 #include "../alife_registry_wrappers.h"
 #include "../actorcondition.h"

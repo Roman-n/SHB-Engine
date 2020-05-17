@@ -3,10 +3,8 @@
 #include "UICursor.h"//
 
 #include "..\XR_3DA\CustomHUD.h"
-//#include "UI.h"
-#include "HUDManager.h"//
-#include "ui/UIStatic.h"//
-
+#include "..\HUDManager.h"//
+#include "UIStatic.h"//
 
 #define C_DEFAULT	D3DCOLOR_XRGB(0xff,0xff,0xff)
 

@@ -1,13 +1,14 @@
 #include "stdafx.h"
+
 #include "MapSpot.h"//
 #include "map_location.h"
 
-#include "ui/UIXmlInit.h"
+#include "ui/UIXmlInit.h"//
 #include "ui/UIMapWnd.h"//
 #include "level.h"
 #include "..\XR_3DA\xr_object.h"
 #include "object_broker.h"
-#include "ui/UITextureMaster.h"
+#include "ui/UITextureMaster.h"//
 
 CMapSpot::CMapSpot(CMapLocation* ml)
 :m_map_location(ml)
@@ -17,8 +18,7 @@ CMapSpot::CMapSpot(CMapLocation* ml)
 }
 
 CMapSpot::~CMapSpot()
-{
-}
+{ }
 
 void CMapSpot::Load(CUIXml* xml, LPCSTR path)
 {
@@ -57,13 +57,11 @@ bool CMapSpot::OnMouseDown		(int mouse_btn)
 		return false;
 }
 
-
 void CMapSpot::OnFocusLost		()
 {
 	inherited::OnFocusLost		();
 	GetMessageTarget()->SendMessage(this, MAP_HIDE_HINT, NULL);
 }
-
 
 CMapSpotPointer::CMapSpotPointer(CMapLocation* ml)
 :inherited(ml)
@@ -72,8 +70,7 @@ CMapSpotPointer::CMapSpotPointer(CMapLocation* ml)
 }
 
 CMapSpotPointer::~CMapSpotPointer()
-{
-}
+{ }
 
 LPCSTR CMapSpotPointer::GetHint()
 {

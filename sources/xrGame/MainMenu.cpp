@@ -7,10 +7,10 @@
 #include "..\XR_3DA\IGame_Level.h"
 #include "..\XR_3DA\CameraManager.h"
 #include "xr_Level_controller.h"
-#include "ui\UITextureMaster.h"
-#include "ui\UIXmlInit.h"
+#include "ui\UITextureMaster.h"//
+#include "ui\UIXmlInit.h"//
 #include <dinput.h>
-#include "ui\UIBtnHint.h"
+#include "ui\UIBtnHint.h"//
 #include "ui/UICursor.h"//
 #include "string_table.h"
 

@@ -22,11 +22,13 @@ class CUIStatic : public CUIWindow, public CUISingleTextureOwner, public IUIText
 {
 	friend class CUIXmlInit;
 	friend class CUI3tButton;
+
 private:
 	typedef CUIWindow inherited;
 	lanim_cont				m_lanim_clr;
 	lanim_cont				m_lanim_xform;
 	void					EnableHeading_int		(bool b)				{m_bHeading = b;}
+
 public:
 	using CUISimpleWindow::SetWndRect;
 
@@ -64,7 +66,6 @@ public:
 			void		TextureOff					()							{ m_bTextureEnable = false; }
 			void		TextureAvailable			(bool value)				{ m_bAvailableTexture = value; }
 			bool		TextureAvailable			()							{ return m_bAvailableTexture;}
-
 
 	// own
 	virtual void		SetHighlightColor			(const u32 uColor)	{ m_HighlightColor = uColor; }

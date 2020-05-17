@@ -54,7 +54,7 @@ void ParseFile(LPCSTR path, CMemoryWriter& W, IReader *F, CXml* xml )
 	}
 }
 
-bool CXml::Init(LPCSTR path_alias, LPCSTR path, LPCSTR _xml_filename)
+bool CXml::Init(const char* path_alias, const char* path, const char* _xml_filename)
 {
 	shared_str fn			= correct_file_name(path, _xml_filename);
 

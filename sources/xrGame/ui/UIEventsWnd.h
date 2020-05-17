@@ -2,7 +2,7 @@
 
 #include "UIWindow.h"//
 #include "UIWndCallback.h"
-#include "UIXmlInit.h"
+#include "UIXmlInit.h"//
 
 class CUIFrameWindow;
 class CUIFrameLineWnd;

@@ -7,9 +7,9 @@ class CUIMessageBoxEx;
 
 #include "..\XR_3DA\IInputReceiver.h"
 #include "..\XR_3DA\IGame_Persistent.h"
-#include "ui/UIDialogHolder.h"
-#include "ui/UIWndCallback.h"
-#include "ui/ui_base.h"
+#include "ui/UIDialogHolder.h"//
+#include "ui/UIWndCallback.h"//
+#include "ui/ui_base.h"//
 
 class CMainMenu :
 	public IMainMenu,
@@ -52,6 +52,7 @@ protected:
 	u32				m_start_time;
 	
 	xr_vector<CUIMessageBoxEx*>	m_pMB_ErrDlgs;
+
 public:
 	u32				m_deactivated_frame;
 	virtual void	DestroyInternal					(bool bForce);
@@ -82,7 +83,6 @@ public:
 	virtual void	StartStopMenu					(CUIDialogWnd* pDialog, bool bDoHideIndicators);
 	virtual bool	UseIndicators					()						{return false;}
 
-
 	void			OnDeviceCreate					();
 
 	void			Screenshot						(IRender_interface::ScreenshotMode mode=IRender_interface::SM_NORMAL, LPCSTR name = 0);
@@ -92,7 +92,6 @@ public:
 	void			SetErrorDialog					(EErrorDlg ErrDlg);
 	EErrorDlg		GetErrorDialogType				() const { return m_NeedErrDialog; } ;
 	void			CheckForErrorDlg				();
-	void			SwitchToMultiplayerMenu			();
 	void			OnSessionTerminate				(LPCSTR reason);
 	void			SetNeedVidRestart				();
 	virtual void	OnDeviceReset					();

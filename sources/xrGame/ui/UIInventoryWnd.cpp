@@ -2,8 +2,8 @@
 
 #include "UIInventoryWnd.h"//
 
-#include "xrUIXmlParser.h"
-#include "UIXmlInit.h"
+#include "xrUIXmlParser.h"//
+#include "UIXmlInit.h"//
 #include "../string_table.h"
 
 #include "../actor.h"

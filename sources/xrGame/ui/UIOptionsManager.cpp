@@ -3,19 +3,22 @@
 ///////////////////////////////////
 
 #include "stdafx.h"
+
 #include "UIOptionsManager.h"//
 #include "UIOptionsItem.h"//
 #include "../..\XR_3DA\xr_ioconsole.h"
 
-CUIOptionsManager::CUIOptionsManager(){
+CUIOptionsManager::CUIOptionsManager( )
+{
 	m_b_vid_restart = false;
 	m_b_vid_restart = false;
 }
 
-void CUIOptionsManager::RegisterItem(CUIOptionsItem* item, LPCSTR group){
+void CUIOptionsManager::RegisterItem(CUIOptionsItem* item, LPCSTR group)
+{
 	groups_it it = m_groups.find(group);
 
-	if (m_groups.end() != it)
+	if (m_groups.end( ) != it)
 	{
 		(*it).second.push_back(item);
 	}
@@ -29,27 +32,34 @@ void CUIOptionsManager::RegisterItem(CUIOptionsItem* item, LPCSTR group){
 	}
 }
 
-void CUIOptionsManager::UnRegisterGroup(LPCSTR group){
+void CUIOptionsManager::UnRegisterGroup(LPCSTR group)
+{
 	groups_it it = m_groups.find(group);
 
-	if (it != m_groups.end())
+	if (it != m_groups.end( ))
 		m_groups.erase(it);
 }
-void CUIOptionsManager::UnRegisterItem(CUIOptionsItem* item){
+
+void CUIOptionsManager::UnRegisterItem(CUIOptionsItem* item)
+{
 	groups_it it;
-	for (it = m_groups.begin(); it!= m_groups.end(); it++){
-		for (u32 i = 0; i < (*it).second.size(); i++)
-			if ((*it).second[i] == item){
-				(*it).second.erase((*it).second.begin() + i); return;}
+	for (it = m_groups.begin( ); it != m_groups.end( ); it++)
+	{
+		for (u32 i = 0; i < (*it).second.size( ); i++)
+			if ((*it).second[i] == item)
+			{
+				(*it).second.erase((*it).second.begin( ) + i); return;
+			}
 	}
 }
 
-void CUIOptionsManager::SendMessage2Group(LPCSTR group, LPCSTR message){
+void CUIOptionsManager::SendMessage2Group(LPCSTR group, LPCSTR message)
+{
 	groups_it it = m_groups.find(group);
 
-	R_ASSERT2(m_groups.end() != it, "invalid group name");
+	R_ASSERT2(m_groups.end( ) != it, "invalid group name");
 
-	for (u32 i = 0; i < (*it).second.size(); i++)
+	for (u32 i = 0; i < (*it).second.size( ); i++)
 		(*it).second[i]->OnMessage(message);
 }
 
@@ -57,59 +67,68 @@ void CUIOptionsManager::SeveBackupValues(LPCSTR group)
 {
 	groups_it it = m_groups.find(group);
 
-	R_ASSERT3(m_groups.end() != it, "invalid group name",group);
+	R_ASSERT3(m_groups.end( ) != it, "invalid group name", group);
 
-	for (u32 i = 0; i < (*it).second.size(); i++){
-		(*it).second[i]->SeveBackUpValue();
+	for (u32 i = 0; i < (*it).second.size( ); i++)
+	{
+		(*it).second[i]->SeveBackUpValue( );
 	}
 }
 
-void CUIOptionsManager::SetCurrentValues(LPCSTR group){
+void CUIOptionsManager::SetCurrentValues(LPCSTR group)
+{
 	groups_it it = m_groups.find(group);
 
-	R_ASSERT3(m_groups.end() != it, "invalid group name",group);
+	R_ASSERT3(m_groups.end( ) != it, "invalid group name", group);
 
-	for (u32 i = 0; i < (*it).second.size(); i++){
-		(*it).second[i]->SetCurrentValue();
+	for (u32 i = 0; i < (*it).second.size( ); i++)
+	{
+		(*it).second[i]->SetCurrentValue( );
 //.		(*it).second[i]->SeveBackUpValue();
 	}
 }
 
-void CUIOptionsManager::SaveValues(LPCSTR group){
+void CUIOptionsManager::SaveValues(LPCSTR group)
+{
 	groups_it it = m_groups.find(group);
 
-	R_ASSERT3(m_groups.end() != it, "invalid group name",group);
+	R_ASSERT3(m_groups.end( ) != it, "invalid group name", group);
 
-	for (u32 i = 0; i < (*it).second.size(); i++){
-		if ((*it).second[i]->IsChanged())
-            (*it).second[i]->SaveValue();
+	for (u32 i = 0; i < (*it).second.size( ); i++)
+	{
+		if ((*it).second[i]->IsChanged( ))
+			(*it).second[i]->SaveValue( );
 	}
 }
 
-bool CUIOptionsManager::IsGroupChanged(LPCSTR group){
-	groups_it it = m_groups.find(group);	
-	R_ASSERT2(m_groups.end() != it, "invalid group name");
+bool CUIOptionsManager::IsGroupChanged(LPCSTR group)
+{
+	groups_it it = m_groups.find(group);
+	R_ASSERT2(m_groups.end( ) != it, "invalid group name");
 
-	for (u32 i = 0; i < (*it).second.size(); i++)
+	for (u32 i = 0; i < (*it).second.size( ); i++)
 	{
-		if ((*it).second[i]->IsChanged())
+		if ((*it).second[i]->IsChanged( ))
 			return true;
 	}
 
 	return false;
 }
 
-void CUIOptionsManager::UndoGroup(LPCSTR group){
-	groups_it it = m_groups.find(group);	
-	R_ASSERT2(m_groups.end() != it, "invalid group name");
+void CUIOptionsManager::UndoGroup(LPCSTR group)
+{
+	groups_it it = m_groups.find(group);
+	R_ASSERT2(m_groups.end( ) != it, "invalid group name");
 
-	for (u32 i = 0; i < (*it).second.size(); i++){
-		if ((*it).second[i]->IsChanged())
-            (*it).second[i]->Undo();
+	for (u32 i = 0; i < (*it).second.size( ); i++)
+	{
+		if ((*it).second[i]->IsChanged( ))
+			(*it).second[i]->Undo( );
 	}
 }
 
-void CUIOptionsManager::OptionsPostAccept(){
+void CUIOptionsManager::OptionsPostAccept( )
+{
 	if (m_b_vid_restart)
 		Console->Execute("vid_restart");
 	if (m_b_snd_restart)
@@ -119,14 +138,12 @@ void CUIOptionsManager::OptionsPostAccept(){
 	m_b_snd_restart = false;
 }
 
-void CUIOptionsManager::DoVidRestart(){
+void CUIOptionsManager::DoVidRestart( )
+{
 	m_b_vid_restart = true;
 }
 
-void CUIOptionsManager::DoSndRestart(){
-    m_b_snd_restart = true;
+void CUIOptionsManager::DoSndRestart( )
+{
+	m_b_snd_restart = true;
 }
-
-
-
-

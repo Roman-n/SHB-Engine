@@ -1,22 +1,21 @@
 //////////////////////////////////////////////////////////////////////
 // UIPdaMsgListItem.cpp: элемент окна списка в основном 
 // экране для сообщений PDA
-//////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "UIPdaMsgListItem.h"//
 #include "../Entity.h"
 #include "../character_info.h"
 #include "UIInventoryUtilities.h"//
-#include "xrUIXmlParser.h"
-#include "UIXmlInit.h"
+#include "xrUIXmlParser.h"//
+#include "UIXmlInit.h"//
 #include "UIColorAnimatorWrapper.h"//
 #include "../object_broker.h"
 
 #define PDA_MSG_MAINGAME_CHAR "maingame_pda_msg.xml"
 
 using namespace InventoryUtilities;
-
 
 void CUIPdaMsgListItem::SetFont(CGameFont* pFont){
 	UIMsgText.SetFont(pFont);

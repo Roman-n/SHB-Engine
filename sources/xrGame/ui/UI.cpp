@@ -1,15 +1,17 @@
 #include "stdafx.h"
-//#include "UI.h"
-#include "..\XR_3DA\xr_IOConsole.h"
-#include "Entity.h"
-#include "HUDManager.h"//
+
+#include "..\..\XR_3DA\xr_IOConsole.h"
+#include "..\Entity.h"
+#include "..\HUDManager.h"//
 #include "UIGameSP.h"//
-#include "actor.h"
-#include "level.h"
-#include "game_cl_base.h"
-#include "ui/UIMainIngameWnd.h"//
-#include "ui/UIMessagesWindow.h"//
-#include "ui/UIPdaWnd.h"//
+#include "..\actor.h"
+#include "..\level.h"
+#include "..\game_cl_base.h"
+#include "UIMainIngameWnd.h"//
+#include "UIMessagesWindow.h"//
+#include "UIPdaWnd.h"//
+#include "..\inventory.h"
+#include "..\huditem.h"
 
 CUI::CUI(CHUDManager* p)
 {
@@ -72,8 +74,7 @@ void CUI::UIOnFrame()
 	m_pMessagesWnd->Update();
 }
 //--------------------------------------------------------------------
-#include "inventory.h"
-#include "huditem.h"
+
 bool CUI::Render()
 {
 	if( GameIndicatorsShown() )

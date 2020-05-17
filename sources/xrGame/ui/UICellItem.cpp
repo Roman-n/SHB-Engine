@@ -25,7 +25,6 @@ CUICellItem::~CUICellItem()
 	delete_data		(m_custom_draw);
 }
 
-
 void CUICellItem::Draw()
 {
 	m_b_already_drawn		= true;
@@ -210,4 +209,3 @@ Fvector2 CUIDragItem::GetPosition()
 {
 	return Fvector2().add(m_pos_offset, GetUICursor()->GetCursorPosition());
 }
-

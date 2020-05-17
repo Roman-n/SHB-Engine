@@ -2,7 +2,7 @@
 
 #include "UIMapWnd.h"//
 #include "UIMap.h"//
-#include "UIXmlInit.h"
+#include "UIXmlInit.h"//
 
 #include "../map_manager.h"
 #include "UIInventoryUtilities.h"//
@@ -15,7 +15,7 @@
 #include "UI3tButton.h"//
 #include "UIMapWndActions.h"//
 #include "UIMapWndActionsSpace.h"//
-#include "UIMapHint.h"
+#include "UIMapHint.h"//
 
 #include "../HUDManager.h"//
 

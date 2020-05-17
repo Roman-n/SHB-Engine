@@ -2,8 +2,8 @@
 
 #include "UITradeWnd.h"//
 
-#include "xrUIXmlParser.h"
-#include "UIXmlInit.h"
+#include "xrUIXmlParser.h"//
+#include "UIXmlInit.h"//
 
 #include "../Entity.h"
 #include "../HUDManager.h"//

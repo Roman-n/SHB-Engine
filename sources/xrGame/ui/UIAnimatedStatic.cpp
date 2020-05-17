@@ -1,16 +1,9 @@
-//=============================================================================
 //  Filename:   UIAnimatedStatic.cpp
-//	Created by Roman E. Marchenko, vortex@gsc-game.kiev.ua
-//	Copyright 2004. GSC Game World
-//	---------------------------------------------------------------------------
 //  —татик дл€ отображени€ анимированной иконки
-//=============================================================================
 
 #include "stdafx.h"
 
 #include "UIAnimatedStatic.h"//
-
-//////////////////////////////////////////////////////////////////////////
 
 CUIAnimatedStatic::CUIAnimatedStatic()
 	:	m_uFrameCount			(0),
@@ -28,8 +21,6 @@ CUIAnimatedStatic::CUIAnimatedStatic()
 	m_pos.set(0,0);
 	ClipperOn();
 }
-
-//////////////////////////////////////////////////////////////////////////
 
 void CUIAnimatedStatic::Update()
 {
@@ -69,8 +60,6 @@ void CUIAnimatedStatic::Update()
 		SetFrame(m_uCurFrame);
 	}
 }
-
-//////////////////////////////////////////////////////////////////////////
 
 void CUIAnimatedStatic::SetFrame(const u32 frameNum)
 {

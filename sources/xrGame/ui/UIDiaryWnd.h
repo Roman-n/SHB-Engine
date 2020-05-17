@@ -24,6 +24,7 @@ class CUIDiaryWnd: public CUIWindow, public CUIWndCallback
 			eNews,
 			eNone
 	};
+
 protected:
 	EDiaryFilter		m_currFilter;
 
@@ -61,6 +62,7 @@ protected:
 			void		UnloadNewsTab			();
 			void		LoadNewsTab				();
 			void		Reload					(EDiaryFilter new_filter);
+
 public:
 						CUIDiaryWnd				();
 	virtual				~CUIDiaryWnd			();
@@ -73,6 +75,4 @@ public:
 			void		AddNews					();
 			void		MarkNewsAsRead			(bool status);
 	virtual void		Show					(bool status);
-
 };
-

@@ -1,8 +1,8 @@
 #include "stdafx.h"
 
-#include "UIXmlInit.h"
+#include "UIXmlInit.h"//
 #include "../HUDManager.h"//
-#include "UI.h"
+//#include "UI.h"
 #include "../level.h"
 #include "UICustomItem.h"//
 
@@ -22,13 +22,12 @@
 #include "UITextBanner.h"//
 #include "UIMultiTextStatic.h"//
 #include "UIAnimatedStatic.h"//
-#include "uixmlinit.h"
 #include "UIListBox.h"//
 #include "UIComboBox.h"//
 #include "UITrackBar.h"//
 #include "../game_base_space.h"
 
-#include "UITextureMaster.h"
+#include "UITextureMaster.h"//
 #include "UIDragDropListEx.h"//
 
 extern int keyname_to_dik(LPCSTR);
@@ -81,7 +80,7 @@ Frect CUIXmlInit::GetFRect(CUIXml& xml_doc, const char* path, int index){
 	return rect;
 }
 
-bool CUIXmlInit::InitWindow(CUIXml& xml_doc, LPCSTR path, 	
+bool CUIXmlInit::InitWindow(CUIXml& xml_doc, const char* path,
 							int index, CUIWindow* pWnd)
 {
 	R_ASSERT3(xml_doc.NavigateToNode(path,index), "XML node not found", path);

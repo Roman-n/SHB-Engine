@@ -1,8 +1,8 @@
 #include "stdafx.h"
 
 #include "script_ui_registrator.h"
-#include "ui\UIMultiTextStatic.h"//
-#include "MainMenu.h"
+#include "UIMultiTextStatic.h"//
+#include "..\MainMenu.h"
 
 using namespace luabind;
 

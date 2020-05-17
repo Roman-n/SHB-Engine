@@ -15,13 +15,9 @@ CUITextBanner::CUITextBanner()
 {
 }
 
-////////////////////////////////////////////////////////////////////////////////
-
 CUITextBanner::~CUITextBanner()
 {
 }
-
-////////////////////////////////////////////////////////////////////////////////
 
 EffectParams * CUITextBanner::SetStyleParams(const TextBannerStyles styleName)
 {
@@ -35,8 +31,6 @@ EffectParams * CUITextBanner::SetStyleParams(const TextBannerStyles styleName)
 	return &m_StyleParams[styleName];
 }
 
-////////////////////////////////////////////////////////////////////////////////
-
 void CUITextBanner::Update()
 {
 	StyleParams_it it = m_StyleParams.begin();
@@ -49,8 +43,6 @@ void CUITextBanner::Update()
 				it->second.fTimePassed += Device.fTimeDelta;
 	}
 }
-
-////////////////////////////////////////////////////////////////////////////////
 
 void CUITextBanner::Out(float x, float y, const char *fmt, ...)
 {
@@ -93,8 +85,6 @@ void CUITextBanner::Out(float x, float y, const char *fmt, ...)
 	m_pFont->Out(pos.x, pos.y, "%s", buf.c_str());
 }
 
-////////////////////////////////////////////////////////////////////////////////
-
 void CUITextBanner::EffectFade()
 {
 	EffectParams	&fade = m_StyleParams[tbsFade];
@@ -127,8 +117,6 @@ void CUITextBanner::EffectFade()
 		m_Cl = subst_alpha(GetTextColor(), u8(iFloor(255.f*(1 - (fade.fTimePassed / fade.fPeriod)))));
 	}
 }
-
-//////////////////////////////////////////////////////////////////////////
 
 void CUITextBanner::EffectFlicker()
 {
@@ -163,15 +151,10 @@ void CUITextBanner::EffectFlicker()
 	}
 }
 
-//////////////////////////////////////////////////////////////////////////
-
 void CUITextBanner::SetTextColor(u32 cl)
 {
-
 	m_Cl = cl;
 }
-
-//////////////////////////////////////////////////////////////////////////
 
 u32  CUITextBanner::GetTextColor()
 {
@@ -180,8 +163,6 @@ u32  CUITextBanner::GetTextColor()
 
 	return m_Cl;
 }
-
-//////////////////////////////////////////////////////////////////////////
 
 void CUITextBanner::ResetAnimation(const TextBannerStyles styleName)
 {

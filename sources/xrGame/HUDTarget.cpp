@@ -4,6 +4,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "HUDTarget.h"//
 #include "HUDManager.h"//
 #include "GameMtlLib.h"

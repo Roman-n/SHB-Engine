@@ -1,6 +1,5 @@
 // UIWindow.cpp: implementation of the CUIWindow class.
-//
-//////////////////////////////////////////////////////////////////////
+
 #include "stdafx.h"
 
 #include "UIWindow.h"//
