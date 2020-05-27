@@ -180,7 +180,7 @@ void CCustomZone::Load(LPCSTR section)
 	if(pSettings->line_exist(section,"blowout_particles_time")) 
 	{
 		m_dwBlowoutParticlesTime = pSettings->r_u32(section,"blowout_particles_time");
-		if (s32(m_dwBlowoutParticlesTime)>m_StateTime[eZoneStateBlowout])	{
+		if (int(m_dwBlowoutParticlesTime)>m_StateTime[eZoneStateBlowout])	{
 			m_dwBlowoutParticlesTime=m_StateTime[eZoneStateBlowout];
 			Msg("! ERROR: invalid 'blowout_particles_time' in '%s'",section);
 		}
@@ -191,7 +191,7 @@ void CCustomZone::Load(LPCSTR section)
 	if(pSettings->line_exist(section,"blowout_light_time")) 
 	{
 		m_dwBlowoutLightTime = pSettings->r_u32(section,"blowout_light_time");
-		if (s32(m_dwBlowoutLightTime)>m_StateTime[eZoneStateBlowout])	{
+		if (int(m_dwBlowoutLightTime)>m_StateTime[eZoneStateBlowout])	{
 			m_dwBlowoutLightTime=m_StateTime[eZoneStateBlowout];
 			Msg("! ERROR: invalid 'blowout_light_time' in '%s'",section);
 		}
@@ -202,7 +202,7 @@ void CCustomZone::Load(LPCSTR section)
 	if(pSettings->line_exist(section,"blowout_sound_time")) 
 	{
 		m_dwBlowoutSoundTime = pSettings->r_u32(section,"blowout_sound_time");
-		if (s32(m_dwBlowoutSoundTime)>m_StateTime[eZoneStateBlowout])	{
+		if (int(m_dwBlowoutSoundTime)>m_StateTime[eZoneStateBlowout])	{
 			m_dwBlowoutSoundTime=m_StateTime[eZoneStateBlowout];
 			Msg("! ERROR: invalid 'blowout_sound_time' in '%s'",section);
 		}
@@ -212,7 +212,7 @@ void CCustomZone::Load(LPCSTR section)
 
 	if(pSettings->line_exist(section,"blowout_explosion_time"))	{
 		m_dwBlowoutExplosionTime = pSettings->r_u32(section,"blowout_explosion_time"); 
-		if (s32(m_dwBlowoutExplosionTime)>m_StateTime[eZoneStateBlowout])	{
+		if (int(m_dwBlowoutExplosionTime)>m_StateTime[eZoneStateBlowout])	{
 			m_dwBlowoutExplosionTime=m_StateTime[eZoneStateBlowout];
 			Msg("! ERROR: invalid 'blowout_explosion_time' in '%s'",section);
 		}
@@ -228,7 +228,7 @@ void CCustomZone::Load(LPCSTR section)
 		R_ASSERT(m_dwBlowoutWindTimeStart < m_dwBlowoutWindTimePeak);
 		R_ASSERT(m_dwBlowoutWindTimePeak < m_dwBlowoutWindTimeEnd);
 
-		if((s32)m_dwBlowoutWindTimeEnd < m_StateTime[eZoneStateBlowout]){
+		if((int)m_dwBlowoutWindTimeEnd < m_StateTime[eZoneStateBlowout]){
 			m_dwBlowoutWindTimeEnd =u32( m_StateTime[eZoneStateBlowout]-1);
 			Msg("! ERROR: invalid 'blowout_wind_time_end' in '%s'",section);
 		}

@@ -31,6 +31,8 @@
 
 #include "ui/UIGameCustom.h"//
 
+#include "ActorStatisticMgr.h"
+
 using namespace luabind;
 
 LPCSTR command_line	()
@@ -439,7 +441,7 @@ void set_snd_volume(float v)
 	psSoundVFactor = v;
 	clamp(psSoundVFactor,0.0f,1.0f);
 }
-#include "actor_statistic_mgr.h"
+
 void add_actor_points(LPCSTR sect, LPCSTR detail_key, int cnt, int pts)
 {
 	return Actor()->StatisticMgr().AddPoints(sect, detail_key, cnt, pts);

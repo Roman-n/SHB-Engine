@@ -45,7 +45,7 @@ public:
 	IC void			w_u16	(u16 d)					{	w(&d,sizeof(u16));	}
 	IC void			w_u8	(u8 d)					{	w(&d,sizeof(u8));	}
 	IC void			w_s64	(s64 d)					{	w(&d,sizeof(s64));	}
-	IC void			w_s32	(s32 d)					{	w(&d,sizeof(s32));	}
+	IC void			w_s32	(int d)					{	w(&d,sizeof(int));	}
 	IC void			w_s16	(s16 d)					{	w(&d,sizeof(s16));	}
 	IC void			w_s8	(s8 d)					{	w(&d,sizeof(s8));	}
 	IC void			w_float	(float d)				{	w(&d,sizeof(float));}
@@ -145,7 +145,7 @@ public:
 	IC u16			r_u16		()			{	u16 tmp;	r(&tmp,sizeof(tmp)); return tmp;	};
 	IC u8			r_u8		()			{	u8 tmp;		r(&tmp,sizeof(tmp)); return tmp;	};
 	IC s64			r_s64		()			{	s64 tmp;	r(&tmp,sizeof(tmp)); return tmp;	};
-	IC s32			r_s32		()			{	s32 tmp;	r(&tmp,sizeof(tmp)); return tmp;	};
+	IC int			r_s32		()			{	int tmp;	r(&tmp,sizeof(tmp)); return tmp;	};
 	IC s16			r_s16		()			{	s16 tmp;	r(&tmp,sizeof(tmp)); return tmp;	};
 	IC s8			r_s8		()			{	s8 tmp;		r(&tmp,sizeof(tmp)); return tmp;	};
 	IC float		r_float		()			{	float tmp;	r(&tmp,sizeof(tmp)); return tmp;	};

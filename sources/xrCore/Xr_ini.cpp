@@ -391,10 +391,10 @@ s16 CInifile::r_s16(LPCSTR S, LPCSTR L)
 	LPCSTR		C = r_string(S,L);
 	return		s16(atoi(C));
 }
-s32 CInifile::r_s32(LPCSTR S, LPCSTR L)
+int CInifile::r_s32(LPCSTR S, LPCSTR L)
 {
 	LPCSTR		C = r_string(S,L);
-	return		s32(atoi(C));
+	return		int(atoi(C));
 }
 float CInifile::r_float(LPCSTR S, LPCSTR L)
 {
@@ -572,7 +572,7 @@ void	CInifile::w_s16			( LPCSTR S, LPCSTR L, s16				V, LPCSTR comment )
 	string128 temp; sprintf_s		(temp,sizeof(temp),"%d",V);
 	w_string	(S,L,temp,comment);
 }
-void	CInifile::w_s32			( LPCSTR S, LPCSTR L, s32				V, LPCSTR comment )
+void	CInifile::w_s32			( LPCSTR S, LPCSTR L, int				V, LPCSTR comment )
 {
 	string128 temp; sprintf_s		(temp,sizeof(temp),"%d",V);
 	w_string	(S,L,temp,comment);

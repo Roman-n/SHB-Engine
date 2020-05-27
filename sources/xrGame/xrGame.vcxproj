@@ -193,7 +193,7 @@
     <ClInclude Include="actor_input_handler.h" />
     <ClInclude Include="actor_memory.h" />
     <ClInclude Include="actor_statistic_defs.h" />
-    <ClInclude Include="actor_statistic_mgr.h" />
+    <ClInclude Include="ActorStatisticMgr.h" />
     <ClInclude Include="agent_corpse_manager.h" />
     <ClInclude Include="agent_corpse_manager_inline.h" />
     <ClInclude Include="agent_enemy_manager.h" />
@@ -1513,7 +1513,7 @@
     <ClCompile Include="Actor_Movement.cpp" />
     <ClCompile Include="Actor_Network.cpp" />
     <ClCompile Include="Actor_Sleep.cpp" />
-    <ClCompile Include="actor_statistic_mgr.cpp" />
+    <ClCompile Include="ActorStatisticMgr.cpp" />
     <ClCompile Include="Actor_Weapon.cpp" />
     <ClCompile Include="agent_corpse_manager.cpp" />
     <ClCompile Include="agent_enemy_manager.cpp" />

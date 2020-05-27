@@ -26,7 +26,7 @@ public:
 	void				_destroy		();
 
 	u32					stat_calls;
-	s32					stat_counter;
+	int					stat_counter;
 public:
 	void				dbg_register	(void* _p,	size_t _size, LPCSTR _name);
 	void				dbg_unregister	(void* _p);

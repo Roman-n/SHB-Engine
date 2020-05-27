@@ -121,6 +121,7 @@ bool CPhraseDialog::SayPhrase (DIALOG_SHARED_PTR& phrase_dialog, const shared_st
 			if(next_phrase_vertex->data()->m_PhraseScript.Precondition(pSpeakerGO2, pSpeakerGO1, *phrase_dialog->m_DialogId, phrase_id.c_str(), next_phrase_id.c_str()))
 			{
 				phrase_dialog->m_PhraseVector.push_back(next_phrase_vertex->data());
+
 #ifdef DEBUG
 				if(psAI_Flags.test(aiDialogs)){
 					LPCSTR phrase_text = next_phrase_vertex->data()->GetText();
@@ -128,8 +129,8 @@ bool CPhraseDialog::SayPhrase (DIALOG_SHARED_PTR& phrase_dialog, const shared_st
 					Msg("----added phrase text [%s]phrase_id=[%s] id=[%s] to dialog [%s]",phrase_text, phrase_id, id, *phrase_dialog->m_DialogId);
 				}
 #endif
-			}
 
+			}
 		}
 
 		R_ASSERT2	(
@@ -145,15 +146,12 @@ bool CPhraseDialog::SayPhrase (DIALOG_SHARED_PTR& phrase_dialog, const shared_st
 				 phrase_dialog->m_PhraseVector.end(), PhraseGoodwillPred);
 	}
 
-
-
 	//сообщить CDialogManager, что сказана фраза
 	//и ожидается ответ
 	if(first_is_speaking)
 		phrase_dialog->SecondSpeaker()->ReceivePhrase(phrase_dialog);
 	else
 		phrase_dialog->FirstSpeaker()->ReceivePhrase(phrase_dialog);
-
 
 	return phrase_dialog?!phrase_dialog->m_bFinished:true;
 }
@@ -172,12 +170,10 @@ LPCSTR CPhraseDialog::DialogCaption()
 	return data()->m_sCaption.size()?*data()->m_sCaption:GetPhraseText("0");
 }
 
-
 int	 CPhraseDialog::Priority()
 {
 	return data()->m_iPriority;
 }
-
 
 void CPhraseDialog::Load(shared_str dialog_id)
 {

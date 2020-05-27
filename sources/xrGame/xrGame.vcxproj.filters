@@ -2128,6 +2128,9 @@
     <Filter Include="UI\Common\DiaryWnd">
       <UniqueIdentifier>{9405ff7b-7cc6-4814-92c1-49c04bf991b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Client\Objects\tasks_info_dialogs\info portions">
+      <UniqueIdentifier>{464ed855-47fb-4264-8056-eac90c3d33f5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mt_config.h">
@@ -4662,12 +4665,6 @@
     <ClInclude Include="HangingLamp.h">
       <Filter>Core\Client\Objects\hanging_lamp</Filter>
     </ClInclude>
-    <ClInclude Include="InfoPortion.h">
-      <Filter>Core\Client\Objects\tasks_info_dialogs</Filter>
-    </ClInclude>
-    <ClInclude Include="InfoPortionDefs.h">
-      <Filter>Core\Client\Objects\tasks_info_dialogs</Filter>
-    </ClInclude>
     <ClInclude Include="xml_str_id_loader.h">
       <Filter>Core\Client\Objects\tasks_info_dialogs</Filter>
     </ClInclude>
@@ -4711,9 +4708,6 @@
       <Filter>Core\Client\Objects\tasks_info_dialogs\news</Filter>
     </ClInclude>
     <ClInclude Include="actor_statistic_defs.h">
-      <Filter>Core\Client\Objects\tasks_info_dialogs\statistics</Filter>
-    </ClInclude>
-    <ClInclude Include="actor_statistic_mgr.h">
       <Filter>Core\Client\Objects\tasks_info_dialogs\statistics</Filter>
     </ClInclude>
     <ClInclude Include="Inventory.h">
@@ -6032,6 +6026,15 @@
     </ClInclude>
     <ClInclude Include="SmartZone.h">
       <Filter>Core\Client\Objects\zones\SmartZone</Filter>
+    </ClInclude>
+    <ClInclude Include="InfoPortion.h">
+      <Filter>Core\Client\Objects\tasks_info_dialogs\info portions</Filter>
+    </ClInclude>
+    <ClInclude Include="InfoPortionDefs.h">
+      <Filter>Core\Client\Objects\tasks_info_dialogs\info portions</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorStatisticMgr.h">
+      <Filter>Core\Client\Objects\tasks_info_dialogs\statistics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -7484,9 +7487,6 @@
     <ClCompile Include="HangingLamp.cpp">
       <Filter>Core\Client\Objects\hanging_lamp</Filter>
     </ClCompile>
-    <ClCompile Include="InfoPortion.cpp">
-      <Filter>Core\Client\Objects\tasks_info_dialogs</Filter>
-    </ClCompile>
     <ClCompile Include="GameTask.cpp">
       <Filter>Core\Client\Objects\tasks_info_dialogs\game tasks</Filter>
     </ClCompile>
@@ -7516,9 +7516,6 @@
     </ClCompile>
     <ClCompile Include="game_news.cpp">
       <Filter>Core\Client\Objects\tasks_info_dialogs\news</Filter>
-    </ClCompile>
-    <ClCompile Include="actor_statistic_mgr.cpp">
-      <Filter>Core\Client\Objects\tasks_info_dialogs\statistics</Filter>
     </ClCompile>
     <ClCompile Include="Inventory.cpp">
       <Filter>Core\Client\Objects\inventory</Filter>
@@ -8812,6 +8809,12 @@
     </ClCompile>
     <ClCompile Include="Pda.cpp">
       <Filter>Core\Client\Objects\items &amp; weapons\PDA &amp; information</Filter>
+    </ClCompile>
+    <ClCompile Include="InfoPortion.cpp">
+      <Filter>Core\Client\Objects\tasks_info_dialogs\info portions</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorStatisticMgr.cpp">
+      <Filter>Core\Client\Objects\tasks_info_dialogs\statistics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

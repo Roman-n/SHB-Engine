@@ -390,7 +390,7 @@ public:
 			void						react_on_member_death			();
 private:
 	CWeaponShotEffector					*m_weapon_shot_effector;
-	s32									m_weapon_shot_random_seed;
+	int									m_weapon_shot_random_seed;
 
 public:
 	virtual	void						on_weapon_shot_start			(CWeapon *weapon);

@@ -38,7 +38,7 @@
 #include "game_base_kill_type.h"
 #include "holder_custom.h"
 #include "actor_memory.h"
-#include "actor_statistic_mgr.h"
+#include "ActorStatisticMgr.h"
 #include "characterphysicssupport.h"
 #include "game_cl_base_weapon_usage_statistic.h"
 #include "clsid_game.h"

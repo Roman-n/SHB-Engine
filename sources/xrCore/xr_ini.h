@@ -90,8 +90,8 @@ public:
 	s8	 		r_s8			( const shared_str& S, LPCSTR L )				{ return r_s8(*S,L);			}
 	s16	 		r_s16			( LPCSTR S, LPCSTR L );
 	s16	 		r_s16			( const shared_str& S, LPCSTR L )				{ return r_s16(*S,L);			}
-	s32	 		r_s32			( LPCSTR S, LPCSTR L );
-	s32	 		r_s32			( const shared_str& S, LPCSTR L )				{ return r_s32(*S,L);			}
+	int	 		r_s32			( LPCSTR S, LPCSTR L );
+	int	 		r_s32			( const shared_str& S, LPCSTR L )				{ return r_s32(*S,L);			}
 	float		r_float			( LPCSTR S, LPCSTR L );
 	float		r_float			( const shared_str& S, LPCSTR L )				{ return r_float(*S,L);			}
 	Fcolor		r_fcolor		( LPCSTR S, LPCSTR L );
@@ -122,7 +122,7 @@ public:
 	void		w_u32			( LPCSTR S, LPCSTR L, u32				V, LPCSTR comment=0 );
     void		w_s8			( LPCSTR S, LPCSTR L, s8				V, LPCSTR comment=0 );
 	void		w_s16			( LPCSTR S, LPCSTR L, s16				V, LPCSTR comment=0 );
-	void		w_s32			( LPCSTR S, LPCSTR L, s32				V, LPCSTR comment=0 );
+	void		w_s32			( LPCSTR S, LPCSTR L, int				V, LPCSTR comment=0 );
 	void		w_float			( LPCSTR S, LPCSTR L, float				V, LPCSTR comment=0 );
     void		w_fcolor		( LPCSTR S, LPCSTR L, const Fcolor&		V, LPCSTR comment=0 );
     void		w_color			( LPCSTR S, LPCSTR L, u32				V, LPCSTR comment=0 );

@@ -114,12 +114,12 @@ void CActor::OnEvent		(NET_Packet& P, u16 type)
 		break;
 	case GE_INV_ACTION:
 		{
-			s32 cmd;
+		int cmd;
 			P.r_s32		(cmd);
 			u32 flags;
 			P.r_u32		(flags);
-			s32 ZoomRndSeed = P.r_s32();
-			s32 ShotRndSeed = P.r_s32();
+			int ZoomRndSeed = P.r_s32();
+			int ShotRndSeed = P.r_s32();
 									
 			if (flags & CMD_START)
 			{

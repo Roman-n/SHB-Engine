@@ -85,12 +85,10 @@ CGameTask*	CGameTaskManager::GiveGameTaskToActor(CGameTask* t, u32 timeToComplet
 	GameTasks().back().game_task			= t;
 	t->m_ReceiveTime				= Level().GetGameTime();
 	t->m_TimeToComplete				= t->m_ReceiveTime + timeToComplete;
-
 	
 	std::sort						(GameTasks().begin(), GameTasks().end(), task_prio_pred);
 
 	ARTICLE_VECTOR& article_vector = Actor()->encyclopedia_registry->registry().objects();
-
 
 	SGameTaskObjective	*obj = NULL;
 	for (u32 i = 0; i < t->m_Objectives.size(); ++i){
@@ -116,7 +114,6 @@ CGameTask*	CGameTaskManager::GiveGameTaskToActor(CGameTask* t, u32 timeToComplet
 	{
 		SetActiveTask(t->m_ID, 1);
 	}
-
 
 	//установить флажок необходимости прочтения тасков в PDA
 	if(HUD().GetUI()){
@@ -226,7 +223,6 @@ void CGameTaskManager::UpdateTasks						()
 	if(	m_flags.test(eChanged) )
 		UpdateActiveTask	();
 }
-
 
 void CGameTaskManager::UpdateActiveTask				()
 {

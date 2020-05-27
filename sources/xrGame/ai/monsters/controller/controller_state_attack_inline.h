@@ -68,7 +68,7 @@ void CStateControllerAttackAbstract::execute()
 			//} else if (!control_fire_can && control_tube_can) {
 			//	state_id = eStateAttack_ControlTube;
 			//} else if (control_fire_can && control_tube_can) {
-			//	s32 rand = Random.randI(CONTROL_FIRE_PERC + CONTROL_TUBE_PERC);
+			//	int rand = Random.randI(CONTROL_FIRE_PERC + CONTROL_TUBE_PERC);
 			//	
 			//	if (rand < CONTROL_FIRE_PERC)
 			//		state_id = eStateAttack_ControlFire;

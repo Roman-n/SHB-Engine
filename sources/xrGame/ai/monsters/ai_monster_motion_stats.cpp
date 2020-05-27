@@ -26,7 +26,7 @@ bool CMotionStats::is_good_motion(u32 elems_checked)
 	if (index == 0) return true;
 	else from_index = index-1;
 
-	if (s32(index - elems_checked) < 0) return true;
+	if (int(index - elems_checked) < 0) return true;
 	else to_index = index - elems_checked;
 	
 	bool bGood = true;

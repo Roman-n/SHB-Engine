@@ -77,8 +77,6 @@ void CAI_PhraseDialogManager::AnswerPhrase (DIALOG_SHARED_PTR& phrase_dialog)
 	}
 }
 
-
-
 void CAI_PhraseDialogManager::SetStartDialog(shared_str phrase_dialog)
 {
 	m_sStartDialog = phrase_dialog;
@@ -93,7 +91,6 @@ void CAI_PhraseDialogManager::RestoreDefaultStartDialog()
 {
 	m_sStartDialog = m_sDefaultStartDialog;
 }
-
 
 void CAI_PhraseDialogManager::UpdateAvailableDialogs	(CPhraseDialogManager* partner)
 {		

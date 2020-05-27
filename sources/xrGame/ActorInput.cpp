@@ -457,7 +457,7 @@ void	CActor::OnPrevWeaponSlot()
 		if (SlotsToCheck[CurSlot] == ActiveSlot) break;
 	};
 	if (CurSlot >= NumSlotsToCheck) return;
-	for (s32 i=s32(CurSlot-1); i>=0; i--)
+	for (int i= int(CurSlot-1); i>=0; i--)
 	{
 		if (inventory().ItemFromSlot(SlotsToCheck[i]))
 		{

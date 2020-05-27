@@ -1,5 +1,6 @@
 #include "stdafx.h"
-#include "actor_statistic_mgr.h"
+
+#include "ActorStatisticMgr.h"
 #include "alife_registry_wrappers.h"
 #include "alife_simulator_header.h"
 /*
@@ -31,7 +32,6 @@ void SStatDetailBData::load(IReader &stream)
 	if(ai().get_alife()->header().version()>0x0002)
 		load_data			(str_value,		stream);
 }
-
 
 ////////////////////////////////////////////////
 void SStatSectionData::save(IWriter &stream)	
@@ -93,9 +93,9 @@ SStatDetailBData&	SStatSectionData::GetData	(const shared_str& key)
 	return data.back		();
 }
 
-s32 SStatSectionData::GetTotalPoints() const
+int SStatSectionData::GetTotalPoints() const
 {
-	s32 res = 0;
+	int res = 0;
 	vStatDetailData::const_iterator it		= data.begin();
 	vStatDetailData::const_iterator it_e	= data.end();
 	for(;it!=it_e;++it)
@@ -105,8 +105,8 @@ s32 SStatSectionData::GetTotalPoints() const
 		
 		res		+= (*it).int_count*(*it).int_points;
 	}
-	return res;
 
+	return res;
 }
 
 CActorStatisticMgr::CActorStatisticMgr		()
@@ -151,7 +151,7 @@ void CActorStatisticMgr::AddPoints(const shared_str& key, const shared_str& deta
 	d.str_value					= str_value;
 }
 
-void CActorStatisticMgr::AddPoints(const shared_str& key, const shared_str& detail_key, s32 cnt, s32 pts)
+void CActorStatisticMgr::AddPoints(const shared_str& key, const shared_str& detail_key, int cnt, int pts)
 {
 	SStatSectionData& sect		= GetSection		(key);
 	SStatDetailBData& d			= sect.GetData		(detail_key);
@@ -159,18 +159,18 @@ void CActorStatisticMgr::AddPoints(const shared_str& key, const shared_str& deta
 	d.int_points				+= cnt*pts;
 }
 
-s32 CActorStatisticMgr::GetSectionPoints(const shared_str& key)
+int CActorStatisticMgr::GetSectionPoints(const shared_str& key)
 {
 	if( key != "total" )
 		return GetSection(key).GetTotalPoints();
 	else{//total
-		s32 _total = -1;
+		int _total = -1;
 		vStatSectionData& d					= GetStorage();
 		vStatSectionData::iterator it		= d.begin();
 		vStatSectionData::iterator it_e		= d.end();
 		for(;it!=it_e;++it)
 		{
-			s32 _p = (*it).GetTotalPoints();
+			int _p = (*it).GetTotalPoints();
 
 			if(_p !=-1)
 			{

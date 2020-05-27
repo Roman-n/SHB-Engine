@@ -1137,7 +1137,7 @@ ID3DXSprite*        g_pTextSprite = NULL;   // Sprite for batching draw text cal
 
 /*
 #include "UIGameTutorial.h"
-#include "../actor_statistic_mgr.h"
+#include "../ActorStatisticMgr.h"
 CUIGameTutorial* g_tut = NULL;
 */
 //#include "../postprocessanimator.h"

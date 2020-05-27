@@ -22,8 +22,6 @@
 ALife::_STORY_ID	story_id		(LPCSTR story_id);
 u16					storyId2GameId	(ALife::_STORY_ID);
 
-
-
 using namespace luabind;
 
 ALife::_STORY_ID	story_id	(LPCSTR story_id)
@@ -110,20 +108,17 @@ void CGameTask::Load(const TASK_ID& id)
 		m_Objectives.push_back			(SGameTaskObjective(this,i));
 		SGameTaskObjective&				objective = m_Objectives.back();
 
-//.
 		LPCSTR tag_text					= g_gameTaskXml->Read(l_root, "text", 0, NULL);
 		objective.description			= tag_text;
-//.
+
 		tag_text						= g_gameTaskXml->Read(l_root, "article", 0, NULL);
 		if(tag_text)
 			objective.article_id		= tag_text;
 
-//.
 		tag_text						= g_gameTaskXml->ReadAttrib(l_root, "key", NULL);
 		if(tag_text)
 			objective.article_key		= tag_text;
 
-//.
 		if(i==0)
 		{
 			objective.icon_texture_name		= g_gameTaskXml->Read(g_gameTaskXml->GetLocalRoot(), "icon", 0, NULL);
@@ -141,12 +136,11 @@ void CGameTask::Load(const TASK_ID& id)
 				objective.icon_rect.y2			= g_gameTaskXml->ReadAttribFlt(l_root, "icon", 0, "height");
 			}
 		}
-//.
+
 		objective.map_location			= g_gameTaskXml->Read(l_root, "map_location_type", 0, NULL);
 
 		LPCSTR object_story_id			= g_gameTaskXml->Read(l_root, "object_story_id", 0, NULL);
 
-//*
 		LPCSTR ddd;
 		ddd								= g_gameTaskXml->Read(l_root, "map_location_hidden", 0, NULL);
 		if(ddd)
@@ -157,10 +151,8 @@ void CGameTask::Load(const TASK_ID& id)
 		b2								= (NULL==object_story_id);
 		VERIFY3							(b1==b2,"check [map_location_type] and [object_story_id] fields in objective definition for: ",*objective.description);
 		
-//.
 		objective.object_id				= u16(-1);
 
-//.
 		objective.map_hint				= g_gameTaskXml->ReadAttrib(l_root, "map_location_type", 0, "hint", NULL);
 
 		if(object_story_id){
@@ -195,7 +187,6 @@ void CGameTask::Load(const TASK_ID& id)
 		for(j=0; j<info_num; ++j)
 			objective.m_infos_on_fail[j]= g_gameTaskXml->Read(l_root, "infoportion_set_fail", j, NULL);
 
-
 //------function_complete
 		LPCSTR		str;
 		bool functor_exists;
@@ -206,7 +197,6 @@ void CGameTask::Load(const TASK_ID& id)
 			functor_exists				= ai().script_engine().functor(str ,objective.m_complete_lua_functions[j]);
 			THROW3						(functor_exists, "Cannot find script function described in task objective  ", str);
 		}
-
 
 //------function_fail
 		info_num						= g_gameTaskXml->GetNodesNum(l_root,"function_fail");
@@ -325,11 +315,9 @@ ETaskState SGameTaskObjective::UpdateState	()
 	if( CheckInfo(m_completeInfos) )
 		return		eTaskStateCompleted;
 
-
 //check complete functor
 	if( CheckFunctions(m_complete_lua_functions) )
 		return		eTaskStateCompleted;
-
 	
 	return TaskState();
 }
@@ -339,7 +327,6 @@ void SGameTaskObjective::SendInfo		(xr_vector<shared_str>& v)
 	xr_vector<shared_str>::iterator it	= v.begin();
 	for(;it!=v.end();++it)
 		Actor()->TransferInfo					((*it),true);
-
 }
 
 bool SGameTaskObjective::CheckInfo		(xr_vector<shared_str>& v)
@@ -350,6 +337,7 @@ bool SGameTaskObjective::CheckInfo		(xr_vector<shared_str>& v)
 		res = Actor()->HasInfo					(*it);
 		if(!res) break;
 	}
+
 	return res;
 }
 
@@ -361,8 +349,8 @@ bool SGameTaskObjective::CheckFunctions	(xr_vector<luabind::functor<bool> >& v)
 		if( (*it).is_valid() ) res = (*it)(*(parent->m_ID), idx);
 		if(!res) break;
 	}
-	return res;
 
+	return res;
 }
 
 void SGameTaskObjective::CallAllFuncs	(xr_vector<luabind::functor<bool> >& v)
@@ -372,6 +360,7 @@ void SGameTaskObjective::CallAllFuncs	(xr_vector<luabind::functor<bool> >& v)
 		if( (*it).is_valid() ) (*it)(*(parent->m_ID), idx);
 	}
 }
+
 void SGameTaskObjective::SetDescription_script(LPCSTR _descr)
 {
 	description = _descr;
@@ -434,20 +423,21 @@ void SGameTaskObjective::AddCompleteFunc_script(LPCSTR _str)
 {
 	m_pScriptHelper.m_s_complete_lua_functions.push_back(_str);
 }
+
 void SGameTaskObjective::AddFailFunc_script(LPCSTR _str)
 {
 	m_pScriptHelper.m_s_fail_lua_functions.push_back(_str);
 }
+
 void SGameTaskObjective::AddOnCompleteFunc_script(LPCSTR _str)
 {
 	m_pScriptHelper.m_s_lua_functions_on_complete.push_back(_str);
 }
+
 void SGameTaskObjective::AddOnFailFunc_script(LPCSTR _str)
 {
 	m_pScriptHelper.m_s_lua_functions_on_fail.push_back(_str);
 }
-
-
 
 void CGameTask::Load_script(LPCSTR _id)		
 {
@@ -479,7 +469,6 @@ void SGameTaskObjective::ChangeStateCallback()
 	Actor()->callback(GameObject::eTaskStateChange)(parent, this, task_state);
 }
 
-
 void SGameTaskObjective::save(IWriter &stream)
 {
 		save_data(idx,					stream);
@@ -504,7 +493,6 @@ void SGameTaskObjective::save(IWriter &stream)
 		save_data(b_script,				stream);
 		if(b_script)
 			save_data(m_pScriptHelper,	stream);
-
 }
 
 void SGameTaskObjective::load(IReader &stream)
@@ -584,7 +572,6 @@ void SGameTaskKey::save(IWriter &stream)
 	OBJECTIVE_VECTOR_IT it_e	= game_task->m_Objectives.end();
 	for(;it!=it_e;++it)
 		save_data(*it, stream);
-
 }
 
 void SGameTaskKey::load(IReader &stream)
@@ -656,7 +643,6 @@ void CGameTask::script_register(lua_State* L)
 		.def("get_idx", &SGameTaskObjective::GetIDX_script)
 		.def("get_state", &SGameTaskObjective::TaskState),
 
-
 		class_<CGameTask>("CGameTask")
 		.def(constructor<>( ))
 		.def("load", &CGameTask::Load_script)
@@ -669,6 +655,5 @@ void CGameTask::script_register(lua_State* L)
 		.def("get_id", &CGameTask::GetID_script)
 		.def("set_id", &CGameTask::SetID_script)
 		.def("get_objectives_cnt", &CGameTask::GetObjectiveSize_script)
-
 		];
 }

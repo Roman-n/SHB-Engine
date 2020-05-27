@@ -434,8 +434,8 @@ typedef _vector3<float>		Fvector;
 typedef _vector3<float>		Fvector3;
 typedef _vector3<double>	Dvector;
 typedef _vector3<double>	Dvector3;
-typedef _vector3<s32>		Ivector;
-typedef _vector3<s32>		Ivector3;
+typedef _vector3<int>		Ivector;
+typedef _vector3<int>		Ivector3;
 
 template <class T>
 BOOL	_valid			(const _vector3<T>& v)	{ return _valid((T)v.x) && _valid((T)v.y) && _valid((T)v.z);	}

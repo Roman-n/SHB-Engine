@@ -20,7 +20,7 @@ enum ELocationFlags
 	ePosToActor			= (1<<3),
 	ePointerEnabled		= (1<<4),
 	eSpotEnabled		= (1<<5),
-	eUserDefined		= (1<<6),
+	eUserDefined		= (1<<6)
 };
 
 protected:

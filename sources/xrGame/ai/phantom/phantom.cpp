@@ -321,7 +321,7 @@ void CPhantom::PsyHit(const CObject *object, float value)
 // Core events
 void CPhantom::save(NET_Packet &output_packet)
 {
-	output_packet.w_s32	(s32(m_CurState));
+	output_packet.w_s32	(int(m_CurState));
 }
 void CPhantom::load(IReader &input_packet)
 {
