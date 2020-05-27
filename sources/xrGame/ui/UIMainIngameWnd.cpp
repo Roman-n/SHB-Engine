@@ -9,7 +9,7 @@
 #include <dinput.h>
 #include "../actor.h"
 #include "../HUDManager.h"//
-#include "../PDA.h"
+#include "../Pda.h"
 #include "../WeaponHUD.h"
 #include "../character_info.h"
 #include "../inventory.h"

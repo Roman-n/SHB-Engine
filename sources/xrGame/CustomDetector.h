@@ -1,7 +1,8 @@
 #pragma once
+
 #include "inventory_item_object.h"
 #include "..\XR_3DA\feel_touch.h"
-#include "hudsound.h"
+#include "HudSound.h"
 
 class CCustomZone;
 //описание типа зоны

@@ -10,8 +10,8 @@ class CGrenadeLauncher : public CInventoryItemObject {
 private:
 	typedef CInventoryItemObject inherited;
 public:
-	CGrenadeLauncher (void);
-	virtual ~CGrenadeLauncher(void);
+	CGrenadeLauncher ( );
+	virtual ~CGrenadeLauncher( );
 
 	virtual BOOL net_Spawn			(CSE_Abstract* DC);
 	virtual void Load				(LPCSTR section);

@@ -8,7 +8,7 @@
 #include "stdafx.h"
 
 #include "script_zone.h"
-#include "smart_zone.h"
+#include "SmartZone.h"
 
 using namespace luabind;
 

@@ -7,7 +7,7 @@
 #include "../grenadelauncher.h"
 #include "../Artifact.h"
 #include "../eatable_item.h"
-#include "../BottleItem.h"
+#include "../BottleItem.h"//
 #include "../WeaponMagazined.h"
 #include "../inventory.h"
 #include "../game_base.h"
@@ -17,7 +17,7 @@
 #include "UIListBoxItem.h"//
 #include "../CustomOutfit.h"
 #include "../Medkit.h"
-#include "../Antirad.h"
+#include "../Antirad.h"//==>
 
 void CUIInventoryWnd::EatItem(PIItem itm)
 {

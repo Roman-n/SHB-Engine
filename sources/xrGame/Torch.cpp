@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "torch.h"
 #include "entity.h"
 #include "actor.h"
@@ -63,7 +64,7 @@ CTorch::~CTorch(void)
 	HUD_SOUND::DestroySound	(m_NightVisionBrokenSnd);
 }
 
-inline bool CTorch::can_use_dynamic_lights	()
+IC bool CTorch::can_use_dynamic_lights	()
 {
 	if (!H_Parent())
 		return				(true);
@@ -493,12 +494,26 @@ bool  CTorch::can_be_attached		() const
 	}
 	return true;
 }
+
 void CTorch::afterDetach			()
 {
 	inherited::afterDetach	();
 	Switch					(false);
 }
+
 void CTorch::renderable_Render()
 {
 	inherited::renderable_Render();
+}
+
+using namespace luabind;
+
+#pragma optimize("s",on)
+void CTorch::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CTorch, CGameObject>("CTorch")
+			.def(constructor<>( ))
+		];
 }

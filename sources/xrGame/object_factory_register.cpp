@@ -98,10 +98,10 @@
 #	include "grenadelauncher.h"
 
 #	include "bolt.h"
-#	include "medkit.h"
-#	include "antirad.h"
-#	include "fooditem.h"
-#	include "bottleitem.h"
+#	include "Medkit.h"
+#	include "Antirad.h"//==>
+#	include "FoodItem.h"
+#	include "BottleItem.h"//
 #	include "explosiveitem.h"
 
 #	include "infodocument.h"
@@ -130,10 +130,10 @@
 #	include "hairszone.h"
 #	include "amebazone.h"
 #	include "nogravityzone.h"
-#	include "simpledetector.h"
+#	include "SimpleDetector.h"
 
 #	include "torch.h"
-#	include "pda.h"
+#	include "Pda.h"
 
 #	include "searchlight.h"
 
@@ -150,7 +150,7 @@
 #	include "ui/UIGameSP.h"//
 #	include	"climableobject.h"
 #	include "space_restrictor.h"
-#	include "smart_zone.h"
+#	include "SmartZone.h"
 #	include "InventoryBox.h"
 
 #define ADD(a,b,c,d)			add<a,b>(c,d)

@@ -1,5 +1,6 @@
 #include "stdafx.h"
-#include "pda.h"
+
+#include "Pda.h"
 #include "HUDManager.h"//
 #include "PhysicsShell.h"
 #include "Entity.h"
@@ -12,7 +13,6 @@
 #include "specific_character.h"
 #include "alife_registry_wrappers.h"
 
-
 CPda::CPda(void)						
 {										
 	m_slot					= PDA_SLOT;
@@ -20,7 +20,6 @@ CPda::CPda(void)
 
 	m_idOriginalOwner		= u16(-1);
 	m_SpecificChracterOwner = NULL;
-
 	
 	TurnOff					();
 }
@@ -113,8 +112,11 @@ BOOL CPda::feel_touch_contact(CObject* O)
 			CEntityAlive* pEntityAlive = smart_cast<CEntityAlive*>(O);
 			if(pEntityAlive && !pEntityAlive->cast_base_monster() )
 				return TRUE;
-		}else
-		return FALSE;
+		}
+		else
+		{
+			return FALSE;
+		}
 	}
 
 	return FALSE;
@@ -132,7 +134,8 @@ void CPda::OnH_A_Chield()
 			m_sFullName += " ";
 			m_sFullName += (smart_cast<CInventoryOwner*>(H_Parent()))->Name();
 		}
-	};
+	}
+
 	inherited::OnH_A_Chield		();
 }
 
@@ -144,7 +147,6 @@ void CPda::OnH_B_Independent(bool just_before_destroy)
 	TurnOff();
 }
 
-
 CInventoryOwner* CPda::GetOriginalOwner()
 {
 	CObject* pObject =  Level().Objects.net_Find(GetOriginalOwnerID());
@@ -152,8 +154,6 @@ CInventoryOwner* CPda::GetOriginalOwner()
 
 	return pInvOwner;
 }
-
-
 
 void CPda::ActivePDAContacts(xr_vector<CPda*>& res)
 {
@@ -185,6 +185,7 @@ CObject* CPda::GetOwnerObject()
 {
 	return				Level().Objects.net_Find(GetOriginalOwnerID());
 }
+
 LPCSTR		CPda::Name				()
 {
 	if( !m_SpecificChracterOwner.size() )

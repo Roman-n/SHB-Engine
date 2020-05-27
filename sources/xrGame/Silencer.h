@@ -4,11 +4,13 @@
 ///////////////////////////////////////////////////////////////
 
 #pragma once
+
 #include "inventory_item_object.h"
 
 class CSilencer : public CInventoryItemObject {
 private:
 	typedef CInventoryItemObject inherited;
+
 public:
 	CSilencer (void);
 	virtual ~CSilencer(void);
@@ -22,5 +24,4 @@ public:
 
 	virtual void UpdateCL			();
 	virtual void renderable_Render	();
-
 };

@@ -7,7 +7,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include "hud_item_object.h"
+#include "HudItemObject.h"
 
 CHudItemObject::CHudItemObject			()
 {

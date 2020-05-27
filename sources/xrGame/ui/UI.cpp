@@ -11,7 +11,7 @@
 #include "UIMessagesWindow.h"//
 #include "UIPdaWnd.h"//
 #include "..\inventory.h"
-#include "..\huditem.h"
+#include "..\HudItem.h"
 
 CUI::CUI(CHUDManager* p)
 {

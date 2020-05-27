@@ -25,10 +25,10 @@
 #include "../game_object_space.h"
 #include "../script_callback_ex.h"
 #include "../script_game_object.h"
-#include "../BottleItem.h"
+#include "../BottleItem.h"//
 #include "../xr_level_controller.h"
 #include "../Medkit.h"
-#include "../Antirad.h"
+#include "../Antirad.h"//==>
 
 
 #define				CAR_BODY_XML		"carbody_new.xml"

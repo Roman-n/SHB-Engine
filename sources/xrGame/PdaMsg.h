@@ -5,6 +5,7 @@
 /////////////////////////////////////////////////////
 
 #pragma once
+
 #include "alife_space.h"
 #include "pda_space.h"
 
@@ -29,7 +30,6 @@ typedef struct tagSPdaMessage
 	ALife::_TIME_ID	time;
 		
 } SPdaMessage;
-
 
 //информация о контактах персонажей по PDA и во время диалога
 struct TALK_CONTACT_DATA

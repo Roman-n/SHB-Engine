@@ -122,7 +122,7 @@
 #	include "alife_monster_detail_path_manager.h"
 #	include "alife_smart_terrain_task.h"
 #	include "game_graph.h"
-#	include "smart_zone.h"
+#	include "SmartZone.h"
 #	include "F1.h"
 #	include "RGD5.h"
 #	include "Scope.h"

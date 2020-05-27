@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "customdetector.h"
+#include "CustomDetector.h"
 #include "customzone.h"
 #include "HUDManager.h"//
 #include "artifact.h"

@@ -5010,28 +5010,16 @@
     <ClInclude Include="Torch.h">
       <Filter>Core\Client\Objects\items &amp; weapons\Devices\Torch</Filter>
     </ClInclude>
-    <ClInclude Include="PDA.h">
-      <Filter>Core\Client\Objects\items &amp; weapons\PDA &amp; information</Filter>
-    </ClInclude>
     <ClInclude Include="pda_space.h">
       <Filter>Core\Client\Objects\items &amp; weapons\PDA &amp; information</Filter>
     </ClInclude>
     <ClInclude Include="PdaMsg.h">
       <Filter>Core\Client\Objects\items &amp; weapons\PDA &amp; information</Filter>
     </ClInclude>
-    <ClInclude Include="antirad.h">
-      <Filter>Core\Client\Objects\items &amp; weapons\Food &amp; Drugs</Filter>
-    </ClInclude>
     <ClInclude Include="BottleItem.h">
       <Filter>Core\Client\Objects\items &amp; weapons\Food &amp; Drugs</Filter>
     </ClInclude>
     <ClInclude Include="FoodItem.h">
-      <Filter>Core\Client\Objects\items &amp; weapons\Food &amp; Drugs</Filter>
-    </ClInclude>
-    <ClInclude Include="ItemHealth.h">
-      <Filter>Core\Client\Objects\items &amp; weapons\Food &amp; Drugs</Filter>
-    </ClInclude>
-    <ClInclude Include="medkit.h">
       <Filter>Core\Client\Objects\items &amp; weapons\Food &amp; Drugs</Filter>
     </ClInclude>
     <ClInclude Include="BoneProtections.h">
@@ -5054,9 +5042,6 @@
     </ClInclude>
     <ClInclude Include="InfoDocument.h">
       <Filter>Core\Client\Objects\items &amp; weapons\Documents</Filter>
-    </ClInclude>
-    <ClInclude Include="hud_item_object.h">
-      <Filter>Core\Client\Objects\items &amp; weapons\HudItem</Filter>
     </ClInclude>
     <ClInclude Include="HudItem.h">
       <Filter>Core\Client\Objects\items &amp; weapons\HudItem</Filter>
@@ -5123,9 +5108,6 @@
     </ClInclude>
     <ClInclude Include="NoGravityZone.h">
       <Filter>Core\Client\Objects\zones\NoGravityZone</Filter>
-    </ClInclude>
-    <ClInclude Include="smart_zone.h">
-      <Filter>Core\Client\Objects\zones\SmartZone</Filter>
     </ClInclude>
     <ClInclude Include="map_location.h">
       <Filter>Core\Client\Objects\map</Filter>
@@ -6035,6 +6017,21 @@
     </ClInclude>
     <ClInclude Include="ui\script_ui_registrator.h">
       <Filter>AI\AScript\ScriptClasses\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Antirad.h">
+      <Filter>Core\Client\Objects\items &amp; weapons\Food &amp; Drugs</Filter>
+    </ClInclude>
+    <ClInclude Include="Medkit.h">
+      <Filter>Core\Client\Objects\items &amp; weapons\Food &amp; Drugs</Filter>
+    </ClInclude>
+    <ClInclude Include="HudItemObject.h">
+      <Filter>Core\Client\Objects\items &amp; weapons\HudItem</Filter>
+    </ClInclude>
+    <ClInclude Include="Pda.h">
+      <Filter>Core\Client\Objects\items &amp; weapons\PDA &amp; information</Filter>
+    </ClInclude>
+    <ClInclude Include="SmartZone.h">
+      <Filter>Core\Client\Objects\zones\SmartZone</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -7796,25 +7793,10 @@
     <ClCompile Include="Torch.cpp">
       <Filter>Core\Client\Objects\items &amp; weapons\Devices\Torch</Filter>
     </ClCompile>
-    <ClCompile Include="torch_script.cpp">
-      <Filter>Core\Client\Objects\items &amp; weapons\Devices\Torch</Filter>
-    </ClCompile>
-    <ClCompile Include="PDA.cpp">
-      <Filter>Core\Client\Objects\items &amp; weapons\PDA &amp; information</Filter>
-    </ClCompile>
-    <ClCompile Include="antirad.cpp">
-      <Filter>Core\Client\Objects\items &amp; weapons\Food &amp; Drugs</Filter>
-    </ClCompile>
     <ClCompile Include="BottleItem.cpp">
       <Filter>Core\Client\Objects\items &amp; weapons\Food &amp; Drugs</Filter>
     </ClCompile>
     <ClCompile Include="FoodItem.cpp">
-      <Filter>Core\Client\Objects\items &amp; weapons\Food &amp; Drugs</Filter>
-    </ClCompile>
-    <ClCompile Include="ItemHealth.cpp">
-      <Filter>Core\Client\Objects\items &amp; weapons\Food &amp; Drugs</Filter>
-    </ClCompile>
-    <ClCompile Include="medkit.cpp">
       <Filter>Core\Client\Objects\items &amp; weapons\Food &amp; Drugs</Filter>
     </ClCompile>
     <ClCompile Include="BoneProtections.cpp">
@@ -7837,9 +7819,6 @@
     </ClCompile>
     <ClCompile Include="InfoDocument.cpp">
       <Filter>Core\Client\Objects\items &amp; weapons\Documents</Filter>
-    </ClCompile>
-    <ClCompile Include="hud_item_object.cpp">
-      <Filter>Core\Client\Objects\items &amp; weapons\HudItem</Filter>
     </ClCompile>
     <ClCompile Include="HudItem.cpp">
       <Filter>Core\Client\Objects\items &amp; weapons\HudItem</Filter>
@@ -7883,13 +7862,7 @@
     <ClCompile Include="Mincer.cpp">
       <Filter>Core\Client\Objects\zones\Mincer</Filter>
     </ClCompile>
-    <ClCompile Include="mincer_script.cpp">
-      <Filter>Core\Client\Objects\zones\Mincer</Filter>
-    </ClCompile>
     <ClCompile Include="MosquitoBald.cpp">
-      <Filter>Core\Client\Objects\zones\MosquitoBald</Filter>
-    </ClCompile>
-    <ClCompile Include="MosquitoBald_script.cpp">
       <Filter>Core\Client\Objects\zones\MosquitoBald</Filter>
     </ClCompile>
     <ClCompile Include="RadioactiveZone.cpp">
@@ -7911,9 +7884,6 @@
       <Filter>Core\Client\Objects\zones\TorridZone\ZoneVisual</Filter>
     </ClCompile>
     <ClCompile Include="space_restrictor.cpp">
-      <Filter>Core\Client\Objects\zones\SpaceRestrictor</Filter>
-    </ClCompile>
-    <ClCompile Include="space_restrictor_script.cpp">
       <Filter>Core\Client\Objects\zones\SpaceRestrictor</Filter>
     </ClCompile>
     <ClCompile Include="HairsZone.cpp">
@@ -8830,6 +8800,18 @@
     </ClCompile>
     <ClCompile Include="ui\ui_export_script.cpp">
       <Filter>AI\AScript\ScriptClasses\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Antirad.cpp">
+      <Filter>Core\Client\Objects\items &amp; weapons\Food &amp; Drugs</Filter>
+    </ClCompile>
+    <ClCompile Include="Medkit.cpp">
+      <Filter>Core\Client\Objects\items &amp; weapons\Food &amp; Drugs</Filter>
+    </ClCompile>
+    <ClCompile Include="HudItemObject.cpp">
+      <Filter>Core\Client\Objects\items &amp; weapons\HudItem</Filter>
+    </ClCompile>
+    <ClCompile Include="Pda.cpp">
+      <Filter>Core\Client\Objects\items &amp; weapons\PDA &amp; information</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

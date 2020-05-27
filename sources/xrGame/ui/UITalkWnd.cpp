@@ -7,7 +7,7 @@
 #include "../actor.h"
 #include "../HUDManager.h"//
 #include "UIGameSP.h"//
-#include "../PDA.h"
+#include "../Pda.h"
 #include "../character_info.h"
 #include "../level.h"
 

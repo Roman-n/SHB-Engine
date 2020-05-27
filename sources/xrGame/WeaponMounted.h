@@ -1,11 +1,9 @@
-#ifndef WeaponMountedH
-#define WeaponMountedH
 #pragma once
 
 #include "holder_custom.h"
 #include "shootingobject.h"
 
-#include "hudsound.h"
+#include "HudSound.h"
 #include "weaponammo.h"
 #include "physicsshellholder.h"
 
@@ -98,4 +96,3 @@ public:
 
 	virtual CCameraBase*	Camera				();
 };
-#endif // WeaponMountedH

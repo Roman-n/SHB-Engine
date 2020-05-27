@@ -1,5 +1,5 @@
 #pragma once
-#include "hud_item_object.h"
+#include "HudItemObject.h"
 #include "HudSound.h"
 
 #define MS_HIDDEN	0

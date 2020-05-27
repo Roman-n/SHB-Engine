@@ -89,7 +89,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4237;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>..\third-party;..\third-party\dxsdk\include;..\third-party\loki</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\third-party;..\third-party\dxsdk\include;..\third-party\loki;.\</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -145,7 +145,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4237;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <AdditionalIncludeDirectories>..\third-party;..\third-party\dxsdk\include;..\third-party\loki</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\third-party;..\third-party\dxsdk\include;..\third-party\loki;.\</AdditionalIncludeDirectories>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -577,7 +577,7 @@
     <ClInclude Include="alife_update_manager_inline.h" />
     <ClInclude Include="AmebaZone.h" />
     <ClInclude Include="animation_movement_controller.h" />
-    <ClInclude Include="antirad.h" />
+    <ClInclude Include="Antirad.h" />
     <ClInclude Include="Artifact.h" />
     <ClInclude Include="associative_vector.h" />
     <ClInclude Include="associative_vector_compare_predicate.h" />
@@ -780,7 +780,7 @@
     <ClInclude Include="HUDManager.h" />
     <ClInclude Include="HudSound.h" />
     <ClInclude Include="HUDTarget.h" />
-    <ClInclude Include="hud_item_object.h" />
+    <ClInclude Include="HudItemObject.h" />
     <ClInclude Include="IColisiondamageInfo.h" />
     <ClInclude Include="id_generator.h" />
     <ClInclude Include="IKLimbsController.h" />
@@ -809,7 +809,6 @@
     <ClInclude Include="inventory_item_object.h" />
     <ClInclude Include="inventory_owner_inline.h" />
     <ClInclude Include="inventory_space.h" />
-    <ClInclude Include="ItemHealth.h" />
     <ClInclude Include="ItemListTypes.h" />
     <ClInclude Include="item_manager.h" />
     <ClInclude Include="item_manager_inline.h" />
@@ -842,7 +841,7 @@
     <ClInclude Include="material_manager.h" />
     <ClInclude Include="material_manager_inline.h" />
     <ClInclude Include="MathUtils.h" />
-    <ClInclude Include="medkit.h" />
+    <ClInclude Include="Medkit.h" />
     <ClInclude Include="member_corpse.h" />
     <ClInclude Include="member_corpse_inline.h" />
     <ClInclude Include="member_enemy.h" />
@@ -941,7 +940,7 @@
     <ClInclude Include="patrol_path_storage_inline.h" />
     <ClInclude Include="patrol_point.h" />
     <ClInclude Include="patrol_point_inline.h" />
-    <ClInclude Include="PDA.h" />
+    <ClInclude Include="Pda.h" />
     <ClInclude Include="PdaMsg.h" />
     <ClInclude Include="pda_space.h" />
     <ClInclude Include="PHActivationShape.h" />
@@ -1164,7 +1163,7 @@
     <ClInclude Include="smart_cast_impl0.h" />
     <ClInclude Include="smart_cast_impl1.h" />
     <ClInclude Include="smart_cast_impl2.h" />
-    <ClInclude Include="smart_zone.h" />
+    <ClInclude Include="SmartZone.h" />
     <ClInclude Include="sound_collection_storage.h" />
     <ClInclude Include="sound_collection_storage_inline.h" />
     <ClInclude Include="sound_memory_manager.h" />
@@ -1725,7 +1724,7 @@
     </ClCompile>
     <ClCompile Include="AmebaZone.cpp" />
     <ClCompile Include="animation_movement_controller.cpp" />
-    <ClCompile Include="antirad.cpp" />
+    <ClCompile Include="Antirad.cpp" />
     <ClCompile Include="artefact_script.cpp" />
     <ClCompile Include="Artifact.cpp" />
     <ClCompile Include="attachable_item.cpp" />
@@ -1879,7 +1878,7 @@
     <ClCompile Include="HUDManager.cpp" />
     <ClCompile Include="HudSound.cpp" />
     <ClCompile Include="HUDTarget.cpp" />
-    <ClCompile Include="hud_item_object.cpp" />
+    <ClCompile Include="HudItemObject.cpp" />
     <ClCompile Include="IKLimbsController.cpp" />
     <ClCompile Include="Ik\aint.cxx" />
     <ClCompile Include="Ik\Dof7control.cpp" />
@@ -1900,7 +1899,6 @@
     <ClCompile Include="inventory_item.cpp" />
     <ClCompile Include="inventory_item_object.cpp" />
     <ClCompile Include="inventory_owner_info.cpp" />
-    <ClCompile Include="ItemHealth.cpp" />
     <ClCompile Include="item_manager.cpp" />
     <ClCompile Include="key_binding_registrator_script.cpp" />
     <ClCompile Include="Level.cpp" />
@@ -1935,17 +1933,15 @@
     <ClCompile Include="MapSpot.cpp" />
     <ClCompile Include="material_manager.cpp" />
     <ClCompile Include="MathUtils.cpp" />
-    <ClCompile Include="medkit.cpp" />
+    <ClCompile Include="Medkit.cpp" />
     <ClCompile Include="memory_manager.cpp" />
     <ClCompile Include="memory_space_script.cpp" />
     <ClCompile Include="MercuryBall.cpp" />
     <ClCompile Include="MilitaryOutfit.cpp" />
     <ClCompile Include="Mincer.cpp" />
-    <ClCompile Include="mincer_script.cpp" />
     <ClCompile Include="Missile.cpp" />
     <ClCompile Include="monster_community.cpp" />
     <ClCompile Include="MosquitoBald.cpp" />
-    <ClCompile Include="MosquitoBald_script.cpp" />
     <ClCompile Include="movement_manager.cpp" />
     <ClCompile Include="movement_manager_game.cpp" />
     <ClCompile Include="movement_manager_level.cpp" />
@@ -1973,7 +1969,7 @@
     <ClCompile Include="patrol_path_params_script.cpp" />
     <ClCompile Include="patrol_path_storage.cpp" />
     <ClCompile Include="patrol_point.cpp" />
-    <ClCompile Include="PDA.cpp" />
+    <ClCompile Include="Pda.cpp" />
     <ClCompile Include="PHActivationShape.cpp" />
     <ClCompile Include="PHActorCharacter.cpp" />
     <ClCompile Include="PHAICharacter.cpp" />
@@ -2169,7 +2165,6 @@
     <ClCompile Include="space_restriction_manager.cpp" />
     <ClCompile Include="space_restriction_shape.cpp" />
     <ClCompile Include="space_restrictor.cpp" />
-    <ClCompile Include="space_restrictor_script.cpp" />
     <ClCompile Include="specific_character.cpp" />
     <ClCompile Include="Spectator.cpp" />
     <ClCompile Include="squad_hierarchy_holder.cpp" />
@@ -2229,7 +2224,6 @@
     <ClCompile Include="TeleWhirlwind.cpp" />
     <ClCompile Include="ThornArtifact.cpp" />
     <ClCompile Include="Torch.cpp" />
-    <ClCompile Include="torch_script.cpp" />
     <ClCompile Include="TorridZone.cpp" />
     <ClCompile Include="Tracer.cpp" />
     <ClCompile Include="trade.cpp" />

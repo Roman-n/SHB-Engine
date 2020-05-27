@@ -21,15 +21,16 @@ class CMainMenu :
 {
 	CUIDialogWnd*		m_startDialog;
 
-	enum{
-		flRestoreConsole	= (1<<0),
-		flRestorePause		= (1<<1),
-		flRestorePauseStr	= (1<<2),
-		flActive			= (1<<3),
-		flNeedChangeCapture	= (1<<4),
-		flRestoreCursor		= (1<<5),
-		flGameSaveScreenshot= (1<<6),
-		flNeedVidRestart	= (1<<7),
+	enum
+	{
+		flRestoreConsole		= (1 << 0),
+		flRestorePause			= (1 << 1),
+		flRestorePauseStr		= (1 << 2),
+		flActive				= (1 << 3),
+		flNeedChangeCapture		= (1 << 4),
+		flRestoreCursor			= (1 << 5),
+		flGameSaveScreenshot	= (1 << 6),
+		flNeedVidRestart		= (1 << 7)
 	};
 	Flags16			m_Flags;
 	string_path		m_screenshot_name;
@@ -44,7 +45,7 @@ public:
 	{
 		SessionTerminate,
 		ErrMax,
-		ErrNoError = ErrMax,
+		ErrNoError = ErrMax
 	};
 
 protected:

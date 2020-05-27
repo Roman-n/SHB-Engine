@@ -2,7 +2,7 @@
 
 #include "actor.h"
 #include "ui/UIGameSP.h"//
-#include "PDA.h"
+#include "Pda.h"
 #include "HUDManager.h"//
 #include "level.h"
 #include "string_table.h"

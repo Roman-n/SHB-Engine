@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "customoutfit.h"
+#include "CustomOutfit.h"
 #include "PhysicsShell.h"
 #include "inventory_space.h"
 #include "Inventory.h"
