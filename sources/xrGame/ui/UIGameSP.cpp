@@ -140,8 +140,8 @@ bool CUIGame::IR_OnKeyboardRelease(int dik)
 {
 	if(inherited::IR_OnKeyboardRelease(dik)) return true;
 
-	if( is_binded(kSCORES, dik))
-			RemoveCustomStatic		("main_task");
+	if (is_binded(kSCORES, dik))
+		RemoveCustomStatic("main_task");
 
 	return false;
 }
@@ -245,12 +245,13 @@ void CChangeLevelWnd::OnCancel()
 
 bool CChangeLevelWnd::OnKeyboard(int dik, EUIMessages keyboard_action)
 {
-	if(keyboard_action==WINDOW_KEY_PRESSED)
+	if (keyboard_action == WINDOW_KEY_PRESSED)
 	{
-		if(is_binded(kQUIT, dik) )
-			OnCancel		();
+		if (is_binded(kQUIT, dik))
+			OnCancel( );
 		return true;
 	}
+
 	return inherited::OnKeyboard(dik, keyboard_action);
 }
 

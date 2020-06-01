@@ -228,9 +228,9 @@ void	CMainMenu::IR_OnKeyboardPress(int dik)
 {
 	if(!IsActive()) return;
 
-	if( is_binded(kCONSOLE, dik) )
+	if (is_binded(kCONSOLE, dik))
 	{
-		Console->Show();
+		Console->Show( );
 		return;
 	}
 	if (DIK_F12 == dik){

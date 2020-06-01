@@ -616,19 +616,6 @@ bool CInventory::Action(s32 cmd, u32 flags)
 				}
 			}
 		}break;
-	case kARTEFACT:
-		{
-			if(flags&CMD_START)
-			{
-                if((int)m_iActiveSlot == ARTEFACT_SLOT &&
-					m_slots[m_iActiveSlot].m_pIItem)
-				{
-					b_send_event = Activate(NO_ACTIVE_SLOT);
-				}else {
-					b_send_event = Activate(ARTEFACT_SLOT);
-				}
-			}
-		}break;
 	}
 
 	if(b_send_event && g_pGameLevel && OnClient() && pActor)

@@ -248,9 +248,9 @@ void CUISequencer::IR_OnKeyboardPress	(int dik)
 	bool b = true;
 	if(m_items.size()) b &= m_items.front()->AllowKey(dik);
 
-	if(b && is_binded(kQUIT, dik) )
+	if (b && is_binded(kQUIT, dik))
 	{
-		Stop		();
+		Stop( );
 		return;
 	}
 

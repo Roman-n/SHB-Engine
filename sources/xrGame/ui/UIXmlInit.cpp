@@ -30,7 +30,7 @@
 #include "UITextureMaster.h"//
 #include "UIDragDropListEx.h"//
 
-extern int keyname_to_dik(LPCSTR);
+extern int keyname_to_dik(const char* _name);
 
 #define ARIAL_FONT_NAME			"arial"
 
@@ -294,7 +294,7 @@ bool CUIXmlInit::InitText(CUIXml& xml_doc, const char* path, int index, IUITextC
 	return true;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////
-extern int keyname_to_dik(LPCSTR);
+extern int keyname_to_dik(const char* _name);
 
 bool CUIXmlInit::Init3tButton(CUIXml& xml_doc, const char* path, int index, CUI3tButton* pWnd){
 	R_ASSERT3(xml_doc.NavigateToNode(path,index), "XML node not found", path);
@@ -307,7 +307,7 @@ bool CUIXmlInit::Init3tButton(CUIXml& xml_doc, const char* path, int index, CUI3
 	InitTextureOffset	(xml_doc, path, index, pWnd);
 	InitSound			(xml_doc, path, index, pWnd);
 
-	LPCSTR accel		= xml_doc.ReadAttrib(path, index, "accel", NULL);
+	const char* accel		= xml_doc.ReadAttrib(path, index, "accel", NULL);
 	if(accel)
 	{
 		int acc				= keyname_to_dik(accel);
@@ -370,7 +370,7 @@ bool CUIXmlInit::InitButton(CUIXml& xml_doc, LPCSTR path,
 
 	InitStatic(xml_doc, path, index, pWnd);
 
-	LPCSTR accel		= xml_doc.ReadAttrib(path, index, "accel", NULL);
+	const char* accel		= xml_doc.ReadAttrib(path, index, "accel", NULL);
 	if(accel)
 	{
 		int acc				= keyname_to_dik(accel);

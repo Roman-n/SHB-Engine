@@ -1270,6 +1270,7 @@ void CCC_RegisterCommands()
 #ifndef MASTER_GOLD
 	CMD3(CCC_Mask,				"hud_draw",				&psHUD_Flags,	HUD_DRAW);
 #endif // MASTER_GOLD
+
 	// hud
 	psHUD_Flags.set(HUD_CROSSHAIR,		true);
 	psHUD_Flags.set(HUD_WEAPON,			true);
@@ -1374,7 +1375,6 @@ void CCC_RegisterCommands()
 	CMD4(CCC_FloatBlock,		"ph_tri_query_ex_aabb_rate",	&ph_tri_query_ex_aabb_rate	,			1.01f	,3.f			);
 #endif // DEBUG
 
-
 #ifndef MASTER_GOLD
 	CMD1(CCC_JumpToLevel,	"jump_to_level"		);
 	CMD3(CCC_Mask,			"g_god",			&psActorFlags,	AF_GODMODE	);
@@ -1385,7 +1385,6 @@ void CCC_RegisterCommands()
 #endif // MASTER_GOLD
 
 	CMD3(CCC_Mask,		"g_autopickup",			&psActorFlags,	AF_AUTOPICKUP);
-
 
 #ifdef DEBUG
 	CMD1(CCC_LuaHelp,				"lua_help");
@@ -1444,15 +1443,12 @@ void CCC_RegisterCommands()
 	CMD3(CCC_Mask,		"dbg_draw_ph_ik_limits"			,&ph_dbg_draw_mask1,phDbgDrawIKLimits);
 #endif
 
-
-
 #ifdef DEBUG
 	CMD4(CCC_Integer,	"string_table_error_msg",	&CStringTable::m_bWriteErrorsToLog,	0,	1);
 
 	CMD1(CCC_DumpInfos,				"dump_infos");
 	CMD1(CCC_DumpMap,				"dump_map");
 	CMD1(CCC_DumpCreatures,			"dump_creatures");
-
 #endif
 
 	CMD3(CCC_Mask,			"cl_dynamiccrosshair",	&psHUD_Flags,	HUD_CROSSHAIR_DYNAMIC);
@@ -1463,12 +1459,10 @@ void CCC_RegisterCommands()
 	CMD4(CCC_TimeFactorSingle,	"time_factor_single", &g_fTimeFactor, 0.f,flt_max);
 #endif // MASTER_GOLD
 
-
 	g_uCommonFlags.zero();
 	g_uCommonFlags.set(flAiUseTorchDynamicLights, TRUE);
 
 	CMD3(CCC_Mask,		"ai_use_torch_dynamic_lights",	&g_uCommonFlags, flAiUseTorchDynamicLights);
-
 
 #ifndef MASTER_GOLD
 	CMD4(CCC_Vector3,				"psp_cam_offset",				&CCameraLook2::m_cam_offset, Fvector().set(-1000,-1000,-1000),Fvector().set(1000,1000,1000));
@@ -1484,5 +1478,6 @@ void CCC_RegisterCommands()
 	CMD4(CCC_Integer,				"dbg_show_ani_info",			&g_ShowAnimationInfo,	0, 1);
 	CMD4(CCC_Integer,				"dbg_dump_physics_step",		&g_bDebugDumpPhysicsStep, 0, 1);
 #endif
+
 	*g_last_saved_game	= 0;
 }

@@ -381,8 +381,8 @@ bool CUICarBodyWnd::OnKeyboard(int dik, EUIMessages keyboard_action)
 
 	if(keyboard_action==WINDOW_KEY_PRESSED && is_binded(kUSE, dik)) 
 	{
-			GetHolder()->StartStopMenu(this,true);
-			return true;
+		GetHolder()->StartStopMenu(this,true);
+		return true;
 	}
 	return false;
 }

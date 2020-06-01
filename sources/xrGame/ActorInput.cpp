@@ -431,12 +431,7 @@ void	CActor::OnNextWeaponSlot()
 	{
 		if (inventory().ItemFromSlot(SlotsToCheck[i]))
 		{
-			if (SlotsToCheck[i] == ARTEFACT_SLOT) 
-			{
-				IR_OnKeyboardPress(kARTEFACT);
-			}
-			else
-				IR_OnKeyboardPress(kWPN_1+(i-KNIFE_SLOT));
+			IR_OnKeyboardPress(kWPN_1+(i-KNIFE_SLOT));
 			return;
 		}
 	}
@@ -461,12 +456,7 @@ void	CActor::OnPrevWeaponSlot()
 	{
 		if (inventory().ItemFromSlot(SlotsToCheck[i]))
 		{
-			if (SlotsToCheck[i] == ARTEFACT_SLOT) 
-			{
-				IR_OnKeyboardPress(kARTEFACT);
-			}
-			else
-				IR_OnKeyboardPress(kWPN_1+(i-KNIFE_SLOT));
+			IR_OnKeyboardPress(kWPN_1+(i-KNIFE_SLOT));
 			return;
 		}
 	}
