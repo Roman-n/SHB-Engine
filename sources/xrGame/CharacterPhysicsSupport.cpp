@@ -151,14 +151,15 @@ void CCharacterPhysicsSupport::in_Load(LPCSTR section)
 	if(pSettings->line_exist(section,"ph_skel_shot_up_factor")) m_shot_up_factor=pSettings->r_float(section,"ph_skel_shot_up_factor");
 	if(pSettings->line_exist(section,"ph_after_death_velocity_factor")) m_after_death_velocity_factor=pSettings->r_float(section,"ph_after_death_velocity_factor");
 	m_flags.set(fl_specific_bonce_demager,TRUE);
-	if(pSettings->line_exist(section,"bonce_damage_factor"))
+	if (pSettings->line_exist(section, "bonce_damage_factor"))
 	{
-		
-		m_BonceDamageFactor=pSettings->r_float(section,"bonce_damage_factor_for_objects");
-	}else
-	{
-		m_BonceDamageFactor=pSettings->r_float("collision_damage","bonce_damage_factor_for_objects");
+		m_BonceDamageFactor = pSettings->r_float(section, "bonce_damage_factor_for_objects");
 	}
+	else
+	{
+		m_BonceDamageFactor = pSettings->r_float("collision_damage", "bonce_damage_factor_for_objects");
+	}
+
 	CPHDestroyable::Load(section);
 }
 

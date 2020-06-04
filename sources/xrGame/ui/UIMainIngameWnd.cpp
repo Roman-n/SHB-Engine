@@ -226,7 +226,6 @@ void CUIMainIngameWnd::Init()
 		j = static_cast<EWarningIcons>(j + 1);
 	}
 
-
 	// Flashing icons initialize
 	uiXml.SetLocalRoot						(uiXml.NavigateToNode("flashing_icons"));
 	InitFlashingIcons						(&uiXml);

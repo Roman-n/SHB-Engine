@@ -327,16 +327,14 @@ void CActorCondition::ChangeSatiety(float value)
 
 void CActorCondition::UpdateTutorialThresholds()
 {
-	string256						cb_name;
-	static float _cPowerThr			= pSettings->r_float("tutorial_conditions_thresholds","power");
-	static float _cPowerMaxThr		= pSettings->r_float("tutorial_conditions_thresholds","max_power");
-	static float _cBleeding			= pSettings->r_float("tutorial_conditions_thresholds","bleeding");
-	static float _cSatiety			= pSettings->r_float("tutorial_conditions_thresholds","satiety");
-	static float _cRadiation		= pSettings->r_float("tutorial_conditions_thresholds","radiation");
-	static float _cWpnCondition		= pSettings->r_float("tutorial_conditions_thresholds","weapon_jammed");
-	static float _cPsyHealthThr		= pSettings->r_float("tutorial_conditions_thresholds","psy_health");
-
-
+	string256					cb_name;
+	static float _cPowerThr		= pSettings->r_float("tutorial_conditions_thresholds", "power");
+	static float _cPowerMaxThr	= pSettings->r_float("tutorial_conditions_thresholds", "max_power");
+	static float _cBleeding		= pSettings->r_float("tutorial_conditions_thresholds", "bleeding");
+	static float _cSatiety		= pSettings->r_float("tutorial_conditions_thresholds", "satiety");
+	static float _cRadiation	= pSettings->r_float("tutorial_conditions_thresholds", "radiation");
+	static float _cWpnCondition	= pSettings->r_float("tutorial_conditions_thresholds", "weapon_jammed");
+	static float _cPsyHealthThr	= pSettings->r_float("tutorial_conditions_thresholds", "psy_health");
 
 	bool b = true;
 	if(b && !m_condition_flags.test(eCriticalPowerReached) && GetPower()<_cPowerThr){
@@ -368,6 +366,7 @@ void CActorCondition::UpdateTutorialThresholds()
 		b=false;
 		strcpy_s(cb_name,"_G.on_actor_radiation");
 	}
+
 
 	if(b && !m_condition_flags.test(ePhyHealthMinReached) && GetPsyHealth()>_cPsyHealthThr){
 //.		m_condition_flags.set			(ePhyHealthMinReached, TRUE);

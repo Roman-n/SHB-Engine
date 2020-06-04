@@ -133,9 +133,8 @@ void CPHDestroyable::PhysicallyRemovePart(CPHDestroyableNotificate *dn)
 							s					->DisableCollision			()		;
 }
 
-void CPHDestroyable::Destroy(u16 source_id/*=u16(-1)*/,LPCSTR section/*="ph_skeleton_object"*/)
+void CPHDestroyable::Destroy(u16 source_id, LPCSTR section)
 {
-	
 	if(!CanDestroy())return ;
 	m_notificate_objects.clear();
 	CPhysicsShellHolder	*obj	=PPhysicsShellHolder()		;
