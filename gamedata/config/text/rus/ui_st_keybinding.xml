@@ -15,15 +15,6 @@
 	<string id="kb_binoculars">
 		<text>Бинокль</text>
 	</string>
-	<string id="kb_buy_menu">
-		<text>Меню покупки</text>
-	</string>
-	<string id="kb_chat">
-		<text>Чат</text>
-	</string>
-	<string id="kb_chat_team">
-		<text>Командный чат</text>
-	</string>
 	<string id="kb_console">
 		<text>Консоль</text>
 	</string>
@@ -68,9 +59,6 @@
 	</string>
 	<string id="kb_grp_movement">
 		<text>Движение</text>
-	</string>
-	<string id="kb_grp_multiplayer">
-		<text>Сетевая игра</text>
 	</string>
 	<string id="kb_grp_weapons">
 		<text>Оружие</text>
@@ -132,14 +120,8 @@
 	<string id="kb_screenshot">
 		<text>Скриншот</text>
 	</string>
-	<string id="kb_skin_menu">
-		<text>Меню выбора модели</text>
-	</string>
 	<string id="kb_sprint">
 		<text>Бег</text>
-	</string>
-	<string id="kb_team_menu">
-		<text>Меню выбора команды</text>
 	</string>
 	<string id="kb_torch">
 		<text>Фонарик</text>
@@ -158,18 +140,6 @@
 	</string>
 	<string id="kb_use_medkit">
 		<text>Быстрое использ. аптечки</text>
-	</string>
-	<string id="kb_vote_begin">
-		<text>Начать голосование</text>
-	</string>
-	<string id="kb_vote_menu">
-		<text>Проголосовать</text>
-	</string>
-	<string id="kb_vote_no">
-		<text>Проголосовать "Нет"</text>
-	</string>
-	<string id="kb_vote_yes">
-		<text>Проголосовать "Да"</text>
 	</string>
 	<string id="kb_weapon1">
 		<text>Оружие 1</text>
@@ -197,11 +167,5 @@
 	</string>
 	<string id="kb_zoom">
 		<text>Приблизить</text>
-	</string>
-	<string id="speech_menu_group">
-		<text>Голосовые сообщения (1)</text>
-	</string>
-	<string id="speech_menu_personal">
-		<text>Голосовые сообщения (2)</text>
 	</string>
 </string_table>

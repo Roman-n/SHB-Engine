@@ -206,10 +206,10 @@ void CLevel::ClientReceive()
 			{
 				ClientSave			();
 			}break;
-		case M_GAMESPY_CDKEY_VALIDATION_CHALLENGE:
-			{
-			OnGameSpyChallenge(P); //Убрать это если не вызывается!
-			}break;
+//		case M_GAMESPY_CDKEY_VALIDATION_CHALLENGE:
+//			{
+//			OnGameSpyChallenge(P); //Убрать это если не вызывается!
+//			}break;
 		case M_AUTH_CHALLENGE:
 			{
 				OnBuildVersionChallenge();
