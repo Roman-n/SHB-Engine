@@ -60,7 +60,7 @@ void CAI_Trader::reinit	()
 	m_busy_now				= false;
 }
 
-void CAI_Trader::reload	(LPCSTR section)
+void CAI_Trader::reload	(const char* section)
 {
 	CEntityAlive::reload	(section);
 	CInventoryOwner::reload	(section);

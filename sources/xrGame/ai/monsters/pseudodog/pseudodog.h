@@ -28,7 +28,7 @@ public:
 	virtual void	Load				(LPCSTR section);
 
 	virtual void	reinit				();
-	virtual void	reload				(LPCSTR section);
+	virtual void	reload				(const char* section);
 
 	virtual bool	ability_can_drag	() {return true;}
 	virtual bool	ability_psi_attack	() {return true;}

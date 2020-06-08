@@ -17,7 +17,7 @@ public:
 	virtual					~CAI_Bloodsucker();	
 
 	virtual void			reinit					();
-	virtual	void			reload					(LPCSTR section);
+	virtual	void			reload					(const char* section);
 
 	virtual void			UpdateCL				();
 	virtual void			shedule_Update			(u32 dt);

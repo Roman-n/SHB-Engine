@@ -149,10 +149,8 @@ void CAI_Bloodsucker::Load(LPCSTR section)
 	m_vampire_want_speed			= pSettings->r_float(section,"Vampire_Want_Speed");
 	m_vampire_wound					= pSettings->r_float(section,"Vampire_Wound");
 
-
 	invisible_particle_name			= pSettings->r_string(section,"Particle_Invisible");
 }
-
 
 void CAI_Bloodsucker::reinit()
 {
@@ -179,7 +177,7 @@ void CAI_Bloodsucker::reinit()
 	m_predator					= false;
 }
 
-void CAI_Bloodsucker::reload(LPCSTR section)
+void CAI_Bloodsucker::reload(const char* section)
 {
 	inherited::reload(section);
 
@@ -191,7 +189,6 @@ void CAI_Bloodsucker::reload(LPCSTR section)
 	sound().add(pSettings->r_string(section,"Sound_Growl"),						DEFAULT_SAMPLE_COUNT,	SOUND_TYPE_MONSTER_ATTACKING, MonsterSound::eHighPriority + 6,	MonsterSound::eBaseChannel,	eGrowl,							"bip01_head");
 	sound().add(pSettings->r_string(section,"Sound_Alien"),						DEFAULT_SAMPLE_COUNT,	SOUND_TYPE_MONSTER_ATTACKING, MonsterSound::eCriticalPriority,	u32(MonsterSound::eCaptureAllChannels),	eAlien,				"bip01_head");
 }
-
 
 void CAI_Bloodsucker::LoadVampirePPEffector(LPCSTR section)
 {
@@ -209,14 +206,12 @@ void CAI_Bloodsucker::LoadVampirePPEffector(LPCSTR section)
 	sscanf(pSettings->r_string(section,"color_add"),	"%f,%f,%f", &pp_vampire_effector.color_add.r,  &pp_vampire_effector.color_add.g,  &pp_vampire_effector.color_add.b);
 }
 
-
 void  CAI_Bloodsucker::BoneCallback(CBoneInstance *B)
 {
 	CAI_Bloodsucker*	this_class = static_cast<CAI_Bloodsucker*> (B->Callback_Param);
 
 	this_class->Bones.Update(B, Device.dwTimeGlobal);
 }
-
 
 void CAI_Bloodsucker::vfAssignBones()
 {
@@ -235,7 +230,6 @@ void CAI_Bloodsucker::vfAssignBones()
 	Bones.AddBone(bone_spine, AXIS_X);	Bones.AddBone(bone_spine, AXIS_Y);
 	Bones.AddBone(bone_head, AXIS_X);	Bones.AddBone(bone_head, AXIS_Y);
 }
-
 
 //#define MAX_BONE_ANGLE PI_DIV_4
 
@@ -279,7 +273,6 @@ void CAI_Bloodsucker::ActivateVampireEffector()
 	Actor()->Cameras().AddPPEffector(xr_new<CVampirePPEffector>(pp_vampire_effector, 6.0f));
 }
 
-
 void CAI_Bloodsucker::CheckSpecParams(u32 spec_params)
 {
 	if ((spec_params & ASP_CHECK_CORPSE) == ASP_CHECK_CORPSE) {
@@ -295,7 +288,6 @@ void CAI_Bloodsucker::CheckSpecParams(u32 spec_params)
 		anim().SetCurAnim(eAnimLookAround);
 		return;
 	}
-
 }
 
 BOOL CAI_Bloodsucker::net_Spawn (CSE_Abstract* DC) 
@@ -317,7 +309,6 @@ void CAI_Bloodsucker::UpdateCL()
 	m_vampire_want_value += m_vampire_want_speed * client_update_fdelta();
 	clamp(m_vampire_want_value,0.f,1.f);
 }
-
 
 void CAI_Bloodsucker::shedule_Update(u32 dt)
 {

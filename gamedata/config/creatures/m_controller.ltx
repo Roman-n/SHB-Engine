@@ -101,7 +101,6 @@ Max_Satiety			= 0.9		; макс. норма сытости (больше - очень сытый)
 
 distance_to_corpse	= 1.2		; дист. до трупа, при которой он переходит в состояние еды
 
-
 ;                           fSearchRange,fOptEnemyDistance,fOptEnemyDistanceWeight,fMinEnemyDistance,fMinEnemyDistanceWeight,fMaxEnemyDistance,fMaxEnemyDistanceWeight
 selector_free_hunting    =      20.0,            20.0,                 1000.0,                 0.0,               10000.0,               1000.0,               10000.0,      
 ;                           fSearchRange,fCoverFromEnemyWeight,fOptEnemyDistance,fOptEnemyDistanceWeight,fMinEnemyDistance,fMinEnemyDistanceWeight,fMaxEnemyDistance,fMaxEnemyDistanceWeight
@@ -117,20 +116,20 @@ terrain				 = controller_terrain
 
 hit_type = wound
 
-;-------------------------------------------------------------------------
-; Entity Conditions
-;-------------------------------------------------------------------------
-satiety_v =           0.0005;0.01		;скорость уменьшения сытости со временем
-radiation_v =        0.00001;0.004		;скорость уменьшения радиации
-satiety_power_v =      0.001;0.01		;увеличение силы при уменьшении сытости 
-satiety_health_v =     0.001;0.03		;увеличение здоровья при уменьшении сытости 
-satiety_critical =      -1.0;0.25		;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
-radiation_health_v =    0.01;0.006		;уменьшение здоровья при воздействии радиации
-morale_v			=    0.1			;скорость восстановления морали
+;------------------------------------------------------------------------------
+;----------------------------- Entity Conditions ------------------------------
+;------------------------------------------------------------------------------
+satiety_v				= 0.0005			;скорость уменьшения сытости со временем [0...1]
+satiety_power_v			= 0.001				;увеличение силы при уменьшении сытости 
+satiety_health_v		= 0.001				;увеличение здоровья при уменьшении сытости
+radiation_v				= 0.00001			;скорость уменьшения радиации [0...1]
+radiation_health_v		= 0.01				;уменьшение здоровья при воздействии радиации
+morale_v				= 0.1				;скорость восстановления морали [0...1]
+psy_health_v			= 0.1				;скорость восстановления psy-здоровья
+
+
 health_hit_part =        0.25;0.1;0.8	;процент хита, уходящий на отнимание здоровья
 power_hit_part =         0.1;0.9		;процент хита, уходящий на отнимание силы
-psy_health_v =           0.1			;скорость восстановления psy-здоровья
-
 
 immunities_sect				= controller_immunities
 
@@ -145,9 +144,9 @@ sleep_satiety = 1.0		;0.8
 sleep_radiation = 1.0	;1.1
 sleep_psy_health			= 1.0
 
-eat_freq			=	5.0		; частота укусов в сек
-eat_slice			=	0.04	; увеличение сытости при 1 укусе
-eat_slice_weight	=	10.0	; уменьшение еды у трупа
+eat_freq			=	5.0		;частота укусов в сек
+eat_slice			=	0.04	;увеличение сытости при 1 укусе
+eat_slice_weight	=	10.0	;уменьшение еды у трупа
 
 satiety_threshold		= 0.5							; below this value monster fill hunger
 ;-------------------------------------------------------------------------

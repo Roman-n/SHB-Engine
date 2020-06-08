@@ -164,7 +164,7 @@ public:
 
 
 	virtual void reinit			();
-	virtual void reload			(LPCSTR section);
+	virtual void reload			(const char* section);
 	virtual bool use_bolts		() const;
 
 	virtual void OnItemTake		(CInventoryItem *inventory_item);

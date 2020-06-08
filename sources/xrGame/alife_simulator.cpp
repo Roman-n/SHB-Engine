@@ -86,7 +86,7 @@ void CALifeSimulator::setup_simulator	(CSE_ALifeObject *object)
 	object->m_alife_simulator	= this;
 }
 
-void CALifeSimulator::reload			(LPCSTR section)
+void CALifeSimulator::reload			(const char* section)
 {
 	CALifeUpdateManager::reload	(section);
 }

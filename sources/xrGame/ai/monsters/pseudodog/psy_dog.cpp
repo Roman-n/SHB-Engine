@@ -53,7 +53,7 @@ void CPsyDog::reinit()
 	m_time_last_phantom_appear = 0;
 }
 
-void CPsyDog::reload(LPCSTR section)
+void CPsyDog::reload(const char* section)
 {
 	inherited::reload(section);
 }

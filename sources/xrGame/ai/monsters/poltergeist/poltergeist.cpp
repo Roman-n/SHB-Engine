@@ -107,7 +107,7 @@ void CPoltergeist::Load(LPCSTR section)
 	}	
 }
 
-void CPoltergeist::reload(LPCSTR section)
+void CPoltergeist::reload(const char* section)
 {
 	inherited::reload(section);
 	Energy::reload(section,"Invisible_");

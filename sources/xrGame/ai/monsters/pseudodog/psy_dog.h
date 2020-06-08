@@ -31,7 +31,7 @@ public:
 		virtual void	Load				(LPCSTR section);
 		virtual BOOL	net_Spawn			(CSE_Abstract *dc);
 		virtual void	reinit				();
-		virtual void	reload				(LPCSTR section);
+		virtual void	reload				(const char* section);
 		virtual void	net_Destroy			();
 		virtual void	Die					(CObject* who);
 

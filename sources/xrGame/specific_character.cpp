@@ -171,9 +171,7 @@ void CSpecificCharacter::load_shared(LPCSTR)
 		}
 	}
 
-
 #ifdef  XRGAME_EXPORTS
-
 	LPCSTR team = pXML->Read("community", 0, NULL);
 	R_ASSERT3(team != NULL, "'community' field not fulfiled for specific character", *m_OwnId);
 	

@@ -134,7 +134,7 @@ void CAI_PseudoDog::Load(LPCSTR section)
 
 }
 
-void CAI_PseudoDog::reload(LPCSTR section)
+void CAI_PseudoDog::reload(const char* section)
 {
 	inherited::reload			(section);
 

@@ -44,7 +44,7 @@ enum EMoveCommand
 	mcAnyMove	= (mcFwd|mcBack|mcLStrafe|mcRStrafe),
 	mcAnyAction = (mcAnyMove|mcJump|mcFall|mcLanding|mcLanding2), //mcTurn|
 	mcAnyState	= (mcCrouch|mcAccel|mcClimb|mcSprint),
-	mcLookout	= (mcLLookout|mcRLookout),
+	mcLookout	= (mcLLookout|mcRLookout)
 };
 
 // enum для определения действия над вещью на которую наведен в текущее время прицел.
@@ -55,7 +55,7 @@ enum EActorAction
 	eaaPickup,
 	eaaTalk,
 	eaaOpenDoor,
-	eaaSearchCorpse,
+	eaaSearchCorpse
 };
 
 typedef const char*		EActorSleep;

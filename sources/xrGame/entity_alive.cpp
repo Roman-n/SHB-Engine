@@ -38,7 +38,6 @@ float CEntityAlive::m_fStartBloodWoundSize = 0.3f;
 float CEntityAlive::m_fStopBloodWoundSize = 0.1f;
 float CEntityAlive::m_fBloodDropSize = 0.03f;
 
-
 //минимальный размер ожега, после которого горят партиклы
 //минимальное время горения
 u32	  CEntityAlive::m_dwMinBurnTime = 10000;
@@ -54,7 +53,6 @@ STR_VECTOR* CEntityAlive::m_pFireParticlesVector = NULL;
 /////////////////////////////////////////////
 CEntityAlive::CEntityAlive()
 {
-	
 	monster_community		= xr_new<MONSTER_COMMUNITY>	();
 
 	m_ef_weapon_type		= u32(-1);
@@ -65,7 +63,6 @@ CEntityAlive::CEntityAlive()
 
 CEntityAlive::~CEntityAlive()
 {
-
 	xr_delete				(monster_community);
 	xr_delete				(m_material_manager);
 }
@@ -108,14 +105,11 @@ void CEntityAlive::LoadBloodyWallmarks (LPCSTR section)
 		s.create ("effects\\wallmark",_GetItem(wallmarks_name,k,tmp));
 		m_pBloodMarksVector->push_back	(s);
 	}
-
 	
-	m_fBloodMarkSizeMin = pSettings->r_float(section, "min_size"); 
-	m_fBloodMarkSizeMax = pSettings->r_float(section, "max_size"); 
-	m_fBloodMarkDistance = pSettings->r_float(section, "dist"); 
-	m_fNominalHit = pSettings->r_float(section, "nominal_hit"); 
-
-
+	m_fBloodMarkSizeMin = pSettings->r_float(section, "min_size");
+	m_fBloodMarkSizeMax = pSettings->r_float(section, "max_size");
+	m_fBloodMarkDistance = pSettings->r_float(section, "dist");
+	m_fNominalHit = pSettings->r_float(section, "nominal_hit");
 
 	//капли крови с открытых ран
 	wallmarks_name = pSettings->r_string(section, "blood_drops");
@@ -126,7 +120,6 @@ void CEntityAlive::LoadBloodyWallmarks (LPCSTR section)
 		s.create ("effects\\wallmark",_GetItem(wallmarks_name,k,tmp));
 		m_pBloodDropsVector->push_back	(s);
 	}
-
 
 	m_fStartBloodWoundSize  = pSettings->r_float(section, "start_blood_size");
 	m_fStopBloodWoundSize   = pSettings->r_float(section, "stop_blood_size");
@@ -139,6 +132,7 @@ void CEntityAlive::UnloadBloodyWallmarks	()
 		m_pBloodMarksVector->clear	();
 		xr_delete					(m_pBloodMarksVector);
 	}
+
 	if (m_pBloodDropsVector){
 		m_pBloodDropsVector->clear	();
 		xr_delete					(m_pBloodDropsVector);
@@ -296,7 +290,6 @@ void CEntityAlive::Hit(SHit* pHDS)
 			RELATION_REGISTRY().Action(EA, this, RELATION_REGISTRY::ATTACK);
 		}
 	}
-
 }
 
 void CEntityAlive::Die	(CObject* who)
@@ -321,7 +314,7 @@ void CEntityAlive::Die	(CObject* who)
 
 //вывзывает при подсчете хита
 float CEntityAlive::CalcCondition(float /**hit/**/)
-{	
+{
 	conditions().UpdateCondition();
 
 	//dont call inherited::CalcCondition it will be meaningless
@@ -334,16 +327,19 @@ u16	CEntityAlive::PHGetSyncItemsNumber()
 	if(character_physics_support()->movement()->CharacterExist()) return 1;
 	else										  return inherited::PHGetSyncItemsNumber();
 }
+
 CPHSynchronize* CEntityAlive::PHGetSyncItem	(u16 item)
 {
 	if(character_physics_support()->movement()->CharacterExist()) return character_physics_support()->movement()->GetSyncItem();
 	else										 return inherited::PHGetSyncItem(item);
 }
+
 void CEntityAlive::PHUnFreeze()
 {
 	if(character_physics_support()->movement()->CharacterExist()) character_physics_support()->movement()->UnFreeze();
 	else if(m_pPhysicsShell) m_pPhysicsShell->UnFreeze();
 }
+
 void CEntityAlive::PHFreeze()
 {
 	if(character_physics_support()->movement()->CharacterExist()) character_physics_support()->movement()->Freeze();
@@ -352,26 +348,25 @@ void CEntityAlive::PHFreeze()
 //////////////////////////////////////////////////////////////////////
 
 //добавление кровавых отметок на стенах, после получения хита
-void CEntityAlive::BloodyWallmarks (float P, const Fvector &dir, s16 element, 
-									const Fvector& position_in_object_space)
+void CEntityAlive::BloodyWallmarks (float P, const Fvector &dir, s16 element, const Fvector& position_in_object_space)
 {
 	if(BI_NONE == (u16)element)
 		return;
 
 	//вычислить координаты попадания
 	CKinematics* V = smart_cast<CKinematics*>(Visual());
-		
+
 	Fvector start_pos = position_in_object_space;
 	if(V)
 	{
 		Fmatrix& m_bone = (V->LL_GetBoneInstance(u16(element))).mTransform;
 		m_bone.transform_tiny(start_pos);
 	}
+
 	XFORM().transform_tiny(start_pos);
 
 	float small_entity = 1.f;
 	if(Radius()<SMALL_ENTITY_RADIUS) small_entity = 0.5;
-
 
 	float wallmark_size = m_fBloodMarkSizeMax;
 	wallmark_size *= (P/m_fNominalHit);
@@ -379,14 +374,10 @@ void CEntityAlive::BloodyWallmarks (float P, const Fvector &dir, s16 element,
 	clamp(wallmark_size, m_fBloodMarkSizeMin, m_fBloodMarkSizeMax);
 
 	VERIFY(m_pBloodMarksVector);
-	PlaceBloodWallmark(dir, start_pos, m_fBloodMarkDistance, 
-						wallmark_size, *m_pBloodMarksVector);
-
+	PlaceBloodWallmark(dir, start_pos, m_fBloodMarkDistance, wallmark_size, *m_pBloodMarksVector);
 }
 
-void CEntityAlive::PlaceBloodWallmark(const Fvector& dir, const Fvector& start_pos, 
-									  float trace_dist, float wallmark_size,
-									  SHADER_VECTOR& wallmarks_vector)
+void CEntityAlive::PlaceBloodWallmark(const Fvector& dir, const Fvector& start_pos, float trace_dist, float wallmark_size, SHADER_VECTOR& wallmarks_vector)
 {
 	collide::rq_result	result;
 	BOOL				reach_wall = 
@@ -426,8 +417,6 @@ void CEntityAlive::PlaceBloodWallmark(const Fvector& dir, const Fvector& start_p
 		}
 	}
 }
-
-
 
 void CEntityAlive::StartFireParticles(CWound* pWound)
 {
@@ -501,15 +490,13 @@ ALife::ERelationType CEntityAlive::tfGetRelationType	(const CEntityAlive *tpEnti
 		case 0:		return(ALife::eRelationTypeNeutral);	break;
 		case -1:	return(ALife::eRelationTypeEnemy);		break;
 		case -2:	return(ALife::eRelationTypeWorstEnemy);	break;
-		
 		default:	return(ALife::eRelationTypeDummy);		break;
 	}
 };
 
 bool CEntityAlive::is_relation_enemy(const CEntityAlive *tpEntityAlive) const
 {
-	return ((tfGetRelationType(tpEntityAlive) == ALife::eRelationTypeEnemy) ||  
-		(tfGetRelationType(tpEntityAlive) == ALife::eRelationTypeWorstEnemy));
+	return ((tfGetRelationType(tpEntityAlive) == ALife::eRelationTypeEnemy) || (tfGetRelationType(tpEntityAlive) == ALife::eRelationTypeWorstEnemy));
 }
 
 void CEntityAlive::StartBloodDrops			(CWound* pWound)
@@ -571,6 +558,7 @@ void CEntityAlive::UpdateBloodDrops()
 								m_fBloodDropSize, *m_pBloodDropsVector);
 			}
 		}
+
 		it++;
 	}
 }
@@ -587,7 +575,7 @@ void CEntityAlive::load	(IReader &input_packet)
 	conditions().load(input_packet);
 }
 
-BOOL	CEntityAlive::net_SaveRelevant		()
+BOOL CEntityAlive::net_SaveRelevant		()
 {
 	return		(TRUE);
 }
@@ -634,7 +622,6 @@ float CEntityAlive::g_Radiation	()	const
 	return conditions().GetRadiation()*100.f;
 }
 
-
 DLL_Pure *CEntityAlive::_construct	()
 {
 	inherited::_construct	();
@@ -658,6 +645,7 @@ u32	 CEntityAlive::ef_detector_type	() const
 	VERIFY	(m_ef_detector_type != u32(-1));
 	return	(m_ef_detector_type);
 }
+
 void CEntityAlive::PHGetLinearVell(Fvector& velocity)
 {
 	if(character_physics_support())
@@ -665,9 +653,11 @@ void CEntityAlive::PHGetLinearVell(Fvector& velocity)
 		character_physics_support()->PHGetLinearVell(velocity);
 	}
 	else
+	{
 		inherited::PHGetLinearVell(velocity);
-
+	}
 }
+
 CIKLimbsController*	CEntityAlive::character_ik_controller()
 {
 	if(character_physics_support())
@@ -679,6 +669,7 @@ CIKLimbsController*	CEntityAlive::character_ik_controller()
 		return NULL;
 	}
 }
+
 CPHSoundPlayer* CEntityAlive::ph_sound_player()
 {
 	if(character_physics_support())
@@ -691,14 +682,14 @@ CPHSoundPlayer* CEntityAlive::ph_sound_player()
 	}
 }
 
-SCollisionHitCallback*	CEntityAlive::	get_collision_hit_callback		()
+SCollisionHitCallback* CEntityAlive::get_collision_hit_callback		()
 {
   CCharacterPhysicsSupport *cs=character_physics_support();
   if(cs)return cs->get_collision_hit_callback();
   else return false;
 }
 
-bool					CEntityAlive::	set_collision_hit_callback		(SCollisionHitCallback *cc)
+bool CEntityAlive::set_collision_hit_callback		(SCollisionHitCallback *cc)
 {
 	CCharacterPhysicsSupport* cs=character_physics_support();
 	if(cs)return cs->set_collision_hit_callback(cc);
@@ -718,6 +709,7 @@ void	CEntityAlive::		create_anim_mov_ctrl	( CBlend* b )
 	 if( cs )
 		 cs->on_create_anim_mov_ctrl( );
 }
+
 void	CEntityAlive::	destroy_anim_mov_ctrl( )
 {
 	 inherited::destroy_anim_mov_ctrl(); 

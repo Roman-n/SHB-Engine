@@ -25,13 +25,14 @@ protected:
 	typedef GraphEngineSpace::_solver_value_type		_value_type;
 
 protected:
-	enum EActionStates {
-		eActionStateConstructed		= u32(0),
+	enum EActionStates
+	{
+		eActionStateConstructed = u32(0),
 		eActionStateSetup,
 		eActionStateInitialized,
 		eActionStateExecuted,
 		eActionStateFinalized,
-		eActionStateDummy			= u32(-1),
+		eActionStateDummy = u32(-1)
 	};
 
 public:

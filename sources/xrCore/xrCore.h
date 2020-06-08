@@ -137,7 +137,7 @@ struct XRCORE_API xr_shortcut{
     enum{
         flShift	= 0x20,
         flCtrl	= 0x40,
-        flAlt	= 0x80,
+        flAlt	= 0x80
     };
     union{
     	struct{

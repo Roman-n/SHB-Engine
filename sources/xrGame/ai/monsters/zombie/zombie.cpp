@@ -86,7 +86,7 @@ void CZombie::reinit()
 	active_triple_idx		= u8(-1);
 }
 
-void CZombie::reload(LPCSTR section)
+void CZombie::reload(const char* section)
 {
 	inherited::reload(section);
 

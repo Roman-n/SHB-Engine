@@ -71,7 +71,7 @@ void CALifeSimulatorBase::unload			()
 	m_initialized				= false;
 }
 
-void CALifeSimulatorBase::reload			(LPCSTR section)
+void CALifeSimulatorBase::reload			(const char* section)
 {
 	m_header					= xr_new<CALifeSimulatorHeader>		(section);
 	m_time_manager				= xr_new<CALifeTimeManager>			(section);

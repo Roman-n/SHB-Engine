@@ -143,8 +143,7 @@ CSE_Abstract *CSE_ALifeTraderAbstract::init	()
 }
 
 CSE_ALifeTraderAbstract::~CSE_ALifeTraderAbstract()
-{
-}
+{ }
 
 void CSE_ALifeTraderAbstract::STATE_Write	(NET_Packet &tNetPacket)
 {
@@ -156,6 +155,7 @@ void CSE_ALifeTraderAbstract::STATE_Write	(NET_Packet &tNetPacket)
 	shared_str s;
 	tNetPacket.w_stringZ		(s);
 #endif
+
 	tNetPacket.w_u32			(m_trader_flags.get());
 //	tNetPacket.w_s32			(m_iCharacterProfile);
 	tNetPacket.w_stringZ		(m_sCharacterProfile);
@@ -169,6 +169,7 @@ void CSE_ALifeTraderAbstract::STATE_Write	(NET_Packet &tNetPacket)
 	tNetPacket.w_s32			(NO_RANK);
 	tNetPacket.w_s32			(NO_REPUTATION);
 #endif
+
 	save_data					(m_character_name, tNetPacket);
 }
 
@@ -358,7 +359,6 @@ void CSE_ALifeTraderAbstract::set_specific_character	(shared_str new_spec_char)
 	}
 
 #ifdef XRGAME_EXPORTS
-
 	if(NO_COMMUNITY_INDEX == m_community_index)
 	{
 		m_community_index = selected_char.Community().index();
@@ -366,8 +366,6 @@ void CSE_ALifeTraderAbstract::set_specific_character	(shared_str new_spec_char)
 		if (creature)
 			creature->s_team = selected_char.Community().team();
 	}
-
-
 
 //----
 	CSE_ALifeMonsterAbstract* monster = smart_cast<CSE_ALifeMonsterAbstract*>(base());
@@ -405,11 +403,9 @@ void CSE_ALifeTraderAbstract::set_specific_character	(shared_str new_spec_char)
 		n					+= subset;
 		n					+= "_";
 		n					+= itoa(::Random.randI(last_name_cnt),S,10);
-		m_character_name	+= *(CStringTable().translate(n.c_str()));
-
-
-	
+		m_character_name	+= *(CStringTable().translate(n.c_str()));	
 	}
+
 	u32 min_m = selected_char.MoneyDef().min_money;
 	u32 max_m = selected_char.MoneyDef().max_money;
 	if(min_m!=0 && max_m!=0){
@@ -420,6 +416,7 @@ void CSE_ALifeTraderAbstract::set_specific_character	(shared_str new_spec_char)
 	//в редакторе специфический профиль оставляем не заполненым
 	m_SpecificCharacter = NULL;
 #endif
+
 }
 
 void CSE_ALifeTraderAbstract::set_character_profile(shared_str new_profile)
@@ -432,9 +429,7 @@ shared_str CSE_ALifeTraderAbstract::character_profile()
 	return	m_sCharacterProfile;
 }
 
-
 #ifdef XRGAME_EXPORTS
-
 //для работы с relation system
 u16								CSE_ALifeTraderAbstract::object_id		() const
 {
@@ -472,12 +467,10 @@ CHARACTER_REPUTATION_VALUE	CSE_ALifeTraderAbstract::Reputation ()
 #endif
 
 void CSE_ALifeTraderAbstract::UPDATE_Write	(NET_Packet &tNetPacket)
-{
-};
+{ };
 
 void CSE_ALifeTraderAbstract::UPDATE_Read	(NET_Packet &tNetPacket)
-{
-};
+{ };
 
 
 ////////////////////////////////////////////////////////////////////////////
@@ -491,8 +484,7 @@ CSE_ALifeTrader::CSE_ALifeTrader			(LPCSTR caSection) : CSE_ALifeDynamicObjectVi
 }
 
 CSE_ALifeTrader::~CSE_ALifeTrader			()
-{
-}
+{ }
 
 #ifdef DEBUG
 bool CSE_ALifeTrader::match_configuration	() const
@@ -594,39 +586,43 @@ CSE_ALifeCustomZone::CSE_ALifeCustomZone	(LPCSTR caSection) : CSE_ALifeSpaceRest
 	m_enabled_time				= 0;
 	m_disabled_time				= 0;
 	m_start_time_shift			= 0;
-
 }
 
 CSE_ALifeCustomZone::~CSE_ALifeCustomZone	()
+{ }
+
+void CSE_ALifeCustomZone::STATE_Read(NET_Packet& tNetPacket, u16 size)
 {
-}
+	inherited::STATE_Read(tNetPacket, size);
 
-void CSE_ALifeCustomZone::STATE_Read		(NET_Packet	&tNetPacket, u16 size)
-{
-	inherited::STATE_Read		(tNetPacket,size);
-	
-	tNetPacket.r_float			(m_maxPower);
+	tNetPacket.r_float(m_maxPower);
 
-	if (m_wVersion < 113) {
-		tNetPacket.r_float		();
-		tNetPacket.r_u32		();
+	if (m_wVersion < 113)
+	{
+		tNetPacket.r_float( );
+		tNetPacket.r_u32( );
 	}
 
-	if ((m_wVersion > 66) && (m_wVersion < 118)) {
-		tNetPacket.r_u32		();
+	if ((m_wVersion > 66) && (m_wVersion < 118))
+	{
+		tNetPacket.r_u32( );
 	}
 
-	if(m_wVersion > 102)
-		tNetPacket.r_u32		(m_owner_id);
-
-	if (m_wVersion > 105) {
-		tNetPacket.r_u32		(m_enabled_time);
-		tNetPacket.r_u32		(m_disabled_time);
-	}
-	if (m_wVersion > 106) {
-		tNetPacket.r_u32		(m_start_time_shift);
+	if (m_wVersion > 102)
+	{
+		tNetPacket.r_u32(m_owner_id);
 	}
 
+	if (m_wVersion > 105)
+	{
+		tNetPacket.r_u32(m_enabled_time);
+		tNetPacket.r_u32(m_disabled_time);
+	}
+
+	if (m_wVersion > 106)
+	{
+		tNetPacket.r_u32(m_start_time_shift);
+	}
 }
 
 void CSE_ALifeCustomZone::STATE_Write	(NET_Packet	&tNetPacket)
@@ -698,8 +694,7 @@ const CSE_Abstract *CSE_ALifeAnomalousZone::base	() const
 }
 
 CSE_ALifeAnomalousZone::~CSE_ALifeAnomalousZone		()
-{
-}
+{ }
 
 u32	CSE_ALifeAnomalousZone::ef_anomaly_type			() const
 {
@@ -759,7 +754,6 @@ void CSE_ALifeAnomalousZone::STATE_Read		(NET_Packet	&tNetPacket, u16 size)
 		u32 dummy;
 		tNetPacket.r_u32		(dummy);
 	}
-
 }
 
 void CSE_ALifeAnomalousZone::STATE_Write	(NET_Packet	&tNetPacket)
@@ -791,14 +785,11 @@ void CSE_ALifeAnomalousZone::FillProps		(LPCSTR pref, PropItemVec& items)
 //////////////////////////////////////////////////////////////////////////
 //SE_ALifeTorridZone
 //////////////////////////////////////////////////////////////////////////
-CSE_ALifeTorridZone::CSE_ALifeTorridZone	(LPCSTR caSection)
-:CSE_ALifeCustomZone(caSection),CSE_Motion()
-{
-}
+CSE_ALifeTorridZone::CSE_ALifeTorridZone(LPCSTR caSection) : CSE_ALifeCustomZone(caSection), CSE_Motion( )
+{ }
 
 CSE_ALifeTorridZone::~CSE_ALifeTorridZone	()
-{
-}
+{ }
 
 CSE_Motion* CSE_ALifeTorridZone::motion		()
 {
@@ -816,7 +807,6 @@ void CSE_ALifeTorridZone::STATE_Write		(NET_Packet	&tNetPacket)
 {
 	inherited1::STATE_Write		(tNetPacket);
 	CSE_Motion::motion_write	(tNetPacket);
-
 }
 
 void CSE_ALifeTorridZone::UPDATE_Read		(NET_Packet	&tNetPacket)
@@ -848,14 +838,13 @@ CSE_ALifeZoneVisual::CSE_ALifeZoneVisual	(LPCSTR caSection)
 }
 
 CSE_ALifeZoneVisual::~CSE_ALifeZoneVisual	()
-{
-
-}
+{ }
 
 CSE_Visual* CSE_ALifeZoneVisual::visual	()
 {
 	return		static_cast<CSE_Visual*>(this);
 }
+
 void CSE_ALifeZoneVisual::STATE_Read		(NET_Packet	&tNetPacket, u16 size)
 {
 	inherited1::STATE_Read		(tNetPacket,size);
@@ -913,8 +902,7 @@ CSE_ALifeCreatureAbstract::CSE_ALifeCreatureAbstract(LPCSTR caSection)	: CSE_ALi
 }
 
 CSE_ALifeCreatureAbstract::~CSE_ALifeCreatureAbstract()
-{
-}
+{ }
 
 #ifdef DEBUG
 bool CSE_ALifeCreatureAbstract::match_configuration	() const
@@ -1071,7 +1059,7 @@ bool CSE_ALifeCreatureAbstract::can_switch_offline	() const
 ////////////////////////////////////////////////////////////////////////////
 // CSE_ALifeMonsterAbstract
 ////////////////////////////////////////////////////////////////////////////
-CSE_ALifeMonsterAbstract::CSE_ALifeMonsterAbstract(LPCSTR caSection)	: CSE_ALifeCreatureAbstract(caSection), CSE_ALifeSchedulable(caSection)
+CSE_ALifeMonsterAbstract::CSE_ALifeMonsterAbstract(LPCSTR caSection) : CSE_ALifeCreatureAbstract(caSection), CSE_ALifeSchedulable(caSection)
 {
 	m_tNextGraphID				= m_tGraphID;
 	m_tPrevGraphID				= m_tGraphID;
@@ -1125,6 +1113,7 @@ CSE_ALifeMonsterAbstract::CSE_ALifeMonsterAbstract(LPCSTR caSection)	: CSE_ALife
 #ifdef XRGAME_EXPORTS
 	m_stay_after_death_time_interval	= generate_time(1,1,1,pSettings->r_u32("monsters_common","stay_after_death_time_interval"),0,0);
 #endif // XRGAME_EXPORTS
+
 }
 
 CSE_ALifeMonsterAbstract::~CSE_ALifeMonsterAbstract()
@@ -1198,7 +1187,6 @@ void CSE_ALifeMonsterAbstract::STATE_Read	(NET_Packet &tNetPacket, u16 size)
 
 	if (m_wVersion > 113)
 		tNetPacket.r			(&m_task_reached,sizeof(m_task_reached));
-
 }
 
 void CSE_ALifeMonsterAbstract::UPDATE_Write	(NET_Packet &tNetPacket)
@@ -1259,8 +1247,7 @@ CSE_ALifeCreatureActor::CSE_ALifeCreatureActor	(LPCSTR caSection) : CSE_ALifeCre
 }
 
 CSE_ALifeCreatureActor::~CSE_ALifeCreatureActor()
-{
-}
+{ }
 
 #ifdef DEBUG
 bool CSE_ALifeCreatureActor::match_configuration	() const
@@ -1328,6 +1315,7 @@ void CSE_ALifeCreatureActor::load(NET_Packet &tNetPacket)
 	inherited3::load(tNetPacket);
 	m_holderID=tNetPacket.r_u16();
 }
+
 void CSE_ALifeCreatureActor::UPDATE_Read	(NET_Packet	&tNetPacket)
 {
 	inherited1::UPDATE_Read		(tNetPacket);
@@ -1369,6 +1357,7 @@ void CSE_ALifeCreatureActor::UPDATE_Read	(NET_Packet	&tNetPacket)
 		tNetPacket.r(m_DeadBodyData, BodyDataSize);
 	};
 };
+
 void CSE_ALifeCreatureActor::UPDATE_Write	(NET_Packet	&tNetPacket)
 {
 	inherited1::UPDATE_Write	(tNetPacket);
@@ -1435,8 +1424,7 @@ CSE_ALifeCreatureCrow::CSE_ALifeCreatureCrow(LPCSTR caSection) : CSE_ALifeCreatu
 }
 
 CSE_ALifeCreatureCrow::~CSE_ALifeCreatureCrow()
-{
-}
+{ }
 
 void CSE_ALifeCreatureCrow::STATE_Read		(NET_Packet	&tNetPacket, u16 size)
 {
@@ -1472,7 +1460,6 @@ bool CSE_ALifeCreatureCrow::used_ai_locations	() const
 	return						(false);
 }
 
-
 ////////////////////////////////////////////////////////////////////////////
 // CSE_ALifeCreaturePhantom
 ////////////////////////////////////////////////////////////////////////////
@@ -1485,8 +1472,7 @@ CSE_ALifeCreaturePhantom::CSE_ALifeCreaturePhantom(LPCSTR caSection) : CSE_ALife
 }
 
 CSE_ALifeCreaturePhantom::~CSE_ALifeCreaturePhantom()
-{
-}
+{ }
 
 void CSE_ALifeCreaturePhantom::STATE_Read		(NET_Packet	&tNetPacket, u16 size)
 {
@@ -1542,8 +1528,7 @@ CSE_ALifeMonsterZombie::CSE_ALifeMonsterZombie	(LPCSTR caSection) : CSE_ALifeMon
 }
 
 CSE_ALifeMonsterZombie::~CSE_ALifeMonsterZombie()
-{
-}
+{ }
 
 void CSE_ALifeMonsterZombie::STATE_Read		(NET_Packet	&tNetPacket, u16 size)
 {
@@ -1607,10 +1592,10 @@ void CSE_ALifeMonsterZombie::FillProps		(LPCSTR pref, PropItemVec& items)
    	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Personal",	"Pursuit distance" 		),&fMaxPursuitRadius,				0,300,10);
    	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Personal",	"Home distance" 		),&fMaxHomeRadius,					0,300,10);
 	// attack																			 	
-	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Attack",		"Hit power" 			),&fHitPower,						0,200,5);
-	PHelper().CreateU16  			(items, PrepareKey(pref,*s_name,"Attack",		"Hit interval" 			),&u16HitInterval,					0,65535,500);
-	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Attack",		"Distance" 				),&fAttackDistance,					0,300,10);
-	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Attack",		"Maximum angle" 		),&fAttackAngle,					0,100,1);
+	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Attack",	"Hit power" 			),&fHitPower,						0,200,5);
+	PHelper().CreateU16  			(items, PrepareKey(pref,*s_name,"Attack",	"Hit interval" 			),&u16HitInterval,					0,65535,500);
+	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Attack",	"Distance" 				),&fAttackDistance,					0,300,10);
+	PHelper().CreateFloat			(items, PrepareKey(pref,*s_name,"Attack",	"Maximum angle" 		),&fAttackAngle,					0,100,1);
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -1620,12 +1605,10 @@ CSE_ALifeMonsterBase::CSE_ALifeMonsterBase	(LPCSTR caSection) : CSE_ALifeMonster
 {
     set_visual					(pSettings->r_string(caSection,"visual"));
 	m_spec_object_id			= 0xffff;
-	
 }
 
 CSE_ALifeMonsterBase::~CSE_ALifeMonsterBase()
-{
-}
+{ }
 
 void CSE_ALifeMonsterBase::STATE_Read		(NET_Packet	&tNetPacket, u16 size)
 {
@@ -1673,12 +1656,10 @@ void CSE_ALifeMonsterBase::FillProps	(LPCSTR pref, PropItemVec& values)
 // CSE_ALifePsyDogPhantom
 //////////////////////////////////////////////////////////////////////////
 CSE_ALifePsyDogPhantom::CSE_ALifePsyDogPhantom	(LPCSTR caSection) : CSE_ALifeMonsterBase(caSection)
-{
-}
+{ }
 
 CSE_ALifePsyDogPhantom::~CSE_ALifePsyDogPhantom()
-{
-}
+{ }
 
 void CSE_ALifePsyDogPhantom::STATE_Read		(NET_Packet	&tNetPacket, u16 size)
 {
@@ -1714,8 +1695,7 @@ CSE_ALifeHumanAbstract::CSE_ALifeHumanAbstract(LPCSTR caSection) : CSE_ALifeTrad
 }
 
 CSE_ALifeHumanAbstract::~CSE_ALifeHumanAbstract()
-{
-}
+{ }
 
 CALifeMonsterBrain *CSE_ALifeHumanAbstract::create_brain	()
 {
@@ -1792,8 +1772,7 @@ CSE_ALifeHumanStalker::CSE_ALifeHumanStalker(LPCSTR caSection) : CSE_ALifeHumanA
 }
 
 CSE_ALifeHumanStalker::~CSE_ALifeHumanStalker()
-{
-}
+{ }
 
 void CSE_ALifeHumanStalker::STATE_Write		(NET_Packet &tNetPacket)
 {
@@ -1841,10 +1820,8 @@ void CSE_ALifeHumanStalker::FillProps		(LPCSTR pref, PropItemVec& values)
 //////////////////////////////////////////////////////////////////////////
 // CSE_ALifeOnlineOfflineGroup
 //////////////////////////////////////////////////////////////////////////
-
 CSE_ALifeOnlineOfflineGroup::CSE_ALifeOnlineOfflineGroup	(LPCSTR caSection) : CSE_ALifeDynamicObject(caSection), CSE_ALifeSchedulable(caSection)
-{
-}
+{ }
 
 CSE_Abstract *CSE_ALifeOnlineOfflineGroup::base				()
 {

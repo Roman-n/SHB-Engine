@@ -342,7 +342,7 @@ void CController::play_control_sound_hit()
 	control_hit_sound.play_at_pos(const_cast<CEntityAlive*>(EnemyMan.get_enemy()),pos);
 }
 
-void CController::reload(LPCSTR section)
+void CController::reload(const char* section)
 {
 	inherited::reload			(section);
 	com_man().ta_fill_data(anim_triple_control,	"stand_sit_down_attack_0",	"control_attack_0",	"sit_stand_up_attack_0", true, false);

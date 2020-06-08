@@ -241,7 +241,7 @@ void CActor::reinit	()
 	m_time_lock_accel							= 0;
 }
 
-void CActor::reload	(LPCSTR section)
+void CActor::reload	(const char* section)
 {
 	CEntityAlive::reload		(section);
 	CInventoryOwner::reload		(section);

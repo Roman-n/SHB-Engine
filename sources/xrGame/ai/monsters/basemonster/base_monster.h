@@ -98,7 +98,7 @@ public:
 	virtual void			InitThink						() {}
 	virtual void			Think							();
 	virtual	void			reinit							();
-	virtual void			reload							(LPCSTR section);
+	virtual void			reload							(const char* section);
 
 	virtual void			init							() {}
 
@@ -272,10 +272,11 @@ public:
 	CControlledEntityBase	*m_controlled;	
 
 	// -----------------------------------------------------------------------------
-	enum EMonsterType {
-		eMonsterTypeUniversal	= u32(0),
+	enum EMonsterType
+	{
+		eMonsterTypeUniversal = u32(0),
 		eMonsterTypeIndoor,
-		eMonsterTypeOutdoor,
+		eMonsterTypeOutdoor
 	} m_monster_type;
 
 	// -----------------------------------------------------------------------------

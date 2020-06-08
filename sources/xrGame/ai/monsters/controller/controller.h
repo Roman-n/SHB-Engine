@@ -81,7 +81,7 @@ public:
 	virtual			~CController		();	
 
 	virtual void	Load				(LPCSTR section);
-	virtual void	reload				(LPCSTR section);
+	virtual void	reload				(const char* section);
 	virtual void	reinit				();
 	virtual void	UpdateCL			();
 	virtual void	shedule_Update		(u32 dt);

@@ -33,7 +33,7 @@ public:
 	virtual			~CPoltergeist		();	
 
 	virtual void	Load				(LPCSTR section);
-	virtual void	reload				(LPCSTR section);
+	virtual void	reload				(const char* section);
 	virtual void	reinit				();
 
 	virtual BOOL	net_Spawn			(CSE_Abstract* DC);

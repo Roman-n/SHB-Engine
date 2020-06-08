@@ -1440,9 +1440,6 @@
     <None Include="config\external.ltx">
       <Filter>config</Filter>
     </None>
-    <None Include="config\extracontent.ltx">
-      <Filter>config</Filter>
-    </None>
     <None Include="config\fonts.ltx">
       <Filter>config</Filter>
     </None>
@@ -1482,16 +1479,10 @@
     <None Include="config\rspec_low.ltx">
       <Filter>config</Filter>
     </None>
-    <None Include="config\rspec_maximum.ltx">
-      <Filter>config</Filter>
-    </None>
     <None Include="config\rspec_minimum.ltx">
       <Filter>config</Filter>
     </None>
     <None Include="config\script.ltx">
-      <Filter>config</Filter>
-    </None>
-    <None Include="config\stalker_custom_data.ltx">
       <Filter>config</Filter>
     </None>
     <None Include="config\system.ltx">

@@ -202,7 +202,7 @@ void CAI_Stalker::LoadSounds		(LPCSTR section)
 	sound().add						(pSettings->r_string(section,"sound_enemy_killed_or_wounded"),		100, SOUND_TYPE_MONSTER_TALKING,	4, u32(eStalkerSoundMaskEnemyKilledOrWounded),		eStalkerSoundEnemyKilledOrWounded,		head_bone_name, xr_new<CStalkerSoundData>(this));
 }
 
-void CAI_Stalker::reload			(LPCSTR section)
+void CAI_Stalker::reload			(const char* section)
 {
 	brain().setup					(this);
 

@@ -83,7 +83,7 @@ public:
 	///////////////////////////////////////////////////////////////////////
 
 	virtual void			reinit					();
-	virtual void			reload					(LPCSTR section);
+	virtual void			reload					(const char* section);
 
 	static	void			BoneCallback			(CBoneInstance *B);
 			void			LookAtActor				(CBoneInstance *B);

@@ -50,7 +50,7 @@ void CBurer::net_Destroy()
 	TScanner::on_destroy();
 }
 
-void CBurer::reload(LPCSTR section)
+void CBurer::reload(const char* section)
 {
 	inherited::reload	(section);
 

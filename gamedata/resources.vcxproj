@@ -135,7 +135,6 @@
     <None Include="config\defines.ltx" />
     <None Include="config\evaluation.ltx" />
     <None Include="config\external.ltx" />
-    <None Include="config\extracontent.ltx" />
     <None Include="config\fonts.ltx" />
     <None Include="config\game.ltx" />
     <None Include="config\game_graphs.ltx" />
@@ -292,7 +291,6 @@
     <None Include="config\rspec_extreme.ltx" />
     <None Include="config\rspec_high.ltx" />
     <None Include="config\rspec_low.ltx" />
-    <None Include="config\rspec_maximum.ltx" />
     <None Include="config\rspec_minimum.ltx" />
     <None Include="config\script.ltx" />
     <None Include="config\scripts\agr\agr_factory_assault_trigger.ltx" />
@@ -490,7 +488,6 @@
     <None Include="config\scripts\yan_labx16_switcher2.ltx" />
     <None Include="config\scripts\yan_labx16_switcher3.ltx" />
     <None Include="config\scripts\yan_labx16_switcher_primary.ltx" />
-    <None Include="config\stalker_custom_data.ltx" />
     <None Include="config\system.ltx" />
     <None Include="config\text\eng\stable_dialogs_darkvalley.ltx" />
     <None Include="config\text\map_desc\fog_net.ltx" />

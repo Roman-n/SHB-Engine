@@ -17,15 +17,17 @@ class CActor;
 class CActorCondition: public CEntityCondition {
 private:
 	typedef CEntityCondition inherited;
-	enum {	eCriticalPowerReached			=(1<<0),
-			eCriticalMaxPowerReached		=(1<<1),
-			eCriticalBleedingSpeed			=(1<<2),
-			eCriticalSatietyReached			=(1<<3),
-			eCriticalRadiationReached		=(1<<4),
-			eWeaponJammedReached			=(1<<5),
-			ePhyHealthMinReached			=(1<<6),
-			eCantWalkWeight					=(1<<7),
-			};
+	enum
+	{
+		eCriticalPowerReached = (1 << 0),
+		eCriticalMaxPowerReached = (1 << 1),
+		eCriticalBleedingSpeed = (1 << 2),
+		eCriticalSatietyReached = (1 << 3),
+		eCriticalRadiationReached = (1 << 4),
+		eWeaponJammedReached = (1 << 5),
+		ePhyHealthMinReached = (1 << 6),
+		eCantWalkWeight = (1 << 7)
+	};
 	Flags16											m_condition_flags;
 private:
 	CActor*											m_object;
@@ -35,7 +37,7 @@ public:
 						CActorCondition				(CActor *object);
 	virtual				~CActorCondition			(void);
 
-	virtual void		LoadCondition				(LPCSTR section);
+	virtual void		LoadCondition				(const char* section);
 	virtual void		reinit						();
 
 	virtual CWound*		ConditionHit				(SHit* pHDS);

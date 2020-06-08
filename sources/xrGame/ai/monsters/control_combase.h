@@ -16,7 +16,7 @@ public:
 			void	init_external			(CControl_Manager *cm, CBaseMonster *obj)	{m_man = cm; m_object = obj;}
 	virtual void	load					(LPCSTR section)							{}
 	virtual void	reinit					()											{m_active = false; m_inited = true;}
-	virtual void	reload					(LPCSTR section)							{}
+	virtual void	reload					(const char* section)							{}
 
 	// update
 	virtual void	update_schedule			()											{}

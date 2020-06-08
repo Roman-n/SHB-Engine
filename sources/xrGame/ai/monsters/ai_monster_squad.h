@@ -38,7 +38,7 @@ enum ESquadCommandType {
 	SC_FEEL_DANGER,
 	SC_EXPLICIT_ACTION,
 	SC_REST,
-	SC_NONE,
+	SC_NONE
 };
 
 struct SSquadCommand {

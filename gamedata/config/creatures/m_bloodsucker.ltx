@@ -12,7 +12,6 @@ corpse_visual				 = monsters\krovosos\krovosos_dead
 icon						 = ui_npc_monster_krovosos
 MaxHealthValue		 		 = 2.0							; range [0..200]
 
-
 ef_creature_type			 = 13							; option for evaluation functions
 ef_weapon_type				 = 3
 ef_detector_type			 = 1
@@ -33,14 +32,14 @@ Spawn_Inventory_Item_Probability = 0.2
 ;------------------------------------------------------------------------
 ; Offline Alife
 ;------------------------------------------------------------------------
-Scheduled		    		 = on							; option for ALife Simulator
-Human		     			 = off							; option for ALife Simulator
-Health			   			 = 400							; option for ALife Simulator
-MinSpeed		    		 = 2.0	;1.0					; option for ALife Simulator
-MaxSpeed		    		 = 4.5	;1.5					; option for ALife Simulator
-going_speed          		 = 2.0	;1.0                   	; option for ALife Simulator
-current_level_going_speed		= 1;2					; option for ALife Simulator
-search_speed         		 = .5                      		; option for ALife Simulator
+Scheduled						= on							; option for ALife Simulator
+Human							= off							; option for ALife Simulator
+Health							= 400							; option for ALife Simulator
+MinSpeed						= 2.0	;1.0					; option for ALife Simulator
+MaxSpeed						= 4.5	;1.5					; option for ALife Simulator
+going_speed						= 2.0	;1.0					; option for ALife Simulator
+current_level_going_speed		= 1;2							; option for ALife Simulator
+search_speed					= .5							; option for ALife Simulator
 smart_terrain_choose_interval	= 00:15:00
 
 ;---------------------------------------------------------------------
@@ -93,15 +92,15 @@ Accel_Aggressive				= 20.0
 ;--------------------------------------------------------------------------
 ; Attack parameters
 ;--------------------------------------------------------------------------
-MinAttackDist					= 2.3 	;2.4    
-MaxAttackDist					= 2.8	;3.8	
+MinAttackDist					= 2.3 	;2.4
+MaxAttackDist					= 2.8	;3.8
 EffectDistance					= 20.0
 hit_type						= wound					; type of attack 
-as_min_dist						= 1.7    
+as_min_dist						= 1.7
 as_step				 			= 0.3
 
 Run_Attack_Dist					= 3.5,		4.5
-Run_Attack_Delay				= 1000,		3000 
+Run_Attack_Delay				= 1000,		3000
 
 attack_params					= m_bloodsucker_attack_params
 
@@ -110,19 +109,21 @@ vampire_effector				= m_bloodsucker_vampire_effector
 
 Melee_Rotation_Factor	= 2.0
 berserk_always			= true
-;-------------------------------------------------------------------------
-; Entity Conditions
-;-------------------------------------------------------------------------
-satiety_v 					= 0.0001			;0.01	;скорость уменьшения сытости со временем [0...1]
-radiation_v 				= 0.00001		;0.004		;скорость уменьшения радиации [0...1]
-satiety_power_v 			= 0.005		;0.01			;увеличение силы при уменьшении сытости [0...1]
-satiety_health_v 			= 0.001		;0.03			;увеличение здоровья при уменьшении сытости [0...1]
-satiety_critical 			= -1.0		;0.25			;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
-radiation_health_v 			= 0.0	;0.006				;уменьшение здоровья при воздействии радиации [0...1]
-morale_v					= 0.01						;скорость восстановления морали [0...1]
+
+;------------------------------------------------------------------------------
+;----------------------------- Entity Conditions ------------------------------
+;------------------------------------------------------------------------------
+satiety_v				= 0.0001			;скорость уменьшения сытости со временем [0...1]
+satiety_power_v			= 0.005				;увеличение силы при уменьшении сытости [0...1]
+satiety_health_v		= 0.001				;увеличение здоровья при уменьшении сытости [0...1]
+satiety_v				= 0.00001			;скорость уменьшения радиации [0...1]
+radiation_health_v		= 0.0				;уменьшение здоровья при воздействии радиации [0...1]
+morale_v				= 0.01				;скорость восстановления морали [0...1]
+psy_health_v			= 0.1				;скорость восстановления psy-здоровья
+
+
 health_hit_part 			= 1.0		;0.8			;процент хита, уходящий на отнимание здоровья [0...1]
 power_hit_part 				= 1.0		;0.9			;процент хита, уходящий на отнимание силы [0...1]
-psy_health_v				= 0.1						;скорость восстановления psy-здоровья
 
 immunities_sect				= bloodsucker_immunities
 
@@ -135,16 +136,16 @@ min_wound_size				= 0.01
 DamagedThreshold			= 0.1
 
 ;Sleep settings 
-sleep_health 				= 1.0		;1.5			;ъю¤ЇЇшЎшхэЄv ёъюЁюёЄхщ шчьхэхэш  ярЁрьхЄЁют тю тЁхь  ёэр
+sleep_health 				= 1.0		;1.5			;коэффициенты скоростей изменения параметров во время сна
 sleep_power 				= 1.0		;1.5
 sleep_satiety 				= 1.0		;0.8
 sleep_radiation 			= 1.0	;1.1
 sleep_psy_health			= 1.0
 
 ; Eat settings
-eat_freq					= 5.0						; ўрёЄюЄр єъєёют т ёхъ
-eat_slice					= 0.05						; єтхышўхэшх ёvЄюёЄш яЁш 1 єъєёх
-eat_slice_weight			= 10.0						; єьхэ№°хэшх хфv є ЄЁєяр
+eat_freq					= 5.0						;частота укусов в сек
+eat_slice					= 0.05						;увеличение сытости при 1 укусе
+eat_slice_weight			= 10.0						;уменьшение еды у трупа
 
 satiety_threshold			= 0.2						; below this value monster fill hunger
 
@@ -162,9 +163,7 @@ sound_die_in_anomaly		= monsters\bloodsucker\die_
 
 sound_distant_idle			= monsters\bloodsucker\idle_
 distant_idle_sound_delay	= 80000
-distant_idle_sound_range	= 100.0	
-
-
+distant_idle_sound_range	= 100.0
 
 killer_clsids				= Z_MINCER,Z_GALANT,ZS_BFUZZ,ZS_MBALD,ZS_GALAN,ZS_MINCE
 
@@ -217,7 +216,6 @@ Morale_Despondent_Threashold	= 0.5
 ;-------------------------------------------------------------------------
 damage					= m_bloodsucker_damage
 
-
 critical_wound_threshold		= -1; 1.1 ;1.1
 critical_wound_decrease_quant	= 0.
 
@@ -233,18 +231,17 @@ critical_wound_bones_legs	= bloodsucker_critical_wound_bones_legs
 ;-------------------------------------------------------------------------
 ; Other Stuff (refactoring needed)
 ;-------------------------------------------------------------------------
-DayTime_Begin					= 6			;6			; эрўрыр фэ  фы  ьюэёЄЁр
-DayTime_End						= 23					; ъюэхЎ фэ  фы  ьюэёЄЁр
-Min_Satiety						= 0.000055 	;0.06		; ьшэ. эюЁьр ёvЄюёЄш (ьхэ№°х - єцх уюыюфэvщ)
-Max_Satiety						= 1.0	;0.9			; ьръё. эюЁьр ёvЄюёЄш (сюы№°х - юўхэ№ ёvЄvщ)
-distance_to_corpse				= 0.8					; фшёЄ. фю ЄЁєяр, яЁш ъюЄюЁющ юэ яхЁхїюфшЄ т ёюёЄю эшх хфv
+DayTime_Begin					= 6			;6			; начала дня для монстра
+DayTime_End						= 23					; конец дня для монстра
+Min_Satiety						= 0.000055 	;0.06		; мин. норма сытости (меньше - уже голодный)
+Max_Satiety						= 1.0	;0.9			; макс. норма сытости (больше - очень сытый)
+distance_to_corpse				= 0.8					; дист. до трупа, при которой он переходит в состояние еды
 
 ; spin spin sugar
 bone_spin						= bip01_spine1
 
 ;									fSearchRange,fOptEnemyDistance,fOptEnemyDistanceWeight,fMinEnemyDistance,fMinEnemyDistanceWeight,fMaxEnemyDistance,fMaxEnemyDistanceWeight
 selector_approach				=      20.0,            1.0,           1000.0,             0.0,               0.0,              1000.0,				10000.0,      
-
 
 terrain							= bloodsucker_terrain
 material						= creatures\medium
@@ -266,26 +263,17 @@ Invisibility_BlinkTime								= 300
 Invisibility_BlinkMicroInterval  					= 30
 Invisibility_EnergySpeed							= 0.05
 
-
 ;-------------------------------------------------------------------------
 ; Vampire Ability
 ;-------------------------------------------------------------------------
-
 Vampire_Delay			= 100000
 Vampire_Want_Speed		= 0.01
 Vampire_Wound			= 0.2
-
-;--- OUTDATED :: REMOVE THIS PARAM ---------------
-Vampire_Reach_Time		= 15000
-;-------------------------------------------------
-
 
 ;-------------------------------------------------------------------------
 ; Predator Ability
 ;-------------------------------------------------------------------------
 Predator_Visual	= monsters\krovosos\krovosos_xray
-
-
 
 ;=================================================================================
 ; Bloodsucker Damage
@@ -302,7 +290,6 @@ bip01_spine2 		= 1.0, -1, 0.5
 bip01_spine3 		= 1.0, -1, 0.5
 bip01_neck 			= 1.0, -1, 1.5
 bip01_head 			= 2.0, -1, 0.5, 10
-
 
 [bloodsucker_critical_wound_bones_head]
 bip01_neck
@@ -361,7 +348,6 @@ bip01_r_finger31
 bip01_r_finger4
 bip01_r_finger41
 
-
 [bloodsucker_critical_wound_bones_legs]
 bip01_l_thigh
 bip01_l_calf
@@ -371,9 +357,6 @@ bip01_r_thigh
 bip01_r_calf
 bip01_r_foot
 bip01_r_toe1
-
-
-
 
 ;=================================================================================
 ; Bloodsucker Terrain
@@ -390,12 +373,11 @@ bip01_r_toe1
 ;	anim			Cycles	| time1 | power1 | time2 | power2 | 
 ;--------------------------------------------------------------------------
 stand_run_0			=	1,    0.15,    1.0,	   0.70,     1.0,
-stand_run_dmg_0		=	1,	  0.15,    1.0,	   0.40,     1.0,   
+stand_run_dmg_0		=	1,	  0.15,    1.0,	   0.40,     1.0,
 stand_walk_fwd_0	=	1,	  0.05,    1.0,    0.50,     1.0 
-stand_walk_dmg_0	=   1,	  0.05,    1.0,	   0.60,     1.0,   
-stand_steal_0		=	2,	  0.15,    0.2,    0.50,     0.2,   
-;stand_drag_0		=	1,	  0.2,	   1.0,	   0.25,     0.7,   
-
+stand_walk_dmg_0	=   1,	  0.05,    1.0,	   0.60,     1.0,
+stand_steal_0		=	2,	  0.15,    0.2,    0.50,     0.2,
+;stand_drag_0		=	1,	  0.2,	   1.0,	   0.25,     0.7,
 
 ;===========================================================================
 ; Attack Animation Parameters
@@ -425,8 +407,8 @@ value2			= 0.60,		0.2,		    550,        0.0, 2.5, 4.50,		  -1.2, 1.2, -1.2, 1.2,
 [bloodsucker_immunities]
 burn_immunity			= 1.0
 strike_immunity			= 1.0
-shock_immunity			= 1.0					
-wound_immunity 				= 0.4	;0.75	;1.0		
+shock_immunity			= 1.0
+wound_immunity 				= 0.4	;0.75	;1.0
 radiation_immunity 			= 0.0	;0.5
 telepatic_immunity 			= 1.0
 chemical_burn_immunity		= 0.5
@@ -467,13 +449,11 @@ time_release		= 0.45		; fade out
 ce_time				= 0.65 ;time 
 ce_amplitude		= 15;12.0 
 ce_period_number	= 2.0;3.0 
-ce_power			= 3.0 ;0.7 ; power 
-
+ce_power			= 3.0 ;0.7 ; power
 
 ;*********************************************************************************
 ; BASE PROFILES
 ;*********************************************************************************
-
 [bloodsucker_weak]:m_bloodsucker_e
 $spawn				= "monsters\bloodsuckers\bloodsucker_01_weak"
 visual				= monsters\krovosos\krovosos
@@ -562,7 +542,6 @@ stand_attack_run_0 =	bloodsucker_normal_run_attack_sect
 value1			= 0.20,		0.2,		    250,        0.0, 0.5, 3.00,		  -1.2, 1.2, -1.2, 1.2,				  2.2
 value2			= 0.60,		0.4,		    300,        0.0, 0.5, 3.00,		  -1.2, 1.2, -1.2, 1.2,				  2.2
 
-
 [bloodsucker_strong]:m_bloodsucker_e
 $spawn				= "monsters\bloodsuckers\bloodsucker_03_strong"
 visual				= monsters\krovosos\krovosos_strong
@@ -574,7 +553,6 @@ immunities_sect		= bloodsucker_immunities_strong
 attack_params		= bloodsucker_attack_params_strong
 spec_rank			= strong
 community			= bloodsucker
-
 
 [bloodsucker_immunities_strong]
 burn_immunity			= 1.0
@@ -609,7 +587,6 @@ stand_attack_run_0 =	bloodsucker_strong_run_attack_sect
 value1			= 0.20,		0.4,		    350,        0.0, 0.5, 4.50,		  -1.2, 1.2, -1.2, 1.2,				  2.2
 value2			= 0.60,		0.8,		    400,        0.0, 0.5, 4.50,		  -1.2, 1.2, -1.2, 1.2,				  2.2
 
-
 ;*********************************************************************************
 ; CUSTOM PROFILES
 ;*********************************************************************************
@@ -624,7 +601,6 @@ visual				= monsters\krovosos\krovosos
 icon				= ui_npc_monster_krovosos
 panic_threshold		= 0.05
 species				= arena_monstr
-
 
 [bloodsucker_mil]:bloodsucker_strong
 $spawn				= "monsters\military\bloodsucker_mil"

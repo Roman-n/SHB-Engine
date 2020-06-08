@@ -35,7 +35,6 @@ ph_crash_speed_max   = 16;30
 ph_mass 		     = 170.
 cost			     = 1
 
-
 Health				 = 100.0
 money				 = 1000000
 
@@ -43,8 +42,7 @@ immunities_sect				= trader_immunities
 condition_sect				= trader_condition
 
 ; attach params
-attachable_items		= 
-
+attachable_items		=
 
 ;species of monster
 species				= human
@@ -323,16 +321,17 @@ explosion_immunity 			= 0.0
 fire_wound_immunity  		= 0.0
 
 [trader_condition]
-satiety_v					= 0.0				;скорость уменьшения сытости со временем
-radiation_v					= 1.0				;скорость уменьшения радиации
+satiety_v					= 0.0				;скорость уменьшения сытости со временем [0...1]
 satiety_power_v				= 1.0				;увеличение силы при уменьшении сытости 
-satiety_health_v			= 1.0				;увеличение здоровья при уменьшении сытости 
-satiety_critical			= 0.0				;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
+satiety_health_v			= 1.0				;увеличение здоровья при уменьшении сытости
+radiation_v					= 1.0				;скорость уменьшения радиации [0...1]
 radiation_health_v			= 0.0				;уменьшение здоровья при воздействии радиации
-morale_v					= 0.0				;скорость восстановления морали
+morale_v					= 0.0				;скорость восстановления морали [0...1]
+psy_health_v				= 0.1				;скорость восстановления psy-здоровья
+
+
 health_hit_part				= 1.0				;процент хита, уходящий на отнимание здоровья
 power_hit_part				= 0.1				;процент хита, уходящий на отнимание силы
-psy_health_v				= 0.1				;скорость восстановления psy-здоровья
 
 ;открытые раны
 bleeding_v					= 0.0				;потеря крови при номинальной ране в секунду

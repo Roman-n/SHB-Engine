@@ -33,7 +33,7 @@ public:
 							CEntityCondition		(CEntityAlive *object);
 	virtual					~CEntityCondition		(void);
 
-	virtual void			LoadCondition			(LPCSTR section);
+	virtual void			LoadCondition			(const char* section);
 	virtual void			remove_links			(const CObject *object);
 
 	virtual void			save					(NET_Packet &output_packet);
@@ -137,7 +137,7 @@ protected:
 	{
 		float			m_fV_Radiation;
 		float			m_fV_PsyHealth;
-		float			m_fV_Circumspection;
+//		float			m_fV_Circumspection;
 		float			m_fV_EntityMorale;
 		float			m_fV_RadiationHealth;
 		float			m_fV_Bleeding;

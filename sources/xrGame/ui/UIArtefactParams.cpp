@@ -55,12 +55,15 @@ LPCSTR af_item_param_names[] = {
 	"ui_inv_outfit_fire_wound_protection",		// "(fire_wound_imm)",
 };
 
-LPCSTR af_actor_param_names[]={
-	"satiety_health_v",
-	"radiation_v",
+const char* af_actor_param_names[ ] =
+{
 	"satiety_v",
 	"satiety_power_v",
-	"wound_incarnation_v",
+	"satiety_health_v",
+	"radiation_v",
+
+
+	"wound_incarnation_v"
 };
 
 void CUIArtefactParams::InitFromXml(CUIXml& xml_doc)

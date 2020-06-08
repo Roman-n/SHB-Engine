@@ -35,143 +35,137 @@
 #include "misc\respawn.ltx"
 #include "creatures\spawn_sections.ltx"
 
-; Extra Content
-#include "extracontent.ltx"
-
 #include "localization.ltx"
 
 [sound]
-occlusion_scale	= 0.4
-snd_collide_min_volume=0.1
-snd_collide_max_volume=200.
+occlusion_scale						= 0.4
+snd_collide_min_volume				= 0.1
+snd_collide_max_volume				= 200.0
 
 [demo_record]
-speed0		= 0.3
-speed1		= 3.0
-speed2		= 15.0
-speed3		= 60.0
-ang_speed0	= 0.1
-ang_speed1	= 0.5
-ang_speed2	= 7.0
-ang_speed3	= 2.0
+speed0								= 0.3
+speed1								= 3.0
+speed2								= 15.0
+speed3								= 60.0
+ang_speed0							= 0.1
+ang_speed1							= 0.5
+ang_speed2							= 7.0
+ang_speed3							= 2.0
 
 [texture_desc]
-files = ui_icons_map, ui_common, ui_old_textures, ui_ingame, ui_map_description, ui_mainmenu, ui_statistics, ui_hud, ui_numpad, ui_inventory, ui_inventory2, ui_iconstotal, ui_pda, ui_icons_npc, ui_npc_monster, ui_npc_unique, ui_buy_menu, ui_asus_intro
+files								= ui_icons_map, ui_common, ui_old_textures, ui_ingame, ui_map_description, ui_mainmenu, ui_statistics, ui_hud, ui_numpad, ui_inventory, ui_inventory2, ui_iconstotal, ui_pda, ui_icons_npc, ui_npc_monster, ui_npc_unique, ui_buy_menu, ui_asus_intro
 
 [info_portions]
 ;список xml файлов, содержащих game_information_portions
-files = info_known_objects, info_l01escape, info_l02garbage, info_l03agroprom, info_l05dark_valley, info_l06dark_valley_u, info_l07rostok, info_l08deadcity, info_l08yantar, info_l10military, info_l10radar, info_l11pripyat, info_l12u_sarcofag, info_l16radar_antena, info_l19stanciya, info_lchanger_ico, info_level_tips, info_portions, info_portions_light, info_portions_test, info_stories
+files								= info_known_objects, info_l01escape, info_l02garbage, info_l03agroprom, info_l05dark_valley, info_l06dark_valley_u, info_l07rostok, info_l08deadcity, info_l08yantar, info_l10military, info_l10radar, info_l11pripyat, info_l12u_sarcofag, info_l16radar_antena, info_l19stanciya, info_lchanger_ico, info_level_tips, info_portions, info_portions_light, info_portions_test, info_stories
 
 [encyclopedia]
-files = storyline_info_to_diary, encyclopedia_equipment, encyclopedia_mutants, encyclopedia_social, encyclopedia_tutorial, encyclopedia_weapons, encyclopedia_zone
+files								= storyline_info_to_diary, encyclopedia_equipment, encyclopedia_mutants, encyclopedia_social, encyclopedia_tutorial, encyclopedia_weapons, encyclopedia_zone
 
 [dialogs]
-files = dialogs, dialogs_escape, dialogs_garbage, dialogs_agroprom, dialogs_deadcity, dialogs_darkvalley, dialogs_pripyat, dialogs_bar, dialogs_yantar, dialogs_military, dialogs_labx18, dialogs_radar, dialogs_aes
+files								= dialogs, dialogs_escape, dialogs_garbage, dialogs_agroprom, dialogs_deadcity, dialogs_darkvalley, dialogs_pripyat, dialogs_bar, dialogs_yantar, dialogs_military, dialogs_labx18, dialogs_radar, dialogs_aes
 
 [profiles]
 ;список xml файлов, содержащих профили сталкеров и торговцев
-files =  npc_profile
+files								= npc_profile
 ;список xml файлов, содержащих описания конкретных сталкеров и торговцев
-specific_characters_files = character_desc_general, character_desc_simulation,character_desc_escape, character_desc_garbage, character_desc_agroprom, character_desc_darkvalley, character_desc_deadcity, character_desc_bar, character_desc_yantar, character_desc_military, character_desc_radar, character_desc_pripyat, character_desc_aes, character_desc_kishka, character_desc_sarcofag
+specific_characters_files			= character_desc_general, character_desc_simulation,character_desc_escape, character_desc_garbage, character_desc_agroprom, character_desc_darkvalley, character_desc_deadcity, character_desc_bar, character_desc_yantar, character_desc_military, character_desc_radar, character_desc_pripyat, character_desc_aes, character_desc_kishka, character_desc_sarcofag
 
 [artefacts_tasks]
 ;имя скриптовой функции, которая вызывается для создания списка артефактов
-script_func = ;trader_job.artefacts_task_list_text
+script_func							= ;trader_job.artefacts_task_list_text
 
 [game_tasks]
-files = game_tasks
+files								= game_tasks
 
 [inventory]
-take_dist		= 2
-max_weight		= 50
-max_ruck		= 56
-max_belt		= 5 ;16
-slots			= 11
+take_dist							= 2
+max_weight							= 50
+max_ruck							= 56
+max_belt							= 5 ;16
+slots								= 11
 
-slot_persistent_1  = true		;knife
-slot_persistent_2  = false		;pistol
-slot_persistent_3  = false		;automatic
-slot_persistent_4  = true		;grenades
-slot_persistent_5  = true		;binocular
-slot_persistent_6  = true		;bolt
-slot_persistent_7  = false		;outfit
-slot_persistent_8  = true		;pda
-slot_persistent_9  = true		;detector
-slot_persistent_10  = true		;torch
-
+slot_persistent_1					= true		;knife
+slot_persistent_2					= false		;pistol
+slot_persistent_3					= false		;automatic
+slot_persistent_4					= true		;grenades
+slot_persistent_5					= true		;binocular
+slot_persistent_6					= true		;bolt
+slot_persistent_7					= false		;outfit
+slot_persistent_8					= true		;pda
+slot_persistent_9					= true		;detector
+slot_persistent_10					= true		;torch
 
 [lights_hanging_lamp]
-;GroupControlSection	= spawn_group
-$spawn 				= "physics\hanging lamp"
-class				= O_HLAMP
-script_binding      = bind_physic_object.init
+;GroupControlSection				= spawn_group
+$spawn								= "physics\hanging lamp"
+class								= O_HLAMP
+script_binding						= bind_physic_object.init
 
 [physic_object]
-;GroupControlSection	= spawn_group
-$spawn 				= "physics\object"
-$prefetch 			= 8
-class				= O_PHYS_S
-remove_time			= 60; after this time  unbreaked removable bone will be removed
-script_binding      = bind_physic_object.init
+;GroupControlSection				= spawn_group
+$spawn								= "physics\object"
+$prefetch							= 8
+class								= O_PHYS_S
+remove_time							= 60; after this time unbreaked removable bone will be removed
+script_binding						= bind_physic_object.init
 
 [physic_destroyable_object]
-;GroupControlSection	= spawn_group
-$spawn 				= "physics\destroyable_object"
-;$prefetch 			= 8
-class				= P_DSTRBL
-remove_time			= 60; after this time  unbreaked removable bone will be removed
-script_binding      = bind_physic_object.init
+;GroupControlSection				= spawn_group
+$spawn								= "physics\destroyable_object"
+;$prefetch							= 8
+class								= P_DSTRBL
+remove_time							= 60; after this time unbreaked removable bone will be removed
+script_binding						= bind_physic_object.init
 
 [search_light]
-;GroupControlSection	= spawn_group
-$spawn 				= "physics\search light"
-class				= O_SEARCH
-cform				= skeleton
-visual				= equipments\projector.ogf
-script_binding      = bind_physic_object.init
+;GroupControlSection				= spawn_group
+$spawn								= "physics\search light"
+class								= O_SEARCH
+cform								= skeleton
+visual								= equipments\projector.ogf
+script_binding						= bind_physic_object.init
 
 [explosion_marks]
-wallmarks			= wm\wm_grenade
-dist				= 0.5	;2.4	;
-size				= 0.6	;0.4	;
-max_count			= 5
+wallmarks							= wm\wm_grenade
+dist								= 0.5	;2.4	;
+size								= 0.6	;0.4	;
+max_count							= 5
 
 [bloody_marks]
-wallmarks			= wm\wm_blood_1,wm\wm_blood_2,wm\wm_blood_3
-dist				= 2.0	;2.4	;(м) max рассто¤ние отлета крови
-max_size			= 0.4	;0.3	;(м)радиус пятна при хите силой nominal hit по большому объекту (по маленькому *0.5)
-min_size			= 0.06			;(м)минимальный радиус пятна
-nominal_hit			= 0.5			;величина номинального хита, при котором разлетается максимум крови (max_size)
+wallmarks							= wm\wm_blood_1,wm\wm_blood_2,wm\wm_blood_3
+dist								= 2.0	;2.4	;(м) max рассто¤ние отлета крови
+max_size							= 0.4	;0.3	;(м)радиус пятна при хите силой nominal hit по большому объекту (по маленькому *0.5)
+min_size							= 0.06			;(м)минимальный радиус пятна
+nominal_hit							= 0.5			;величина номинального хита, при котором разлетается максимум крови (max_size)
 
 ;капли крови
+blood_drops							= wm\wm_blood_drop_1, wm\wm_blood_drop_2, wm\wm_blood_drop_3, wm\wm_blood_drop_4
+start_blood_size					= 0.4			;размер раны чтоб начала капать кровь
+stop_blood_size						= 0.025			;размер раны чтоб кровь остановилась (должно быть меньше start_blood_size)
 
-blood_drops			= wm\wm_blood_drop_1,wm\wm_blood_drop_2,wm\wm_blood_drop_3,wm\wm_blood_drop_4
-start_blood_size	= 0.4			;размер раны чтоб начала капать кровь
-stop_blood_size		= 0.025			;размер раны чтоб кровь остановилась (должно быть меньше start_blood_size)
-
-blood_drop_time     = 0.1			;OBSOLETE
-blood_drop_time_min = 0.3			;
-blood_drop_time_max = 2.0			;
-blood_drop_size		= 0.1			;размер капли (м) крови, котора¤ упала
-
+;blood_drop_time					= 0.1			;OBSOLETE
+blood_drop_time_min					= 0.3			;
+blood_drop_time_max					= 2.0			;
+blood_drop_size						= 0.1			;размер капли (м) крови, которая упала
 
 [entity_fire_particles]
-fire_particles = damage_fx\burn_creatures
-start_burn_size	= 0.0003		;размер ожега после которого начать играть партиклы огн¤
-stop_burn_size	= 0.0001		;размер ожега после которого остановить партиклы
-min_burn_time	= 10000		;минимальное врем¤ отыгрыша партиклов (даже если рана уже зажила)
+fire_particles						= damage_fx\burn_creatures
+start_burn_size						= 0.0003		;размер ожега после которого начать играть партиклы огня
+stop_burn_size						= 0.0001		;размер ожега после которого остановить партиклы
+min_burn_time						= 10000			;минимальное время отыгрыша партиклов (даже если рана уже зажила)
 
 [hud_cursor]
 ;все размеры в процентах от длины экрана
-cross_length		= 0.015					;длина "палочки" прицела
-min_radius			= 0.0					;минимальный радиус прицела (при нулевой дисперсии)
-max_radius			= 1.0					;максимальный радиус
-radius_lerp_speed	= 0.08					;скорость интерполяции положений прицела
-cross_color			= 0.7,0.7,0.7,1.0		;цвет прицела
-disp_scale			= 0.08					;масштаб прицела (относительно радиан)
+cross_length						= 0.015					;длина "палочки" прицела
+min_radius							= 0.0					;минимальный радиус прицела (при нулевой дисперсии)
+max_radius							= 1.0					;максимальный радиус
+radius_lerp_speed					= 0.08					;скорость интерполяции положений прицела
+cross_color							= 0.7, 0.7, 0.7, 1.0	;цвет прицела
+;disp_scale							= 0.08					;масштаб прицела (относительно радиан)
 
 [hud_hitmark]
-hit_mark_texture = ui\ui_hud_hit_mark
+hit_mark_texture					= ui\ui_hud_hit_mark
 ;ui\ui_hud_hit_mark
 ;ui\ui_hud_hit_mark_01
 ;ui\ui_hud_hit_mark_02
@@ -196,85 +190,77 @@ hit_mark_texture = ui\ui_hud_hit_mark
 ; inventory items
 ;------------------------------------------------------------------------------
 [document]
-;GroupControlSection	= spawn_group
-;;discovery_dependency = 
-$spawn 				= "documents\document 01"
-;$prefetch 			= 32
-class				= II_DOC
-cform				= skeleton
-visual				= equipments\item_document_01.ogf
+;GroupControlSection				= spawn_group
+;discovery_dependency				= 
+$spawn								= "documents\document 01"
+;$prefetch							= 32
+class								= II_DOC
+cform								= skeleton
+visual								= equipments\item_document_01.ogf
 
-inv_name			= Document
-inv_name_short		= Document
-inv_weight			= 1	;0.2
+inv_name							= Document
+inv_name_short						= Document
+inv_weight							= 1		;0.2
 
-inv_grid_width		= 1
-inv_grid_height		= 1
-inv_grid_x			= 0
-inv_grid_y			= 0
-cost				= 0
-
-
-
+inv_grid_width						= 1
+inv_grid_height						= 1
+inv_grid_x							= 0
+inv_grid_y							= 0
+cost								= 0
 
 [spectator]
- $player 				= on
-class                   = SPECT
+$player								= on
+class								= SPECT
 
-      
 [??tg_event]
-class 			 = EVENT
+class								= EVENT
 
 [m_car]
-;GroupControlSection	= spawn_group
-;discovery_dependency = 
-$spawn 			= "vehicles\car"
-cform                   = skeleton
-class                   = SCRPTCAR
-
-inv_weight				= 1000
-cost					= 100000
-inv_grid_width			= 1
-inv_grid_height			= 1
-
-script_binding  		= bind_physic_object.init
-
+;GroupControlSection				= spawn_group
+;discovery_dependency				= 
+$spawn								= "vehicles\car"
+cform								= skeleton
+class								= SCRPTCAR
+inv_weight							= 1000
+cost								= 100000
+inv_grid_width						= 1
+inv_grid_height						= 1
+script_binding						= bind_physic_object.init
 
 [actor_firsteye_cam]
-lim_pitch				= -1.5, 1.5
-lim_yaw					= 0, 0
-rot_speed				= 3.14, 3.14, 0
+lim_pitch							= -1.5, 1.5
+lim_yaw								= 0, 0
+rot_speed							= 3.14, 3.14, 0
 
 [actor_ladder_cam]
-lim_pitch				= -1.5, 1.5
-lim_yaw					= -1.0, 1.0
-rot_speed				= 3.14, 3.14, 0
+lim_pitch							= -1.5, 1.5
+lim_yaw								= -1.0, 1.0
+rot_speed							= 3.14, 3.14, 0
 
 [actor_free_cam]
-;----------------
-lim_pitch                = -1.5, 1.5
-lim_yaw                  = 0, 0
-lim_zoom                 = 0.4, 10
-rot_speed                = 3.14, 1.0, 10
- 
+lim_pitch							= -1.5, 1.5
+lim_yaw								= 0, 0
+lim_zoom							= 0.4, 10
+rot_speed							= 3.14, 1.0, 10
+
 [actor_look_cam]
-lim_pitch                = -0.7, 1
-lim_yaw                  = 0, 0
-lim_zoom                 = 1, 5
-rot_speed                = 3.14, 6.28, 10
+lim_pitch							= -0.7, 1
+lim_yaw								= 0, 0
+lim_zoom							= 1, 5
+rot_speed							= 3.14, 6.28, 10
 
 [actor_look_cam_psp]
-lim_pitch                = -0.7, 1
-lim_yaw                  = 0, 0
-lim_zoom                 = 1, 5
-rot_speed                = 2, 2, 2
-offset					= 0.4,0.2,-1.1
-autoaim_speed_y			= 0.5, 3.14    ;min,max speed
-autoaim_speed_x			= 0.5, 3.14
+lim_pitch							= -0.7, 1
+lim_yaw								= 0, 0
+lim_zoom							= 1, 5
+rot_speed							= 2, 2, 2
+offset								= 0.4, 0.2, -1.1
+autoaim_speed_y						= 0.5, 3.14			;min, max speed
+autoaim_speed_x						= 0.5, 3.14
 
 [mounted_weapon_cam]
-lim_pitch                = -0.5, 0.5
-lim_yaw                  = -2.0, 2.0
+lim_pitch							= -0.5, 0.5
+lim_yaw								= -2.0, 2.0
 rot_speed							= 3.14, 1.0, 0
 
 [car_firsteye_cam]

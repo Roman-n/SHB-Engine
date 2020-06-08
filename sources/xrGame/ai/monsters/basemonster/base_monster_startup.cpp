@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "base_monster.h"
 #include "../../../ai_space.h"
 #include "../../../hit.h"
@@ -70,7 +71,7 @@ void CBaseMonster::Load(LPCSTR section)
 	if (pSettings->line_exist(section,sound_name))						\
 		sound().add(pSettings->r_string(section,sound_name), DEFAULT_SAMPLE_COUNT,_type,_prior,u32(_mask),_int_type,"bip01_head");
 
-void CBaseMonster::reload	(LPCSTR section)
+void CBaseMonster::reload	(const char* section)
 {
 	CCustomMonster::reload		(section);
 	
@@ -98,11 +99,16 @@ void CBaseMonster::reload	(LPCSTR section)
 
 	// load monster type
 	m_monster_type = eMonsterTypeUniversal;
-	if (pSettings->line_exist(section,"monster_type")) {
-		if (xr_strcmp(pSettings->r_string(section,"monster_type"), "indoor") == 0)
+	if (pSettings->line_exist(section, "monster_type"))
+	{
+		if (xr_strcmp(pSettings->r_string(section, "monster_type"), "indoor") == 0)
+		{
 			m_monster_type = eMonsterTypeIndoor;
-		else if (xr_strcmp(pSettings->r_string(section,"monster_type"), "outdoor") == 0)
+		}
+		else if (xr_strcmp(pSettings->r_string(section, "monster_type"), "outdoor") == 0)
+		{
 			m_monster_type = eMonsterTypeOutdoor;
+		}
 	}
 
 	Home->load						("home");
@@ -110,7 +116,6 @@ void CBaseMonster::reload	(LPCSTR section)
 	// save panic_threshold
 	m_default_panic_threshold = m_panic_threshold;
 }
-
 
 void CBaseMonster::reinit()
 {
@@ -162,7 +167,6 @@ void CBaseMonster::reinit()
 #endif 
 	
 }
-
 
 BOOL CBaseMonster::net_Spawn (CSE_Abstract* DC) 
 {
@@ -312,7 +316,6 @@ void CBaseMonster::settings_load(LPCSTR section)
 	m_base_settings.create	(crc,1,&data);
 }
 
-
 void CBaseMonster::settings_overrides()
 {
 	SMonsterSettings			*data;
@@ -366,12 +369,8 @@ void CBaseMonster::fill_bones_body_parts	(LPCSTR body_part, CriticalWoundType wo
 	CInifile::Sect			&body_part_section = pSettings->r_section(body_parts_section);
 	CInifile::SectCIt		I = body_part_section.Data.begin();
 	CInifile::SectCIt		E = body_part_section.Data.end();
-	for ( ; I != E; ++I)
-		m_bones_body_parts.insert	(
-			std::make_pair(
-				kinematics->LL_BoneID((*I).first),
-				u32(wound_type)
-			)
-		);
+	for (; I != E; ++I)
+	{
+		m_bones_body_parts.insert(std::make_pair(kinematics->LL_BoneID((*I).first), u32(wound_type)));
+	}
 }
-

@@ -171,7 +171,7 @@ public:
 			void						init								();
 	virtual void						Load								(LPCSTR	section );
 	virtual	void						reinit								();
-	virtual void						reload								(LPCSTR	section );
+	virtual void						reload								(const char* section );
 	virtual void						LoadSounds							(LPCSTR section );
 	
 	virtual BOOL						net_Spawn							(CSE_Abstract* DC);

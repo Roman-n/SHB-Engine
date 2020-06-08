@@ -139,16 +139,19 @@ void CVisualMemoryManager::reinit					()
 	m_last_update_time					= u32(-1);
 }
 
-void CVisualMemoryManager::reload				(LPCSTR section)
+void CVisualMemoryManager::reload(const char* section)
 {
-	m_max_object_count			= READ_IF_EXISTS(pSettings,r_s32,section,"DynamicObjectsCount",1);
+	m_max_object_count = READ_IF_EXISTS(pSettings, r_s32, section, "DynamicObjectsCount", 1);
 
-	if (m_stalker) {
-		m_free.Load		(pSettings->r_string(section,"vision_free_section"),true);
-		m_danger.Load	(pSettings->r_string(section,"vision_danger_section"),true);
+	if (m_stalker)
+	{
+		m_free.Load(pSettings->r_string(section, "vision_free_section"), true);
+		m_danger.Load(pSettings->r_string(section, "vision_danger_section"), true);
 	}
 	else
-		m_free.Load		(section,!!m_client);
+	{
+		m_free.Load(section, !!m_client);
+	}
 }
 
 IC	const CVisionParameters &CVisualMemoryManager::current_state() const

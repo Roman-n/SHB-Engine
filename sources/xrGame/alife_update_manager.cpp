@@ -277,7 +277,7 @@ void CALifeUpdateManager::load			(LPCSTR game_name, bool no_assert, bool new_onl
 	g_pGamePersistent->LoadTitle		("st_server_connecting");
 }
 
-void CALifeUpdateManager::reload		(LPCSTR section)
+void CALifeUpdateManager::reload		(const char* section)
 {
 	CALifeSimulatorBase::reload			(section);
 	set_process_time					((int)m_max_process_time);

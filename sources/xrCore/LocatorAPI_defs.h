@@ -15,7 +15,7 @@ public:
 	enum{
     	flRecurse	= (1<<0),
     	flNotif		= (1<<1),
-    	flNeedRescan= (1<<2),
+    	flNeedRescan= (1<<2)
     };
 public:
 	LPSTR		m_Path;
@@ -41,7 +41,7 @@ struct 				_finddata64i32_t;
 struct XRCORE_API FS_File{
 	enum{ 
 		flSubDir= (1<<0),
-		flVFS	= (1<<1),
+		flVFS	= (1<<1)
 	};
 	unsigned 	attrib;
 	time_t	  	time_write;
