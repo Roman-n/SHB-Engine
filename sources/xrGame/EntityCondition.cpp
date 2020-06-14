@@ -11,12 +11,12 @@
 #include "..\XR_3DA\SkeletonCustom.h"
 #include "object_broker.h"
 
-#define MAX_HEALTH 1.0f
-#define MIN_HEALTH -0.01f
+#define MAX_HEALTH			1.0f
+#define MIN_HEALTH			-0.01f
 
-#define MAX_POWER 1.0f
-#define MAX_RADIATION 1.0f
-#define MAX_PSY_HEALTH 1.0f
+#define MAX_POWER			1.0f
+#define MAX_RADIATION		1.0f
+#define MAX_PSY_HEALTH		1.0f
 
 CEntityConditionSimple::CEntityConditionSimple( )
 {
@@ -27,8 +27,7 @@ CEntityConditionSimple::CEntityConditionSimple( )
 CEntityConditionSimple::~CEntityConditionSimple( )
 { }
 
-CEntityCondition::CEntityCondition(CEntityAlive* object)
-	:CEntityConditionSimple( )
+CEntityCondition::CEntityCondition(CEntityAlive* object) : CEntityConditionSimple( )
 {
 	VERIFY(object);
 
@@ -41,40 +40,36 @@ CEntityCondition::CEntityCondition(CEntityAlive* object)
 	m_fPowerMax = MAX_POWER;
 	m_fRadiationMax = MAX_RADIATION;
 	m_fPsyHealthMax = MAX_PSY_HEALTH;
-	m_fEntityMorale = m_fEntityMoraleMax = 1.f;
-
+	m_fEntityMorale = m_fEntityMoraleMax = 1.0f;
 
 	m_fPower = MAX_POWER;
-	m_fRadiation = 0;
+	m_fRadiation = 0.0f;
 	m_fPsyHealth = MAX_PSY_HEALTH;
 
 	m_fMinWoundSize = 0.00001f;
 
-
 	m_fHealthHitPart = 1.0f;
 	m_fPowerHitPart = 0.5f;
 
-	m_fDeltaHealth = 0;
-	m_fDeltaPower = 0;
-	m_fDeltaRadiation = 0;
-	m_fDeltaPsyHealth = 0;
+	m_fDeltaHealth = 0.0f;
+	m_fDeltaPower = 0.0f;
+	m_fDeltaRadiation = 0.0f;
+	m_fDeltaPsyHealth = 0.0f;
 
-
-	m_fHealthLost = 0.f;
-	m_pWho = NULL;
+	m_fHealthLost = 0.0f;
+	m_pWho = nullptr;
 	m_iWhoID = 0;
 
 	m_WoundVector.clear( );
 
-
-	m_fHitBoneScale = 1.f;
-	m_fWoundBoneScale = 1.f;
+	m_fHitBoneScale = 1.0f;
+	m_fWoundBoneScale = 1.0f;
 
 	m_bIsBleeding = false;
 	m_bCanBeHarmed = true;
 }
 
-CEntityCondition::~CEntityCondition(void)
+CEntityCondition::~CEntityCondition( )
 {
 	ClearWounds( );
 }
@@ -102,7 +97,7 @@ void CEntityCondition::LoadCondition(const char* entity_section)
 	m_fPowerHitPart = pSettings->r_float(section, "power_hit_part");
 
 	m_use_limping_state = !!(READ_IF_EXISTS(pSettings, r_bool, section, "use_limping_state", FALSE));
-	m_limping_threshold = READ_IF_EXISTS(pSettings, r_float, section, "limping_threshold", .5f);
+	m_limping_threshold = READ_IF_EXISTS(pSettings, r_float, section, "limping_threshold", 0.5f);
 }
 
 void CEntityCondition::reinit( )
@@ -115,27 +110,25 @@ void CEntityCondition::reinit( )
 	m_fRadiationMax = MAX_RADIATION;
 	m_fPsyHealthMax = MAX_PSY_HEALTH;
 
-	m_fEntityMorale = m_fEntityMoraleMax = 1.f;
+	m_fEntityMorale = m_fEntityMoraleMax = 1.0f;
 
 	health( ) = MAX_HEALTH;
 	m_fPower = MAX_POWER;
-	m_fRadiation = 0;
+	m_fRadiation = 0.0f;
 	m_fPsyHealth = MAX_PSY_HEALTH;
 
-	m_fDeltaHealth = 0;
-	m_fDeltaPower = 0;
-	m_fDeltaRadiation = 0;
-	m_fDeltaCircumspection = 0;
-	m_fDeltaEntityMorale = 0;
-	m_fDeltaPsyHealth = 0;
+	m_fDeltaHealth = 0.0f;
+	m_fDeltaPower = 0.0f;
+	m_fDeltaRadiation = 0.0f;
+	m_fDeltaCircumspection = 0.0f;
+	m_fDeltaEntityMorale = 0.0f;
+	m_fDeltaPsyHealth = 0.0f;
 
-
-	m_fHealthLost = 0.f;
-	m_pWho = NULL;
-	m_iWhoID = NULL;
+	m_fHealthLost = 0.0f;
+	m_pWho = nullptr;
+	m_iWhoID = 0;
 
 	ClearWounds( );
-
 }
 
 void CEntityCondition::ChangeHealth(float value)
@@ -187,10 +180,10 @@ bool RemoveWoundPred(CWound* pWound)
 	if (pWound->GetDestroy( ))
 	{
 		xr_delete(pWound);
-		return			true;
+		return true;
 	}
 
-	return				false;
+	return false;
 }
 
 void  CEntityCondition::UpdateWounds( )
@@ -221,11 +214,11 @@ void CEntityCondition::UpdateConditionTime( )
 		SetConditionDeltaTime(0.0f);
 		m_bTimeValid = true;
 
-		m_fDeltaHealth = 0;
-		m_fDeltaPower = 0;
-		m_fDeltaRadiation = 0;
-		m_fDeltaCircumspection = 0;
-		m_fDeltaEntityMorale = 0;
+		m_fDeltaHealth = 0.0f;
+		m_fDeltaPower = 0.0f;
+		m_fDeltaRadiation = 0.0f;
+		m_fDeltaCircumspection = 0.0f;
+		m_fDeltaEntityMorale = 0.0f;
 	}
 
 	m_iLastTimeCalled = _cur_time;
@@ -272,12 +265,12 @@ void CEntityCondition::UpdateCondition( )
 	m_fEntityMorale += m_fDeltaEntityMorale;
 	m_fRadiation += m_fDeltaRadiation;
 
-	m_fDeltaHealth = 0;
-	m_fDeltaPower = 0;
-	m_fDeltaRadiation = 0;
-	m_fDeltaPsyHealth = 0;
-	m_fDeltaCircumspection = 0;
-	m_fDeltaEntityMorale = 0;
+	m_fDeltaHealth = 0.0f;
+	m_fDeltaPower = 0.0f;
+	m_fDeltaRadiation = 0.0f;
+	m_fDeltaPsyHealth = 0.0f;
+	m_fDeltaCircumspection = 0.0f;
+	m_fDeltaEntityMorale = 0.0f;
 
 	clamp(health( ), MIN_HEALTH, max_health( ));
 	clamp(m_fPower, 0.0f, m_fPowerMax);
@@ -314,7 +307,7 @@ float CEntityCondition::HitOutfitEffect(float hit_power, ALife::EHitType hit_typ
 	//увеличить изношенность костюма
 	pOutfit->Hit(hit_power, hit_type);
 
-	return							new_hit_power;
+	return new_hit_power;
 }
 
 float CEntityCondition::HitPowerEffect(float power_loss)
@@ -333,7 +326,7 @@ float CEntityCondition::HitPowerEffect(float power_loss)
 
 	float new_power_loss = power_loss * pOutfit->GetPowerLoss( );
 
-	return							new_power_loss;
+	return new_power_loss;
 }
 
 CWound* CEntityCondition::AddWound(float hit_power, ALife::EHitType hit_type, u16 element)
@@ -351,7 +344,7 @@ CWound* CEntityCondition::AddWound(float hit_power, ALife::EHitType hit_type, u1
 		}
 	}
 
-	CWound* pWound = NULL;
+	CWound* pWound = nullptr;
 
 	//новая рана
 	if (it == m_WoundVector.end( ))
@@ -360,7 +353,7 @@ CWound* CEntityCondition::AddWound(float hit_power, ALife::EHitType hit_type, u1
 		pWound->AddHit(hit_power * ::Random.randF(0.5f, 1.5f), hit_type);
 		m_WoundVector.push_back(pWound);
 	}
-	//старая 
+	//старая
 	else
 	{
 		pWound = *it;
@@ -375,7 +368,7 @@ CWound* CEntityCondition::ConditionHit(SHit* pHDS)
 {
 	//кто нанес последний хит
 	m_pWho = pHDS->who;
-	m_iWhoID = (NULL != pHDS->who) ? pHDS->who->ID( ) : 0;
+	m_iWhoID = (nullptr != pHDS->who) ? pHDS->who->ID( ) : 0;
 
 	float hit_power_org = pHDS->damage( );
 	float hit_power = hit_power_org;
@@ -385,66 +378,81 @@ CWound* CEntityCondition::ConditionHit(SHit* pHDS)
 	switch (pHDS->hit_type)
 	{
 		case ALife::eHitTypeTelepatic:
-			// -------------------------------------------------
+		{	// -------------------------------------------------
 			// temp (till there is no death from psy hits)
 			hit_power *= m_HitTypeK[pHDS->hit_type];
-	/*
-			m_fHealthLost = hit_power*m_fHealthHitPart*m_fHitBoneScale;
-			m_fDeltaHealth -= CanBeHarmed() ? m_fHealthLost : 0;
-			m_fDeltaPower -= hit_power*m_fPowerHitPart;
-	*/
+/*
+			m_fHealthLost = hit_power * m_fHealthHitPart * m_fHitBoneScale;
+			m_fDeltaHealth -= CanBeHarmed() ? m_fHealthLost : 0.0f;
+			m_fDeltaPower -= hit_power * m_fPowerHitPart;
+*/
 			// -------------------------------------------------
 
 			hit_power *= m_HitTypeK[pHDS->hit_type];
 			ChangePsyHealth(-hit_power);
 			bAddWound = false;
 			break;
+		}
 		case ALife::eHitTypeBurn:
+		{
 			hit_power *= m_HitTypeK[pHDS->hit_type];
 			m_fHealthLost = hit_power * m_fHealthHitPart * m_fHitBoneScale;
-			m_fDeltaHealth -= CanBeHarmed( ) ? m_fHealthLost : 0;
+			m_fDeltaHealth -= CanBeHarmed( ) ? m_fHealthLost : 0.0f;
 			m_fDeltaPower -= hit_power * m_fPowerHitPart;
 			bAddWound = false;
 			break;
+		}
 		case ALife::eHitTypeChemicalBurn:
+		{
 			hit_power *= m_HitTypeK[pHDS->hit_type];
 			break;
+		}
 		case ALife::eHitTypeShock:
+		{
 			hit_power *= m_HitTypeK[pHDS->hit_type];
 			m_fHealthLost = hit_power * m_fHealthHitPart;
-			m_fDeltaHealth -= CanBeHarmed( ) ? m_fHealthLost : 0;
+			m_fDeltaHealth -= CanBeHarmed( ) ? m_fHealthLost : 0.0f;
 			m_fDeltaPower -= hit_power * m_fPowerHitPart;
 			bAddWound = false;
 			break;
+		}
 		case ALife::eHitTypeRadiation:
+		{
 			m_fDeltaRadiation += hit_power;
-			return NULL;
+			return nullptr;
 			break;
+		}
 		case ALife::eHitTypeExplosion:
 		case ALife::eHitTypeStrike:
 		case ALife::eHitTypePhysicStrike:
+		{
 			hit_power *= m_HitTypeK[pHDS->hit_type];
 			m_fHealthLost = hit_power * m_fHealthHitPart;
-			m_fDeltaHealth -= CanBeHarmed( ) ? m_fHealthLost : 0;
+			m_fDeltaHealth -= CanBeHarmed( ) ? m_fHealthLost : 0.0f;
 			m_fDeltaPower -= hit_power * m_fPowerHitPart;
 			break;
+		}
 		case ALife::eHitTypeFireWound:
 		case ALife::eHitTypeWound:
+		{
 			hit_power *= m_HitTypeK[pHDS->hit_type];
 			m_fHealthLost = hit_power * m_fHealthHitPart * m_fHitBoneScale;
-			m_fDeltaHealth -= CanBeHarmed( ) ? m_fHealthLost : 0;
+			m_fDeltaHealth -= CanBeHarmed( ) ? m_fHealthLost : 0.0f;
 			m_fDeltaPower -= hit_power * m_fPowerHitPart;
 			break;
+		}
 		default:
 		{
 			R_ASSERT2(0, "unknown hit type");
-		}break;
+			break;
+		}
 	}
 
 	if (bDebug)
 	{
 		Msg("%s hitted in %s with %f[%f]", m_object->Name( ), smart_cast<CKinematics*>(m_object->Visual( ))->LL_BoneName_dbg(pHDS->boneID), m_fHealthLost * 100.0f, hit_power_org);
 	}
+
 	//раны добавляются только живому
 	if (bAddWound && GetHealth( ) > 0)
 	{
@@ -452,27 +460,27 @@ CWound* CEntityCondition::ConditionHit(SHit* pHDS)
 	}
 	else
 	{
-		return NULL;
+		return nullptr;
 	}
 }
 
 float CEntityCondition::BleedingSpeed( )
 {
-	float bleeding_speed = 0;
+	float bleeding_speed = 0.0f;
 
 	for (WOUND_VECTOR_IT it = m_WoundVector.begin( ); m_WoundVector.end( ) != it; ++it)
 	{
 		bleeding_speed += (*it)->TotalSize( );
 	}
 
-	return (m_WoundVector.empty( ) ? 0.f : bleeding_speed / m_WoundVector.size( ));
+	return (m_WoundVector.empty( ) ? 0.0f : bleeding_speed / m_WoundVector.size( ));
 }
 
 void CEntityCondition::UpdateHealth( )
 {
 	float bleeding_speed = BleedingSpeed( ) * m_fDeltaTime * m_change_v.m_fV_Bleeding;
 	m_bIsBleeding = fis_zero(bleeding_speed) ? false : true;
-	m_fDeltaHealth -= CanBeHarmed( ) ? bleeding_speed : 0;
+	m_fDeltaHealth -= CanBeHarmed( ) ? bleeding_speed : 0.0f;
 	m_fDeltaHealth += m_fDeltaTime * m_change_v.m_fV_HealthRestore;
 
 	VERIFY(_valid(m_fDeltaHealth));
@@ -484,7 +492,7 @@ void CEntityCondition::UpdatePower( )
 
 void CEntityCondition::UpdatePsyHealth(float k)
 {
-	if (m_fPsyHealth > 0)
+	if (m_fPsyHealth > 0.0f)
 	{
 		m_fDeltaPsyHealth += m_change_v.m_fV_PsyHealth * k * m_fDeltaTime;
 	}
@@ -492,7 +500,7 @@ void CEntityCondition::UpdatePsyHealth(float k)
 
 void CEntityCondition::UpdateRadiation(float k)
 {
-	if (m_fRadiation > 0)
+	if (m_fRadiation > 0.0f)
 	{
 		m_fDeltaRadiation -= m_change_v.m_fV_Radiation * k * m_fDeltaTime;
 		m_fDeltaHealth -= CanBeHarmed( ) ? m_change_v.m_fV_RadiationHealth * m_fRadiation * m_fDeltaTime : 0.0f;
@@ -511,7 +519,7 @@ bool CEntityCondition::IsLimping( ) const
 {
 	if (!m_use_limping_state)
 	{
-		return	(false);
+		return false;
 	}
 
 	return (m_fPower * GetHealth( ) <= m_limping_threshold);
@@ -519,7 +527,7 @@ bool CEntityCondition::IsLimping( ) const
 
 void CEntityCondition::save(NET_Packet& output_packet)
 {
-	u8 is_alive = (GetHealth( ) > 0.f) ? 1 : 0;
+	u8 is_alive = (GetHealth( ) > 0.0f) ? 1 : 0;
 
 	output_packet.w_u8(is_alive);
 	if (is_alive)
@@ -563,10 +571,9 @@ void CEntityCondition::load(IReader& input_packet)
 	}
 }
 
-void CEntityCondition::SConditionChangeV::load(LPCSTR sect, LPCSTR prefix)
+void CEntityCondition::SConditionChangeV::load(const char* sect, const char* prefix)
 {
 	string256				str;
-//	m_fV_Circumspection		= 0.01f;
 
 	strconcat(sizeof(str), str, "radiation_v", prefix);
 	m_fV_Radiation = pSettings->r_float(sect, str);

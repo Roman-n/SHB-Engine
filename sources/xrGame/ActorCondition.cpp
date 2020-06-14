@@ -24,23 +24,23 @@
 #define MAX_SATIETY					1.0f
 #define START_SATIETY				0.5f
 
-BOOL	GodMode( )
+BOOL GodMode( )
 {
 	return psActorFlags.test(AF_GODMODE);
 }
 
 CActorCondition::CActorCondition(CActor* object) : inherited(object)
 {
-	m_fJumpPower = 0.f;
-	m_fStandPower = 0.f;
-	m_fWalkPower = 0.f;
-	m_fJumpWeightPower = 0.f;
-	m_fWalkWeightPower = 0.f;
-	m_fOverweightWalkK = 0.f;
-	m_fOverweightJumpK = 0.f;
-	m_fAccelK = 0.f;
-	m_fSprintK = 0.f;
-	m_fAlcohol = 0.f;
+	m_fJumpPower = 0.0f;
+	m_fStandPower = 0.0f;
+	m_fWalkPower = 0.0f;
+	m_fJumpWeightPower = 0.0f;
+	m_fWalkWeightPower = 0.0f;
+	m_fOverweightWalkK = 0.0f;
+	m_fOverweightJumpK = 0.0f;
+	m_fAccelK = 0.0f;
+	m_fSprintK = 0.0f;
+	m_fAlcohol = 0.0f;
 	m_fSatiety = 1.0f;
 
 	VERIFY(object);
@@ -135,7 +135,6 @@ void CActorCondition::UpdateCondition( )
 			if(outfit)
 				base_w += outfit->m_additional_weight2;
 */
-
 			k_max_power = 1.0f + _min(weight, base_w) / base_w + _max(0.0f, (weight - base_w) / 10.0f);
 		}
 		else
@@ -145,7 +144,6 @@ void CActorCondition::UpdateCondition( )
 
 		SetMaxPower(GetMaxPower( ) - m_fPowerLeakSpeed * m_fDeltaTime * k_max_power);
 	}
-
 
 	m_fAlcohol += m_fV_Alcohol * m_fDeltaTime;
 	clamp(m_fAlcohol, 0.0f, 1.0f);
@@ -168,7 +166,7 @@ void CActorCondition::UpdateCondition( )
 
 	CEffectorPP* ppe = object( ).Cameras( ).GetPPEffector((EEffectorPPType) effPsyHealth);
 
-	string64			pp_sect_name;
+	string64 pp_sect_name;
 	shared_str ln = Level( ).name( );
 	strconcat(sizeof(pp_sect_name), pp_sect_name, "effector_psy_health", "_", *ln);
 	if (!pSettings->section_exist(pp_sect_name))
@@ -206,7 +204,7 @@ void CActorCondition::UpdateCondition( )
 void CActorCondition::UpdateSatiety( )
 {
 	float k = 1.0f;
-	if (m_fSatiety > 0)
+	if (m_fSatiety > 0.0f)
 	{
 		m_fSatiety -= m_fV_Satiety * k * m_fDeltaTime;
 		clamp(m_fSatiety, 0.0f, 1.0f);
@@ -215,7 +213,7 @@ void CActorCondition::UpdateSatiety( )
 	//сытость увеличивает здоровье только если нет открытых ран
 	if (!m_bIsBleeding)
 	{
-		m_fDeltaHealth += CanBeHarmed( ) ? (m_fV_SatietyHealth * (m_fSatiety > 0.0f ? 1.0f : -1.0f) * m_fDeltaTime) : 0;
+		m_fDeltaHealth += CanBeHarmed( ) ? (m_fV_SatietyHealth * (m_fSatiety > 0.0f ? 1.0f : -1.0f) * m_fDeltaTime) : 0.0f;
 	}
 
 	//коэффициенты уменьшения восстановления силы от сытоти и радиации
@@ -229,7 +227,7 @@ CWound* CActorCondition::ConditionHit(SHit* pHDS)
 {
 	if (GodMode( ))
 	{
-		return NULL;
+		return nullptr;
 	}
 
 	return inherited::ConditionHit(pHDS);
@@ -239,15 +237,15 @@ CWound* CActorCondition::ConditionHit(SHit* pHDS)
 void CActorCondition::ConditionJump(float weight)
 {
 	float power = m_fJumpPower;
-	power += m_fJumpWeightPower * weight * (weight > 1.f ? m_fOverweightJumpK : 1.f);
+	power += m_fJumpWeightPower * weight * (weight > 1.0f ? m_fOverweightJumpK : 1.0f);
 	m_fPower -= HitPowerEffect(power);
 }
 
 void CActorCondition::ConditionWalk(float weight, bool accel, bool sprint)
 {
 	float power = m_fWalkPower;
-	power += m_fWalkWeightPower * weight * (weight > 1.f ? m_fOverweightWalkK : 1.f);
-	power *= m_fDeltaTime * (accel ? (sprint ? m_fSprintK : m_fAccelK) : 1.f);
+	power += m_fWalkWeightPower * weight * (weight > 1.0f ? m_fOverweightWalkK : 1.0f);
+	power *= m_fDeltaTime * (accel ? (sprint ? m_fSprintK : m_fAccelK) : 1.0f);
 	m_fPower -= HitPowerEffect(power);
 }
 
@@ -269,7 +267,7 @@ bool CActorCondition::IsCantWalk( ) const
 		m_bCantWalk = false;
 	}
 
-	return				m_bCantWalk;
+	return m_bCantWalk;
 }
 
 bool CActorCondition::IsCantWalkWeight( )
@@ -306,7 +304,7 @@ bool CActorCondition::IsCantSprint( ) const
 		m_bCantSprint = false;
 	}
 
-	return				m_bCantSprint;
+	return m_bCantSprint;
 }
 
 bool CActorCondition::IsLimping( ) const
@@ -322,6 +320,7 @@ bool CActorCondition::IsLimping( ) const
 
 	return m_bLimping;
 }
+
 extern bool g_bShowHudInfo;
 
 void CActorCondition::save(NET_Packet& output_packet)
@@ -344,7 +343,7 @@ void CActorCondition::reinit( )
 {
 	inherited::reinit( );
 	m_bLimping = false;
-	m_fSatiety = 1.f;
+	m_fSatiety = 1.0f;
 }
 
 void CActorCondition::ChangeAlcohol(float value)
@@ -360,7 +359,7 @@ void CActorCondition::ChangeSatiety(float value)
 
 void CActorCondition::UpdateTutorialThresholds( )
 {
-	string256					cb_name;
+	string256 cb_name;
 	static float _cPowerThr = pSettings->r_float("tutorial_conditions_thresholds", "power");
 	static float _cPowerMaxThr = pSettings->r_float("tutorial_conditions_thresholds", "max_power");
 	static float _cBleeding = pSettings->r_float("tutorial_conditions_thresholds", "bleeding");
@@ -407,14 +406,14 @@ void CActorCondition::UpdateTutorialThresholds( )
 
 	if (b && !m_condition_flags.test(ePhyHealthMinReached) && GetPsyHealth( ) > _cPsyHealthThr)
 	{
-//.		m_condition_flags.set			(ePhyHealthMinReached, TRUE);
+//.		m_condition_flags.set(ePhyHealthMinReached, TRUE);
 		b = false;
 		strcpy_s(cb_name, "_G.on_actor_psy");
 	}
 
 	if (b && !m_condition_flags.test(eCantWalkWeight))
 	{
-//.		m_condition_flags.set			(eCantWalkWeight, TRUE);
+//.		m_condition_flags.set(eCantWalkWeight, TRUE);
 		b = false;
 		strcpy_s(cb_name, "_G.on_actor_cant_walk_weight");
 	}
@@ -425,15 +424,16 @@ void CActorCondition::UpdateTutorialThresholds( )
 		CWeapon* pWeapon = smart_cast<CWeapon*>(item);
 		if (pWeapon && pWeapon->GetCondition( ) < _cWpnCondition)
 		{
-			m_condition_flags.set(eWeaponJammedReached, TRUE); b = false;
+			m_condition_flags.set(eWeaponJammedReached, TRUE);
+			b = false;
 			strcpy_s(cb_name, "_G.on_actor_weapon_jammed");
 		}
 	}
 
 	if (!b)
 	{
-		luabind::functor<LPCSTR>			fl;
-		R_ASSERT(ai( ).script_engine( ).functor<LPCSTR>(cb_name, fl));
+		luabind::functor<const char*> fl;
+		R_ASSERT(ai( ).script_engine( ).functor<const char*>(cb_name, fl));
 		fl( );
 	}
 }
