@@ -63,15 +63,12 @@ CALifeMonsterBrain::~CALifeMonsterBrain			()
 }
 
 void CALifeMonsterBrain::on_state_write		(NET_Packet &packet)
-{
-}
+{ }
 
 void CALifeMonsterBrain::on_state_read		(NET_Packet &packet)
-{
-}
+{ }
 
 #ifdef XRGAME_EXPORTS
-
 bool CALifeMonsterBrain::perform_attack		()
 {
 	return							(false);
@@ -83,16 +80,13 @@ ALife::EMeetActionType CALifeMonsterBrain::action_type	(CSE_ALifeSchedulable *tp
 }
 
 void CALifeMonsterBrain::on_register			()
-{
-}
+{ }
 
 void CALifeMonsterBrain::on_unregister		()
-{
-}
+{ }
 
 void CALifeMonsterBrain::on_location_change	()
-{
-}
+{ }
 
 IC	CSE_ALifeSmartZone &CALifeMonsterBrain::smart_terrain	()
 {
@@ -186,5 +180,4 @@ void CALifeMonsterBrain::on_switch_offline	()
 {
 	movement().on_switch_offline	();
 }
-
 #endif // XRGAME_EXPORTS

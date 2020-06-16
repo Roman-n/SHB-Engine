@@ -19,7 +19,6 @@ holder_range_modifier	= 1.0		       ; во сколько раз увеличивается eye_range
 holder_fov_modifier		= 0.7              ; во сколько раз увеличивается eye_fov
 ;-----------------------------------------------------------------------------------
 
-
 cost					= 1000				; the price of the item
 weapon_class			= assault_rifle		; the type of the box that will be used in buy-menu in multiplayer mode	
 	
@@ -36,7 +35,6 @@ single_handed			= 0
 	
 slot 					= 2									; number of slot in inventory we put weapon in (1 - knife slot, 2 - pistol, 3 - rifle, 4 - grenade, 5 - apparatus)
 animation_slot			= 2									; type of the animation that will be used
-
 
 inv_name	        	= wpn-ak74u								; name in inventory	
 inv_name_short			= wpn-ak74u	
@@ -134,11 +132,9 @@ light_color					= 0.6,0.5,0.3				; params for light during the fire
 light_range					= 5							; radius
 light_var_color				= 0.05						
 light_var_range				= 0.5
-light_time 					= 0.2						
-
+light_time 					= 0.2
 
 ph_mass						= 5							; physic mass (kg)
-
 
 ;addons
 scope_status				= 0							; 0 - no addon
@@ -171,10 +167,8 @@ snd_shoot_grenade			= weapons\gen_grenshoot
 snd_reload_grenade			= weapons\gen_grenload, 1.0, 0.8
 snd_switch					= weapons\groza_switch, 1.0, 0.5
 
-
 ;params when silencer is attached 
 ;similar to corresponding params without prefix silencer_
-
 
 ;silencer_flame_particles 	= weapons\generic_weapon01
 silencer_smoke_particles 	= weapons\generic_shoot_00
@@ -187,14 +181,10 @@ silencer_light_var_color	= 0.05
 silencer_light_var_range	= 0.5
 silencer_light_time 		= 0.2
 
-
 ;-----------------------------------------------------------------------------
 ;-- HUD DESCRIPTION
-;-----------------------------------------------------------------------------
- 
+;----------------------------------------------------------------------------- 
 [wpn_ak74u_hud]
-
-
 ;similar to corresponding params in weapon section but for 1st person view
 
 shell_point     	   	 	= 0.15, 0.0, -0.05
@@ -228,5 +218,4 @@ zoom_offset			= -0.137700,0.033800,-0.115100
 zoom_rotate_x		= -0.005000
 zoom_rotate_y		= 0.017900
 
-
-zoom_hide_crosshair	= true						;to hide crosshair in zoom 
+zoom_hide_crosshair	= true						;to hide crosshair in zoom

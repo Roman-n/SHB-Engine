@@ -43,14 +43,15 @@ const float COMBAT_SOUND_PERCEIVE_RADIUS_SQR	= _sqr(5.f);
 CSoundMemoryManager::~CSoundMemoryManager		()
 {
 	clear_delayed_objects	();
+
 #ifdef USE_SELECTED_SOUND
 	xr_delete				(m_selected_sound);
 #endif
+
 }
 
 void CSoundMemoryManager::Load					(LPCSTR section)
-{
-}
+{ }
 
 void CSoundMemoryManager::reinit				()
 {
@@ -59,9 +60,11 @@ void CSoundMemoryManager::reinit				()
 	m_last_sound_time		= 0;
 	m_sound_threshold		= m_min_sound_threshold;
 	VERIFY					(_valid(m_sound_threshold));
+
 #ifdef USE_SELECTED_SOUND
 	xr_delete				(m_selected_sound);
 #endif
+
 }
 
 void CSoundMemoryManager::reload				(LPCSTR section)
@@ -127,6 +130,7 @@ IC	bool is_sound_type(int s, const ESoundTypes &t)
 
 void CSoundMemoryManager::feel_sound_new(CObject *object, int sound_type, CSound_UserDataPtr user_data, const Fvector &position, float sound_power)
 {
+
 #ifndef MASTER_GOLD
 	if (object && (object->CLS_ID == CLSID_OBJECT_ACTOR) && psAI_Flags.test(aiIgnoreActor))
 		return;
@@ -141,6 +145,7 @@ void CSoundMemoryManager::feel_sound_new(CObject *object, int sound_type, CSound
 
 	CObject					*self = m_object;
 	VERIFY					(self);
+
 #ifndef SILENCE
 	Msg						("%s (%d) - sound type %x from %s at %d in (%.2f,%.2f,%.2f) with power %.2f",*self->cName(),Device.dwTimeGlobal,sound_type,object ? *object->cName() : "world",Device.dwTimeGlobal,position.x,position.y,position.z,sound_power);
 #endif
@@ -275,12 +280,15 @@ void CSoundMemoryManager::add			(const CObject *object, int sound_type, const Fv
 		sound_object.fill		(game_object,self,ESoundTypes(sound_type),sound_power,!m_stalker ? squad_mask_type(-1) : m_stalker->agent_manager().member().mask(m_stalker));
 		if (!game_object)
 			sound_object.m_object_params.m_position = position;
+
 #ifdef USE_FIRST_GAME_TIME
 		sound_object.m_first_game_time	= Level().GetGameTime();
 #endif
+
 #ifdef USE_FIRST_LEVEL_TIME
 		sound_object.m_first_level_time	= Device.dwTimeGlobal;
 #endif
+
 		add						(sound_object);
 	}
 	else {
@@ -372,6 +380,7 @@ void CSoundMemoryManager::remove_links	(CObject *object)
 
 	xr_delete				(m_selected_sound);
 #endif
+
 }
 
 void CSoundMemoryManager::save	(NET_Packet &packet) const
@@ -389,28 +398,35 @@ void CSoundMemoryManager::save	(NET_Packet &packet) const
 		// object params
 		packet.w_u32			((*I).m_object_params.m_level_vertex_id);
 		packet.w_vec3			((*I).m_object_params.m_position);
+
 #ifdef USE_ORIENTATION
 		packet.w_float			((*I).m_object_params.m_orientation.yaw);
 		packet.w_float			((*I).m_object_params.m_orientation.pitch);
 		packet.w_float			((*I).m_object_params.m_orientation.roll);
 #endif // USE_ORIENTATION
+
 		// self params
 		packet.w_u32			((*I).m_self_params.m_level_vertex_id);
 		packet.w_vec3			((*I).m_self_params.m_position);
+
 #ifdef USE_ORIENTATION
 		packet.w_float			((*I).m_self_params.m_orientation.yaw);
 		packet.w_float			((*I).m_self_params.m_orientation.pitch);
 		packet.w_float			((*I).m_self_params.m_orientation.roll);
 #endif // USE_ORIENTATION
+
 #ifdef USE_LEVEL_TIME
 		packet.w_u32			((Device.dwTimeGlobal >= (*I).m_level_time) ? (Device.dwTimeGlobal - (*I).m_level_time) : 0);
 #endif // USE_LAST_LEVEL_TIME
+
 #ifdef USE_LEVEL_TIME
 		packet.w_u32			((Device.dwTimeGlobal >= (*I).m_level_time) ? (Device.dwTimeGlobal - (*I).m_last_level_time) : 0);
 #endif // USE_LAST_LEVEL_TIME
+
 #ifdef USE_FIRST_LEVEL_TIME
 		packet.w_u32			((Device.dwTimeGlobal >= (*I).m_level_time) ? (Device.dwTimeGlobal - (*I).m_first_level_time) : 0);
 #endif // USE_FIRST_LEVEL_TIME
+
 		packet.w_u32			((*I).m_sound_type);
 		packet.w_float			((*I).m_power);
 	}
@@ -435,34 +451,41 @@ void CSoundMemoryManager::load	(IReader &packet)
 		// object params
 		object.m_object_params.m_level_vertex_id	= packet.r_u32();
 		packet.r_fvector3			(object.m_object_params.m_position);
+
 #ifdef USE_ORIENTATION
 		packet.r_float				(object.m_object_params.m_orientation.yaw);
 		packet.r_float				(object.m_object_params.m_orientation.pitch);
 		packet.r_float				(object.m_object_params.m_orientation.roll);
 #endif
+
 		// self params
 		object.m_self_params.m_level_vertex_id	= packet.r_u32();
 		packet.r_fvector3			(object.m_self_params.m_position);
+
 #ifdef USE_ORIENTATION
 		packet.r_float				(object.m_self_params.m_orientation.yaw);
 		packet.r_float				(object.m_self_params.m_orientation.pitch);
 		packet.r_float				(object.m_self_params.m_orientation.roll);
 #endif
+
 #ifdef USE_LEVEL_TIME
 		VERIFY						(Device.dwTimeGlobal >= object.m_level_time);
 		object.m_level_time			= packet.r_u32();
 		object.m_level_time			+= Device.dwTimeGlobal;
 #endif // USE_LEVEL_TIME
+
 #ifdef USE_LAST_LEVEL_TIME
 		VERIFY						(Device.dwTimeGlobal >= object.m_last_level_time);
 		object.m_last_level_time	= packet.r_u32();
 		object.m_last_level_time	+= Device.dwTimeGlobal;
 #endif // USE_LAST_LEVEL_TIME
+
 #ifdef USE_FIRST_LEVEL_TIME
 		VERIFY						(Device.dwTimeGlobal >= (*I).m_first_level_time);
 		object.m_first_level_time	= packet.r_u32();
 		object.m_first_level_time	+= Device.dwTimeGlobal;
 #endif // USE_FIRST_LEVEL_TIME
+
 		object.m_sound_type			= (ESoundTypes)packet.r_u32();
 		object.m_power				= packet.r_float();
 
@@ -484,6 +507,7 @@ void CSoundMemoryManager::load	(IReader &packet)
 			}
 		}
 #endif // DEBUG
+
 	}
 }
 

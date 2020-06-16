@@ -128,6 +128,7 @@ void set_game_difficulty(ESingleGameDifficulty dif)
 	game_cl_Single* game		= smart_cast<game_cl_Single*>(Level().game); VERIFY(game);
 	game->OnDifficultyChanged	();
 }
+
 ESingleGameDifficulty get_game_difficulty()
 {
 	return g_SingleGameDifficulty;
@@ -184,16 +185,16 @@ Fvector vertex_position(u32 level_vertex_id)
 
 void map_add_object_spot(u16 id, LPCSTR spot_type, LPCSTR text)
 {
-	CMapLocation* ml = Level().MapManager().AddMapLocation(spot_type,id);
-	if( xr_strlen(text) )
-			ml->SetHint(text);
+	CMapLocation* ml = Level( ).MapManager( ).AddMapLocation(spot_type, id);
+	if (xr_strlen(text))
+		ml->SetHint(text);
 }
 
 void map_add_object_spot_ser(u16 id, LPCSTR spot_type, LPCSTR text)
 {
-	CMapLocation* ml = Level().MapManager().AddMapLocation(spot_type,id);
-	if( xr_strlen(text) )
-			ml->SetHint(text);
+	CMapLocation* ml = Level( ).MapManager( ).AddMapLocation(spot_type, id);
+	if (xr_strlen(text))
+		ml->SetHint(text);
 
 	ml->SetSerializable(true);
 }
@@ -230,7 +231,6 @@ void prefetch_sound	(LPCSTR name)
 	Level().PrefetchSound(name);
 }
 
-
 CClientSpawnManager	&get_client_spawn_manager()
 {
 	return		(Level().client_spawn_manager());
@@ -240,7 +240,6 @@ void start_stop_menu(CUIDialogWnd* pDialog, bool bDoHideIndicators)
 {
 	HUD().GetUI()->StartStopMenu(pDialog,bDoHideIndicators);
 }
-
 
 void add_dialog_to_render(CUIDialogWnd* pDialog)
 {
@@ -270,7 +269,6 @@ void show_indicators()
 	HUD().GetUI()->ShowGameIndicators();
 	HUD().GetUI()->ShowCrosshair();
 }
-
 
 bool is_level_present()
 {
@@ -319,7 +317,6 @@ void remove_call(const luabind::object &lua_object, LPCSTR condition,LPCSTR acti
 
 void add_call(const luabind::object &lua_object, const luabind::functor<bool> &condition,const luabind::functor<void> &action)
 {
-
 	CPHScriptObjectConditionN	*c=xr_new<CPHScriptObjectConditionN>(lua_object,condition);
 	CPHScriptObjectActionN		*a=xr_new<CPHScriptObjectActionN>(lua_object,action);
 	Level().ph_commander_scripts().add_call(c,a);
@@ -342,6 +339,7 @@ CPHWorld* physics_world()
 {
 	return	ph_world;
 }
+
 CEnvironment *environment()
 {
 	return		(g_pGamePersistent->pEnvironment);
@@ -351,11 +349,13 @@ CEnvDescriptor *current_environment(CEnvironment *self)
 {
 	return		(&self->CurrentEnv);
 }
+
 extern bool g_bDisableAllInput;
 void disable_input()
 {
 	g_bDisableAllInput = true;
 }
+
 void enable_input()
 {
 	g_bDisableAllInput = false;
@@ -430,7 +430,7 @@ void remove_cam_effector(int id)
 {
 	Actor()->Cameras().RemoveCamEffector((ECamEffectorType)id );
 }
-		
+
 float get_snd_volume()
 {
 	return psSoundVFactor;
@@ -456,11 +456,10 @@ int get_actor_points(LPCSTR sect)
 {
 	return Actor()->StatisticMgr().GetSectionPoints(sect);
 }
+
 extern int get_actor_ranking();
 extern void add_human_to_top_list		(u16 id);
 extern void remove_human_from_top_list	(u16 id);
-
-
 
 #include "ActorEffector.h"
 void add_complex_effector(LPCSTR section, int id)
@@ -485,22 +484,30 @@ void remove_pp_effector(int id)
 {
 	CPostprocessAnimator*	pp	= smart_cast<CPostprocessAnimator*>(Actor()->Cameras().GetPPEffector((EEffectorPPType)id));
 
-	if(pp) pp->Stop(1.0f);
-
+	if (pp)
+	{
+		pp->Stop(1.0f);
+	}
 }
 
 void set_pp_effector_factor(int id, float f, float f_sp)
 {
 	CPostprocessAnimator*	pp	= smart_cast<CPostprocessAnimator*>(Actor()->Cameras().GetPPEffector((EEffectorPPType)id));
 
-	if(pp) pp->SetDesiredFactor(f,f_sp);
+	if (pp)
+	{
+		pp->SetDesiredFactor(f, f_sp);
+	}
 }
 
 void set_pp_effector_factor2(int id, float f)
 {
 	CPostprocessAnimator*	pp	= smart_cast<CPostprocessAnimator*>(Actor()->Cameras().GetPPEffector((EEffectorPPType)id));
 
-	if(pp) pp->SetCurrentFactor(f);
+	if (pp)
+	{
+		pp->SetCurrentFactor(f);
+	}
 }
 
 #include "relation_registry.h"
@@ -541,6 +548,7 @@ void CLevel::script_register(lua_State *L)
 	[
 		// obsolete\deprecated
 		def("object_by_id",						get_object_by_id),
+
 #ifdef DEBUG
 		def("debug_object",						get_object_by_name),
 		def("debug_actor",						tpfGetActor),

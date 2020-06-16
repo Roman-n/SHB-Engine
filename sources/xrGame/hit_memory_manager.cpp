@@ -84,14 +84,17 @@ void CHitMemoryManager::reinit				()
 
 void CHitMemoryManager::reload				(LPCSTR section)
 {
+
 #ifdef USE_SELECTED_HIT
 	xr_delete				(m_selected_hit);
 #endif
+
 	m_max_hit_count			= READ_IF_EXISTS(pSettings,r_s32,section,"DynamicHitCount",1);
 }
 
 void CHitMemoryManager::add					(float amount, const Fvector &vLocalDir, const CObject *who, s16 element)
 {
+
 #ifndef MASTER_GOLD
 	if (who && (who->CLS_ID == CLSID_OBJECT_ACTOR) && psAI_Flags.test(aiIgnoreActor))
 		return;
@@ -127,13 +130,15 @@ void CHitMemoryManager::add					(float amount, const Fvector &vLocalDir, const C
 		CHitObject						hit_object;
 
 		hit_object.fill					(entity_alive,m_object,!m_stalker ? squad_mask_type(-1) : m_stalker->agent_manager().member().mask(m_stalker));
-		
+
 #ifdef USE_FIRST_GAME_TIME
 		hit_object.m_first_game_time	= Level().GetGameTime();
 #endif
+
 #ifdef USE_FIRST_LEVEL_TIME
 		hit_object.m_first_level_time	= Device.dwTimeGlobal;
 #endif
+
 		hit_object.m_amount				= amount;
 
 		if (m_max_hit_count <= m_hits->size()) {
@@ -152,6 +157,7 @@ void CHitMemoryManager::add					(float amount, const Fvector &vLocalDir, const C
 
 void CHitMemoryManager::add					(const CHitObject &_hit_object)
 {
+
 #ifndef MASTER_GOLD
 	if (_hit_object.m_object && (_hit_object.m_object->CLS_ID == CLSID_OBJECT_ACTOR) && psAI_Flags.test(aiIgnoreActor))
 		return;
@@ -218,6 +224,7 @@ void CHitMemoryManager::update()
 		}
 	}
 #endif
+
 	STOP_PROFILE
 }
 
@@ -249,6 +256,7 @@ void CHitMemoryManager::remove_links	(CObject *object)
 
 	xr_delete			(m_selected_hit);
 #endif
+
 }
 
 void CHitMemoryManager::save	(NET_Packet &packet) const
@@ -266,28 +274,35 @@ void CHitMemoryManager::save	(NET_Packet &packet) const
 		// object params
 		packet.w_u32			((*I).m_object_params.m_level_vertex_id);
 		packet.w_vec3			((*I).m_object_params.m_position);
+
 #ifdef USE_ORIENTATION
 		packet.w_float			((*I).m_object_params.m_orientation.yaw);
 		packet.w_float			((*I).m_object_params.m_orientation.pitch);
 		packet.w_float			((*I).m_object_params.m_orientation.roll);
 #endif // USE_ORIENTATION
+
 		// self params
 		packet.w_u32			((*I).m_self_params.m_level_vertex_id);
 		packet.w_vec3			((*I).m_self_params.m_position);
+
 #ifdef USE_ORIENTATION
 		packet.w_float			((*I).m_self_params.m_orientation.yaw);
 		packet.w_float			((*I).m_self_params.m_orientation.pitch);
 		packet.w_float			((*I).m_self_params.m_orientation.roll);
 #endif // USE_ORIENTATION
+
 #ifdef USE_LEVEL_TIME
 		packet.w_u32			((Device.dwTimeGlobal >= (*I).m_level_time) ? (Device.dwTimeGlobal - (*I).m_level_time) : 0);
 #endif // USE_LAST_LEVEL_TIME
+
 #ifdef USE_LEVEL_TIME
 		packet.w_u32			((Device.dwTimeGlobal >= (*I).m_level_time) ? (Device.dwTimeGlobal - (*I).m_last_level_time) : 0);
 #endif // USE_LAST_LEVEL_TIME
+
 #ifdef USE_FIRST_LEVEL_TIME
 		packet.w_u32			((Device.dwTimeGlobal >= (*I).m_level_time) ? (Device.dwTimeGlobal - (*I).m_first_level_time) : 0);
 #endif // USE_FIRST_LEVEL_TIME
+
 		packet.w_vec3			((*I).m_direction);
 		packet.w_u16			((*I).m_bone_index);
 		packet.w_float			((*I).m_amount);
@@ -313,34 +328,41 @@ void CHitMemoryManager::load	(IReader &packet)
 		// object params
 		object.m_object_params.m_level_vertex_id	= packet.r_u32();
 		packet.r_fvector3			(object.m_object_params.m_position);
+
 #ifdef USE_ORIENTATION
 		packet.r_float				(object.m_object_params.m_orientation.yaw);
 		packet.r_float				(object.m_object_params.m_orientation.pitch);
 		packet.r_float				(object.m_object_params.m_orientation.roll);
 #endif
+
 		// self params
 		object.m_self_params.m_level_vertex_id	= packet.r_u32();
 		packet.r_fvector3			(object.m_self_params.m_position);
+
 #ifdef USE_ORIENTATION
 		packet.r_float				(object.m_self_params.m_orientation.yaw);
 		packet.r_float				(object.m_self_params.m_orientation.pitch);
 		packet.r_float				(object.m_self_params.m_orientation.roll);
 #endif
+
 #ifdef USE_LEVEL_TIME
 		VERIFY						(Device.dwTimeGlobal >= object.m_level_time);
 		object.m_level_time			= packet.r_u32();
 		object.m_level_time			+= Device.dwTimeGlobal;
 #endif // USE_LEVEL_TIME
+
 #ifdef USE_LAST_LEVEL_TIME
 		VERIFY						(Device.dwTimeGlobal >= object.m_last_level_time);
 		object.m_last_level_time	= packet.r_u32();
 		object.m_last_level_time	+= Device.dwTimeGlobal;
 #endif // USE_LAST_LEVEL_TIME
+
 #ifdef USE_FIRST_LEVEL_TIME
 		VERIFY						(Device.dwTimeGlobal >= (*I).m_first_level_time);
 		object.m_first_level_time	= packet.r_u32();
 		object.m_first_level_time	+= Device.dwTimeGlobal;
 #endif // USE_FIRST_LEVEL_TIME
+
 		packet.r_fvector3			(object.m_direction);
 		object.m_bone_index			= packet.r_u16();
 		object.m_amount				= packet.r_float();
@@ -355,6 +377,7 @@ void CHitMemoryManager::load	(IReader &packet)
 		const CClientSpawnManager::CSpawnCallback	*spawn_callback = Level().client_spawn_manager().callback(delayed_object.m_object_id,m_object->ID());
 		if (!spawn_callback || !spawn_callback->m_object_callback)
 			Level().client_spawn_manager().add	(delayed_object.m_object_id,m_object->ID(),callback);
+
 #ifdef DEBUG
 		else {
 			if (spawn_callback && spawn_callback->m_object_callback) {
@@ -362,6 +385,7 @@ void CHitMemoryManager::load	(IReader &packet)
 			}
 		}
 #endif // DEBUG
+
 	}
 }
 

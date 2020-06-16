@@ -314,68 +314,79 @@ void CActor::g_cl_CheckControls(u32 mstate_wf, Fvector &vControlAccel, float &Ju
 
 #define ACTOR_ANIM_SECT "actor_animation"
 
-void CActor::g_Orientate	(u32 mstate_rl, float dt)
+void CActor::g_Orientate(u32 mstate_rl, float dt)
 {
-	static float fwd_l_strafe_yaw	= deg2rad(pSettings->r_float(ACTOR_ANIM_SECT,	"fwd_l_strafe_yaw"));
-	static float back_l_strafe_yaw	= deg2rad(pSettings->r_float(ACTOR_ANIM_SECT,	"back_l_strafe_yaw"));
-	static float fwd_r_strafe_yaw	= deg2rad(pSettings->r_float(ACTOR_ANIM_SECT,	"fwd_r_strafe_yaw"));
-	static float back_r_strafe_yaw	= deg2rad(pSettings->r_float(ACTOR_ANIM_SECT,	"back_r_strafe_yaw"));
-	static float l_strafe_yaw		= deg2rad(pSettings->r_float(ACTOR_ANIM_SECT,	"l_strafe_yaw"));
-	static float r_strafe_yaw		= deg2rad(pSettings->r_float(ACTOR_ANIM_SECT,	"r_strafe_yaw"));
+	static float fwd_l_strafe_yaw	= deg2rad(pSettings->r_float(ACTOR_ANIM_SECT, "fwd_l_strafe_yaw"));
+	static float back_l_strafe_yaw	= deg2rad(pSettings->r_float(ACTOR_ANIM_SECT, "back_l_strafe_yaw"));
+	static float fwd_r_strafe_yaw	= deg2rad(pSettings->r_float(ACTOR_ANIM_SECT, "fwd_r_strafe_yaw"));
+	static float back_r_strafe_yaw	= deg2rad(pSettings->r_float(ACTOR_ANIM_SECT, "back_r_strafe_yaw"));
+	static float l_strafe_yaw		= deg2rad(pSettings->r_float(ACTOR_ANIM_SECT, "l_strafe_yaw"));
+	static float r_strafe_yaw		= deg2rad(pSettings->r_float(ACTOR_ANIM_SECT, "r_strafe_yaw"));
 
-	if(!g_Alive())return;
+	if (!g_Alive( ))
+	{
+		return;
+	}
+
 	// visual effect of "fwd+strafe" like motion
 	float calc_yaw = 0;
-	if(mstate_real&mcClimb)
+	if (mstate_real & mcClimb)
 	{
-		if(g_LadderOrient()) return;
+		if (g_LadderOrient( ))
+		{
+			return;
+		}
 	}
-	switch(mstate_rl&mcAnyMove)
+
+	switch (mstate_rl & mcAnyMove)
 	{
-	case mcFwd+mcLStrafe:
-		calc_yaw = +fwd_l_strafe_yaw;//+PI_DIV_4; 
-		break;
-	case mcBack+mcRStrafe:
-		calc_yaw = +back_r_strafe_yaw;//+PI_DIV_4; 
-		break;
-	case mcFwd+mcRStrafe:
-		calc_yaw = -fwd_r_strafe_yaw;//-PI_DIV_4; 
-		break;
-	case mcBack+mcLStrafe: 
-		calc_yaw = -back_l_strafe_yaw;//-PI_DIV_4; 
-		break;
-	case mcLStrafe:
-		calc_yaw = +l_strafe_yaw;//+PI_DIV_3-EPS_L; 
-		break;
-	case mcRStrafe:
-		calc_yaw = -r_strafe_yaw;//-PI_DIV_4+EPS_L; 
-		break;
+		case mcFwd + mcLStrafe:
+			calc_yaw = +fwd_l_strafe_yaw;	//+PI_DIV_4;
+			break;
+		case mcBack + mcRStrafe:
+			calc_yaw = +back_r_strafe_yaw;	//+PI_DIV_4;
+			break;
+		case mcFwd + mcRStrafe:
+			calc_yaw = -fwd_r_strafe_yaw;	//-PI_DIV_4;
+			break;
+		case mcBack + mcLStrafe:
+			calc_yaw = -back_l_strafe_yaw;	//-PI_DIV_4;
+			break;
+		case mcLStrafe:
+			calc_yaw = +l_strafe_yaw;		//+PI_DIV_3-EPS_L;
+			break;
+		case mcRStrafe:
+			calc_yaw = -r_strafe_yaw;		//-PI_DIV_4+EPS_L;
+			break;
 	}
 
 	// lerp angle for "effect" and capture torso data from camera
-	angle_lerp		(r_model_yaw_delta,calc_yaw,PI_MUL_4,dt);
+	angle_lerp(r_model_yaw_delta, calc_yaw, PI_MUL_4, dt);
 
 	// build matrix
 	Fmatrix mXFORM;
-	mXFORM.rotateY	(-(r_model_yaw + r_model_yaw_delta));
-	mXFORM.c.set	(Position());
-	XFORM().set		(mXFORM);
+	mXFORM.rotateY(-(r_model_yaw + r_model_yaw_delta));
+	mXFORM.c.set(Position( ));
+	XFORM( ).set(mXFORM);
 
 	//-------------------------------------------------
-
-	float tgt_roll		=	0.f;
-	if (mstate_rl&mcLookout)
+	float tgt_roll = 0.0f;
+	if (mstate_rl & mcLookout)
 	{
-		tgt_roll		=	(mstate_rl&mcLLookout)?-ACTOR_LOOKOUT_ANGLE:ACTOR_LOOKOUT_ANGLE;
-		
-		if( (mstate_rl&mcLLookout) && (mstate_rl&mcRLookout) )
-			tgt_roll	= 0.0f;
+		tgt_roll = (mstate_rl & mcLLookout) ? -ACTOR_LOOKOUT_ANGLE : ACTOR_LOOKOUT_ANGLE;
+
+		if ((mstate_rl & mcLLookout) && (mstate_rl & mcRLookout))
+		{
+			tgt_roll = 0.0f;
+		}
 	}
-	if (!fsimilar(tgt_roll,r_torso_tgt_roll,EPS)){
-		angle_lerp		(r_torso_tgt_roll,tgt_roll,PI_MUL_2,dt);
-		r_torso_tgt_roll= angle_normalize_signed(r_torso_tgt_roll);
+	if (!fsimilar(tgt_roll, r_torso_tgt_roll, EPS))
+	{
+		angle_lerp(r_torso_tgt_roll, tgt_roll, PI_MUL_2, dt);
+		r_torso_tgt_roll = angle_normalize_signed(r_torso_tgt_roll);
 	}
 }
+
 bool CActor::g_LadderOrient()
 {
 	Fvector leader_norm;

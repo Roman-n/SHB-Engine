@@ -66,7 +66,6 @@ collision_energy_max			= 0.5 ;0.7;0.50
 whine_sounds					= weapons\whine_1, weapons\whine_2, weapons\whine_3, weapons\whine_4, weapons\whine01, weapons\whine02
 explode_particles				= explosions\expl_bullet,explosions\expl_bullet_00,explosions\expl_bullet_01
 
-
 [tracers_color_table]	;color_table
 color_0 = 1.0, 0.54, 0.0	; yellow
 color_1 = 1.0, 1.0, 1.0	; white
@@ -102,7 +101,6 @@ inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 11
 inv_grid_y			= 12
-
 
 k_dist			= 1
 k_disp			= 3
@@ -409,7 +407,6 @@ inv_grid_width		= 2
 inv_grid_height		= 1
 inv_grid_x			= 9
 inv_grid_y			= 10
-
 
 k_dist			= 1
 k_disp			= 2.5;3
@@ -895,7 +892,6 @@ inv_grid_height		= 1
 inv_grid_x			= 15
 inv_grid_y			= 19
 
-
 k_dist			= 1
 k_disp			= 1
 k_hit			= 1
@@ -987,7 +983,6 @@ kill_msg_y			= 233
 kill_msg_width		= 21
 kill_msg_height		= 22
 
-
 k_dist			= 1
 k_disp			= 1
 k_hit			= 1
@@ -1032,7 +1027,6 @@ kill_msg_y			= 232
 kill_msg_width		= 19
 kill_msg_height		= 22
 
-
 k_dist			= 1
 k_disp			= 1
 k_hit			= 1
@@ -1051,8 +1045,6 @@ can_be_unlimited = true ;false
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Fake Missiles and Grenades
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
 [wpn_fake_missile]:identity_immunities
 visual                  = weapons\ammo\ammo_vog-25.ogf
 cform                    = skeleton
@@ -1069,7 +1061,6 @@ blast_impulse		= 250
 ;delete
 blast_impulse_factor = 1
 
-
 frags				= 3
 frags_r				= 20
 frag_hit			= 1.50
@@ -1080,16 +1071,13 @@ hit_type_frag		= fire_wound
 
 up_throw_factor		= 0.7
 
-
 ;trail				= weapons\rpg_trail_01, weapons\rpg_trail_02
 
 explode_particles	= explosions\explosion_01
 
-
 light_color		         = 1.9,1.2,0.5
 light_range		         = 25.0
 light_time 		         = 0.5
-
 
 ph_mass			 = 5
 ;engine_f			= 530
@@ -1146,7 +1134,6 @@ blast_impulse		= 350
 ;delete
 blast_impulse_factor = 1
 
-
 frags				= 4
 frags_r				= 20
 frag_hit			= 1.50
@@ -1161,11 +1148,9 @@ up_throw_factor		= 0.7
 
 explode_particles	= explosions\explosion_01
 
-
 light_color		         = 1.9,1.4,0.5
 light_range		         = 14.0
 light_time 		         = 0.85
-
 
 ph_mass			 = 5
 ;engine_f			= 530
@@ -1199,7 +1184,6 @@ kill_msg_y			= 233
 kill_msg_width		= 21
 kill_msg_height		= 22
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Свойства CustomRocket
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1225,7 +1209,6 @@ blast_impulse		= 250
 ;delete
 blast_impulse_factor = 1
 
-
 frags				= 3
 frags_r				= 25
 frag_hit			= 1.50
@@ -1240,11 +1223,9 @@ up_throw_factor		= 0.7
 
 explode_particles	= explosions\explosion_01
 
-
 light_color		         = 1.9,1.4,0.5
 light_range		         = 14.0
 light_time 		         = 0.85
-
 
 ph_mass			 = 5
 ;engine_f			= 530
@@ -1292,7 +1273,6 @@ force_explode_time  = 10000
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [explosive_fuelcan]:identity_immunities,delayed_action_fuse
-
 ;GroupControlSection	= spawn_group
 ;discovery_dependency = 
 $spawn 				= "weapons\explosive\fuelcan"
@@ -1319,7 +1299,6 @@ blast_r				= 8
 blast_impulse		= 250
 ;delete
 blast_impulse_factor = 1
-
 
 frags				= 5
 frags_r				= 15
@@ -1361,9 +1340,7 @@ chemical_burn_immunity	= 1.0
 explosion_immunity		= 1.0
 fire_wound_immunity		= 0.7
 
-
 [explosive_tank]:identity_immunities,delayed_action_fuse
-
 ;GroupControlSection	= spawn_group
 ;discovery_dependency = 
 $spawn 				= "weapons\explosive\tank"
@@ -1389,7 +1366,6 @@ blast_r				= 8
 blast_impulse		= 250
 ;delete
 blast_impulse_factor = 1
-
 
 frags				= 5
 frags_r				= 15
@@ -1432,9 +1408,7 @@ chemical_burn_immunity	= 1.0
 explosion_immunity		= 1.0
 fire_wound_immunity		= 0.7
 
-
 [explosive_barrel_low]:identity_immunities,delayed_action_fuse
-
 ;GroupControlSection	= spawn_group
 ;discovery_dependency = 
 $spawn 				= "weapons\explosive\barrel_low"
@@ -1460,7 +1434,6 @@ blast_r				= 8
 blast_impulse		= 250
 ;delete
 blast_impulse_factor = 1
-
 
 frags				= 5
 frags_r				= 15
@@ -1493,7 +1466,6 @@ immunities_sect			= explosive_barrel_low_immunities_sect
 
 ;time_to_explode			= 0.f
 
-
 [explosive_barrel_low_immunities_sect]
 ;коэффициенты для попаданий различными типами хитов
 burn_immunity			= 1
@@ -1506,9 +1478,7 @@ chemical_burn_immunity	= 1
 explosion_immunity		= 1
 fire_wound_immunity		= 5
 
-
 [explosive_barrel]:identity_immunities,delayed_action_fuse
-
 ;GroupControlSection	= spawn_group
 ;discovery_dependency = 
 $spawn 				= "weapons\explosive\barrel"
@@ -1535,7 +1505,6 @@ blast_impulse		= 250
 ;delete
 blast_impulse_factor = 1
 
-
 frags				= 5
 frags_r				= 15
 frag_hit			= 0.75
@@ -1559,7 +1528,6 @@ fragment_speed				= 100		;скорость осколков (м/с)
 
 explode_duration		 = 5		;подолжительность взрыва (с)
 
-
 ;звуки
 snd_explode = weapons\f1_explode
 immunities_sect			= explosive_barrel_immunities_sect
@@ -1578,9 +1546,7 @@ chemical_burn_immunity	= 1
 explosion_immunity		= 1
 fire_wound_immunity		= 0.7
 
-
 [explosive_mobiltank]:identity_immunities,delayed_action_fuse
-
 ;GroupControlSection	= spawn_group
 ;discovery_dependency = 
 $spawn 				= "weapons\explosive\mobiltank"
@@ -1607,7 +1573,6 @@ blast_impulse		= 250
 ;delete
 blast_impulse_factor = 1
 
-
 frags				= 5
 frags_r				= 15
 frag_hit			= 0.75
@@ -1631,7 +1596,6 @@ fragment_speed				= 100		;скорость осколков (м/с)
 
 explode_duration		 = 5		;подолжительность взрыва (с)
 
-
 ;звуки
 snd_explode = weapons\f1_explode
 immunities_sect			= explosive_mobiltank_immunities_sect
@@ -1650,9 +1614,7 @@ chemical_burn_immunity	= 1.0
 explosion_immunity		= 1.0
 fire_wound_immunity		= 0.7
 
-
 [explosive_dinamit]:delayed_action_fuse
-
 ;GroupControlSection	= spawn_group
 ;discovery_dependency = 
 $spawn 				= "weapons\explosive\dinamit"
@@ -1679,7 +1641,6 @@ blast_r				= 5
 blast_impulse		= 250
 ;delete
 blast_impulse_factor = 1
-
 
 frags				= 5
 frags_r				= 8
@@ -1750,7 +1711,6 @@ inv_grid_y			= 2
 scope_texture		= wpn\wpn_crosshair
 scope_zoom_factor	= 30		;ПСО-1 2X
 
-
 [wpn_addon_scope_susat]:identity_immunities
 ;GroupControlSection	= spawn_group
 ;discovery_dependency = 
@@ -1777,7 +1737,6 @@ inv_grid_x			= 19
 inv_grid_y			= 1
 scope_texture		= wpn\wpn_crosshair_l85
 scope_zoom_factor	= 30		;SUSAT 2X
-
 
 [wpn_addon_silencer]:identity_immunities
 ;GroupControlSection	= spawn_group
@@ -1824,7 +1783,6 @@ inv_grid_height		= 1
 inv_grid_x			= 18
 inv_grid_y			= 0
 grenade_vel			= 76
-
 
 [wpn_addon_grenade_launcher_m203]:identity_immunities
 ;GroupControlSection	= spawn_group

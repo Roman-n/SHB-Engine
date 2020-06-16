@@ -29,7 +29,7 @@ LPCSTR af_item_sect_names[] = {
 	"burn_immunity",
 	"strike_immunity",
 	"shock_immunity",
-	"wound_immunity",		
+	"wound_immunity",
 	"radiation_immunity",
 	"telepatic_immunity",
 	"chemical_burn_immunity",

@@ -144,29 +144,27 @@ bip01_r_toe0	 	 		= 0.0, -1, 0.2
 	eye_left
 	eye_right
 	jaw_1
-	bip01_l_hand	 	 	    
-	bip01_l_finger0	 	 	    
-	bip01_l_finger01	 		
-	bip01_l_finger02	 		
-	bip01_l_finger1	 	 	    
-	bip01_l_finger11	 		
-	bip01_l_finger12	 		
-	bip01_l_finger2	 	 	    
-	bip01_l_finger21	 		
+	bip01_l_hand
+	bip01_l_finger0
+	bip01_l_finger01
+	bip01_l_finger02
+	bip01_l_finger1
+	bip01_l_finger11
+	bip01_l_finger12
+	bip01_l_finger2
+	bip01_l_finger21
 	bip01_l_finger22
-	bip01_r_hand	 	 		
-	bip01_r_finger0	 	 		
-	bip01_r_finger01	 		
-	bip01_r_finger02	 		
-	bip01_r_finger1	 	 		
-	bip01_r_finger11	 		
-	bip01_r_finger12	 		
-	bip01_r_finger2	 	 	 	
-	bip01_r_finger21	 		
-	bip01_r_finger22	 		
+	bip01_r_hand
+	bip01_r_finger0
+	bip01_r_finger01
+	bip01_r_finger02
+	bip01_r_finger1
+	bip01_r_finger11
+	bip01_r_finger12
+	bip01_r_finger2
+	bip01_r_finger21
+	bip01_r_finger22
 	bip01_neck
-	
-	
 
 [critical_wound_torso_section]
 	bip01_pelvis
@@ -175,16 +173,15 @@ bip01_r_toe0	 	 		= 0.0, -1, 0.2
 	bip01_spine1
 	bip01_spine2
 
-
 [critical_wound_hand_left_section]
 	bip01_l_upperarm
 	bip01_l_forearm	
-	bip01_l_clavicle	 		
+	bip01_l_clavicle
 
 [critical_wound_hand_right_section]
 	bip01_r_upperarm
 	bip01_r_forearm	
-	bip01_r_clavicle	 		
+	bip01_r_clavicle
 
 [critical_wound_leg_left_section]
 	bip01_l_thigh
@@ -228,31 +225,28 @@ morale_v					= 0.0001			;скорость восстановлени€ морали [0...1]
 psy_health_v				= 0.01				;скорость восстановлени€ psy-здоровь€
 
 ;открытые раны
-bleeding_v					= 0.0						;потер€ крови при номинальной ране в секунду
-wound_incarnation_v			= 0.001					;крутизна кривой заживлени€ (какой процент раны останетс€ после заживлени€ в игровую секунду)
+bleeding_v					= 0.0				;потер€ крови при номинальной ране в секунду
+wound_incarnation_v			= 0.001				;крутизна кривой заживлени€ (какой процент раны останетс€ после заживлени€ в игровую секунду)
 min_wound_size				= 0.01
 
+health_hit_part				= 1.0				;процент хита, уход€щий на отнимание здоровь€
+power_hit_part				= 0.0				;процент хита, уход€щий на отнимание силы
 
-health_hit_part				= 1.0					;процент хита, уход€щий на отнимание здоровь€
-power_hit_part				= 0.0					;процент хита, уход€щий на отнимание силы
-
-sleep_health				= 1.0					;коэффициенты скоростей изменени€ параметров во врем€ сна
-sleep_power					= 1.0
-sleep_satiety				= 1.0
-sleep_radiation 			= 1.0
-sleep_psy_health			= 1.0
+;sleep_health				= 1.0				;коэффициенты скоростей изменени€ параметров во врем€ сна
+;sleep_power					= 1.0
+;sleep_satiety				= 1.0
+;sleep_radiation 			= 1.0
+;sleep_psy_health			= 1.0
 
 ;---LIMPING STATE-----------------------------------------------------
 use_limping_state			= off
 limping_threshold			= 0.5
 
-
-
 [stalker_terrain]
 	255,000,255,255
 	008,001,255,255 ;–азрешено ходить по опасным местам на баре
 	012,001,255,255 ;–азрешено ходить по опасным местам на ћилитари
-	
+
 [stalker_dolg_terrain]
 	255,000,255,255
 	008,001,255,255 ;–азрешено ходить по опасным местам на баре
@@ -278,8 +272,6 @@ limping_threshold			= 0.5
 	255,000,255,255
 	010,001,255,255	;–азрешено ходить по опасным местам на €нтаре
 
-
-	
 [stalker_movement_speeds]
 	; danger
 	;; crouch

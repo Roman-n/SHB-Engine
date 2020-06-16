@@ -8,6 +8,7 @@ void CControlAnimationBase::accel_init()
 {
 	m_accel.active = false;
 }
+
 void CControlAnimationBase::accel_load(LPCSTR section)
 {
 	m_accel.calm			= pSettings->r_float(section, "Accel_Calm");

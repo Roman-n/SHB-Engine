@@ -38,7 +38,6 @@ bone_fire			 = bip01_head				; bone name
 
 weapon_usage		 = 0						; boolean
 
-
 ;---------------------------------------------------------------------
 ; Physics
 ;---------------------------------------------------------------------
@@ -77,7 +76,7 @@ Velocity_Drag			= 0.6,		0.8,			0.8,		1,		1
 Velocity_Steal			= 1.6,		3.0,			3.0,		1,		1
 
 ; acceleration
-Accel_Generic			= 1.5
+;Accel_Generic			= 1.5
 Accel_Calm				= 2.5
 Accel_Aggressive		= 14.5
 
@@ -115,24 +114,21 @@ radiation_health_v		= 0.01				;уменьшение здоровья при воздействии радиации
 morale_v				= 0.1				;скорость восстановления морали [0...1]
 psy_health_v			= 0.1				;скорость восстановления psy-здоровья
 
-
 health_hit_part 	= 1.0		;0.8			;процент хита, уходящий на отнимание здоровья
 power_hit_part 		= 1.0		;0.9			;процент хита, уходящий на отнимание силы
 
 immunities_sect				= pseudodog_immunities
-
 
 ;открытые раны
 bleeding_v					= 0.05						;потеря крови при номинальной ране в секунду
 wound_incarnation_v			= 0.04				;крутизна кривой заживления (какой процент раны останется после заживления в игровую секунду)
 min_wound_size				= 0.01
 
-
-sleep_health = 1.0		;1.5				;коэффициенты скоростей изменения параметров во время сна
-sleep_power = 1.0		;1.5
-sleep_satiety = 1.0		;0.8
-sleep_radiation = 1.0	;1.1
-sleep_psy_health = 1.0
+;sleep_health = 1.0		;1.5				;коэффициенты скоростей изменения параметров во время сна
+;sleep_power = 1.0		;1.5
+;sleep_satiety = 1.0		;0.8
+;sleep_radiation = 1.0	;1.1
+;sleep_psy_health = 1.0
 
 eat_freq			= 5.0		;частота укусов в сек
 eat_slice			= 0.01	;увеличение сытости при 1 укусе
@@ -160,7 +156,6 @@ sound_die_in_anomaly	= monsters\pseudodog\pdog_death_
 
 killer_clsids			= Z_MINCER,Z_GALANT,ZS_BFUZZ,ZS_MBALD,ZS_GALAN,ZS_MINCE
 
-
 idle_sound_delay		= 92000
 eat_sound_delay			= 3000
 attack_sound_delay		= 28500
@@ -176,8 +171,7 @@ max_hear_dist		 = 60
 ; Vision
 ;-------------------------------------------------------------------------
 eye_fov				 = 110	;150
-eye_range			 = 60	;100	
-
+eye_range			 = 60	;100
 
 min_view_distance   		= 0.4				; коэффициент, который множится на eye_range, в зависимости от угла
 max_view_distance	 		= 1.0				; коэффициент, который множится на eye_range, в зависимости от угла
@@ -217,8 +211,7 @@ jump_max_height				= 3.5
 ;-------------------------------------------------------------------------
 DamagedThreshold		= 0.2
 critical_wound_threshold		= -1
-critical_wound_decrease_quant	= 0.
-
+critical_wound_decrease_quant	= 0.0
 
 material				= creatures\medium
 DynamicObjectsCount		= 32
@@ -255,7 +248,6 @@ run_jamp_1		=		0.55,		0.10,		    120,        0.0, 1.0, 4.0,		 -1.8, 1.8, -1.8, 1
 ; SPECIAL EFFECTORS
 ;===========================================================================
 [m_pseudodog_attack_effector]
-
 duality_h		= 0.01
 duality_v		= 0.01
 blur			= 0.01
@@ -270,7 +262,7 @@ time			= 0.3
 time_attack		= 0.05		; fade in
 time_release	        = 0.25		; fade out
 
-; camera effects
+;camera effects
 ce_time				= 0.45 ;time 
 ce_amplitude		= -15.0 
 ce_period_number	= 2.0 
@@ -339,7 +331,6 @@ attack_params		= pseudodog_attack_params_weak
 spec_rank			= weak
 community			= pseudodog
 
-
 [pseudodog_immunities_weak]
 burn_immunity			= 1.0
 strike_immunity			= 1.0
@@ -374,7 +365,6 @@ attack_params		= pseudodog_attack_params_normal
 spec_rank			= normal
 community			= pseudodog
 
-
 [pseudodog_immunities_normal]
 burn_immunity			= 1.0
 strike_immunity			= 1.0
@@ -395,7 +385,6 @@ stand_attack_0	=	  	0.45,		0.40,		    100,        0.0, 1.0, 1.0,		 -1.0, 1.0, -1
 ;Jump attack
 run_jamp_1		=		0.55,		0.25,		    320,        0.0, 1.0, 4.0,		 -1.8, 1.8, -1.8, 1.8,								  1.0
 
-
 ;*********************************************************************************
 ; STRONG PROFILE
 ;*********************************************************************************
@@ -410,7 +399,6 @@ immunities_sect		= pseudodog_immunities_strong
 attack_params		= pseudodog_attack_params_strong
 spec_rank			= strong
 community			= pseudodog
-
 
 [pseudodog_immunities_strong]
 burn_immunity			= 1.0
@@ -432,21 +420,15 @@ stand_attack_0	=	  	0.45,		0.50,		    100,        0.0, 1.0, 1.0,		 -1.0, 1.0, -1
 ;Jump attack
 run_jamp_1		=		0.55,		0.35,		    420,        0.0, 1.0, 4.0,		 -1.8, 1.8, -1.8, 1.8,								  1.0
 
-
-
-
-
 ;*********************************************************************************
 ; CUSTOM PROFILES
 ;*********************************************************************************
-
 [pseudodog_arena]:pseudodog_strong
 $spawn				= "monsters\arena\pseudodog_arena"
 visual				= monsters\pseudodog\pseudodog_grey
 icon				= ui_npc_monster_pseudodog_grey
 panic_threshold		= 0.05
 species				= arena_monstr
-
 
 ;---------------------------------------------------------------------------------
 ;-- PSY DOG
@@ -462,7 +444,6 @@ noise_fps		= 25
 color_base		= 0.9,0.9,1.0
 color_gray		= 0.33,0.330,0.33
 color_add		= 0.00,0.00,0.015
-
 
 [psy_dog]:pseudodog_strong
 $spawn				= "monsters\psy_dog\psy_dog"
@@ -503,7 +484,6 @@ ce_amplitude		= 1.0
 ce_period_number	= 2.0
 ce_power			= 0.3 ;0.7
 
-
 ;=========================================================================================
 ; Base Definition
 ;=========================================================================================
@@ -519,12 +499,10 @@ class               = SM_DOG_F
 ;jump_max_distance			= 10.0
 ;jump_max_angle				= 0.2
 
-
 appear_effector		= psy_dog_phantom_appear_effector
 particles_appear	= monsters\pseudo_phantom_birth_00
 particles_disappear	= monsters\pseudo_phantom_death_00
 ;=========================================================================================
-
 
 [psy_dog_radar]:psy_dog 
 $spawn				= "monsters\psy_dog\rad_psy_dog"
@@ -532,4 +510,3 @@ $spawn				= "monsters\psy_dog\rad_psy_dog"
 Max_Phantoms_Count	= 4
 Min_Phantoms_Count	= 2
 Time_Phantom_Appear = 5000
-
