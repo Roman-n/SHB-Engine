@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "zombie.h"
 #include "zombie_state_manager.h"
 #include "../../../profiler.h"
@@ -217,3 +218,15 @@ void CZombie::debug_on_key(int key)
 	}
 }
 #endif
+
+using namespace luabind;
+
+#pragma optimize("s",on)
+void CZombie::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CZombie, CGameObject>("CZombie")
+			.def(constructor<>( ))
+		];
+}

@@ -32,19 +32,17 @@ struct SZoneObjectInfo
 	bool operator == (const CGameObject* O) const {return object==O;}
 };
 
-
 class CCustomZone :
 	public CSpaceRestrictor,
 	public Feel::Touch
 {
 private:
-    typedef	CSpaceRestrictor inherited;
+	typedef	CSpaceRestrictor inherited;
 
 public:
 	CZoneEffector*		m_effector;
 
 public:
-
 						CCustomZone						(void);
 	virtual				~CCustomZone					();
 
@@ -101,7 +99,7 @@ protected:
 		eBlowoutLight			=(1<<5),
 		eIdleLight				=(1<<6),
 		eSpawnBlowoutArtefacts	=(1<<7),
-		eUseOnOffTime			=(1<<8),
+		eUseOnOffTime			=(1<<8)
 	};
 	u32					m_owner_id;		//if created from artefact
 	u32					m_ttl;
@@ -123,10 +121,7 @@ protected:
 	//тип наносимого хита
 	ALife::EHitType		m_eHitTypeBlowout;
 
-	
-
 	EZoneState			m_eZoneState;
-
 
 	//текущее время пребывания зоны в определенном состоянии 
 	int					m_iStateTime;
@@ -157,14 +152,14 @@ protected:
 				void		UpdateOnOffState			();
 	virtual		void		GoEnabledState				();
 	virtual		void		GoDisabledState				();
+
 public:
 				bool		IsEnabled					()	{return m_eZoneState != eZoneStateDisabled; };
 				void		ZoneEnable					();	
 				void		ZoneDisable					();
 	EZoneState				ZoneState					() {return m_eZoneState;}
+
 protected:
-
-
 	//воздействие зоной на объект
 	virtual		void		Affect						(SZoneObjectInfo* O)  {}
 
@@ -178,7 +173,6 @@ protected:
 //	bool					m_bZoneReady;
 	//если в зоне есть не disabled объекты
 	bool					m_bZoneActive;
-
 
 	//параметры для выброса, с какой задержкой 
 	//включать эффекты и логику
@@ -201,7 +195,6 @@ protected:
 	void					StopWind					();
 	void					UpdateWind					();
 
-
 	//время, через которое, зона перестает реагировать 
 	//на объект мертвый объект (-1 если не указано)
 	int						m_iDisableHitTime;
@@ -218,7 +211,6 @@ protected:
 	shared_str				m_sBlowoutParticles;
 	shared_str				m_sAccumParticles;
 	shared_str				m_sAwakingParticles;
-
 
 	//появление большого и мальнекого объекта в зоне
 	shared_str				m_sEntranceParticlesSmall;
@@ -256,7 +248,6 @@ protected:
 	void					StopIdleLight				();
 	void					UpdateIdleLight				();
 
-
 	//подсветка выброса
 	ref_light				m_pLight;
 	float					m_fLightRange;
@@ -264,8 +255,6 @@ protected:
 	float					m_fLightTime;
 	float					m_fLightTimeLeft;
 	float					m_fLightHeight;
-
-
 
 	void					StartBlowoutLight			();
 	void					StopBlowoutLight			();
@@ -284,10 +273,8 @@ protected:
 															const Fvector& pos_in_bone, 
 															float hit_impulse, 
 															ALife::EHitType hit_type);
-		
 
 	virtual	void	Hit					(SHit* pHDS);
-
 
 	//для визуализации зоны
 				void		PlayIdleParticles			();
@@ -365,6 +352,7 @@ protected:
 	u32						m_ef_anomaly_type;
 	u32						m_ef_weapon_type;
 	BOOL					m_b_always_fastmode;
+
 public:
 	virtual u32				ef_anomaly_type				() const;
 	virtual u32				ef_weapon_type				() const;

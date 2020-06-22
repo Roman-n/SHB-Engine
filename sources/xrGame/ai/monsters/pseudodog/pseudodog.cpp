@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "pseudodog.h"
 #include "pseudodog_state_manager.h"
 #include "../../../..\XR_3DA\skeletonanimated.h"
@@ -53,8 +54,8 @@ void CAI_PseudoDog::Load(LPCSTR section)
 {
 	inherited::Load	(section);
 
-	anim().AddReplacedAnim(&m_bDamaged, eAnimRun,		eAnimRunDamaged);
-	anim().AddReplacedAnim(&m_bDamaged, eAnimWalkFwd,	eAnimWalkDamaged);
+	anim().AddReplacedAnim(&m_bDamaged,			eAnimRun,		eAnimRunDamaged);
+	anim().AddReplacedAnim(&m_bDamaged,			eAnimWalkFwd,	eAnimWalkDamaged);
 	anim().AddReplacedAnim(&m_bRunTurnLeft,		eAnimRun,		eAnimRunTurnLeft);
 	anim().AddReplacedAnim(&m_bRunTurnRight,	eAnimRun,		eAnimRunTurnRight);
 
@@ -173,4 +174,16 @@ void CAI_PseudoDog::debug_on_key(int key)
 IStateManagerBase *CAI_PseudoDog::create_state_manager()
 {
 	return xr_new<CStateManagerPseudodog>(this);
+}
+
+using namespace luabind;
+
+#pragma optimize("s",on)
+void CAI_PseudoDog::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CAI_PseudoDog, CGameObject>("CAI_PseudoDog")
+			.def(constructor<>( ))
+		];
 }

@@ -91,12 +91,14 @@ void CGameTask::Load(const TASK_ID& id)
 	g_gameTaskXml->SetLocalRoot		(task_node);
 	m_Title							= g_gameTaskXml->Read(g_gameTaskXml->GetLocalRoot(), "title", 0, NULL);
 	m_priority						= g_gameTaskXml->ReadAttribInt(g_gameTaskXml->GetLocalRoot(), "prio", -1);
+
 #ifdef DEBUG
 	if(m_priority == u32(-1))
 	{
 		Msg("Game Task [%s] has no priority", *id);
 	}
 #endif // DEBUG
+
 	int tag_num						= g_gameTaskXml->GetNodesNum(g_gameTaskXml->GetLocalRoot(),"objective");
 	m_Objectives.clear		();
 	for(int i=0; i<tag_num; i++)
@@ -160,7 +162,6 @@ void CGameTask::Load(const TASK_ID& id)
 			objective.object_id			= storyId2GameId(_sid);
 		}
 
-
 //------infoportion_complete
 		int info_num					= g_gameTaskXml->GetNodesNum(l_root,"infoportion_complete");
 		objective.m_completeInfos.resize(info_num);
@@ -215,7 +216,6 @@ void CGameTask::Load(const TASK_ID& id)
 			functor_exists				= ai().script_engine().functor(str ,objective.m_lua_functions_on_complete[j]);
 			THROW3						(functor_exists, "Cannot find script function described in task objective  ", str);
 		}
-
 
 //------function_on_fail
 		info_num						= g_gameTaskXml->GetNodesNum(l_root,"function_call_fail");
@@ -439,22 +439,22 @@ void SGameTaskObjective::AddOnFailFunc_script(LPCSTR _str)
 	m_pScriptHelper.m_s_lua_functions_on_fail.push_back(_str);
 }
 
-void CGameTask::Load_script(LPCSTR _id)		
+void CGameTask::Load_script(LPCSTR _id)
 {
 	Load(_id);
 }
 
-void CGameTask::SetTitle_script(LPCSTR _title)		
+void CGameTask::SetTitle_script(LPCSTR _title)
 {
 	m_Title	= _title;
 }
 
-void CGameTask::SetPriority_script(int _prio)		
+void CGameTask::SetPriority_script(int _prio)
 {
 	m_priority	= _prio;
 }
 
-void CGameTask::AddObjective_script(SGameTaskObjective* O)	
+void CGameTask::AddObjective_script(SGameTaskObjective* O)
 {
 	O->m_pScriptHelper.init_functors(O->m_pScriptHelper.m_s_complete_lua_functions,		O->m_complete_lua_functions);
 	O->m_pScriptHelper.init_functors(O->m_pScriptHelper.m_s_fail_lua_functions,			O->m_fail_lua_functions);

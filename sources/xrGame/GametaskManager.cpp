@@ -153,7 +153,6 @@ void CGameTaskManager::SetTaskState(CGameTask* t, u16 objective_num, ETaskState 
 			SetActiveTask					(t->m_ID, objective_num+1 );
 		}
 
-
 	if(isRoot){//setState for task and all sub-tasks
 		
 		for(u16 i=0; i<t->m_Objectives.size();++i)
@@ -164,12 +163,10 @@ void CGameTaskManager::SetTaskState(CGameTask* t, u16 objective_num, ETaskState 
 	if(0 == objective_num && eTaskStateCompleted == state || eTaskStateFail == state)
 		t->m_FinishTime = Level().GetGameTime();
 
-
 	CUIGame* pGame = smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
 	if(pGame) {
 		pGame->PdaMenu->PdaContentsChanged	(pda_section::quests);
 	}
-
 }
 
 void CGameTaskManager::SetTaskState(const TASK_ID& id, u16 objective_num, ETaskState state)

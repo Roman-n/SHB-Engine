@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "tushkano.h"
 #include "tushkano_state_manager.h"
 #include "../monster_velocity_space.h"
@@ -89,4 +90,16 @@ void CTushkano::CheckSpecParams(u32 spec_params)
 	//	anim().SetCurAnim(eAnimLookAround);
 	//	return;
 	//}
+}
+
+using namespace luabind;
+
+#pragma optimize("s",on)
+void CTushkano::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CTushkano, CGameObject>("CTushkano")
+			.def(constructor<>( ))
+		];
 }

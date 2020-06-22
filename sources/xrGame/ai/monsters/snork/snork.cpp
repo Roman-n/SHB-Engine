@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "snork.h"
 #include "snork_state_manager.h"
 #include "../../../detail_path_manager_space.h"
@@ -162,7 +163,7 @@ bool CSnork::find_geometry(Fvector &dir)
 	
 	if (trace_geometry(dir, range)) {
 		if (range < JUMP_DISTANCE) {
-			return true;	
+			return true;
 		}
 	}
 
@@ -276,7 +277,6 @@ void CSnork::on_activate_control(ControlCom::EControlType type)
 }
 //////////////////////////////////////////////////////////////////////////
 
-
 #ifdef _DEBUG
 void CSnork::debug_on_key(int key)
 {
@@ -289,3 +289,15 @@ void CSnork::debug_on_key(int key)
 	}
 }
 #endif
+
+using namespace luabind;
+
+#pragma optimize("s",on)
+void CSnork::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CSnork, CGameObject>("CSnork")
+			.def(constructor<>( ))
+		];
+}

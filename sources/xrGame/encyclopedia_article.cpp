@@ -21,7 +21,7 @@ void ARTICLE_DATA::load (IReader& stream)
 	load_data(article_type, stream);
 }
 
-void ARTICLE_DATA::save (IWriter& stream)		
+void ARTICLE_DATA::save (IWriter& stream)
 {
 	save_data(receive_time, stream); 
 	save_data(article_id, stream); 
@@ -30,8 +30,7 @@ void ARTICLE_DATA::save (IWriter& stream)
 }
 
 CEncyclopediaArticle::CEncyclopediaArticle()
-{
-}
+{ }
 
 CEncyclopediaArticle::~CEncyclopediaArticle()
 {
@@ -50,7 +49,6 @@ void CEncyclopediaArticle::Load	(shared_str  id)
 	m_ArticleId = id;
 	inherited_shared::load_shared(m_ArticleId, NULL);
 }
-
 
 void CEncyclopediaArticle::load_shared	(LPCSTR)
 {
@@ -71,7 +69,6 @@ void CEncyclopediaArticle::load_shared	(LPCSTR)
 	data()->group = pXML->ReadAttrib(pNode, "group", "");
 	//секция ltx, откуда читать данные
 	LPCSTR ltx = pXML->Read(pNode, "ltx", 0, NULL);
-
 
 	if(ltx)
 	{
@@ -117,23 +114,29 @@ void CEncyclopediaArticle::load_shared	(LPCSTR)
 		}
 
 		data()->image.SetWndRect(0, 0, r.width(), r.height());
-	};
+	}
 
 	// Тип статьи
 	xr_string atricle_type = pXML->ReadAttrib(pNode, "article_type", "encyclopedia");
-	if(0==stricmp(atricle_type.c_str(),"encyclopedia")){
-		data()->articleType = ARTICLE_DATA::eEncyclopediaArticle;
-	}else
-	if(0==stricmp(atricle_type.c_str(),"journal")){
-		data()->articleType = ARTICLE_DATA::eJournalArticle;
-	}else
-	if(0==stricmp(atricle_type.c_str(),"task")){
-		data()->articleType = ARTICLE_DATA::eTaskArticle;
-	}else
-	if(0==stricmp(atricle_type.c_str(),"info")){
-		data()->articleType = ARTICLE_DATA::eInfoArticle;
-	}else{
-		Msg("incorrect article type definition for [%s]",*item_data.id);
+	if (0 == stricmp(atricle_type.c_str( ), "encyclopedia"))
+	{
+		data( )->articleType = ARTICLE_DATA::eEncyclopediaArticle;
+	}
+	else if (0 == stricmp(atricle_type.c_str( ), "journal"))
+	{
+		data( )->articleType = ARTICLE_DATA::eJournalArticle;
+	}
+	else if (0 == stricmp(atricle_type.c_str( ), "task"))
+	{
+		data( )->articleType = ARTICLE_DATA::eTaskArticle;
+	}
+	else if (0 == stricmp(atricle_type.c_str( ), "info"))
+	{
+		data( )->articleType = ARTICLE_DATA::eInfoArticle;
+	}
+	else
+	{
+		Msg("incorrect article type definition for [%s]", *item_data.id);
 	}
 
 	data()->ui_template_name = pXML->ReadAttrib(pNode, "ui_template", "common");

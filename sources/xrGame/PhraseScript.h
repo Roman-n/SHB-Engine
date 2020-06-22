@@ -32,13 +32,11 @@ public:
 //	virtual LPCSTR Text			(LPCSTR original_text, const CGameObject* pSpeaker1, const CGameObject* pSpeaker2, LPCSTR dialog_id, int phrase_num) const;
 //	virtual bool   HasText		() const {return *m_sScriptTextFunc!=NULL;}
 
-
 	DEFINE_VECTOR				(shared_str, PRECONDITION_VECTOR, PRECONDITION_VECTOR_IT);
 	virtual const PRECONDITION_VECTOR& Preconditions		() const {return m_Preconditions;}
-	
+
 	DEFINE_VECTOR(shared_str, ACTION_NAME_VECTOR, ACTION_NAME_VECTOR_IT);
 	virtual const ACTION_NAME_VECTOR& Actions() const {return m_ScriptActions;}
-
 
 			void				AddPrecondition	(LPCSTR str);
 			void				AddAction		(LPCSTR str);
@@ -46,6 +44,7 @@ public:
 			void				AddDontHasInfo	(LPCSTR str);
 			void				AddGiveInfo		(LPCSTR str);
 			void				AddDisableInfo	(LPCSTR str);
+
 protected:
 	//загрузка содержания последовательности тагов в контейнер строк 
 	template<class T> 

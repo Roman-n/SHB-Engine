@@ -22,18 +22,15 @@
 CBaseGraviZone ::CBaseGraviZone (void)
 {
 	m_dwTeleTime = 0;
+}
 
-}
 CBaseGraviZone ::~CBaseGraviZone (void)
-{
-	
-}
+{ }
 
 void CBaseGraviZone ::Load(LPCSTR section)
 {
 	inherited::Load(section);
 
-	
 	m_fThrowInImpulse		= pSettings->r_float(section,	"throw_in_impulse");//800.f;
 	m_fThrowInImpulseAlive	= pSettings->r_float(section,	"throw_in_impulse_alive");//800.f;
 	m_fThrowInAtten			= pSettings->r_float(section,	"throw_in_atten");
@@ -58,20 +55,18 @@ BOOL CBaseGraviZone ::net_Spawn(CSE_Abstract* DC)
 {
 	return inherited::net_Spawn(DC);
 }
+
 void CBaseGraviZone ::net_Destroy()
 {
 	Telekinesis().deactivate();
 	inherited::net_Destroy();
 }
 
-
-
 void CBaseGraviZone ::shedule_Update		(u32 dt)
 {
 	inherited::shedule_Update(dt);
 	Telekinesis().schedule_update();
 }
-
 
 bool  CBaseGraviZone ::BlowoutState()
 {
@@ -85,7 +80,6 @@ bool  CBaseGraviZone ::BlowoutState()
 
 	return result;
 }
-
 
 bool CBaseGraviZone ::IdleState()
 {
@@ -134,11 +128,11 @@ bool CBaseGraviZone::CheckAffectField(CPhysicsShellHolder* GO,float dist_to_radi
 {
 	return dist_to_radius>BlowoutRadiusPercent(GO);
 }
+
 void CBaseGraviZone ::Affect(SZoneObjectInfo* O) 
 {
 	CPhysicsShellHolder* GO = smart_cast<CPhysicsShellHolder*>(O->object);
 	if(!GO) return;
-
 
 	//////////////////////////////////////////////////////////////////////////
 	//	зат€гиваем объет по направлению к центру зоны
@@ -173,15 +167,13 @@ void CBaseGraviZone ::Affect(SZoneObjectInfo* O)
 		// выброс аномалии
 		
 		//если врем€ выброса еще не пришло
-		if(m_dwBlowoutExplosionTime<(u32)m_iPreviousStateTime ||
-			m_dwBlowoutExplosionTime>=(u32)m_iStateTime)
+		if(m_dwBlowoutExplosionTime<(u32)m_iPreviousStateTime || m_dwBlowoutExplosionTime>=(u32)m_iStateTime)
 		{
-
 			AffectPull(GO,throw_in_dir,BlowoutRadiusPercent(GO)*Radius());	
 			return;
 		}
+
 		AffectThrow(O,GO,throw_in_dir,dist);
-			
 	}
 }
 
@@ -189,6 +181,7 @@ void CBaseGraviZone ::  ThrowInCenter(Fvector& C)
 {
 	Center(C);
 }
+
 void CBaseGraviZone ::	AffectPull(CPhysicsShellHolder* GO,const Fvector& throw_in_dir,float dist)
 {
 	CEntityAlive* EA = smart_cast<CEntityAlive*>(GO);	
@@ -201,6 +194,7 @@ void CBaseGraviZone ::	AffectPull(CPhysicsShellHolder* GO,const Fvector& throw_i
 		AffectPullDead(GO,throw_in_dir,dist);
 	}
 }
+
 void CBaseGraviZone ::	AffectPullAlife(CEntityAlive* EA,const Fvector& throw_in_dir,float dist)
 {
 			float rel_power = RelativePower(dist);
@@ -212,13 +206,14 @@ void CBaseGraviZone ::	AffectPullAlife(CEntityAlive* EA,const Fvector& throw_in_
 			vel.mul(throw_power);
 			EA->character_physics_support()->movement()->AddControlVel(vel);
 }
+
 void CBaseGraviZone ::	AffectPullDead(CPhysicsShellHolder* GO,const Fvector& throw_in_dir,float dist)
 {
 			GO->PPhysicsShell()->applyImpulse(throw_in_dir,dist * m_fThrowInImpulse*GO->GetMass()/100.f);
 }
+
 void CBaseGraviZone ::	AffectThrow(SZoneObjectInfo* O, CPhysicsShellHolder* GO,const Fvector& throw_in_dir,float dist)
 {
-
 	Fvector position_in_bone_space;
 
 	float power = Power(dist);//Power(GO->Position().distance_to(zone_center));
@@ -232,7 +227,6 @@ void CBaseGraviZone ::	AffectThrow(SZoneObjectInfo* O, CPhysicsShellHolder* GO,c
 	//else
 	//	throw_in_dir.normalize();
 
-
 	//статистика по объекту
 	O->total_damage += power;
 	O->hit_num++;
@@ -245,7 +239,6 @@ void CBaseGraviZone ::	AffectThrow(SZoneObjectInfo* O, CPhysicsShellHolder* GO,c
 		PlayHitParticles(GO);
 	}
 }
-
 
 void CBaseGraviZone ::PlayTeleParticles(CGameObject* pObject)
 {
@@ -268,6 +261,7 @@ void CBaseGraviZone ::PlayTeleParticles(CGameObject* pObject)
 
 	PP->StartParticles(particle_str, Fvector().set(0,1,0), ID());
 }
+
 void CBaseGraviZone ::StopTeleParticles(CGameObject* pObject)
 {
 	CParticlesPlayer* PP = smart_cast<CParticlesPlayer*>(pObject);

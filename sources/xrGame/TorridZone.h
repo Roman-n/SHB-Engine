@@ -1,4 +1,5 @@
 #pragma once
+
 #include "mosquitobald.h"
 
 class CObjectAnimator;

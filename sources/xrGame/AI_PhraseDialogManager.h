@@ -1,14 +1,10 @@
 ///////////////////////////////////////////////////////////////
 // AI_PhraseDialogManager.h
-// Класс, от которого наследуются NPC персонажи, ведущие диалог
-// с актером
-//
-///////////////////////////////////////////////////////////////
+// Класс, от которого наследуются NPC персонажи, ведущие диалог с актером
 
 #pragma once
 
 #include "PhraseDialogManager.h"
-
 
 class CAI_PhraseDialogManager: public CPhraseDialogManager
 {
@@ -27,6 +23,7 @@ public:
 	virtual void				SetDefaultStartDialog		(shared_str phrase_dialog);
 	virtual shared_str	GetStartDialog						()								{return m_sStartDialog;}
 	virtual void				RestoreDefaultStartDialog	();
+
 protected:
 	//диалог, если не NULL, то его персонаж запустит
 	//при встрече с актером

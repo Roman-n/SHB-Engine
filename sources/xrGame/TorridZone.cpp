@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "torridZone.h"
 #include "..\XR_3DA\objectanimator.h"
 #include "xrServer_Objects_ALife_Monsters.h"
@@ -57,4 +58,3 @@ void CTorridZone::GoDisabledState()
 {
 	inherited::GoDisabledState();
 }
-

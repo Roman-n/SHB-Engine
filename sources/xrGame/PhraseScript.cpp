@@ -86,7 +86,6 @@ bool  CPhraseScript::CheckInfo		(const CInventoryOwner* pOwner) const
 	return true;
 }
 
-
 void  CPhraseScript::TransferInfo	(const CInventoryOwner* pOwner) const
 {
 	THROW(pOwner);
@@ -99,8 +98,6 @@ void  CPhraseScript::TransferInfo	(const CInventoryOwner* pOwner) const
 //.		pOwner->TransferInfo(m_DisableInfo[i],false);
 		Actor()->TransferInfo(m_DisableInfo[i], false);
 }
-
-
 
 bool CPhraseScript::Precondition(const CGameObject* pSpeakerGO, LPCSTR dialog_id, LPCSTR phrase_id) const 
 {

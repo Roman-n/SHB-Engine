@@ -280,7 +280,7 @@ void CControllerAnimation::set_body_state(ETorsoActionType torso, ELegsActionTyp
 	m_current_legs_action		= CControllerAnimation::eLegsTypeStealMotion;
 	m_current_torso_action		= CControllerAnimation::eTorsoSteal;
 	//m_current_legs_action		= legs;
-	//m_current_torso_action		= torso;
+	//m_current_torso_action	= torso;
 }
 
 bool CControllerAnimation::is_moving()
@@ -293,7 +293,7 @@ bool CControllerAnimation::is_moving()
 
 	
 	return true;
-}										
+}
 
 // if we gonna build path in direction opposite which we look
 // then set negative speed 
@@ -306,7 +306,7 @@ void CControllerAnimation::set_path_params()
 	if (moving_action) {
 		
 		u32 vel_mask = 0;
-		u32 des_mask = 0;		
+		u32 des_mask = 0;
 
 		bool looking_fwd = true;
 

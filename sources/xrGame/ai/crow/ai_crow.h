@@ -3,8 +3,7 @@
 //	Description : AI Behaviour for monster "Crow"
 ////////////////////////////////////////////////////////////////////////////
 
-#ifndef __XRAY_AI_CROW__
-#define __XRAY_AI_CROW__
+#pragma once
 
 #include "../../entity_alive.h"
 #include "../../..\XR_3DA\SkeletonAnimated.h"
@@ -16,7 +15,8 @@ class CKinematicsAnimated;
 class CAI_Crow : public CEntity
 {
 	typedef	CEntity inherited;
-	enum ECrowStates 	{
+	enum ECrowStates
+	{
 		eUndef		= -1,
 		eDeathFall	= 0,
 		eDeathDead,
@@ -46,10 +46,11 @@ class CAI_Crow : public CEntity
 		void			SetPosition		(const Fvector& pos);
 		void			Unload			();
 	};
+
 public:
 	void				OnHitEndPlaying	(CBlend* B);
+
 protected:
-	
 	struct SCrowAnimations
 	{
 		SAnim		m_idle;
@@ -103,6 +104,7 @@ protected:
 public:						
 	u32				o_workload_frame	;
 	u32				o_workload_rframe	;
+
 public:
 					CAI_Crow();
 	virtual			~CAI_Crow();
@@ -136,5 +138,3 @@ public:
 	virtual BOOL	UsedAI_Locations()			;
 	virtual void	create_physic_shell	()		;
 };
-
-#endif

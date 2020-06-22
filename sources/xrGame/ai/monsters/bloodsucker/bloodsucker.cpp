@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "bloodsucker.h"
 #include "bloodsucker_state_manager.h"
 #include "../../../..\XR_3DA\skeletoncustom.h"
@@ -30,8 +31,6 @@
 #include <dinput.h>
 #endif
 
-
-
 CAI_Bloodsucker::CAI_Bloodsucker()
 {
 	StateMan						= xr_new<CStateManagerBloodsucker>	(this);
@@ -60,13 +59,11 @@ void CAI_Bloodsucker::Load(LPCSTR section)
 	anim().AddReplacedAnim(&m_bRunTurnLeft,		eAnimRun,		eAnimRunTurnLeft);
 	anim().AddReplacedAnim(&m_bRunTurnRight,	eAnimRun,		eAnimRunTurnRight);
 
-
 	anim().accel_load			(section);
 	anim().accel_chain_add		(eAnimWalkFwd,		eAnimRun);
 	anim().accel_chain_add		(eAnimWalkFwd,		eAnimRunTurnLeft);
 	anim().accel_chain_add		(eAnimWalkFwd,		eAnimRunTurnRight);
 	anim().accel_chain_add		(eAnimWalkDamaged,	eAnimRunDamaged);
-
 
 	SVelocityParam &velocity_none		= move().get_velocity(MonsterMovement::eVelocityParameterIdle);	
 	SVelocityParam &velocity_turn		= move().get_velocity(MonsterMovement::eVelocityParameterStand);
@@ -133,7 +130,7 @@ void CAI_Bloodsucker::Load(LPCSTR section)
 	anim().LinkAction(ACT_STEAL,		eAnimSteal);
 	anim().LinkAction(ACT_LOOK_AROUND,	eAnimLookAround); 
 
-	#ifdef DEBUG	
+	#ifdef DEBUG
 		anim().accel_chain_test		();
 	#endif
 	
@@ -423,6 +420,7 @@ void CAI_Bloodsucker::start_invisible_predator()
 	state_invisible				= true;
 	predator_start				();
 }
+
 void CAI_Bloodsucker::stop_invisible_predator()
 {
 	state_invisible				= false;
@@ -440,8 +438,6 @@ void CAI_Bloodsucker::manual_deactivate()
 	state_invisible = false;
 	setVisible		(TRUE);
 }
-
-
 
 #ifdef DEBUG
 CBaseMonster::SDebugInfo CAI_Bloodsucker::show_debug_info()
@@ -473,6 +469,16 @@ void CAI_Bloodsucker::debug_on_key(int key)
 }
 #endif
 
-
 #endif
 
+using namespace luabind;
+
+#pragma optimize("s",on)
+void CAI_Bloodsucker::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CAI_Bloodsucker, CGameObject>("CAI_Bloodsucker")
+			.def(constructor<>( ))
+		];
+}

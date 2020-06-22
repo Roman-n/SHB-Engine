@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "phantom.h"
 #include "../../../xrNetServer/net_utils.h"
 #include "../../level.h"
@@ -227,7 +228,8 @@ void CPhantom::UpdateFlyMedia()
 	UpdatePosition	(m_enemy->Position());
 	Fmatrix	xform			= XFORM_center();
 	// update particles
-	if (m_fly_particles){		
+	if (m_fly_particles)
+	{
 		Fvector		vel;
 		vel.sub		(m_enemy->Position(),Position()).normalize_safe().mul(fSpeed);
 		m_fly_particles->UpdateParent(xform,vel);
@@ -253,6 +255,7 @@ void CPhantom::UpdateCL()
 	if (!UpdateEvent.empty())	UpdateEvent();
 	if (m_TgtState!=m_CurState)	SwitchToState_internal(m_TgtState);
 }
+
 //---------------------------------------------------------------------
 //void CPhantom::Hit	(float P, Fvector &dir, CObject* who, s16 element,Fvector p_in_object_space, float impulse, ALife::EHitType hit_type)
 void	CPhantom::Hit							(SHit* pHDS)

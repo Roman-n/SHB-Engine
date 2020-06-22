@@ -70,7 +70,6 @@ void CStateManagerBloodsucker::execute()
 	}
 	///////////////////////////////////////////////////////////////////////////////
 
-	
 	select_state(state_id); 
 
 	// выполнить текущее состояние
@@ -79,4 +78,3 @@ void CStateManagerBloodsucker::execute()
 	prev_substate = current_substate;
 
 }
-

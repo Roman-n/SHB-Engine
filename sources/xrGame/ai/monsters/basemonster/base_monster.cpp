@@ -559,5 +559,3 @@ void CBaseMonster::OnEvent(NET_Packet& P, u16 type)
 		break;
 	}
 }
-
-

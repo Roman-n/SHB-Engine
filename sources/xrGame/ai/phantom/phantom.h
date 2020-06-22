@@ -10,7 +10,8 @@ class CPhantom : public CEntity {
 	
 	typedef	CEntity inherited;
 private:
-	enum EState{
+	enum EState
+	{
 		stInvalid		= -2,
 		stIdle			= -1,
 		stBirth			= 0,
@@ -31,6 +32,7 @@ private:
 	void				UpdateFlyMedia				();
 
 	fastdelegate::FastDelegate0<>					UpdateEvent;
+
 private:
 	struct SStateData{
 		shared_str		particles;
@@ -38,9 +40,11 @@ private:
 		MotionID		motion;
 	};
 	SStateData			m_state_data[stCount];
+
 private:
 	CParticlesObject*	m_fly_particles;
 	static void			animation_end_callback	(CBlend* B);
+
 private:
 	CObject*			m_enemy;
 
@@ -58,6 +62,7 @@ private:
 	void				UpdatePosition				(const Fvector& tgt_pos);
 
 	void				PsyHit						(const CObject *object, float value);
+
 public:
 						CPhantom					();
 	virtual				~CPhantom					();

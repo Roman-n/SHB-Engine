@@ -1,8 +1,7 @@
-// Actor.cpp: implementation of the CSpectator class.
-//
-//////////////////////////////////////////////////////////////////////
+// Spectator.cpp: implementation of the CSpectator class.
 
 #include "stdafx.h"
+
 #include "spectator.h"
 #include "effectorfall.h"
 #include "CameraLook.h"
@@ -24,7 +23,6 @@
 #include "string_table.h"
 #include "map_manager.h"
 
-//--------------------------------------------------------------------
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
@@ -59,25 +57,30 @@ void CSpectator::UpdateCL()
 	inherited::UpdateCL();
 
 	if (g_pGameLevel->CurrentViewEntity()==this){
-		if (eacFreeFly!=cam_active){
-			//-------------------------------------
-			
-			//-------------------------------------
+		if (eacFreeFly!=cam_active)
+		{
 			int idx			= 0;
 			game_PlayerState* P = Game().local_player;
-			if (P&&(P->team>=0)&&(P->team<(int)Level().seniority_holder().teams().size())){
+			if (P&&(P->team>=0)&&(P->team<(int)Level().seniority_holder().teams().size()))
+			{
 				const CTeamHierarchyHolder& T		= Level().seniority_holder().team(P->team);
-				for (u32 i=0; i<T.squads().size(); ++i){
+				for (u32 i=0; i<T.squads().size(); ++i)
+				{
 					const CSquadHierarchyHolder& S = T.squad(i);
-					for (u32 j=0; j<S.groups().size(); ++j){
+					for (u32 j=0; j<S.groups().size(); ++j)
+					{
 						const CGroupHierarchyHolder& G = S.group(j);
-						for (u32 k=0; k<G.members().size(); ++k){
+						for (u32 k=0; k<G.members().size(); ++k)
+						{
 							CActor* A = smart_cast<CActor*>(G.members()[k]);
-							if (A/*&&A->g_Alive()*/){
-								if(idx==look_idx){
+							if (A/*&&A->g_Alive()*/)
+							{
+								if(idx==look_idx)
+								{
 									cam_Update	(A);
 									return;
 								}
+
 								++idx;
 							}
 						}
@@ -106,8 +109,10 @@ static float Accel_mul = START_ACCEL;
 
 void CSpectator::IR_OnKeyboardPress(int cmd)
 {
-	if (Remote())												return;
-
+	if (Remote( ))
+	{
+		return;
+	}
 
 	switch(cmd) 
 	{
@@ -115,7 +120,7 @@ void CSpectator::IR_OnKeyboardPress(int cmd)
 		{
 			Accel_mul = START_ACCEL*2;
 		}break;
-	case kCAM_1:	
+	case kCAM_1:
 		{
 			if (m_pActorToLookAt)
 				cam_Set			(eacFirstEye);
@@ -150,7 +155,6 @@ void CSpectator::IR_OnKeyboardRelease(int cmd)
 		}break;
 	}
 }
-
 
 void CSpectator::IR_OnKeyboardHold(int cmd)
 {
@@ -217,13 +221,13 @@ void CSpectator::FirstEye_ToPlayer(CObject* pObject)
 		if (pOldActor)
 		{
 			pOldActor->inventory().Items_SetCurrentEntityHud(false);
-		};
+		}
 		if (pCurViewEntity->CLS_ID != CLSID_SPECTATOR)
 		{
 			Engine.Sheduler.Unregister	(pCurViewEntity);
 			Engine.Sheduler.Register	(pCurViewEntity, TRUE);
-		};
-	};
+		}
+	}
 	if (pObject)
 	{
 		Level().SetEntity(pObject);
@@ -242,8 +246,8 @@ void CSpectator::FirstEye_ToPlayer(CObject* pObject)
 				pHudItem->OnStateSwitch(pHudItem->GetState());
 			}
 		}
-	};
-};
+	}
+}
 
 void CSpectator::cam_Set	(EActorCameras style)
 {
@@ -251,17 +255,16 @@ void CSpectator::cam_Set	(EActorCameras style)
 	//-----------------------------------------------
 	if (style == eacFirstEye)
 	{
-		FirstEye_ToPlayer(m_pActorToLookAt);		
-	};
+		FirstEye_ToPlayer(m_pActorToLookAt);
+	}
 	if (cam_active == eacFirstEye)
 	{
 		FirstEye_ToPlayer(this);
-	};
+	}
 	//-----------------------------------------------
 	cam_active = style;
 	old_cam->OnDeactivate();
 	cameras[cam_active]->OnActivate(old_cam);
-	
 }
 
 void CSpectator::cam_Update	(CActor* A)
@@ -287,7 +290,7 @@ void CSpectator::cam_Update	(CActor* A)
 			
 			Fvector point, point1, dangle;
 			point.set	(0.f,1.6f,0.f);
-			point1.set	(0.f,1.6f,0.f);			
+			point1.set	(0.f,1.6f,0.f);
 			M.transform_tiny		(point);
 			tmp.translate_over(point);
 			tmp.transform_tiny		(point1);
@@ -317,7 +320,7 @@ void CSpectator::cam_Update	(CActor* A)
 //		cam->vPosition.set(point0);
 		g_pGameLevel->Cameras().Update	(cam);
 		// hud output
-	};
+	}
 }
 
 BOOL			CSpectator::net_Spawn				( CSE_Abstract*	DC )

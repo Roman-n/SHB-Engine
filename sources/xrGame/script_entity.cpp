@@ -85,7 +85,6 @@ void CScriptEntity::ClearActionQueue()
 	m_use_animation_movement_controller	= false;
 }
 
-
 void CScriptEntity::reinit()
 {
 	ResetScriptData			();
@@ -122,12 +121,14 @@ void CScriptEntity::SetScriptControl(const bool bScriptControl, shared_str caSci
 
 	m_bScriptControl	= bScriptControl;
 	m_caScriptName		= caSciptName;
+
 #ifdef DEBUG
 	if (bScriptControl)
 		ai().script_engine().script_log			(ScriptStorage::eLuaMessageTypeInfo,"Script %s set object %s under its control",*caSciptName,*object().cName());
 	else
 		ai().script_engine().script_log			(ScriptStorage::eLuaMessageTypeInfo,"Script %s freed object %s from its control",*caSciptName,*object().cName());
 #endif
+
 	if (!bScriptControl)
 		ResetScriptData(this);
 }
@@ -233,12 +234,15 @@ void CScriptEntity::vfFinishAction(CScriptEntityAction *tpEntityAction)
 void CScriptEntity::ProcessScripts()
 {
 	CScriptEntityAction	*l_tpEntityAction = 0;
+
 #ifdef DEBUG
 	bool			empty_queue = m_tpActionQueue.empty();
 #endif
+
 	while (!m_tpActionQueue.empty()) {
 		l_tpEntityAction= m_tpActionQueue.front();
 		VERIFY		(l_tpEntityAction);
+
 #ifdef _DEBUG
 //		if (!xr_strcmp("m_stalker_wounded",*object().cName()))
 //			Msg			("%6d Processing action : %s",Device.dwTimeGlobal,*l_tpEntityAction->m_tAnimationAction.m_caAnimationToPlay);
@@ -269,10 +273,12 @@ void CScriptEntity::ProcessScripts()
 	}
 
 	if (m_tpActionQueue.empty()) {
+
 #ifdef DEBUG
 		if (empty_queue)
 			ai().script_engine().script_log	(ScriptStorage::eLuaMessageTypeInfo,"Object %s has an empty script queue!",*object().cName());
 #endif
+
 		return;
 	}
 
@@ -372,9 +378,11 @@ bool CScriptEntity::bfAssignSound(CScriptEntityAction *tpEntityAction)
 	if (m_current_sound) {
 		if (!m_current_sound->_feedback())
 			if (!l_tSoundAction.m_bStartedToPlay) {
+
 #ifdef _DEBUG
 //				Msg									("%6d Starting sound %s",Device.dwTimeGlobal,*l_tSoundAction.m_caSoundToPlay);
 #endif
+
 				const Fmatrix	&l_tMatrix = GetUpdatedMatrix(l_tSoundAction.m_caBoneName,l_tSoundAction.m_tSoundPosition,l_tSoundAction.m_tSoundAngles);
 				m_current_sound->play_at_pos(m_object,l_tMatrix.c,l_tSoundAction.m_bLooped ? sm_Looped : 0);
 				l_tSoundAction.m_bStartedToPlay = true;
@@ -444,11 +452,13 @@ bool CScriptEntity::bfAssignMovement(CScriptEntityAction *tpEntityAction)
 	switch (l_tMovementAction.m_tGoalType) {
 		case CScriptMovementAction::eGoalTypeObject : {
 			CGameObject		*l_tpGameObject = smart_cast<CGameObject*>(l_tMovementAction.m_tpObjectToGo);
+
 #ifdef DEBUG
 			THROW2	(l_tpGameObject,"eGoalTypeObject specified, but no object passed!");
 #else
 			R_ASSERT(l_tpGameObject);
 #endif
+
 			m_monster->movement().set_path_type(MovementManager::ePathTypeLevelPath);
 //			Msg			("%6d Object %s, position [%f][%f][%f]",Device.dwTimeGlobal,*l_tpGameObject->cName(),VPUSH(l_tpGameObject->Position()));
 			m_monster->movement().detail().set_dest_position(l_tpGameObject->Position());
@@ -482,6 +492,7 @@ bool CScriptEntity::bfAssignMovement(CScriptEntityAction *tpEntityAction)
 				THROW2		(ai().level_graph().valid_vertex_id(vertex_id),S);
 			}
 #endif
+
 			m_monster->movement().level_path().set_dest_vertex(vertex_id);
 			break;
 		}
@@ -525,12 +536,14 @@ void CScriptEntity::net_Destroy()
 
 LPCSTR CScriptEntity::GetPatrolPathName()
 {
+
 #ifdef DEBUG
 	if (!GetScriptControl()) {
 		ai().script_engine().script_log(eLuaMessageTypeError,"Object %s is not under script control while you are trying to get patrol path name!",*m_object->cName());
 		return "";
 	}
 #endif
+
 	if (m_tpActionQueue.empty())
 		return				("");
 	return					(*m_tpActionQueue.back()->m_tMovementAction.m_path_name);
@@ -584,6 +597,7 @@ bool CScriptEntity::bfScriptAnimation()
 			//if (!xr_strcmp("m_stalker_wounded",*object().cName()))
 			//	Msg				("%6d Playing animation : %s , Object %s",Device.dwTimeGlobal,*GetCurrentAction()->m_tAnimationAction.m_caAnimationToPlay, *object().cName());
 #endif
+
 			m_tpScriptAnimation = m_tpNextAnimation;
 			CKinematicsAnimated	*skeleton_animated = smart_cast<CKinematicsAnimated*>(object().Visual());
 			LPCSTR				animation_id = *GetCurrentAction()->m_tAnimationAction.m_caAnimationToPlay;
@@ -650,6 +664,7 @@ CEntity	*CScriptEntity::GetCurrentEnemy()
 {
 	return (0);
 }
+
 CEntity	*CScriptEntity::GetCurrentCorpse()
 {
 	return (0);

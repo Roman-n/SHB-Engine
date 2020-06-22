@@ -1,4 +1,5 @@
 #pragma once
+
 #include "../BaseMonster/base_monster.h"
 #include "../controlled_entity.h"
 #include "../../../script_export_space.h"
@@ -13,9 +14,10 @@ private:
 	xr_vector<CObject*>		m_nearest;
 
 	// step_effector
-	struct {
+	struct
+	{
 		float time;
-		float amplitude;	
+		float amplitude;
 		float period_number;
 	} step_effector;
 

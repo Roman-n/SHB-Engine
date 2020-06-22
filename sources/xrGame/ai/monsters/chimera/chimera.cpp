@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "chimera.h"
 #include "chimera_state_manager.h"
 #include "../../../..\XR_3DA\skeletonanimated.h"
@@ -10,7 +11,6 @@
 #include "../control_animation_base.h"
 #include "../control_movement_base.h"
 #include "../control_path_builder_base.h"
-
 
 CChimera::CChimera()
 {
@@ -44,67 +44,65 @@ void CChimera::Load(LPCSTR section)
 	SVelocityParam &velocity_drag		= move().get_velocity(MonsterMovement::eVelocityParameterDrag);
 
 
-	anim().AddAnim(eAnimStandIdle,		"stand_idle_",			-1, &velocity_none,				PS_STAND);
-	anim().AddAnim(eAnimStandTurnLeft,	"stand_turn_ls_",		-1, &velocity_turn,		PS_STAND);
-	anim().AddAnim(eAnimStandTurnRight,	"stand_turn_rs_",		-1, &velocity_turn,		PS_STAND);
+	anim().AddAnim(eAnimStandIdle,				"stand_idle_",			-1, &velocity_none,				PS_STAND);
+	anim().AddAnim(eAnimStandTurnLeft,			"stand_turn_ls_",		-1, &velocity_turn,				PS_STAND);
+	anim().AddAnim(eAnimStandTurnRight,			"stand_turn_rs_",		-1, &velocity_turn,				PS_STAND);
 
-	anim().AddAnim(eAnimLieIdle,			"lie_sleep_",			-1, &velocity_none,				PS_LIE);
-	anim().AddAnim(eAnimSleep,			"lie_sleep_",			-1, &velocity_none,				PS_LIE);
+	anim().AddAnim(eAnimLieIdle,				"lie_sleep_",			-1, &velocity_none,				PS_LIE);
+	anim().AddAnim(eAnimSleep,					"lie_sleep_",			-1, &velocity_none,				PS_LIE);
 
-	anim().AddAnim(eAnimWalkFwd,			"stand_walk_fwd_",		-1, &velocity_walk,	PS_STAND);
-	anim().AddAnim(eAnimWalkDamaged,		"stand_walk_fwd_dmg_",	-1, &velocity_walk_dmg,	PS_STAND);
-	anim().AddAnim(eAnimRun,				"stand_run_fwd_",		-1,	&velocity_run,		PS_STAND);
-	anim().AddAnim(eAnimRunDamaged,		"stand_run_dmg_",		-1,	&velocity_run_dmg,	PS_STAND);
-	anim().AddAnim(eAnimCheckCorpse,		"stand_check_corpse_",	-1,	&velocity_none,				PS_STAND);
-	anim().AddAnim(eAnimEat,				"stand_eat_",			-1, &velocity_none,				PS_STAND);
-	anim().AddAnim(eAnimAttack,			"stand_attack_",		-1, &velocity_turn,		PS_STAND);
+	anim().AddAnim(eAnimWalkFwd,				"stand_walk_fwd_",		-1, &velocity_walk,				PS_STAND);
+	anim().AddAnim(eAnimWalkDamaged,			"stand_walk_fwd_dmg_",	-1, &velocity_walk_dmg,			PS_STAND);
+	anim().AddAnim(eAnimRun,					"stand_run_fwd_",		-1,	&velocity_run,				PS_STAND);
+	anim().AddAnim(eAnimRunDamaged,				"stand_run_dmg_",		-1,	&velocity_run_dmg,			PS_STAND);
+	anim().AddAnim(eAnimCheckCorpse,			"stand_check_corpse_",	-1,	&velocity_none,				PS_STAND);
+	anim().AddAnim(eAnimEat,					"stand_eat_",			-1, &velocity_none,				PS_STAND);
+	anim().AddAnim(eAnimAttack,					"stand_attack_",		-1, &velocity_turn,				PS_STAND);
 
-	anim().AddAnim(eAnimDragCorpse,		"stand_drag_",			-1, &velocity_drag,				PS_STAND);
-	anim().AddAnim(eAnimLookAround,		"stand_idle_",			 2, &velocity_none,				PS_STAND);
-	anim().AddAnim(eAnimSteal,			"stand_steal_",			-1, &velocity_steal,			PS_STAND);
-	anim().AddAnim(eAnimDie,				"stand_idle_",			-1, &velocity_none,				PS_STAND);
-	anim().AddAnim(eAnimThreaten,		"stand_threaten_",		-1, &velocity_none,				PS_STAND);
+	anim().AddAnim(eAnimDragCorpse,				"stand_drag_",			-1, &velocity_drag,				PS_STAND);
+	anim().AddAnim(eAnimLookAround,				"stand_idle_",			 2, &velocity_none,				PS_STAND);
+	anim().AddAnim(eAnimSteal,					"stand_steal_",			-1, &velocity_steal,			PS_STAND);
+	anim().AddAnim(eAnimDie,					"stand_idle_",			-1, &velocity_none,				PS_STAND);
+	anim().AddAnim(eAnimThreaten,				"stand_threaten_",		-1, &velocity_none,				PS_STAND);
 
-	anim().AddAnim(eAnimAttackRun,		"stand_run_attack_",	-1, &velocity_run,		PS_STAND);
+	anim().AddAnim(eAnimAttackRun,				"stand_run_attack_",	-1, &velocity_run,				PS_STAND);
 
 	//////////////////////////////////////////////////////////////////////////
 
-	anim().AddAnim(eAnimUpperStandIdle,		"stand_up_idle_",		-1, &velocity_none,			PS_STAND_UPPER);
-	anim().AddAnim(eAnimUpperStandTurnLeft,	"stand_up_turn_ls_",	-1, &velocity_turn,	PS_STAND_UPPER);
-	anim().AddAnim(eAnimUpperStandTurnRight,	"stand_up_turn_rs_",	-1, &velocity_turn,	PS_STAND_UPPER);
+	anim().AddAnim(eAnimUpperStandIdle,			"stand_up_idle_",		-1, &velocity_none,				PS_STAND_UPPER);
+	anim().AddAnim(eAnimUpperStandTurnLeft,		"stand_up_turn_ls_",	-1, &velocity_turn,				PS_STAND_UPPER);
+	anim().AddAnim(eAnimUpperStandTurnRight,	"stand_up_turn_rs_",	-1, &velocity_turn,				PS_STAND_UPPER);
 
-	anim().AddAnim(eAnimStandToUpperStand,	"stand_upper_",			-1, &velocity_none,			PS_STAND);
-	anim().AddAnim(eAnimUppperStandToStand,	"stand_up_to_down_",	-1, &velocity_none,			PS_STAND_UPPER);
+	anim().AddAnim(eAnimStandToUpperStand,		"stand_upper_",			-1, &velocity_none,				PS_STAND);
+	anim().AddAnim(eAnimUppperStandToStand,		"stand_up_to_down_",	-1, &velocity_none,				PS_STAND_UPPER);
 
-	anim().AddAnim(eAnimUpperWalkFwd,		"stand_up_walk_fwd_",	-1, &m_fsVelocityWalkUpper,							PS_STAND_UPPER);
-	anim().AddAnim(eAnimUpperThreaten,		"stand_up_threaten_",	-1, &velocity_none,			PS_STAND_UPPER);
-	anim().AddAnim(eAnimUpperAttack,			"stand_up_attack_",		-1, &velocity_turn,	PS_STAND_UPPER);
+	anim().AddAnim(eAnimUpperWalkFwd,			"stand_up_walk_fwd_",	-1, &m_fsVelocityWalkUpper,		PS_STAND_UPPER);
+	anim().AddAnim(eAnimUpperThreaten,			"stand_up_threaten_",	-1, &velocity_none,				PS_STAND_UPPER);
+	anim().AddAnim(eAnimUpperAttack,			"stand_up_attack_",		-1, &velocity_turn,				PS_STAND_UPPER);
 
 	//////////////////////////////////////////////////////////////////////////
 	// define transitions
 	anim().AddTransition(PS_STAND,			PS_STAND_UPPER,		eAnimStandToUpperStand,		false);
-	anim().AddTransition(PS_STAND_UPPER,		PS_STAND,			eAnimUppperStandToStand,	false);
+	anim().AddTransition(PS_STAND_UPPER,	PS_STAND,			eAnimUppperStandToStand,	false);
 
 	// link action
 	anim().LinkAction(ACT_STAND_IDLE,	eAnimStandIdle);
 	anim().LinkAction(ACT_SIT_IDLE,		eAnimLieIdle);
 	anim().LinkAction(ACT_LIE_IDLE,		eAnimLieIdle);
 	anim().LinkAction(ACT_WALK_FWD,		eAnimWalkFwd);
-	anim().LinkAction(ACT_WALK_BKWD,		eAnimDragCorpse);
+	anim().LinkAction(ACT_WALK_BKWD,	eAnimDragCorpse);
 	anim().LinkAction(ACT_RUN,			eAnimRun);
 	anim().LinkAction(ACT_EAT,			eAnimEat);
-	anim().LinkAction(ACT_SLEEP,			eAnimSleep);
+	anim().LinkAction(ACT_SLEEP,		eAnimSleep);
 	anim().LinkAction(ACT_REST,			eAnimLieIdle);
 	anim().LinkAction(ACT_DRAG,			eAnimDragCorpse);
 	anim().LinkAction(ACT_ATTACK,		eAnimAttack);
-	anim().LinkAction(ACT_STEAL,			eAnimSteal);
+	anim().LinkAction(ACT_STEAL,		eAnimSteal);
 	anim().LinkAction(ACT_LOOK_AROUND,	eAnimLookAround);
 
 #ifdef DEBUG	
 	anim().accel_chain_test		();
 #endif
-
-	//*****************************************************************************
 
 	m_fsVelocityWalkUpper.Load	(section, "Velocity_Walk_Upper");
 }
@@ -170,8 +168,8 @@ void CChimera::TranslateActionToPathParams()
 	u32 des_mask = 0;
 
 	switch (anim().m_tAction) {
-	case ACT_STAND_IDLE: 
-	case ACT_SIT_IDLE:	 
+	case ACT_STAND_IDLE:
+	case ACT_SIT_IDLE:
 	case ACT_LIE_IDLE:
 	case ACT_EAT:
 	case ACT_SLEEP:
@@ -228,7 +226,7 @@ void CChimera::TranslateActionToPathParams()
 	if (bEnablePath) {
 		path().set_velocity_mask	(vel_mask);
 		path().set_desirable_mask	(des_mask);
-		path().enable_path			();	
+		path().enable_path			();
 	} else {
 		path().disable_path			();
 	}
@@ -243,4 +241,16 @@ void CChimera::HitEntityInJump(const CEntity *pEntity)
 void CChimera::UpdateCL()
 {
 	inherited::UpdateCL				();
+}
+
+using namespace luabind;
+
+#pragma optimize("s",on)
+void CChimera::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CChimera, CGameObject>("CChimera")
+			.def(constructor<>( ))
+		];
 }

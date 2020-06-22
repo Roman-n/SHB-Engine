@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "psy_dog.h"
 #include "../../../level_graph.h"
 #include "../../../ai_space.h"
@@ -304,4 +305,25 @@ void CPsyDogPhantom::destroy_from_parent()
 	NET_Packet		P;
 	u_EventGen		(P,GE_DESTROY,ID());
 	u_EventSend		(P);
+}
+
+using namespace luabind;
+
+#pragma optimize("s",on)
+void CPsyDog::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CPsyDog, CGameObject>("CPsyDog")
+			.def(constructor<>( ))
+		];
+}
+
+void CPsyDogPhantom::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CPsyDogPhantom, CGameObject>("CPsyDogPhantom")
+			.def(constructor<>( ))
+		];
 }

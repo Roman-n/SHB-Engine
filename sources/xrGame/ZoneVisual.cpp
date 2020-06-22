@@ -1,16 +1,16 @@
 #include "stdafx.h"
+
 #include "CustomZone.h"
 #include "..\XR_3DA\SkeletonAnimated.h"
 #include "ZoneVisual.h"
 #include "xrServer_Objects_ALife_Monsters.h"
 #include "..\XR_3DA\SkeletonAnimated.h"
-CVisualZone::CVisualZone						()
-{
-}
-CVisualZone::~CVisualZone						()
-{
 
-}
+CVisualZone::CVisualZone						()
+{ }
+
+CVisualZone::~CVisualZone						()
+{ }
 
 BOOL CVisualZone::	net_Spawn						(CSE_Abstract* DC)
 {
@@ -24,16 +24,18 @@ BOOL CVisualZone::	net_Spawn						(CSE_Abstract* DC)
 	setVisible(TRUE);
 	return ret;
 }
+
 void CVisualZone::net_Destroy()
 {
 	inherited::net_Destroy();
-
 }
-void CVisualZone:: AffectObjects					()		
+
+void CVisualZone:: AffectObjects					()
 {
 	inherited::AffectObjects					();
 //	smart_cast<CKinematicsAnimated*>(Visual())->PlayCycle(*m_attack_animation);
 }
+
 void CVisualZone::SwitchZoneState(EZoneState new_state)
 {
 	if(m_eZoneState==eZoneStateBlowout && new_state != eZoneStateBlowout)
@@ -43,8 +45,8 @@ void CVisualZone::SwitchZoneState(EZoneState new_state)
 	}
 
 	inherited::SwitchZoneState(new_state);
-
 }
+
 void CVisualZone::Load(LPCSTR section)
 {
 	inherited::Load(section);

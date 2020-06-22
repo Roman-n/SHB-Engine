@@ -43,6 +43,7 @@ private:
 	typedef CXML_IdToIndex<CEncyclopediaArticle>							id_to_index;
 
 	friend id_to_index;
+
 public:
 						CEncyclopediaArticle		();
 	virtual				~CEncyclopediaArticle		();
@@ -53,6 +54,7 @@ protected:
 	shared_str			m_ArticleId;
 	virtual	void		load_shared					(LPCSTR);
 	static  void		InitXmlIdToIndex			();
+
 public:
 	const shared_str	Id							()						{return m_ArticleId;}
 	SArticleData*		data						()						{ VERIFY(inherited_shared::get_sd()); return inherited_shared::get_sd();}

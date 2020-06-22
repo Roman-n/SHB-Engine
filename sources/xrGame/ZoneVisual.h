@@ -10,9 +10,9 @@ class CVisualZone :
 	u32					m_dwAttackAnimaionEnd		;
 
 public:
-	CVisualZone				()						;
+					CVisualZone						()						;
 	virtual			~CVisualZone					()						;
-	virtual BOOL	net_Spawn						(CSE_Abstract* DC)				;
+	virtual BOOL	net_Spawn						(CSE_Abstract* DC)		;
 	virtual void	net_Destroy						()						;
 	virtual void    AffectObjects					()						;
 	virtual void	SwitchZoneState					(EZoneState new_state)	;

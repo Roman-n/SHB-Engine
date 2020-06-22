@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "burer.h"
 #include "../../../PhysicsShell.h"
 #include "../../../characterphysicssupport.h"
@@ -24,7 +25,6 @@ CBurer::CBurer()
 
 	m_fast_gravi		= xr_new<CBurerFastGravi>();
 	control().add		(m_fast_gravi,  ControlCom::eComCustom1);
-
 }
 
 CBurer::~CBurer()
@@ -32,7 +32,6 @@ CBurer::~CBurer()
 	xr_delete(StateMan);
 	xr_delete(m_fast_gravi);
 }
-
 
 void CBurer::reinit()
 {
@@ -148,7 +147,7 @@ void CBurer::Load(LPCSTR section)
 	anim().LinkAction(ACT_STEAL,		eAnimSteal);
 	anim().LinkAction(ACT_LOOK_AROUND,	eAnimScared);
 
-#ifdef DEBUG	
+#ifdef DEBUG
 	anim().accel_chain_test		();
 #endif
 
@@ -165,8 +164,7 @@ void CBurer::shedule_Update(u32 dt)
 }
 
 void CBurer::CheckSpecParams(u32 spec_params)
-{
-}
+{ }
 
 void CBurer::UpdateGraviObject()
 {
@@ -232,7 +230,7 @@ void CBurer::UpdateGraviObject()
 			}
 		}
 	}
-																								
+
 	m_gravi_object.cur_pos				= new_pos;
 	m_gravi_object.time_last_update		= Device.dwTimeGlobal;
 
@@ -281,13 +279,12 @@ void CBurer::UpdateCL()
 
 	UpdateGraviObject();
 
-	
 	//if (m_fast_gravi->check_start_conditions()) 
 	//	control().activate(ControlCom::eComCustom1);
 
 }
 
-void CBurer::StartGraviPrepare() 
+void CBurer::StartGraviPrepare()
 {
 	const CEntityAlive *enemy = EnemyMan.get_enemy();
 	if (!enemy) return;
@@ -297,7 +294,8 @@ void CBurer::StartGraviPrepare()
 
 	pA->CParticlesPlayer::StartParticles(particle_gravi_prepare,Fvector().set(0.0f,0.1f,0.0f),pA->ID());
 }
-void CBurer::StopGraviPrepare() 
+
+void CBurer::StopGraviPrepare()
 {
 	CActor *pA = smart_cast<CActor*>(Level().CurrentEntity());
 	if (!pA) return;
@@ -311,6 +309,7 @@ void CBurer::StartTeleObjectParticle(CGameObject *pO)
 	if(!PP) return;
 	PP->StartParticles(particle_tele_object,Fvector().set(0.0f,0.1f,0.0f),pO->ID());
 }
+
 void CBurer::StopTeleObjectParticle(CGameObject *pO) 
 {
 	CParticlesPlayer* PP = smart_cast<CParticlesPlayer*>(pO);
@@ -341,7 +340,6 @@ void	CBurer::Hit								(SHit* pHDS)
 	last_hit_frame = Device.dwFrame;
 }
 
-
 void CBurer::Die(CObject* who)
 {
 	inherited::Die(who);
@@ -371,7 +369,6 @@ void CBurer::net_Relcase(CObject *O)
 	TTelekinesis::remove_links	(O);
 }
 
-
 #ifdef DEBUG
 CBaseMonster::SDebugInfo CBurer::show_debug_info()
 {
@@ -387,4 +384,14 @@ CBaseMonster::SDebugInfo CBurer::show_debug_info()
 }
 #endif
 
+using namespace luabind;
 
+#pragma optimize("s",on)
+void CBurer::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CBurer, CGameObject>("CBurer")
+			.def(constructor<>( ))
+		];
+}

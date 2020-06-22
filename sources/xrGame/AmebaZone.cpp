@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "CustomZone.h"
 #include "..\XR_3DA\SkeletonAnimated.h"
 #include "ZoneVisual.h"
@@ -16,14 +17,14 @@ CAmebaZone::CAmebaZone()
 }
 
 CAmebaZone::~CAmebaZone()
-{
+{ }
 
-}
 void CAmebaZone::Load(LPCSTR section)
 {
 	inherited::Load(section);
 	m_fVelocityLimit= pSettings->r_float(section,		"max_velocity_in_zone");
 }
+
 bool CAmebaZone::BlowoutState()
 {
 	bool result = inherited::BlowoutState();
@@ -47,12 +48,12 @@ void  CAmebaZone::Affect(SZoneObjectInfo* O)
 	sprintf_s(l_pow, "zone hit. %.1f", Power(distance_to_center(O->object)));
 	if(bDebug) Msg("%s %s",*pGameObject->cName(), l_pow);
 #endif
+
 	Fvector hit_dir; 
 	hit_dir.set(::Random.randF(-.5f,.5f), 
 		::Random.randF(.0f,1.f), 
 		::Random.randF(-.5f,.5f)); 
 	hit_dir.normalize();
-
 
 	Fvector position_in_bone_space;
 
@@ -93,7 +94,6 @@ void CAmebaZone::PhTune(dReal step)
 								mc->SetVelocityLimit(m_fVelocityLimit);
 			}
 		}
-		
 	}
 }
 

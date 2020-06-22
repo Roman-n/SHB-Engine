@@ -8,7 +8,7 @@ class CGameTaskManager;
 class CMapLocation;
 class CGameTask;
 
-class SScriptObjectiveHelper: public IPureSerializeObject<IReader,IWriter>
+class SScriptObjectiveHelper : public IPureSerializeObject<IReader, IWriter>
 {
 public:
 	xr_vector<shared_str>	m_s_complete_lua_functions;
@@ -16,6 +16,7 @@ public:
 
 	xr_vector<shared_str>	m_s_lua_functions_on_complete;
 	xr_vector<shared_str>	m_s_lua_functions_on_fail;
+
 public:
 	bool			not_empty		() {return m_s_complete_lua_functions.size()	||
 												m_s_fail_lua_functions.size()		||
@@ -28,10 +29,11 @@ public:
 			void			init_functors	(xr_vector<shared_str>& v_src, xr_vector<luabind::functor<bool> >& v_dest);
 };
 
-class SGameTaskObjective : public IPureSerializeObject<IReader,IWriter>
+class SGameTaskObjective : public IPureSerializeObject<IReader, IWriter>
 {
 	friend struct SGameTaskKey;
 	friend class CGameTaskManager;
+
 private:
 	ETaskState				task_state;
 	CGameTask*				parent;
@@ -41,6 +43,7 @@ private:
 	bool					CheckInfo		(xr_vector<shared_str>&);
 	bool					CheckFunctions	(xr_vector<luabind::functor<bool> >& v);
 	void					SetTaskState	(ETaskState new_state);
+
 public:
 	SScriptObjectiveHelper	m_pScriptHelper;
 	virtual void			save			(IWriter &stream);

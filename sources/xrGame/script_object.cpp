@@ -7,15 +7,14 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "script_object.h"
 
 CScriptObject::CScriptObject			()
-{
-}
+{ }
 
 CScriptObject::~CScriptObject			()
-{
-}
+{ }
 
 DLL_Pure *CScriptObject::_construct		()
 {

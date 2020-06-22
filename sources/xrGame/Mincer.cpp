@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "alife_space.h"
 #include "hit.h"
 #include "PHDestroyable.h"
@@ -18,8 +19,8 @@ CMincer::CMincer(void)
 }
 
 CMincer::~CMincer(void) 
-{
-}
+{ }
+
 void CMincer::OnStateSwitch(EZoneState new_state)
 {
 	if(m_eZoneState!=eZoneStateBlowout && new_state==eZoneStateBlowout)
@@ -62,14 +63,15 @@ BOOL CMincer::net_Spawn(CSE_Abstract* DC)
 	m_telekinetics.SetOwnerObject(smart_cast<CGameObject*>(this));
 	return result;
 }
+
 void CMincer::net_Destroy()
 {
 	inherited::net_Destroy();
 	m_telekinetics.clear_impacts();
 }
+
 void CMincer::feel_touch_new				(CObject* O)
 {
-	
 	inherited::feel_touch_new(O);
 	if( m_eZoneState==eZoneStateBlowout && (m_dwBlowoutExplosionTime>(u32)m_iStateTime) )
 	{
@@ -77,10 +79,12 @@ void CMincer::feel_touch_new				(CObject* O)
 		Telekinesis().activate(GO, m_fThrowInImpulse, m_fTeleHeight, 100000);
 	}
 }
+
 BOOL	CMincer::feel_touch_contact				(CObject* O)
 {
 	return inherited::feel_touch_contact(O)&&smart_cast<CPhysicsShellHolder *>(O);
 }
+
 void CMincer:: AffectThrow	(SZoneObjectInfo* O, CPhysicsShellHolder* GO,const Fvector& throw_in_dir,float dist)
 {
 	inherited::AffectThrow(O,GO,throw_in_dir,dist);
@@ -105,12 +109,12 @@ bool CMincer::BlowoutState	()
 	Telekinesis().deactivate();
 	return ret;
 }
+
 void CMincer ::ThrowInCenter(Fvector& C)
 {
 	C.set(m_telekinetics.Center());
 	C.y=Position().y;
 }
-
 
 void CMincer ::Center	(Fvector& C) const
 {
@@ -151,7 +155,6 @@ void CMincer::AffectPullAlife(CEntityAlive* EA,const Fvector& throw_in_dir,float
 		CreateHit(EA->ID(),ID(),throw_in_dir,power,0,pos_in_bone_space,0.0f,m_eHitTypeBlowout);
 	}
 	inherited::AffectPullAlife(EA,throw_in_dir,dist);
-
 }
 
 float CMincer::BlowoutRadiusPercent	(CPhysicsShellHolder* GO)

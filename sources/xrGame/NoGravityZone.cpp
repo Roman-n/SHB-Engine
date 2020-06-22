@@ -1,28 +1,32 @@
 #include "stdafx.h"
+
 #include "nogravityzone.h"
 #include "physicsshell.h"
 #include "entity_alive.h"
 #include "PHMovementControl.h"
 #include "PhWorld.h"
 #include "CharacterPhysicsSupport.h"
+
 extern CPHWorld	*ph_world;
+
 void CNoGravityZone::enter_Zone(SZoneObjectInfo& io)
 {
 	inherited::enter_Zone(io);
 	switchGravity(io,false);
-
 }
+
 void CNoGravityZone::exit_Zone(SZoneObjectInfo& io)
 {
 	switchGravity(io,true);
 	inherited::exit_Zone(io);
-	
 }
+
 void CNoGravityZone::UpdateWorkload(u32 dt)
 {
 	OBJECT_INFO_VEC_IT i=m_ObjectInfoMap.begin(),e=m_ObjectInfoMap.end();
 	for(;e!=i;i++)switchGravity(*i,false);
 }
+
 void CNoGravityZone::switchGravity(SZoneObjectInfo& io, bool val)
 {
 	if(io.object->getDestroy()) return;
@@ -35,16 +39,16 @@ void CNoGravityZone::switchGravity(SZoneObjectInfo& io, bool val)
 		if(!val&&shell->get_ApplyByGravity())
 		{
 			CPhysicsElement* e=shell->get_ElementByStoreOrder(u16(Random.randI(0,shell->get_ElementsNumber())));
-			if(e->isActive()){
+			if(e->isActive())
+			{
 				e->applyImpulseTrace(Fvector().random_point(e->getRadius()),Fvector().random_dir(),shell->getMass()*ph_world->Gravity()*fixed_step,e->m_SelfID);
-
 			}
-
 		}
 		//shell->SetAirResistance(0.f,0.f);
 		//shell->set_DynamicScales(1.f);
 		return;
 	}
+
 	if(!io.nonalive_object)
 	{
 		CEntityAlive* ea=smart_cast<CEntityAlive*>(io.object);
@@ -56,7 +60,6 @@ void CNoGravityZone::switchGravity(SZoneObjectInfo& io, bool val)
 			Fvector gn;
 			mc->GroundNormal(gn);
 			mc->ApplyImpulse(gn,mc->GetMass()*ph_world->Gravity()*fixed_step);
-			
 		}
 	}
 }

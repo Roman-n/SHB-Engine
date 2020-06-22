@@ -8,7 +8,6 @@
 
 typedef CGraphAbstract<CPhrase*, float, shared_str> CPhraseGraph;
 
-
 struct SPhraseDialogData : CSharedResource
 {
 	SPhraseDialogData ();
@@ -51,7 +50,6 @@ public:
 							CPhraseDialog		(const CPhraseDialog& pharase_dialog) {*this = pharase_dialog;}
 							CPhraseDialog&		operator = (const CPhraseDialog& pharase_dialog) {*this = pharase_dialog; return *this;}
 
-	
 	virtual void			Load				(shared_str dialog_id);
 
 	//связь диалога между двумя DialogManager
@@ -82,7 +80,6 @@ public:
 		const shared_str&	GetLastPhraseID		() {return m_SaidPhraseID;}
 			LPCSTR			DialogCaption		();
 			int				Priority			();
-
 
 			bool			IsFinished			()	const {return m_bFinished;}
 	

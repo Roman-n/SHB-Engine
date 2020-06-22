@@ -104,7 +104,7 @@ void CInfoPortion::load_shared	(LPCSTR)
 	}
 }
 
-void   CInfoPortion::InitXmlIdToIndex()
+void CInfoPortion::InitXmlIdToIndex()
 {
 	if(!id_to_index::tag_name)
 		id_to_index::tag_name = "info_portion";
@@ -117,18 +117,21 @@ void _destroy_item_data_vector_cont(T_VECTOR* vec)
 	T_VECTOR::iterator it		= vec->begin();
 	T_VECTOR::iterator it_e		= vec->end();
 
-	xr_vector<CUIXml*>			_tmp;	
+	xr_vector<CUIXml*>			_tmp;
 	for(;it!=it_e;++it)
 	{
 		xr_vector<CUIXml*>::iterator it_f = std::find(_tmp.begin(), _tmp.end(), (*it)._xml);
-		if(it_f==_tmp.end())
-	{
-			_tmp.push_back	((*it)._xml);
-			Msg("%s is unique",(*it)._xml->m_xml_file_name);
-		}else
-			Msg("%s already in list",(*it)._xml->m_xml_file_name);
-
+		if (it_f == _tmp.end( ))
+		{
+			_tmp.push_back((*it)._xml);
+			Msg("%s is unique", (*it)._xml->m_xml_file_name);
+		}
+		else
+		{
+			Msg("%s already in list", (*it)._xml->m_xml_file_name);
+		}
 	}
+
 	Log("_tmp.size()",_tmp.size());
 	delete_data	(_tmp);
 }

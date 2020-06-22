@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "controller.h"
 #include "controller_state_manager.h"
 #include "../controlled_entity.h"
@@ -58,7 +59,7 @@ CController::CController()
 
 	m_aura				= xr_new<CControllerAura>(this);
 
-#ifdef _DEBUG	
+#ifdef _DEBUG
 	P1.set(0.f,0.f,0.f);
 	P2.set(0.f,0.f,0.f);
 #endif
@@ -109,14 +110,14 @@ void CController::Load(LPCSTR section)
 	sscanf(pSettings->r_string(ppi_section,"color_gray"),	"%f,%f,%f", &m_control_effector.ppi.color_gray.r,	&m_control_effector.ppi.color_gray.g,	&m_control_effector.ppi.color_gray.b);
 	sscanf(pSettings->r_string(ppi_section,"color_add"),	"%f,%f,%f", &m_control_effector.ppi.color_add.r,	&m_control_effector.ppi.color_add.g,	&m_control_effector.ppi.color_add.b);
 
-	m_control_effector.time			= pSettings->r_float(ppi_section,"time");
-	m_control_effector.time_attack	= pSettings->r_float(ppi_section,"time_attack");
-	m_control_effector.time_release	= pSettings->r_float(ppi_section,"time_release");
+	m_control_effector.time					= pSettings->r_float(ppi_section,"time");
+	m_control_effector.time_attack			= pSettings->r_float(ppi_section,"time_attack");
+	m_control_effector.time_release			= pSettings->r_float(ppi_section,"time_release");
 
-	m_control_effector.ce_time			= pSettings->r_float(ppi_section,"ce_time");
-	m_control_effector.ce_amplitude		= pSettings->r_float(ppi_section,"ce_amplitude");
-	m_control_effector.ce_period_number	= pSettings->r_float(ppi_section,"ce_period_number");
-	m_control_effector.ce_power			= pSettings->r_float(ppi_section,"ce_power");
+	m_control_effector.ce_time				= pSettings->r_float(ppi_section,"ce_time");
+	m_control_effector.ce_amplitude			= pSettings->r_float(ppi_section,"ce_amplitude");
+	m_control_effector.ce_period_number		= pSettings->r_float(ppi_section,"ce_period_number");
+	m_control_effector.ce_power				= pSettings->r_float(ppi_section,"ce_power");
 
 	SVelocityParam &velocity_none		= move().get_velocity(MonsterMovement::eVelocityParameterIdle);	
 	SVelocityParam &velocity_turn		= move().get_velocity(MonsterMovement::eVelocityParameterStand);
@@ -127,63 +128,59 @@ void CController::Load(LPCSTR section)
 	SVelocityParam &velocity_steal		= move().get_velocity(MonsterMovement::eVelocityParameterSteal);
 	//SVelocityParam &velocity_drag		= move().get_velocity(MonsterMovement::eVelocityParameterDrag);
 
-
-	anim().AddAnim(eAnimStandIdle,		"stand_idle_",			-1, &velocity_none,		PS_STAND);
-	anim().AddAnim(eAnimStandTurnLeft,	"stand_turn_ls_",		-1, &velocity_turn,		PS_STAND);
-	anim().AddAnim(eAnimStandTurnRight,	"stand_turn_rs_",		-1, &velocity_turn,		PS_STAND);
-	anim().AddAnim(eAnimStandDamaged,	"stand_idle_dmg_",		-1, &velocity_none,		PS_STAND);
-	anim().AddAnim(eAnimSitIdle,		"sit_idle_",			-1, &velocity_none,		PS_SIT);
-	anim().AddAnim(eAnimEat,			"sit_eat_",				-1, &velocity_none,		PS_SIT);
-	anim().AddAnim(eAnimWalkFwd,		"stand_walk_fwd_",		-1, &velocity_walk,		PS_STAND);
-	anim().AddAnim(eAnimWalkDamaged,	"stand_walk_fwd_",		-1, &velocity_walk,		PS_STAND);
-	anim().AddAnim(eAnimRun,			"stand_walk_fwd_",		-1,	&velocity_walk,		PS_STAND);
-	anim().AddAnim(eAnimRunDamaged,		"stand_walk_fwd_",		-1, &velocity_walk,		PS_STAND);
-	anim().AddAnim(eAnimAttack,			"stand_attack_",		-1, &velocity_turn,		PS_STAND);
-	anim().AddAnim(eAnimSteal,			"stand_steal_",			-1, &velocity_steal,	PS_STAND);
-	anim().AddAnim(eAnimCheckCorpse,	"stand_check_corpse_",	-1,	&velocity_none,		PS_STAND);
-	anim().AddAnim(eAnimDie,			"stand_die_",			-1, &velocity_none,		PS_STAND);
-	anim().AddAnim(eAnimStandSitDown,	"stand_sit_down_",		-1, &velocity_none,		PS_STAND);	
-	anim().AddAnim(eAnimSitStandUp,		"sit_stand_up_",		-1, &velocity_none,		PS_SIT);
-	anim().AddAnim(eAnimSleep,			"sit_sleep_",			-1, &velocity_none,		PS_SIT);
-
-
+	anim().AddAnim(eAnimStandIdle,			"stand_idle_",				-1, &velocity_none,		PS_STAND);
+	anim().AddAnim(eAnimStandTurnLeft,		"stand_turn_ls_",			-1, &velocity_turn,		PS_STAND);
+	anim().AddAnim(eAnimStandTurnRight,		"stand_turn_rs_",			-1, &velocity_turn,		PS_STAND);
+	anim().AddAnim(eAnimStandDamaged,		"stand_idle_dmg_",			-1, &velocity_none,		PS_STAND);
+	anim().AddAnim(eAnimSitIdle,			"sit_idle_",				-1, &velocity_none,		PS_SIT);
+	anim().AddAnim(eAnimEat,				"sit_eat_",					-1, &velocity_none,		PS_SIT);
+	anim().AddAnim(eAnimWalkFwd,			"stand_walk_fwd_",			-1, &velocity_walk,		PS_STAND);
+	anim().AddAnim(eAnimWalkDamaged,		"stand_walk_fwd_",			-1, &velocity_walk,		PS_STAND);
+	anim().AddAnim(eAnimRun,				"stand_walk_fwd_",			-1,	&velocity_walk,		PS_STAND);
+	anim().AddAnim(eAnimRunDamaged,			"stand_walk_fwd_",			-1, &velocity_walk,		PS_STAND);
+	anim().AddAnim(eAnimAttack,				"stand_attack_",			-1, &velocity_turn,		PS_STAND);
+	anim().AddAnim(eAnimSteal,				"stand_steal_",				-1, &velocity_steal,	PS_STAND);
+	anim().AddAnim(eAnimCheckCorpse,		"stand_check_corpse_",		-1,	&velocity_none,		PS_STAND);
+	anim().AddAnim(eAnimDie,				"stand_die_",				-1, &velocity_none,		PS_STAND);
+	anim().AddAnim(eAnimStandSitDown,		"stand_sit_down_",			-1, &velocity_none,		PS_STAND);
+	anim().AddAnim(eAnimSitStandUp,			"sit_stand_up_",			-1, &velocity_none,		PS_SIT);
+	anim().AddAnim(eAnimSleep,				"sit_sleep_",				-1, &velocity_none,		PS_SIT);
 
 	//anim().AddAnim(eAnimStandIdle,		"new_torso_steal_",			-1, &velocity_none,		PS_STAND);
 	//anim().AddAnim(eAnimStandTurnLeft,	"new_torso_steal_",			-1, &velocity_turn,		PS_STAND);
 	//anim().AddAnim(eAnimStandTurnRight,	"new_torso_steal_",			-1, &velocity_turn,		PS_STAND);
-	//anim().AddAnim(eAnimStandDamaged,	"new_torso_steal_",			-1, &velocity_none,		PS_STAND);
-	//anim().AddAnim(eAnimSitIdle,		"sit_idle_",			-1, &velocity_none,		PS_SIT);
-	//anim().AddAnim(eAnimEat,			"sit_eat_",				-1, &velocity_none,		PS_SIT);
-	//anim().AddAnim(eAnimWalkFwd,		"new_torso_steal_",			-1, &velocity_steal,	PS_STAND);
-	//anim().AddAnim(eAnimWalkDamaged,	"new_torso_steal_",			-1, &velocity_steal,	PS_STAND);
-	//anim().AddAnim(eAnimRun,			"new_torso_steal_",			-1,	&velocity_steal,	PS_STAND);
+	//anim().AddAnim(eAnimStandDamaged,		"new_torso_steal_",			-1, &velocity_none,		PS_STAND);
+	//anim().AddAnim(eAnimSitIdle,			"sit_idle_",				-1, &velocity_none,		PS_SIT);
+	//anim().AddAnim(eAnimEat,				"sit_eat_",					-1, &velocity_none,		PS_SIT);
+	//anim().AddAnim(eAnimWalkFwd,			"new_torso_steal_",			-1, &velocity_steal,	PS_STAND);
+	//anim().AddAnim(eAnimWalkDamaged,		"new_torso_steal_",			-1, &velocity_steal,	PS_STAND);
+	//anim().AddAnim(eAnimRun,				"new_torso_steal_",			-1,	&velocity_steal,	PS_STAND);
 	//anim().AddAnim(eAnimRunDamaged,		"new_torso_steal_",			-1, &velocity_steal,	PS_STAND);
-	//anim().AddAnim(eAnimAttack,			"stand_attack_",		-1, &velocity_turn,		PS_STAND);
+	//anim().AddAnim(eAnimAttack,			"stand_attack_",			-1, &velocity_turn,		PS_STAND);
 	//anim().AddAnim(eAnimSteal,			"new_torso_steal_",			-1, &velocity_steal,	PS_STAND);
-	//anim().AddAnim(eAnimCheckCorpse,	"stand_check_corpse_",	-1,	&velocity_none,		PS_STAND);
-	//anim().AddAnim(eAnimDie,			"stand_die_",			-1, &velocity_none,		PS_STAND);
-	//anim().AddAnim(eAnimStandSitDown,	"stand_sit_down_",		-1, &velocity_none,		PS_STAND);	
-	//anim().AddAnim(eAnimSitStandUp,		"sit_stand_up_",		-1, &velocity_none,		PS_SIT);
-	//anim().AddAnim(eAnimSleep,			"sit_sleep_",			-1, &velocity_none,		PS_SIT);
+	//anim().AddAnim(eAnimCheckCorpse,		"stand_check_corpse_",		-1,	&velocity_none,		PS_STAND);
+	//anim().AddAnim(eAnimDie,				"stand_die_",				-1, &velocity_none,		PS_STAND);
+	//anim().AddAnim(eAnimStandSitDown,		"stand_sit_down_",			-1, &velocity_none,		PS_STAND);
+	//anim().AddAnim(eAnimSitStandUp,		"sit_stand_up_",			-1, &velocity_none,		PS_SIT);
+	//anim().AddAnim(eAnimSleep,			"sit_sleep_",				-1, &velocity_none,		PS_SIT);
 
-
-	//anim().AddAnim(eAnimStandIdle,		"stand_idle_",			-1, &velocity_none,		PS_STAND);
-	//anim().AddAnim(eAnimStandTurnLeft,	"stand_turn_ls_",		-1, &velocity_turn,		PS_STAND);
-	//anim().AddAnim(eAnimStandTurnRight,	"stand_turn_rs_",		-1, &velocity_turn,		PS_STAND);
-	//anim().AddAnim(eAnimStandDamaged,	"stand_idle_dmg_",		-1, &velocity_none,		PS_STAND);
-	//anim().AddAnim(eAnimSitIdle,		"sit_idle_",			-1, &velocity_none,		PS_SIT);
-	//anim().AddAnim(eAnimEat,			"sit_eat_",				-1, &velocity_none,		PS_SIT);
-	//anim().AddAnim(eAnimWalkFwd,		"stand_walk_fwd_",		-1, &velocity_walk,		PS_STAND);
-	//anim().AddAnim(eAnimWalkDamaged,	"stand_walk_dmg_",		-1, &velocity_walk_dmg,	PS_STAND);
-	//anim().AddAnim(eAnimRun,			"run_scared_",			-1,	&velocity_run,		PS_STAND);
-	//anim().AddAnim(eAnimRunDamaged,		"stand_run_dmg_",		-1, &velocity_run_dmg,	PS_STAND);
-	//anim().AddAnim(eAnimAttack,			"stand_attack_",		-1, &velocity_turn,		PS_STAND);
-	//anim().AddAnim(eAnimSteal,			"stand_steal_",			-1, &velocity_steal,	PS_STAND);
-	//anim().AddAnim(eAnimCheckCorpse,	"stand_check_corpse_",	-1,	&velocity_none,		PS_STAND);
-	//anim().AddAnim(eAnimDie,			"stand_die_",			-1, &velocity_none,		PS_STAND);
-	//anim().AddAnim(eAnimStandSitDown,	"stand_sit_down_",		-1, &velocity_none,		PS_STAND);	
-	//anim().AddAnim(eAnimSitStandUp,		"sit_stand_up_",		-1, &velocity_none,		PS_SIT);
-	//anim().AddAnim(eAnimSleep,			"sit_sleep_",			-1, &velocity_none,		PS_SIT);
+	//anim().AddAnim(eAnimStandIdle,		"stand_idle_",				-1, &velocity_none,		PS_STAND);
+	//anim().AddAnim(eAnimStandTurnLeft,	"stand_turn_ls_",			-1, &velocity_turn,		PS_STAND);
+	//anim().AddAnim(eAnimStandTurnRight,	"stand_turn_rs_",			-1, &velocity_turn,		PS_STAND);
+	//anim().AddAnim(eAnimStandDamaged,		"stand_idle_dmg_",			-1, &velocity_none,		PS_STAND);
+	//anim().AddAnim(eAnimSitIdle,			"sit_idle_",				-1, &velocity_none,		PS_SIT);
+	//anim().AddAnim(eAnimEat,				"sit_eat_",					-1, &velocity_none,		PS_SIT);
+	//anim().AddAnim(eAnimWalkFwd,			"stand_walk_fwd_",			-1, &velocity_walk,		PS_STAND);
+	//anim().AddAnim(eAnimWalkDamaged,		"stand_walk_dmg_",			-1, &velocity_walk_dmg,	PS_STAND);
+	//anim().AddAnim(eAnimRun,				"run_scared_",				-1,	&velocity_run,		PS_STAND);
+	//anim().AddAnim(eAnimRunDamaged,		"stand_run_dmg_",			-1, &velocity_run_dmg,	PS_STAND);
+	//anim().AddAnim(eAnimAttack,			"stand_attack_",			-1, &velocity_turn,		PS_STAND);
+	//anim().AddAnim(eAnimSteal,			"stand_steal_",				-1, &velocity_steal,	PS_STAND);
+	//anim().AddAnim(eAnimCheckCorpse,		"stand_check_corpse_",		-1,	&velocity_none,		PS_STAND);
+	//anim().AddAnim(eAnimDie,				"stand_die_",				-1, &velocity_none,		PS_STAND);
+	//anim().AddAnim(eAnimStandSitDown,		"stand_sit_down_",			-1, &velocity_none,		PS_STAND);
+	//anim().AddAnim(eAnimSitStandUp,		"sit_stand_up_",			-1, &velocity_none,		PS_SIT);
+	//anim().AddAnim(eAnimSleep,			"sit_sleep_",				-1, &velocity_none,		PS_SIT);
 
 	anim().LinkAction(ACT_STAND_IDLE,	eAnimStandIdle);
 	anim().LinkAction(ACT_SIT_IDLE,		eAnimSitIdle);
@@ -554,6 +551,7 @@ void CController::set_psy_fire_delay_zero()
 {
 	m_psy_fire_delay = 0;
 }
+
 void CController::set_psy_fire_delay_default()
 {
 	m_psy_fire_delay = _pmt_psy_attack_delay;
@@ -742,3 +740,15 @@ void CController::debug_on_key(int key)
 	}
 }
 #endif
+
+using namespace luabind;
+
+#pragma optimize("s",on)
+void CController::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CController, CGameObject>("CController")
+			.def(constructor<>( ))
+		];
+}

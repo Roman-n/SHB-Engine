@@ -14,11 +14,10 @@
 #include "script_game_object.h"
 
 CPhraseDialogManager::CPhraseDialogManager	(void)
-{
-}
+{ }
+
 CPhraseDialogManager::~CPhraseDialogManager	(void)
-{
-}
+{ }
 
 const DIALOG_SHARED_PTR& CPhraseDialogManager::GetDialogByID(const shared_str& dialog_id) const
 {
@@ -65,8 +64,7 @@ void CPhraseDialogManager::AddDialog(DIALOG_SHARED_PTR& phrase_dialog)
 }
 
 void CPhraseDialogManager::ReceivePhrase(DIALOG_SHARED_PTR& phrase_dialog)
-{
-}
+{ }
 
 void CPhraseDialogManager::SayPhrase(DIALOG_SHARED_PTR& phrase_dialog, const shared_str& phrase_id)
 {
@@ -79,8 +77,6 @@ void CPhraseDialogManager::SayPhrase(DIALOG_SHARED_PTR& phrase_dialog, const sha
 	if(!coninue_talking)
 		m_ActiveDialogs.erase(it);
 }
-
-
 
 static bool dialog_priority (DIALOG_SHARED_PTR dialog1, DIALOG_SHARED_PTR dialog2)
 {

@@ -54,8 +54,7 @@ protected:
 	//радиус действи€ выброса (в процентах от всего)
 	float			m_fBlowoutRadiusPercent;
 
-
-	//параметры телекинеза	
+	//параметры телекинеза
 	float			m_fTeleHeight;
 	u32				m_dwTimeToTele;
 	u32				m_dwTelePause;

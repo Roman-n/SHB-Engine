@@ -7,6 +7,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "level_changer.h"
 #include "hit.h"
 #include "actor.h"
@@ -23,8 +24,7 @@
 xr_vector<CLevelChanger*>	g_lchangers;
 
 CLevelChanger::~CLevelChanger	()
-{
-}
+{ }
 
 void CLevelChanger::Center		(Fvector& C) const
 {
@@ -104,6 +104,7 @@ void CLevelChanger::shedule_Update(u32 dt)
 
 	update_actor_invitation		();
 }
+
 #include "patrol_path.h"
 #include "patrol_path_storage.h"
 void CLevelChanger::feel_touch_new	(CObject *tpObject)

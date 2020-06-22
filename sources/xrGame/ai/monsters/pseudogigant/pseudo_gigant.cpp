@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "pseudo_gigant.h"
 #include "pseudo_gigant_step_effector.h"
 #include "../../../actor.h"
@@ -114,8 +115,8 @@ void CPseudoGigant::Load(LPCSTR section)
 	anim().LinkAction(ACT_STEAL,		eAnimSteal);
 	anim().LinkAction(ACT_LOOK_AROUND,	eAnimStandIdle);
 
-	// define transitions																											
-	anim().AddTransition(eAnimStandLieDown,	eAnimSleep,		eAnimLieToSleep,		false);										
+	// define transitions
+	anim().AddTransition(eAnimStandLieDown,	eAnimSleep,		eAnimLieToSleep,		false);
 	anim().AddTransition(PS_STAND,			eAnimSleep,		eAnimStandLieDown,		true);
 	anim().AddTransition(PS_STAND,			PS_LIE,			eAnimStandLieDown,		false);
 
@@ -311,4 +312,16 @@ void CPseudoGigant::TranslateActionToPathParams()
 	path().set_velocity_mask	(vel_mask);
 	path().set_desirable_mask	(des_mask);
 	path().enable_path			();
+}
+
+using namespace luabind;
+
+#pragma optimize("s",on)
+void CPseudoGigant::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CPseudoGigant, CGameObject>("CPseudoGigant")
+			.def(constructor<>( ))
+		];
 }

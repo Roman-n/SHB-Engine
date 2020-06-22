@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "flesh.h"
 #include "../../../ai_space.h"
 #include "flesh_state_manager.h"
@@ -79,7 +80,7 @@ void CAI_Flesh::Load(LPCSTR section)
 	anim().AddAnim(eAnimThreaten,		"stand_threaten_",		-1,	&velocity_none,		PS_STAND);
 
 	// define transitions
-	anim().AddTransition(PS_STAND,	PS_LIE,		eAnimStandLieDown,		false);
+	anim().AddTransition(PS_STAND,		PS_LIE,		eAnimStandLieDown,		false);
 	anim().AddTransition(PS_LIE,		PS_STAND,	eAnimLieStandUp,		false, SKIP_IF_AGGRESSIVE);
 
 	// define links from Action to animations
@@ -151,4 +152,16 @@ bool CAI_Flesh::ConeSphereIntersection(Fvector ConeVertex, float ConeAngle, Fvec
 	}
 
 	return false;
+}
+
+using namespace luabind;
+
+#pragma optimize("s",on)
+void CAI_Flesh::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CAI_Flesh, CGameObject>("CAI_Flesh")
+			.def(constructor<>( ))
+		];
 }

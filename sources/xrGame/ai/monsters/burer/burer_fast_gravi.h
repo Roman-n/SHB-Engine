@@ -1,4 +1,5 @@
 #pragma once
+
 #include "../control_combase.h"
 
 class CBurerFastGravi : public CControl_ComCustom<> {
@@ -13,6 +14,4 @@ public:
 	
 private:	
 			void	process_hit				();
-
 };
-

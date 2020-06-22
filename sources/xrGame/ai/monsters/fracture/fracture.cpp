@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "fracture.h"
 #include "fracture_state_manager.h"
 #include "../monster_velocity_space.h"
@@ -34,7 +35,6 @@ void CFracture::Load(LPCSTR section)
 	SVelocityParam &velocity_run_dmg	= move().get_velocity(MonsterMovement::eVelocityParameterRunDamaged);
 	SVelocityParam &velocity_steal		= move().get_velocity(MonsterMovement::eVelocityParameterSteal);
 	//SVelocityParam &velocity_drag		= move().get_velocity(MonsterMovement::eVelocityParameterDrag);
-
 
 	anim().AddAnim(eAnimStandIdle,		"stand_idle_",			-1, &velocity_none,			PS_STAND);
 	anim().AddAnim(eAnimStandDamaged,	"stand_idle_dmg_",		-1, &velocity_none,			PS_STAND);
@@ -87,4 +87,16 @@ void CFracture::CheckSpecParams(u32 spec_params)
 		anim().SetCurAnim(eAnimLookAround);
 		return;
 	}
+}
+
+using namespace luabind;
+
+#pragma optimize("s",on)
+void CFracture::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CFracture, CGameObject>("CFracture")
+			.def(constructor<>( ))
+		];
 }

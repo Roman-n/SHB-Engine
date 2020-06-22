@@ -12,9 +12,7 @@ SPhraseDialogData::SPhraseDialogData ()
 }
 
 SPhraseDialogData::~SPhraseDialogData ()
-{}
-
-
+{ }
 
 CPhraseDialog::CPhraseDialog()
 {
@@ -25,9 +23,7 @@ CPhraseDialog::CPhraseDialog()
 }
 
 CPhraseDialog::~CPhraseDialog()
-{
-}
-
+{ }
 
 void CPhraseDialog::Init(CPhraseDialogManager* speaker_first, 
 						 CPhraseDialogManager* speaker_second)
@@ -50,8 +46,7 @@ void CPhraseDialog::Init(CPhraseDialogManager* speaker_first,
 
 //обнуляем все связи
 void CPhraseDialog::Reset ()	
-{
-}
+{ }
 
 CPhraseDialogManager* CPhraseDialog::OurPartner	(CPhraseDialogManager* dialog_manager) const
 {
@@ -61,16 +56,15 @@ CPhraseDialogManager* CPhraseDialog::OurPartner	(CPhraseDialogManager* dialog_ma
 		return FirstSpeaker();
 }
 
-
 CPhraseDialogManager* CPhraseDialog::CurrentSpeaker()	const 
 {
 	return FirstIsSpeaking()?m_pSpeakerFirst:m_pSpeakerSecond;
 }
+
 CPhraseDialogManager* CPhraseDialog::OtherSpeaker	()	const 
 {
 	return (!FirstIsSpeaking())?m_pSpeakerFirst:m_pSpeakerSecond;
 }
-
 
 //предикат для сортировки вектора фраз
 static bool PhraseGoodwillPred(const CPhrase* phrase1, const CPhrase* phrase2)
@@ -122,6 +116,7 @@ bool CPhraseDialog::SayPhrase (DIALOG_SHARED_PTR& phrase_dialog, const shared_st
 			{
 				phrase_dialog->m_PhraseVector.push_back(next_phrase_vertex->data());
 
+
 #ifdef DEBUG
 				if(psAI_Flags.test(aiDialogs)){
 					LPCSTR phrase_text = next_phrase_vertex->data()->GetText();
@@ -158,7 +153,6 @@ bool CPhraseDialog::SayPhrase (DIALOG_SHARED_PTR& phrase_dialog, const shared_st
 
 LPCSTR CPhraseDialog::GetPhraseText	(const shared_str& phrase_id, bool current_speaking)
 {
-	
 	CPhraseGraph::CVertex* phrase_vertex = data()->m_PhraseGraph.vertex(phrase_id);
 	THROW(phrase_vertex);
 
@@ -197,7 +191,6 @@ void CPhraseDialog::load_shared	(LPCSTR)
 
 	pXML->SetLocalRoot(dialog_node);
 
-
 	SetPriority	( pXML->ReadAttribInt(dialog_node, "priority", 0) );
 
 	//заголовок 
@@ -225,10 +218,10 @@ void CPhraseDialog::load_shared	(LPCSTR)
 
 	pXML->SetLocalRoot(phrase_list_node);
 
-#ifdef DEBUG // debug & mixed
+#ifdef DEBUG 
 	LPCSTR wrong_phrase_id = pXML->CheckUniqueAttrib(phrase_list_node, "phrase", "id");
 	THROW3(wrong_phrase_id == NULL, *item_data.id, wrong_phrase_id);
-#endif	
+#endif
 
 	//ищем стартовую фразу
 	XML_NODE* phrase_node	= pXML->NavigateToNodeWithAttribute("phrase", "id", "0");

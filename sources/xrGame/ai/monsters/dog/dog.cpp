@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "dog.h"
 #include "dog_state_manager.h"
 #include "../monster_velocity_space.h"
@@ -106,7 +107,7 @@ void CAI_Dog::Load(LPCSTR section)
 	anim().LinkAction(ACT_STEAL,		eAnimSteal);	
 	anim().LinkAction(ACT_LOOK_AROUND,	eAnimStandIdle);
 	
-#ifdef DEBUG	
+#ifdef DEBUG
 	anim().accel_chain_test		();
 #endif
 
@@ -159,3 +160,15 @@ void CAI_Dog::debug_on_key(int key)
 	}
 }
 #endif
+
+using namespace luabind;
+
+#pragma optimize("s",on)
+void CAI_Dog::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CAI_Dog, CGameObject>("CAI_Dog")
+			.def(constructor<>( ))
+		];
+}

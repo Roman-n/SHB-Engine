@@ -4,6 +4,7 @@
 ///////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "game_news.h"
 #include "object_broker.h"
 
@@ -42,8 +43,6 @@ void GAME_NEWS_DATA::load (IReader& stream)
 	load_data(tex_rect,		stream);
 }
 
-
-
 LPCSTR GAME_NEWS_DATA::SingleLineText()
 {
 	if( xr_strlen(full_news_text.c_str()) )
@@ -58,10 +57,8 @@ LPCSTR GAME_NEWS_DATA::SingleLineText()
 	sprintf_s		(time, "%02i:%02i ", hours, minutes);
 //	strconcat	(result, locationName, time, newsPhrase);
 
-
 	full_news_text			= time;
 	full_news_text			+= news_text.c_str();
-
 
 	return full_news_text.c_str();
 }

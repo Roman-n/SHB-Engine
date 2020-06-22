@@ -1,11 +1,9 @@
 ///////////////////////////////////////////////////////////////
 // AI_PhraseDialogManager.cpp
-// Класс, от которого наследуются NPC персонажи, ведущие диалог
-// с актером
-//
-///////////////////////////////////////////////////////////////
+// Класс, от которого наследуются NPC персонажи, ведущие диалог с актером
 
 #include "stdafx.h"
+
 #include "AI_PhraseDialogManager.h"
 #include "PhraseDialog.h"
 #include "inventoryowner.h"
@@ -23,7 +21,7 @@ CAI_PhraseDialogManager::CAI_PhraseDialogManager	(void)
 }
 
 CAI_PhraseDialogManager::~CAI_PhraseDialogManager	(void)
-{}
+{ }
 
 //PhraseDialogManager
 void CAI_PhraseDialogManager::ReceivePhrase (DIALOG_SHARED_PTR& phrase_dialog)
@@ -93,7 +91,7 @@ void CAI_PhraseDialogManager::RestoreDefaultStartDialog()
 }
 
 void CAI_PhraseDialogManager::UpdateAvailableDialogs	(CPhraseDialogManager* partner)
-{		
+{
 	m_AvailableDialogs.clear();
 	m_CheckedDialogs.clear();
 

@@ -1,11 +1,11 @@
 #include "stdafx.h"
+
 #include "cat.h"
 #include "cat_state_manager.h"
 #include "../../../..\XR_3DA\skeletonanimated.h"
 #include "../monster_velocity_space.h"
 #include "../control_animation_base.h"
 #include "../control_movement_base.h"
-
 
 CCat::CCat()
 {
@@ -38,20 +38,19 @@ void CCat::Load(LPCSTR section)
 	SVelocityParam &velocity_steal		= move().get_velocity(MonsterMovement::eVelocityParameterSteal);
 	SVelocityParam &velocity_drag		= move().get_velocity(MonsterMovement::eVelocityParameterDrag);
 
-
 	anim().AddAnim(eAnimStandIdle,		"stand_idle_",			-1, &velocity_none,				PS_STAND);
 	anim().AddAnim(eAnimStandDamaged,	"stand_idle_dmg_",		-1, &velocity_none,				PS_STAND);
 	anim().AddAnim(eAnimStandTurnLeft,	"stand_turn_ls_",		-1, &velocity_turn,		PS_STAND);
 	anim().AddAnim(eAnimStandTurnRight,	"stand_turn_rs_",		-1, &velocity_turn,		PS_STAND);
-	anim().AddAnim(eAnimWalkFwd,			"stand_walk_fwd_",		-1, &velocity_walk,	PS_STAND);
-	anim().AddAnim(eAnimWalkDamaged,		"stand_walk_dmg_",		-1, &velocity_walk_dmg,	PS_STAND);
-	anim().AddAnim(eAnimRun,				"stand_run_fwd_",		-1,	&velocity_run,		PS_STAND);
+	anim().AddAnim(eAnimWalkFwd,		"stand_walk_fwd_",		-1, &velocity_walk,	PS_STAND);
+	anim().AddAnim(eAnimWalkDamaged,	"stand_walk_dmg_",		-1, &velocity_walk_dmg,	PS_STAND);
+	anim().AddAnim(eAnimRun,			"stand_run_fwd_",		-1,	&velocity_run,		PS_STAND);
 	anim().AddAnim(eAnimRunDamaged,		"stand_run_dmg_",		-1,	&velocity_run_dmg,	PS_STAND);
-	anim().AddAnim(eAnimCheckCorpse,		"stand_check_corpse_",	-1,	&velocity_none,				PS_STAND);
-	anim().AddAnim(eAnimEat,				"stand_eat_",			-1, &velocity_none,				PS_STAND);
+	anim().AddAnim(eAnimCheckCorpse,	"stand_check_corpse_",	-1,	&velocity_none,				PS_STAND);
+	anim().AddAnim(eAnimEat,			"stand_eat_",			-1, &velocity_none,				PS_STAND);
 	anim().AddAnim(eAnimAttack,			"stand_attack_",		-1, &velocity_turn,		PS_STAND);
 	anim().AddAnim(eAnimLookAround,		"stand_look_around_",	-1, &velocity_none,				PS_STAND);
-	anim().AddAnim(eAnimLieIdle,			"lie_idle_",			-1, &velocity_none,				PS_LIE);
+	anim().AddAnim(eAnimLieIdle,		"lie_idle_",			-1, &velocity_none,				PS_LIE);
 	anim().AddAnim(eAnimLieStandUp,		"lie_stand_up_",		-1, &velocity_none,				PS_LIE);		
 	anim().AddAnim(eAnimDragCorpse,		"stand_drag_",			-1, &velocity_drag,				PS_STAND);
 	anim().AddAnim(eAnimSteal,			"stand_steal_",			-1, &velocity_steal,			PS_STAND);
@@ -61,8 +60,7 @@ void CCat::Load(LPCSTR section)
 	anim().AddAnim(eAnimJumpRight,		"stand_jump_rs_",		-1, &velocity_none,				PS_STAND);
 	
 	anim().AddTransition(PS_LIE,		PS_STAND,	eAnimLieStandUp,		false);
-	anim().AddTransition(PS_STAND,	PS_LIE,		eAnimStandLieDown,		false);
-
+	anim().AddTransition(PS_STAND,		PS_LIE,		eAnimStandLieDown,		false);
 
 	// link action
 	anim().LinkAction(ACT_STAND_IDLE,	eAnimStandIdle);
@@ -79,11 +77,10 @@ void CCat::Load(LPCSTR section)
 	anim().LinkAction(ACT_STEAL,		eAnimSteal);
 	anim().LinkAction(ACT_LOOK_AROUND,	eAnimLookAround);
 
-#ifdef DEBUG	
+#ifdef DEBUG
 	anim().accel_chain_test		();
 #endif
 
-	//*****************************************************************************
 }
 
 void CCat::reinit()
@@ -140,8 +137,6 @@ void CCat::CheckSpecParams(u32 spec_params)
 
 		//return;
 	}
-
-
 }
 
 void CCat::UpdateCL()
@@ -155,4 +150,14 @@ void CCat::HitEntityInJump(const CEntity *pEntity)
 	HitEntity			(pEntity, params.hit_power, params.impulse, params.impulse_dir);
 }
 
+using namespace luabind;
 
+#pragma optimize("s",on)
+void CCat::script_register(lua_State* L)
+{
+	module(L)
+		[
+			class_<CCat, CGameObject>("CCat")
+			.def(constructor<>( ))
+		];
+}
