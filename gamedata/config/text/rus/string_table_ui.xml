@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
 	<string id="cant_walk">
-		<text>Вы слишком истощены, чтобы двигаться</text>
+		<text>Вы слишком истощены, чтобы идти</text>
 	</string>
 	<string id="cant_walk_weight">
-		<text>Вы слишком перегружены, чтобы двигаться</text>
+		<text>Вы слишком перегружены, чтобы идти</text>
 	</string>
 	<string id="dar_poltergeist_hold_the_door">
 		<text>Кто-то удерживает дверь.</text>

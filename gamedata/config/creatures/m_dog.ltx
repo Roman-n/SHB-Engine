@@ -15,7 +15,7 @@ search_speed         = .5                       ; option for ALife Simulator
 visual				 = monsters\dog\dog
 corpse_visual		 = monsters\dog\dog_dead
 icon				 = ui_npc_monster_dog
-MaxHealthValue		     = 100			; range [0..200]
+MaxHealthValue		= 100			; range [0..200]
 DynamicObjectsCount	 = 32
 smart_terrain_choose_interval	= 00:15:00
 
@@ -25,11 +25,10 @@ Spawn_Inventory_Item_Probability = 0.2
 cform                = skeleton					; collision class
 class                = SM_DOG_S					; AI class
 
-ef_creature_type	 = 6				; option for evaluation functions
-ef_weapon_type		 = 2
-ef_detector_type			 = 1
+ef_creature_type	= 6				; option for evaluation functions
+ef_weapon_type		= 2
+ef_detector_type	= 1
 panic_threshold		= 0.1
-
 
 script_binding  	= bind_monster.bind
 
@@ -63,15 +62,14 @@ ph_after_death_velocity_factor= 0.75
 ph_skel_shot_up_factor        = 0.25
 ;---------------------------------------------------------------------
 
-
 ;----------------------------------------------------------------------------
 ; Movement::Velocities & Acceleration
 ;----------------------------------------------------------------------------
 ; speed factors			linear | angular_real | angular_path | min |  max
 Velocity_Stand			= 0,		2.0,			2.0,		1,		1
 Velocity_WalkFwdNormal	= 1.45,		3.0,			3.0,		0.2,	1.5
-Velocity_WalkFwdDamaged	= 1.3,		1.0,			1.0,		0.2,	1	
-Velocity_RunFwdNormal	= 6.3,		2.6,			2.6,		0.21,	1	
+Velocity_WalkFwdDamaged	= 1.3,		1.0,			1.0,		0.2,	1
+Velocity_RunFwdNormal	= 6.3,		2.6,			2.6,		0.21,	1
 Velocity_RunFwdDamaged	= 4.5,		1.0,			1.0,		0.18,	1
 Velocity_Drag			= 0.6,		3.0,			3.0,		1,		1
 Velocity_Steal			= 1.5,		3.0,			3.0,		1,		1
@@ -166,16 +164,12 @@ sound_distant_idle		= monsters\dog\bdog_distant_	; только для расстояний свыше 2
 
 killer_clsids				= Z_MINCER,Z_GALANT,ZS_BFUZZ,ZS_MBALD,ZS_GALAN,ZS_MINCE
 
-
-
 idle_sound_delay		= 80000;50000	;20000	;15000
 eat_sound_delay			= 2000	;3000
 attack_sound_delay		= 5000	;2000; 5000	;2000
 
 distant_idle_sound_delay = 80000
-distant_idle_sound_range = 30.0	
-
-
+distant_idle_sound_range = 30.0
 
 SoundThreshold		 = 0.04             ; range [0..1]
 max_hear_dist		 = 60
@@ -200,7 +194,6 @@ transparency_threshold		= 0.25
 ;-------------------------------------------------------------------------
 DamagedThreshold		= 0.2
 damage					= m_dog_damage
-
 
 critical_wound_threshold		= 0.4	;1.1
 critical_wound_decrease_quant	= 0.
@@ -238,7 +231,6 @@ step_params			= m_dog_step_params
 
 LegsCount			= 4
 
-
 ;species of monster
 species					= dog
 
@@ -246,7 +238,6 @@ species					= dog
 ; Attack Animation Parameters
 ;===========================================================================
 [m_dog_attack_params]
-
 ;---------------------------------------------------------------------------------------------------------------------------------------------------------
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, top, bottom) |	Test Dist|
 ;---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -258,7 +249,6 @@ stand_attack_2 =	  	0.45,		0.25,	    50,        0.0, 1.0, 0.0,		 -1.6, 1.6, -1.6
 stand_attack_3 =	  	0.45,		0.25,	    50,        0.0, 1.0, 0.0,		 -1.6, 1.6, -1.6, 1.6,				 3.5
 
 [m_dog_attack_effector]
-
 duality_h		= 0.01
 duality_v		= 0.01
 blur			= 0.01

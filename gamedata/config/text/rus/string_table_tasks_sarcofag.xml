@@ -29,10 +29,7 @@
 		<text>Встретится с теми, кто стоял за Монолитом</text>
 	</string>
 	<string id="sar_perception_2">
-		<text>Найти секретную лабораторию и встретить "кукловодов"</text>
-	</string>
-	<string id="sar_secret_lab">
-		<text>Секретная лаборатория</text>
+		<text>Найти серкретную лабораторию и встретить "кукловодов"</text>
 	</string>
 	<string id="sar_secret_lab_0">
 		<text>Попасть в секретный бункер</text>
@@ -45,4 +42,7 @@
 	</string>
 	<string id="sar_secret_lab_3">
 		<text>Разведать, что находится за дверью</text>
+	</string>
+	<string id="sar_secret_lab_find">
+		<text>Секретная лаборатория</text>
 	</string>

@@ -61,8 +61,6 @@ const char* af_actor_param_names[ ] =
 	"satiety_power_v",
 	"satiety_health_v",
 	"radiation_v",
-
-
 	"wound_incarnation_v"
 };
 

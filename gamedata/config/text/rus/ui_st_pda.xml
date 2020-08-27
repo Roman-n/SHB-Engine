@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
 	<string id="actor_btn_hint">
-		<text>Центр на Меченом</text>
+		<text>Центрировать на актера</text>
 	</string>
 	<string id="add_spot_btn_hint">
 		<text>Добавить новую отметку</text>
@@ -10,13 +10,13 @@
 		<text>Контакты</text>
 	</string>
 	<string id="Encyclopedia">
-		<text>Справка</text>
+		<text>Энциклопедия</text>
 	</string>
 	<string id="global_map_btn_hint">
 		<text>На карту зоны</text>
 	</string>
 	<string id="level_changer_invitation">
-		<text>Перейти на другую локацию?</text>
+		<text>Перейти на следующий уровень ?</text>
 	</string>
 	<string id="Name">
 		<text>Имя</text>
@@ -40,13 +40,13 @@
 		<text>Показать список контактов сталкеров</text>
 	</string>
 	<string id="pda_btn_diary">
-		<text>Журнал</text>
+		<text>Дневник</text>
 	</string>
 	<string id="pda_btn_diary_hint">
 		<text>Показать дневник игрока</text>
 	</string>
 	<string id="pda_btn_encyclopedia">
-		<text>Справка</text>
+		<text>Энциклопедия</text>
 	</string>
 	<string id="pda_btn_encyclopedia_hint">
 		<text>Показать энциклопедию по Зоне</text>
@@ -67,13 +67,13 @@
 		<text>Показать записи игрока</text>
 	</string>
 	<string id="pda_btn_map">
-		<text>План</text>
+		<text>Карта</text>
 	</string>
 	<string id="pda_btn_map_hint">
 		<text>Показать карту Зоны</text>
 	</string>
 	<string id="pda_btn_news">
-		<text>История</text>
+		<text>История сообщ.</text>
 	</string>
 	<string id="pda_btn_news_hint">
 		<text>Показать историю сообщений</text>
@@ -88,13 +88,13 @@
 		<text>Показать свои отметки на карте</text>
 	</string>
 	<string id="pda_btn_quests">
-		<text>Задачи</text>
+		<text>Задания</text>
 	</string>
 	<string id="pda_btn_quests_hint">
 		<text>Показать информацию по квестам</text>
 	</string>
 	<string id="pda_btn_ranking">
-		<text>Ранги</text>
+		<text>Рейтинг</text>
 	</string>
 	<string id="pda_btn_ranking_hint">
 		<text>Показать рейтинг лучших сталкеров</text>
@@ -103,7 +103,7 @@
 		<text>Репутация</text>
 	</string>
 	<string id="pda_btn_statistics">
-		<text>Данные</text>
+		<text>Статистика</text>
 	</string>
 	<string id="pda_btn_statistics_hint">
 		<text>Показать статистику по прохождению</text>
@@ -142,13 +142,13 @@
 		<text>Убийство мутантов</text>
 	</string>
 	<string id="st_detail_list_for_quests">
-		<text>Выполненные задания</text>
+		<text>Выполненные квесты</text>
 	</string>
 	<string id="st_detail_list_for_stalkerkills">
 		<text>Убийство сталкеров</text>
 	</string>
 	<string id="st_map_actor">
-		<text>Меченый</text>
+		<text>Это Вы</text>
 	</string>
 	<string id="st_news">
 		<text>Новость</text>
@@ -190,7 +190,7 @@
 		<text>Сообщение</text>
 	</string>
 	<string id="svoboda_outfit_description_m1">
-		<text>В комбинезон интегрирована металлическая сетка, защищающая от электрических и магнитных полей. В комплект также включен прибор ночного видения.</text>
+		<text>В комбинизон интегрирована металлическая сетка, защищающая от электрических и магнитных полей. В комплект также включен прибор ночного видения.</text>
 	</string>
 	<string id="Tasks">
 		<text>Задания</text>

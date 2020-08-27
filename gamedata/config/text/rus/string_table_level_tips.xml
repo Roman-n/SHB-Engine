@@ -9,11 +9,8 @@
 	<string id="character_use">
 		<text>Говорить ($$ACTION_USE$$)</text>
 	</string>
-	<string id="dead_character_use_or_drag">
-		<text>Обыскать труп ($$ACTION_USE$$) \n Тащить труп (SHIFT+$$ACTION_USE$$)</text>
-	</string>
 	<string id="dead_character_use">
-		<text>Обыскать труп ($$ACTION_USE$$)</text>
+		<text>Обыскать труп ($$ACTION_USE$$) \n Тащить труп (SHIFT+$$ACTION_USE$$)</text>
 	</string>
 	<string id="general_complete_task">
 		<text>Задание выполнено:</text>
@@ -54,6 +51,15 @@
 	<string id="st_codelock">
 		<text>Кодовый замок ($$ACTION_USE$$)</text>
 	</string>
+	<string id="st_helmet_countdown">
+		<text>Отключение защиты</text>
+	</string>
+	<string id="st_psy_danger">
+		<text>Критический уровень пси излучения. Немедленно покиньте опасную зону.</text>
+	</string>
+	<string id="st_radiation_danger">
+		<text>Опасный уровень радиации. Необходима защита, чтобы пройти.</text>
+	</string>
 	<string id="to_aes">
 		<text>На ЧАЭС</text>
 	</string>
@@ -89,17 +95,5 @@
 	</string>
 	<string id="to_yantar">
 		<text>На Янтарь</text>
-	</string>
-	<string id="st_helmet_countdown">
-		<text>Отключение защиты</text>
-	</string>
-	<string id="st_psy_danger">
-		<text>Критический уровень пси излучения. Немедленно покиньте опасную зону.</text>
-	</string>
-	<string id="st_radiation_danger">
-		<text>Опасный уровень радиации. Необходима защита, чтобы пройти.</text>
-	</string>
-	<string id="st_found_new_pda">
-		<text>Найдена информация:</text>
 	</string>
 </string_table>

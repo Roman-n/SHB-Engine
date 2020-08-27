@@ -1,23 +1,22 @@
 [level_maps_single]
-L01_escape
-L02_garbage
-L03_agroprom
-L03u_agr_underground
-l04_darkvalley
-l04u_LabX18
-L05_bar
-L06_rostok
-l07_military
-l08_yantar
-l08u_brainlab
-l10_radar
-l10u_bunker
-l11_pripyat
-l12_stancia
-l12_stancia_2
-l12u_control_monolith
-l12u_sarcofag
-
+	l01_escape
+	l02_garbage
+	l03_agroprom
+	l03u_agr_underground
+	l04_darkvalley
+	l04u_labx18
+	l05_bar
+	l06_rostok
+	l07_military
+	l08_yantar
+	l08u_brainlab
+	l10_radar
+	l10u_bunker
+	l11_pripyat
+	l12_stancia
+	l12_stancia_2
+	l12u_control_monolith
+	l12u_sarcofag
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [level_music_tracks]
@@ -40,7 +39,7 @@ weathers		= default
 music_tracks    = l01_escape_musics
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[L02_garbage]
+[l02_garbage]
 texture         = map\map_garbage
 bound_rect      = -322.334, -347.225, 321.685, 318.000
 global_rect		= 371.0,1767.0,561.0,1963.256226
@@ -73,8 +72,8 @@ weathers		= pripyat
 music_tracks    = l04_darkvalley_musics
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[l04u_LabX18]
-texture			= map\map_labx18_map
+[l04u_labx18]
+texture			= map\map_labx18
 bound_rect		= -51.236, -37.911, 47.999, 81.159
 global_rect		= 788.0, 1144.0,	790.0, 1146.399780
 weathers		= indoor_x18
@@ -114,7 +113,7 @@ music_tracks	= l08_yantar_musics
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [l08u_brainlab]
-texture         = map\map_mind
+texture         = map\map_brainlab
 bound_rect      = -146.670, -41.626, 153.227, 21.611
 global_rect		= 172.0,1612.0,174.0,1614.0
 weathers		= indoor
@@ -151,18 +150,6 @@ weathers		= stancia
 music_tracks    = l12_stancia_musics
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[l12u_sarcofag]
-global_rect		= 440.0, 333.0,	442.0, 335.0
-weathers		= sarkofag
-music_tracks    = l12u_sarcofag_musics
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[l12u_control_monolith]
-global_rect		= 440.0, 333.0,	442.0, 335.0
-weathers		= indoor
-music_tracks    = l12u_control_musics
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [l12_stancia_2]
 texture			= map\map_aes_1
 bound_rect		= -256.776, -747.782, 1398.440, 850.523
@@ -171,47 +158,13 @@ weathers		= stancia2
 music_tracks    = l12_stancia_2_musics
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-
-
-
-
+[l12u_control_monolith]
+global_rect		= 440.0, 333.0,	442.0, 335.0
+weathers		= indoor
+music_tracks    = l12u_control_musics
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[l06u_labx16]
-global_rect		= 767.0, 1827.0,	855.0,1978.0
-;texture			= ui\ui_global_map
-;bound_rect		= 0.0,0.0, 5000.0,10000.0
-weathers		= indoor
-
-[l09_deadcity]
-global_rect		= -6,1220.0, 248.0,1481.0
-texture	    	= map\map_deadcity
-bound_rect		= -502.148,-412.284,379.976,474,479
-weathers		= mrachno
-
-
-[andy_test]
-texture			= map\map_andy_test
-global_rect		= 100.0,900.0,	209.563507,982.172606
-bound_rect		= -150.000,-100.000, 50.000,50.000
-;weathers		= test
-weathers		= default
-;weathers		= indoor
-;weathers		= indoor_x18
-;weathers		= yantar
-;weathers		= radar
-;weathers		= pripyat
-
-;weathers		= stancia
-
-;weathers		= sarkofag
-;weathers		= stancia2
-music_tracks    = l01_escape_musics
-
-
-[ai_test]
-texture			= map\map_test
-bound_rect		= -150.000, -100.000, 52.927, 50.000
-global_rect		= 156.0,833.0,365.691223,988.0
-music_tracks	= l03_agroprom_musics
+[l12u_sarcofag]
+global_rect		= 440.0, 333.0,	442.0, 335.0
+weathers		= sarkofag
+music_tracks    = l12u_sarcofag_musics

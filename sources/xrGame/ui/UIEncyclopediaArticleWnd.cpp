@@ -28,7 +28,7 @@ void CUIEncyclopediaArticleWnd::Init(LPCSTR xml_name, LPCSTR start_from)
 
 	strconcat				(sizeof(str),str,start_from,":image");
 	m_UIImage				= xr_new<CUIStatic>();	m_UIImage->SetAutoDelete(true);
-	xml_init.InitStatic			(uiXml,str,0,m_UIImage);
+	xml_init.InitStatic		(uiXml,str,0,m_UIImage);
 	AttachChild				(m_UIImage);
 
 	strconcat				(sizeof(str),str,start_from,":text_cont");

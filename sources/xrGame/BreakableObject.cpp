@@ -23,23 +23,21 @@ CBreakableObject::CBreakableObject	()
 }
 
 CBreakableObject::~CBreakableObject	()
-{
-}
+{ }
 
-void CBreakableObject::Load		(LPCSTR section)
+void CBreakableObject::Load(LPCSTR section)
 {
 	inherited::Load			(section);
-	m_remove_time=pSettings	->r_u32(section,"remove_time")*1000;
-	m_health_threshhold=pSettings	->r_float(section,"hit_break_threthhold");
-	m_damage_threshold=pSettings	->r_float(section,"collision_break_threthhold");
-	m_immunity_factor  =pSettings	->r_float(section,"immunity_factor");
-	this->shedule.t_min	= 1000;
-	this->shedule.t_max	= 1000;
+	m_remove_time			= pSettings->r_u32(section, "remove_time") * 1000;
+	m_health_threshhold		= pSettings->r_float(section, "hit_break_threthhold");
+	m_damage_threshold		= pSettings->r_float(section, "collision_break_threthhold");
+	m_immunity_factor		= pSettings->r_float(section, "immunity_factor");
+	this->shedule.t_min		= 1000;
+	this->shedule.t_max		= 1000;
 }
 
 BOOL CBreakableObject::net_Spawn(CSE_Abstract* DC)
 {
-
 	CSE_Abstract			*e		= (CSE_Abstract*)(DC);
 	CSE_ALifeObjectBreakable *obj	= smart_cast<CSE_ALifeObjectBreakable*>(e);
 	R_ASSERT				(obj);
@@ -66,12 +64,14 @@ void CBreakableObject::shedule_Update	(u32 dt)
 	inherited::shedule_Update		(dt);
 	if(m_pPhysicsShell&&!bRemoved&&Device.dwTimeGlobal-m_break_time>m_remove_time) SendDestroy();
 }
+
 void CBreakableObject::UpdateCL()
 {
 	inherited::UpdateCL();
 //	Fmatrix	d;
 	if(m_pPhysicsShell&&m_pPhysicsShell->isFullActive())m_pPhysicsShell->InterpolateGlobalTransform(&XFORM());
 }
+
 void CBreakableObject::enable_notificate()
 {
 	if(b_resived_damage)ProcessDamage();
@@ -112,12 +112,11 @@ BOOL CBreakableObject::UsedAI_Locations()
 	return					(FALSE);
 }
 
-
-
 void CBreakableObject::CreateUnbroken()
 {
 	m_pUnbrokenObject=P_BuildStaticGeomShell(smart_cast<CGameObject*>(this),ObjectContactCallback);
 }
+
 void CBreakableObject::DestroyUnbroken()
 {
 	if(!m_pUnbrokenObject) return;
@@ -168,7 +167,6 @@ void CBreakableObject::CreateBroken()
 	Fobb b;
 	Visual()->vis.box.getradius(b.m_halfsize);
 	m_Shell->SetMaxAABBRadius(_max(_max(b.m_halfsize.x,b.m_halfsize.y),b.m_halfsize.z)*2.f);//+2.f
-
 }
 
 void CBreakableObject::ActivateBroken()
@@ -200,8 +198,8 @@ void CBreakableObject::net_Destroy()
 	//Visual()->vis.box.set(m_saved_box);
 	Render->model_Delete(renderable.visual,TRUE);
 	cNameVisual_set("");
-
 }
+
 void CBreakableObject::Split()
 {
 	//for (u16 k=0; k<K->LL_BoneCount(); k++){
@@ -250,27 +248,29 @@ void CBreakableObject::ObjectContactCallback(bool&/**do_colide/**/,bool bo1,dCon
 	CBreakableObject* this_object;
 	dBodyID	body;
 	float norm_sign;
-	if(
-		usr_data_1&&
-		usr_data_1->ph_ref_object&&
+	if (
+		usr_data_1 &&
+		usr_data_1->ph_ref_object &&
 		usr_data_1->ph_ref_object->CLS_ID == CLSID_OBJECT_BREAKABLE
-		) {
-				body=dGeomGetBody(c.geom.g2);
-				if(!body) return;
-				this_object=static_cast<CBreakableObject*>(usr_data_1->ph_ref_object);
-				norm_sign=-1.f;
-		}
-	else if(
-		usr_data_2&&
-		usr_data_2->ph_ref_object&&
+		)
+	{
+		body = dGeomGetBody(c.geom.g2);
+		if (!body) return;
+		this_object = static_cast<CBreakableObject*>(usr_data_1->ph_ref_object);
+		norm_sign = -1.f;
+	}
+	else if (
+		usr_data_2 &&
+		usr_data_2->ph_ref_object &&
 		usr_data_2->ph_ref_object->CLS_ID == CLSID_OBJECT_BREAKABLE
-		){
-				body=dGeomGetBody(c.geom.g1);
-				if(!body) return;
-				this_object=static_cast<CBreakableObject*>(usr_data_2->ph_ref_object);
-				norm_sign=1.f;
-		}
-		else return;
+		)
+	{
+		body = dGeomGetBody(c.geom.g1);
+		if (!body) return;
+		this_object = static_cast<CBreakableObject*>(usr_data_2->ph_ref_object);
+		norm_sign = 1.f;
+	}
+	else return;
 
 	if(!this_object->m_pUnbrokenObject) return;
 	float c_damage=E_NlS(body,c.geom.normal,norm_sign);
@@ -289,11 +289,11 @@ void CBreakableObject::ProcessDamage()
 	NET_Packet			P;
 	SHit				HS;
 	HS.GenHeader		(GE_HIT, ID());
-	HS.whoID			= (ID());			
-	HS.weaponID			= (ID());			
+	HS.whoID			= (ID());
+	HS.weaponID			= (ID());
 	HS.dir				= (m_contact_damage_dir);
-	HS.power			= (m_max_frame_damage);					
-	HS.boneID			= (PKinematics(Visual())->LL_GetBoneRoot());				
+	HS.power			= (m_max_frame_damage);
+	HS.boneID			= (PKinematics(Visual())->LL_GetBoneRoot());
 	HS.p_in_bone_space	= (m_contact_damage_pos);
 	HS.impulse			= (0.f);
 	HS.hit_type			= (ALife::eHitTypeStrike);
@@ -304,6 +304,7 @@ void CBreakableObject::ProcessDamage()
 	m_max_frame_damage		= 0.f;
 	b_resived_damage		=false;
 }
+
 void CBreakableObject::CheckHitBreak(float power,ALife::EHitType hit_type)
 {
 	if( hit_type!=ALife::eHitTypeStrike)
@@ -311,7 +312,8 @@ void CBreakableObject::CheckHitBreak(float power,ALife::EHitType hit_type)
 		float res_power=power*m_immunity_factor;
 		if(power>m_health_threshhold) fHealth-=res_power;
 	}
-	if(fHealth<=0.f)	
+
+	if(fHealth<=0.f)
 	{
 		Break();return;
 	}

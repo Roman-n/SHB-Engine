@@ -35,8 +35,7 @@ protected:
 		_item_explosion_immunit,
 		_item_fire_wound_immunity,
 
-		_max_item_index,
-
+		_max_item_index
 	};
 	CUIStatic*					m_info_items[_max_item_index];
 };

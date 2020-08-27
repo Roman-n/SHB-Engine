@@ -1302,7 +1302,6 @@
     <Xml Include="config\ui\af_params.xml" />
     <Xml Include="config\ui\af_params_16.xml" />
     <Xml Include="config\ui\buy_menu_item.xml" />
-    <Xml Include="config\ui\buy_mp_item.xml" />
     <Xml Include="config\ui\carbody.xml" />
     <Xml Include="config\ui\carbody_item.xml" />
     <Xml Include="config\ui\carbody_item_16.xml" />
@@ -1310,15 +1309,12 @@
     <Xml Include="config\ui\carbody_new_16.xml" />
     <Xml Include="config\ui\car_panel.xml" />
     <Xml Include="config\ui\car_panel_16.xml" />
-    <Xml Include="config\ui\chat_mp.xml" />
     <Xml Include="config\ui\color_defs.xml" />
     <Xml Include="config\ui\contracts.xml" />
     <Xml Include="config\ui\contracts_character.xml" />
     <Xml Include="config\ui\encyclopedia.xml" />
     <Xml Include="config\ui\encyclopedia_item.xml" />
     <Xml Include="config\ui\events_new.xml" />
-    <Xml Include="config\ui\follower_character.xml" />
-    <Xml Include="config\ui\follower_panel.xml" />
     <Xml Include="config\ui\game_tutorials.xml" />
     <Xml Include="config\ui\global_map.xml" />
     <Xml Include="config\ui\grenade.xml" />

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
 	<string id="kb_active_jobs">
-		<text>Активные задачи в КПК</text>
+		<text>Активные задачи в ПДА</text>
 	</string>
 	<string id="kb_always_run">
-		<text>Шаг</text>
+		<text>Всегда бежать</text>
 	</string>
 	<string id="kb_artefact">
 		<text>Артефакт</text>
@@ -15,11 +15,20 @@
 	<string id="kb_binoculars">
 		<text>Бинокль</text>
 	</string>
+	<string id="kb_buy_menu">
+		<text>Меню покупки</text>
+	</string>
+	<string id="kb_chat">
+		<text>Чат</text>
+	</string>
+	<string id="kb_chat_team">
+		<text>Командный чат</text>
+	</string>
 	<string id="kb_console">
 		<text>Консоль</text>
 	</string>
 	<string id="kb_contacts">
-		<text>Контакты в КПК</text>
+		<text>Контакты в ПДА</text>
 	</string>
 	<string id="kb_crouch">
 		<text>Присесть</text>
@@ -60,6 +69,9 @@
 	<string id="kb_grp_movement">
 		<text>Движение</text>
 	</string>
+	<string id="kb_grp_multiplayer">
+		<text>Мультиплеер</text>
+	</string>
 	<string id="kb_grp_weapons">
 		<text>Оружие</text>
 	</string>
@@ -79,7 +91,7 @@
 		<text>Шаг влево</text>
 	</string>
 	<string id="kb_map">
-		<text>Карта в КПК</text>
+		<text>Карта в ПДА</text>
 	</string>
 	<string id="kb_next_slot">
 		<text>Оружие из следующего слота</text>
@@ -91,7 +103,7 @@
 		<text>Пауза</text>
 	</string>
 	<string id="kb_pda">
-		<text>КПК</text>
+		<text>ПДА</text>
 	</string>
 	<string id="kb_prev_slot">
 		<text>Оружие из предыдущего слота</text>
@@ -120,8 +132,14 @@
 	<string id="kb_screenshot">
 		<text>Скриншот</text>
 	</string>
+	<string id="kb_skin_menu">
+		<text>Меню выбора модели</text>
+	</string>
 	<string id="kb_sprint">
-		<text>Бег</text>
+		<text>Спринт</text>
+	</string>
+	<string id="kb_team_menu">
+		<text>Меню выбора команды</text>
 	</string>
 	<string id="kb_torch">
 		<text>Фонарик</text>
@@ -140,6 +158,18 @@
 	</string>
 	<string id="kb_use_medkit">
 		<text>Быстрое использ. аптечки</text>
+	</string>
+	<string id="kb_vote_begin">
+		<text>Начать голосование</text>
+	</string>
+	<string id="kb_vote_menu">
+		<text>Проголосовать</text>
+	</string>
+	<string id="kb_vote_no">
+		<text>Проголосовать "Нет"</text>
+	</string>
+	<string id="kb_vote_yes">
+		<text>Проголосовать "Да"</text>
 	</string>
 	<string id="kb_weapon1">
 		<text>Оружие 1</text>
@@ -166,6 +196,12 @@
 		<text>Предыдущее оружие этого типа</text>
 	</string>
 	<string id="kb_zoom">
-		<text>Приблизить</text>
+		<text>Увеличить</text>
+	</string>
+	<string id="speech_menu_group">
+		<text>Голосовые сообщения (1)</text>
+	</string>
+	<string id="speech_menu_personal">
+		<text>Голосовые сообщения (2)</text>
 	</string>
 </string_table>

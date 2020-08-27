@@ -26,7 +26,7 @@
 		<text>Группа сталкеров-нейтралов зовет на помощь.</text>
 	</string>
 	<string id="gar_newbie">
-		<text>Новичок, испуганный и уставший.</text>
+		<text>Новичок, испуганый и уставший.</text>
 	</string>
 	<string id="gar_secret1">
 		<text>Тайник, оставленный новичком.</text>
@@ -41,8 +41,8 @@
 		<text>Кучи мусора с аномалиями и артефактами.</text>
 	</string>
 	<string id="gar_tunnel">
-		<text>Железнодорожный тоннель.</text>
+		<text>Железнодорожный туннель.</text>
 	</string>
 	<string id="gar_wounded_help">
-		<text>Сигнал SOS. Очевидно, раненый сталкер.</text>
+		<text>Сигнал СОС. Очевидно, раненый сталкер.</text>
 	</string>

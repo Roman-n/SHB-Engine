@@ -88,8 +88,7 @@ void CUISleepWnd::SendMessage(CUIWindow *pWnd, s16 msg, void *pData)
 
 void CUISleepWnd::ModifyRestTime(s8 dHours, s8 dMinutes)
 {
-
-	// Проверка на влидный интервал
+	// Проверка на валидный интервал
 	R_ASSERT(dMinutes < 61);
 
 	s8 oldMin = m_Minutes;
