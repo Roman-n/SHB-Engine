@@ -56,26 +56,25 @@ void load_attack_goodwill()
 
 void RELATION_REGISTRY::Action (CEntityAlive* from, CEntityAlive* to, ERelationAction action)
 {
-	static CHARACTER_GOODWILL friend_kill_goodwill				= pSettings->r_s32(ACTIONS_POINTS_SECT, "friend_kill_goodwill");
-	static CHARACTER_GOODWILL neutral_kill_goodwill				= pSettings->r_s32(ACTIONS_POINTS_SECT, "neutral_kill_goodwill");
-	static CHARACTER_GOODWILL enemy_kill_goodwill				= pSettings->r_s32(ACTIONS_POINTS_SECT, "enemy_kill_goodwill");
-	static CHARACTER_GOODWILL community_member_kill_goodwill	= pSettings->r_s32(ACTIONS_POINTS_SECT, "community_member_kill_goodwill");
+	static CHARACTER_GOODWILL friend_kill_goodwill					= pSettings->r_s32(ACTIONS_POINTS_SECT, "friend_kill_goodwill");
+	static CHARACTER_GOODWILL neutral_kill_goodwill					= pSettings->r_s32(ACTIONS_POINTS_SECT, "neutral_kill_goodwill");
+	static CHARACTER_GOODWILL enemy_kill_goodwill					= pSettings->r_s32(ACTIONS_POINTS_SECT, "enemy_kill_goodwill");
+	static CHARACTER_GOODWILL community_member_kill_goodwill		= pSettings->r_s32(ACTIONS_POINTS_SECT, "community_member_kill_goodwill");
 
-	static CHARACTER_REPUTATION_VALUE friend_kill_reputation	= pSettings->r_s32(ACTIONS_POINTS_SECT, "friend_kill_reputation");
-	static CHARACTER_REPUTATION_VALUE neutral_kill_reputation	= pSettings->r_s32(ACTIONS_POINTS_SECT, "neutral_kill_reputation");
-	static CHARACTER_REPUTATION_VALUE enemy_kill_reputation		= pSettings->r_s32(ACTIONS_POINTS_SECT, "enemy_kill_reputation");
+	static CHARACTER_REPUTATION_VALUE friend_kill_reputation		= pSettings->r_s32(ACTIONS_POINTS_SECT, "friend_kill_reputation");
+	static CHARACTER_REPUTATION_VALUE neutral_kill_reputation		= pSettings->r_s32(ACTIONS_POINTS_SECT, "neutral_kill_reputation");
+	static CHARACTER_REPUTATION_VALUE enemy_kill_reputation			= pSettings->r_s32(ACTIONS_POINTS_SECT, "enemy_kill_reputation");
 
 	//(с) мин. время через которое снова будет зарегестрировано сообщение об атаке на персонажа
-	static u32	 min_attack_delta_time							= u32(1000.f * pSettings->r_float(ACTIONS_POINTS_SECT, "min_attack_delta_time"));
+	static u32	 min_attack_delta_time								= u32(1000.f * pSettings->r_float(ACTIONS_POINTS_SECT, "min_attack_delta_time"));
 
-	static CHARACTER_GOODWILL friend_fight_help_goodwill		= pSettings->r_s32(ACTIONS_POINTS_SECT, "friend_fight_help_goodwill");
-	static CHARACTER_GOODWILL neutral_fight_help_goodwill		= pSettings->r_s32(ACTIONS_POINTS_SECT, "neutral_fight_help_goodwill");
-	static CHARACTER_GOODWILL enemy_fight_help_goodwill			= pSettings->r_s32(ACTIONS_POINTS_SECT, "enemy_fight_help_goodwill");
+	static CHARACTER_GOODWILL friend_fight_help_goodwill			= pSettings->r_s32(ACTIONS_POINTS_SECT, "friend_fight_help_goodwill");
+	static CHARACTER_GOODWILL neutral_fight_help_goodwill			= pSettings->r_s32(ACTIONS_POINTS_SECT, "neutral_fight_help_goodwill");
+	static CHARACTER_GOODWILL enemy_fight_help_goodwill				= pSettings->r_s32(ACTIONS_POINTS_SECT, "enemy_fight_help_goodwill");
 
 	static CHARACTER_REPUTATION_VALUE friend_fight_help_reputation	= pSettings->r_s32(ACTIONS_POINTS_SECT, "friend_fight_help_reputation");
 	static CHARACTER_REPUTATION_VALUE neutral_fight_help_reputation = pSettings->r_s32(ACTIONS_POINTS_SECT, "neutral_fight_help_reputation");
 	static CHARACTER_REPUTATION_VALUE enemy_fight_help_reputation	= pSettings->r_s32(ACTIONS_POINTS_SECT, "enemy_fight_help_reputation");
-
 
 	CActor*				actor			= smart_cast<CActor*>				(from);
 	CInventoryOwner*	inv_owner_from	= smart_cast<CInventoryOwner*>		(from);
@@ -84,7 +83,10 @@ void RELATION_REGISTRY::Action (CEntityAlive* from, CEntityAlive* to, ERelationA
 
 	//вычисление изменения репутации и рейтинга пока ведется 
 	//только для актера
-	if(!inv_owner_from || from->cast_base_monster()) return;
+	if (!inv_owner_from || from->cast_base_monster( ))
+	{
+		return;
+	}
 	
 	ALife::ERelationType relation = ALife::eRelationTypeDummy;
 	if(stalker)
@@ -102,8 +104,10 @@ void RELATION_REGISTRY::Action (CEntityAlive* from, CEntityAlive* to, ERelationA
 				//учитывать ATTACK и FIGHT_HELP, только если прошло время
 				//min_attack_delta_time 
 				FIGHT_DATA* fight_data_from = FindFight (from->ID(), true);
-				if(Device.dwTimeGlobal - fight_data_from->attack_time < min_attack_delta_time)
+				if (Device.dwTimeGlobal - fight_data_from->attack_time < min_attack_delta_time)
+				{
 					break;
+				}
 
 				fight_data_from->attack_time = Device.dwTimeGlobal;
 
@@ -113,7 +117,7 @@ void RELATION_REGISTRY::Action (CEntityAlive* from, CEntityAlive* to, ERelationA
 				if(fight_data)
 				{
 					CAI_Stalker* defending_stalker = smart_cast<CAI_Stalker*>(Level().Objects.net_Find(fight_data->defender));
-					if(defending_stalker)	
+					if(defending_stalker)
 					{
 						CAI_Stalker*	attacking_stalker = smart_cast<CAI_Stalker*>(Level().Objects.net_Find(fight_data->attacker));
 						Action(actor, defending_stalker, attacking_stalker?FIGHT_HELP_HUMAN:FIGHT_HELP_MONSTER);
@@ -133,8 +137,10 @@ void RELATION_REGISTRY::Action (CEntityAlive* from, CEntityAlive* to, ERelationA
 						const CInventoryOwner* const_inv_owner_stalker_enemy	= smart_cast<const CInventoryOwner*>(stalker_enemy);
 						ALife::ERelationType relation_to_actor = GetRelationType(const_inv_owner_stalker_enemy, const_inv_owner_from);
 
-						if(relation_to_actor == ALife::eRelationTypeEnemy)
+						if (relation_to_actor == ALife::eRelationTypeEnemy)
+						{
 							bDangerScheme = true;
+						}
 					}
 				}
 				SAttackGoodwillStorage*		st		= bDangerScheme?&gw_danger:&gw_free;
@@ -144,20 +150,20 @@ void RELATION_REGISTRY::Action (CEntityAlive* from, CEntityAlive* to, ERelationA
 				switch (relation)
 				{
 					case ALife::eRelationTypeEnemy:
-						{
-							delta_goodwill		= st->enemy_attack_goodwill;
-							delta_reputation	= st->enemy_attack_reputation;
-						}break;
+					{
+						delta_goodwill = st->enemy_attack_goodwill;
+						delta_reputation = st->enemy_attack_reputation;
+					}break;
 					case ALife::eRelationTypeNeutral:
-						{
-							delta_goodwill		= st->neutral_attack_goodwill;
-							delta_reputation	= st->neutral_attack_reputation;
-						}break;
+					{
+						delta_goodwill = st->neutral_attack_goodwill;
+						delta_reputation = st->neutral_attack_reputation;
+					}break;
 					case ALife::eRelationTypeFriend:
-						{
-							delta_goodwill		= st->friend_attack_goodwill;
-							delta_reputation	= st->friend_attack_reputation;
-						}break;
+					{
+						delta_goodwill = st->friend_attack_goodwill;
+						delta_reputation = st->friend_attack_reputation;
+					}break;
 				};
 
 				//сталкер при нападении на членов своей же группировки отношения не меняют
