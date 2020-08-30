@@ -10,7 +10,7 @@ struct GameEvent
 	NET_Packet	P;
 };
 
-class  GameEventQueue
+class GameEventQueue
 {
 	xrCriticalSection		cs;
 	xr_deque<GameEvent*>	ready;

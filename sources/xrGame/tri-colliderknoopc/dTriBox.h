@@ -4,6 +4,7 @@
 #include "../ode_include.h"
 #include "../MathUtils.h"
 #include "dcTriListCollider.h"
+
 struct Triangle;
 struct dxBox {
 	dVector3 side;	// side lengths (x,y,z)

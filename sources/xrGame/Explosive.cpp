@@ -21,16 +21,16 @@
 #include "xrmessages.h"
 #include "gamemtllib.h"
 #include "clsid_game.h"
+
 #ifdef DEBUG
-#include "..\XR_3DA\StatGraph.h"
 #include "PHDebug.h"
 #endif
+
 #include "Physics.h"
-//#include "MathUtils.h"
-//#include "PHValideValues.h"
-#include "PHActivationShape.h"
+#include "PHActivationShape.h"//
 #include "game_base_space.h"
 #include "profiler.h"
+
 #define EFFECTOR_RADIUS 30.f
 const u16	TEST_RAYS_PER_OBJECT=5;
 const u16	BLASTED_OBJ_PROCESSED_PER_FRAME=3;

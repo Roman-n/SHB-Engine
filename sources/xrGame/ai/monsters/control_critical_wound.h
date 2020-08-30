@@ -14,4 +14,3 @@ public:
 	virtual void	on_release				();
 	virtual bool	check_start_conditions	();
 };
-

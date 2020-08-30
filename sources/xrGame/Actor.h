@@ -10,7 +10,7 @@
 #include "PHMovementControl.h"
 #include "PhysicsShell.h"
 #include "InventoryOwner.h"
-#include "..\XR_3DA\StatGraph.h"
+#include "..\XR_3DA\StatGraph.h"//
 #include "PhraseDialogManager.h"
 
 #include "step_manager.h"

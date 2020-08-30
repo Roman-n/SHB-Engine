@@ -6,7 +6,7 @@
 #include "..\XR_3DA\igame_level.h"
 #include "../xrNetServer/net_client.h"
 #include "script_export_space.h"
-#include "..\XR_3DA\StatGraph.h"
+#include "..\XR_3DA\StatGraph.h"//
 #include "xrMessages.h"
 #include "alife_space.h"
 #include "..\xrCore\xrDebug.h"

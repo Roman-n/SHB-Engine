@@ -150,7 +150,6 @@ void game_sv_Single::OnDetach(u16 eid_who, u16 eid_what)
 	}
 }
 
-
 void	game_sv_Single::Update			()
 {
 	inherited::Update	();
@@ -162,7 +161,6 @@ void	game_sv_Single::Update			()
 		}
 	}*/
 }
-
 
 ALife::_TIME_ID game_sv_Single::GetGameTime		()
 {

@@ -2,11 +2,12 @@
 
 #include "Actor_Flags.h"
 #include "HUDManager.h"//
+
 #ifdef DEBUG
 #	include "ode_include.h"
-#	include "..\XR_3DA\StatGraph.h"
 #	include "PHDebug.h"
 #endif // DEBUG
+
 #include "alife_space.h"
 #include "hit.h"
 #include "PHDestroyable.h"

@@ -51,7 +51,7 @@ public:
 	virtual BOOL		net_Spawn		( CSE_Abstract* DC );
 	virtual void		net_Export		(NET_Packet& P);
 	virtual void		net_Import		(NET_Packet& P);
-	virtual	void		net_Destroy		();
+	virtual void		net_Destroy		();
 
 	virtual void		save			(NET_Packet &output_packet);
 	virtual void		load			(IReader &input_packet);
@@ -61,16 +61,16 @@ public:
 	virtual void		Think			();
 	virtual void		HitSignal		(float /**P/**/, Fvector &/**local_dir/**/,	CObject* /**who/**/, s16 /**element/**/){};
 	virtual void		HitImpulse		(float /**P/**/, Fvector &/**vWorldDir/**/, 	Fvector& /**vLocalDir/**/){};
-	virtual	void		Hit				(SHit* pHDS){inherited::Hit(pHDS);}
-	virtual	void		UpdateCL		();
+	virtual void		Hit				(SHit* pHDS){inherited::Hit(pHDS);}
+	virtual void		UpdateCL		();
 
 	virtual void		g_fireParams			(const CHudItem* pHudItem, Fvector& P, Fvector& D);
 	virtual void		g_WeaponBones			(int &L, int &R1, int &R2);
-	virtual	float		ffGetFov				()	const {return 150.f;}
-	virtual	float		ffGetRange				()	const {return 30.f;}
-	virtual	void		OnEvent					(NET_Packet& P, u16 type);
-	virtual	void		feel_touch_new			(CObject* O);
-	virtual	void		DropItemSendMessage		(CObject *O);
+	virtual float		ffGetFov				()	const {return 150.f;}
+	virtual float		ffGetRange				()	const {return 30.f;}
+	virtual void		OnEvent					(NET_Packet& P, u16 type);
+	virtual void		feel_touch_new			(CObject* O);
+	virtual void		DropItemSendMessage		(CObject *O);
 	virtual void		shedule_Update			(u32 dt);
 
 	virtual BOOL		UsedAI_Locations		();
@@ -85,7 +85,7 @@ public:
 	virtual void			reinit					();
 	virtual void			reload					(const char* section);
 
-	static	void			BoneCallback			(CBoneInstance *B);
+	static void			BoneCallback			(CBoneInstance *B);
 			void			LookAtActor				(CBoneInstance *B);
 
 			void			OnStartTrade			();
@@ -94,21 +94,21 @@ public:
 	//игровое имя
 	virtual LPCSTR			Name					() const {return CInventoryOwner::Name();}
 
-	virtual	bool			can_attach				(const CInventoryItem *inventory_item) const;
+	virtual bool			can_attach				(const CInventoryItem *inventory_item) const;
 	virtual bool			use_bolts				() const;
-	virtual	void			spawn_supplies			();
+	virtual void			spawn_supplies			();
 
-	virtual	bool			bfAssignSound			(CScriptEntityAction *tpEntityAction);
+	virtual bool			bfAssignSound			(CScriptEntityAction *tpEntityAction);
 
-	virtual	ALife::ERelationType tfGetRelationType	(const CEntityAlive *tpEntityAlive) const;
+	virtual ALife::ERelationType tfGetRelationType	(const CEntityAlive *tpEntityAlive) const;
 
 	//////////////////////////////////////////////////////////////////////////
 	//генерируемые задания
 public:
 	//проверяет список артефактов в заказах
-	virtual	u32				ArtefactPrice			(CArtefact* pArtefact);
+	virtual u32				ArtefactPrice			(CArtefact* pArtefact);
 	//продажа артефакта, с последуещим изменением списка заказов  (true - если артефакт был в списке)
-	virtual	bool			BuyArtefact				(CArtefact* pArtefact);
+	virtual bool			BuyArtefact				(CArtefact* pArtefact);
 
 public:
 	IC		bool			busy_now				() const

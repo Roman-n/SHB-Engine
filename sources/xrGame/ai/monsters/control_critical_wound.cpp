@@ -22,20 +22,17 @@ void CControlCriticalWound::activate()
 	ctrl_anim->global.actual	= false;
 }
 
-
-
 void CControlCriticalWound::on_release()
 {
 	m_man->release_pure	(this);
 	m_man->unsubscribe	(this, ControlCom::eventAnimationEnd);
 
 	m_object->critical_wounded_state_stop();
-
 }
 
 bool CControlCriticalWound::check_start_conditions()
 {
-	if (is_active())						return false;	
+	if (is_active())						return false;
 	if (m_man->is_captured_pure())			return false;
 
 	return true;

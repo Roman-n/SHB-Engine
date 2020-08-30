@@ -7,13 +7,10 @@
 #include "Phdestroyable.h"
 #include "character_hit_animations.h"
 
-
 class CPhysicsShell;
 class CPHMovementControl;
 class CIKLimbsController;
 class interactive_motion;
-
-
 
 class CCharacterPhysicsSupport :
 public CPHSkeleton,

@@ -5,9 +5,11 @@
 
 #include "ActorEffector.h"
 #include "holder_custom.h"
+
 #ifdef DEBUG
-#include "PHDebug.h"
+#	include "PHDebug.h"
 #endif
+
 #include "alife_space.h"
 #include "hit.h"
 #include "PHDestroyable.h"

@@ -7,13 +7,13 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "alife_spawn_registry_header.h"
 #include "alife_space.h"
 #include "..\XR_3DA\xrlevel.h"
 
 CALifeSpawnHeader::~CALifeSpawnHeader	()
-{
-}
+{ }
 
 void CALifeSpawnHeader::load			(IReader	&file_stream)
 {

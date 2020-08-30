@@ -29,8 +29,7 @@ struct						dSurfaceParameters;
 // defs
 
 #ifdef DEBUG
-	#include "..\XR_3DA\StatGraph.h"
-	#include "PHDebug.h"
+#	include "PHDebug.h"
 #endif
 
 class CScriptEntityAction;

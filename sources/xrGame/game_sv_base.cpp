@@ -45,7 +45,7 @@ game_PlayerState*	game_sv_GameState::get_it					(u32 it)
 	else				return C->ps;
 }
 
-game_PlayerState*	game_sv_GameState::get_id					(ClientID id)							
+game_PlayerState*	game_sv_GameState::get_id					(ClientID id)
 {
 	xrClientData*	C	= (xrClientData*)m_server->ID_to_client	(id);
 	if (0==C)			return NULL;
@@ -69,14 +69,14 @@ LPCSTR				game_sv_GameState::get_name_it				(u32 it)
 	else				return *C->name;
 }
 
-LPCSTR				game_sv_GameState::get_name_id				(ClientID id)							
+LPCSTR				game_sv_GameState::get_name_id				(ClientID id)
 {
 	xrClientData*	C	= (xrClientData*)m_server->ID_to_client	(id);
 	if (0==C)			return 0;
 	else				return *C->name;
 }
 
-LPCSTR				game_sv_GameState::get_player_name_id				(ClientID id)								
+LPCSTR				game_sv_GameState::get_player_name_id				(ClientID id)
 {
 	xrClientData* xrCData	=	m_server->ID_to_client(id);
 	if(xrCData)
@@ -206,7 +206,7 @@ string64&			game_sv_GameState::get_option_s				(LPCSTR lst, LPCSTR name, LPCSTR 
 	LPCSTR			start	= strstr(lst,op);
 	if (start)		
 	{
-		LPCSTR			begin	= start + xr_strlen(op); 
+		LPCSTR			begin	= start + xr_strlen(op);
 		sscanf			(begin, "%[^/]",ret);
 	}
 	else			
@@ -238,7 +238,7 @@ void game_sv_GameState::net_Export_State						(NET_Packet& P, ClientID to)
 	u32 p_count = 0;
 	for (u32 p_it=0; p_it<get_players_count(); ++p_it)
 	{
-		xrClientData*	C		=	(xrClientData*)	m_server->client_Get	(p_it);		
+		xrClientData*	C		=	(xrClientData*)	m_server->client_Get	(p_it);
 		if (!C->net_Ready || (C->ps->IsSkip() && C->ID != to)) continue;
 		p_count++;
 	};
@@ -284,7 +284,7 @@ void game_sv_GameState::net_Export_Update(NET_Packet& P, ClientID id_to, ClientI
 	if (A)
 	{
 		u16 bk_flags = A->flags__;
-		if (id==id_to)	
+		if (id==id_to)
 		{
 			A->setFlag(GAME_PLAYER_FLAG_LOCAL);
 		}
@@ -320,7 +320,7 @@ static float							rpoints_Dist [TEAM_COUNT] = {1000.f, 1000.f, 1000.f, 1000.f};
 void game_sv_GameState::Create					(shared_str &options)
 {
 	string_path	fn_game;	
-	if (FS.exist(fn_game, "$level$", "level.game")) 
+	if (FS.exist(fn_game, "$level$", "level.game"))
 	{
 		IReader *F = FS.r_open	(fn_game);
 		IReader *O = 0;
@@ -363,7 +363,6 @@ void game_sv_GameState::Create					(shared_str &options)
 			};
 			O->close();
 		}
-
 		FS.r_close	(F);
 	}
 
@@ -401,7 +400,7 @@ void game_sv_GameState::Create					(shared_str &options)
 		}
 	};
 	//---------------------------------------------------------------------
-	ReadOptions(options);	
+	ReadOptions(options);
 }
 
 void	game_sv_GameState::ReadOptions				(shared_str &options)
@@ -426,12 +425,10 @@ void	game_sv_GameState::ReadOptions				(shared_str &options)
 //-----------------------------------------------------------
 static bool g_bConsoleCommandsCreated_SV_Base = false;
 void	game_sv_GameState::ConsoleCommands_Create	()
-{
-};
+{ };
 
 void	game_sv_GameState::ConsoleCommands_Clear	()
-{
-};
+{ };
 
 void	game_sv_GameState::assign_RP				(CSE_Abstract* E, game_PlayerState* ps_who)
 {
@@ -519,8 +516,8 @@ CSE_Abstract*		game_sv_GameState::spawn_end				(CSE_Abstract* E, ClientID id)
 }
 
 void game_sv_GameState::GenerateGameMessage (NET_Packet &P)
-{ 
-	P.w_begin(M_GAMEMESSAGE); 
+{
+	P.w_begin(M_GAMEMESSAGE);
 };
 
 void game_sv_GameState::u_EventGen(NET_Packet& P, u16 type, u16 dest)
@@ -562,7 +559,7 @@ game_sv_GameState::game_sv_GameState()
 	m_bFastRestart = false;
 	m_pMapRotation_List.clear();
 
-	for (int i=0; i<TEAM_COUNT; i++) rpoints_MinDist[i] = 1000.0f;	
+	for (int i=0; i<TEAM_COUNT; i++) rpoints_MinDist[i] = 1000.0f;
 }
 
 game_sv_GameState::~game_sv_GameState()
@@ -583,8 +580,7 @@ bool game_sv_GameState::change_level (NET_Packet &net_packet, ClientID sender)
 }
 
 void game_sv_GameState::save_game (NET_Packet &net_packet, ClientID sender)
-{
-}
+{ }
 
 bool game_sv_GameState::load_game (NET_Packet &net_packet, ClientID sender)
 {
@@ -592,12 +588,10 @@ bool game_sv_GameState::load_game (NET_Packet &net_packet, ClientID sender)
 }
 
 void game_sv_GameState::reload_game (NET_Packet &net_packet, ClientID sender)
-{
-}
+{ }
 
 void game_sv_GameState::switch_distance (NET_Packet &net_packet, ClientID sender)
-{
-}
+{ }
 
 void game_sv_GameState::OnHit (u16 id_hitter, u16 id_hitted, NET_Packet& P)
 {
@@ -681,7 +675,7 @@ bool game_sv_GameState::NewPlayerName_Exists( void* pClient, LPCSTR NewName )
 	if ( !CL->name || xr_strlen( CL->name.c_str() ) == 0 ) return false;
 
 	u32	cnt	= get_players_count();
-	for ( u32 it = 0; it < cnt; ++it )	
+	for ( u32 it = 0; it < cnt; ++it )
 	{
 		IClient*	pIC	= m_server->client_Get(it);
 		if ( !pIC || pIC == CL ) continue;
@@ -761,20 +755,16 @@ RPoint game_sv_GameState::getRP (u16 team_idx, u32 rp_idx)
 };
 
 void game_sv_GameState::teleport_object	(NET_Packet &packet, u16 id)
-{
-}
+{ }
 
 void game_sv_GameState::add_restriction	(NET_Packet &packet, u16 id)
-{
-}
+{ }
 
 void game_sv_GameState::remove_restriction(NET_Packet &packet, u16 id)
-{
-}
+{ }
 
 void game_sv_GameState::remove_all_restrictions	(NET_Packet &packet, u16 id)
-{
-}
+{ }
 
 void game_sv_GameState::MapRotation_AddMap		(LPCSTR MapName)
 {
@@ -806,7 +796,7 @@ void game_sv_GameState::MapRotation_ListMaps	()
 };
 
 void game_sv_GameState::OnRoundStart			()
-{ 
+{
 	m_bMapNeedRotation = false;
 	m_bFastRestart = false;
 
@@ -822,7 +812,7 @@ void game_sv_GameState::OnRoundStart			()
 }// старт раунда
 
 void game_sv_GameState::OnRoundEnd()
-{ 
+{
 	if ( round_end_reason == eRoundEnd_GameRestarted || round_end_reason == eRoundEnd_GameRestartedFast )
 	{
 		m_bMapNeedRotation = false;
@@ -956,5 +946,5 @@ void		game_sv_GameState::OnRender				()
 #endif
 //  [7/5/2005]
 
-BOOL	game_sv_GameState::IsVotingEnabled			()	{return g_sv_base_iVotingEnabled != 0;};
-BOOL	game_sv_GameState::IsVotingEnabled			(u16 flag) {return (g_sv_base_iVotingEnabled&flag) != 0;};
+//---BOOL	game_sv_GameState::IsVotingEnabled			()	{return g_sv_base_iVotingEnabled != 0;};
+//---BOOL	game_sv_GameState::IsVotingEnabled			(u16 flag) {return (g_sv_base_iVotingEnabled&flag) != 0;};

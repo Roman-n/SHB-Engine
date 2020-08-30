@@ -133,7 +133,7 @@ namespace ALife {
 		else if (!stricmp(caHitType,"shock"))
 				return(eHitTypeShock);
 		else if (!stricmp(caHitType,"strike"))
-            	return(eHitTypeStrike);
+				return(eHitTypeStrike);
 		else if (!stricmp(caHitType,"wound"))
 				return(eHitTypeWound);
 		else if (!stricmp(caHitType,"radiation"))

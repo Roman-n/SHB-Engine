@@ -3,7 +3,7 @@
 #include "level_bullet_manager.h"
 #include "game_base_kill_type.h"
 
-struct BulletData 
+struct BulletData
 {
 	shared_str		FirerName;
 	shared_str		WeaponName;
@@ -42,8 +42,8 @@ struct HitData
 	bool			operator	==		(u32 ID)	{return ID == BulletID;};
 	bool			operator	!=		(u32 ID)	{return ID != BulletID;};
 	//-----------------------------------------------------------
-	void				Write						(FILE* pFile);
-	void				WriteLtx					(CInifile& ini, LPCSTR sect, LPCSTR perfix);
+//---	void				Write						(FILE* pFile);
+//---	void				WriteLtx					(CInifile& ini, LPCSTR sect, LPCSTR perfix);
 };
 
 DEF_VECTOR	(HITS_VEC, HitData);
@@ -64,7 +64,6 @@ struct Weapon_Statistic
 
 	u32				m_dwNumCompleted;
 	HITS_VEC		m_Hits;
-	
 
 	Weapon_Statistic(LPCSTR Name);
 	~Weapon_Statistic();
@@ -75,8 +74,8 @@ struct Weapon_Statistic
 	bool			FindHit				(u32 BulletID, HITS_VEC_it& Hit_it);
 	bool			operator	==		(LPCSTR name){int res = xr_strcmp(WName.c_str(), name);return	res	 == 0;}
 	//-----------------------------------------------------------
-	void				Write						(FILE* pFile);
-	void				WriteLtx					(CInifile& ini, LPCSTR sect);
+//---	void				Write						(FILE* pFile);
+//---	void				WriteLtx					(CInifile& ini, LPCSTR sect);
 };
 
 DEF_VECTOR		(WEAPON_STATS, Weapon_Statistic);
@@ -97,7 +96,7 @@ struct Player_Statistic
 
 	u8				m_dwCurrentTeam;
 
-	WEAPON_STATS	aWeaponStats;	
+	WEAPON_STATS	aWeaponStats;
 	//-----------------------------------------------
 	u32				m_dwCurMoneyRoundDelta;
 
@@ -111,8 +110,8 @@ struct Player_Statistic
 
 	bool			operator	==		(LPCSTR name){int res = xr_strcmp(PName.c_str(), name);return	res	 == 0;}
 	//-----------------------------------------------------------
-	void				Write						(FILE* pFile);
-	void				WriteLtx					(CInifile& ini, LPCSTR sect);
+//---	void				Write						(FILE* pFile);
+//---	void				WriteLtx					(CInifile& ini, LPCSTR sect);
 };
 
 DEF_VECTOR	(PLAYERS_STATS, Player_Statistic);
@@ -131,7 +130,7 @@ DEF_VECTOR(BChR, Bullet_Check_Request);
 
 struct Bullet_Check_Array
 {
-	u32	SenderID;	
+	u32	SenderID;
 
 	BChR	Requests;
 	u8		NumTrue;
@@ -141,7 +140,7 @@ struct Bullet_Check_Array
 	bool			operator	!=		(u32 ID){return	ID != SenderID;}
 	Bullet_Check_Array(u32 ID) : SenderID(ID) {Requests.clear(); NumTrue = 0; NumFalse = 0;};
 	~Bullet_Check_Array () {Requests.clear_and_free();};
-};	
+};
 
 DEF_VECTOR(BChA, Bullet_Check_Array);
 
@@ -179,7 +178,7 @@ struct WeaponUsageStatistic {
 	void				OnBullet_Hit			(SBullet* pBullet, u16 TargetID, s16 element, Fvector HitLocation);
 	void				OnBullet_Remove			(SBullet* pBullet);
 	//-----------------------------------------------
-	
+
 	u32						m_dwLastRequestSenderID;
 
 	BChA					m_Requests;
@@ -202,9 +201,9 @@ struct WeaponUsageStatistic {
 	void				OnUpdateRespond				(NET_Packet* P);
 	//-----------------------------------------------
 	string_path			mFileName;
-	void				Write						(FILE* pFile);
+//---	void				Write						(FILE* pFile);
 
-	void				WriteLtx					(CInifile& ini);
+//---	void				WriteLtx					(CInifile& ini);
 };
 
 struct Bullet_Check_Respond_True

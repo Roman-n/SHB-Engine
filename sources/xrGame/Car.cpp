@@ -3,7 +3,6 @@
 #include "Physics.h"
 
 #ifdef DEBUG
-#	include "..\XR_3DA\StatGraph.h"
 #	include "PHDebug.h"
 #endif // DEBUG
 
@@ -24,7 +23,7 @@
 #include "CarWeapon.h"
 #include "game_object_space.h"
 #include "GameMtlLib.h"
-#include "PHActivationShape.h"
+#include "PHActivationShape.h"//
 #include "CharacterPhysicsSupport.h"
 #include "car_memory.h"
 

@@ -1,5 +1,6 @@
 #include "stdafx.h"
-#include "climableobject.h "
+
+#include "climableobject.h"
 #include "PHStaticGeomShell.h"
 #include "xrServer_Objects_ALife.h"
 #include "PHCharacter.h"

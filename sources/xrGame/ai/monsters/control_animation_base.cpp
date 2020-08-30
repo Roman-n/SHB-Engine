@@ -13,22 +13,23 @@
 #include "../../sound_player.h"
 
 // DEBUG purpose only
-char *dbg_action_name_table[] = {
+char* dbg_action_name_table[ ] =
+{
 	"ACT_STAND_IDLE",
-		"ACT_SIT_IDLE",
-		"ACT_LIE_IDLE",
-		"ACT_WALK_FWD",
-		"ACT_WALK_BKWD",
-		"ACT_RUN",
-		"ACT_EAT",
-		"ACT_SLEEP",
-		"ACT_REST",
-		"ACT_DRAG",
-		"ACT_ATTACK",
-		"ACT_STEAL",
-		"ACT_LOOK_AROUND",
-		"ACT_JUMP"
-};	
+	"ACT_SIT_IDLE",
+	"ACT_LIE_IDLE",
+	"ACT_WALK_FWD",
+	"ACT_WALK_BKWD",
+	"ACT_RUN",
+	"ACT_EAT",
+	"ACT_SLEEP",
+	"ACT_REST",
+	"ACT_DRAG",
+	"ACT_ATTACK",
+	"ACT_STEAL",
+	"ACT_LOOK_AROUND",
+	"ACT_JUMP"
+};
 
 CControlAnimationBase::CControlAnimationBase()
 {
@@ -119,7 +120,7 @@ void CControlAnimationBase::on_event(ControlCom::EEventType type, ControlCom::IE
 void CControlAnimationBase::select_animation(bool anim_end)
 {
 	// start new animation
-	SControlAnimationData		*ctrl_data = (SControlAnimationData*)m_man->data(this, ControlCom::eControlAnimation); 
+	SControlAnimationData		*ctrl_data = (SControlAnimationData*)m_man->data(this, ControlCom::eControlAnimation);
 	if (!ctrl_data) return;
 
 	if (m_state_attack && !anim_end) return;
@@ -143,7 +144,7 @@ void CControlAnimationBase::select_animation(bool anim_end)
 		index = ::Random.randI(anim_it->count);
 	}
 
-	// установить анимацию	
+	// установить анимацию
 	string128	s1,s2;
 	MotionID	cur_anim		= smart_cast<CKinematicsAnimated*>(m_object->Visual())->ID_Cycle_Safe(strconcat(sizeof(s2),s2,*anim_it->target_name,itoa(index,s1,10)));
 
@@ -192,7 +193,7 @@ bool CControlAnimationBase::CheckTransition(EMotionAnim from, EMotionAnim to)
 			}
 
 			m_object->com_man().seq_add(get_motion_id(I->anim_transition));
-			b_activated	= true;	
+			b_activated	= true;
 
 
 			if (I->chain) {
@@ -246,7 +247,6 @@ SAAParam &CControlAnimationBase::AA_GetParams(MotionID motion, float time_perc)
 	return (*(m_attack_anims.begin()));
 }
 
-
 EPState	CControlAnimationBase::GetState (EMotionAnim a)
 {
 	// найти анимацию 
@@ -290,7 +290,6 @@ float CControlAnimationBase::GetAnimSpeed(EMotionAnim anim)
 	return				(def->Dequantize(def->speed));
 }
 
-
 bool CControlAnimationBase::IsTurningCurAnim()
 {
 	SAnimItem *item_it = m_anim_storage[cur_anim_info().motion];
@@ -308,7 +307,6 @@ bool CControlAnimationBase::IsStandCurAnim()
 	if (fis_zero(item_it->velocity.velocity.linear)) return true;
 	return false;
 }
-
 
 EAction CControlAnimationBase::VelocityIndex2Action(u32 velocity_index)
 {
@@ -344,8 +342,6 @@ EAction CControlAnimationBase::GetActionFromPath()
 
 	return action;
 }
-
-
 
 //////////////////////////////////////////////////////////////////////////
 // Debug
@@ -545,7 +541,6 @@ void parse_anim_params(LPCSTR val, SAAParam &anim)
 	clamp(anim.foh.to_yaw,		-clamp_val, clamp_val);
 	clamp(anim.foh.from_pitch,	-clamp_val, clamp_val);
 	clamp(anim.foh.to_pitch,	-clamp_val, clamp_val);
-
 }
 
 void CControlAnimationBase::AA_reload(LPCSTR section)
@@ -602,4 +597,3 @@ void CControlAnimationBase::free_anim_storage()
 		}
 	}
 }
-

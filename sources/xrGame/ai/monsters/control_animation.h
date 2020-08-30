@@ -33,7 +33,6 @@ struct SAnimationSignalEventData : public ControlCom::IEventData {
 	IC			SAnimationSignalEventData(MotionID m, float perc, u32 id) : time_perc(perc), event_id(id), motion(m) {}
 };
 
-
 class CControlAnimation : public CControl_ComPure<SControlAnimationData> {
 	typedef CControl_ComPure<SControlAnimationData> inherited;
 

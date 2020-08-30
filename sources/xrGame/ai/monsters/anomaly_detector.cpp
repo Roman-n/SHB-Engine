@@ -7,12 +7,10 @@
 #include "../../space_restriction_manager.h"
 
 CAnomalyDetector::CAnomalyDetector(CBaseMonster *monster) : m_object(monster)
-{
-}
+{ }
 
 CAnomalyDetector::~CAnomalyDetector()
-{
-}
+{ }
 
 void CAnomalyDetector::load(LPCSTR section)
 {
@@ -23,17 +21,15 @@ void CAnomalyDetector::load(LPCSTR section)
 void CAnomalyDetector::reinit()
 {
 	m_storage.clear();
-
 	m_active = false;
 }
-
 
 void CAnomalyDetector::update_schedule()
 {
 	if (m_active)
 		m_object->feel_touch_update(m_object->Position(), m_radius);
 
-	if (m_storage.empty()) 
+	if (m_storage.empty())
 		return;
 
 	xr_vector<u16>			temp_out_restrictors;
@@ -61,7 +57,6 @@ void CAnomalyDetector::update_schedule()
 
 	m_object->control().path_builder().restrictions().remove_restrictions(temp_out_restrictors,temp_in_restrictors);
 
-	
 	// remove from storage
 	m_storage.erase		(
 		std::remove_if(

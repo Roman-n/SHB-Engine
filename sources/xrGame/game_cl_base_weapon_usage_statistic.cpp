@@ -72,7 +72,7 @@ void Weapon_Statistic::net_save(NET_Packet* P)
 
 	P->w_u32(m_dwNumCompleted);
 	u32 i = 0;
-	while (i<m_Hits.size())	
+	while (i<m_Hits.size())
 	{
 		HitData& Hit = m_Hits[i];
 		if (Hit.Completed)
@@ -156,7 +156,7 @@ WeaponUsageStatistic::WeaponUsageStatistic()
 
 void WeaponUsageStatistic::Clear()
 {
-	ActiveBullets.clear			();	
+	ActiveBullets.clear			();
 	aPlayersStatistic.clear		();
 	m_Requests.clear			();
 	m_dwLastRequestSenderID		= 0;
@@ -208,7 +208,7 @@ WEAPON_STATS_it	Player_Statistic::FindPlayersWeapon	(LPCSTR WeaponName)
 	WEAPON_STATS_it pWeaponI = std::find(aWeaponStats.begin(), aWeaponStats.end(), WeaponName);
 	if (pWeaponI == aWeaponStats.end() || !((*pWeaponI) == WeaponName))
 	{
-		aWeaponStats.push_back(Weapon_Statistic(WeaponName));		
+		aWeaponStats.push_back(Weapon_Statistic(WeaponName));
 		pWeaponI = aWeaponStats.end()-1;
 		pWeaponI->InvName = pSettings->r_string_wb(WeaponName, "inv_name");
 	}
@@ -240,7 +240,7 @@ void WeaponUsageStatistic::RemoveBullet(ABULLETS_it& Bullet_it)
 	{
 		HitIt->Completed = true;
 		WeaponIt->m_dwNumCompleted++;
-	};	
+	};
 	//-------------------------------------------------------------
 	*Bullet_it = ActiveBullets.back();
 	ActiveBullets.pop_back();
@@ -294,8 +294,8 @@ void WeaponUsageStatistic::OnBullet_Hit(SBullet* pBullet, u16 TargetID, s16 elem
 	if (!FindBullet(pBullet->m_dwID, BulletIt)) return;
 	//-----------------------------------------------------
 	PLAYERS_STATS_it PlayerIt = FindPlayer(*(BulletIt->FirerName));
-	WEAPON_STATS_it WeaponIt = PlayerIt->FindPlayersWeapon(*(BulletIt->WeaponName));	
-	if (!BulletIt->HitRefCount++) 
+	WEAPON_STATS_it WeaponIt = PlayerIt->FindPlayersWeapon(*(BulletIt->WeaponName));
+	if (!BulletIt->HitRefCount++)
 	{
 		WeaponIt->m_dwHitsScored++;
 		WeaponIt->m_dwHitsScored_d++;
@@ -307,7 +307,7 @@ void WeaponUsageStatistic::OnBullet_Hit(SBullet* pBullet, u16 TargetID, s16 elem
 		//---------------------------
 		BulletData& BD = *BulletIt;
 		HitData NewHit;
-		//---------------------------		
+		//---------------------------
 		NewHit.Completed = false;
 		NewHit.Deadly = false;
 		NewHit.BoneID = element;
@@ -320,7 +320,6 @@ void WeaponUsageStatistic::OnBullet_Hit(SBullet* pBullet, u16 TargetID, s16 elem
 		//---------------------------
 		WeaponIt->m_Hits.push_back(NewHit);
 	};
-
 }
 
 void WeaponUsageStatistic::OnBullet_Remove(SBullet* pBullet)
@@ -364,7 +363,7 @@ void WeaponUsageStatistic::OnBullet_Check_Result(bool Result)
 			(*pSenderI).Requests.back().Result = Result;
 			(*pSenderI).Requests.back().Processed = true;
 			if (Result) (*pSenderI).NumTrue++;
-			else (*pSenderI).NumFalse++;			
+			else (*pSenderI).NumFalse++;
 		}
 		else
 		{
@@ -404,7 +403,7 @@ void WeaponUsageStatistic::Send_Check_Respond()
 				{
 					pSTrue->BulletID = curBChR.BulletID;
 					pSTrue->BoneID = curBChR.BoneID;
-					pSTrue++;				
+					pSTrue++;
 //					HitChecksRespondedTrue++;
 					NumTrue++;
 				}
@@ -441,7 +440,7 @@ void WeaponUsageStatistic::On_Check_Respond(NET_Packet* P)
 	u8 NumTrue = P->r_u8();
 
 	u8 i;
-	ABULLETS_it BulletIt;	
+	ABULLETS_it BulletIt;
 	for (i=0; i<NumFalse; i++)
 	{
 		u32 BulletID = P->r_u32();
@@ -478,7 +477,7 @@ void WeaponUsageStatistic::On_Check_Respond(NET_Packet* P)
 			HData.Deadly				= true;
 			HData.BoneID				= BoneID;
 			CObject* pObj				= Level().Objects.net_Find(HData.TargetID);
-			
+
 			if (pObj)
 				HData.BoneName			= smart_cast<CKinematics*>(pObj->Visual())->LL_BoneName_dbg(BoneID);
 		}
@@ -553,7 +552,7 @@ void WeaponUsageStatistic::OnExplosionKill(game_PlayerState* ps, const SHit& hit
 	WeaponIt->m_dwKillsScored++;
 
 	HitData NewHit;
-	//---------------------------		
+	//---------------------------
 	NewHit.Completed	= true;
 	NewHit.Deadly		= true;
 	NewHit.BoneID		= hit.boneID;
@@ -626,4 +625,3 @@ void WeaponUsageStatistic::SetCollectData(bool Collect)
 		Clear();
 	m_bCollectStatistic = Collect;
 }
-

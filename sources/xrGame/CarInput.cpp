@@ -2,9 +2,9 @@
 
 #ifdef DEBUG
 #include "ode_include.h"
-#include "..\XR_3DA\StatGraph.h"
 #include "PHDebug.h"
 #endif
+
 #include "alife_space.h"
 #include "hit.h"
 #include "phdestroyable.h"

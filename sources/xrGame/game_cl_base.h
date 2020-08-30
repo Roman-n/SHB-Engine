@@ -32,8 +32,8 @@ class	game_cl_GameState	: public game_GameState, public ISheduled
 //	bool								m_bCrosshair;	//был ли показан прицел-курсор HUD перед вызовом меню
 protected:
 	CUIGameCustom*						m_game_ui_custom;
-	u16									m_u16VotingEnabled;	
-	bool								m_bServerControlHits;	
+	u16									m_u16VotingEnabled;
+	bool								m_bServerControlHits;
 
 public:
 	typedef xr_map<ClientID,game_PlayerState*>	PLAYERS_MAP;
@@ -45,8 +45,7 @@ public:
 	game_PlayerState*					local_player;
 //.	xr_vector<CGameObject*>				targets;
 
-
-	WeaponUsageStatistic				*m_WeaponUsageStatistic;	
+	WeaponUsageStatistic				*m_WeaponUsageStatistic;
 	virtual		void				reset_ui				();
 	virtual		void				CommonMessageOut		(LPCSTR msg);
 
@@ -54,7 +53,7 @@ private:
 				void				switch_Phase			(u32 new_phase)		{inherited::switch_Phase(new_phase);};
 protected:
 
-	virtual		void				OnSwitchPhase			(u32 old_phase, u32 new_phase);	
+	virtual		void				OnSwitchPhase			(u32 old_phase, u32 new_phase);
 
 	//for scripting enhancement
 	virtual		void				TranslateGameMessage	(u32 msg, NET_Packet& P);
@@ -95,29 +94,27 @@ public:
 	virtual		CUIGameCustom*		createGameUI			(){return NULL;};
 	virtual		void				GetMapEntities			(xr_vector<SZoneMapEntityData>& dst)	{};
 
-
 				void				StartStopMenu			(CUIDialogWnd* pDialog, bool bDoHideIndicators);
 	virtual		void				shedule_Update			(u32 dt);
 
 	void							u_EventGen				(NET_Packet& P, u16 type, u16 dest);
 	void							u_EventSend				(NET_Packet& P);
 
-	virtual		void				ChatSayTeam				(const shared_str &phrase)	{};
-	virtual		void				ChatSayAll				(const shared_str &phrase)	{};
+//---	virtual		void				ChatSayTeam				(const shared_str &phrase)	{};
+//---	virtual		void				ChatSayAll				(const shared_str &phrase)	{};
 	virtual		void				OnChatMessage			(NET_Packet* P)	{};
 	virtual		void				OnWarnMessage			(NET_Packet* P)	{};
 	virtual		void				OnRadminMessage			(u16 type, NET_Packet* P)	{};
-	
 
-	virtual		bool				IsVotingEnabled			()	{return m_u16VotingEnabled != 0;};
-	virtual		bool				IsVotingEnabled			(u16 flag) {return (m_u16VotingEnabled & flag) != 0;};
-	virtual		bool				IsVotingActive			()	{ return false; };
-	virtual		void				SetVotingActive			( bool Active )	{ };
-	virtual		void				SendStartVoteMessage	(LPCSTR args)	{};
-	virtual		void				SendVoteYesMessage		()	{};
-	virtual		void				SendVoteNoMessage		()	{};
-	virtual		void				OnVoteStart				(NET_Packet& P)	{};
-	virtual		void				OnVoteStop				(NET_Packet& P)	{};
+//---	virtual		bool				IsVotingEnabled			()	{return m_u16VotingEnabled != 0;};
+//---	virtual		bool				IsVotingEnabled			(u16 flag) {return (m_u16VotingEnabled & flag) != 0;};
+//---	virtual		bool				IsVotingActive			()	{ return false; };
+//---	virtual		void				SetVotingActive			( bool Active )	{ };
+//---	virtual		void				SendStartVoteMessage	(LPCSTR args)	{};
+//---	virtual		void				SendVoteYesMessage		()	{};
+//---	virtual		void				SendVoteNoMessage		()	{};
+//---	virtual		void				OnVoteStart				(NET_Packet& P)	{};
+//---	virtual		void				OnVoteStop				(NET_Packet& P)	{};
 
 	virtual		void				OnRender				()	{};
 	virtual		bool				IsServerControlHits		()	{return m_bServerControlHits;};
@@ -128,7 +125,7 @@ public:
 	virtual		void				OnSpawn					(CObject* pObj)	{};
 	virtual		void				OnDestroy				(CObject* pObj)	{};
 
-	virtual		void				OnPlayerFlagsChanged	(game_PlayerState* ps)	{};
-	virtual		void				OnPlayerVoted			(game_PlayerState* ps)	{};
+//---	virtual		void				OnPlayerFlagsChanged	(game_PlayerState* ps)	{};
+//--	virtual		void				OnPlayerVoted			(game_PlayerState* ps)	{};
 	virtual		void				SendPickUpEvent			(u16 ID_who, u16 ID_what);
 };

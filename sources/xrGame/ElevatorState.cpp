@@ -1,13 +1,15 @@
 #include "stdafx.h"
+
 #include "ElevatorState.h"
 #include "ClimableObject.h"
 #include "PHCharacter.h"
 #include "MathUtils.h"
 #include "PHWorld.h"
+
 #ifdef DEBUG
-#include "..\XR_3DA\Statgraph.h"
 #include "PHDebug.h"
 #endif
+
 static const float getting_on_dist		=0.3f;
 static const float getting_out_dist		=0.4f;
 static const float start_climbing_dist	=0.f;

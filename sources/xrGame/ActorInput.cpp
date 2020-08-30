@@ -4,9 +4,11 @@
 #include "Torch.h"
 #include "trade.h"
 #include "..\XR_3DA\CameraBase.h"
+
 #ifdef DEBUG
-#include "PHDebug.h"
+#	include "PHDebug.h"
 #endif
+
 #include "hit.h"
 #include "PHDestroyable.h"
 #include "Car.h"

@@ -39,7 +39,6 @@ xrClientData::~xrClientData()
 	xr_delete(ps);
 }
 
-
 xrServer::xrServer():IPureServer(Device.GetTimerGlobal())
 {
 	m_iCurUpdatePacket = 0;
@@ -79,8 +78,7 @@ IClient*	xrServer::client_Create		()
 	return xr_new<xrClientData> ();
 }
 void		xrServer::client_Replicate	()
-{
-}
+{ }
 
 IClient*	xrServer::client_Find_Get	(ClientID ID)
 {
@@ -741,7 +739,6 @@ CSE_Abstract*	xrServer::GetEntity			(u32 Num)
 	return NULL;
 };
 
-
 void		xrServer::OnChatMessage(NET_Packet* P, xrClientData* CL)
 {
 //	string256 ChatMsg;
@@ -826,7 +823,6 @@ void xrServer::create_direct_client()
 	
 	new_client( &cl_data );
 }
-
 
 void xrServer::ProceedDelayedPackets()
 {

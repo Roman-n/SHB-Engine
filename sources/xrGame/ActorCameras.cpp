@@ -1,9 +1,11 @@
 #include "stdafx.h"
 #include "Actor.h"
 #include "..\XR_3DA\CameraBase.h"
+
 #ifdef DEBUG
-#include "PHDebug.h"
+#	include "PHDebug.h"
 #endif
+
 #include "hit.h"
 #include "PHDestroyable.h"
 #include "Car.h"
@@ -127,7 +129,7 @@ ICF BOOL test_point(xrXRC& xrc, const Fmatrix& xform, const Fmatrix33& mat, cons
 }
 
 #include "physics.h"
-#include "PHActivationShape.h"
+#include "PHActivationShape.h"//
 #include "debug_renderer.h"
 void CActor::cam_Update(float dt, float fFOV)
 {

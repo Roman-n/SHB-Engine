@@ -52,7 +52,7 @@ void CTraderAnimation::set_head_animation(LPCSTR anim)
 	// назначить анимацию головы
 	CKinematicsAnimated	*kinematics_animated	= smart_cast<CKinematicsAnimated*>(m_trader->Visual());
 	m_motion_head								= kinematics_animated->ID_Cycle(m_anim_head);
-	kinematics_animated->PlayCycle				(m_motion_head,TRUE,head_callback,this);	
+	kinematics_animated->PlayCycle				(m_motion_head,TRUE,head_callback,this);
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -60,7 +60,7 @@ void CTraderAnimation::set_head_animation(LPCSTR anim)
 //////////////////////////////////////////////////////////////////////////
 void CTraderAnimation::set_sound(LPCSTR sound, LPCSTR anim)
 {
-	if (m_sound)		remove_sound();	
+	if (m_sound)		remove_sound();
 	
 	set_head_animation	(anim);
 
@@ -73,8 +73,8 @@ void CTraderAnimation::remove_sound()
 {
 	VERIFY				(m_sound);
 	
-	if (m_sound->_feedback()) 
-						m_sound->stop();
+	if (m_sound->_feedback( ))
+		m_sound->stop( );
 	
 	m_sound->destroy	();
 	xr_delete			(m_sound);
@@ -108,7 +108,7 @@ void CTraderAnimation::update_frame()
 //////////////////////////////////////////////////////////////////////////
 void CTraderAnimation::external_sound_start(LPCSTR phrase)
 {
-	if (m_sound)			remove_sound();	
+	if (m_sound)			remove_sound();
 	
 	m_sound					= xr_new<ref_sound>();
 	m_sound->create			(phrase,st_Effect,SOUND_TYPE_WORLD);

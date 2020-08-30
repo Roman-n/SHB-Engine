@@ -1,16 +1,18 @@
 #include "stdafx.h"
 #include "cardamageparticles.h"
+
 #ifdef DEBUG
 #include "ode_include.h"
-#include "..\XR_3DA\StatGraph.h"
 #include "PHDebug.h"
 #endif
+
 #include "alife_space.h"
 #include "hit.h"
 #include "PHDestroyable.h"
 #include "Car.h"
 #include "..\XR_3DA\skeletoncustom.h"
 #include "PHWorld.h"
+
 extern CPHWorld*	ph_world;
 void read_bones(CKinematics *K, LPCSTR S , xr_vector<u16>& bones)
 {

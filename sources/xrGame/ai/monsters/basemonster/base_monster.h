@@ -210,10 +210,6 @@ public:
 			bool			GetCoverFromPoint				(const Fvector &pos, Fvector &position, u32 &vertex_id, float min_dist, float max_dist, float radius);
 			bool			GetCoverCloseToPoint			(const Fvector &dest_pos, float min_dist, float max_dist, float deviation, float radius ,Fvector &position, u32 &vertex_id);
 
-
-
-
-
 	// Movement Manager
 protected:
 	CControlPathBuilder			*m_movement_manager;
@@ -317,9 +313,6 @@ public:
 	IC	void				set_custom_panic_threshold	(float value);
 	IC	void				set_default_panic_threshold	();
 	//--------------------------------------------------------------------
-
-
-
 
 	//////////////////////////////////////////////////////////////////////////
 	// -----------------------------------------------------------------------------

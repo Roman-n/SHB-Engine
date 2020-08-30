@@ -2,7 +2,6 @@
 #include "ai_monster_bones.h"
 #include "../../..\XR_3DA\skeletoncustom.h"
 
-
 //****************************************************************************************************
 // class bonesBone
 //****************************************************************************************************
@@ -17,7 +16,6 @@ void bonesBone::Set(CBoneInstance *b, u8 a, float ty, float cy, float r_s)
 	params.dist_yaw	= _abs(ty-cy);
 }
 
-
 bool bonesBone::NeedTurn()
 {
 	if (!fsimilar(params.cur_yaw, params.target_yaw, EPS_L)) return true;
@@ -26,7 +24,7 @@ bool bonesBone::NeedTurn()
 
 void bonesBone::Turn(u32 dt)
 {
-	float PI_DIV_2m		= 8 * PI_DIV_6 / 3;		
+	float PI_DIV_2m		= 8 * PI_DIV_6 / 3;
 	float PIm			= PI_DIV_2m * 2;
 
 	float cur_speed = params.r_speed * _cos(PI_DIV_2m - PIm * _abs(params.target_yaw - params.cur_yaw) / params.dist_yaw);
@@ -36,7 +34,6 @@ void bonesBone::Turn(u32 dt)
 
 	if (_abs(params.target_yaw - params.cur_yaw) < dy) params.cur_yaw = params.target_yaw;
 	else params.cur_yaw += ((params.target_yaw > params.cur_yaw) ? dy : -dy);
-
 }
 
 void bonesBone::Apply()
@@ -56,7 +53,6 @@ void bonesBone::Apply()
 //****************************************************************************************************
 // class bonesManipulation
 //****************************************************************************************************
-
 void bonesManipulation::Reset()
 {
 	time_started		= 0;
@@ -97,8 +93,6 @@ void bonesManipulation::SetMotion(CBoneInstance *bone, u8 axis, float target_yaw
 	in_return_state		= false;
 	time_started	= 0;
 }
-
-
 
 void bonesManipulation::Update(CBoneInstance *bone, u32 cur_time)
 {
@@ -146,7 +140,7 @@ void bonesManipulation::Update(CBoneInstance *bone, u32 cur_time)
 				m_Bones[i].params.dist_yaw		= _abs(m_Bones[i].params.target_yaw - m_Bones[i].params.cur_yaw);
 			}
 			bActive = false;
-		} 
+		}
 	}
 
 	// Установить параметры из m_Bones

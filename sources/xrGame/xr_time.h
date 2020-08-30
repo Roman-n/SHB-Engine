@@ -34,6 +34,5 @@ public:
 	LPCSTR	timeToString	(int mode);
 };
 
-
 extern u32 get_time();
 extern xrTime get_time_struct();

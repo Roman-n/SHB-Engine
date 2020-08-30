@@ -9,9 +9,11 @@
 #include "inventory.h"
 #include "missile.h"
 #include "level.h"
+
 #ifdef DEBUG
-#include "PHDebug.h"
+#	include "PHDebug.h"
 #endif
+
 #include "hit.h"
 #include "PHDestroyable.h"
 #include "Car.h"

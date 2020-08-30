@@ -23,10 +23,8 @@ struct bonesBone {
 	void	Set			(CBoneInstance *b, u8 a, float ty, float cy, float r_s);
 	bool	NeedTurn	();					// необходим поворот по оси p_axis?
 	void	Turn		(u32 dt);			// выполнить поворот по оси p_axis
-	void	Apply		();								// установить углы у боны
-
+	void	Apply		();					// установить углы у боны
 };
-
 
 // управление движениями костей
 class bonesManipulation {
@@ -51,5 +49,3 @@ public:
 
 	bonesAxis	&GetBoneParams		(CBoneInstance *bone, u8 axis_used);
 };
-
-

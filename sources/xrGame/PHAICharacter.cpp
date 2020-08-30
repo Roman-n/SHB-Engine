@@ -10,7 +10,6 @@
 #include "phaicharacter.h"
 
 #ifdef DEBUG
-#	include "..\XR_3DA\StatGraph.h"
 #	include "PHDebug.h"
 #	include "level.h"
 #	include "debug_renderer.h"

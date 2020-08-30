@@ -9,7 +9,6 @@ struct SEventVelocityBounce : public ControlCom::IEventData {
 	IC		SEventVelocityBounce(float ratio) : m_ratio(ratio) {}
 };
 
-
 //////////////////////////////////////////////////////////////////////////
 class CControlAnimationBase : public CControl_ComBase {
 		typedef CControl_ComBase inherited;
@@ -17,7 +16,7 @@ protected:
 
 		REPLACED_ANIM			m_tReplacedAnims;	// анимации подмены
 
-		// сохранённые анимации 
+		// сохранённые анимации
 		EMotionAnim				prev_motion; 
 
 		// исправления сосояния 'бега на месте'
@@ -60,11 +59,9 @@ protected:
 
 		AA_VECTOR				m_attack_anims;
 
-
 		bool					m_state_attack;
 
 protected:
-
 	ANIM_TO_MOTION_MAP			m_anim_motion_map;
 	
 	ANIM_ITEM_VECTOR			m_anim_storage;			
@@ -72,7 +69,6 @@ protected:
 	void						free_anim_storage	();
 
 public:
-
 	EAction					m_tAction;
 
 	float					m_prev_character_velocity;
@@ -128,8 +124,7 @@ public:
 
 	MotionID	get_motion_id			(EMotionAnim a, u32 index = u32(-1));
 
-protected:	
-
+protected:
 	void		UpdateAnimCount			();
 
 	// работа с анимациями атак
@@ -158,7 +153,6 @@ protected:
 
 	EAction		GetActionFromPath		();
 	EAction		VelocityIndex2Action	(u32 velocity_index);
-
 
 	void		stop_now				();
 
@@ -194,7 +188,7 @@ public:
 	bool	accel_check_braking		(float before_interval, float nominal_speed);
 	bool	braking_mode;
 
-	// --------------------------------------------------------------------------------	
+	// --------------------------------------------------------------------------------
 
 	void	CheckVelocityBounce		();
 
@@ -204,8 +198,8 @@ public:
 	// MotionDef to animation name translation
 	void		AddAnimTranslation		(const MotionID &motion, LPCSTR str);
 	shared_str	GetAnimTranslation		(const MotionID &motion);
-public:
 
+public:
 	// информация о текущей анимации
 	SCurrentAnimationInfo	m_cur_anim;
 	SCurrentAnimationInfo	&cur_anim_info() {return m_cur_anim;}
@@ -215,4 +209,3 @@ public:
 
 	void					check_hit			(MotionID motion, float time_perc);
 };
-

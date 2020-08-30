@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "actor.h"
 #include "CustomDetector.h"
 #include "ui/UIGameSP.h"//
@@ -20,9 +21,11 @@
 #include "holder_custom.h"
 #include "ui/UIInventoryWnd.h"//
 #include "game_base_space.h"
+
 #ifdef DEBUG
-#include "PHDebug.h"
+#	include "PHDebug.h"
 #endif
+
 IC BOOL BE	(BOOL A, BOOL B)
 {
 	bool a = !!A;

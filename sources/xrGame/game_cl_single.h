@@ -15,7 +15,6 @@ public :
 	void		OnDifficultyChanged		();
 };
 
-
 // game difficulty
 enum ESingleGameDifficulty{
 	egdNovice			= 0,
@@ -33,7 +32,3 @@ typedef enum_exporter<ESingleGameDifficulty> CScriptGameDifficulty;
 add_to_type_list(CScriptGameDifficulty)
 #undef script_type_list
 #define script_type_list save_type_list(CScriptGameDifficulty)
-
-
-
-
