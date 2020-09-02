@@ -10,7 +10,8 @@
 #include "GameMtlLib.h"
 #include "PhysicsShellHolder.h"
 
-extern	class CPHWorld	*ph_world;
+extern CPHWorld* ph_world;
+
 ObjectContactCallbackFun* saved_callback		=	0	;
 static float max_depth							=	0.f	;
 

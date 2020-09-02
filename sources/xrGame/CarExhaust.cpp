@@ -1,8 +1,8 @@
 #include "stdafx.h"
 
 #ifdef DEBUG
-#include "ode_include.h"
-#include "PHDebug.h"
+#	include "ode_include.h"
+#	include "PHDebug.h"
 #endif
 
 #include "alife_space.h"
@@ -11,7 +11,8 @@
 #include "car.h"
 #include "..\XR_3DA\skeletoncustom.h"
 #include "PHWorld.h"
-extern CPHWorld*	ph_world;
+
+extern CPHWorld* ph_world;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 CCar::SExhaust::~SExhaust()

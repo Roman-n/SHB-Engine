@@ -15,9 +15,10 @@
 #include "..\XR_3DA\fbasicvisual.h"
 #include "CalculateTriangle.h"
 #include "actor.h"
+
 #ifdef DEBUG
-#include "PHDebug.h"
-#include "game_base_space.h"
+#	include "PHDebug.h"
+#	include "game_base_space.h"
 #endif
 
 #define CHOOSE_MAX(x,inst_x,y,inst_y,z,inst_z)\

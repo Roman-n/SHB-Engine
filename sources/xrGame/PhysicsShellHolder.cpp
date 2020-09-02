@@ -11,9 +11,10 @@
 #include "PHScriptCall.h"
 #include "CustomRocket.h"
 #include "Grenade.h"
-#include "phworld.h"
+#include "PHWorld.h"
 #include "PHActivationShape.h"//
 #include "PHValide.h"
+
 CPhysicsShellHolder::CPhysicsShellHolder()
 {
 	init();

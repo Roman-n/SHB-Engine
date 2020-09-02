@@ -4,8 +4,7 @@
 #include "Physics.h"
 #include "MathUtils.h"
 
-extern CPHWorld		*ph_world;
-
+extern CPHWorld* ph_world;
 
 CPHInterpolation::CPHInterpolation()
 {
@@ -14,14 +13,15 @@ CPHInterpolation::CPHInterpolation()
 //	fTimeDelta=0.f;
 }
 
-void CPHInterpolation::SetBody(dBodyID body){
-if(!body) return;
-m_body=body;
-qPositions.fill_in(*((Fvector*) dBodyGetPosition(m_body)));
-const dReal* dQ=dBodyGetQuaternion(m_body);
-Fquaternion fQ;
-fQ.set(-dQ[0],dQ[1],dQ[2],dQ[3]);
-qRotations.fill_in(fQ);
+void CPHInterpolation::SetBody(dBodyID body)
+{
+	if (!body) return;
+	m_body = body;
+	qPositions.fill_in(*((Fvector*) dBodyGetPosition(m_body)));
+	const dReal* dQ = dBodyGetQuaternion(m_body);
+	Fquaternion fQ;
+	fQ.set(-dQ[0], dQ[1], dQ[2], dQ[3]);
+	qRotations.fill_in(fQ);
 }
 
 void CPHInterpolation::UpdatePositions(){

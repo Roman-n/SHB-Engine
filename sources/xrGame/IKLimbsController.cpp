@@ -7,13 +7,13 @@
 
 #include "ik_anim_state.h"
 #include "..\XR_3DA\ennumerateVertices.h"
+
 #ifdef DEBUG
-#include "PHDebug.h"
+#	include "PHDebug.h"
 #endif
+
 CIKLimbsController::CIKLimbsController(): m_object(0), m_legs_blend(0)
-{
-	
-}
+{ }
 
 void CIKLimbsController::Create( CGameObject* O )
 {

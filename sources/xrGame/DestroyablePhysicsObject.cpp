@@ -13,10 +13,12 @@
 #include "script_callback_ex.h"
 #include "script_game_object.h"
 #include "PhysicsShell.h"
+
 #ifdef DEBUG
-#include "PHWorld.h"
-extern CPHWorld			*ph_world;
+#	include "PHWorld.h"
+	extern CPHWorld* ph_world;
 #endif
+
 CDestroyablePhysicsObject ::CDestroyablePhysicsObject()
 {
 	m_fHealth=1.f;

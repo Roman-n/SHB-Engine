@@ -1,14 +1,14 @@
 #include "stdafx.h"
-#ifdef DEBUG
-#include "physics.h"
-#include "MathUtils.h"
-#include "PHDebug.h"
-#include "PHObject.h"
-#include "ExtendedGeom.h"
-#include "Level.h"
-#include "HUDManager.h"//
 
-#include "debug_renderer.h"
+#ifdef DEBUG
+#	include "physics.h"
+#	include "MathUtils.h"
+#	include "PHDebug.h"
+#	include "PHObject.h"
+#	include "ExtendedGeom.h"
+#	include "Level.h"
+#	include "HUDManager.h"//
+#	include "debug_renderer.h"
 
 Flags32		ph_dbg_draw_mask						;
 Flags32		ph_dbg_draw_mask1						;

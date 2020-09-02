@@ -29,7 +29,7 @@
 
 BONE_P_MAP CCar::bone_map=BONE_P_MAP();
 
-extern CPHWorld*	ph_world;
+extern CPHWorld* ph_world;
 
 CCar::CCar()
 {

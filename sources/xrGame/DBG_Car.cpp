@@ -1,14 +1,14 @@
 #include "stdafx.h"
-#ifdef DEBUG
 
-#include "ode_include.h"
-#include "PHDebug.h"
-#include "alife_space.h"
-#include "hit.h"
-#include "PHDestroyable.h"
-#include "Car.h"
-#include "HUDManager.h"//
-#include "Level.h"
+#ifdef DEBUG
+#	include "ode_include.h"
+#	include "PHDebug.h"
+#	include "alife_space.h"
+#	include "hit.h"
+#	include "PHDestroyable.h"
+#	include "Car.h"
+#	include "HUDManager.h"//
+#	include "Level.h"
 
 void CCar::InitDebug()
 {

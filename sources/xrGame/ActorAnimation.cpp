@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "Actor.h"
 //#include "ActorAnimation.h"
 #include "actor_anim_defs.h"
@@ -8,7 +9,7 @@
 #include "weapon.h"
 #include "inventory.h"
 #include "missile.h"
-#include "level.h"
+#include "Level.h"
 
 #ifdef DEBUG
 #	include "PHDebug.h"
@@ -22,7 +23,7 @@
 #include "ai_object_location.h"
 #include "game_cl_base.h"
 #include "..\XR_3DA\motion.h"
-#include "artifact.h"
+#include "Artefact.h"
 #include "IKLimbsController.h"
 
 static const float y_spin0_factor		= 0.0f;
@@ -37,7 +38,6 @@ static const float r_spin0_factor		= 0.3f;
 static const float r_spin1_factor		= 0.3f;
 static const float r_shoulder_factor	= 0.2f;
 static const float r_head_factor		= 0.2f;
-
 
 void  CActor::Spin0Callback(CBoneInstance* B)
 {

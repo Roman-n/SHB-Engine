@@ -16,9 +16,11 @@
 #include "PHCollideValidator.h"
 #include "PHShell.h"
 #include "MathUtils.h"
+
 #ifdef DEBUG
-#include "PHWorld.h"
+#	include "PHWorld.h"
 #endif
+
 /*
 [impulse_transition_to_parts]
 random_min              =1       ; х массу объекта = величина случайно направленного импульса 

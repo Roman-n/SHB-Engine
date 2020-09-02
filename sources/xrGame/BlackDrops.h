@@ -4,15 +4,15 @@
 ///////////////////////////////////////////////////////////////
 
 #pragma once
-#include "artifact.h"
+#include "Artefact.h"
 
 class CBlackDrops : public CArtefact 
 {
 private:
 	typedef CArtefact inherited;
 public:
-	CBlackDrops(void);
-	virtual ~CBlackDrops(void);
+	CBlackDrops( );
+	virtual ~CBlackDrops( );
 
 	virtual void Load				(LPCSTR section);
 

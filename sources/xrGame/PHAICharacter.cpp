@@ -1,6 +1,5 @@
 #include "stdafx.h"
 
-
 #include "PHDynamicData.h"
 #include "Physics.h"
 #include "ExtendedGeom.h"

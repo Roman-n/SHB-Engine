@@ -1,11 +1,11 @@
 #include "stdafx.h"
 
-#include "artifact.h"
+#include "Artefact.h"
 #include "MercuryBall.h"
 #include "GraviArtifact.h"
 #include "BlackDrops.h"
 #include "Needles.h"
-#include "BastArtifact.h"
+#include "BastArtefact.h"
 #include "BlackGraviArtifact.h"
 #include "DummyArtifact.h"
 #include "ZudaArtifact.h"

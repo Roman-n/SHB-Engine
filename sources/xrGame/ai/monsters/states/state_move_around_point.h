@@ -19,4 +19,4 @@ public:
 	virtual bool		check_completion				();
 };
 
-#include "state_move_to_point_inline.h"
+#include "state_move_around_point_inline.h"

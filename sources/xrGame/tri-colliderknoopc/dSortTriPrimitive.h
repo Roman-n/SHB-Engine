@@ -5,10 +5,10 @@
 #include "dTriColliderMath.h"
 #include "__aabb_tri.h"
 #include "../MathUtils.h"
-#ifdef DEBUG
-#include "../PHDebug.h"
-#endif
 
+#ifdef DEBUG
+#	include "../PHDebug.h"
+#endif
 
 template<class T>
 IC int dcTriListCollider::dSortTriPrimitiveCollide (

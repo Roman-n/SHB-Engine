@@ -401,6 +401,6 @@ IC CPHCommander & CLevel::ph_commander_scripts()
 IC bool					OnServer()	{ return Level().IsServer();}
 IC bool					OnClient()	{ return Level().IsClient();}
 
-class  CPHWorld;
-extern CPHWorld*				ph_world;
+class CPHWorld;
+extern CPHWorld* ph_world;
 extern BOOL						g_bDebugEvents;

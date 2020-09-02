@@ -7,6 +7,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "movement_manager.h"
 #include "PHMovementControl.h"
 #include "detail_path_manager.h"
@@ -14,12 +15,12 @@
 #include "custommonster.h"
 #include "IColisiondamageInfo.h"
 #include "profiler.h"
-#ifdef DEBUG
-#		include "PHDebug.h"
-#		define	DBG_PH_MOVE_CONDITIONS(c)				c
 
+#ifdef DEBUG
+#	include "PHDebug.h"
+#	define	DBG_PH_MOVE_CONDITIONS(c)				c
 #else
-#		define	DBG_PH_MOVE_CONDITIONS(c)					
+#	define	DBG_PH_MOVE_CONDITIONS(c)
 #endif
 
 #define DISTANCE_PHISICS_ENABLE_CHARACTERS 2.f

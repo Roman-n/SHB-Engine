@@ -2,7 +2,7 @@
 #include "CustomDetector.h"
 #include "customzone.h"
 #include "HUDManager.h"//
-#include "artifact.h"
+#include "Artefact.h"
 #include "inventory.h"
 #include "level.h"
 #include "map_manager.h"

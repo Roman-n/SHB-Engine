@@ -23,7 +23,7 @@
 #include "clsid_game.h"
 
 #ifdef DEBUG
-#include "PHDebug.h"
+#	include "PHDebug.h"
 #endif
 
 #include "Physics.h"

@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "telewhirlwind.h"
 #include "PhysicsShell.h"
 #include "PhysicsShellHolder.h"
@@ -8,13 +9,13 @@
 #include "xrmessages.h"
 #include "..\XR_3DA\SkeletonCustom.h"
 #include "PHWorld.h"
+
 CTeleWhirlwind ::CTeleWhirlwind () 
 {
 	m_owner_object=NULL;
 	m_center.set(0.f,0.f,0.f);
 	m_keep_radius=1.f;
 	m_throw_power=100.f;
-
 }
 
 CTelekineticObject* CTeleWhirlwind::activate(CPhysicsShellHolder *obj, float strength, float height, u32 max_time_keep, bool rot)

@@ -25,7 +25,7 @@
 #include "xrServer_Objects.h"
 #include "ui/UIMainIngameWnd.h"//
 #include "PhysicsGamePars.h"
-#include "phworld.h"
+#include "PHWorld.h"
 #include "string_table.h"
 #include "autosave_manager.h"
 #include "ai_space.h"
@@ -909,22 +909,21 @@ public:
 };
 #endif // DEBUG
 
-class CCC_PHFps : public IConsole_Command {
+class CCC_PHFps : public IConsole_Command
+{
 public:
-	CCC_PHFps(LPCSTR N) :
-	  IConsole_Command(N)
-	  {};
-	  virtual void	Execute	(LPCSTR args)
-	  {
-		  float				step_count = (float)atof(args);
-		  clamp				(step_count,50.f,200.f);
-		  CPHWorld::SetStep(1.f/step_count);
-	  }
-	  virtual void	Status	(TStatus& S)
-	  {	
-		 	sprintf_s	(S,"%3.5f",1.f/fixed_step);	  
-	  }
-
+	CCC_PHFps(LPCSTR N) : IConsole_Command(N)
+	{ };
+	virtual void	Execute(LPCSTR args)
+	{
+		float				step_count = (float) atof(args);
+		clamp(step_count, 50.f, 200.f);
+		CPHWorld::SetStep(1.f / step_count);
+	}
+	virtual void	Status(TStatus& S)
+	{
+		sprintf_s(S, "%3.5f", 1.f / fixed_step);
+	}
 };
 
 #ifdef DEBUG

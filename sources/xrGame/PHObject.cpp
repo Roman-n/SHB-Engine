@@ -1,13 +1,16 @@
 #include "stdafx.h"
+
 #include "Physics.h"
 #include "PHObject.h"
 #include "PHWorld.h"
 #include "PHMoveStorage.h"
 #include "dRayMotions.h"
 #include "PHCollideValidator.h"
+
 #ifdef DEBUG
-#include "phdebug.h"
+#	include "PHDebug.h"
 #endif
+
 extern CPHWorld* ph_world;
 
 CPHObject::CPHObject	()	: ISpatial(g_SpatialSpacePhysic)

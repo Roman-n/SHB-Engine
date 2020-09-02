@@ -7,9 +7,11 @@
 #include "gameobject.h"
 #include "PhysicsShellHolder.h"
 #include "PHCollideValidator.h"
+
 #ifdef DEBUG
-#include "PHDebug.h"
+#	include "PHDebug.h"
 #endif
+
 ///////////////////////////////////////////////////////////////
 #pragma warning(disable:4995)
 #pragma warning(disable:4267)
@@ -19,7 +21,7 @@
 #pragma warning(default:4267)
 #pragma warning(default:4995)
 
-extern CPHWorld *ph_world;
+extern CPHWorld* ph_world;
 ///////////////////////////////////////////////////////////////////
 
 #include "ExtendedGeom.h"

@@ -1,9 +1,10 @@
 #include "stdafx.h"
+
 #include "cardamageparticles.h"
 
 #ifdef DEBUG
-#include "ode_include.h"
-#include "PHDebug.h"
+#	include "ode_include.h"
+#	include "PHDebug.h"
 #endif
 
 #include "alife_space.h"
@@ -13,7 +14,8 @@
 #include "..\XR_3DA\skeletoncustom.h"
 #include "PHWorld.h"
 
-extern CPHWorld*	ph_world;
+extern CPHWorld* ph_world;
+
 void read_bones(CKinematics *K, LPCSTR S , xr_vector<u16>& bones)
 {
 	string64					S1;

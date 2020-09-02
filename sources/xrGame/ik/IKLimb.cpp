@@ -11,6 +11,7 @@
 #ifdef DEBUG
 #include "../PHDebug.h"
 #endif
+
 const Matrix	IKLocalJoint	={0,0,1,0,  -1,0,0,0, 0,-1,0,0, 0,0,0,1};//. in XGlobal
 const Fmatrix	XLocalJoint		={0,-1,0,0, -1,0,0,0, 0,0,1,0,  0,0,0,1};
 

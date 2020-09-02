@@ -27,7 +27,7 @@
 
 #include "map_manager.h"
 #include "map_location.h"
-#include "phworld.h"
+#include "PHWorld.h"
 
 #include "ui/UIGameCustom.h"//
 
@@ -335,9 +335,9 @@ void remove_calls_for_object(const luabind::object &lua_object)
 	Level().ph_commander_scripts().remove_calls(&c);
 }
 
-CPHWorld* physics_world()
+CPHWorld* physics_world( )
 {
-	return	ph_world;
+	return ph_world;
 }
 
 CEnvironment *environment()

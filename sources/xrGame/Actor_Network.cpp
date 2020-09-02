@@ -12,7 +12,7 @@
 #include "ActorEffector.h"
 
 #include "PHWorld.h"
-#include "level.h"
+#include "Level.h"
 #include "xr_level_controller.h"
 #include "game_cl_base.h"
 #include "infoportion.h"

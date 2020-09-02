@@ -8,10 +8,10 @@
 namespace ALife {
 	enum EHitType;
 };
-#ifdef DEBUG
-#include "PHDebug.h"
-#endif
 
+#ifdef DEBUG
+#	include "PHDebug.h"
+#endif
 
 class CPHSimpleCharacter : 
 	public CPHCharacter,

@@ -7,7 +7,7 @@
 #include "PhWorld.h"
 #include "CharacterPhysicsSupport.h"
 
-extern CPHWorld	*ph_world;
+extern CPHWorld* ph_world;
 
 void CNoGravityZone::enter_Zone(SZoneObjectInfo& io)
 {

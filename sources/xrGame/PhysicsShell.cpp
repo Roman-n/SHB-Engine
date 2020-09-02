@@ -5,14 +5,14 @@
 #include "Physics.h"
 #include "PHJoint.h"
 #include "PHShell.h"
-#include "PHJoint.h"
 #include "PHJointDestroyInfo.h"
 #include "PHSplitedShell.h"
 #include "gameobject.h"
 #include "physicsshellholder.h"
 #include "..\XR_3DA\skeletoncustom.h"
 
-extern CPHWorld			*ph_world;
+extern CPHWorld* ph_world;
+
 CPhysicsShell::~CPhysicsShell()
 {
 	if(ph_world)ph_world->NetRelcase(this);

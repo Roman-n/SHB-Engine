@@ -1,5 +1,3 @@
-///////////////////////////////////////////////////////////////////////
-
 #pragma once
 
 class CPHShell;
@@ -9,7 +7,7 @@ class CPHShellSplitterHolder;
 #include "PHElement.h"
 #include "PHDefs.h"
 #include "PHShellSplitter.h"
-#include "phmovestorage.h"
+#include "PHMoveStorage.h"
 
 class CPHShell: public CPhysicsShell,public CPHObject {
 

@@ -1,8 +1,10 @@
 #include "stdafx.h"
+
 #ifdef DEBUG
-#include "ode_include.h"
-#include "PHDebug.h"
+#	include "ode_include.h"
+#	include "PHDebug.h"
 #endif
+
 #include "alife_space.h"
 #include "hit.h"
 #include "PHDestroyable.h"

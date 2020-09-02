@@ -2,8 +2,8 @@
 #include "CarLights.h"
 
 #ifdef DEBUG
-#include "ode_include.h"
-#include "PHDebug.h"
+#	include "ode_include.h"
+#	include "PHDebug.h"
 #endif
 
 #include "alife_space.h"
@@ -12,7 +12,8 @@
 #include "Car.h"
 #include "..\XR_3DA\skeletoncustom.h"
 #include "PHWorld.h"
-extern CPHWorld*	ph_world;
+
+extern CPHWorld* ph_world;
 
 SCarLight::SCarLight()
 {
@@ -147,7 +148,6 @@ void CCarLights::ParseDefinitions()
 		m_lights.back()->Init(this);
 		m_lights.back()->ParseDefinitions(S1);
 	}
-	
 }
 
 void CCarLights::Update()
@@ -159,7 +159,6 @@ void CCarLights::Update()
 
 void CCarLights::SwitchHeadLights()
 {
-	
 	VERIFY(!ph_world->Processing());
 	LIGHTS_I i =m_lights.begin(),e=m_lights.end();
 	for(;i!=e;++i) (*i)->Switch();
@@ -167,7 +166,6 @@ void CCarLights::SwitchHeadLights()
 
 void CCarLights::TurnOnHeadLights()
 {
-
 	VERIFY(!ph_world->Processing());
 	LIGHTS_I i =m_lights.begin(),e=m_lights.end();
 	for(;i!=e;++i) (*i)->TurnOn();

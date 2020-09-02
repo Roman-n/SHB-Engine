@@ -15,10 +15,10 @@
 #include "characterphysicssupport.h"
 #include "inventory.h"
 #include "..\XR_3DA\IGame_Persistent.h"
-#ifdef DEBUG
-#	include "phdebug.h"
-#endif
 
+#ifdef DEBUG
+#	include "PHDebug.h"
+#endif
 
 #define PLAYING_ANIM_TIME 10000
 

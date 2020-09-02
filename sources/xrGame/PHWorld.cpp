@@ -8,13 +8,16 @@
 #include "draymotions.h"
 #include "PHCollideValidator.h"
 #include "gamemtllib.h"
-#ifdef    DEBUG
+
+#ifdef DEBUG
 #	include "PHDebug.h"
 #endif
+
 #include "PHCommander.h"
 #include "PHSimpleCalls.h"
 #include "PHSynchronize.h"
 #include "phnetstate.h"
+
 //////////////////////////////////////////////////////////////
 //////////////CPHMesh///////////////////////////////////////////
 ///////////////////////////////////////////////////////////
@@ -45,14 +48,13 @@ void CPHMesh ::Destroy(){
 dGeomID plane;
 #endif
 
-#ifdef DEBUG 
-
+#ifdef DEBUG
 void CPHWorld::OnRender()
 {
-
 	PH_DBG_Render();
 }
 #endif
+
 CPHWorld::CPHWorld()
 {
 	disable_count=0;
@@ -70,6 +72,7 @@ CPHWorld::CPHWorld()
 	m_gravity	=default_world_gravity;
 	b_exist=false;
 }
+
 void CPHWorld::SetStep(dReal s)
 {
 	fixed_step											=	s;
@@ -86,6 +89,7 @@ void CPHWorld::SetStep(dReal s)
 		ph_world->m_frame_time				=	frame_time;
 	}
 }
+
 void CPHWorld::Create()
 {
 	dWorldID phWorld=0;
@@ -158,12 +162,12 @@ void CPHWorld::Destroy()
 	Device.seqFrame.Remove		(this);
 	b_exist=false;
 }
+
 void CPHWorld::SetGravity(float g)
 {
 	m_gravity				=g;
 	dWorldID phWorld		=0;
 	dWorldSetGravity		(phWorld, 0,-m_gravity, 0);//-2.f*9.81f
-
 }
 
 void CPHWorld::OnFrame()
@@ -175,7 +179,7 @@ void CPHWorld::OnFrame()
 	Level().BulletManager().Update		();
 	Device.Statistic->TEST0.End			();
 	*/
-#ifdef DEBUG 
+#ifdef DEBUG
 	DBG_DrawFrameStart();
 	DBG_DrawStatBeforeFrameStep();
 #endif
@@ -191,6 +195,7 @@ void CPHWorld::OnFrame()
 //////////////////////////////////////////////////////////////////////////////
 //static dReal frame_time=0.f;
 static u32 start_time=0;
+
 void CPHWorld::Step()
 {
 #ifdef DEBUG

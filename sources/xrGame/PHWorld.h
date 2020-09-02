@@ -23,7 +23,7 @@ public:
 ////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 
-class CPHWorld	: public pureFrame
+class CPHWorld : public pureFrame
 #ifdef DEBUG
 , public pureRender
 #endif
@@ -101,6 +101,7 @@ IC	bool						Processing						()							{return b_processing;}
 
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
+
 add_to_type_list(CPHWorld)
 #undef script_type_list
 #define script_type_list save_type_list(CPHWorld)

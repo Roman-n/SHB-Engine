@@ -1,9 +1,10 @@
 #include "stdafx.h"
+
 #include "physicsshell.h"
 #include "phinterpolation.h"
 #include "phelement.h"
 #include "phobject.h"
-#include "phworld.h"
+#include "PHWorld.h"
 #include "phshell.h"
 
 void CPHElement::get_State(SPHNetState& state)

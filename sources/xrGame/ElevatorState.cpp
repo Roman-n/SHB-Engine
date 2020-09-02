@@ -7,7 +7,7 @@
 #include "PHWorld.h"
 
 #ifdef DEBUG
-#include "PHDebug.h"
+#	include "PHDebug.h"
 #endif
 
 static const float getting_on_dist		=0.3f;
@@ -18,7 +18,9 @@ static const float out_dist				=1.5f;
 
 static const float look_angle_cosine	=0.9238795f;//22.5
 static const float lookup_angle_sine	=0.34202014f;//20
-extern	class CPHWorld	*ph_world;
+
+extern CPHWorld* ph_world;
+
 CElevatorState::CElevatorState()
 {
 	m_state=clbNoLadder;

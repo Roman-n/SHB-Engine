@@ -9,13 +9,13 @@
 #include "inventory.h"
 #include "weapon.h"
 #include "map_manager.h"
-#include "level.h"
+#include "Level.h"
 #include "CharacterPhysicsSupport.h"
 #include "EffectorShot.h"
 #include "WeaponMagazined.h"
 #include "Grenade.h"
 #include "game_base_space.h"
-#include "Artifact.h"
+#include "Artefact.h"
 
 static const float VEL_MAX		= 10.f;
 static const float VEL_A_MAX	= 10.f;

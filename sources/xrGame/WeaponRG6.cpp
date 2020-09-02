@@ -4,16 +4,14 @@
 #include "explosiveRocket.h"
 #include "level.h"
 #include "clsid_game.h"
-
 #include "MathUtils.h"
+
 #ifdef DEBUG
-#include "phdebug.h"
+#	include "PHDebug.h"
 #endif
 
-
 CWeaponRG6::~CWeaponRG6()
-{
-}
+{ }
 
 BOOL	CWeaponRG6::net_Spawn				(CSE_Abstract* DC)
 {

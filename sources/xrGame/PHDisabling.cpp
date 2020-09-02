@@ -1,14 +1,15 @@
 #include "stdafx.h"
+
 #include "PHDisabling.h"
 #include "PhysicsCommon.h"
 #include "Physics.h"
+
 extern CPHWorld* ph_world;
+
 SDisableVector::SDisableVector()
 {
 	Init();
 }
-
-
 
 void	SDisableVector::Reset()
 {

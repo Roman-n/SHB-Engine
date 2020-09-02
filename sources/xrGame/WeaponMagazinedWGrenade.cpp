@@ -15,8 +15,9 @@
 #include "game_base_space.h"
 #include "MathUtils.h"
 #include "clsid_game.h"
+
 #ifdef DEBUG
-#include "phdebug.h"
+#	include "PHDebug.h"
 #endif
 
 CWeaponMagazinedWGrenade::CWeaponMagazinedWGrenade(LPCSTR name,ESoundTypes eSoundType) : CWeaponMagazined(name, eSoundType)

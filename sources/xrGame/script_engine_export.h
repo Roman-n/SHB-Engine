@@ -74,15 +74,15 @@
 #	include "UI/UIPropertiesBox.h"
 #	include "ui/UITabControl.h"//
 #	include "ui/UIListWnd.h"//
-#   include "ui/UIComboBox.h"//
+#	include "ui/UIComboBox.h"//
 #	include "ui/UIOptionsManagerScript.h"//
 #	include "ScriptXmlInit.h"
 #	include "ui/script_ui_registrator.h"
 #	include "key_binding_registrator.h"
 #	include "fs_registrator.h"
 #	include "console_registrator.h"
-#	include	"PhysicsShell.h"
-#	include	"HangingLamp.h"
+#	include "PhysicsShell.h"
+#	include "HangingLamp.h"
 #	include "holder_custom.h"
 #	include "GameTask.h"
 #	include "client_spawn_manager.h"
@@ -106,14 +106,16 @@
 #	include "ai/monsters/cat/cat.h"
 #	include "ai/monsters/tushkano/tushkano.h"
 #	include "PhraseDialog_script.h"
-#	ifdef	DEBUG
+
+#	ifdef DEBUG
 #		include "PHDebug.h"
 #	endif
+
 #	include "hit.h"
 #	include "PHDestroyable.h"
 #	include "car.h"
 #	include "script_lanim.h"
-#	include "artifact.h"
+#	include "Artefact.h"
 #	include "game_cl_single.h"
 #	include "alife_human_brain.h"
 #	include "alife_monster_brain.h"

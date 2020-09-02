@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "PHDynamicData.h"
 #include "Physics.h"
 #include "tri-colliderknoopc/dTriList.h"
@@ -10,17 +11,15 @@
 //#include "..\XR_3DA\skeletoncustom.h"
 #include "..\XR_3DA\skeletonanimated.h"
 #include "../xrODE/ode/src/util.h"
+
 #ifdef DEBUG
-#include	"PHDebug.h"
+#	include "PHDebug.h"
 #endif
 
 ///////////////////////////////////////////////////////////////
 #pragma warning(disable:4995)
 #pragma warning(disable:4267)
-
 #include "../../xrODE/ode/src/collision_kernel.h"
-
-
 #pragma warning(default:4267)
 #pragma warning(default:4995)
 ///////////////////////////////////////////////////////////////////
@@ -30,10 +29,8 @@
 #include "PHShell.h"
 #include "PHElement.h"
 #include "PHElementInline.h"
-extern CPHWorld*				ph_world;
 
-
-
+extern CPHWorld* ph_world;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////Implementation for CPhysicsElement

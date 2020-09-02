@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "Actor.h"
 #include "..\XR_3DA\CameraBase.h"
 
@@ -15,7 +16,7 @@
 
 #include "SleepEffector.h"
 #include "ActorEffector.h"
-#include "level.h"
+#include "Level.h"
 #include "..\XR_3DA\cl_intersect.h"
 #include "gamemtllib.h"
 #include "elevatorstate.h"
@@ -23,6 +24,7 @@
 #include "EffectorShot.h"
 #include "phcollidevalidator.h"
 #include "PHShell.h"
+
 void CActor::cam_Set	(EActorCameras style)
 {
 	CCameraBase* old_cam = cam_Active();

@@ -1,16 +1,18 @@
 #include "stdafx.h"
+
 #include "wallmark_manager.h"
 #include "Level.h"
 #include "GameMtlLib.h"
 #include "CalculateTriangle.h"
 #include "profiler.h"
+
 #ifdef DEBUG
-#include "phdebug.h"
+#	include "PHDebug.h"
 #endif
 
 CWalmarkManager::CWalmarkManager()
-{
-}
+{ }
+
 CWalmarkManager::~CWalmarkManager()
 {
 	Clear();
@@ -224,247 +226,247 @@ float Distance (const Fvector& rkPoint, const Fvector rkTri[3], float& pfSParam,
 {
 	
 //.    Fvector kDiff = rkTri.Origin() - rkPoint;
-    Fvector kDiff;		kDiff.sub	( rkTri[0], rkPoint); //
+	Fvector kDiff;		kDiff.sub	( rkTri[0], rkPoint); //
 
 	Fvector Edge0; Edge0.sub(rkTri[1], rkTri[0]); //
 	Fvector Edge1; Edge1.sub(rkTri[2], rkTri[0]); //
 
 //.    float fA00 = rkTri.Edge0().SquaredLength();
-    float fA00 = Edge0.square_magnitude();
+	float fA00 = Edge0.square_magnitude();
 
 //.    float fA01 = rkTri.Edge0().Dot(rkTri.Edge1());
-    float fA01 = Edge0.dotproduct(Edge1);
+	float fA01 = Edge0.dotproduct(Edge1);
 
 //.    float fA11 = rkTri.Edge1().SquaredLength();
-    float fA11 = Edge1.square_magnitude();
+	float fA11 = Edge1.square_magnitude();
 
 //.    float fB0 = kDiff.Dot(rkTri.Edge0());
-    float fB0 = kDiff.dotproduct(Edge0);
+	float fB0 = kDiff.dotproduct(Edge0);
 
 //.	float fB1 = kDiff.Dot(rkTri.Edge1());
 	float fB1 = kDiff.dotproduct(Edge1);
 
 //.    float fC = kDiff.SquaredLength();
-    float fC = kDiff.square_magnitude();
+	float fC = kDiff.square_magnitude();
 
-    float fDet = _abs(fA00*fA11-fA01*fA01);
+	float fDet = _abs(fA00*fA11-fA01*fA01);
 
-    float fS = fA01*fB1-fA11*fB0;
-    float fT = fA01*fB0-fA00*fB1;
-    float fSqrDist;
+	float fS = fA01*fB1-fA11*fB0;
+	float fT = fA01*fB0-fA00*fB1;
+	float fSqrDist;
 
-    if ( fS + fT <= fDet )
-    {
-        if ( fS < 0.0f )
-        {
-            if ( fT < 0.0f )  // region 4
-            {
-                if ( fB0 < 0.0f )
-                {
-                    fT = 0.0f;
-                    if ( -fB0 >= fA00 )
-                    {
-                        fS = 1.0f;
-                        fSqrDist = fA00+2.0f*fB0+fC;
-                    }
-                    else
-                    {
-                        fS = -fB0/fA00;
-                        fSqrDist = fB0*fS+fC;
-                    }
-                }
-                else
-                {
-                    fS = 0.0f;
-                    if ( fB1 >= 0.0f )
-                    {
-                        fT = 0.0f;
-                        fSqrDist = fC;
-                    }
-                    else if ( -fB1 >= fA11 )
-                    {
-                        fT = 1.0f;
-                        fSqrDist = fA11+2.0f*fB1+fC;
-                    }
-                    else
-                    {
-                        fT = -fB1/fA11;
-                        fSqrDist = fB1*fT+fC;
-                    }
-                }
-            }
-            else  // region 3
-            {
-                fS = 0.0f;
-                if ( fB1 >= 0.0f )
-                {
-                    fT = 0.0f;
-                    fSqrDist = fC;
-                }
-                else if ( -fB1 >= fA11 )
-                {
-                    fT = 1.0f;
-                    fSqrDist = fA11+2.0f*fB1+fC;
-                }
-                else
-                {
-                    fT = -fB1/fA11;
-                    fSqrDist = fB1*fT+fC;
-                }
-            }
-        }
-        else if ( fT < 0.0f )  // region 5
-        {
-            fT = 0.0f;
-            if ( fB0 >= 0.0f )
-            {
-                fS = 0.0f;
-                fSqrDist = fC;
-            }
-            else if ( -fB0 >= fA00 )
-            {
-                fS = 1.0f;
-                fSqrDist = fA00+2.0f*fB0+fC;
-            }
-            else
-            {
-                fS = -fB0/fA00;
-                fSqrDist = fB0*fS+fC;
-            }
-        }
-        else  // region 0
-        {
-            // minimum at interior point
-            float fInvDet = 1.0f/fDet;
-            fS *= fInvDet;
-            fT *= fInvDet;
-            fSqrDist = fS*(fA00*fS+fA01*fT+2.0f*fB0) +
-                fT*(fA01*fS+fA11*fT+2.0f*fB1)+fC;
-        }
-    }
-    else
-    {
-        float fTmp0, fTmp1, fNumer, fDenom;
+	if ( fS + fT <= fDet )
+	{
+		if ( fS < 0.0f )
+		{
+			if ( fT < 0.0f )  // region 4
+			{
+				if ( fB0 < 0.0f )
+				{
+					fT = 0.0f;
+					if ( -fB0 >= fA00 )
+					{
+						fS = 1.0f;
+						fSqrDist = fA00+2.0f*fB0+fC;
+					}
+					else
+					{
+						fS = -fB0/fA00;
+						fSqrDist = fB0*fS+fC;
+					}
+				}
+				else
+				{
+					fS = 0.0f;
+					if ( fB1 >= 0.0f )
+					{
+						fT = 0.0f;
+						fSqrDist = fC;
+					}
+					else if ( -fB1 >= fA11 )
+					{
+						fT = 1.0f;
+						fSqrDist = fA11+2.0f*fB1+fC;
+					}
+					else
+					{
+						fT = -fB1/fA11;
+						fSqrDist = fB1*fT+fC;
+					}
+				}
+			}
+			else  // region 3
+			{
+				fS = 0.0f;
+				if ( fB1 >= 0.0f )
+				{
+					fT = 0.0f;
+					fSqrDist = fC;
+				}
+				else if ( -fB1 >= fA11 )
+				{
+					fT = 1.0f;
+					fSqrDist = fA11+2.0f*fB1+fC;
+				}
+				else
+				{
+					fT = -fB1/fA11;
+					fSqrDist = fB1*fT+fC;
+				}
+			}
+		}
+		else if ( fT < 0.0f )  // region 5
+		{
+			fT = 0.0f;
+			if ( fB0 >= 0.0f )
+			{
+				fS = 0.0f;
+				fSqrDist = fC;
+			}
+			else if ( -fB0 >= fA00 )
+			{
+				fS = 1.0f;
+				fSqrDist = fA00+2.0f*fB0+fC;
+			}
+			else
+			{
+				fS = -fB0/fA00;
+				fSqrDist = fB0*fS+fC;
+			}
+		}
+		else  // region 0
+		{
+			// minimum at interior point
+			float fInvDet = 1.0f/fDet;
+			fS *= fInvDet;
+			fT *= fInvDet;
+			fSqrDist = fS*(fA00*fS+fA01*fT+2.0f*fB0) +
+				fT*(fA01*fS+fA11*fT+2.0f*fB1)+fC;
+		}
+	}
+	else
+	{
+		float fTmp0, fTmp1, fNumer, fDenom;
 
-        if ( fS < 0.0f )  // region 2
-        {
-            fTmp0 = fA01 + fB0;
-            fTmp1 = fA11 + fB1;
-            if ( fTmp1 > fTmp0 )
-            {
-                fNumer = fTmp1 - fTmp0;
-                fDenom = fA00-2.0f*fA01+fA11;
-                if ( fNumer >= fDenom )
-                {
-                    fS = 1.0f;
-                    fT = 0.0f;
-                    fSqrDist = fA00+2.0f*fB0+fC;
-                }
-                else
-                {
-                    fS = fNumer/fDenom;
-                    fT = 1.0f - fS;
-                    fSqrDist = fS*(fA00*fS+fA01*fT+2.0f*fB0) +
-                        fT*(fA01*fS+fA11*fT+2.0f*fB1)+fC;
-                }
-            }
-            else
-            {
-                fS = 0.0f;
-                if ( fTmp1 <= 0.0f )
-                {
-                    fT = 1.0f;
-                    fSqrDist = fA11+2.0f*fB1+fC;
-                }
-                else if ( fB1 >= 0.0f )
-                {
-                    fT = 0.0f;
-                    fSqrDist = fC;
-                }
-                else
-                {
-                    fT = -fB1/fA11;
-                    fSqrDist = fB1*fT+fC;
-                }
-            }
-        }
-        else if ( fT < 0.0f )  // region 6
-        {
-            fTmp0 = fA01 + fB1;
-            fTmp1 = fA00 + fB0;
-            if ( fTmp1 > fTmp0 )
-            {
-                fNumer = fTmp1 - fTmp0;
-                fDenom = fA00-2.0f*fA01+fA11;
-                if ( fNumer >= fDenom )
-                {
-                    fT = 1.0f;
-                    fS = 0.0f;
-                    fSqrDist = fA11+2.0f*fB1+fC;
-                }
-                else
-                {
-                    fT = fNumer/fDenom;
-                    fS = 1.0f - fT;
-                    fSqrDist = fS*(fA00*fS+fA01*fT+2.0f*fB0) +
-                        fT*(fA01*fS+fA11*fT+2.0f*fB1)+fC;
-                }
-            }
-            else
-            {
-                fT = 0.0f;
-                if ( fTmp1 <= 0.0f )
-                {
-                    fS = 1.0f;
-                    fSqrDist = fA00+2.0f*fB0+fC;
-                }
-                else if ( fB0 >= 0.0f )
-                {
-                    fS = 0.0f;
-                    fSqrDist = fC;
-                }
-                else
-                {
-                    fS = -fB0/fA00;
-                    fSqrDist = fB0*fS+fC;
-                }
-            }
-        }
-        else  // region 1
-        {
-            fNumer = fA11 + fB1 - fA01 - fB0;
-            if ( fNumer <= 0.0f )
-            {
-                fS = 0.0f;
-                fT = 1.0f;
-                fSqrDist = fA11+2.0f*fB1+fC;
-            }
-            else
-            {
-                fDenom = fA00-2.0f*fA01+fA11;
-                if ( fNumer >= fDenom )
-                {
-                    fS = 1.0f;
-                    fT = 0.0f;
-                    fSqrDist = fA00+2.0f*fB0+fC;
-                }
-                else
-                {
-                    fS = fNumer/fDenom;
-                    fT = 1.0f - fS;
-                    fSqrDist = fS*(fA00*fS+fA01*fT+2.0f*fB0) +
-                        fT*(fA01*fS+fA11*fT+2.0f*fB1)+fC;
-                }
-            }
-        }
-    }
+		if ( fS < 0.0f )  // region 2
+		{
+			fTmp0 = fA01 + fB0;
+			fTmp1 = fA11 + fB1;
+			if ( fTmp1 > fTmp0 )
+			{
+				fNumer = fTmp1 - fTmp0;
+				fDenom = fA00-2.0f*fA01+fA11;
+				if ( fNumer >= fDenom )
+				{
+					fS = 1.0f;
+					fT = 0.0f;
+					fSqrDist = fA00+2.0f*fB0+fC;
+				}
+				else
+				{
+					fS = fNumer/fDenom;
+					fT = 1.0f - fS;
+					fSqrDist = fS*(fA00*fS+fA01*fT+2.0f*fB0) +
+						fT*(fA01*fS+fA11*fT+2.0f*fB1)+fC;
+				}
+			}
+			else
+			{
+				fS = 0.0f;
+				if ( fTmp1 <= 0.0f )
+				{
+					fT = 1.0f;
+					fSqrDist = fA11+2.0f*fB1+fC;
+				}
+				else if ( fB1 >= 0.0f )
+				{
+					fT = 0.0f;
+					fSqrDist = fC;
+				}
+				else
+				{
+					fT = -fB1/fA11;
+					fSqrDist = fB1*fT+fC;
+				}
+			}
+		}
+		else if ( fT < 0.0f )  // region 6
+		{
+			fTmp0 = fA01 + fB1;
+			fTmp1 = fA00 + fB0;
+			if ( fTmp1 > fTmp0 )
+			{
+				fNumer = fTmp1 - fTmp0;
+				fDenom = fA00-2.0f*fA01+fA11;
+				if ( fNumer >= fDenom )
+				{
+					fT = 1.0f;
+					fS = 0.0f;
+					fSqrDist = fA11+2.0f*fB1+fC;
+				}
+				else
+				{
+					fT = fNumer/fDenom;
+					fS = 1.0f - fT;
+					fSqrDist = fS*(fA00*fS+fA01*fT+2.0f*fB0) +
+						fT*(fA01*fS+fA11*fT+2.0f*fB1)+fC;
+				}
+			}
+			else
+			{
+				fT = 0.0f;
+				if ( fTmp1 <= 0.0f )
+				{
+					fS = 1.0f;
+					fSqrDist = fA00+2.0f*fB0+fC;
+				}
+				else if ( fB0 >= 0.0f )
+				{
+					fS = 0.0f;
+					fSqrDist = fC;
+				}
+				else
+				{
+					fS = -fB0/fA00;
+					fSqrDist = fB0*fS+fC;
+				}
+			}
+		}
+		else  // region 1
+		{
+			fNumer = fA11 + fB1 - fA01 - fB0;
+			if ( fNumer <= 0.0f )
+			{
+				fS = 0.0f;
+				fT = 1.0f;
+				fSqrDist = fA11+2.0f*fB1+fC;
+			}
+			else
+			{
+				fDenom = fA00-2.0f*fA01+fA11;
+				if ( fNumer >= fDenom )
+				{
+					fS = 1.0f;
+					fT = 0.0f;
+					fSqrDist = fA00+2.0f*fB0+fC;
+				}
+				else
+				{
+					fS = fNumer/fDenom;
+					fT = 1.0f - fS;
+					fSqrDist = fS*(fA00*fS+fA01*fT+2.0f*fB0) +
+						fT*(fA01*fS+fA11*fT+2.0f*fB1)+fC;
+				}
+			}
+		}
+	}
 
-    pfSParam = fS;
-    pfTParam = fT;
+	pfSParam = fS;
+	pfTParam = fT;
 
 	closest.mad			(rkTri[0], Edge0, fS).mad(Edge1, fT);
 	
 	dir.sub				(closest, rkPoint);
 	dir.normalize_safe	();
-    return _sqrt		(_abs(fSqrDist));
+	return _sqrt		(_abs(fSqrDist));
 }
