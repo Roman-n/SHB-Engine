@@ -3,7 +3,7 @@
 #include "PhysicsShellHolder.h"
 #include "PhysicsShell.h"
 #include "xrMessages.h"
-#include "ph_shell_interface.h"
+#include "IPhysicShellCreator.h"
 #include "..\XR_3DA\skeletoncustom.h"
 #include "script_callback_ex.h"
 #include "Level.h"

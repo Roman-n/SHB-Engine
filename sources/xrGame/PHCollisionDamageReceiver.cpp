@@ -1,8 +1,9 @@
 #include "stdafx.h"
+
 #include "phcollisiondamagereceiver.h"
 #include "PhysicsShellHolder.h"
 #include "..\XR_3DA\skeletoncustom.h"
-#include "geometry.h"
+#include "Geometry.h"
 #include "PhysicsShell.h"
 #include "GameMtlLib.h"
 #include "Physics.h"

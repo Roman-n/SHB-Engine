@@ -1,7 +1,6 @@
 #include "stdafx.h"
+
 #include "DisablingParams.h"
-
-
 
 SAllDDWParams	worldDisablingParams	=	
 	{
@@ -13,8 +12,6 @@ SAllDDWParams	worldDisablingParams	=
 		}								,								
 		1.5f								//reanable factor
 	};
-
-
 
 void SOneDDOParams::Mul(float v)
 {

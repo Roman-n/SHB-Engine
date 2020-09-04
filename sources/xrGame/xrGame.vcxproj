@@ -781,7 +781,7 @@
     <ClInclude Include="HudSound.h" />
     <ClInclude Include="HUDTarget.h" />
     <ClInclude Include="HudItemObject.h" />
-    <ClInclude Include="IColisiondamageInfo.h" />
+    <ClInclude Include="ICollisionDamageInfo.h" />
     <ClInclude Include="id_generator.h" />
     <ClInclude Include="IKLimbsController.h" />
     <ClInclude Include="Ik\aint.h" />
@@ -1004,7 +1004,7 @@
     <ClInclude Include="PhysicsSkeletonObject.h" />
     <ClInclude Include="physic_item.h" />
     <ClInclude Include="physic_item_inline.h" />
-    <ClInclude Include="ph_shell_interface.h" />
+    <ClInclude Include="IPhysicShellCreator.h" />
     <ClInclude Include="PostprocessAnimator.h" />
     <ClInclude Include="pp_effector_custom.h" />
     <ClInclude Include="pp_effector_distance.h" />

@@ -11,6 +11,7 @@
 #include "gameobject.h"
 #include "PHShellCreator.h"
 #include "PhysicsShellHolder.h"
+
 class CPhysicItem : 
 			public CPhysicsShellHolder,
 			public CPHShellSimpleCreator

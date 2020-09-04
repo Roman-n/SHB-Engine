@@ -6,7 +6,7 @@
 #include "..\XR_3DA\cl_intersect.h"
 #include "tri-colliderKNoOPC\__aabb_tri.h"
 
-#include "phaicharacter.h"
+#include "PHAICharacter.h"
 
 #ifdef DEBUG
 #	include "PHDebug.h"

@@ -2,6 +2,7 @@
 
 #include "PHCharacter.h"
 #include "MathUtils.h"
+
 namespace ALife {
 	enum EHitType;
 };

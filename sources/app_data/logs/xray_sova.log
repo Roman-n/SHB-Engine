@@ -1,21 +1,21 @@
-* Detected CPU: GenuineIntel P3 family, F6/M10/S7, 1996.00 mhz, 27-clk 'rdtsc'
+* Detected CPU: GenuineIntel P3 family, F6/M10/S7, 1994.00 mhz, 27-clk 'rdtsc'
 * CPU Features: RDTSC, MMX, SSE, SSE2
 
 Initializing File System...
 using fs-ltx fsgame.ltx
-FS: 28084 files cached, 4565Kb memory used.
-Init FileSystem 5.705315 sec
-'xrCore' build 7878, Sep  1 2020
+FS: 28075 files cached, 4565Kb memory used.
+Init FileSystem 6.288225 sec
+'xrCore' build 7880, Sep  3 2020
 
-CRT heap 0x005a0000
-Process heap 0x005a0000
+CRT heap 0x00a10000
+Process heap 0x00a10000
 Initializing Engine...
 Executing config-script "user.ltx"...
-[..\app_data\user.ltx] successfully loaded.
+! Cannot open script file [user.ltx]
 Starting INPUT device...
 Loading DLL: xrRender_R1.dll
 Loading DLL: xrGame.dll
-* [win32]: free[4064540 K], reserved[26272 K], committed[103428 K]
+* [win32]: free[4064540 K], reserved[26268 K], committed[103432 K]
 * [ D3D ]: textures[0 K]
 * [x-ray]: process heap[6699 K]
 * [x-ray]: economy: strings[879 K], smem[0 K]
@@ -26,12 +26,7 @@ Executing config-script "c:\engine\shb-engine\debug-win32\..\gamedata\config\def
 ! cant find corresponding [id] for action_name artefact
 [c:\engine\shb-engine\debug-win32\..\gamedata\config\default_controls.ltx] successfully loaded.
 Executing config-script "user.ltx"...
-Executing config-script "c:\engine\shb-engine\debug-win32\..\gamedata\config\rspec_default.ltx"...
-[c:\engine\shb-engine\debug-win32\..\gamedata\config\rspec_default.ltx] successfully loaded.
-Executing config-script "c:\engine\shb-engine\debug-win32\..\gamedata\config\default_controls.ltx"...
-! cant find corresponding [id] for action_name artefact
-[c:\engine\shb-engine\debug-win32\..\gamedata\config\default_controls.ltx] successfully loaded.
-[..\app_data\user.ltx] successfully loaded.
+! Cannot open script file [user.ltx]
 SOUND: OpenAL: enumerate devices...
 SOUND: OpenAL: EnumerationExtension Present
 devices Generic Software
@@ -53,14 +48,14 @@ Available video modes[4]:
 [1366x768]
 * CREATE: DeviceREF: 1
 * Vertex Processor: PURE HARDWARE
-*     Texture memory: 4039 M
+*     Texture memory: 4036 M
 *          DDI-level: 9.0
 * GPU shading: vs(fffe0300/3.0/30), ps(ffff0300/3.0/30)
 * GPU vertex cache: recognized, 24
 * DVB created: 1536K
 * DIB created: 512K
 count of .thm files=0
-load time=182 ms
+load time=248 ms
 * distortion: used, dev(30),need(14)
 * SSample: 1024x768
 * created RT($user$rendertarget), 1024x768
@@ -87,10 +82,13 @@ Starting engine...
 pause [ON] timer=[OFF] sound=[ON] reason=mm_activate1
 snd_emitters_[true] 2
 pause [ON] timer=[ON] sound=[OFF] reason=mm_activate2
-pause [OFF] timer=[ON] sound=[OFF] reason=mm_deactivate1
-pause [OFF] timer=[OFF] sound=[ON] reason=mm_deactivate2
-snd_emitters_[false] 1
-*ref -CRenderDevice::ResetTotal: DeviceREF: 93
+* loading script ui_mm_opt_main.script
+* loading script ui_mm_opt_video.script
+* loading script ui_mm_opt_sound.script
+* loading script ui_mm_opt_gameplay.script
+* loading script ui_mm_opt_controls.script
+* loading script ui_mm_opt_video_adv.script
+*ref -CRenderDevice::ResetTotal: DeviceREF: 97
 * DVB created: 1536K
 * DIB created: 512K
 - r__tf_aniso 4
@@ -101,18 +99,35 @@ snd_emitters_[false] 1
 * SSample: enabled
 * GPU shading: vs(fffe0300/3.0/30), ps(ffff0300/3.0/30)
 * GPU vertex cache: recognized, 24
-*** RESET [40 ms]
-*ref +CRenderDevice::ResetTotal: DeviceREF: 92
+*** RESET [0 ms]
+*ref +CRenderDevice::ResetTotal: DeviceREF: 96
+* MEMORY USAGE: 96340 K
+pause [OFF] timer=[ON] sound=[OFF] reason=mm_deactivate1
+pause [OFF] timer=[OFF] sound=[ON] reason=mm_deactivate2
+snd_emitters_[false] 1
+*ref -CRenderDevice::ResetTotal: DeviceREF: 97
+* DVB created: 1536K
+* DIB created: 512K
+- r__tf_aniso 4
+- r1_tf_mipbias 0.
+* SSample: 1024x768
+* created RT($user$rendertarget), 1024x768
+* created RT($user$distort), 1024x768
+* SSample: enabled
+* GPU shading: vs(fffe0300/3.0/30), ps(ffff0300/3.0/30)
+* GPU vertex cache: recognized, 24
+*** RESET [27 ms]
+*ref +CRenderDevice::ResetTotal: DeviceREF: 96
 "c:\engine\shb-engine\sources\..\debug-win32\binaries\xr_3da.exe" 
 * phase time: 0 ms
-* phase cmem: 78748 K
+* phase cmem: 96443 K
 st_prefetching_objects...
 Loading objects...
 Loading models...
-* [prefetch] time:    17952 ms
-* [prefetch] memory:  291778Kb
-* phase time: 18015 ms
-* phase cmem: 357494 K
+* [prefetch] time:    18949 ms
+* [prefetch] memory:  290771Kb
+* phase time: 19013 ms
+* phase cmem: 374105 K
 st_server_starting...
 * sv_Connect: all/single/alife/new
 * Created server_game single
@@ -135,11 +150,11 @@ st_server_starting...
 * loading script treasure_manager.script
 * loading script xr_sound.script
 * loading script dialog_manager.script
-* phase time: 661 ms
-* phase cmem: 358031 K
+* phase time: 718 ms
+* phase cmem: 358281 K
 st_loading_alife_simulator...
-* phase time: 76 ms
-* phase cmem: 358032 K
+* phase time: 84 ms
+* phase cmem: 358272 K
 st_creating_new_game...
 * Creating new game...
 * Loading spawn registry...
@@ -164,7 +179,7 @@ st_creating_new_game...
 * loading script utils.script
 * loading script xr_logic.script
 * 8641 spawn points are successfully loaded
-* Loading ai space is successfully completed (0.939s,  13.157 Mb)
+* Loading ai space is successfully completed (1.018s,  13.157 Mb)
 * loading script db.script
 * loading script actor_proxy.script
 * loading script gulag_tasks.script
@@ -173,32 +188,32 @@ st_creating_new_game...
 * loading script modules.script
 * Saving spawns...
 * Saving objects...
-* 16930 objects are successfully saved
-* Game all.sav is successfully saved to file '..\app_data\savedgames\all.sav' (3568505 bytes compressed to 897919)
+* 16850 objects are successfully saved
+* Game all.sav is successfully saved to file '..\app_data\savedgames\all.sav' (3556149 bytes compressed to 895281)
 * New game is successfully created!
-* Loading alife simulator is successfully completed ( 57.293 Mb)
-* phase time: 54786 ms
-* phase cmem: 416700 K
+* Loading alife simulator is successfully completed ( 57.142 Mb)
+* phase time: 56043 ms
+* phase cmem: 416785 K
 st_server_connecting...
-* phase time: 267 ms
-* phase cmem: 416909 K
+* phase time: 295 ms
+* phase cmem: 416979 K
 st_client_connecting_to localhost...
 # Player not found. New player created.
 * client : connection accepted - <>
-* phase time: 102 ms
-* phase cmem: 416917 K
+* phase time: 61 ms
+* phase cmem: 416987 K
 st_opening_stream...
-* phase time: 37 ms
-* phase cmem: 416917 K
+* phase time: 33 ms
+* phase cmem: 417003 K
 st_loading_cform...
-* phase time: 20135 ms
-* phase cmem: 489511 K
+* phase time: 20869 ms
+* phase cmem: 489599 K
 st_loading_shaders...
 * created RT($user$shadow), 512x512
 * created RT($user$temp), 512x512
 * created RT($user$projector), 512x512
-* phase time: 3633 ms
-* phase cmem: 490989 K
+* phase time: 3870 ms
+* phase cmem: 491094 K
 st_loading_geometry...
 * [Loading VB] 65532 verts, 2047 Kb
 * [Loading VB] 65525 verts, 2047 Kb
@@ -229,26 +244,26 @@ st_loading_geometry...
 * [Loading IB] 1048572 indices, 2047 Kb
 * [Loading IB] 1048575 indices, 2047 Kb
 * [Loading IB] 228285 indices, 445 Kb
-* phase time: 457 ms
-* phase cmem: 546724 K
+* phase time: 415 ms
+* phase cmem: 546812 K
 st_loading_spatial_db...
-* phase time: 29330 ms
-* phase cmem: 550651 K
+* phase time: 30456 ms
+* phase cmem: 550723 K
 st_loading_details...
 * [DETAILS] VertexConsts(256), Batch(61)
 * [DETAILS] 40687 v(20), 26352 p
 * [DETAILS] Batch(61), VB(794K), IB(154K)
-* phase time: 285 ms
-* phase cmem: 551651 K
+* phase time: 299 ms
+* phase cmem: 551741 K
 st_loading_sectors_portals...
 * Loading HOM: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\level.hom
-* phase time: 217 ms
-* phase cmem: 551826 K
+* phase time: 295 ms
+* phase cmem: 551900 K
 st_loading_ai_objects...
 - Loading music tracks from 'l01_escape_musics'...
 * Initializing level script process
-* phase time: 58 ms
-* phase cmem: 551866 K
+* phase time: 71 ms
+* phase cmem: 551956 K
 st_client_spawning...
 _our = 0
 _him = 0
@@ -282,28 +297,28 @@ _him = 0
  --error-incorrect map definition global rect of map [l12_stancia] intersects with [l12_stancia_2]
  --error-incorrect map definition global rect of map [l12_stancia] intersects with [l12u_sarcofag]
  --error-incorrect map definition global rect of map [l12_stancia_2] intersects with [l12u_sarcofag]
-* phase time: 5934 ms
-* phase cmem: 559242 K
+* phase time: 5956 ms
+* phase cmem: 559286 K
 st_loading_textures...
 * t-report - base: 864, 249783 K
 * t-report - lmap: 10, 10241 K
 ***FATAL***: Too many lmap-textures (limit: 8 textures or 32M).
         Reduce pixel density (worse) or use more vertex lighting (better).
-* phase time: 1525 ms
-* phase cmem: 698040 K
+* phase time: 1392 ms
+* phase cmem: 698083 K
 st_client_synchronising...
-* phase time: 52 ms
-* phase cmem: 698040 K
-* [win32]: free[3247136 K], reserved[65320 K], committed[881784 K]
+* phase time: 51 ms
+* phase cmem: 698083 K
+* [win32]: free[3226576 K], reserved[65292 K], committed[902372 K]
 * [ D3D ]: textures[260025 K]
-* [x-ray]: process heap[698040 K]
-* [x-ray]: economy: strings[3740 K], smem[28221 K]
+* [x-ray]: process heap[698083 K]
+* [x-ray]: economy: strings[3736 K], smem[28221 K]
 * [x-ray]: file mapping: memory[31835 K], count[4]
 * active file mappings (4):
-* [0x0a050000][8128486][c:\engine\shb-engine\debug-win32\..\gamedata\game.graph]
-* [0x0c0e0000][3573054][c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\level.gct]
-* [0x224f0000][12505535][c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\level.ai]
-* [0x2bcd0000][8392388][c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\level.details]
+* [0x0c4c0000][8128486][c:\engine\shb-engine\debug-win32\..\gamedata\game.graph]
+* [0x0e390000][3573054][c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\level.gct]
+* [0x11700000][12505535][c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\level.ai]
+* [0x2e8b0000][8392388][c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\level.details]
 * loading script bind_stalker.script
 * loading script level_weathers.script
 * loading script xr_detector.script
@@ -402,33 +417,56 @@ correction attempts 1
 * loading script move_mgr.script
 * loading script xr_info.script
 * loading script sound_theme.script
+- There are no sounds with prefix talk\stories\legend005_part_
 - There are no sounds with prefix reactions\story\disbelief_story_
 - There are no sounds with prefix talk\use\yes_sleep_
 - There are no sounds with prefix reactions\story\old_story_
 - There are no sounds with prefix weather\bad_weather\bad_weather_
 - There are no sounds with prefix reactions\story\action_wrong_
 - There are no sounds with prefix reactions\story\disbelief_teller_
+- There are no sounds with prefix reactions\see_something\see_
 - There are no sounds with prefix reactions\story\continue_
+- There are no sounds with prefix talk\stories\legend003_part_
 - There are no sounds with prefix fight\attack\attack_5
+- There are no sounds with prefix help\wounded_psy\psy_
+- There are no sounds with prefix threat\stop\stop_
+- There are no sounds with prefix talk\trade\no\no_
 - There are no sounds with prefix reactions\story\wonder_
 - There are no sounds with prefix reactions\story\cool_teller_
 - There are no sounds with prefix reactions\story\advice_sceptic_
+- There are no sounds with prefix talk\stories\legend002_part_
+- There are no sounds with prefix talk\stories\story006_part_
 - There are no sounds with prefix reactions\story\yes_
+- There are no sounds with prefix talk\stories\story002_part_
+- There are no sounds with prefix help\wounded_not_see_helper\help_
+- There are no sounds with prefix help\wounded_see_helper\help_
+- There are no sounds with prefix help\wounded_psy\suicide_
 - There are no sounds with prefix reactions\story\disbelief_
+- There are no sounds with prefix reactions\nothing\nothing_
+- There are no sounds with prefix talk\stories\legend001_part_
 - There are no sounds with prefix talk\use\yes_default_
+- There are no sounds with prefix talk\stories\story005_part_
 - There are no sounds with prefix hail\deleted_
 - There are no sounds with prefix reactions\story\final_happy_
+- There are no sounds with prefix talk\stories\legend004_part_
 - There are no sounds with prefix reactions\story\cool_info_
 - There are no sounds with prefix talk\use\yes_fight_
 - There are no sounds with prefix reactions\story\final_tragic_
+- There are no sounds with prefix waiting\wait_
+- There are no sounds with prefix talk\stories\story003_part_
 - There are no sounds with prefix reactions\story\belief_story_
 - There are no sounds with prefix reactions\story\fear_
+- There are no sounds with prefix talk\stories\story001_part_
 - There are no sounds with prefix reactions\story\action_right_
 - There are no sounds with prefix scenario\bar\barman\bar_barman_psycho_
+- There are no sounds with prefix talk\rejection\rejection_2
+- There are no sounds with prefix help\not_wounded\help_
 - There are no sounds with prefix reactions\story\uncertain_
 - There are no sounds with prefix reactions\story\doubt_
 - There are no sounds with prefix reactions\story\advice_support_
+- There are no sounds with prefix talk\stories\story004_part_
 - There are no sounds with prefix talk\use\yes_kamp_
+- There are no sounds with prefix talk\trade\yes\yes_
 * loading script xr_combat.script
 * loading script xr_use.script
 * loading script xr_hit.script
@@ -442,6 +480,7 @@ correction attempts 1
 * loading script xr_walker.script
 * loading script state_lib.script
 correction attempts 1
+correction attempts 1
 - There are no sounds with prefix fight\death\anomaly_
 - There are no sounds with prefix fight\friendly_grenade\friendly_grenade_
 - There are no sounds with prefix talk\stories\legend005_part_
@@ -493,113 +532,89 @@ correction attempts 1
 - There are no sounds with prefix talk\use\yes_kamp_
 - There are no sounds with prefix talk\trade\yes\yes_
 correction attempts 1
+correction attempts 1
 - There are no sounds with prefix fight\death\anomaly_
 - There are no sounds with prefix fight\friendly_grenade\friendly_grenade_
-- There are no sounds with prefix talk\stories\legend005_part_
 - There are no sounds with prefix reactions\story\disbelief_story_
 - There are no sounds with prefix talk\use\yes_sleep_
 - There are no sounds with prefix reactions\story\old_story_
 - There are no sounds with prefix weather\bad_weather\bad_weather_
 - There are no sounds with prefix reactions\story\action_wrong_
 - There are no sounds with prefix reactions\story\disbelief_teller_
-- There are no sounds with prefix reactions\see_something\see_
 - There are no sounds with prefix reactions\story\continue_
-- There are no sounds with prefix talk\stories\legend003_part_
 - There are no sounds with prefix fight\attack\attack_5
-- There are no sounds with prefix help\wounded_psy\psy_
-- There are no sounds with prefix threat\stop\stop_
-- There are no sounds with prefix talk\trade\no\no_
 - There are no sounds with prefix reactions\story\wonder_
 - There are no sounds with prefix reactions\story\cool_teller_
 - There are no sounds with prefix reactions\story\advice_sceptic_
-- There are no sounds with prefix talk\stories\legend002_part_
-- There are no sounds with prefix talk\stories\story006_part_
 - There are no sounds with prefix reactions\story\yes_
-- There are no sounds with prefix talk\stories\story002_part_
-- There are no sounds with prefix help\wounded_not_see_helper\help_
-- There are no sounds with prefix help\wounded_see_helper\help_
-- There are no sounds with prefix help\wounded_psy\suicide_
 - There are no sounds with prefix reactions\story\disbelief_
-- There are no sounds with prefix reactions\nothing\nothing_
-- There are no sounds with prefix talk\stories\legend001_part_
 - There are no sounds with prefix talk\use\yes_default_
-- There are no sounds with prefix talk\stories\story005_part_
 - There are no sounds with prefix hail\deleted_
 - There are no sounds with prefix reactions\story\final_happy_
-- There are no sounds with prefix talk\stories\legend004_part_
 - There are no sounds with prefix reactions\story\cool_info_
 - There are no sounds with prefix talk\use\yes_fight_
 - There are no sounds with prefix reactions\story\final_tragic_
-- There are no sounds with prefix waiting\wait_
-- There are no sounds with prefix talk\stories\story003_part_
 - There are no sounds with prefix reactions\story\belief_story_
 - There are no sounds with prefix reactions\story\fear_
-- There are no sounds with prefix talk\stories\story001_part_
 - There are no sounds with prefix reactions\story\action_right_
-- There are no sounds with prefix talk\rejection\rejection_2
-- There are no sounds with prefix help\not_wounded\help_
 - There are no sounds with prefix reactions\story\uncertain_
 - There are no sounds with prefix reactions\story\doubt_
 - There are no sounds with prefix reactions\story\advice_support_
-- There are no sounds with prefix talk\stories\story004_part_
 - There are no sounds with prefix talk\use\yes_kamp_
-- There are no sounds with prefix talk\trade\yes\yes_
-correction attempts 1
-correction attempts 1
-- There are no sounds with prefix fight\death\anomaly_
-- There are no sounds with prefix fight\friendly_grenade\friendly_grenade_
-- There are no sounds with prefix talk\stories\legend005_part_
-- There are no sounds with prefix reactions\story\disbelief_story_
-- There are no sounds with prefix talk\use\yes_sleep_
-- There are no sounds with prefix reactions\story\old_story_
-- There are no sounds with prefix weather\bad_weather\bad_weather_
-- There are no sounds with prefix reactions\story\action_wrong_
-- There are no sounds with prefix reactions\story\disbelief_teller_
-- There are no sounds with prefix reactions\see_something\see_
-- There are no sounds with prefix reactions\story\continue_
-- There are no sounds with prefix talk\stories\legend003_part_
-- There are no sounds with prefix help\wounded_psy\psy_
-- There are no sounds with prefix threat\stop\stop_
-- There are no sounds with prefix talk\trade\no\no_
-- There are no sounds with prefix reactions\story\wonder_
-- There are no sounds with prefix reactions\story\cool_teller_
-- There are no sounds with prefix reactions\story\advice_sceptic_
-- There are no sounds with prefix talk\stories\legend002_part_
-- There are no sounds with prefix talk\stories\story006_part_
-- There are no sounds with prefix reactions\story\yes_
-- There are no sounds with prefix talk\stories\story002_part_
-- There are no sounds with prefix help\wounded_not_see_helper\help_
-- There are no sounds with prefix help\wounded_see_helper\help_
-- There are no sounds with prefix help\wounded_psy\suicide_
-- There are no sounds with prefix reactions\story\disbelief_
-- There are no sounds with prefix reactions\nothing\nothing_
-- There are no sounds with prefix talk\stories\legend001_part_
-- There are no sounds with prefix talk\use\yes_default_
-- There are no sounds with prefix talk\stories\story005_part_
-- There are no sounds with prefix hail\deleted_
-- There are no sounds with prefix reactions\story\final_happy_
-- There are no sounds with prefix talk\stories\legend004_part_
-- There are no sounds with prefix reactions\story\cool_info_
-- There are no sounds with prefix talk\use\yes_fight_
-- There are no sounds with prefix reactions\story\final_tragic_
-- There are no sounds with prefix waiting\wait_
-- There are no sounds with prefix talk\stories\story003_part_
-- There are no sounds with prefix reactions\story\belief_story_
-- There are no sounds with prefix reactions\story\fear_
-- There are no sounds with prefix talk\stories\story001_part_
-- There are no sounds with prefix reactions\story\action_right_
-- There are no sounds with prefix talk\rejection\rejection_2
-- There are no sounds with prefix help\not_wounded\help_
-- There are no sounds with prefix reactions\story\uncertain_
-- There are no sounds with prefix reactions\story\doubt_
-- There are no sounds with prefix reactions\story\advice_support_
-- There are no sounds with prefix talk\stories\story004_part_
-- There are no sounds with prefix talk\use\yes_kamp_
-- There are no sounds with prefix talk\trade\yes\yes_
 * loading script xr_kamp.script
 correction attempts 1
 correction attempts 1
 correction attempts 1
+- There are no sounds with prefix fight\death\anomaly_
+- There are no sounds with prefix fight\friendly_grenade\friendly_grenade_
+- There are no sounds with prefix talk\stories\legend005_part_
+- There are no sounds with prefix reactions\story\disbelief_story_
+- There are no sounds with prefix talk\use\yes_sleep_
+- There are no sounds with prefix reactions\story\old_story_
+- There are no sounds with prefix weather\bad_weather\bad_weather_
+- There are no sounds with prefix reactions\story\action_wrong_
+- There are no sounds with prefix reactions\story\disbelief_teller_
+- There are no sounds with prefix reactions\see_something\see_
+- There are no sounds with prefix reactions\story\continue_
+- There are no sounds with prefix talk\stories\legend003_part_
+- There are no sounds with prefix help\wounded_psy\psy_
+- There are no sounds with prefix threat\stop\stop_
+- There are no sounds with prefix talk\trade\no\no_
+- There are no sounds with prefix reactions\story\wonder_
+- There are no sounds with prefix reactions\story\cool_teller_
+- There are no sounds with prefix reactions\story\advice_sceptic_
+- There are no sounds with prefix talk\stories\legend002_part_
+- There are no sounds with prefix talk\stories\story006_part_
+- There are no sounds with prefix reactions\story\yes_
+- There are no sounds with prefix talk\stories\story002_part_
+- There are no sounds with prefix help\wounded_not_see_helper\help_
+- There are no sounds with prefix help\wounded_see_helper\help_
+- There are no sounds with prefix help\wounded_psy\suicide_
+- There are no sounds with prefix reactions\story\disbelief_
+- There are no sounds with prefix reactions\nothing\nothing_
+- There are no sounds with prefix talk\stories\legend001_part_
+- There are no sounds with prefix talk\use\yes_default_
+- There are no sounds with prefix talk\stories\story005_part_
+- There are no sounds with prefix hail\deleted_
+- There are no sounds with prefix reactions\story\final_happy_
+- There are no sounds with prefix talk\stories\legend004_part_
+- There are no sounds with prefix reactions\story\cool_info_
+- There are no sounds with prefix talk\use\yes_fight_
+- There are no sounds with prefix reactions\story\final_tragic_
+- There are no sounds with prefix waiting\wait_
+- There are no sounds with prefix talk\stories\story003_part_
+- There are no sounds with prefix reactions\story\belief_story_
+- There are no sounds with prefix reactions\story\fear_
+- There are no sounds with prefix talk\stories\story001_part_
+- There are no sounds with prefix reactions\story\action_right_
+- There are no sounds with prefix talk\rejection\rejection_2
+- There are no sounds with prefix help\not_wounded\help_
+- There are no sounds with prefix reactions\story\uncertain_
+- There are no sounds with prefix reactions\story\doubt_
+- There are no sounds with prefix reactions\story\advice_support_
+- There are no sounds with prefix talk\stories\story004_part_
+- There are no sounds with prefix talk\use\yes_kamp_
+- There are no sounds with prefix talk\trade\yes\yes_
 correction attempts 1
 * loading script bind_smart_terrain.script
 * loading script bind_heli.script
@@ -643,78 +658,73 @@ correction attempts 1
 - There are no sounds with prefix fight\threat\threat_distant_
 - There are no sounds with prefix fight\enemy_hit\enemy_hit_
 - There are no sounds with prefix fight\enemy_down\enemy_down_
-shell for esc_stalker_corpse[467] created in 8.179333 ms
+shell for esc_stalker_corpse[477] created in 9.199504 ms
 correction attempts 1
-shell for esc_tutorial_dead_novice[553] created in 1.860222 ms
+shell for esc_tutorial_dead_novice[563] created in 1.932578 ms
 correction attempts 1
 * loading script bind_respawn.script
-shell for esc_stalker_corps1[702] created in 1.759642 ms
+shell for esc_stalker_corps1[712] created in 1.882801 ms
 correction attempts 1
-shell for esc_stalker_corps1_0000[704] created in 1.733470 ms
+shell for esc_stalker_corps1_0000[714] created in 1.705760 ms
 correction attempts 1
-shell for esc_stalker_corps1_0001[706] created in 1.697549 ms
+shell for esc_stalker_corps1_0001[716] created in 1.931039 ms
 correction attempts 1
 correction attempts 1
 - There are no sounds with prefix fight\fire\fire_,fight\threat\threat_distant_
 - There are no sounds with prefix fight\threat\threat_distant_
 - There are no sounds with prefix fight\enemy_hit\enemy_hit_
 - There are no sounds with prefix fight\enemy_down\enemy_down_
-shell for esc_trup_bratka[750] created in 1.930012 ms
+shell for esc_trup_bratka[760] created in 1.829432 ms
 correction attempts 1
-shell for esc_stalker_0000[874] created in 1.758615 ms
+shell for esc_stalker_0000[886] created in 1.825840 ms
 correction attempts 1
-shell for esc_trup_scene[878] created in 1.780682 ms
+shell for esc_trup_scene[890] created in 1.768879 ms
 correction attempts 1
 * loading script xr_box.script
 - Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\meshes\physics\balon\balon_02.ogf
 - Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\meshes\physics\decor\fire_vedro.ogf
 * loading script game_stats.script
 * loading script sr_idle.script
+* loading script xr_conditions.script
 Game Task [storyline_eliminate_gunslinger] has no priority
 * loading script news_manager.script
 * loading script xr_effects.script
-* loading script xr_conditions.script
 * loading script sr_no_weapon.script
 * loading script sr_psy_antenna.script
 * loading script xr_spawner.script
 * loading script xr_statistic.script
-* xrSheduler: too much time consumed by object [alife_simulator] (474ms)
+* xrSheduler: too much time consumed by object [alife_simulator] (514ms)
 * loading script ph_on_hit.script
 * loading script sr_light.script
 * loading script xr_sleeper.script
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (23ms)
-* xrSheduler: too much time consumed by object [device_pda0068] (37ms)
-cl setDestroy [707][1417]
-cl setDestroy [705][1418]
-cl setDestroy [703][1419]
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (19ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (53ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (20ms)
-* MEMORY USAGE: 733033 K
-cl setDestroy [554][1440]
-* xrSheduler: too much time consumed by object [esc_specnaz4] (74ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (26ms)
+* xrSheduler: too much time consumed by object [device_pda0068] (27ms)
+cl setDestroy [717][839]
+cl setDestroy [715][840]
+cl setDestroy [713][841]
+* xrSheduler: too much time consumed by object [esc_lager7] (65ms)
+* xrSheduler: too much time consumed by object [esc_lager6] (20ms)
+cl setDestroy [564][860]
+* MEMORY USAGE: 732852 K
 * loading script ph_idle.script
-* xrSheduler: too much time consumed by object [level_prefix_inventory_box_0017] (16ms)
 * loading script ph_door.script
-* xrSheduler: too much time consumed by object [esc_specnaz2] (20ms)
-cl setDestroy [879][1448]
-cl setDestroy [875][1448]
-cl setDestroy [876][1448]
-* xrSheduler: too much time consumed by object [escape_trader] (84ms)
-cl setDestroy [90][1450]
-cl setDestroy [91][1450]
-cl setDestroy [93][1450]
+cl setDestroy [891][868]
+cl setDestroy [887][869]
+cl setDestroy [888][869]
+* xrSheduler: too much time consumed by object [esc_specnaz1] (76ms)
+* xrSheduler: too much time consumed by object [escape_trader] (73ms)
+cl setDestroy [90][871]
+cl setDestroy [91][871]
+cl setDestroy [93][871]
 * WARNING: c_EVENT[19] to [91]: unknown dest
-cl setDestroy [468][1454]
-cl setDestroy [469][1454]
-cl setDestroy [470][1454]
+cl setDestroy [478][875]
+cl setDestroy [479][875]
+cl setDestroy [480][875]
 * loading script ph_sound.script
-* xrSheduler: too much time consumed by object [esc_blokpost] (145ms)
+* xrSheduler: too much time consumed by object [esc_blokpost] (148ms)
 * loading script heli_move.script
-cl setDestroy [751][1458]
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (16ms)
+* xrSheduler: too much time consumed by object [esc_heli] (16ms)
+cl setDestroy [761][879]
 * loading script mob_home.script
 correction attempts 1
 correction attempts 1
@@ -723,2083 +733,971 @@ correction attempts 1
 * loading script mob_sound.script
 * xrSheduler: too much time consumed by object [escape_trader] (17ms)
 * loading script state_mgr_animation_list.script
-* xrSheduler: too much time consumed by object [esc_shustryi] (45ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost] (152ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (16ms)
+* xrSheduler: too much time consumed by object [esc_shustryi] (27ms)
+* xrSheduler: too much time consumed by object [esc_blokpost] (163ms)
 - Play music track: music\amb01
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier7] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (17ms)
-* xrSheduler: too much time consumed by object [esc_physic_destroyable_object_0009] (37ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (20ms)
-* xrSheduler: too much time consumed by object [esc_dog_swarm_0007] (40ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (18ms)
-* xrSheduler: too much time consumed by object [particle_instance] (24ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (16ms)
-* xrSheduler: too much time consumed by object [esc_physic_destroyable_object_0071] (19ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (24ms)
-* xrSheduler: too much time consumed by object [esc_shustryi] (37ms)
-* xrSheduler: too much time consumed by object [esc_specnaz2] (34ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (18ms)
-* xrSheduler: too much time consumed by object [esc_shustryi] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (20ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (18ms)
-[LSS][2256] Going offline [281631][esc_dog_swarm_0001][476] ([-246.726303][-24.793289][-134.433868] : [82.426277][0.238911][532.182800]), on '*SERVER*'
-[LSS][2256] Going offline [281631][esc_dog_swarm_0002][477] ([-246.726303][-24.793289][-134.433868] : [78.733002][1.452955][551.851501]), on '*SERVER*'
-[LSS][2256] Going offline [281631][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][2256] Going offline [281631][esc_dog_swarm_0004][479] ([-246.726303][-24.793289][-134.433868] : [80.897591][0.418478][538.041321]), on '*SERVER*'
-[LSS][2256] Going offline [281631][esc_dog_swarm_0007][480] ([-246.726303][-24.793289][-134.433868] : [83.311188][2.208263][555.960327]), on '*SERVER*'
-cl setDestroy [476][2257]
-cl setDestroy [478][2257]
-cl setDestroy [477][2257]
-cl setDestroy [479][2257]
-cl setDestroy [480][2257]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [esc_specnaz2] (40ms)
-* xrSheduler: too much time consumed by object [esc_specnaz2] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (24ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (32ms)
-* xrSheduler: too much time consumed by object [esc_specnaz2] (22ms)
-* xrSheduler: too much time consumed by object [esc_physic_destroyable_object_0041] (33ms)
-correction attempts 1
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_zone_mosquito_bald_weak_0026] (18ms)
-* xrSheduler: too much time consumed by object [particle_instance] (31ms)
-* xrSheduler: too much time consumed by object [esc_zone_witches_galantine_0004] (17ms)
-* xrSheduler: too much time consumed by object [esc_dog_swarm_0001] (17ms)
-* xrSheduler: too much time consumed by object [esc_dog_swarm_0001] (44ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (16ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (19ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (24ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (20ms)
-* xrSheduler: too much time consumed by object [esc_specnaz2] (16ms)
-* xrSheduler: too much time consumed by object [esc_dog_swarm_0007] (46ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier7] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (18ms)
-* xrSheduler: too much time consumed by object [esc_dog_swarm_0007] (61ms)
-* xrSheduler: too much time consumed by object [esc_boar_most1] (18ms)
-[LSS][3164] Going offline [375114][esc_dog_swarm_0001][476] ([-246.726288][-24.793289][-134.433868] : [132.954742][2.609829][422.845276]), on '*SERVER*'
-[LSS][3164] Going offline [375114][esc_dog_swarm_0002][477] ([-246.726288][-24.793289][-134.433868] : [119.239494][2.349664][442.360870]), on '*SERVER*'
-[LSS][3164] Going offline [375114][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][3164] Going offline [375114][esc_dog_swarm_0004][479] ([-246.726288][-24.793289][-134.433868] : [122.062088][2.839361][420.272827]), on '*SERVER*'
-[LSS][3164] Going offline [375114][esc_dog_swarm_0007][480] ([-246.726288][-24.793289][-134.433868] : [119.770264][2.378222][440.338440]), on '*SERVER*'
-cl setDestroy [476][3165]
-cl setDestroy [478][3165]
-cl setDestroy [477][3165]
-cl setDestroy [479][3165]
-cl setDestroy [480][3165]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [esc_lager2] (19ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (21ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (22ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (30ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (21ms)
-* xrSheduler: too much time consumed by object [esc_specnaz2] (23ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (16ms)
-* xrSheduler: too much time consumed by object [trader_physic_object0007] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz1] (42ms)
-* xrSheduler: too much time consumed by object [esc_specnaz2] (25ms)
-* xrSheduler: too much time consumed by object [esc_specnaz4] (19ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (24ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier2] (19ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (22ms)
-correction attempts 1
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_lager4] (19ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (19ms)
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz2] (32ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier4] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (20ms)
-* xrSheduler: too much time consumed by object [particle_instance] (22ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (18ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (24ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (18ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (17ms)
-* xrSheduler: too much time consumed by object [particle_instance] (30ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (16ms)
-* xrSheduler: too much time consumed by object [door0008] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (24ms)
-* xrSheduler: too much time consumed by object [esc_surprise_box_023] (20ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (16ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (16ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (17ms)
-* xrSheduler: too much time consumed by object [esc_physic_destroyable_object_0017] (37ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (22ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz4] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (19ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (18ms)
-[LSS][4960] Going offline [559662][esc_dog_swarm_0001][476] ([-246.726303][-24.793289][-134.433868] : [84.474731][3.015661][564.022583]), on '*SERVER*'
-[LSS][4960] Going offline [559662][esc_dog_swarm_0002][477] ([-246.726303][-24.793289][-134.433868] : [70.038933][4.367919][581.371582]), on '*SERVER*'
-[LSS][4960] Going offline [559662][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][4960] Going offline [559662][esc_dog_swarm_0004][479] ([-246.726303][-24.793289][-134.433868] : [89.569794][2.698948][556.050598]), on '*SERVER*'
-[LSS][4960] Going offline [559662][esc_dog_swarm_0007][480] ([-246.726303][-24.793289][-134.433868] : [83.448906][2.132891][554.771545]), on '*SERVER*'
-cl setDestroy [476][4961]
-cl setDestroy [478][4961]
-cl setDestroy [477][4961]
-cl setDestroy [479][4961]
-cl setDestroy [480][4961]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [esc_lager6] (30ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (17ms)
-* xrSheduler: too much time consumed by object [esc_specnaz2] (18ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (17ms)
-* xrSheduler: too much time consumed by object [esc_physic_destroyable_object] (42ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (17ms)
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (17ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (17ms)
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (21ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (17ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (66ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier4] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (16ms)
-* xrSheduler: too much time consumed by object [esc_zone_witches_galantine_0002] (20ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (19ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (45ms)
-* xrSheduler: too much time consumed by object [esc2_dogs_exit] (18ms)
-* xrSheduler: too much time consumed by object [esc_specnaz2] (17ms)
-* xrSheduler: too much time consumed by object [esc_zone_witches_galantine] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (17ms)
-[LSS][5841] Going offline [651782][esc_dog_swarm_0001][476] ([-246.726318][-24.793291][-134.433868] : [137.764404][2.870135][404.774689]), on '*SERVER*'
-[LSS][5841] Going offline [651782][esc_dog_swarm_0002][477] ([-246.726318][-24.793291][-134.433868] : [110.189651][2.776143][417.235474]), on '*SERVER*'
-[LSS][5841] Going offline [651782][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][5841] Going offline [651782][esc_dog_swarm_0004][479] ([-246.726318][-24.793291][-134.433868] : [97.639854][1.771459][430.035004]), on '*SERVER*'
-[LSS][5841] Going offline [651782][esc_dog_swarm_0007][480] ([-246.726318][-24.793291][-134.433868] : [114.323013][3.150514][411.571777]), on '*SERVER*'
-cl setDestroy [476][5842]
-cl setDestroy [478][5842]
-cl setDestroy [477][5842]
-cl setDestroy [479][5842]
-cl setDestroy [480][5842]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [esc_specnaz4] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (19ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (17ms)
-* xrSheduler: too much time consumed by object [esc_specnaz4] (46ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (17ms)
-* xrSheduler: too much time consumed by object [esc_shustryi] (19ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (21ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (22ms)
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (24ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (35ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (55ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (19ms)
-correction attempts 1
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_lager3] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz4] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier4] (17ms)
-* xrSheduler: too much time consumed by object [particle_instance] (20ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (21ms)
-* xrSheduler: too much time consumed by object [esc_specnaz1] (17ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (45ms)
-* xrSheduler: too much time consumed by object [esc_specnaz4] (20ms)
-* xrSheduler: too much time consumed by object [trader_physic_object0007] (19ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier2] (35ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier2] (30ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (21ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (17ms)
-- Play music track: music\amb01
-* xrSheduler: too much time consumed by object [esc_wolf] (17ms)
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (19ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (17ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (51ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier2] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (28ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (19ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (21ms)
-* xrSheduler: too much time consumed by object [particle_instance] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (18ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (16ms)
-* xrSheduler: too much time consumed by object [esc2_dogs_exit] (19ms)
-* xrSheduler: too much time consumed by object [esc_specnaz1] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (16ms)
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (20ms)
-[LSS][7506] Going offline [839140][esc_dog_swarm_0001][476] ([-246.726303][-24.793289][-134.433868] : [83.335304][1.923689][552.305664]), on '*SERVER*'
-[LSS][7506] Going offline [839140][esc_dog_swarm_0002][477] ([-246.726303][-24.793289][-134.433868] : [65.630814][2.544760][570.774841]), on '*SERVER*'
-[LSS][7506] Going offline [839140][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][7506] Going offline [839140][esc_dog_swarm_0004][479] ([-246.726303][-24.793289][-134.433868] : [80.720879][5.861567][588.908875]), on '*SERVER*'
-[LSS][7506] Going offline [839140][esc_dog_swarm_0007][480] ([-246.726303][-24.793289][-134.433868] : [88.984734][2.936609][559.450256]), on '*SERVER*'
-cl setDestroy [476][7507]
-cl setDestroy [478][7507]
-cl setDestroy [477][7507]
-cl setDestroy [479][7507]
-cl setDestroy [480][7507]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [esc_lager1] (21ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier2] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier2] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz2] (20ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (17ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (46ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier2] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (18ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (17ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (20ms)
-correction attempts 1
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (19ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier4] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (18ms)
-* xrSheduler: too much time consumed by object [level_prefix_physic_destroyable_object_0004] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (21ms)
-* xrSheduler: too much time consumed by object [esc_specnaz4] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (16ms)
-* xrSheduler: too much time consumed by object [esc_surprise_box_022] (19ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (20ms)
-* xrSheduler: too much time consumed by object [esc_specnaz1] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (51ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (18ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (23ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (16ms)
-* xrSheduler: too much time consumed by object [particle_instance] (26ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (18ms)
-[LSS][8324] Going offline [932310][esc_dog_swarm_0001][476] ([-246.726288][-24.793287][-134.433868] : [102.141365][2.034036][431.370453]), on '*SERVER*'
-[LSS][8324] Going offline [932310][esc_dog_swarm_0002][477] ([-246.726288][-24.793287][-134.433868] : [113.284454][2.855963][416.553101]), on '*SERVER*'
-[LSS][8324] Going offline [932310][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][8324] Going offline [932310][esc_dog_swarm_0004][479] ([-246.726288][-24.793287][-134.433868] : [118.876007][2.664419][428.025146]), on '*SERVER*'
-[LSS][8324] Going offline [932310][esc_dog_swarm_0007][480] ([-246.726288][-24.793287][-134.433868] : [142.729279][2.570618][410.089752]), on '*SERVER*'
-cl setDestroy [476][8325]
-cl setDestroy [478][8325]
-cl setDestroy [477][8325]
-cl setDestroy [479][8325]
-cl setDestroy [480][8325]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (16ms)
-correction attempts 1
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_lager7] (16ms)
-* xrSheduler: too much time consumed by object [particle_instance] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (18ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (17ms)
-* xrSheduler: too much time consumed by object [esc_matugalnik] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (16ms)
-* xrSheduler: too much time consumed by object [escape_trader] (49ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (16ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (41ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (19ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (21ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (19ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (20ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (57ms)
-* xrSheduler: too much time consumed by object [esc_shustryi] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (19ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (17ms)
-* xrSheduler: too much time consumed by object [door0008] (22ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (70ms)
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (16ms)
-* xrSheduler: too much time consumed by object [particle_instance] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (28ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (19ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (23ms)
-* xrSheduler: too much time consumed by object [esc_bridge] (50ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (18ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (24ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (18ms)
-* xrSheduler: too much time consumed by object [esc_specnaz1] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier7] (20ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (17ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (19ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (24ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (18ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (17ms)
-* xrSheduler: too much time consumed by object [esc_specnaz4] (22ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (21ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (17ms)
-* xrSheduler: too much time consumed by object [esc_surprise_box_010] (47ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (26ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (17ms)
-* xrSheduler: too much time consumed by object [particle_instance] (21ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (20ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (17ms)
-* xrSheduler: too much time consumed by object [esc_specnaz4] (16ms)
-* xrSheduler: too much time consumed by object [esc_m_crow_0037] (20ms)
-* xrSheduler: too much time consumed by object [particle_instance] (21ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (24ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (17ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier2] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (40ms)
-* xrSheduler: too much time consumed by object [esc2_dogs_zamost3] (17ms)
-[LSS][9957] Going offline [1116385][esc_dog_swarm_0001][476] ([-246.726318][-24.793291][-134.433868] : [100.673073][5.260129][579.898804]), on '*SERVER*'
-[LSS][9957] Going offline [1116385][esc_dog_swarm_0002][477] ([-246.726318][-24.793291][-134.433868] : [98.118721][2.402508][545.800171]), on '*SERVER*'
-[LSS][9957] Going offline [1116385][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][9957] Going offline [1116385][esc_dog_swarm_0004][479] ([-246.726318][-24.793291][-134.433868] : [89.971001][2.704247][555.945374]), on '*SERVER*'
-[LSS][9957] Going offline [1116385][esc_dog_swarm_0007][480] ([-246.726318][-24.793291][-134.433868] : [81.028351][4.008048][575.659607]), on '*SERVER*'
-cl setDestroy [476][9958]
-cl setDestroy [478][9958]
-cl setDestroy [477][9958]
-cl setDestroy [479][9958]
-cl setDestroy [480][9958]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [esc_lager6] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (23ms)
-* xrSheduler: too much time consumed by object [esc_specnaz1] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (16ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (22ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (18ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier2] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (20ms)
-* xrSheduler: too much time consumed by object [esc_shustryi] (17ms)
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (20ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (17ms)
-correction attempts 1
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (18ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (21ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (22ms)
-* xrSheduler: too much time consumed by object [esc_physic_destroyable_object_0040] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier4] (22ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier2] (22ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (25ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier4] (52ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (17ms)
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (19ms)
-[LSS][10752] Going offline [1209119][esc_dog_swarm_0001][476] ([-246.726303][-24.793291][-134.433868] : [144.644653][2.820453][433.040009]), on '*SERVER*'
-[LSS][10752] Going offline [1209119][esc_dog_swarm_0002][477] ([-246.726303][-24.793291][-134.433868] : [138.107758][2.842553][405.337311]), on '*SERVER*'
-[LSS][10752] Going offline [1209119][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][10752] Going offline [1209119][esc_dog_swarm_0004][479] ([-246.726303][-24.793291][-134.433868] : [140.816513][2.720387][431.777557]), on '*SERVER*'
-[LSS][10752] Going offline [1209119][esc_dog_swarm_0007][480] ([-246.726303][-24.793291][-134.433868] : [137.157593][2.508145][425.523010]), on '*SERVER*'
-cl setDestroy [476][10753]
-cl setDestroy [478][10753]
-cl setDestroy [477][10753]
-cl setDestroy [479][10753]
-cl setDestroy [480][10753]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [esc_lager2] (19ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (20ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (54ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (17ms)
-* xrSheduler: too much time consumed by object [particle_instance] (21ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (16ms)
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (19ms)
-* xrSheduler: too much time consumed by object [particle_instance] (17ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (19ms)
-* xrSheduler: too much time consumed by object [esc_shustryi] (17ms)
-* xrSheduler: too much time consumed by object [particle_instance] (27ms)
-* xrSheduler: too much time consumed by object [esc_specnaz1] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (78ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier2] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (18ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (32ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (18ms)
-* xrSheduler: too much time consumed by object [esc_surprise_box_028] (49ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (17ms)
-* xrSheduler: too much time consumed by object [particle_instance] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (19ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier2] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier4] (23ms)
-correction attempts 1
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_dog_swarm_0002] (26ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (32ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (19ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (16ms)
-- Play music track: music\amb01
-* xrSheduler: too much time consumed by object [esc_wolf] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (25ms)
-* xrSheduler: too much time consumed by object [esc_physic_destroyable_object_0014] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (19ms)
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (22ms)
-* xrSheduler: too much time consumed by object [esc_shustryi] (21ms)
-* xrSheduler: too much time consumed by object [esc_specnaz4] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz2] (63ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (16ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (17ms)
-* xrSheduler: too much time consumed by object [esc_specnaz4] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (20ms)
-* xrSheduler: too much time consumed by object [esc_specnaz4] (16ms)
-* xrSheduler: too much time consumed by object [particle_instance] (31ms)
-* xrSheduler: too much time consumed by object [esc_shustryi] (24ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (19ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (29ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (18ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (22ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (20ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (20ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (19ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (21ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (16ms)
-* xrSheduler: too much time consumed by object [particle_instance] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier7] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (19ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (66ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier2] (17ms)
-* xrSheduler: too much time consumed by object [esc_stalker_0000] (31ms)
-[LSS][12394] Going offline [1397015][esc_dog_swarm_0001][476] ([-246.726303][-24.793289][-134.433868] : [101.916725][4.880563][576.525757]), on '*SERVER*'
-[LSS][12394] Going offline [1397015][esc_dog_swarm_0002][477] ([-246.726303][-24.793289][-134.433868] : [54.696587][0.975785][570.341736]), on '*SERVER*'
-[LSS][12394] Going offline [1397015][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][12394] Going offline [1397015][esc_dog_swarm_0004][479] ([-246.726303][-24.793289][-134.433868] : [101.492447][2.729894][547.867737]), on '*SERVER*'
-[LSS][12394] Going offline [1397015][esc_dog_swarm_0007][480] ([-246.726303][-24.793289][-134.433868] : [97.011513][2.407788][546.814331]), on '*SERVER*'
-cl setDestroy [476][12395]
-cl setDestroy [478][12395]
-cl setDestroy [477][12395]
-cl setDestroy [479][12395]
-cl setDestroy [480][12395]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [esc_wolf] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (16ms)
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (30ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (17ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (20ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (67ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz2] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (20ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (18ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (19ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (52ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (16ms)
-* xrSheduler: too much time consumed by object [door0008] (35ms)
-* xrSheduler: too much time consumed by object [esc_m_crow_0028] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (27ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (23ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (16ms)
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_specnaz4] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier4] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (34ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (24ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier4] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (17ms)
-[LSS][13257] Going offline [1490369][esc_dog_swarm_0001][476] ([-246.726288][-24.793289][-134.433868] : [131.911438][2.854414][431.515594]), on '*SERVER*'
-[LSS][13257] Going offline [1490369][esc_dog_swarm_0002][477] ([-246.726288][-24.793289][-134.433868] : [106.068962][2.078080][439.041016]), on '*SERVER*'
-[LSS][13257] Going offline [1490369][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][13257] Going offline [1490369][esc_dog_swarm_0004][479] ([-246.726288][-24.793289][-134.433868] : [146.251740][4.056517][445.495819]), on '*SERVER*'
-[LSS][13257] Going offline [1490369][esc_dog_swarm_0007][480] ([-246.726288][-24.793289][-134.433868] : [111.232948][3.735992][378.120422]), on '*SERVER*'
-cl setDestroy [476][13258]
-cl setDestroy [478][13258]
-cl setDestroy [477][13258]
-cl setDestroy [479][13258]
-cl setDestroy [480][13258]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (16ms)
-* xrSheduler: too much time consumed by object [esc_surprise_box_027_0000] (63ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (19ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (18ms)
-* xrSheduler: too much time consumed by object [esc_specnaz4] (25ms)
-correction attempts 1
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_lager6] (24ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (17ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (20ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (16ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (57ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (17ms)
-* xrSheduler: too much time consumed by object [esc_shustryi] (20ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (20ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (21ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier4] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (17ms)
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (18ms)
-* xrSheduler: too much time consumed by object [esc_surprise_box_007] (19ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (64ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (38ms)
-* xrSheduler: too much time consumed by object [esc_specnaz5] (17ms)
-* xrSheduler: too much time consumed by object [esc_specnaz1] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (20ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (29ms)
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (25ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager] (17ms)
-* xrSheduler: too much time consumed by object [particle_instance] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (17ms)
-* xrSheduler: too much time consumed by object [gar_stalker_respawn_117012] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (22ms)
-* xrSheduler: too much time consumed by object [esc_specnaz2] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (20ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (18ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (16ms)
-[LSS][14921] Going offline [1675904][esc_dog_swarm_0001][476] ([-246.726288][-24.793289][-134.433868] : [87.418846][2.863443][559.601379]), on '*SERVER*'
-[LSS][14921] Going offline [1675904][esc_dog_swarm_0002][477] ([-246.726288][-24.793289][-134.433868] : [67.463539][-1.389719][533.458679]), on '*SERVER*'
-[LSS][14921] Going offline [1675904][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][14921] Going offline [1675904][esc_dog_swarm_0004][479] ([-246.726288][-24.793289][-134.433868] : [75.529396][4.311682][579.270081]), on '*SERVER*'
-[LSS][14921] Going offline [1675904][esc_dog_swarm_0007][480] ([-246.726288][-24.793289][-134.433868] : [76.303513][-0.662569][530.876770]), on '*SERVER*'
-cl setDestroy [476][14922]
-cl setDestroy [478][14922]
-cl setDestroy [477][14922]
-cl setDestroy [479][14922]
-cl setDestroy [480][14922]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [esc_lager5] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager3] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (18ms)
-correction attempts 1
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_lager6] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (16ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (20ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (20ms)
-* xrSheduler: too much time consumed by object [esc_specnaz4] (17ms)
-* xrSheduler: too much time consumed by object [esc_zone_mosquito_bald_weak_0024] (18ms)
-* xrSheduler: too much time consumed by object [esc_wolf] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz2] (17ms)
-* xrSheduler: too much time consumed by object [esc_boar_most1] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (18ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (20ms)
-* xrSheduler: too much time consumed by object [esc_specnaz1] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (18ms)
-[LSS][15700] Going offline [1770232][esc_dog_swarm_0001][476] ([-246.726288][-24.793289][-134.433868] : [138.126617][2.828656][405.580200]), on '*SERVER*'
-[LSS][15700] Going offline [1770232][esc_dog_swarm_0002][477] ([-246.726288][-24.793289][-134.433868] : [147.020721][2.019617][376.882202]), on '*SERVER*'
-[LSS][15700] Going offline [1770232][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][15700] Going offline [1770232][esc_dog_swarm_0004][479] ([-246.726288][-24.793289][-134.433868] : [128.981201][2.629301][427.844727]), on '*SERVER*'
-[LSS][15700] Going offline [1770232][esc_dog_swarm_0007][480] ([-246.726288][-24.793289][-134.433868] : [155.711166][2.220484][388.868500]), on '*SERVER*'
-cl setDestroy [476][15701]
-cl setDestroy [478][15701]
-cl setDestroy [477][15701]
-cl setDestroy [479][15701]
-cl setDestroy [480][15701]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [esc_lager6] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (58ms)
-correction attempts 1
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (20ms)
-* xrSheduler: too much time consumed by object [gar_stalker_respawn_117012] (16ms)
-* xrSheduler: too much time consumed by object [gar_stalker_respawn_117012] (16ms)
-* xrSheduler: too much time consumed by object [gar_stalker_respawn_117012] (63ms)
-- Play music track: music\amb01
-* xrSheduler: too much time consumed by object [esc_lager7] (23ms)
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (20ms)
-* xrSheduler: too much time consumed by object [esc2_dogs_zamost] (56ms)
-* xrSheduler: too much time consumed by object [esc_physic_destroyable_object_0041] (66ms)
-* xrSheduler: too much time consumed by object [esc_shustryi] (59ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (17ms)
-* xrSheduler: too much time consumed by object [esc_physic_object0010] (55ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (19ms)
-[LSS][17405] Going offline [1956088][esc_dog_swarm_0001][476] ([-246.726303][-24.793289][-134.433868] : [100.148003][1.926275][534.605530]), on '*SERVER*'
-[LSS][17405] Going offline [1956088][esc_dog_swarm_0002][477] ([-246.726303][-24.793289][-134.433868] : [60.544079][3.097550][578.103455]), on '*SERVER*'
-[LSS][17405] Going offline [1956088][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][17405] Going offline [1956088][esc_dog_swarm_0004][479] ([-246.726303][-24.793289][-134.433868] : [105.915550][2.216912][533.636536]), on '*SERVER*'
-[LSS][17405] Going offline [1956088][esc_dog_swarm_0007][480] ([-246.726303][-24.793289][-134.433868] : [96.613930][2.284229][545.292664]), on '*SERVER*'
-cl setDestroy [476][17406]
-cl setDestroy [478][17406]
-cl setDestroy [477][17406]
-cl setDestroy [479][17406]
-cl setDestroy [480][17406]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [esc_specnaz4] (32ms)
-* xrSheduler: too much time consumed by object [esc_specnaz4] (18ms)
-correction attempts 1
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_specnaz2] (17ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (23ms)
-* xrSheduler: too much time consumed by object [esc_lager5] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier7] (63ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (16ms)
-* xrSheduler: too much time consumed by object [esc_surprise_box_018] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (76ms)
-* xrSheduler: too much time consumed by object [esc_specnaz1] (17ms)
-[LSS][18118] Going offline [2050847][esc_dog_swarm_0001][476] ([-246.726288][-24.793289][-134.433868] : [121.238464][3.898868][392.584320]), on '*SERVER*'
-[LSS][18118] Going offline [2050847][esc_dog_swarm_0002][477] ([-246.726288][-24.793289][-134.433868] : [120.693352][3.699973][385.154907]), on '*SERVER*'
-[LSS][18118] Going offline [2050847][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][18118] Going offline [2050847][esc_dog_swarm_0004][479] ([-246.726288][-24.793289][-134.433868] : [138.179611][2.819103][405.824615]), on '*SERVER*'
-[LSS][18118] Going offline [2050847][esc_dog_swarm_0007][480] ([-246.726288][-24.793289][-134.433868] : [134.440018][2.914476][406.074768]), on '*SERVER*'
-cl setDestroy [476][18119]
-cl setDestroy [478][18119]
-cl setDestroy [477][18119]
-cl setDestroy [479][18119]
-cl setDestroy [480][18119]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [esc_lager5] (25ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier7] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier4] (68ms)
-* xrSheduler: too much time consumed by object [esc_lager6] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (33ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (21ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (65ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (16ms)
-correction attempts 1
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (16ms)
-* xrSheduler: too much time consumed by object [esc_lager] (65ms)
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (19ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz1] (20ms)
-* xrSheduler: too much time consumed by object [esc_specnaz1] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (62ms)
-[LSS][19068] Going offline [2237351][esc_dog_swarm_0001][476] ([-246.726318][-24.793291][-134.433868] : [57.693527][7.759516][609.714355]), on '*SERVER*'
-[LSS][19068] Going offline [2237351][esc_dog_swarm_0002][477] ([-246.726318][-24.793291][-134.433868] : [66.737175][1.882003][565.991028]), on '*SERVER*'
-[LSS][19068] Going offline [2237351][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][19068] Going offline [2237351][esc_dog_swarm_0004][479] ([-246.726318][-24.793291][-134.433868] : [68.446144][0.802388][556.618958]), on '*SERVER*'
-[LSS][19068] Going offline [2237351][esc_dog_swarm_0007][480] ([-246.726318][-24.793291][-134.433868] : [78.668419][1.621876][553.806641]), on '*SERVER*'
-cl setDestroy [476][19069]
-cl setDestroy [478][19069]
-cl setDestroy [477][19069]
-cl setDestroy [479][19069]
-cl setDestroy [480][19069]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-correction attempts 1
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (65ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (16ms)
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (18ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (16ms)
-- Play music track: music\amb01
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (17ms)
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (29ms)
-[LSS][19797] Going offline [2420006][esc_dog_swarm_0002][477] ([-246.726303][-24.793289][-134.433868] : [149.167297][2.971368][429.226532]), on '*SERVER*'
-[LSS][19797] Going offline [2420006][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][19797] Going offline [2420006][esc_dog_swarm_0007][480] ([-246.726303][-24.793289][-134.433868] : [117.594101][2.833769][418.532654]), on '*SERVER*'
-cl setDestroy [478][19798]
-cl setDestroy [477][19798]
-cl setDestroy [480][19798]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 477
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (74ms)
-* xrSheduler: too much time consumed by object [esc_specnaz1] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_commander] (17ms)
-[LSS][20179] Going offline [2515592][esc_dog_swarm_0001][476] ([-246.726303][-24.793291][-134.433868] : [49.146725][0.205049][558.288574]), on '*SERVER*'
-[LSS][20179] Going offline [2515592][esc_dog_swarm_0002][477] ([-246.726303][-24.793291][-134.433868] : [70.000717][-0.608968][539.194946]), on '*SERVER*'
-[LSS][20179] Going offline [2515592][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][20179] Going offline [2515592][esc_dog_swarm_0004][479] ([-246.726303][-24.793291][-134.433868] : [49.560631][-0.369431][543.663025]), on '*SERVER*'
-[LSS][20179] Going offline [2515592][esc_dog_swarm_0007][480] ([-246.726303][-24.793291][-134.433868] : [39.961342][1.343087][563.173157]), on '*SERVER*'
-cl setDestroy [476][20180]
-cl setDestroy [478][20180]
-cl setDestroy [477][20180]
-cl setDestroy [479][20180]
-cl setDestroy [480][20180]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [esc_lager5] (34ms)
-* xrSheduler: too much time consumed by object [esc_specnaz4] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (65ms)
-correction attempts 1
-correction attempts 1
-correction attempts 1
-[LSS][20532] Going offline [2606356][esc_dog_swarm_0002][477] ([-246.726318][-24.793289][-134.433868] : [119.384514][2.352647][441.991730]), on '*SERVER*'
-[LSS][20532] Going offline [2606356][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-cl setDestroy [478][20533]
-cl setDestroy [477][20533]
-correction attempts 1
-dumping client spawn manager stuff for object with id 477
-* xrSheduler: too much time consumed by object [esc_lager6] (66ms)
-correction attempts 1
-[LSS][20895] Going offline [2696744][esc_dog_swarm_0001][476] ([-246.726288][-24.793289][-134.433868] : [116.733810][2.717196][424.902283]), on '*SERVER*'
-[LSS][20895] Going offline [2696744][esc_dog_swarm_0004][479] ([-246.726288][-24.793289][-134.433868] : [110.743080][3.861903][397.481934]), on '*SERVER*'
-cl setDestroy [476][20896]
-cl setDestroy [479][20896]
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [esc_lager4] (71ms)
-* xrSheduler: too much time consumed by object [esc_specnaz2] (16ms)
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (16ms)
-* xrSheduler: too much time consumed by object [esc_shustryi] (67ms)
-[LSS][21662] Going offline [2790721][esc_dog_swarm_0001][476] ([-246.726303][-24.793289][-134.433868] : [72.456009][5.458117][587.807495]), on '*SERVER*'
-[LSS][21662] Going offline [2790721][esc_dog_swarm_0002][477] ([-246.726303][-24.793289][-134.433868] : [69.064537][5.319974][588.152527]), on '*SERVER*'
-[LSS][21662] Going offline [2790721][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][21662] Going offline [2790721][esc_dog_swarm_0004][479] ([-246.726303][-24.793289][-134.433868] : [69.227249][3.462014][575.729492]), on '*SERVER*'
-[LSS][21662] Going offline [2790721][esc_dog_swarm_0007][480] ([-246.726303][-24.793289][-134.433868] : [69.544029][2.653305][569.942139]), on '*SERVER*'
-cl setDestroy [476][21663]
-cl setDestroy [478][21663]
-cl setDestroy [477][21663]
-cl setDestroy [479][21663]
-cl setDestroy [480][21663]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_surprise_box_023] (60ms)
-[LSS][22628] Going offline [2883035][esc_dog_swarm_0002][477] ([-246.726288][-24.793289][-134.433868] : [105.513023][2.928322][410.822205]), on '*SERVER*'
-[LSS][22628] Going offline [2883035][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][22628] Going offline [2883035][esc_dog_swarm_0007][480] ([-246.726288][-24.793289][-134.433868] : [138.690338][2.819923][405.512512]), on '*SERVER*'
-correction attempts 1
-cl setDestroy [478][22629]
-cl setDestroy [477][22629]
-correction attempts 1
-cl setDestroy [480][22629]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 477
-* xrSheduler: too much time consumed by object [bar_stalker_respawn_318688] (63ms)
-correction attempts 1
-correction attempts 1
-- Play music track: music\amb01
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (67ms)
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (17ms)
-* xrSheduler: too much time consumed by object [gar_stalker_respawn_117012] (64ms)
-* xrSheduler: too much time consumed by object [esc_dog_swarm_0007] (90ms)
-[LSS][24567] Going offline [3069496][esc_dog_swarm_0001][476] ([-246.726303][-24.793289][-134.433868] : [78.919334][3.690091][573.926086]), on '*SERVER*'
-[LSS][24567] Going offline [3069496][esc_dog_swarm_0002][477] ([-246.726303][-24.793289][-134.433868] : [80.676163][8.566279][606.304443]), on '*SERVER*'
-[LSS][24567] Going offline [3069496][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][24567] Going offline [3069496][esc_dog_swarm_0004][479] ([-246.726303][-24.793289][-134.433868] : [104.478798][3.859615][563.536560]), on '*SERVER*'
-[LSS][24567] Going offline [3069496][esc_dog_swarm_0007][480] ([-246.726303][-24.793289][-134.433868] : [61.766682][3.383040][578.623230]), on '*SERVER*'
-cl setDestroy [476][24568]
-cl setDestroy [478][24568]
-cl setDestroy [477][24568]
-cl setDestroy [479][24568]
-cl setDestroy [480][24568]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-correction attempts 1
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (69ms)
-[LSS][25518] Going offline [3161798][esc_dog_swarm_0001][476] ([-246.726318][-24.793289][-134.433868] : [135.991211][2.716750][411.700714]), on '*SERVER*'
-[LSS][25518] Going offline [3161798][esc_dog_swarm_0002][477] ([-246.726318][-24.793289][-134.433868] : [140.359207][2.745557][406.076935]), on '*SERVER*'
-[LSS][25518] Going offline [3161798][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][25518] Going offline [3161798][esc_dog_swarm_0004][479] ([-246.726318][-24.793289][-134.433868] : [159.460510][5.678342][434.295441]), on '*SERVER*'
-[LSS][25518] Going offline [3161798][esc_dog_swarm_0007][480] ([-246.726318][-24.793289][-134.433868] : [104.904472][2.516609][420.018402]), on '*SERVER*'
-cl setDestroy [476][25519]
-cl setDestroy [478][25519]
-cl setDestroy [477][25519]
-cl setDestroy [479][25519]
-cl setDestroy [480][25519]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [level_prefix_inventory_box_0003] (62ms)
-* xrSheduler: too much time consumed by object [esc_lager4] (69ms)
-correction attempts 1
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_lager3] (67ms)
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier1] (34ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (50ms)
-* xrSheduler: too much time consumed by object [particle_instance] (21ms)
-* xrSheduler: too much time consumed by object [bar_stalker_respawn_318688] (20ms)
-* xrSheduler: too much time consumed by object [particle_instance] (30ms)
-* xrSheduler: too much time consumed by object [esc_specnaz3] (31ms)
-* xrSheduler: too much time consumed by object [gar_stalker_respawn_117012] (29ms)
-* xrSheduler: too much time consumed by object [esc_specnaz1] (25ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (35ms)
-* xrSheduler: too much time consumed by object [particle_instance] (23ms)
-* xrSheduler: too much time consumed by object [esc_small_home3] (17ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (16ms)
-* xrSheduler: too much time consumed by object [esc_specnaz6] (17ms)
-* xrSheduler: too much time consumed by object [particle_instance] (22ms)
-* xrSheduler: too much time consumed by object [particle_instance] (31ms)
-* xrSheduler: too much time consumed by object [bar_stalker_respawn_318688] (20ms)
-* xrSheduler: too much time consumed by object [bar_stalker_respawn_318688] (16ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (35ms)
-* xrSheduler: too much time consumed by object [esc_specnaz2] (17ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (36ms)
-* xrSheduler: too much time consumed by object [esc_lager7] (92ms)
-* xrSheduler: too much time consumed by object [esc_physic_destroyable_object_0026] (30ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier4] (34ms)
-* xrSheduler: too much time consumed by object [particle_instance] (18ms)
-* xrSheduler: too much time consumed by object [esc_lager1] (18ms)
-* xrSheduler: too much time consumed by object [bar_stalker_respawn_318688] (23ms)
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (22ms)
-[LSS][27161] Going offline [3346792][esc_dog_swarm_0001][476] ([-246.726303][-24.793289][-134.433868] : [98.661804][1.749586][532.119141]), on '*SERVER*'
-[LSS][27161] Going offline [3346792][esc_dog_swarm_0002][477] ([-246.726303][-24.793289][-134.433868] : [101.486809][2.629409][546.134644]), on '*SERVER*'
-[LSS][27161] Going offline [3346792][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][27161] Going offline [3346792][esc_dog_swarm_0004][479] ([-246.726303][-24.793289][-134.433868] : [77.863678][6.428265][593.492371]), on '*SERVER*'
-[LSS][27161] Going offline [3346792][esc_dog_swarm_0007][480] ([-246.726303][-24.793289][-134.433868] : [95.494774][0.866445][516.841797]), on '*SERVER*'
-cl setDestroy [476][27162]
-cl setDestroy [478][27162]
-cl setDestroy [477][27162]
-cl setDestroy [479][27162]
-cl setDestroy [480][27162]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [esc_specnaz4] (18ms)
-* xrSheduler: too much time consumed by object [esc_shustryi] (16ms)
-correction attempts 1
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_lager6] (21ms)
-* xrSheduler: too much time consumed by object [esc_surprise_box_003_0000] (62ms)
-[LSS][28005] Going offline [3439440][esc_dog_swarm_0001][476] ([-246.726303][-24.793289][-134.433868] : [153.727249][2.542938][404.928345]), on '*SERVER*'
-[LSS][28005] Going offline [3439440][esc_dog_swarm_0002][477] ([-246.726303][-24.793289][-134.433868] : [141.294495][2.800567][404.049164]), on '*SERVER*'
-[LSS][28005] Going offline [3439440][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][28005] Going offline [3439440][esc_dog_swarm_0004][479] ([-246.726303][-24.793289][-134.433868] : [133.096710][2.607470][422.399078]), on '*SERVER*'
-[LSS][28005] Going offline [3439440][esc_dog_swarm_0007][480] ([-246.726303][-24.793289][-134.433868] : [127.258064][2.879865][413.230652]), on '*SERVER*'
-cl setDestroy [476][28006]
-cl setDestroy [478][28006]
-cl setDestroy [477][28006]
-cl setDestroy [479][28006]
-cl setDestroy [480][28006]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-* xrSheduler: too much time consumed by object [bar_stalker_respawn_318688] (67ms)
-* xrSheduler: too much time consumed by object [esc_lager2] (70ms)
-- Play music track: music\amb01
-correction attempts 1
-correction attempts 1
-correction attempts 1
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_dogs_swarm] (16ms)
-* xrSheduler: too much time consumed by object [gar_stalker_respawn_117012] (68ms)
-* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (70ms)
-[LSS][28844] Going offline [3622125][esc_dog_swarm_0001][476] ([-246.726303][-24.793287][-134.433868] : [93.208664][1.767925][539.636963]), on '*SERVER*'
-[LSS][28844] Going offline [3622125][esc_dog_swarm_0002][477] ([-246.726303][-24.793287][-134.433868] : [67.742287][0.341846][552.704529]), on '*SERVER*'
-[LSS][28844] Going offline [3622125][mutant_dog_tail0478][478] with parent [477][esc_dog_swarm_0002] on '*SERVER*'
-[LSS][28844] Going offline [3622125][esc_dog_swarm_0004][479] ([-246.726303][-24.793287][-134.433868] : [54.935528][-0.488687][547.025452]), on '*SERVER*'
-[LSS][28844] Going offline [3622125][esc_dog_swarm_0007][480] ([-246.726303][-24.793287][-134.433868] : [92.838303][1.761109][539.970459]), on '*SERVER*'
-cl setDestroy [476][28845]
-cl setDestroy [478][28845]
-cl setDestroy [477][28845]
-cl setDestroy [479][28845]
-cl setDestroy [480][28845]
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 479
-dumping client spawn manager stuff for object with id 477
-dumping client spawn manager stuff for object with id 476
-correction attempts 1
-correction attempts 1
-* loading script escape_dialog.script
-* xrSheduler: too much time consumed by object [esc_specnaz3] (69ms)
-shell for esc_stalker[737] created in 2.013659 ms
-correction attempts 1
-cl setDestroy [738][29024]
-* loading script dialogs.script
-correction attempts 1
-* xrSheduler: too much time consumed by object [esc_lager3] (67ms)
 pause [ON] timer=[OFF] sound=[ON] reason=mm_activate1
 snd_emitters_[true] 2
 pause [ON] timer=[ON] sound=[OFF] reason=mm_activate2
 - Disconnect
-cl setDestroy [16930][29338]
-cl setDestroy [68][29338]
-cl setDestroy [67][29338]
-cl setDestroy [66][29338]
-cl setDestroy [65][29338]
-cl setDestroy [64][29338]
-cl setDestroy [0][29338]
-cl setDestroy [1][29338]
-cl setDestroy [2][29338]
-cl setDestroy [3][29338]
-cl setDestroy [4][29338]
-cl setDestroy [5][29338]
-cl setDestroy [6][29338]
-cl setDestroy [7][29338]
-cl setDestroy [8][29338]
-cl setDestroy [9][29338]
-cl setDestroy [10][29338]
-cl setDestroy [11][29338]
-cl setDestroy [12][29338]
-cl setDestroy [13][29338]
-cl setDestroy [14][29338]
-cl setDestroy [15][29338]
-cl setDestroy [16][29338]
-cl setDestroy [17][29338]
-cl setDestroy [18][29338]
-cl setDestroy [19][29338]
-cl setDestroy [20][29338]
-cl setDestroy [21][29338]
-cl setDestroy [22][29338]
-cl setDestroy [23][29338]
-cl setDestroy [24][29338]
-cl setDestroy [25][29338]
-cl setDestroy [26][29338]
-cl setDestroy [27][29338]
-cl setDestroy [28][29338]
-cl setDestroy [29][29338]
-cl setDestroy [30][29338]
-cl setDestroy [31][29338]
-cl setDestroy [32][29338]
-cl setDestroy [33][29338]
-cl setDestroy [34][29338]
-cl setDestroy [35][29338]
-cl setDestroy [36][29338]
-cl setDestroy [37][29338]
-cl setDestroy [38][29338]
-cl setDestroy [39][29338]
-cl setDestroy [40][29338]
-cl setDestroy [41][29338]
-cl setDestroy [42][29338]
-cl setDestroy [43][29338]
-cl setDestroy [44][29338]
-cl setDestroy [45][29338]
-cl setDestroy [46][29338]
-cl setDestroy [47][29338]
-cl setDestroy [48][29338]
-cl setDestroy [49][29338]
-cl setDestroy [50][29338]
-cl setDestroy [51][29338]
-cl setDestroy [52][29338]
-cl setDestroy [53][29338]
-cl setDestroy [54][29338]
-cl setDestroy [55][29338]
-cl setDestroy [56][29338]
-cl setDestroy [57][29338]
-cl setDestroy [58][29338]
-cl setDestroy [59][29338]
-cl setDestroy [60][29338]
-cl setDestroy [61][29338]
-cl setDestroy [62][29338]
-cl setDestroy [63][29338]
-cl setDestroy [69][29338]
-cl setDestroy [70][29338]
-cl setDestroy [71][29338]
-cl setDestroy [72][29338]
-cl setDestroy [73][29338]
-cl setDestroy [74][29338]
-cl setDestroy [75][29338]
-cl setDestroy [76][29338]
-cl setDestroy [77][29338]
-cl setDestroy [78][29338]
-cl setDestroy [79][29338]
-cl setDestroy [80][29338]
-cl setDestroy [81][29338]
-cl setDestroy [82][29338]
-cl setDestroy [83][29338]
-cl setDestroy [84][29338]
-cl setDestroy [85][29338]
-cl setDestroy [86][29338]
-cl setDestroy [87][29338]
-cl setDestroy [88][29338]
-cl setDestroy [17004][29338]
-cl setDestroy [17003][29338]
-cl setDestroy [17002][29338]
-cl setDestroy [17001][29338]
-cl setDestroy [17000][29338]
-cl setDestroy [16999][29338]
-cl setDestroy [16998][29338]
-cl setDestroy [16997][29338]
-cl setDestroy [16996][29338]
-cl setDestroy [16995][29338]
-cl setDestroy [16994][29338]
-cl setDestroy [16993][29338]
-cl setDestroy [16992][29338]
-cl setDestroy [16991][29338]
-cl setDestroy [16990][29338]
-cl setDestroy [16989][29338]
-cl setDestroy [16988][29338]
-cl setDestroy [16987][29338]
-cl setDestroy [16986][29338]
-cl setDestroy [16985][29338]
-cl setDestroy [16984][29338]
-cl setDestroy [16983][29338]
-cl setDestroy [16982][29338]
-cl setDestroy [16981][29338]
-cl setDestroy [16980][29338]
-cl setDestroy [16979][29338]
-cl setDestroy [92][29338]
-cl setDestroy [89][29338]
-cl setDestroy [94][29338]
-cl setDestroy [95][29338]
-cl setDestroy [96][29338]
-cl setDestroy [97][29338]
-cl setDestroy [98][29338]
-cl setDestroy [99][29338]
-cl setDestroy [100][29338]
-cl setDestroy [101][29338]
-cl setDestroy [16931][29338]
-cl setDestroy [107][29338]
-cl setDestroy [106][29338]
-cl setDestroy [105][29338]
-cl setDestroy [104][29338]
-cl setDestroy [103][29338]
-cl setDestroy [102][29338]
-cl setDestroy [16932][29338]
-cl setDestroy [112][29338]
-cl setDestroy [111][29338]
-cl setDestroy [110][29338]
-cl setDestroy [109][29338]
-cl setDestroy [108][29338]
-cl setDestroy [16933][29338]
-cl setDestroy [118][29338]
-cl setDestroy [117][29338]
-cl setDestroy [116][29338]
-cl setDestroy [115][29338]
-cl setDestroy [114][29338]
-cl setDestroy [113][29338]
-cl setDestroy [16934][29338]
-cl setDestroy [123][29338]
-cl setDestroy [122][29338]
-cl setDestroy [121][29338]
-cl setDestroy [120][29338]
-cl setDestroy [119][29338]
-cl setDestroy [16935][29338]
-cl setDestroy [129][29338]
-cl setDestroy [128][29338]
-cl setDestroy [127][29338]
-cl setDestroy [126][29338]
-cl setDestroy [125][29338]
-cl setDestroy [124][29338]
-cl setDestroy [16936][29338]
-cl setDestroy [133][29338]
-cl setDestroy [132][29338]
-cl setDestroy [131][29338]
-cl setDestroy [130][29338]
-cl setDestroy [16937][29338]
-cl setDestroy [137][29338]
-cl setDestroy [136][29338]
-cl setDestroy [135][29338]
-cl setDestroy [134][29338]
-cl setDestroy [16938][29338]
-cl setDestroy [145][29338]
-cl setDestroy [144][29338]
-cl setDestroy [143][29338]
-cl setDestroy [142][29338]
-cl setDestroy [141][29338]
-cl setDestroy [140][29338]
-cl setDestroy [139][29338]
-cl setDestroy [138][29338]
-cl setDestroy [146][29338]
-cl setDestroy [147][29338]
-cl setDestroy [148][29338]
-cl setDestroy [149][29338]
-cl setDestroy [46851][29338]
-cl setDestroy [153][29338]
-cl setDestroy [152][29338]
-cl setDestroy [151][29338]
-cl setDestroy [150][29338]
-cl setDestroy [154][29338]
-cl setDestroy [16942][29338]
-cl setDestroy [16941][29338]
-cl setDestroy [16940][29338]
-cl setDestroy [16939][29338]
-cl setDestroy [155][29338]
-cl setDestroy [156][29338]
-cl setDestroy [184][29338]
-cl setDestroy [219][29338]
-cl setDestroy [224][29338]
-cl setDestroy [225][29338]
-cl setDestroy [226][29338]
-cl setDestroy [227][29338]
-cl setDestroy [245][29338]
-cl setDestroy [253][29338]
-cl setDestroy [258][29338]
-cl setDestroy [259][29338]
-cl setDestroy [260][29338]
-cl setDestroy [261][29338]
-cl setDestroy [262][29338]
-cl setDestroy [263][29338]
-cl setDestroy [264][29338]
-cl setDestroy [265][29338]
-cl setDestroy [266][29338]
-cl setDestroy [267][29338]
-cl setDestroy [268][29338]
-cl setDestroy [269][29338]
-cl setDestroy [270][29338]
-cl setDestroy [271][29338]
-cl setDestroy [272][29338]
-cl setDestroy [273][29338]
-cl setDestroy [274][29338]
-cl setDestroy [275][29338]
-cl setDestroy [276][29338]
-cl setDestroy [277][29338]
-cl setDestroy [278][29338]
-cl setDestroy [310][29338]
-cl setDestroy [16943][29338]
-cl setDestroy [317][29338]
-cl setDestroy [316][29338]
-cl setDestroy [315][29338]
-cl setDestroy [314][29338]
-cl setDestroy [313][29338]
-cl setDestroy [312][29338]
-cl setDestroy [311][29338]
-cl setDestroy [16944][29338]
-cl setDestroy [324][29338]
-cl setDestroy [323][29338]
-cl setDestroy [322][29338]
-cl setDestroy [321][29338]
-cl setDestroy [320][29338]
-cl setDestroy [319][29338]
-cl setDestroy [318][29338]
-cl setDestroy [16945][29338]
-cl setDestroy [331][29338]
-cl setDestroy [330][29338]
-cl setDestroy [329][29338]
-cl setDestroy [328][29338]
-cl setDestroy [327][29338]
-cl setDestroy [326][29338]
-cl setDestroy [325][29338]
-cl setDestroy [16946][29338]
-cl setDestroy [338][29338]
-cl setDestroy [337][29338]
-cl setDestroy [336][29338]
-cl setDestroy [335][29338]
-cl setDestroy [334][29338]
-cl setDestroy [333][29338]
-cl setDestroy [332][29338]
-cl setDestroy [16947][29338]
-cl setDestroy [345][29338]
-cl setDestroy [344][29338]
-cl setDestroy [343][29338]
-cl setDestroy [342][29338]
-cl setDestroy [341][29338]
-cl setDestroy [340][29338]
-cl setDestroy [339][29338]
-cl setDestroy [16948][29338]
-cl setDestroy [352][29338]
-cl setDestroy [351][29338]
-cl setDestroy [350][29338]
-cl setDestroy [349][29338]
-cl setDestroy [348][29338]
-cl setDestroy [347][29338]
-cl setDestroy [346][29338]
-cl setDestroy [16949][29338]
-cl setDestroy [358][29338]
-cl setDestroy [357][29338]
-cl setDestroy [356][29338]
-cl setDestroy [355][29338]
-cl setDestroy [354][29338]
-cl setDestroy [353][29338]
-cl setDestroy [16950][29338]
-cl setDestroy [364][29338]
-cl setDestroy [363][29338]
-cl setDestroy [362][29338]
-cl setDestroy [361][29338]
-cl setDestroy [360][29338]
-cl setDestroy [359][29338]
-cl setDestroy [16951][29338]
-cl setDestroy [370][29338]
-cl setDestroy [369][29338]
-cl setDestroy [368][29338]
-cl setDestroy [367][29338]
-cl setDestroy [366][29338]
-cl setDestroy [365][29338]
-cl setDestroy [16952][29338]
-cl setDestroy [376][29338]
-cl setDestroy [375][29338]
-cl setDestroy [374][29338]
-cl setDestroy [373][29338]
-cl setDestroy [372][29338]
-cl setDestroy [371][29338]
-cl setDestroy [16953][29338]
-cl setDestroy [382][29338]
-cl setDestroy [381][29338]
-cl setDestroy [380][29338]
-cl setDestroy [379][29338]
-cl setDestroy [378][29338]
-cl setDestroy [377][29338]
-cl setDestroy [16954][29338]
-cl setDestroy [388][29338]
-cl setDestroy [387][29338]
-cl setDestroy [386][29338]
-cl setDestroy [385][29338]
-cl setDestroy [384][29338]
-cl setDestroy [383][29338]
-cl setDestroy [16955][29338]
-cl setDestroy [394][29338]
-cl setDestroy [393][29338]
-cl setDestroy [392][29338]
-cl setDestroy [391][29338]
-cl setDestroy [390][29338]
-cl setDestroy [389][29338]
-cl setDestroy [16956][29338]
-cl setDestroy [400][29338]
-cl setDestroy [399][29338]
-cl setDestroy [398][29338]
-cl setDestroy [397][29338]
-cl setDestroy [396][29338]
-cl setDestroy [395][29338]
-cl setDestroy [16957][29338]
-cl setDestroy [407][29338]
-cl setDestroy [406][29338]
-cl setDestroy [405][29338]
-cl setDestroy [404][29338]
-cl setDestroy [403][29338]
-cl setDestroy [402][29338]
-cl setDestroy [401][29338]
-cl setDestroy [16958][29338]
-cl setDestroy [413][29338]
-cl setDestroy [412][29338]
-cl setDestroy [411][29338]
-cl setDestroy [410][29338]
-cl setDestroy [409][29338]
-cl setDestroy [408][29338]
-cl setDestroy [414][29338]
-cl setDestroy [415][29338]
-cl setDestroy [422][29338]
-cl setDestroy [423][29338]
-cl setDestroy [17007][29338]
-cl setDestroy [17006][29338]
-cl setDestroy [17005][29338]
-cl setDestroy [16959][29338]
-cl setDestroy [471][29338]
-cl setDestroy [467][29338]
-cl setDestroy [472][29338]
-cl setDestroy [473][29338]
-cl setDestroy [475][29338]
-cl setDestroy [476][29338]
-cl setDestroy [480][29338]
-cl setDestroy [481][29338]
-cl setDestroy [482][29338]
-cl setDestroy [483][29338]
-cl setDestroy [484][29338]
-cl setDestroy [485][29338]
-cl setDestroy [486][29338]
-cl setDestroy [487][29338]
-cl setDestroy [488][29338]
-cl setDestroy [489][29338]
-cl setDestroy [490][29338]
-cl setDestroy [491][29338]
-cl setDestroy [492][29338]
-cl setDestroy [493][29338]
-cl setDestroy [494][29338]
-cl setDestroy [495][29338]
-cl setDestroy [496][29338]
-cl setDestroy [497][29338]
-cl setDestroy [498][29338]
-cl setDestroy [499][29338]
-cl setDestroy [500][29338]
-cl setDestroy [501][29338]
-cl setDestroy [502][29338]
-cl setDestroy [503][29338]
-cl setDestroy [504][29338]
-cl setDestroy [505][29338]
-cl setDestroy [506][29338]
-cl setDestroy [507][29338]
-cl setDestroy [508][29338]
-cl setDestroy [509][29338]
-cl setDestroy [510][29338]
-cl setDestroy [511][29338]
-cl setDestroy [512][29338]
-cl setDestroy [513][29338]
-cl setDestroy [514][29338]
-cl setDestroy [515][29338]
-cl setDestroy [516][29338]
-cl setDestroy [517][29338]
-cl setDestroy [518][29338]
-cl setDestroy [519][29338]
-cl setDestroy [520][29338]
-cl setDestroy [521][29338]
-cl setDestroy [526][29338]
-cl setDestroy [527][29338]
-cl setDestroy [528][29338]
-cl setDestroy [529][29338]
-cl setDestroy [530][29338]
-cl setDestroy [531][29338]
-cl setDestroy [532][29338]
-cl setDestroy [533][29338]
-cl setDestroy [534][29338]
-cl setDestroy [535][29338]
-cl setDestroy [536][29338]
-cl setDestroy [537][29338]
-cl setDestroy [538][29338]
-cl setDestroy [539][29338]
-cl setDestroy [540][29338]
-cl setDestroy [541][29338]
-cl setDestroy [542][29338]
-cl setDestroy [543][29338]
-cl setDestroy [544][29338]
-cl setDestroy [545][29338]
-cl setDestroy [546][29338]
-cl setDestroy [547][29338]
-cl setDestroy [548][29338]
-cl setDestroy [549][29338]
-cl setDestroy [551][29338]
-cl setDestroy [552][29338]
-cl setDestroy [16973][29338]
-cl setDestroy [16960][29338]
-cl setDestroy [553][29338]
-cl setDestroy [555][29338]
-cl setDestroy [556][29338]
-cl setDestroy [557][29338]
-cl setDestroy [558][29338]
-cl setDestroy [559][29338]
-cl setDestroy [560][29338]
-cl setDestroy [561][29338]
-cl setDestroy [562][29338]
-cl setDestroy [563][29338]
-cl setDestroy [571][29338]
-cl setDestroy [572][29338]
-cl setDestroy [573][29338]
-cl setDestroy [574][29338]
-cl setDestroy [575][29338]
-cl setDestroy [576][29338]
-cl setDestroy [577][29338]
-cl setDestroy [578][29338]
-cl setDestroy [579][29338]
-cl setDestroy [580][29338]
-cl setDestroy [581][29338]
-cl setDestroy [582][29338]
-cl setDestroy [583][29338]
-cl setDestroy [584][29338]
-cl setDestroy [585][29338]
-cl setDestroy [586][29338]
-cl setDestroy [587][29338]
-cl setDestroy [588][29338]
-cl setDestroy [589][29338]
-cl setDestroy [590][29338]
-cl setDestroy [591][29338]
-cl setDestroy [592][29338]
-cl setDestroy [593][29338]
-cl setDestroy [594][29338]
-cl setDestroy [595][29338]
-cl setDestroy [596][29338]
-cl setDestroy [597][29338]
-cl setDestroy [598][29338]
-cl setDestroy [599][29338]
-cl setDestroy [600][29338]
-cl setDestroy [601][29338]
-cl setDestroy [602][29338]
-cl setDestroy [603][29338]
-cl setDestroy [604][29338]
-cl setDestroy [605][29338]
-cl setDestroy [606][29338]
-cl setDestroy [607][29338]
-cl setDestroy [608][29338]
-cl setDestroy [609][29338]
-cl setDestroy [610][29338]
-cl setDestroy [611][29338]
-cl setDestroy [612][29338]
-cl setDestroy [613][29338]
-cl setDestroy [614][29338]
-cl setDestroy [615][29338]
-cl setDestroy [616][29338]
-cl setDestroy [617][29338]
-cl setDestroy [618][29338]
-cl setDestroy [619][29338]
-cl setDestroy [620][29338]
-cl setDestroy [621][29338]
-cl setDestroy [622][29338]
-cl setDestroy [623][29338]
-cl setDestroy [624][29338]
-cl setDestroy [625][29338]
-cl setDestroy [626][29338]
-cl setDestroy [627][29338]
-cl setDestroy [628][29338]
-cl setDestroy [629][29338]
-cl setDestroy [630][29338]
-cl setDestroy [631][29338]
-cl setDestroy [632][29338]
-cl setDestroy [633][29338]
-cl setDestroy [634][29338]
-cl setDestroy [635][29338]
-cl setDestroy [636][29338]
-cl setDestroy [637][29338]
-cl setDestroy [638][29338]
-cl setDestroy [639][29338]
-cl setDestroy [649][29338]
-cl setDestroy [650][29338]
-cl setDestroy [651][29338]
-cl setDestroy [652][29338]
-cl setDestroy [653][29338]
-cl setDestroy [654][29338]
-cl setDestroy [655][29338]
-cl setDestroy [656][29338]
-cl setDestroy [657][29338]
-cl setDestroy [658][29338]
-cl setDestroy [659][29338]
-cl setDestroy [660][29338]
-cl setDestroy [661][29338]
-cl setDestroy [669][29338]
-cl setDestroy [670][29338]
-cl setDestroy [671][29338]
-cl setDestroy [672][29338]
-cl setDestroy [673][29338]
-cl setDestroy [674][29338]
-cl setDestroy [675][29338]
-cl setDestroy [676][29338]
-cl setDestroy [677][29338]
-cl setDestroy [678][29338]
-cl setDestroy [679][29338]
-cl setDestroy [694][29338]
-cl setDestroy [695][29338]
-cl setDestroy [696][29338]
-cl setDestroy [697][29338]
-cl setDestroy [698][29338]
-cl setDestroy [699][29338]
-cl setDestroy [700][29338]
-cl setDestroy [701][29338]
-cl setDestroy [16961][29338]
-cl setDestroy [702][29338]
-cl setDestroy [16972][29338]
-cl setDestroy [16971][29338]
-cl setDestroy [16970][29338]
-cl setDestroy [16962][29338]
-cl setDestroy [704][29338]
-cl setDestroy [16969][29338]
-cl setDestroy [16968][29338]
-cl setDestroy [16963][29338]
-cl setDestroy [706][29338]
-cl setDestroy [709][29338]
-cl setDestroy [710][29338]
-cl setDestroy [711][29338]
-cl setDestroy [712][29338]
-cl setDestroy [713][29338]
-cl setDestroy [714][29338]
-cl setDestroy [715][29338]
-cl setDestroy [716][29338]
-cl setDestroy [717][29338]
-cl setDestroy [718][29338]
-cl setDestroy [719][29338]
-cl setDestroy [723][29338]
-cl setDestroy [728][29338]
-cl setDestroy [729][29338]
-cl setDestroy [730][29338]
-cl setDestroy [731][29338]
-cl setDestroy [16964][29338]
-cl setDestroy [736][29338]
-cl setDestroy [735][29338]
-cl setDestroy [734][29338]
-cl setDestroy [733][29338]
-cl setDestroy [732][29338]
-cl setDestroy [46848][29338]
-cl setDestroy [737][29338]
-cl setDestroy [739][29338]
-cl setDestroy [745][29338]
-cl setDestroy [746][29338]
-cl setDestroy [17008][29338]
-cl setDestroy [16965][29338]
-cl setDestroy [750][29338]
-cl setDestroy [752][29338]
-cl setDestroy [753][29338]
-cl setDestroy [754][29338]
-cl setDestroy [755][29338]
-cl setDestroy [765][29338]
-cl setDestroy [766][29338]
-cl setDestroy [767][29338]
-cl setDestroy [768][29338]
-cl setDestroy [769][29338]
-cl setDestroy [770][29338]
-cl setDestroy [771][29338]
-cl setDestroy [772][29338]
-cl setDestroy [773][29338]
-cl setDestroy [774][29338]
-cl setDestroy [775][29338]
-cl setDestroy [776][29338]
-cl setDestroy [777][29338]
-cl setDestroy [778][29338]
-cl setDestroy [779][29338]
-cl setDestroy [780][29338]
-cl setDestroy [781][29338]
-cl setDestroy [782][29338]
-cl setDestroy [783][29338]
-cl setDestroy [785][29338]
-cl setDestroy [786][29338]
-cl setDestroy [787][29338]
-cl setDestroy [788][29338]
-cl setDestroy [789][29338]
-cl setDestroy [790][29338]
-cl setDestroy [791][29338]
-cl setDestroy [792][29338]
-cl setDestroy [793][29338]
-cl setDestroy [794][29338]
-cl setDestroy [795][29338]
-cl setDestroy [796][29338]
-cl setDestroy [797][29338]
-cl setDestroy [798][29338]
-cl setDestroy [799][29338]
-cl setDestroy [800][29338]
-cl setDestroy [801][29338]
-cl setDestroy [802][29338]
-cl setDestroy [803][29338]
-cl setDestroy [804][29338]
-cl setDestroy [805][29338]
-cl setDestroy [806][29338]
-cl setDestroy [807][29338]
-cl setDestroy [808][29338]
-cl setDestroy [809][29338]
-cl setDestroy [810][29338]
-cl setDestroy [811][29338]
-cl setDestroy [812][29338]
-cl setDestroy [813][29338]
-cl setDestroy [814][29338]
-cl setDestroy [815][29338]
-cl setDestroy [816][29338]
-cl setDestroy [817][29338]
-cl setDestroy [818][29338]
-cl setDestroy [819][29338]
-cl setDestroy [820][29338]
-cl setDestroy [821][29338]
-cl setDestroy [822][29338]
-cl setDestroy [823][29338]
-cl setDestroy [824][29338]
-cl setDestroy [825][29338]
-cl setDestroy [826][29338]
-cl setDestroy [827][29338]
-cl setDestroy [828][29338]
-cl setDestroy [829][29338]
-cl setDestroy [830][29338]
-cl setDestroy [831][29338]
-cl setDestroy [832][29338]
-cl setDestroy [833][29338]
-cl setDestroy [834][29338]
-cl setDestroy [835][29338]
-cl setDestroy [836][29338]
-cl setDestroy [837][29338]
-cl setDestroy [838][29338]
-cl setDestroy [839][29338]
-cl setDestroy [840][29338]
-cl setDestroy [841][29338]
-cl setDestroy [842][29338]
-cl setDestroy [849][29338]
-cl setDestroy [850][29338]
-cl setDestroy [851][29338]
-cl setDestroy [852][29338]
-cl setDestroy [853][29338]
-cl setDestroy [854][29338]
-cl setDestroy [855][29338]
-cl setDestroy [856][29338]
-cl setDestroy [857][29338]
-cl setDestroy [858][29338]
-cl setDestroy [859][29338]
-cl setDestroy [860][29338]
-cl setDestroy [861][29338]
-cl setDestroy [862][29338]
-cl setDestroy [863][29338]
-cl setDestroy [864][29338]
-cl setDestroy [865][29338]
-cl setDestroy [866][29338]
-cl setDestroy [16978][29338]
-cl setDestroy [16977][29338]
-cl setDestroy [16976][29338]
-cl setDestroy [16975][29338]
-cl setDestroy [16966][29338]
-cl setDestroy [877][29338]
-cl setDestroy [874][29338]
-cl setDestroy [16974][29338]
-cl setDestroy [16967][29338]
-cl setDestroy [878][29338]
-cl setDestroy [880][29338]
-cl setDestroy [884][29338]
-cl setDestroy [885][29338]
-cl setDestroy [886][29338]
-cl setDestroy [887][29338]
-cl setDestroy [890][29338]
-cl setDestroy [891][29338]
-cl setDestroy [893][29338]
-cl setDestroy [894][29338]
-cl setDestroy [896][29338]
-cl setDestroy [897][29338]
-cl setDestroy [899][29338]
-cl setDestroy [900][29338]
-cl setDestroy [902][29338]
-cl setDestroy [903][29338]
-cl setDestroy [905][29338]
-cl setDestroy [906][29338]
-cl setDestroy [908][29338]
-cl setDestroy [909][29338]
-cl setDestroy [910][29338]
-cl setDestroy [911][29338]
-cl setDestroy [912][29338]
-cl setDestroy [913][29338]
-cl setDestroy [914][29338]
-cl setDestroy [915][29338]
-cl setDestroy [917][29338]
-cl setDestroy [918][29338]
-cl setDestroy [921][29338]
-cl setDestroy [922][29338]
-cl setDestroy [928][29338]
-cl setDestroy [935][29338]
-cl setDestroy [936][29338]
-cl setDestroy [937][29338]
-cl setDestroy [938][29338]
-cl setDestroy [939][29338]
-cl setDestroy [940][29338]
-cl setDestroy [941][29338]
-cl setDestroy [953][29338]
-cl setDestroy [954][29338]
-cl setDestroy [955][29338]
-cl setDestroy [19246][29338]
-cl setDestroy [49665][29338]
-cl setDestroy [961][29338]
-cl setDestroy [965][29338]
-cl setDestroy [968][29338]
-cl setDestroy [969][29338]
-cl setDestroy [970][29338]
-cl setDestroy [971][29338]
-cl setDestroy [972][29338]
-cl setDestroy [973][29338]
-cl setDestroy [974][29338]
-cl setDestroy [975][29338]
-cl setDestroy [976][29338]
-cl setDestroy [977][29338]
-cl setDestroy [978][29338]
-cl setDestroy [979][29338]
-cl setDestroy [980][29338]
-cl setDestroy [981][29338]
-cl setDestroy [982][29338]
-cl setDestroy [983][29338]
-cl setDestroy [984][29338]
-cl setDestroy [985][29338]
-cl setDestroy [986][29338]
-cl setDestroy [987][29338]
-cl setDestroy [988][29338]
-cl setDestroy [989][29338]
-cl setDestroy [990][29338]
-cl setDestroy [991][29338]
-cl setDestroy [992][29338]
-cl setDestroy [993][29338]
-cl setDestroy [994][29338]
-cl setDestroy [995][29338]
-cl setDestroy [996][29338]
-cl setDestroy [997][29338]
-cl setDestroy [998][29338]
-cl setDestroy [999][29338]
-cl setDestroy [1000][29338]
-cl setDestroy [1001][29338]
-cl setDestroy [1002][29338]
-cl setDestroy [1003][29338]
-cl setDestroy [1004][29338]
-cl setDestroy [1005][29338]
-cl setDestroy [1006][29338]
-cl setDestroy [1007][29338]
-cl setDestroy [1008][29338]
-cl setDestroy [1009][29338]
-cl setDestroy [1010][29338]
-cl setDestroy [1011][29338]
-cl setDestroy [1012][29338]
-cl setDestroy [1013][29338]
-cl setDestroy [1014][29338]
-cl setDestroy [1015][29338]
-cl setDestroy [1016][29338]
-cl setDestroy [1017][29338]
-cl setDestroy [1018][29338]
-cl setDestroy [1019][29338]
-cl setDestroy [1020][29338]
-cl setDestroy [1021][29338]
-cl setDestroy [1022][29338]
-cl setDestroy [1023][29338]
-cl setDestroy [1024][29338]
-cl setDestroy [1025][29338]
-cl setDestroy [1026][29338]
-cl setDestroy [1027][29338]
-cl setDestroy [1028][29338]
-cl setDestroy [1029][29338]
-cl setDestroy [1030][29338]
-cl setDestroy [1031][29338]
-cl setDestroy [1032][29338]
-cl setDestroy [1033][29338]
-cl setDestroy [1034][29338]
-cl setDestroy [1035][29338]
-cl setDestroy [1036][29338]
-cl setDestroy [1037][29338]
-cl setDestroy [1038][29338]
-cl setDestroy [1039][29338]
-cl setDestroy [1041][29338]
-cl setDestroy [1042][29338]
-cl setDestroy [1043][29338]
-cl setDestroy [1044][29338]
-cl setDestroy [1045][29338]
-cl setDestroy [1046][29338]
-cl setDestroy [1047][29338]
-cl setDestroy [1048][29338]
-cl setDestroy [1049][29338]
-cl setDestroy [1050][29338]
-cl setDestroy [1051][29338]
-cl setDestroy [1052][29338]
-cl setDestroy [1053][29338]
-cl setDestroy [1054][29338]
-cl setDestroy [1055][29338]
-cl setDestroy [1056][29338]
-cl setDestroy [1057][29338]
-cl setDestroy [1058][29338]
-cl setDestroy [1059][29338]
-cl setDestroy [1060][29338]
-cl setDestroy [1061][29338]
-cl setDestroy [1062][29338]
-cl setDestroy [1063][29338]
-cl setDestroy [1064][29338]
-cl setDestroy [1065][29338]
-cl setDestroy [1066][29338]
-cl setDestroy [1067][29338]
-cl setDestroy [1068][29338]
-cl setDestroy [1069][29338]
-cl setDestroy [1071][29338]
-cl setDestroy [1078][29338]
-cl setDestroy [1079][29338]
-cl setDestroy [1080][29338]
-cl setDestroy [1081][29338]
-cl setDestroy [1082][29338]
-cl setDestroy [1083][29338]
-cl setDestroy [1084][29338]
-cl setDestroy [1085][29338]
-cl setDestroy [1086][29338]
-cl setDestroy [1087][29338]
-cl setDestroy [1088][29338]
-cl setDestroy [1089][29338]
-cl setDestroy [1090][29338]
-cl setDestroy [1091][29338]
-cl setDestroy [1092][29338]
-cl setDestroy [1093][29338]
-cl setDestroy [1094][29338]
-cl setDestroy [1095][29338]
-cl setDestroy [1096][29338]
-cl setDestroy [1097][29338]
-cl setDestroy [1098][29338]
-cl setDestroy [1099][29338]
-cl setDestroy [1100][29338]
-cl setDestroy [1101][29338]
-cl setDestroy [1102][29338]
-cl setDestroy [1103][29338]
-cl setDestroy [1104][29338]
-cl setDestroy [1105][29338]
-cl setDestroy [1106][29338]
-cl setDestroy [1107][29338]
-cl setDestroy [1108][29338]
-cl setDestroy [1109][29338]
-cl setDestroy [1110][29338]
-cl setDestroy [1111][29338]
-cl setDestroy [1112][29338]
-cl setDestroy [1114][29338]
-cl setDestroy [1115][29338]
-cl setDestroy [1116][29338]
-cl setDestroy [1117][29338]
-cl setDestroy [1118][29338]
-cl setDestroy [1119][29338]
-cl setDestroy [1120][29338]
-cl setDestroy [1121][29338]
-cl setDestroy [1122][29338]
-cl setDestroy [1123][29338]
-cl setDestroy [1124][29338]
-cl setDestroy [1125][29338]
-cl setDestroy [1126][29338]
-cl setDestroy [1127][29338]
-cl setDestroy [1129][29338]
-cl setDestroy [1130][29338]
-cl setDestroy [1134][29338]
-cl setDestroy [1135][29338]
-cl setDestroy [1136][29338]
-cl setDestroy [1137][29338]
-cl setDestroy [1148][29338]
-cl setDestroy [1149][29338]
-cl setDestroy [1150][29338]
-cl setDestroy [1151][29338]
-cl setDestroy [1152][29338]
-cl setDestroy [1153][29338]
-cl setDestroy [1155][29338]
-cl setDestroy [1156][29338]
-cl setDestroy [49664][29338]
-cl setDestroy [17018][29338]
-cl setDestroy [17017][29338]
-cl setDestroy [17016][29338]
-cl setDestroy [17015][29338]
-cl setDestroy [17014][29338]
-cl setDestroy [17013][29338]
-cl setDestroy [17012][29338]
-cl setDestroy [19239][29338]
-cl setDestroy [18695][29338]
-cl setDestroy [18694][29338]
-cl setDestroy [18693][29338]
-cl setDestroy [18692][29338]
-cl setDestroy [18691][29338]
-cl setDestroy [18690][29338]
-cl setDestroy [18689][29338]
-cl setDestroy [18688][29338]
-dumping client spawn manager stuff for object with id 18688
-dumping client spawn manager stuff for object with id 17012
-dumping client spawn manager stuff for object with id 878
-dumping client spawn manager stuff for object with id 874
-dumping client spawn manager stuff for object with id 750
-dumping client spawn manager stuff for object with id 737
-dumping client spawn manager stuff for object with id 732
-dumping client spawn manager stuff for object with id 706
-dumping client spawn manager stuff for object with id 704
-dumping client spawn manager stuff for object with id 702
-dumping client spawn manager stuff for object with id 553
-dumping client spawn manager stuff for object with id 480
-dumping client spawn manager stuff for object with id 476
-dumping client spawn manager stuff for object with id 467
-dumping client spawn manager stuff for object with id 408
-dumping client spawn manager stuff for object with id 401
-dumping client spawn manager stuff for object with id 395
-dumping client spawn manager stuff for object with id 389
-dumping client spawn manager stuff for object with id 383
-dumping client spawn manager stuff for object with id 377
-dumping client spawn manager stuff for object with id 371
-dumping client spawn manager stuff for object with id 365
-dumping client spawn manager stuff for object with id 359
-dumping client spawn manager stuff for object with id 353
-dumping client spawn manager stuff for object with id 346
-dumping client spawn manager stuff for object with id 339
-dumping client spawn manager stuff for object with id 332
-dumping client spawn manager stuff for object with id 325
-dumping client spawn manager stuff for object with id 318
-dumping client spawn manager stuff for object with id 311
-dumping client spawn manager stuff for object with id 150
+cl setDestroy [16850][1203]
+cl setDestroy [68][1203]
+cl setDestroy [67][1203]
+cl setDestroy [66][1203]
+cl setDestroy [65][1203]
+cl setDestroy [64][1203]
+cl setDestroy [0][1203]
+cl setDestroy [1][1203]
+cl setDestroy [2][1203]
+cl setDestroy [3][1203]
+cl setDestroy [4][1203]
+cl setDestroy [5][1203]
+cl setDestroy [6][1203]
+cl setDestroy [7][1203]
+cl setDestroy [8][1203]
+cl setDestroy [9][1203]
+cl setDestroy [10][1203]
+cl setDestroy [11][1203]
+cl setDestroy [12][1203]
+cl setDestroy [13][1203]
+cl setDestroy [14][1203]
+cl setDestroy [15][1203]
+cl setDestroy [16][1203]
+cl setDestroy [17][1203]
+cl setDestroy [18][1203]
+cl setDestroy [19][1203]
+cl setDestroy [20][1203]
+cl setDestroy [21][1203]
+cl setDestroy [22][1203]
+cl setDestroy [23][1203]
+cl setDestroy [24][1203]
+cl setDestroy [25][1203]
+cl setDestroy [26][1203]
+cl setDestroy [27][1203]
+cl setDestroy [28][1203]
+cl setDestroy [29][1203]
+cl setDestroy [30][1203]
+cl setDestroy [31][1203]
+cl setDestroy [32][1203]
+cl setDestroy [33][1203]
+cl setDestroy [34][1203]
+cl setDestroy [35][1203]
+cl setDestroy [36][1203]
+cl setDestroy [37][1203]
+cl setDestroy [38][1203]
+cl setDestroy [39][1203]
+cl setDestroy [40][1203]
+cl setDestroy [41][1203]
+cl setDestroy [42][1203]
+cl setDestroy [43][1203]
+cl setDestroy [44][1203]
+cl setDestroy [45][1203]
+cl setDestroy [46][1203]
+cl setDestroy [47][1203]
+cl setDestroy [48][1203]
+cl setDestroy [49][1203]
+cl setDestroy [50][1203]
+cl setDestroy [51][1203]
+cl setDestroy [52][1203]
+cl setDestroy [53][1203]
+cl setDestroy [54][1203]
+cl setDestroy [55][1203]
+cl setDestroy [56][1203]
+cl setDestroy [57][1203]
+cl setDestroy [58][1203]
+cl setDestroy [59][1203]
+cl setDestroy [60][1203]
+cl setDestroy [61][1203]
+cl setDestroy [62][1203]
+cl setDestroy [63][1203]
+cl setDestroy [69][1203]
+cl setDestroy [70][1203]
+cl setDestroy [71][1203]
+cl setDestroy [72][1203]
+cl setDestroy [73][1203]
+cl setDestroy [74][1203]
+cl setDestroy [75][1203]
+cl setDestroy [76][1203]
+cl setDestroy [77][1203]
+cl setDestroy [78][1203]
+cl setDestroy [79][1203]
+cl setDestroy [80][1203]
+cl setDestroy [81][1203]
+cl setDestroy [82][1203]
+cl setDestroy [83][1203]
+cl setDestroy [84][1203]
+cl setDestroy [85][1203]
+cl setDestroy [86][1203]
+cl setDestroy [87][1203]
+cl setDestroy [88][1203]
+cl setDestroy [16929][1203]
+cl setDestroy [16928][1203]
+cl setDestroy [16927][1203]
+cl setDestroy [16926][1203]
+cl setDestroy [16925][1203]
+cl setDestroy [16924][1203]
+cl setDestroy [16923][1203]
+cl setDestroy [16922][1203]
+cl setDestroy [16921][1203]
+cl setDestroy [16920][1203]
+cl setDestroy [16919][1203]
+cl setDestroy [16918][1203]
+cl setDestroy [16917][1203]
+cl setDestroy [16916][1203]
+cl setDestroy [16915][1203]
+cl setDestroy [16914][1203]
+cl setDestroy [16913][1203]
+cl setDestroy [16912][1203]
+cl setDestroy [16911][1203]
+cl setDestroy [16910][1203]
+cl setDestroy [16909][1203]
+cl setDestroy [16908][1203]
+cl setDestroy [16907][1203]
+cl setDestroy [16906][1203]
+cl setDestroy [16905][1203]
+cl setDestroy [92][1203]
+cl setDestroy [89][1203]
+cl setDestroy [94][1203]
+cl setDestroy [95][1203]
+cl setDestroy [96][1203]
+cl setDestroy [97][1203]
+cl setDestroy [98][1203]
+cl setDestroy [100][1203]
+cl setDestroy [99][1203]
+cl setDestroy [101][1203]
+cl setDestroy [102][1203]
+cl setDestroy [16851][1203]
+cl setDestroy [107][1203]
+cl setDestroy [106][1203]
+cl setDestroy [105][1203]
+cl setDestroy [104][1203]
+cl setDestroy [103][1203]
+cl setDestroy [16852][1203]
+cl setDestroy [112][1203]
+cl setDestroy [111][1203]
+cl setDestroy [110][1203]
+cl setDestroy [109][1203]
+cl setDestroy [108][1203]
+cl setDestroy [16853][1203]
+cl setDestroy [118][1203]
+cl setDestroy [117][1203]
+cl setDestroy [116][1203]
+cl setDestroy [115][1203]
+cl setDestroy [114][1203]
+cl setDestroy [113][1203]
+cl setDestroy [16854][1203]
+cl setDestroy [122][1203]
+cl setDestroy [121][1203]
+cl setDestroy [120][1203]
+cl setDestroy [119][1203]
+cl setDestroy [16855][1203]
+cl setDestroy [127][1203]
+cl setDestroy [126][1203]
+cl setDestroy [125][1203]
+cl setDestroy [124][1203]
+cl setDestroy [123][1203]
+cl setDestroy [16856][1203]
+cl setDestroy [132][1203]
+cl setDestroy [131][1203]
+cl setDestroy [130][1203]
+cl setDestroy [129][1203]
+cl setDestroy [128][1203]
+cl setDestroy [16857][1203]
+cl setDestroy [137][1203]
+cl setDestroy [136][1203]
+cl setDestroy [135][1203]
+cl setDestroy [134][1203]
+cl setDestroy [133][1203]
+cl setDestroy [16858][1203]
+cl setDestroy [145][1203]
+cl setDestroy [144][1203]
+cl setDestroy [143][1203]
+cl setDestroy [142][1203]
+cl setDestroy [141][1203]
+cl setDestroy [140][1203]
+cl setDestroy [139][1203]
+cl setDestroy [138][1203]
+cl setDestroy [146][1203]
+cl setDestroy [147][1203]
+cl setDestroy [148][1203]
+cl setDestroy [149][1203]
+cl setDestroy [154][1203]
+cl setDestroy [16862][1203]
+cl setDestroy [16861][1203]
+cl setDestroy [16860][1203]
+cl setDestroy [16859][1203]
+cl setDestroy [155][1203]
+cl setDestroy [156][1203]
+cl setDestroy [184][1203]
+cl setDestroy [222][1203]
+cl setDestroy [227][1203]
+cl setDestroy [228][1203]
+cl setDestroy [229][1203]
+cl setDestroy [230][1203]
+cl setDestroy [253][1203]
+cl setDestroy [261][1203]
+cl setDestroy [266][1203]
+cl setDestroy [267][1203]
+cl setDestroy [268][1203]
+cl setDestroy [269][1203]
+cl setDestroy [270][1203]
+cl setDestroy [271][1203]
+cl setDestroy [272][1203]
+cl setDestroy [273][1203]
+cl setDestroy [274][1203]
+cl setDestroy [275][1203]
+cl setDestroy [276][1203]
+cl setDestroy [277][1203]
+cl setDestroy [278][1203]
+cl setDestroy [279][1203]
+cl setDestroy [280][1203]
+cl setDestroy [281][1203]
+cl setDestroy [282][1203]
+cl setDestroy [283][1203]
+cl setDestroy [284][1203]
+cl setDestroy [285][1203]
+cl setDestroy [286][1203]
+cl setDestroy [319][1203]
+cl setDestroy [16863][1203]
+cl setDestroy [326][1203]
+cl setDestroy [325][1203]
+cl setDestroy [324][1203]
+cl setDestroy [323][1203]
+cl setDestroy [322][1203]
+cl setDestroy [321][1203]
+cl setDestroy [320][1203]
+cl setDestroy [16864][1203]
+cl setDestroy [333][1203]
+cl setDestroy [332][1203]
+cl setDestroy [331][1203]
+cl setDestroy [330][1203]
+cl setDestroy [329][1203]
+cl setDestroy [328][1203]
+cl setDestroy [327][1203]
+cl setDestroy [16865][1203]
+cl setDestroy [340][1203]
+cl setDestroy [339][1203]
+cl setDestroy [338][1203]
+cl setDestroy [337][1203]
+cl setDestroy [336][1203]
+cl setDestroy [335][1203]
+cl setDestroy [334][1203]
+cl setDestroy [16866][1203]
+cl setDestroy [347][1203]
+cl setDestroy [346][1203]
+cl setDestroy [345][1203]
+cl setDestroy [344][1203]
+cl setDestroy [343][1203]
+cl setDestroy [342][1203]
+cl setDestroy [341][1203]
+cl setDestroy [16867][1203]
+cl setDestroy [354][1203]
+cl setDestroy [353][1203]
+cl setDestroy [352][1203]
+cl setDestroy [351][1203]
+cl setDestroy [350][1203]
+cl setDestroy [349][1203]
+cl setDestroy [348][1203]
+cl setDestroy [16868][1203]
+cl setDestroy [361][1203]
+cl setDestroy [360][1203]
+cl setDestroy [359][1203]
+cl setDestroy [358][1203]
+cl setDestroy [357][1203]
+cl setDestroy [356][1203]
+cl setDestroy [355][1203]
+cl setDestroy [16869][1203]
+cl setDestroy [367][1203]
+cl setDestroy [366][1203]
+cl setDestroy [365][1203]
+cl setDestroy [364][1203]
+cl setDestroy [363][1203]
+cl setDestroy [362][1203]
+cl setDestroy [16870][1203]
+cl setDestroy [374][1203]
+cl setDestroy [373][1203]
+cl setDestroy [372][1203]
+cl setDestroy [371][1203]
+cl setDestroy [370][1203]
+cl setDestroy [369][1203]
+cl setDestroy [368][1203]
+cl setDestroy [16871][1203]
+cl setDestroy [380][1203]
+cl setDestroy [379][1203]
+cl setDestroy [378][1203]
+cl setDestroy [377][1203]
+cl setDestroy [376][1203]
+cl setDestroy [375][1203]
+cl setDestroy [16872][1203]
+cl setDestroy [386][1203]
+cl setDestroy [385][1203]
+cl setDestroy [384][1203]
+cl setDestroy [383][1203]
+cl setDestroy [382][1203]
+cl setDestroy [381][1203]
+cl setDestroy [16873][1203]
+cl setDestroy [392][1203]
+cl setDestroy [391][1203]
+cl setDestroy [390][1203]
+cl setDestroy [389][1203]
+cl setDestroy [388][1203]
+cl setDestroy [387][1203]
+cl setDestroy [16874][1203]
+cl setDestroy [399][1203]
+cl setDestroy [398][1203]
+cl setDestroy [397][1203]
+cl setDestroy [396][1203]
+cl setDestroy [395][1203]
+cl setDestroy [394][1203]
+cl setDestroy [393][1203]
+cl setDestroy [16875][1203]
+cl setDestroy [405][1203]
+cl setDestroy [404][1203]
+cl setDestroy [403][1203]
+cl setDestroy [402][1203]
+cl setDestroy [401][1203]
+cl setDestroy [400][1203]
+cl setDestroy [16876][1203]
+cl setDestroy [411][1203]
+cl setDestroy [410][1203]
+cl setDestroy [409][1203]
+cl setDestroy [408][1203]
+cl setDestroy [407][1203]
+cl setDestroy [406][1203]
+cl setDestroy [16877][1203]
+cl setDestroy [417][1203]
+cl setDestroy [416][1203]
+cl setDestroy [415][1203]
+cl setDestroy [414][1203]
+cl setDestroy [413][1203]
+cl setDestroy [412][1203]
+cl setDestroy [16878][1203]
+cl setDestroy [423][1203]
+cl setDestroy [422][1203]
+cl setDestroy [421][1203]
+cl setDestroy [420][1203]
+cl setDestroy [419][1203]
+cl setDestroy [418][1203]
+cl setDestroy [424][1203]
+cl setDestroy [425][1203]
+cl setDestroy [432][1203]
+cl setDestroy [433][1203]
+cl setDestroy [16932][1203]
+cl setDestroy [16931][1203]
+cl setDestroy [16930][1203]
+cl setDestroy [16879][1203]
+cl setDestroy [481][1203]
+cl setDestroy [477][1203]
+cl setDestroy [482][1203]
+cl setDestroy [483][1203]
+cl setDestroy [485][1203]
+cl setDestroy [487][1203]
+cl setDestroy [486][1203]
+cl setDestroy [488][1203]
+cl setDestroy [489][1203]
+cl setDestroy [490][1203]
+cl setDestroy [491][1203]
+cl setDestroy [492][1203]
+cl setDestroy [493][1203]
+cl setDestroy [494][1203]
+cl setDestroy [495][1203]
+cl setDestroy [496][1203]
+cl setDestroy [497][1203]
+cl setDestroy [498][1203]
+cl setDestroy [499][1203]
+cl setDestroy [500][1203]
+cl setDestroy [501][1203]
+cl setDestroy [502][1203]
+cl setDestroy [503][1203]
+cl setDestroy [504][1203]
+cl setDestroy [505][1203]
+cl setDestroy [506][1203]
+cl setDestroy [507][1203]
+cl setDestroy [508][1203]
+cl setDestroy [509][1203]
+cl setDestroy [510][1203]
+cl setDestroy [511][1203]
+cl setDestroy [512][1203]
+cl setDestroy [513][1203]
+cl setDestroy [514][1203]
+cl setDestroy [515][1203]
+cl setDestroy [516][1203]
+cl setDestroy [517][1203]
+cl setDestroy [518][1203]
+cl setDestroy [519][1203]
+cl setDestroy [520][1203]
+cl setDestroy [521][1203]
+cl setDestroy [522][1203]
+cl setDestroy [523][1203]
+cl setDestroy [524][1203]
+cl setDestroy [525][1203]
+cl setDestroy [526][1203]
+cl setDestroy [527][1203]
+cl setDestroy [528][1203]
+cl setDestroy [529][1203]
+cl setDestroy [530][1203]
+cl setDestroy [531][1203]
+cl setDestroy [536][1203]
+cl setDestroy [537][1203]
+cl setDestroy [538][1203]
+cl setDestroy [539][1203]
+cl setDestroy [540][1203]
+cl setDestroy [541][1203]
+cl setDestroy [542][1203]
+cl setDestroy [543][1203]
+cl setDestroy [544][1203]
+cl setDestroy [545][1203]
+cl setDestroy [546][1203]
+cl setDestroy [547][1203]
+cl setDestroy [548][1203]
+cl setDestroy [549][1203]
+cl setDestroy [550][1203]
+cl setDestroy [551][1203]
+cl setDestroy [552][1203]
+cl setDestroy [553][1203]
+cl setDestroy [554][1203]
+cl setDestroy [555][1203]
+cl setDestroy [556][1203]
+cl setDestroy [557][1203]
+cl setDestroy [558][1203]
+cl setDestroy [559][1203]
+cl setDestroy [561][1203]
+cl setDestroy [562][1203]
+cl setDestroy [16894][1203]
+cl setDestroy [16893][1203]
+cl setDestroy [16880][1203]
+cl setDestroy [563][1203]
+cl setDestroy [565][1203]
+cl setDestroy [566][1203]
+cl setDestroy [567][1203]
+cl setDestroy [568][1203]
+cl setDestroy [569][1203]
+cl setDestroy [570][1203]
+cl setDestroy [571][1203]
+cl setDestroy [572][1203]
+cl setDestroy [573][1203]
+cl setDestroy [581][1203]
+cl setDestroy [582][1203]
+cl setDestroy [583][1203]
+cl setDestroy [584][1203]
+cl setDestroy [585][1203]
+cl setDestroy [586][1203]
+cl setDestroy [587][1203]
+cl setDestroy [588][1203]
+cl setDestroy [589][1203]
+cl setDestroy [590][1203]
+cl setDestroy [591][1203]
+cl setDestroy [592][1203]
+cl setDestroy [593][1203]
+cl setDestroy [594][1203]
+cl setDestroy [595][1203]
+cl setDestroy [596][1203]
+cl setDestroy [597][1203]
+cl setDestroy [598][1203]
+cl setDestroy [599][1203]
+cl setDestroy [600][1203]
+cl setDestroy [601][1203]
+cl setDestroy [602][1203]
+cl setDestroy [603][1203]
+cl setDestroy [604][1203]
+cl setDestroy [605][1203]
+cl setDestroy [606][1203]
+cl setDestroy [607][1203]
+cl setDestroy [608][1203]
+cl setDestroy [609][1203]
+cl setDestroy [610][1203]
+cl setDestroy [611][1203]
+cl setDestroy [612][1203]
+cl setDestroy [613][1203]
+cl setDestroy [614][1203]
+cl setDestroy [615][1203]
+cl setDestroy [616][1203]
+cl setDestroy [617][1203]
+cl setDestroy [618][1203]
+cl setDestroy [619][1203]
+cl setDestroy [620][1203]
+cl setDestroy [621][1203]
+cl setDestroy [622][1203]
+cl setDestroy [623][1203]
+cl setDestroy [624][1203]
+cl setDestroy [625][1203]
+cl setDestroy [626][1203]
+cl setDestroy [627][1203]
+cl setDestroy [628][1203]
+cl setDestroy [629][1203]
+cl setDestroy [630][1203]
+cl setDestroy [631][1203]
+cl setDestroy [632][1203]
+cl setDestroy [633][1203]
+cl setDestroy [634][1203]
+cl setDestroy [635][1203]
+cl setDestroy [636][1203]
+cl setDestroy [637][1203]
+cl setDestroy [638][1203]
+cl setDestroy [639][1203]
+cl setDestroy [640][1203]
+cl setDestroy [641][1203]
+cl setDestroy [642][1203]
+cl setDestroy [643][1203]
+cl setDestroy [644][1203]
+cl setDestroy [645][1203]
+cl setDestroy [646][1203]
+cl setDestroy [647][1203]
+cl setDestroy [648][1203]
+cl setDestroy [649][1203]
+cl setDestroy [659][1203]
+cl setDestroy [660][1203]
+cl setDestroy [661][1203]
+cl setDestroy [662][1203]
+cl setDestroy [663][1203]
+cl setDestroy [664][1203]
+cl setDestroy [665][1203]
+cl setDestroy [666][1203]
+cl setDestroy [667][1203]
+cl setDestroy [668][1203]
+cl setDestroy [669][1203]
+cl setDestroy [670][1203]
+cl setDestroy [671][1203]
+cl setDestroy [679][1203]
+cl setDestroy [680][1203]
+cl setDestroy [681][1203]
+cl setDestroy [682][1203]
+cl setDestroy [683][1203]
+cl setDestroy [684][1203]
+cl setDestroy [685][1203]
+cl setDestroy [686][1203]
+cl setDestroy [687][1203]
+cl setDestroy [688][1203]
+cl setDestroy [689][1203]
+cl setDestroy [704][1203]
+cl setDestroy [705][1203]
+cl setDestroy [706][1203]
+cl setDestroy [707][1203]
+cl setDestroy [708][1203]
+cl setDestroy [709][1203]
+cl setDestroy [710][1203]
+cl setDestroy [711][1203]
+cl setDestroy [16881][1203]
+cl setDestroy [712][1203]
+cl setDestroy [16892][1203]
+cl setDestroy [16891][1203]
+cl setDestroy [16890][1203]
+cl setDestroy [16882][1203]
+cl setDestroy [714][1203]
+cl setDestroy [16889][1203]
+cl setDestroy [16888][1203]
+cl setDestroy [16883][1203]
+cl setDestroy [716][1203]
+cl setDestroy [719][1203]
+cl setDestroy [720][1203]
+cl setDestroy [721][1203]
+cl setDestroy [722][1203]
+cl setDestroy [723][1203]
+cl setDestroy [724][1203]
+cl setDestroy [725][1203]
+cl setDestroy [726][1203]
+cl setDestroy [727][1203]
+cl setDestroy [728][1203]
+cl setDestroy [729][1203]
+cl setDestroy [733][1203]
+cl setDestroy [738][1203]
+cl setDestroy [739][1203]
+cl setDestroy [740][1203]
+cl setDestroy [741][1203]
+cl setDestroy [16884][1203]
+cl setDestroy [746][1203]
+cl setDestroy [745][1203]
+cl setDestroy [744][1203]
+cl setDestroy [743][1203]
+cl setDestroy [742][1203]
+cl setDestroy [749][1203]
+cl setDestroy [755][1203]
+cl setDestroy [756][1203]
+cl setDestroy [16933][1203]
+cl setDestroy [16885][1203]
+cl setDestroy [760][1203]
+cl setDestroy [762][1203]
+cl setDestroy [763][1203]
+cl setDestroy [764][1203]
+cl setDestroy [765][1203]
+cl setDestroy [776][1203]
+cl setDestroy [777][1203]
+cl setDestroy [778][1203]
+cl setDestroy [779][1203]
+cl setDestroy [780][1203]
+cl setDestroy [781][1203]
+cl setDestroy [782][1203]
+cl setDestroy [783][1203]
+cl setDestroy [784][1203]
+cl setDestroy [785][1203]
+cl setDestroy [786][1203]
+cl setDestroy [787][1203]
+cl setDestroy [788][1203]
+cl setDestroy [789][1203]
+cl setDestroy [790][1203]
+cl setDestroy [791][1203]
+cl setDestroy [792][1203]
+cl setDestroy [793][1203]
+cl setDestroy [794][1203]
+cl setDestroy [797][1203]
+cl setDestroy [798][1203]
+cl setDestroy [799][1203]
+cl setDestroy [800][1203]
+cl setDestroy [801][1203]
+cl setDestroy [802][1203]
+cl setDestroy [803][1203]
+cl setDestroy [804][1203]
+cl setDestroy [805][1203]
+cl setDestroy [806][1203]
+cl setDestroy [807][1203]
+cl setDestroy [808][1203]
+cl setDestroy [809][1203]
+cl setDestroy [810][1203]
+cl setDestroy [811][1203]
+cl setDestroy [812][1203]
+cl setDestroy [813][1203]
+cl setDestroy [814][1203]
+cl setDestroy [815][1203]
+cl setDestroy [816][1203]
+cl setDestroy [817][1203]
+cl setDestroy [818][1203]
+cl setDestroy [819][1203]
+cl setDestroy [820][1203]
+cl setDestroy [821][1203]
+cl setDestroy [822][1203]
+cl setDestroy [823][1203]
+cl setDestroy [824][1203]
+cl setDestroy [825][1203]
+cl setDestroy [826][1203]
+cl setDestroy [827][1203]
+cl setDestroy [828][1203]
+cl setDestroy [829][1203]
+cl setDestroy [830][1203]
+cl setDestroy [831][1203]
+cl setDestroy [832][1203]
+cl setDestroy [833][1203]
+cl setDestroy [834][1203]
+cl setDestroy [835][1203]
+cl setDestroy [836][1203]
+cl setDestroy [837][1203]
+cl setDestroy [838][1203]
+cl setDestroy [839][1203]
+cl setDestroy [840][1203]
+cl setDestroy [841][1203]
+cl setDestroy [842][1203]
+cl setDestroy [843][1203]
+cl setDestroy [844][1203]
+cl setDestroy [845][1203]
+cl setDestroy [846][1203]
+cl setDestroy [847][1203]
+cl setDestroy [848][1203]
+cl setDestroy [849][1203]
+cl setDestroy [850][1203]
+cl setDestroy [851][1203]
+cl setDestroy [852][1203]
+cl setDestroy [853][1203]
+cl setDestroy [854][1203]
+cl setDestroy [861][1203]
+cl setDestroy [862][1203]
+cl setDestroy [863][1203]
+cl setDestroy [864][1203]
+cl setDestroy [865][1203]
+cl setDestroy [866][1203]
+cl setDestroy [867][1203]
+cl setDestroy [868][1203]
+cl setDestroy [869][1203]
+cl setDestroy [870][1203]
+cl setDestroy [871][1203]
+cl setDestroy [872][1203]
+cl setDestroy [873][1203]
+cl setDestroy [874][1203]
+cl setDestroy [875][1203]
+cl setDestroy [876][1203]
+cl setDestroy [877][1203]
+cl setDestroy [878][1203]
+cl setDestroy [16904][1203]
+cl setDestroy [16903][1203]
+cl setDestroy [16902][1203]
+cl setDestroy [16901][1203]
+cl setDestroy [16900][1203]
+cl setDestroy [16899][1203]
+cl setDestroy [16886][1203]
+cl setDestroy [889][1203]
+cl setDestroy [886][1203]
+cl setDestroy [16898][1203]
+cl setDestroy [16897][1203]
+cl setDestroy [16896][1203]
+cl setDestroy [16895][1203]
+cl setDestroy [16887][1203]
+cl setDestroy [890][1203]
+cl setDestroy [892][1203]
+cl setDestroy [896][1203]
+cl setDestroy [897][1203]
+cl setDestroy [898][1203]
+cl setDestroy [899][1203]
+cl setDestroy [902][1203]
+cl setDestroy [903][1203]
+cl setDestroy [905][1203]
+cl setDestroy [906][1203]
+cl setDestroy [908][1203]
+cl setDestroy [909][1203]
+cl setDestroy [911][1203]
+cl setDestroy [912][1203]
+cl setDestroy [914][1203]
+cl setDestroy [915][1203]
+cl setDestroy [917][1203]
+cl setDestroy [918][1203]
+cl setDestroy [920][1203]
+cl setDestroy [921][1203]
+cl setDestroy [922][1203]
+cl setDestroy [923][1203]
+cl setDestroy [924][1203]
+cl setDestroy [925][1203]
+cl setDestroy [926][1203]
+cl setDestroy [927][1203]
+cl setDestroy [929][1203]
+cl setDestroy [930][1203]
+cl setDestroy [933][1203]
+cl setDestroy [934][1203]
+cl setDestroy [940][1203]
+cl setDestroy [947][1203]
+cl setDestroy [948][1203]
+cl setDestroy [949][1203]
+cl setDestroy [950][1203]
+cl setDestroy [951][1203]
+cl setDestroy [952][1203]
+cl setDestroy [953][1203]
+cl setDestroy [965][1203]
+cl setDestroy [966][1203]
+cl setDestroy [967][1203]
+cl setDestroy [973][1203]
+cl setDestroy [977][1203]
+cl setDestroy [980][1203]
+cl setDestroy [981][1203]
+cl setDestroy [982][1203]
+cl setDestroy [983][1203]
+cl setDestroy [984][1203]
+cl setDestroy [985][1203]
+cl setDestroy [986][1203]
+cl setDestroy [987][1203]
+cl setDestroy [988][1203]
+cl setDestroy [989][1203]
+cl setDestroy [990][1203]
+cl setDestroy [991][1203]
+cl setDestroy [992][1203]
+cl setDestroy [993][1203]
+cl setDestroy [994][1203]
+cl setDestroy [995][1203]
+cl setDestroy [996][1203]
+cl setDestroy [997][1203]
+cl setDestroy [998][1203]
+cl setDestroy [999][1203]
+cl setDestroy [1000][1203]
+cl setDestroy [1001][1203]
+cl setDestroy [1002][1203]
+cl setDestroy [1003][1203]
+cl setDestroy [1004][1203]
+cl setDestroy [1005][1203]
+cl setDestroy [1006][1203]
+cl setDestroy [1007][1203]
+cl setDestroy [1008][1203]
+cl setDestroy [1009][1203]
+cl setDestroy [1010][1203]
+cl setDestroy [1011][1203]
+cl setDestroy [1012][1203]
+cl setDestroy [1013][1203]
+cl setDestroy [1014][1203]
+cl setDestroy [1015][1203]
+cl setDestroy [1016][1203]
+cl setDestroy [1017][1203]
+cl setDestroy [1018][1203]
+cl setDestroy [1019][1203]
+cl setDestroy [1020][1203]
+cl setDestroy [1021][1203]
+cl setDestroy [1022][1203]
+cl setDestroy [1023][1203]
+cl setDestroy [1024][1203]
+cl setDestroy [1025][1203]
+cl setDestroy [1026][1203]
+cl setDestroy [1027][1203]
+cl setDestroy [1028][1203]
+cl setDestroy [1029][1203]
+cl setDestroy [1030][1203]
+cl setDestroy [1031][1203]
+cl setDestroy [1032][1203]
+cl setDestroy [1033][1203]
+cl setDestroy [1034][1203]
+cl setDestroy [1035][1203]
+cl setDestroy [1036][1203]
+cl setDestroy [1037][1203]
+cl setDestroy [1038][1203]
+cl setDestroy [1039][1203]
+cl setDestroy [1040][1203]
+cl setDestroy [1041][1203]
+cl setDestroy [1042][1203]
+cl setDestroy [1043][1203]
+cl setDestroy [1044][1203]
+cl setDestroy [1045][1203]
+cl setDestroy [1046][1203]
+cl setDestroy [1047][1203]
+cl setDestroy [1048][1203]
+cl setDestroy [1049][1203]
+cl setDestroy [1050][1203]
+cl setDestroy [1051][1203]
+cl setDestroy [1053][1203]
+cl setDestroy [1054][1203]
+cl setDestroy [1055][1203]
+cl setDestroy [1056][1203]
+cl setDestroy [1057][1203]
+cl setDestroy [1058][1203]
+cl setDestroy [1059][1203]
+cl setDestroy [1060][1203]
+cl setDestroy [1061][1203]
+cl setDestroy [1062][1203]
+cl setDestroy [1063][1203]
+cl setDestroy [1064][1203]
+cl setDestroy [1065][1203]
+cl setDestroy [1066][1203]
+cl setDestroy [1067][1203]
+cl setDestroy [1068][1203]
+cl setDestroy [1069][1203]
+cl setDestroy [1070][1203]
+cl setDestroy [1071][1203]
+cl setDestroy [1072][1203]
+cl setDestroy [1073][1203]
+cl setDestroy [1074][1203]
+cl setDestroy [1075][1203]
+cl setDestroy [1076][1203]
+cl setDestroy [1077][1203]
+cl setDestroy [1078][1203]
+cl setDestroy [1079][1203]
+cl setDestroy [1080][1203]
+cl setDestroy [1081][1203]
+cl setDestroy [1083][1203]
+cl setDestroy [1090][1203]
+cl setDestroy [1091][1203]
+cl setDestroy [1092][1203]
+cl setDestroy [1093][1203]
+cl setDestroy [1094][1203]
+cl setDestroy [1095][1203]
+cl setDestroy [1096][1203]
+cl setDestroy [1097][1203]
+cl setDestroy [1098][1203]
+cl setDestroy [1099][1203]
+cl setDestroy [1100][1203]
+cl setDestroy [1101][1203]
+cl setDestroy [1102][1203]
+cl setDestroy [1103][1203]
+cl setDestroy [1104][1203]
+cl setDestroy [1105][1203]
+cl setDestroy [1106][1203]
+cl setDestroy [1107][1203]
+cl setDestroy [1108][1203]
+cl setDestroy [1109][1203]
+cl setDestroy [1110][1203]
+cl setDestroy [1111][1203]
+cl setDestroy [1112][1203]
+cl setDestroy [1113][1203]
+cl setDestroy [1114][1203]
+cl setDestroy [1115][1203]
+cl setDestroy [1116][1203]
+cl setDestroy [1117][1203]
+cl setDestroy [1118][1203]
+cl setDestroy [1119][1203]
+cl setDestroy [1120][1203]
+cl setDestroy [1121][1203]
+cl setDestroy [1122][1203]
+cl setDestroy [1123][1203]
+cl setDestroy [1124][1203]
+cl setDestroy [1126][1203]
+cl setDestroy [1127][1203]
+cl setDestroy [1128][1203]
+cl setDestroy [1129][1203]
+cl setDestroy [1130][1203]
+cl setDestroy [1131][1203]
+cl setDestroy [1132][1203]
+cl setDestroy [1133][1203]
+cl setDestroy [1134][1203]
+cl setDestroy [1135][1203]
+cl setDestroy [1136][1203]
+cl setDestroy [1137][1203]
+cl setDestroy [1138][1203]
+cl setDestroy [1139][1203]
+cl setDestroy [1141][1203]
+cl setDestroy [1142][1203]
+cl setDestroy [1146][1203]
+cl setDestroy [1147][1203]
+cl setDestroy [1148][1203]
+cl setDestroy [1149][1203]
+cl setDestroy [1160][1203]
+cl setDestroy [1161][1203]
+cl setDestroy [1162][1203]
+cl setDestroy [1163][1203]
+cl setDestroy [1164][1203]
+cl setDestroy [1165][1203]
+cl setDestroy [1167][1203]
+cl setDestroy [1168][1203]
+dumping client spawn manager stuff for object with id 890
+dumping client spawn manager stuff for object with id 886
+dumping client spawn manager stuff for object with id 760
+dumping client spawn manager stuff for object with id 742
+dumping client spawn manager stuff for object with id 716
+dumping client spawn manager stuff for object with id 714
+dumping client spawn manager stuff for object with id 712
+dumping client spawn manager stuff for object with id 563
+dumping client spawn manager stuff for object with id 490
+dumping client spawn manager stuff for object with id 489
+dumping client spawn manager stuff for object with id 488
+dumping client spawn manager stuff for object with id 486
+dumping client spawn manager stuff for object with id 477
+dumping client spawn manager stuff for object with id 418
+dumping client spawn manager stuff for object with id 412
+dumping client spawn manager stuff for object with id 406
+dumping client spawn manager stuff for object with id 400
+dumping client spawn manager stuff for object with id 393
+dumping client spawn manager stuff for object with id 387
+dumping client spawn manager stuff for object with id 381
+dumping client spawn manager stuff for object with id 375
+dumping client spawn manager stuff for object with id 368
+dumping client spawn manager stuff for object with id 362
+dumping client spawn manager stuff for object with id 355
+dumping client spawn manager stuff for object with id 348
+dumping client spawn manager stuff for object with id 341
+dumping client spawn manager stuff for object with id 334
+dumping client spawn manager stuff for object with id 327
+dumping client spawn manager stuff for object with id 320
 dumping client spawn manager stuff for object with id 138
-dumping client spawn manager stuff for object with id 134
-dumping client spawn manager stuff for object with id 130
-dumping client spawn manager stuff for object with id 124
+dumping client spawn manager stuff for object with id 133
+dumping client spawn manager stuff for object with id 128
+dumping client spawn manager stuff for object with id 123
 dumping client spawn manager stuff for object with id 119
 dumping client spawn manager stuff for object with id 113
 dumping client spawn manager stuff for object with id 108
-dumping client spawn manager stuff for object with id 102
+dumping client spawn manager stuff for object with id 103
 dumping client spawn manager stuff for object with id 99
-* WARNING: c_EVENT[19] to [67]: unknown dest
 * WARNING: c_EVENT[19] to [106]: unknown dest
 * WARNING: c_EVENT[19] to [111]: unknown dest
 * WARNING: c_EVENT[19] to [117]: unknown dest
-* WARNING: c_EVENT[19] to [123]: unknown dest
-* WARNING: c_EVENT[19] to [137]: unknown dest
+* WARNING: c_EVENT[19] to [122]: unknown dest
+* WARNING: c_EVENT[19] to [126]: unknown dest
+* WARNING: c_EVENT[19] to [132]: unknown dest
 * WARNING: c_EVENT[19] to [144]: unknown dest
-* WARNING: c_EVENT[19] to [316]: unknown dest
-* WARNING: c_EVENT[19] to [323]: unknown dest
-* WARNING: c_EVENT[19] to [330]: unknown dest
-* WARNING: c_EVENT[19] to [337]: unknown dest
-* WARNING: c_EVENT[19] to [344]: unknown dest
-* WARNING: c_EVENT[19] to [351]: unknown dest
-* WARNING: c_EVENT[19] to [357]: unknown dest
-* WARNING: c_EVENT[19] to [363]: unknown dest
-* WARNING: c_EVENT[19] to [369]: unknown dest
-* WARNING: c_EVENT[19] to [375]: unknown dest
-* WARNING: c_EVENT[19] to [381]: unknown dest
-* WARNING: c_EVENT[19] to [387]: unknown dest
-* WARNING: c_EVENT[19] to [393]: unknown dest
-* WARNING: c_EVENT[19] to [399]: unknown dest
-* WARNING: c_EVENT[19] to [406]: unknown dest
-* WARNING: c_EVENT[19] to [412]: unknown dest
-* WARNING: c_EVENT[19] to [17018]: unknown dest
+* WARNING: c_EVENT[19] to [325]: unknown dest
+* WARNING: c_EVENT[19] to [332]: unknown dest
+* WARNING: c_EVENT[19] to [339]: unknown dest
+* WARNING: c_EVENT[19] to [346]: unknown dest
+* WARNING: c_EVENT[19] to [353]: unknown dest
+* WARNING: c_EVENT[19] to [360]: unknown dest
+* WARNING: c_EVENT[19] to [366]: unknown dest
+* WARNING: c_EVENT[19] to [373]: unknown dest
+* WARNING: c_EVENT[19] to [379]: unknown dest
+* WARNING: c_EVENT[19] to [385]: unknown dest
+* WARNING: c_EVENT[19] to [391]: unknown dest
+* WARNING: c_EVENT[19] to [398]: unknown dest
+* WARNING: c_EVENT[19] to [404]: unknown dest
+* WARNING: c_EVENT[19] to [410]: unknown dest
+* WARNING: c_EVENT[19] to [416]: unknown dest
+* WARNING: c_EVENT[19] to [422]: unknown dest
 - Destroying level
 pause [OFF] timer=[ON] sound=[OFF] reason=mm_deactivate1
 pause [OFF] timer=[OFF] sound=[ON] reason=mm_deactivate2
@@ -4933,7 +3831,6 @@ gameplay\encyclopedia_zone.xml already in list
 gameplay\encyclopedia_zone.xml already in list
 gameplay\encyclopedia_zone.xml already in list
 _tmp.size() 7
-DestroySingleton::RefCounter: 0
 gameplay\dialogs.xml is unique
 gameplay\dialogs.xml already in list
 gameplay\dialogs.xml already in list

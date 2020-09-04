@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "control_manager_custom.h"
 #include "BaseMonster/base_monster.h"
 #include "control_sequencer.h"
@@ -9,7 +10,6 @@
 #include "../../level.h"
 #include "control_animation_base.h"
 #include "control_critical_wound.h"
-
 
 CControlManagerCustom::CControlManagerCustom()
 {

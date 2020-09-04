@@ -5316,9 +5316,6 @@
     <ClInclude Include="PhysicsGamePars.h">
       <Filter>Physics\Base</Filter>
     </ClInclude>
-    <ClInclude Include="ph_shell_interface.h">
-      <Filter>Physics\Base\Objects</Filter>
-    </ClInclude>
     <ClInclude Include="PHDefs.h">
       <Filter>Physics\Base\Objects</Filter>
     </ClInclude>
@@ -5393,9 +5390,6 @@
     </ClInclude>
     <ClInclude Include="PHSimpleCharacterInline.h">
       <Filter>Physics\Base\Objects\PhyMove\SipmpleCharacter</Filter>
-    </ClInclude>
-    <ClInclude Include="IColisiondamageInfo.h">
-      <Filter>Physics\Base\Objects\PhyMove\BaseCharacter</Filter>
     </ClInclude>
     <ClInclude Include="PHCharacter.h">
       <Filter>Physics\Base\Objects\PhyMove\BaseCharacter</Filter>
@@ -5984,6 +5978,12 @@
     </ClInclude>
     <ClInclude Include="BastArtefact.h">
       <Filter>Core\Client\Objects\items &amp; weapons\Artefacts\BastArtefact</Filter>
+    </ClInclude>
+    <ClInclude Include="ICollisionDamageInfo.h">
+      <Filter>Physics\Base\Objects\PhyMove\BaseCharacter</Filter>
+    </ClInclude>
+    <ClInclude Include="IPhysicShellCreator.h">
+      <Filter>Physics\Base\Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #ifdef DEBUG
-#	include "physics.h"
+#	include "Physics.h"
 #	include "MathUtils.h"
 #	include "PHDebug.h"
 #	include "PHObject.h"

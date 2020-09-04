@@ -11,9 +11,6 @@ public:
 	virtual bool				compare							(const CPHReqComparerV* v)	const	{return false;}		;
 };
 
-
-
-
 class CPHCondition :
 	public CPHReqBase
 {

@@ -10,7 +10,7 @@
 #include "PhysicsShell.h"
 #include "entity_alive.h"
 #include "ParticlesObject.h"
-#include "phmovementcontrol.h"
+#include "PHMovementControl.h"
 #include "xrmessages.h"
 #include "physicsshellholder.h"
 #include "explosive.h"

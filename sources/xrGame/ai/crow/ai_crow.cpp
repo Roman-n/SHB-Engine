@@ -7,7 +7,8 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include "../../physicsshell.h"
+
+#include "../../PhysicsShell.h"
 #include "ai_crow.h"
 #include "../../HUDManager.h"//
 #include "../../Level.h"

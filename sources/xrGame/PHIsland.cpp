@@ -1,6 +1,8 @@
 #include "stdafx.h"
+
 #include "PHIsland.h"
-#include "physics.h"
+#include "Physics.h"
+
 void	CPHIsland::	Step(dReal step)
 {
 	if(!m_flags.is_active()) return;

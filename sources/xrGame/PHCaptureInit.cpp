@@ -1,6 +1,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////
 #include "stdafx.h"
-#include "phcharacter.h"
+
+#include "PHCharacter.h"
 #include "Physics.h"
 #include "ExtendedGeom.h"
 #include "PHCapture.h"

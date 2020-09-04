@@ -14,11 +14,12 @@
 
 #include "PhysicsShell.h"
 #include "entity_alive.h"
-#include "phmovementcontrol.h"
+#include "PHMovementControl.h"
 #include "xrmessages.h"
 #include "PhysicsShellHolder.h"
 #include "Level.h"
 #include "CharacterPhysicsSupport.h"
+
 CBaseGraviZone ::CBaseGraviZone (void)
 {
 	m_dwTeleTime = 0;

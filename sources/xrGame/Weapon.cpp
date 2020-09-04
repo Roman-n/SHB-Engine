@@ -23,7 +23,7 @@
 #include "..\XR_3DA\skeletoncustom.h"
 #include "ai_object_location.h"
 #include "clsid_game.h"
-#include "mathutils.h"
+#include "MathUtils.h"
 #include "object_broker.h"
 #include "..\XR_3DA\igame_persistent.h"
 

@@ -3,9 +3,6 @@
 #include "telekinetic_object.h"
 #include "../../PHObject.h"
 
-
-
-
 class CTelekinesis : public CPHUpdateObject {
 
 protected:
@@ -19,7 +16,6 @@ public:
 	virtual			~CTelekinesis		();
 
 			// allocates relevant TelekineticObject
-
 
 			// активировать объект
 virtual		CTelekineticObject*	activate(CPhysicsShellHolder *obj, float strength, float height, u32 max_time_keep, bool rot = true);

@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "PHDynamicData.h"
 #include "Physics.h"
 #include "tri-colliderknoopc/dTriList.h"
@@ -9,7 +10,6 @@
 
 #include "PHElement.h"
 #include "PHShell.h"
-
 
 void CPHShell::applyHit(const Fvector& pos, const Fvector& dir, float val,const u16 id,ALife::EHitType hit_type)
 {

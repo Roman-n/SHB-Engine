@@ -1,10 +1,9 @@
-/////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
 #include "stdafx.h"
+
 #include "PHDynamicData.h"
 #include "Physics.h"
 #include "tri-colliderknoopc/dTriList.h"
-#include "PHShellSplitter.h"
+//#include "PHShellSplitter.h"
 #include "PHFracture.h"
 #include "PHJointDestroyInfo.h"
 #include "SpaceUtils.h"
@@ -15,7 +14,7 @@
 #include "game_object_space.h"
 
 #include "ExtendedGeom.h"
-#include "PHElement.h"
+//#include "PHElement.h"
 #include "PHShell.h"
 #include "PHCollideValidator.h"
 #include "PHElementInline.h"

@@ -20,7 +20,7 @@
 #include "..\XR_3DA\skeletonanimated.h"
 #include "client_spawn_manager.h"
 #include "hit.h"
-#include "PHDestroyable.h"
+//#include "PHDestroyable.h"
 #include "CharacterPhysicsSupport.h"
 #include "Grenade.h"
 #include "WeaponMagazined.h"

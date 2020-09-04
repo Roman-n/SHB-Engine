@@ -13,7 +13,7 @@
 #include "detail_path_manager.h"
 #include "level.h"
 #include "custommonster.h"
-#include "IColisiondamageInfo.h"
+#include "ICollisionDamageInfo.h"
 #include "profiler.h"
 
 #ifdef DEBUG

@@ -5,10 +5,10 @@
 #include "PhysicsShell.h"
 #include "script_entity.h"
 #include "CarLights.h"
-#include "phobject.h"
+#include "PHObject.h"
 #include "holder_custom.h"
 #include "PHSkeleton.h"
-#include "DamagableItem.h"
+#include "DamagableItem.h"//ok
 #include "phcollisiondamagereceiver.h"
 #include "CarDamageParticles.h"
 #include "xrserver_objects_alife.h"

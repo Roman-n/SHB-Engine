@@ -1,21 +1,14 @@
 #include "stdafx.h"
+
 #include "PHDynamicData.h"
 #include "Physics.h"
 #include "tri-colliderknoopc/dTriList.h"
 #include "PHJointDestroyInfo.h"
-///////////////////////////////////////////////////////////////
-///#pragma warning(disable:4995)
-////#include "../ode/src/collision_kernel.h"
-//#include <../ode/src/joint.h>
-//#include <../ode/src/objects.h>
-
-//#pragma warning(default:4995)
-///////////////////////////////////////////////////////////////////
 
 #include "ExtendedGeom.h"
 
-#include "PHElement.h"
-#include "PHJoint.h"
+//#include "PHElement.h"
+//#include "PHJoint.h"
 #include "PHShell.h"
 
 const float hinge2_spring=20000.f;

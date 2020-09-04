@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "phcharacter.h"
+#include "PHCharacter.h"
 #include "PHDynamicData.h"
 #include "Physics.h"
 #include "ExtendedGeom.h"

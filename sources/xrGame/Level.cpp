@@ -35,7 +35,7 @@
 #include "ClimableObject.h"
 #include "level_graph.h"
 #include "mt_config.h"
-#include "phcommander.h"
+#include "PHCommander.h"
 #include "map_manager.h"
 #include "..\XR_3DA\CameraManager.h"
 #include "level_sounds.h"

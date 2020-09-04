@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ph_shell_interface.h"
+#include "IPhysicShellCreator.h"
 
 class CPHShellSimpleCreator: public IPhysicShellCreator
 {

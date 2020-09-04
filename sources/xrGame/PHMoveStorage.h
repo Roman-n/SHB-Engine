@@ -1,6 +1,6 @@
 #pragma once
 
-#include "phgeometryowner.h"
+#include "PHGeometryOwner.h"
 
 //DEFINE_VECTOR(dReal *&,POSITIONS_STORAGE,POSITIONS_I);
 

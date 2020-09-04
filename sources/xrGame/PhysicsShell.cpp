@@ -3,7 +3,7 @@
 #include "physicsshell.h"
 #include "PHDynamicData.h"
 #include "Physics.h"
-#include "PHJoint.h"
+//#include "PHJoint.h"
 #include "PHShell.h"
 #include "PHJointDestroyInfo.h"
 #include "PHSplitedShell.h"

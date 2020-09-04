@@ -8,8 +8,6 @@ class CPHElement;
 
 DEFINE_VECTOR(dJointFeedback,CFEEDBACK_STORAGE,CFEEDBACK_I)
 
-
-
 class CPHFracturesHolder 			//stored in CPHElement
 {
 friend class CPHElement;

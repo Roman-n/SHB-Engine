@@ -4,6 +4,7 @@
 #include "PHReqComparer.h"
 #include "alife_space.h"
 #include "script_export_space.h"
+
 class CPhysicsShell;
 class CPHCallOnStepCondition:
 	public CPHCondition

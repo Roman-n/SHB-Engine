@@ -1,5 +1,6 @@
 #ifndef TELE_WHIRLWIND
 #define TELE_WHIRLWIND
+
 #include "ai/monsters/telekinesis.h"
 #include "ai/monsters/telekinetic_object.h"
 #include "PHImpact.h"
@@ -27,8 +28,6 @@ public:
 	virtual		void				fire					(const Fvector &target, float power);
 	virtual		void				switch_state			(ETelekineticState new_state);
 	virtual		bool				destroy_object			(const Fvector dir,float val);
-
-
 };
 
 class CTeleWhirlwind : public CTelekinesis

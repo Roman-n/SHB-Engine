@@ -10,9 +10,9 @@
 #	include "PHDebug.h"
 #endif
 
-#include "alife_space.h"
+//#include "alife_space.h"
 #include "hit.h"
-#include "PHDestroyable.h"
+//#include "PHDestroyable.h"
 #include "Car.h"
 #include "..\XR_3DA\skeletonanimated.h"
 #include "PHShellSplitter.h"

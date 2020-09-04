@@ -2,7 +2,7 @@
 
 #include "physicsskeletonobject.h"
 #include "PhysicsShell.h"
-#include "phsynchronize.h"
+#include "PHSynchronize.h"
 #include "xrserver_objects_alife.h"
 #include "..\XR_3DA\skeletoncustom.h"
 #include "..\XR_3DA\xr_collide_form.h"

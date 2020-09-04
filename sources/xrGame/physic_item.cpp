@@ -8,7 +8,7 @@
 
 #include "stdafx.h"
 #include "physic_item.h"
-#include "physicsshell.h"
+#include "PhysicsShell.h"
 #include "xrserver_objects.h"
 #include "..\XR_3DA\fbasicvisual.h"
 #include "..\XR_3DA\SkeletonCustom.h"

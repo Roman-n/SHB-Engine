@@ -1,6 +1,6 @@
-#pragma	 once
+#pragma once
 
-#include "phobject.h"
+#include "PHObject.h"
 #include "gameobject.h"
 #include "physicsshellholder.h"
 

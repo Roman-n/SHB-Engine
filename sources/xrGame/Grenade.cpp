@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "grenade.h"
 #include "PhysicsShell.h"
 #include "WeaponHUD.h"
@@ -16,7 +17,6 @@
 const float default_grenade_detonation_threshold_hit=100;
 CGrenade::CGrenade(void) 
 {
-
 	m_eSoundCheckout = ESoundTypes(SOUND_TYPE_WEAPON_RECHARGING);
 }
 

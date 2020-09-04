@@ -1,11 +1,12 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////
 #include "stdafx.h"
-#include "phcharacter.h"
+
+#include "PHCharacter.h"
 #include "Physics.h"
 #include "ExtendedGeom.h"
 #include "PHCapture.h"
 #include "entity_alive.h"
-#include "phmovementcontrol.h"
+#include "PHMovementControl.h"
 #include "..\XR_3DA\skeletoncustom.h"
 #include "characterphysicssupport.h"
 ///////////////////////////////////////////////////////////////////////////////////

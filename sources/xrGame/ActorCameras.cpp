@@ -8,7 +8,7 @@
 #endif
 
 #include "hit.h"
-#include "PHDestroyable.h"
+//#include "PHDestroyable.h"
 #include "Car.h"
 
 #include "Weapon.h"
@@ -19,11 +19,15 @@
 #include "Level.h"
 #include "..\XR_3DA\cl_intersect.h"
 #include "gamemtllib.h"
-#include "elevatorstate.h"
+#include "ElevatorState.h"
 #include "CharacterPhysicsSupport.h"
 #include "EffectorShot.h"
 #include "phcollidevalidator.h"
 #include "PHShell.h"
+
+#include "Physics.h"
+#include "PHActivationShape.h"//
+#include "debug_renderer.h"
 
 void CActor::cam_Set	(EActorCameras style)
 {
@@ -130,9 +134,6 @@ ICF BOOL test_point(xrXRC& xrc, const Fmatrix& xform, const Fmatrix33& mat, cons
 	return FALSE;
 }
 
-#include "physics.h"
-#include "PHActivationShape.h"//
-#include "debug_renderer.h"
 void CActor::cam_Update(float dt, float fFOV)
 {
 	if(m_holder)		return;

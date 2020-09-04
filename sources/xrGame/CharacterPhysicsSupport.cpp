@@ -7,7 +7,7 @@
 #include "PHMovementControl.h"
 #include "CustomMonster.h"
 #include "PhysicsShell.h"
-#include "..\XR_3DA\skeletonanimated.h"
+//#include "..\XR_3DA\skeletonanimated.h"
 #include "Actor.h"
 #include "CustomZone.h"
 #include "Extendedgeom.h"
@@ -18,7 +18,7 @@
 #include "PHCapture.h"
 #include "PHCollideValidator.h"
 #include "ai/stalker/ai_stalker.h"
-#include "interactive_motion.h"
+#include "interactive_motion.h"//ok
 #include "animation_movement_controller.h"
 //const float default_hinge_friction = 5.f;//gray_wolf comment
 

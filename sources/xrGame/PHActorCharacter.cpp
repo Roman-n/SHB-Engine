@@ -1,5 +1,6 @@
 #include "stdafx.h"
-#include "phactorcharacter.h"
+
+#include "PHActorCharacter.h"
 #include "Extendedgeom.h"
 #include "PhysicsCommon.h"
 #include "GameObject.h"

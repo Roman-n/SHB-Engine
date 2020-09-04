@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "Physics.h"
 #include "PHShell.h"
 #include "PHShellSplitter.h"
@@ -8,6 +9,7 @@
 #include "MathUtils.h"
 #include "..\XR_3DA\skeletoncustom.h"
 #include "PHCollideValidator.h"
+
 CPHShellSplitterHolder::CPHShellSplitterHolder(CPHShell* shell)
 {
 	m_pShell=shell;

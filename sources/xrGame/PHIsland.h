@@ -8,7 +8,6 @@
 #pragma warning(default:4267)
 #include "PhysicsCommon.h"
 
-
 class CPHIslandFlags
 {
 	static const	int base				=	8		;

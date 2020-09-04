@@ -40,7 +40,7 @@ private:
 		fl_death_anim_on			=1<<0,
 		fl_skeleton_in_shell		=1<<1,
 		fl_specific_bonce_demager	=1<<2,
-		fl_block_hit				=1<<3,
+		fl_block_hit				=1<<3
 	};
 
 	struct	animation_movement_state{ 
@@ -152,7 +152,7 @@ private:
 		void 							CreateSkeleton					();
 		void 							ActivateShell					(CObject* who)																										;
 		void							KillHit							(CObject* who, ALife::EHitType hit_type, float &impulse)																										;
-static	void							DeathAnimCallback				(CBlend *B)																											;
+//static	void							DeathAnimCallback				(CBlend *B);
 		void							CreateIKController				()																													;
 		void							DestroyIKController				()																													;
 		void							CollisionCorrectObjPos			(const Fvector& start_from,bool character_create=false);

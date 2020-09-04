@@ -1,6 +1,6 @@
 #pragma once
 
-#include "phsimplecharacter.h"
+#include "PHSimpleCharacter.h"
 
 class CPhysicShellHolder;
 

@@ -7,7 +7,7 @@
 
 #include "BastArtefact.h"
 #include "PhysicsShell.h"
-#include "extendedgeom.h"
+#include "ExtendedGeom.h"
 #include "ParticlesObject.h"
 
 CBastArtefact::CBastArtefact( )

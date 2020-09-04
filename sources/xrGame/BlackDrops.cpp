@@ -4,17 +4,15 @@
 ///////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "BlackDrops.h"
 #include "PhysicsShell.h"
 
-
 CBlackDrops::CBlackDrops( ) 
-{
-}
+{ }
 
 CBlackDrops::~CBlackDrops( ) 
-{
-}
+{ }
 
 void CBlackDrops::Load(LPCSTR section) 
 {

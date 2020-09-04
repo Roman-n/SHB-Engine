@@ -256,7 +256,8 @@ void CHelicopter::PHHit(float P,Fvector &dir, CObject *who,s16 element,Fvector p
 #include "team_hierarchy_holder.h"
 #include "squad_hierarchy_holder.h"
 
-#include "extendedgeom.h"
+#include "ExtendedGeom.h"
+
 void CollisionCallbackDead(bool& do_colide,bool bo1,dContact& c,SGameMtl* material_1,SGameMtl* material_2)
 {	
 	do_colide=true; 

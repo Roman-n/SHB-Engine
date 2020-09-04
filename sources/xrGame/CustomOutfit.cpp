@@ -9,7 +9,6 @@
 #include "Level.h"
 #include "BoneProtections.h"
 
-
 CCustomOutfit::CCustomOutfit()
 {
 	m_slot = OUTFIT_SLOT;

@@ -5,16 +5,10 @@
 #include "physicscommon.h"
 #include "MathUtils.h"
 
-
-
 #ifdef DEBUG
 extern	u32				dbg_total_saved_tries					;
 #endif
 class CPhysicsShellHolder;
-
-
-
-
 
 class CObjectContactCallback
 {

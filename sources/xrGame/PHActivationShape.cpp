@@ -18,7 +18,7 @@
 
 #include "PHDynamicData.h"
 #include "PHSynchronize.h"
-#include "phnetstate.h"
+#include "PHNetState.h"
 
 static float max_depth = 0.0f;
 static float friction_factor = 0.0f;
