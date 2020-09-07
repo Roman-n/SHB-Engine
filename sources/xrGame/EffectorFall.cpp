@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "EffectorFall.h"
 #include "CameraEffector.h"
 
@@ -12,8 +13,7 @@ CEffectorFall::CEffectorFall(float power,float life_time) : CEffectorCam(eCEFall
 }
 
 CEffectorFall::~CEffectorFall()
-{
-}
+{ }
 
 BOOL CEffectorFall::Process(Fvector &p, Fvector &d, Fvector &n, float& fFov, float& fFar, float& fAspect)
 {

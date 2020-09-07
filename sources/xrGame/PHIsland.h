@@ -6,6 +6,7 @@
 #include "../../xrODE/ode/src/joint.h"
 #pragma warning(default:4995)
 #pragma warning(default:4267)
+
 #include "PhysicsCommon.h"
 
 class CPHIslandFlags

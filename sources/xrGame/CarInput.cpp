@@ -10,7 +10,7 @@
 #include "phdestroyable.h"
 #include "car.h"
 #include "actor.h"
-#include "cameralook.h"
+#include "CameraLook.h"
 #include "camerafirsteye.h"
 #include "script_entity_action.h"
 #include "xr_level_controller.h"

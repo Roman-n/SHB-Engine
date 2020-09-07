@@ -27,8 +27,6 @@ void	dMassSub(dMass* a, const dMass* b);
 void	SaveContacts(dGeomID o1, dGeomID o2, dJointGroupID jointGroup);
 const	dReal* dJointGetPositionContact(dJointID joint);
 
-
-
 //const dReal world_spring=24000000.f;//2400000.f;//550000.f;///1000000.f;;
 //const dReal world_damping=400000.f;//erp/cfm1.1363636e-006f,0.54545456f
 

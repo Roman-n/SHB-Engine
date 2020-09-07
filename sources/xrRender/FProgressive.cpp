@@ -32,19 +32,19 @@ void FProgressive::Release	()
 	}
 }
 
-void FProgressive::Load		(LPCSTR N, IReader *data, u32 dwFlags)
+void FProgressive::Load		(const char* N, IReader *data, u32 dwFlags)
 {
 	Fvisual::Load	(N,data,dwFlags);
 
 	// normal SWI
 	destructor<IReader> lods (data->open_chunk	(OGF_SWIDATA));
-    nSWI.reserved[0]	= lods().r_u32();	// reserved 16 bytes
-    nSWI.reserved[1]	= lods().r_u32();
-    nSWI.reserved[2]	= lods().r_u32();
-    nSWI.reserved[3]	= lods().r_u32();
-    nSWI.count			= lods().r_u32();
+	nSWI.reserved[0]	= lods().r_u32();	// reserved 16 bytes
+	nSWI.reserved[1]	= lods().r_u32();
+	nSWI.reserved[2]	= lods().r_u32();
+	nSWI.reserved[3]	= lods().r_u32();
+	nSWI.count			= lods().r_u32();
 	VERIFY				(NULL==nSWI.sw);
-    nSWI.sw				= xr_alloc<FSlideWindow>(nSWI.count);
+	nSWI.sw				= xr_alloc<FSlideWindow>(nSWI.count);
 	lods().r			(nSWI.sw,nSWI.count*sizeof(FSlideWindow));
 
 	// fast

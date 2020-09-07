@@ -35,10 +35,7 @@ void CPHMesh ::Destroy(){
 	
 	dGeomDestroy(Geom);
 	dTriListClass=-1;
-
 }
-
-
 
 ////////////////////////////////////////////////////////////////////////////
 ///////////CPHWorld/////////////////////////////////////////////////////////
@@ -188,7 +185,6 @@ void CPHWorld::OnFrame()
 	Device.Statistic->Physics.End		();
 #ifdef DEBUG
 	DBG_DrawStatAfterFrameStep();
-
 #endif
 }
 
@@ -202,7 +198,7 @@ void CPHWorld::Step()
 	dbg_reused_queries_per_step	=0			;
 	dbg_new_queries_per_step	=0			;
 #endif
-	
+
 	VERIFY(b_processing||IsFreezed());
 
 	PH_OBJECT_I			i_object;
@@ -306,15 +302,11 @@ void CPHWorld::Step()
 	ContactFeedBacks.empty();
 	ContactEffectors.empty();
 
-
-
 	if(physics_step_time_callback) 
 	{
 		physics_step_time_callback(start_time,start_time+u32(fixed_step*1000));	
 		start_time += u32(fixed_step*1000);
-	};
-
-
+	}
 }
 
 void CPHWorld::StepTouch()
@@ -324,7 +316,6 @@ void CPHWorld::StepTouch()
 	{
 		CPHObject* obj=(*i_object);
 		obj->Collide();
-
 		++i_object;
 	}
 

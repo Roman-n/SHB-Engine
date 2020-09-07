@@ -1,13 +1,14 @@
 #pragma once
 
 #include "..\..\..\XR_3DA\effectorPP.h"
-#include "../../CameraEffector.h"
+#include "..\..\CameraEffector.h"
 #include "..\..\..\XR_3DA\cameramanager.h"
 
 //////////////////////////////////////////////////////////////////////////
 // CMonsterEffector
 //////////////////////////////////////////////////////////////////////////
-class CMonsterEffector : public CEffectorPP {
+class CMonsterEffector : public CEffectorPP
+{
 	typedef CEffectorPP inherited;	
 	
 	SPPInfo state;			// current state
@@ -25,17 +26,16 @@ public:
 //////////////////////////////////////////////////////////////////////////
 // CMonsterEffectorHit
 //////////////////////////////////////////////////////////////////////////
-class CMonsterEffectorHit : public CEffectorCam {
-
+class CMonsterEffectorHit : public CEffectorCam
+{
 	float total;
 	float max_amp;
 	float period_number;
 	float power;
 
 	Fvector offset;
+
 public:
 					CMonsterEffectorHit		(float time, float amp, float periods, float power);
 	virtual	BOOL	Process					(Fvector &p, Fvector &d, Fvector &n, float& fFov, float& fFar, float& fAspect);
 };
-
-

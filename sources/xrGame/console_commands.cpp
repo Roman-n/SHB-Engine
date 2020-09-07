@@ -39,7 +39,7 @@
 #include "level_graph.h"
 #include "..\XR_3DA\resourcemanager.h"
 #include "doug_lea_memory_allocator.h"
-#include "cameralook.h"
+#include "CameraLook.h"
 
 #ifdef DEBUG
 #	include "PHDebug.h"

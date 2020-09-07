@@ -1,16 +1,19 @@
 #pragma once
+
 #include "pp_effector_custom.h"
 
 //////////////////////////////////////////////////////////////////////////
 // CPPEffectorDistance
 //////////////////////////////////////////////////////////////////////////
-class CPPEffectorDistance : public CPPEffectorController {
+class CPPEffectorDistance : public CPPEffectorController
+{
 	typedef CPPEffectorController inherited;
 
 	float			m_r_min_perc;		// min_radius (percents [0..1])
 	float			m_r_max_perc;		// max_radius (percents [0..1])
 	float			m_radius;
 	float			m_dist;
+
 public:
 	virtual void	load					(LPCSTR section);
 	IC		void	set_radius				(float r) {m_radius = r;}

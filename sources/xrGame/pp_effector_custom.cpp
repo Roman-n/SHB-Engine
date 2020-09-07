@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "pp_effector_custom.h"
 #include "actor.h"
 #include "..\XR_3DA\CameraManager.h"
@@ -7,7 +8,6 @@
 
 #pragma warning(push)
 #pragma warning(disable:4355) // 'this' : used in base member initializer list
-
 CPPEffectorCustom::CPPEffectorCustom(const SPPInfo &ppi, bool one_instance, bool destroy_from_engine) :
 inherited(TRANSLATE_TYPE(one_instance), flt_max, destroy_from_engine)
 {
@@ -16,8 +16,6 @@ inherited(TRANSLATE_TYPE(one_instance), flt_max, destroy_from_engine)
 	m_type		= TRANSLATE_TYPE(one_instance);
 }
 #pragma warning(pop)
-
-
 
 #define SET_VALUE(def, target, factor) (def + (target-def) * factor)
 
@@ -45,10 +43,8 @@ BOOL CPPEffectorControlled::update()
 	return TRUE;
 }
 
-
 CPPEffectorController::CPPEffectorController() 
-{
-}
+{ }
 
 CPPEffectorController::~CPPEffectorController()
 {
@@ -57,9 +53,8 @@ CPPEffectorController::~CPPEffectorController()
 	}
 }
 
-
 void CPPEffectorController::activate()
-{	
+{
 	VERIFY							(!m_effector);
 	
 	m_effector = create_effector	();
@@ -80,6 +75,3 @@ void CPPEffectorController::frame_update()
 		if (check_completion())				deactivate();
 	} else if (check_start_conditions())	activate();
 }
-
-
-

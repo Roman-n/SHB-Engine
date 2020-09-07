@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "zone_effector.h"
 #include "level.h"
 #include "clsid_game.h"
@@ -40,13 +41,12 @@ void CZoneEffector::Activate()
 	m_pp_effector->SetFactorFunc		(GET_KOEFF_FUNC(this, &CZoneEffector::GetFactor));
 	m_pp_effector->Load					(*m_pp_fname);
 	m_pActor->Cameras().AddPPEffector	(m_pp_effector);
-
 }
 
 void CZoneEffector::Stop()
 {
 	if (!m_pp_effector) return;
-	 
+
 	m_pActor->Cameras().RemovePPEffector(EEffectorPPType( u32(u64(this) & u32(-1)) ));
 	m_pp_effector			= NULL;
 	m_pActor				= NULL;
@@ -80,4 +80,3 @@ void CZoneEffector::SetRadius(float r)
 {
 	radius	= r;
 }
-

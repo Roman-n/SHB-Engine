@@ -11,7 +11,7 @@
 #include "PHDestroyable.h"
 #include "car.h"
 #include "actor.h"
-#include "cameralook.h"
+#include "CameraLook.h"
 #include "camerafirsteye.h"
 #include "level.h"
 #include "..\XR_3DA\cameramanager.h"

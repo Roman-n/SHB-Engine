@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////
 // SleepEffector.h:		эффектор, который запускается во время сна
-//						актера                           
+//						актера
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
@@ -12,8 +12,9 @@
 
 #define FATIGUE_EFFECTOR_TYPE_ID 33
 
-class CSleepEffectorPP : public CEffectorPP {
-	typedef CEffectorPP inherited;	
+class CSleepEffectorPP : public CEffectorPP
+{
+	typedef CEffectorPP inherited;
 
 	SPPInfo state;			// current state
 	float	m_total;		// total PP time
@@ -24,7 +25,6 @@ public:
 	CSleepEffectorPP			(const SPPInfo &ppi, float life_time, float attack_time = 0.0f, float release_time = 0.0f);
 	virtual	BOOL	Process		(SPPInfo& pp);
 
-	
 	//текущий статус сна
 	enum SLEEP_STATE { BEGIN_SLEEP,
 					   BEFORE_SLEEPING,
@@ -33,8 +33,8 @@ public:
 	SLEEP_STATE m_eSleepState;
 };
 
-
-struct SSleepEffector {
+struct SSleepEffector
+{
 	SPPInfo	ppi;
 	float	time;
 	float	time_attack;

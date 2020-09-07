@@ -171,9 +171,6 @@
     <ClInclude Include="..\xrRender\uber_deffer.h">
       <Filter>Shading templates</Filter>
     </ClInclude>
-    <ClInclude Include="..\xrRender\Blender_detail_still.h">
-      <Filter>Shading templates\R1</Filter>
-    </ClInclude>
     <ClInclude Include="..\xrRender\Blender_Lm(EbB).h">
       <Filter>Shading templates\R1</Filter>
     </ClInclude>
@@ -233,6 +230,9 @@
     </ClInclude>
     <ClInclude Include="..\xrRender\light.h">
       <Filter>Lights</Filter>
+    </ClInclude>
+    <ClInclude Include="..\xrRender\Blender_Detail_Still.h">
+      <Filter>Shading templates\R1</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

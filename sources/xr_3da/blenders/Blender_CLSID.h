@@ -29,5 +29,5 @@
 #define		B_MODEL_EbB		MK_CLSID('M','O','D','E','L','E','b','B')
 
 // Editor
-#define		B_EDITOR_WIRE	MK_CLSID('E','_','W','I','R','E',' ',' ')
-#define		B_EDITOR_SEL	MK_CLSID('E','_','S','E','L',' ',' ',' ')
+//#define		B_EDITOR_WIRE	MK_CLSID('E','_','W','I','R','E',' ',' ')
+//#define		B_EDITOR_SEL	MK_CLSID('E','_','S','E','L',' ',' ',' ')

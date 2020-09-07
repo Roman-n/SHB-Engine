@@ -1,17 +1,13 @@
 #include "stdafx.h"
+
 #include "EffectorBobbing.h"
-
-
 #include "actor.h"
 #include "actor_defs.h"
-
 
 #define BOBBING_SECT "bobbing_effector"
 
 #define CROUCH_FACTOR	0.75f
-#define SPEED_REMINDER	5.f 
-
-
+#define SPEED_REMINDER	5.0f
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -33,15 +29,14 @@ CEffectorBobbing::CEffectorBobbing() : CEffectorCam(eCEBobbing,10000.f)
 }
 
 CEffectorBobbing::~CEffectorBobbing	()
-{
-}
+{ }
 
-void CEffectorBobbing::SetState(u32 mstate, bool limping, bool ZoomMode){
+void CEffectorBobbing::SetState(u32 mstate, bool limping, bool ZoomMode)
+{
 	dwMState		= mstate;
 	is_limping		= limping;
 	m_bZoomMode		= ZoomMode;
 }
-
 
 BOOL CEffectorBobbing::Process		(Fvector &p, Fvector &d, Fvector &n, float& /**fFov/**/, float& /**fFar/**/, float& /**fAspect/**/)
 {

@@ -53,6 +53,7 @@ class CAnimatorCamEffectorScriptCB :public CAnimatorCamEffector
 	typedef 	CAnimatorCamEffector			inherited;
 
 	shared_str			cb_name;
+
 public:
 	CAnimatorCamEffectorScriptCB	(LPCSTR _cb){cb_name =_cb;};
 	virtual	BOOL		Valid					();
@@ -65,6 +66,7 @@ class CAnimatorCamLerpEffector :public CAnimatorCamEffector
 protected:
 	typedef				CAnimatorCamEffector		inherited;
 	GET_KOEFF_FUNC									m_func;
+
 public:
 			void		SetFactorFunc				(GET_KOEFF_FUNC f)	{m_func=f;}
 	virtual	BOOL		Process						(Fvector &p, Fvector &d, Fvector &n, float& fFov, float& fFar, float& fAspect);
@@ -74,6 +76,7 @@ class CAnimatorCamLerpEffectorConst :public CAnimatorCamLerpEffector
 {
 protected:
 	float				m_factor;
+
 public:
 						CAnimatorCamLerpEffectorConst	();
 	void				SetFactor						(float v)		{m_factor=v; clamp(m_factor,0.0f,1.0f);}
@@ -83,6 +86,7 @@ public:
 class CCameraEffectorControlled :public CAnimatorCamLerpEffector
 {
 	CEffectorController*		m_controller;
+
 public:
 						CCameraEffectorControlled		(CEffectorController* c);
 	virtual				~CCameraEffectorControlled		();
@@ -92,6 +96,7 @@ public:
 class SndShockEffector:public CEffectorController
 {
 	typedef CEffectorController inherited;
+
 public:
 	float						m_snd_length;	//ms
 	float						m_cur_length;	//ms
@@ -99,6 +104,7 @@ public:
 	float						m_end_time;
 	float						m_life_time;
 	CActor*						m_actor;
+
 public:
 								SndShockEffector	();
 	virtual						~SndShockEffector	();
@@ -109,7 +115,6 @@ public:
 				BOOL			InWork				();
 	virtual	float xr_stdcall	GetFactor			();
 };
-
 
 //////////////////////////////////////////////////////////////////////////
 class CControllerPsyHitCamEffector :public CEffectorCam {

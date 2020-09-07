@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "ai_monster_effector.h"
 
 #define MONSTER_EFFECTOR_TYPE_ID 5
@@ -42,7 +43,6 @@ BOOL CMonsterEffector::Process(SPPInfo& pp)
 	return TRUE;
 }
 
-
 //////////////////////////////////////////////////////////////////////////
 // CMonsterEffectorHit
 //////////////////////////////////////////////////////////////////////////
@@ -77,7 +77,6 @@ BOOL CMonsterEffectorHit::Process(Fvector &p, Fvector &d, Fvector &n, float& fFo
 	float period_all	= period_number * PI_MUL_2;		// макс. значение цикла
 	float cur_amp		= max_amp * (PI / 180) * time_left_perc;
 
-	
 	Fvector dangle;
 	dangle.x = cur_amp/offset.x	* _sin(period_all/offset.x	* (1.0f - time_left_perc));
 	dangle.y = cur_amp/offset.y	* _cos(period_all/offset.y	* (1.0f - time_left_perc));
@@ -95,4 +94,3 @@ BOOL CMonsterEffectorHit::Process(Fvector &p, Fvector &d, Fvector &n, float& fFo
 
 	return TRUE;
 }
-

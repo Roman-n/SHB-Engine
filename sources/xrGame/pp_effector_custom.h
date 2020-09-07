@@ -1,4 +1,5 @@
 #pragma once
+
 #include "..\XR_3DA\effectorPP.h"
 #include "..\XR_3DA\cameramanager.h"
 
@@ -37,7 +38,6 @@ protected:
 	SPPInfo			m_state;
 };
 
-
 template<class _Effector>
 CPPEffectorCustomController<_Effector>::CPPEffectorCustomController()
 {
@@ -63,7 +63,6 @@ void CPPEffectorCustomController<_Effector>::load(LPCSTR section)
 
 //////////////////////////////////////////////////////////////////////////
 
-
 class CPPEffectorController;
 
 class CPPEffectorControlled : public CPPEffectorCustom {
@@ -77,7 +76,6 @@ public:
 };
 
 //////////////////////////////////////////////////////////////////////////
-
 
 class CPPEffectorController : public CPPEffectorCustomController<CPPEffectorControlled>{
 public:
@@ -97,4 +95,3 @@ protected:
 			void	activate				();
 			void	deactivate				();
 };
-

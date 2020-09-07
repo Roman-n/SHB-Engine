@@ -1,6 +1,5 @@
 // FS.h: interface for the CFS class.
-//
-//////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
 #pragma once
 
 #define CFS_CompressMark	(1ul << 31ul)
@@ -30,7 +29,7 @@ public:
 	}
 	virtual	~IWriter	()
 	{
-        R_ASSERT3	(chunk_pos.empty(),"Opened chunk not closed.",*fName);
+		R_ASSERT3	(chunk_pos.empty(),"Opened chunk not closed.",*fName);
 	}
 
 	// kernel
@@ -62,7 +61,7 @@ public:
 	IC void			w_ivector3(const Ivector3 &v)	{	w(&v,sizeof(Ivector3));	}
 	IC void			w_ivector2(const Ivector2 &v)	{	w(&v,sizeof(Ivector2));	}
 
-    // quant writing functions
+	// quant writing functions
 	IC void 		w_float_q16	(float a, float min, float max)
 	{
 		VERIFY		(a>=min && a<=max);
@@ -162,14 +161,14 @@ public:
 		u16	val 	= r_u16();
 		float A		= (float(val)*(max-min))/65535.f + min;		// floating-point-error possible
 		VERIFY		((A >= min-EPS_S) && (A <= max+EPS_S));
-        return A;
+		return A;
 	}
 	IC float		r_float_q8	(float min, float max)
 	{
 		u8 val		= r_u8();
 		float	A	= (float(val)/255.0001f) *(max-min) + min;	// floating-point-error possible
 		VERIFY		((A >= min) && (A <= max));
-        return	A;
+		return	A;
 	}
 	IC float		r_angle16	()			{ return r_float_q16(0,PI_MUL_2);	}
 	IC float		r_angle8	()			{ return r_float_q8	(0,PI_MUL_2);	}

@@ -3,7 +3,7 @@
 #include "CameraEffector.h"
 #include "..\XR_3DA\cameramanager.h"
 
-class CEffectorBobbing : public CEffectorCam  
+class CEffectorBobbing : public CEffectorCam
 {
 	float	fTime;
 	Fvector	vAngleAmplitude;

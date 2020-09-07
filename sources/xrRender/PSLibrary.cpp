@@ -9,26 +9,26 @@
 bool ped_sort_pred	(const PS::CPEDef* a, 	const PS::CPEDef* b)	{	return xr_strcmp(a->Name(),b->Name())<0;}
 bool pgd_sort_pred	(const PS::CPGDef* a, 	const PS::CPGDef* b)	{	return xr_strcmp(a->m_Name,b->m_Name)<0;}
 
-bool ped_find_pred	(const PS::CPEDef* a, 	LPCSTR b)				{	return xr_strcmp(a->Name(),b)<0;}
-bool pgd_find_pred	(const PS::CPGDef* a, 	LPCSTR b)				{	return xr_strcmp(a->m_Name,b)<0;}
+bool ped_find_pred	(const PS::CPEDef* a, const char* b)				{	return xr_strcmp(a->Name(),b)<0;}
+bool pgd_find_pred	(const PS::CPGDef* a, const char* b)				{	return xr_strcmp(a->m_Name,b)<0;}
 //----------------------------------------------------
 void CPSLibrary::OnCreate()
 {
 	string_path fn;
-    FS.update_path(fn, "$game_data$",PSLIB_FILENAME);
+	FS.update_path(fn, "$game_data$",PSLIB_FILENAME);
 	if (FS.exist(fn)){
-    	if (!Load(fn)) Msg("PS Library: Unsupported version.");
-    }else{
-    	Msg("Can't find file: '%s'",fn);
-    }
+		if (!Load(fn)) Msg("PS Library: Unsupported version.");
+	}else{
+		Msg("Can't find file: '%s'",fn);
+	}
 	for (PS::PEDIt e_it = m_PEDs.begin(); e_it!=m_PEDs.end(); e_it++)
-    	(*e_it)->CreateShader();
+		(*e_it)->CreateShader();
 }
  
 void CPSLibrary::OnDestroy()
 {
 	for (PS::PEDIt e_it = m_PEDs.begin(); e_it!=m_PEDs.end(); e_it++)
-    	(*e_it)->DestroyShader();
+		(*e_it)->DestroyShader();
 
 	for (e_it = m_PEDs.begin(); e_it!=m_PEDs.end(); e_it++)
 		xr_delete	(*e_it);
@@ -39,7 +39,7 @@ void CPSLibrary::OnDestroy()
 	m_PGDs.clear	();
 }
 //----------------------------------------------------
-PS::PEDIt CPSLibrary::FindPEDIt(LPCSTR Name)
+PS::PEDIt CPSLibrary::FindPEDIt(const char* Name)
 {
 	if (!Name) return m_PEDs.end();
 
@@ -48,13 +48,13 @@ PS::PEDIt CPSLibrary::FindPEDIt(LPCSTR Name)
 	else														return I;
 }
 
-PS::CPEDef* CPSLibrary::FindPED(LPCSTR Name)
+PS::CPEDef* CPSLibrary::FindPED(const char* Name)
 {
 	PS::PEDIt it = FindPEDIt(Name);
-    return (it==m_PEDs.end())?0:*it;
+	return (it==m_PEDs.end())?0:*it;
 }
 
-PS::PGDIt CPSLibrary::FindPGDIt(LPCSTR Name)
+PS::PGDIt CPSLibrary::FindPGDIt(const char* Name)
 {
 	if (!Name) return m_PGDs.end();
 
@@ -63,25 +63,25 @@ PS::PGDIt CPSLibrary::FindPGDIt(LPCSTR Name)
 	else														return I;
 }
 
-PS::CPGDef* CPSLibrary::FindPGD(LPCSTR Name)
+PS::CPGDef* CPSLibrary::FindPGD(const char* Name)
 {
 	PS::PGDIt it = FindPGDIt(Name);
-    return (it==m_PGDs.end())?0:*it;
+	return (it==m_PGDs.end())?0:*it;
 }
 
-void CPSLibrary::RenamePED(PS::CPEDef* src, LPCSTR new_name)
+void CPSLibrary::RenamePED(PS::CPEDef* src, const char* new_name)
 {
 	R_ASSERT(src&&new_name&&new_name[0]);
 	src->SetName(new_name);
 }
 
-void CPSLibrary::RenamePGD(PS::CPGDef* src, LPCSTR new_name)
+void CPSLibrary::RenamePGD(PS::CPGDef* src, const char* new_name)
 {
 	R_ASSERT(src&&new_name&&new_name[0]);
 	src->SetName(new_name);
 }
 
-void CPSLibrary::Remove(LPCSTR nm)
+void CPSLibrary::Remove(const char* nm)
 {
 	PS::PEDIt it = FindPEDIt(nm);
 	if (it!=m_PEDs.end()){
@@ -98,56 +98,56 @@ void CPSLibrary::Remove(LPCSTR nm)
 }
 //----------------------------------------------------
 
-bool CPSLibrary::Load(LPCSTR nm)
+bool CPSLibrary::Load(const char* nm)
 {
 	IReader*	F			= FS.r_open(nm);
 	bool bRes 				= true;
-    R_ASSERT(F->find_chunk(PS_CHUNK_VERSION));
-    u16 ver					= F->r_u16();
-    if (ver!=PS_VERSION) return false;
-    // second generation
-    IReader* OBJ;
-    OBJ			 			= F->open_chunk(PS_CHUNK_SECONDGEN);
-    if (OBJ){
-        IReader* O   		= OBJ->open_chunk(0);
-        for (int count=1; O; count++) {
-            PS::CPEDef*	def	= xr_new<PS::CPEDef>();
-            if (def->Load(*O)) m_PEDs.push_back(def);
-            else{ bRes = false; xr_delete(def); }
-            O->close();
-            if (!bRes)	break;
-            O 			= OBJ->open_chunk(count);
-        }
-        OBJ->close();
-    }
-    // second generation
-    OBJ 					= F->open_chunk(PS_CHUNK_THIRDGEN);
-    if (OBJ){
-        IReader* O   		= OBJ->open_chunk(0);
-        for (int count=1; O; count++) {
-            PS::CPGDef*	def	= xr_new<PS::CPGDef>();
-            if (def->Load(*O)) m_PGDs.push_back(def);
-            else{ bRes = false; xr_delete(def); }
-            O->close();
-            if (!bRes) break;
-            O 			= OBJ->open_chunk(count);
-        }
-        OBJ->close();
-    }
+	R_ASSERT(F->find_chunk(PS_CHUNK_VERSION));
+	u16 ver					= F->r_u16();
+	if (ver!=PS_VERSION) return false;
+	// second generation
+	IReader* OBJ;
+	OBJ			 			= F->open_chunk(PS_CHUNK_SECONDGEN);
+	if (OBJ){
+		IReader* O   		= OBJ->open_chunk(0);
+		for (int count=1; O; count++) {
+			PS::CPEDef*	def	= xr_new<PS::CPEDef>();
+			if (def->Load(*O)) m_PEDs.push_back(def);
+			else{ bRes = false; xr_delete(def); }
+			O->close();
+			if (!bRes)	break;
+			O 			= OBJ->open_chunk(count);
+		}
+		OBJ->close();
+	}
+	// second generation
+	OBJ 					= F->open_chunk(PS_CHUNK_THIRDGEN);
+	if (OBJ){
+		IReader* O   		= OBJ->open_chunk(0);
+		for (int count=1; O; count++) {
+			PS::CPGDef*	def	= xr_new<PS::CPGDef>();
+			if (def->Load(*O)) m_PGDs.push_back(def);
+			else{ bRes = false; xr_delete(def); }
+			O->close();
+			if (!bRes) break;
+			O 			= OBJ->open_chunk(count);
+		}
+		OBJ->close();
+	}
 
-    // final
+	// final
 	FS.r_close			(F);
 
 	std::sort			(m_PEDs.begin(),m_PEDs.end(),ped_sort_pred);
 	std::sort			(m_PGDs.begin(),m_PGDs.end(),pgd_sort_pred);
    
-    return bRes;
+	return bRes;
 }
 //----------------------------------------------------
 void CPSLibrary::Reload()
 {
 	OnDestroy();
-    OnCreate();
+	OnCreate();
 	Msg( "PS Library was succesfully reloaded." );
 }
 //----------------------------------------------------

@@ -9,7 +9,7 @@ class CBlender_Particle		: public IBlender
 	xrP_Integer	oAREF;
 	xrP_BOOL	oClamp;
 public:
-	virtual		LPCSTR		getComment()	{ return "particles";	}
+	virtual		const char* getComment()	{ return "particles";	}
 	virtual		BOOL		canBeLMAPped()	{ return FALSE;			}
 	
 	virtual		void		Save			(IWriter&  fs);

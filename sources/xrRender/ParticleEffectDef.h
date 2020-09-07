@@ -10,7 +10,7 @@ namespace PAPI
 	struct ParticleEffect;
 	struct PAHeader;
 	struct ParticleAction;
-    DEFINE_VECTOR(ParticleAction*,PAVec,PAVecIt);
+	DEFINE_VECTOR(ParticleAction*,PAVec,PAVecIt);
 }
 struct EParticleAction;        
 
@@ -57,18 +57,18 @@ namespace PS
 			dfAnimated		= (1<<11),
 			dfRandomFrame   = (1<<12),
 			dfRandomPlayback= (1<<13),
-            
+			
 			dfTimeLimit		= (1<<14),
 
-            dfAlignToPath	= (1<<15),
-            dfCollision		= (1<<16),
-            dfCollisionDel	= (1<<17),
-            dfVelocityScale	= (1<<18),
-            dfCollisionDyn	= (1<<19),
+			dfAlignToPath	= (1<<15),
+			dfCollision		= (1<<16),
+			dfCollisionDel	= (1<<17),
+			dfVelocityScale	= (1<<18),
+			dfCollisionDyn	= (1<<19),
 			dfWorldAlign	= (1<<20),
-            dfFaceAlign		= (1<<21),
-            dfCulling		= (1<<22),
-            dfCullCCW		= (1<<23),
+			dfFaceAlign		= (1<<21),
+			dfCulling		= (1<<22),
+			dfCullCCW		= (1<<23),
 		};
 		shared_str		  	m_Name;
 		Flags32				m_Flags;
@@ -78,28 +78,28 @@ namespace PS
 		ref_shader			m_CachedShader;
 		SFrame				m_Frame;
 	// compiled actions
-        CMemoryWriter		m_Actions;
+		CMemoryWriter		m_Actions;
 	// def        
 		float				m_fTimeLimit;			// time limit
 		int					m_MaxParticles;			// max particle count
-	    Fvector				m_VelocityScale;		// velocity scale
-	    Fvector				m_APDefaultRotation;	// align to path
-    // collision
-	    float 				m_fCollideOneMinusFriction;
-        float 				m_fCollideResilience;
-        float 				m_fCollideSqrCutoff; 
+		Fvector				m_VelocityScale;		// velocity scale
+		Fvector				m_APDefaultRotation;	// align to path
+	// collision
+		float 				m_fCollideOneMinusFriction;
+		float 				m_fCollideResilience;
+		float 				m_fCollideSqrCutoff; 
 	// execute
 		void				ExecuteAnimate		(PAPI::Particle *particles, u32 p_cnt, float dt);
-        void				ExecuteCollision	(PAPI::Particle *particles, u32 p_cnt, float dt, CParticleEffect* owner, CollisionCallback cb);
+		void				ExecuteCollision	(PAPI::Particle *particles, u32 p_cnt, float dt, CParticleEffect* owner, CollisionCallback cb);
 
 	public:
-                            CPEDef				();
-                            ~CPEDef				();
-        
-		void				SetName				(LPCSTR name);
-        IC LPCSTR			Name				()const{return *m_Name;}
-        void				CreateShader		();
-        void				DestroyShader		();
+							CPEDef				();
+							~CPEDef				();
+		
+		void				SetName				(const char* name);
+		IC const char* Name				()const{return *m_Name;}
+		void				CreateShader		();
+		void				DestroyShader		();
 
 		void 				Save				(IWriter& F);
 		BOOL 				Load				(IReader& F);

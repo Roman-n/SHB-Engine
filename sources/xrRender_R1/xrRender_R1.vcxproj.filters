@@ -105,9 +105,6 @@
     <ClInclude Include="Blender_default_aref.h">
       <Filter>Shading templates</Filter>
     </ClInclude>
-    <ClInclude Include="..\xrRender\Blender_detail_still.h">
-      <Filter>Shading templates</Filter>
-    </ClInclude>
     <ClInclude Include="..\xrRender\Blender_Editor_Selection.h">
       <Filter>Shading templates</Filter>
     </ClInclude>
@@ -207,6 +204,9 @@
     <ClInclude Include="..\xrRender\LightTrack.h">
       <Filter>Lights</Filter>
     </ClInclude>
+    <ClInclude Include="..\xrRender\Blender_Detail_Still.h">
+      <Filter>Shading templates</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -300,9 +300,6 @@
       <Filter>Shading templates</Filter>
     </ClCompile>
     <ClCompile Include="Blender_default_aref.cpp">
-      <Filter>Shading templates</Filter>
-    </ClCompile>
-    <ClCompile Include="..\xrRender\Blender_detail_still.cpp">
       <Filter>Shading templates</Filter>
     </ClCompile>
     <ClCompile Include="..\xrRender\Blender_Editor_Selection.cpp">
@@ -409,6 +406,9 @@
     </ClCompile>
     <ClCompile Include="..\xrRender\LightTrack.cpp">
       <Filter>Lights</Filter>
+    </ClCompile>
+    <ClCompile Include="..\xrRender\Blender_Detail_Still.cpp">
+      <Filter>Shading templates</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

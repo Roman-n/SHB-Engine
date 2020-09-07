@@ -10,7 +10,7 @@
 #include "PHDestroyable.h"
 #include "car.h"
 #include "HUDManager.h"//
-#include "cameralook.h"
+#include "CameraLook.h"
 #include "camerafirsteye.h"
 #include "Actor.h"
 #include "ActorEffector.h"

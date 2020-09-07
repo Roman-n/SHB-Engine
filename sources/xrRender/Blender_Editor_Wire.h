@@ -4,7 +4,7 @@ class CBlender_Editor_Wire : public IBlender
 {
 	string64	oT_Factor;
 public:
-	virtual		LPCSTR		getComment()	{ return "EDITOR: wire";	}
+	virtual		const char* getComment()	{ return "EDITOR: wire";	}
 	virtual		BOOL		canBeLMAPped()	{ return FALSE; }
 
 	virtual		void		Save			(IWriter&  fs);

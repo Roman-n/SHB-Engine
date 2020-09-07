@@ -6,16 +6,16 @@
 #include "blender_vertex_aref.h"
 #include "..\xrRender\blender_screen_set.h"
 #include "blender_screen_gray.h"
-#include "..\xrRender\blender_editor_wire.h"
-#include "..\xrRender\blender_editor_selection.h"
+//#include "..\xrRender\blender_editor_wire.h"
+//#include "..\xrRender\blender_editor_selection.h"
 #include "blender_LaEmB.h"
 #include "..\xrRender\blender_Lm(EbB).h"
-#include "..\xrRender\blender_BmmD.h"
+#include "..\xrRender\Blender_BmmD.h"
 #include "blender_shadow_world.h"
 #include "blender_blur.h"
 #include "blender_model.h"
 #include "..\xrRender\blender_model_ebb.h"
-#include "..\xrRender\blender_detail_still.h"
+#include "..\xrRender\Blender_Detail_Still.h"
 #include "..\xrRender\blender_tree.h"
 #include "..\xrRender\blender_particle.h"
 
@@ -29,8 +29,8 @@ IBlender*	CRender::blender_create	(CLASS_ID cls)
 	case B_VERT_AREF:		return xr_new<CBlender_Vertex_aref>		();	
 	case B_SCREEN_SET:		return xr_new<CBlender_Screen_SET>		();	
 	case B_SCREEN_GRAY:		return xr_new<CBlender_Screen_GRAY>		();	
-	case B_EDITOR_WIRE:		return xr_new<CBlender_Editor_Wire>		();	
-	case B_EDITOR_SEL:		return xr_new<CBlender_Editor_Selection>();
+//	case B_EDITOR_WIRE:		return xr_new<CBlender_Editor_Wire>		();	
+//	case B_EDITOR_SEL:		return xr_new<CBlender_Editor_Selection>();
 	case B_LaEmB:			return xr_new<CBlender_LaEmB>			();		
 	case B_LmEbB:			return xr_new<CBlender_LmEbB>			();		
 	case B_BmmD:			return xr_new<CBlender_BmmD>			();			

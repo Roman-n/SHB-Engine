@@ -22,7 +22,7 @@ bool CPPEffectorDistance::check_completion()
 bool CPPEffectorDistance::check_start_conditions()
 {
 	return (m_dist < m_radius * m_r_max_perc);
-}	
+}
 
 void CPPEffectorDistance::update_factor()
 {
@@ -32,7 +32,6 @@ void CPPEffectorDistance::update_factor()
 
 	m_effector->set_factor(factor);
 }
-
 
 CPPEffectorControlled *CPPEffectorDistance::create_effector()
 {

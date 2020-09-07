@@ -65,20 +65,20 @@ void SGameMtlPair::Load(IReader& fs)
 	shared_str				buf;
 
 	R_ASSERT(fs.find_chunk(GAMEMTLPAIR_CHUNK_PAIR));
-    mtl0				= fs.r_u32();
-    mtl1				= fs.r_u32();
-    ID					= fs.r_u32();
-    ID_parent			= fs.r_u32();
-    OwnProps.assign		(fs.r_u32());
+	mtl0				= fs.r_u32();
+	mtl1				= fs.r_u32();
+	ID					= fs.r_u32();
+	ID_parent			= fs.r_u32();
+	OwnProps.assign		(fs.r_u32());
  
-    R_ASSERT(fs.find_chunk(GAMEMTLPAIR_CHUNK_BREAKING));
-    fs.r_stringZ			(buf); 		CreateSounds		(BreakingSounds,*buf);
-    
-    R_ASSERT(fs.find_chunk(GAMEMTLPAIR_CHUNK_STEP));
-    fs.r_stringZ			(buf);		CreateSounds		(StepSounds,*buf);
-    
+	R_ASSERT(fs.find_chunk(GAMEMTLPAIR_CHUNK_BREAKING));
+	fs.r_stringZ			(buf); 		CreateSounds		(BreakingSounds,*buf);
+	
+	R_ASSERT(fs.find_chunk(GAMEMTLPAIR_CHUNK_STEP));
+	fs.r_stringZ			(buf);		CreateSounds		(StepSounds,*buf);
+	
 	R_ASSERT(fs.find_chunk(GAMEMTLPAIR_CHUNK_COLLIDE));
-    fs.r_stringZ			(buf);		CreateSounds		(CollideSounds,*buf);
-    fs.r_stringZ			(buf);		CreatePSs			(CollideParticles,*buf);
-    fs.r_stringZ			(buf);		CreateMarks			(CollideMarks,*buf);
+	fs.r_stringZ			(buf);		CreateSounds		(CollideSounds,*buf);
+	fs.r_stringZ			(buf);		CreatePSs			(CollideParticles,*buf);
+	fs.r_stringZ			(buf);		CreateMarks			(CollideMarks,*buf);
 }

@@ -88,7 +88,7 @@ public:
 	virtual void	set_virtual_size		(float R)						{};
 	virtual void	set_color				(const Fcolor& C)				{ color.set(C);				}
 	virtual void	set_color				(float r, float g, float b)		{ color.set(r,g,b,1);		}
-	virtual void	set_texture				(LPCSTR name);
+	virtual void	set_texture				(const char* name);
 
 	virtual	void	spatial_move			();
 	virtual	Fvector	spatial_sector_point	();

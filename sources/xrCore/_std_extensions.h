@@ -176,7 +176,7 @@ IC LPCSTR						strconcat				( int dest_sz, char* dest, LPCSTR S1, LPCSTR S2, LPC
 }
 
 // dest = S1+S2+S3+S4+S5
-IC LPCSTR						strconcat				( int dest_sz, char* dest, LPCSTR S1, LPCSTR S2, LPCSTR S3, LPCSTR S4, LPCSTR S5)
+IC LPCSTR						strconcat				(int dest_sz, char* dest, LPCSTR S1, LPCSTR S2, LPCSTR S3, LPCSTR S4, LPCSTR S5)
 {
 	u32 l1 = xr_strlen(S1);
 	u32 l2 = xr_strlen(S2);
@@ -210,7 +210,6 @@ IC LPCSTR						strconcat				( int dest_sz, char* dest, LPCSTR S1, LPCSTR S2, LPC
 	return dest;
 	//.	return strcat(strcat(strcat(strcat(strcat(strcpy(dest,S1),S2),S3),S4),S5),S6);
 }
-
 
 // return pointer to ".ext"
 IC char*						strext					(LPCSTR S )

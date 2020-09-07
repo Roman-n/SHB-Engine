@@ -2,7 +2,7 @@
 
 #include "PHObject.h"
 #include "ode_include.h"
-#include "physicscommon.h"
+#include "PhysicsCommon.h"
 #include "MathUtils.h"
 
 #ifdef DEBUG
