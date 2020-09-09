@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "ai_monster_motion_stats.h"
 #include "BaseMonster/base_monster.h"
 
@@ -50,4 +51,3 @@ bool CMotionStats::is_good_motion(u32 elems_checked)
 	}
 	return bGood;
 }
-

@@ -26,7 +26,6 @@ protected:
 	xr_vector<bool>					m_temp;
 	mutable xr_vector<CCoverPoint*>	m_nearest;
 
-
 protected:
 	IC		bool					edge_vertex			(u32 index);
 	IC		bool					cover				(LevelGraph::CVertex *v, u32 index0, u32 index1);

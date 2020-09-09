@@ -16,13 +16,11 @@
 #include "physicsshellholder.h"
 #include "..\XR_3DA\skeletoncustom.h"
 #include "PHSimpleCharacterInline.h"
-#include "DamageSource.h"
+#include "IDamageSource.h"
 #include "PHCollideValidator.h"
 #include "CalculateTriangle.h"
 #include "game_base_space.h"
 //#include "PHValide.h"
-
-
 
 IC		bool	PhOutOfBoundaries			(const Fvector& v)
 {

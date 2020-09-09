@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "..\XR_3DA\skeletonanimated.h"
 #include "step_manager_defs.h"
 #include "step_manager.h"
@@ -10,12 +11,10 @@
 #include "IKLimbsController.h"
 
 CStepManager::CStepManager()
-{
-}
+{ }
 
 CStepManager::~CStepManager()
-{
-}
+{ }
 
 DLL_Pure *CStepManager::_construct	()
 {
@@ -62,7 +61,6 @@ void CStepManager::reload(LPCSTR section)
 	for (u32 i = 0; i < MAX_LEGS_COUNT; i++) m_foot_bones[i] = BI_NONE;
 	reload_foot_bones	();
 
-	
 	m_time_anim_started	= 0;
 	m_blend				= 0;
 }
@@ -93,10 +91,8 @@ void CStepManager::on_animation_start(MotionID motion_id, CBlend *blend)
 		m_step_info.activity[i].cycle	= m_step_info.cur_cycle;
 	}
 
-
 	VERIFY					(m_blend);
 }
-
 
 void CStepManager::update()
 {

@@ -8,15 +8,13 @@
 
 #define CStateMonsterStealAbstract CStateMonsterSteal<_Object>
 
-#define STEAL_MIN_DISTANCE		4.f
-#define STEAL_MAX_DISTANCE		15.f
+#define STEAL_MIN_DISTANCE		4.0f
+#define STEAL_MAX_DISTANCE		15.0f
 #define STEAL_MAX_PATH_ANGLE	PI_DIV_6
-
 
 TEMPLATE_SPECIALIZATION
 CStateMonsterStealAbstract::CStateMonsterSteal(_Object *obj) : inherited(obj)
-{
-}
+{ }
 
 TEMPLATE_SPECIALIZATION
 void CStateMonsterStealAbstract::initialize()

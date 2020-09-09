@@ -1,6 +1,4 @@
 // xrServer.h: interface for the xrServer class.
-//
-//////////////////////////////////////////////////////////////////////
 
 #pragma once
 
@@ -11,7 +9,6 @@
 #ifdef DEBUG
 //. #define SLOW_VERIFY_ENTITIES
 #endif
-
 
 class CSE_Abstract;
 
@@ -45,13 +42,13 @@ public:
 	virtual void			Clear					();
 };
 
-
 // main
 struct	svs_respawn
 {
 	u32		timestamp;
 	u16		phantom;
 };
+
 IC bool operator < (const svs_respawn& A, const svs_respawn& B)	{ return A.timestamp<B.timestamp; }
 
 class xrServer	: public IPureServer  
@@ -100,6 +97,7 @@ private:
 protected:
 	void					Server_Client_Check				(IClient* CL);
 	void					PerformCheckClientsForMaxPing	();
+
 public:
 	game_sv_GameState*		game;
 
@@ -139,6 +137,7 @@ public:
 
 	void					AttachNewClient			(IClient* CL);
 	virtual void			OnBuildVersionRespond				(IClient* CL, NET_Packet& P);
+
 protected:
 	bool					CheckAdminRights		(const shared_str& user, const shared_str& pass, string512 reason);
 	virtual IClient*		new_client				( SClientConnectData* cl_data );

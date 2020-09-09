@@ -646,8 +646,8 @@
     <ClInclude Include="CustomZone.h" />
     <ClInclude Include="CycleConstStorage.h" />
     <ClInclude Include="DamagableItem.h" />
-    <ClInclude Include="DamageSource.h" />
-    <ClInclude Include="damage_manager.h" />
+    <ClInclude Include="IDamageSource.h" />
+    <ClInclude Include="DamageManager.h" />
     <ClInclude Include="danger_cover_location.h" />
     <ClInclude Include="danger_cover_location_inline.h" />
     <ClInclude Include="danger_explosive.h" />
@@ -1758,7 +1758,7 @@
     <ClCompile Include="CustomRocket.cpp" />
     <ClCompile Include="CustomZone.cpp" />
     <ClCompile Include="DamagableItem.cpp" />
-    <ClCompile Include="damage_manager.cpp" />
+    <ClCompile Include="DamageManager.cpp" />
     <ClCompile Include="danger_cover_location.cpp" />
     <ClCompile Include="danger_explosive.cpp" />
     <ClCompile Include="danger_location.cpp" />

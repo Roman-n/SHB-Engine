@@ -5,7 +5,7 @@
 #include "hit.h"
 #include "PHDestroyable.h"
 #include "hit_immunity.h"
-#include "damage_manager.h"
+#include "DamageManager.h"
 #include "DestroyablePhysicsObject.h"
 #include "..\XR_3DA\SkeletonCustom.h"
 #include "xrServer_Objects_ALife.h"

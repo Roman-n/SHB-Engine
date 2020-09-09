@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "xrServer.h"
 #include "game_sv_single.h"
 #include "alife_simulator.h"
@@ -33,8 +34,7 @@ void xrServer::Process_event	(NET_Packet& P, ClientID sender)
 	{
 		R_ASSERT(receiver->owner);
 		receiver->OnEvent						(P,type,timestamp,sender);
-
-	};
+	}
 
 	switch		(type)
 	{
@@ -163,7 +163,6 @@ void xrServer::Process_event	(NET_Packet& P, ClientID sender)
 			// Parse message
 			u16 id_src;
 			P.r_u16				(id_src);
-
 
 			VERIFY(game && ID_to_client(sender));
 

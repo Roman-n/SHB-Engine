@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "xrServer.h"
 #include "game_sv_single.h"
 #include "alife_simulator.h"
@@ -55,13 +56,13 @@ void xrServer::Process_event_destroy	(NET_Packet& P, ClientID sender, u32 time, 
 
 		while (!e_dest->children.empty())
 			Process_event_destroy		(P,sender,time,*e_dest->children.begin(), pEventPack);
-	};
+	}
 
 	if (0xffff == parent_id && NULL == pEventPack) 
 	{
 		SendBroadcast				(BroadcastCID,P,MODE);
 	}
-	else 
+	else
 	{
 		NET_Packet	tmpP;
 		if (0xffff != parent_id && Process_event_reject(P,sender,time,parent_id,ID,false)) 
@@ -74,13 +75,13 @@ void xrServer::Process_event_destroy	(NET_Packet& P, ClientID sender, u32 time, 
 			
 			pEventPack->w_u8(u8(tmpP.B.count));
 			pEventPack->w(&tmpP.B.data, tmpP.B.count);
-		};
+		}
 		
- 		game->u_EventGen(tmpP, GE_DESTROY, id_dest);
+		game->u_EventGen(tmpP, GE_DESTROY, id_dest);
 		
 		pEventPack->w_u8(u8(tmpP.B.count));
 		pEventPack->w(&tmpP.B.data, tmpP.B.count);
-	};
+	}
 
 	if (NULL == pEPack && NULL != pEventPack)
 	{
