@@ -21,8 +21,8 @@ void		IBlender::CreatePalette(xr_vector<IBlender*> &palette)
 	palette.push_back(Create(B_VERT_AREF));
 	palette.push_back(Create(B_SCREEN_SET));
 	palette.push_back(Create(B_SCREEN_GRAY));
-//	palette.push_back(Create(B_EDITOR_WIRE));
-//	palette.push_back(Create(B_EDITOR_SEL));
+	palette.push_back(Create(B_EDITOR_WIRE));
+	palette.push_back(Create(B_EDITOR_SEL));
 	palette.push_back(Create(B_LIGHT));
 	palette.push_back(Create(B_LaEmB));
 	palette.push_back(Create(B_LmEbB));

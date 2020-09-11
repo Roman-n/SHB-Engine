@@ -41,6 +41,7 @@ void CPortal::OnRender	()
 		V[0].set			(C,0x800000FF);
 
 		RCache.set_xform_world(Fidentity);
+		
 		// draw solid
 		RCache.set_Shader	(Device.m_SelectionShader);
 		RCache.dbg_Draw		(D3DPT_TRIANGLEFAN,&*V.begin(),V.size()-2);
@@ -58,6 +59,7 @@ void CPortal::OnRender	()
 		}else{
 			Device.SetNearer(FALSE);
 		}
+		
 	}
 }
 #endif
