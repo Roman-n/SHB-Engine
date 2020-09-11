@@ -20,8 +20,8 @@ CEngineAPI::CEngineAPI	()
 }
 
 CEngineAPI::~CEngineAPI()
-{
-}
+{ }
+
 extern u32 renderer_value; //con cmd
 
 void CEngineAPI::Initialize(void)

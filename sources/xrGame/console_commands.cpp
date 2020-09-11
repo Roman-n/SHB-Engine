@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
-#include "..\XR_3DA\xr_ioconsole.h"
-#include "..\XR_3DA\xr_ioc_cmd.h"
+#include "..\XR_3DA\Console.h"
+#include "..\XR_3DA\IConsole_Command.h"
 #include "..\XR_3DA\customhud.h"
 #include "..\XR_3DA\fdemorecord.h"
 #include "..\XR_3DA\fdemoplay.h"
@@ -120,7 +120,7 @@ enum E_COMMON_FLAGS{
 class CCC_MemStats : public IConsole_Command
 {
 public:
-	CCC_MemStats(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = TRUE; };
+	CCC_MemStats(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 		Memory.mem_compact		();
 //		u32		_crt_heap		= mem_usage_impl((HANDLE)_get_heap_handle(),0,0);
@@ -340,7 +340,7 @@ class CCC_DemoPlay : public IConsole_Command
 public:
 	CCC_DemoPlay(LPCSTR N) : 
 	  IConsole_Command(N) 
-	  { bEmptyArgsHandled = TRUE; };
+	  { bEmptyArgsHandled = true; };
 	  virtual void Execute(LPCSTR args) {
 		  if (0==g_pGameLevel)
 		  {

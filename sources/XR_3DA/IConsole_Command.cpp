@@ -3,8 +3,8 @@
 
 #include "xr_effgamma.h"
 #include "x_ray.h"
-#include "xr_ioconsole.h"
-#include "xr_ioc_cmd.h"
+#include "Console.h"
+#include "IConsole_Command.h"
 #include "fbasicvisual.h"
 #include "cameramanager.h"
 #include "environment.h"
@@ -46,7 +46,7 @@ xr_token							vid_bpp_token							[ ]={
 class CCC_Quit : public IConsole_Command
 {
 public:
-	CCC_Quit(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = TRUE; };
+	CCC_Quit(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 //		TerminateProcess(GetCurrentProcess(),0);
 		Console->Hide();
@@ -59,14 +59,14 @@ public:
 class CCC_DbgStrCheck : public IConsole_Command
 {
 public:
-	CCC_DbgStrCheck(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = TRUE; };
+	CCC_DbgStrCheck(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) { g_pStringContainer->verify(); }
 };
 
 class CCC_DbgStrDump : public IConsole_Command
 {
 public:
-	CCC_DbgStrDump(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = TRUE; };
+	CCC_DbgStrDump(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) { g_pStringContainer->dump();}
 };
 
@@ -74,7 +74,7 @@ public:
 class CCC_MotionsStat : public IConsole_Command
 {
 public:
-	CCC_MotionsStat(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = TRUE; };
+	CCC_MotionsStat(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 		g_pMotionsContainer->dump();
 	}
@@ -82,7 +82,7 @@ public:
 class CCC_TexturesStat : public IConsole_Command
 {
 public:
-	CCC_TexturesStat(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = TRUE; };
+	CCC_TexturesStat(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 		Device.Resources->_DumpMemoryUsage();
 	}
@@ -91,7 +91,7 @@ public:
 class CCC_E_Dump : public IConsole_Command
 {
 public:
-	CCC_E_Dump(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = TRUE; };
+	CCC_E_Dump(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 		Engine.Event.Dump();
 	}
@@ -111,7 +111,7 @@ public:
 class CCC_Help : public IConsole_Command
 {
 public:
-	CCC_Help(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = TRUE; };
+	CCC_Help(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 		Log("- --- Command listing: start ---");
 		CConsole::vecCMD_IT it;
@@ -165,7 +165,7 @@ void 			crashthread			( void* )
 class CCC_Crash : public IConsole_Command
 {
 public:
-	CCC_Crash(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = TRUE; };
+	CCC_Crash(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 		thread_spawn	(crashthread,"crash",0,0);
 	}
@@ -174,7 +174,7 @@ public:
 class CCC_DumpResources : public IConsole_Command
 {
 public:
-	CCC_DumpResources(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = TRUE; };
+	CCC_DumpResources(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 		Device.Resources->Dump(args!=NULL);
 	}
@@ -184,7 +184,7 @@ XRCORE_API void _dump_open_files(int mode);
 class CCC_DumpOpenFiles : public IConsole_Command
 {
 public:
-	CCC_DumpOpenFiles(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = FALSE; };
+	CCC_DumpOpenFiles(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = false; };
 	virtual void Execute(LPCSTR args) {
 		int _mode			= atoi(args);
 		_dump_open_files	(_mode);
@@ -195,7 +195,7 @@ public:
 class CCC_SaveCFG : public IConsole_Command
 {
 public:
-	CCC_SaveCFG(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = TRUE; };
+	CCC_SaveCFG(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) 
 	{
 		string_path			cfg_full_name;
@@ -309,7 +309,7 @@ public:
 class CCC_Disconnect : public IConsole_Command
 {
 public:
-	CCC_Disconnect(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = TRUE; };
+	CCC_Disconnect(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 		Engine.Event.Defer("KERNEL:disconnect");
 	}
@@ -318,7 +318,7 @@ public:
 class CCC_VID_Reset : public IConsole_Command
 {
 public:
-	CCC_VID_Reset(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = TRUE; };
+	CCC_VID_Reset(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 		if (Device.b_is_Ready) {
 			Device.Reset	();
@@ -329,7 +329,7 @@ class CCC_VidMode : public CCC_Token
 {
 	u32		_dummy;
 public :
-					CCC_VidMode(LPCSTR N) : CCC_Token(N, &_dummy, NULL) { bEmptyArgsHandled = FALSE; };
+					CCC_VidMode(LPCSTR N) : CCC_Token(N, &_dummy, NULL) { bEmptyArgsHandled = false; };
 	virtual void	Execute(LPCSTR args){
 		u32 _w, _h;
 		int cnt = sscanf		(args,"%dx%d",&_w,&_h);
@@ -355,7 +355,7 @@ public :
 class CCC_SND_Restart : public IConsole_Command
 {
 public:
-	CCC_SND_Restart(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = TRUE; };
+	CCC_SND_Restart(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 		Sound->_restart();
 	}
@@ -388,7 +388,7 @@ extern	Fvector	g_DR_LM_Min, g_DR_LM_Max;
 class CCC_DR_ClearPoint : public IConsole_Command
 {
 public:
-	CCC_DR_ClearPoint(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = TRUE; };
+	CCC_DR_ClearPoint(LPCSTR N) : IConsole_Command(N) { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 		g_DR_LM_Min.x = 1000000.0f;
 		g_DR_LM_Min.z = 1000000.0f;
@@ -403,7 +403,7 @@ public:
 class CCC_DR_TakePoint : public IConsole_Command
 {
 public:
-	CCC_DR_TakePoint(LPCSTR N) : IConsole_Command(N)	{ bEmptyArgsHandled = TRUE; };
+	CCC_DR_TakePoint(LPCSTR N) : IConsole_Command(N)	{ bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 		Fvector CamPos =  Device.vCameraPosition;
 

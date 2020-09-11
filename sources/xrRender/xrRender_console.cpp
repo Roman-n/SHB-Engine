@@ -112,8 +112,8 @@ float		ps_r2_slight_fade			= 1.f;				// 1.f
 float		ps_r2_gloss_factor			= 1.0f;
 //- Mad Max
 
-#include	"..\XR_3DA\xr_ioconsole.h"
-#include	"..\XR_3DA\xr_ioc_cmd.h"
+#include	"..\XR_3DA\Console.h"
+#include	"..\XR_3DA\IConsole_Command.h"
 
 //-----------------------------------------------------------------------
 class CCC_tf_Aniso		: public CCC_Integer
@@ -195,7 +195,7 @@ public:
 class CCC_ModelPoolStat : public IConsole_Command
 {
 public:
-	CCC_ModelPoolStat(const char* N) : IConsole_Command(N)  { bEmptyArgsHandled = TRUE; };
+	CCC_ModelPoolStat(const char* N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(const char* args) {
 		RImplementation.Models->dump();
 	}
@@ -229,7 +229,7 @@ public:
 class CCC_BuildSSA : public IConsole_Command
 {
 public:
-	CCC_BuildSSA(const char* N) : IConsole_Command(N)  { bEmptyArgsHandled = TRUE; };
+	CCC_BuildSSA(const char* N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(const char* args) {
 		r_pixel_calculator	c;
 		c.run				();

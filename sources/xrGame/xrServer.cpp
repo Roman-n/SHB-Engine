@@ -11,7 +11,7 @@
 #include "ai_space.h"
 #include "..\XR_3DA\IGame_Persistent.h"
 
-#include "..\XR_3DA\XR_IOConsole.h"
+#include "..\XR_3DA\Console.h"
 #include "ui/UIInventoryUtilities.h"//
 
 xrClientData::xrClientData	():IClient(Device.GetTimerGlobal())

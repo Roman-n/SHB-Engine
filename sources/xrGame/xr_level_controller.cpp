@@ -1,9 +1,9 @@
 #include "stdafx.h"
 
 #include <dinput.h>
-#include "..\XR_3DA\xr_ioconsole.h"
+#include "..\XR_3DA\Console.h"
 #include "..\XR_3DA\xr_input.h"
-#include "..\XR_3DA\xr_ioc_cmd.h"
+#include "..\XR_3DA\IConsole_Command.h"
 #include "xr_level_controller.h"
 #include "string_table.h"
 
@@ -498,7 +498,7 @@ class CCC_UnBind : public IConsole_Command
 public:
 	CCC_UnBind(LPCSTR N, int idx) : IConsole_Command(N), m_work_idx(idx)
 	{
-		bEmptyArgsHandled = TRUE;
+		bEmptyArgsHandled = true;
 	};
 	virtual void Execute(LPCSTR args)
 	{
@@ -515,7 +515,7 @@ class CCC_ListActions : public IConsole_Command
 public:
 	CCC_ListActions(LPCSTR N) : IConsole_Command(N)
 	{
-		bEmptyArgsHandled = TRUE;
+		bEmptyArgsHandled = true;
 	};
 
 	virtual void Execute(LPCSTR args)
@@ -536,7 +536,7 @@ class CCC_UnBindAll : public IConsole_Command
 public:
 	CCC_UnBindAll(LPCSTR N) : IConsole_Command(N)
 	{
-		bEmptyArgsHandled = TRUE;
+		bEmptyArgsHandled = true;
 	};
 
 	virtual void Execute(LPCSTR args)
@@ -563,7 +563,7 @@ class CCC_BindList : public IConsole_Command
 public:
 	CCC_BindList(LPCSTR N) : IConsole_Command(N)
 	{
-		bEmptyArgsHandled = TRUE;
+		bEmptyArgsHandled = true;
 	};
 
 	virtual void Execute(LPCSTR args)
@@ -613,7 +613,7 @@ class CCC_UnBindConsoleCmd : public IConsole_Command
 public:
 	CCC_UnBindConsoleCmd(LPCSTR N) : IConsole_Command(N)
 	{
-		bEmptyArgsHandled = FALSE;
+		bEmptyArgsHandled = false;
 	};
 
 	virtual void Execute(LPCSTR args)

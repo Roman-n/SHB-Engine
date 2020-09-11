@@ -453,12 +453,6 @@
     <ClInclude Include="xrXRC.h">
       <Filter>Engine\Collision Core</Filter>
     </ClInclude>
-    <ClInclude Include="xr_ioc_cmd.h">
-      <Filter>Engine\Console</Filter>
-    </ClInclude>
-    <ClInclude Include="XR_IOConsole.h">
-      <Filter>Engine\Console</Filter>
-    </ClInclude>
     <ClInclude Include="Engine.h">
       <Filter>Engine\Core</Filter>
     </ClInclude>
@@ -482,6 +476,12 @@
     </ClInclude>
     <ClInclude Include="perlin.h">
       <Filter>Engine\Noise</Filter>
+    </ClInclude>
+    <ClInclude Include="Console.h">
+      <Filter>Engine\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="IConsole_Command.h">
+      <Filter>Engine\Console</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -815,12 +815,6 @@
     <ClCompile Include="xrXRC.cpp">
       <Filter>Engine\Collision Core</Filter>
     </ClCompile>
-    <ClCompile Include="xr_ioc_cmd.cpp">
-      <Filter>Engine\Console</Filter>
-    </ClCompile>
-    <ClCompile Include="XR_IOConsole.cpp">
-      <Filter>Engine\Console</Filter>
-    </ClCompile>
     <ClCompile Include="Engine.cpp">
       <Filter>Engine\Core</Filter>
     </ClCompile>
@@ -841,6 +835,12 @@
     </ClCompile>
     <ClCompile Include="perlin.cpp">
       <Filter>Engine\Noise</Filter>
+    </ClCompile>
+    <ClCompile Include="Console.cpp">
+      <Filter>Engine\Console</Filter>
+    </ClCompile>
+    <ClCompile Include="IConsole_Command.cpp">
+      <Filter>Engine\Console</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

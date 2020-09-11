@@ -7,7 +7,7 @@
 #include "UIDialogWnd.h"//
 #include "../HUDManager.h"//
 #include "../xr_level_controller.h"
-#include "../..\XR_3DA\xr_ioconsole.h"
+#include "..\..\XR_3DA\Console.h"
 #include "../level.h"
 #include "../GameObject.h"
 

@@ -1,4 +1,4 @@
-// XR_IOConsole.cpp: implementation of the CConsole class.
+// Console.cpp: implementation of the CConsole class.
 //
 //////////////////////////////////////////////////////////////////////
 
@@ -7,9 +7,9 @@
 #include "igame_persistent.h"
 
 #include "x_ray.h"
-#include "xr_ioconsole.h"
+#include "Console.h"
 #include "xr_input.h"
-#include "xr_ioc_cmd.h"
+#include "IConsole_Command.h"
 #include "GameFont.h"
 #include "CustomHUD.h"
 
@@ -631,48 +631,6 @@ xr_token* CConsole::GetXRToken(LPCSTR cmd)
 		CCC_Token* cf = dynamic_cast<CCC_Token*>(C);
 		return cf->GetToken();
 	}
+
 	return NULL;
 }
-
-/*
-char * CConsole::GetNextValue(LPCSTR cmd)
-{
-
-	ioc_command *cmd = (ioc_command *)bsearch(name, ioc_cmd_array,ioc_num_cmd,sizeof(ioc_command),ioc_compare_search_cmd);
-	if (cmd!=NULL && cmd->type==cmdVALUE) {
-		u32 *v = (u32 *) cmd->ptr; // pointer to value
-		xr_token *tok=cmd->tok;
-		while (tok->name) {
-			if (tok->id==(int)(*v)) {
-				char *save = (char *)tok->name;
-				tok++;
-				if (tok->name!=0) return (char *)tok->name;
-				else				 return save;
-			}
-			tok++;
-		}
-	}
-
-	return GetValue(cmd);
-}
-
-char * CConsole::GetPrevValue(LPCSTR cmd)
-{
-
-	ioc_command *cmd = (ioc_command *)bsearch(name, ioc_cmd_array,ioc_num_cmd,sizeof(ioc_command),ioc_compare_search_cmd);
-	if (cmd!=NULL && cmd->type==cmdVALUE) {
-		u32 *v = (u32 *) cmd->ptr; // pointer to value
-		xr_token *tok=cmd->tok;
-		while (tok->name) {
-			if (tok->id==(int)(*v)) {
-				if (tok!=cmd->tok) tok--;
-				return (char *)tok->name;
-			}
-			tok++;
-		}
-	}
-
-	return GetValue(cmd);
-}
-
-*/

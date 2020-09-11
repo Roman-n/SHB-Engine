@@ -2,7 +2,7 @@
 
 #include "UIOptionsItem.h"//
 #include "UIOptionsManager.h"//
-#include "../..\XR_3DA\xr_ioconsole.h"
+#include "..\..\XR_3DA\Console.h"
 
 CUIOptionsManager CUIOptionsItem::m_optionsManager;
 

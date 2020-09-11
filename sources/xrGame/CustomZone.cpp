@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "..\XR_3DA\xr_ioconsole.h"
+#include "..\XR_3DA\Console.h"
 #include "customzone.h"
 #include "hit.h"
 #include "PHDestroyable.h"

@@ -7,7 +7,7 @@
 #include <d3dx9.h>
 #pragma warning(default:4995)
 #include "HW.h"
-#include "xr_IOconsole.h"
+#include "Console.h"
 
 void	fill_vid_mode_list			(CHW* _hw);
 void	free_vid_mode_list			();
