@@ -246,7 +246,7 @@
     <ClCompile Include="tinyxml.cpp" />
     <ClCompile Include="tinyxmlerror.cpp" />
     <ClCompile Include="tinyxmlparser.cpp" />
-    <ClCompile Include="xrDebugNew.cpp" />
+    <ClCompile Include="Debug.cpp" />
     <ClCompile Include="xrMemory.cpp" />
     <ClCompile Include="xrMemory_align.cpp" />
     <ClCompile Include="xrMemory_debug.cpp" />
@@ -316,8 +316,8 @@
     <ClInclude Include="vector.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="Core_platform.h" />
-    <ClInclude Include="xrDebug.h" />
-    <ClInclude Include="xrDebug_macros.h" />
+    <ClInclude Include="Debug.h" />
+    <ClInclude Include="Debug_macros.h" />
     <ClInclude Include="xrMemory.h" />
     <ClInclude Include="xrMemory_align.h" />
     <ClInclude Include="xrMEMORY_POOL.h" />

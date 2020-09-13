@@ -3,14 +3,14 @@
 typedef	void		crashhandler		(void);
 typedef	void		on_dialog			(bool before);
 
-class CORE_API	xrDebug
+class CORE_API	CDebug
 {
 private:
 	crashhandler*	handler	;
 	on_dialog*		m_on_dialog;
 
 public:
-	void			_initialize			(const bool &dedicated);
+	void			_initialize			( );
 	
 public:
 	crashhandler*	get_crashhandler	()							{ return handler;	};
@@ -46,8 +46,8 @@ IC	std::string __cdecl	make_string		(LPCSTR format,...)
 	return		(temp);
 }
 
-extern CORE_API	xrDebug		Debug;
+extern CORE_API	CDebug		Debug;
 
 CORE_API void LogStackTrace	(LPCSTR header);
 
-#include "xrDebug_macros.h"
+#include "Debug_macros.h"

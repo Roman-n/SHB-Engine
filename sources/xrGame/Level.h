@@ -9,7 +9,7 @@
 #include "..\ENGINE\StatGraph.h"//
 #include "xrMessages.h"
 #include "alife_space.h"
-#include "..\Core\xrDebug.h"
+#include "..\Core\Debug.h"
 #include "xrServer.h"
 
 class	CHUDManager;

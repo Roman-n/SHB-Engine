@@ -108,7 +108,7 @@
 #	define CORE_API __declspec(dllimport)
 #endif
 
-#include "xrDebug.h"
+#include "Debug.h"
 #include "vector.h"
 
 #include "clsid.h"

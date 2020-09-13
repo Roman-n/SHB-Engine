@@ -25,7 +25,7 @@ static BOOL			bException	= FALSE;
 #	define USE_OWN_MINI_DUMP
 #endif // DEBUG
 
-CORE_API	xrDebug		Debug;
+CORE_API	CDebug		Debug;
 
 static bool	error_after_dialog = false;
 
@@ -179,14 +179,14 @@ void gather_info		(LPCSTR expression, LPCSTR description, LPCSTR argument0, LPCS
 	}
 }
 
-void xrDebug::do_exit	(const std::string &message)
+void CDebug::do_exit	(const std::string &message)
 {
 	FlushLog			();
 	MessageBox			(NULL,message.c_str(),"Error",MB_OK|MB_ICONERROR|MB_SYSTEMMODAL);
 	TerminateProcess	(GetCurrentProcess(),1);
 }
 
-void xrDebug::backend	(LPCSTR expression, LPCSTR description, LPCSTR argument0, LPCSTR argument1, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
+void CDebug::backend	(LPCSTR expression, LPCSTR description, LPCSTR argument0, LPCSTR argument1, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
 {
 	static xrCriticalSection CS;
 
@@ -247,7 +247,7 @@ void xrDebug::backend	(LPCSTR expression, LPCSTR description, LPCSTR argument0, 
 	CS.Leave			();
 }
 
-LPCSTR xrDebug::error2string	(long code)
+LPCSTR CDebug::error2string	(long code)
 {
 	LPCSTR				result	= 0;
 	static	string1024	desc_storage;
@@ -262,42 +262,42 @@ LPCSTR xrDebug::error2string	(long code)
 	return		result	;
 }
 
-void xrDebug::error		(long hr, LPCSTR expr, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
+void CDebug::error		(long hr, LPCSTR expr, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
 {
 	backend		(error2string(hr),expr,0,0,file,line,function,ignore_always);
 }
 
-void xrDebug::error		(long hr, LPCSTR expr, LPCSTR e2, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
+void CDebug::error		(long hr, LPCSTR expr, LPCSTR e2, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
 {
 	backend		(error2string(hr),expr,e2,0,file,line,function,ignore_always);
 }
 
-void xrDebug::fail		(LPCSTR e1, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
+void CDebug::fail		(LPCSTR e1, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
 {
 	backend		("assertion failed",e1,0,0,file,line,function,ignore_always);
 }
 
-void xrDebug::fail		(LPCSTR e1, const std::string &e2, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
+void CDebug::fail		(LPCSTR e1, const std::string &e2, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
 {
 	backend		(e1,e2.c_str(),0,0,file,line,function,ignore_always);
 }
 
-void xrDebug::fail		(LPCSTR e1, LPCSTR e2, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
+void CDebug::fail		(LPCSTR e1, LPCSTR e2, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
 {
 	backend		(e1,e2,0,0,file,line,function,ignore_always);
 }
 
-void xrDebug::fail		(LPCSTR e1, LPCSTR e2, LPCSTR e3, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
+void CDebug::fail		(LPCSTR e1, LPCSTR e2, LPCSTR e3, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
 {
 	backend		(e1,e2,e3,0,file,line,function,ignore_always);
 }
 
-void xrDebug::fail		(LPCSTR e1, LPCSTR e2, LPCSTR e3, LPCSTR e4, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
+void CDebug::fail		(LPCSTR e1, LPCSTR e2, LPCSTR e3, LPCSTR e4, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
 {
 	backend		(e1,e2,e3,e4,file,line,function,ignore_always);
 }
 
-void __cdecl xrDebug::fatal(LPCSTR file, int line, LPCSTR function, LPCSTR F,...)
+void __cdecl CDebug::fatal(LPCSTR file, int line, LPCSTR function, LPCSTR F,...)
 {
 	string1024	buffer;
 
@@ -708,7 +708,7 @@ _CRTIMP _PNH	__cdecl _set_new_handler( _PNH );
 		handler_base					("termination with exit code 3");
 	}
 
-    void	xrDebug::_initialize		(const bool &dedicated)
+    void	CDebug::_initialize		( )
     {
 		debug_on_thread_spawn			();
 
