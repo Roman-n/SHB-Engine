@@ -85,7 +85,7 @@
 		<text>Ящик мусора</text>
 	</string>
 	<string id="agr_secret_0014_descr">
-		<text>Под поваленым деревом нашел сейф, пока буду тут все прятать.</text>
+		<text>Под поваленным деревом нашел сейф, пока буду тут все прятать.</text>
 	</string>
 	<string id="agr_secret_0014_name">
 		<text>Сейф под деревом</text>
@@ -361,7 +361,7 @@
 		<text>Сейф на ферме</text>
 	</string>
 	<string id="esc_secret_0007_descr">
-		<text>Ребятки шепнули, что в вагоне на мосту кто-то что-то прячет, надо заглянуть на обратном пути. Узнать бы кто…</text>
+		<text>Ребятки шепнули, что в вагоне на мосту кто-то что-то прячет, надо заглянуть на обратном пути. Узнать бы кто...</text>
 	</string>
 	<string id="esc_secret_0007_name">
 		<text>Контейнер в вагоне</text>
@@ -421,7 +421,7 @@
 		<text>Воровской чердак</text>
 	</string>
 	<string id="esc_secret_0017_descr">
-		<text>Обнаружил инвентарь в трубе, недалеко от фермы. Вот гаупвахта закончится - обязательно вернусь.</text>
+		<text>Обнаружил инвентарь в трубе, недалеко от фермы. Вот гауптвахта закончится - обязательно вернусь.</text>
 	</string>
 	<string id="esc_secret_0017_name">
 		<text>Газовая труба</text>
@@ -445,7 +445,7 @@
 		<text>Бандитский схрон</text>
 	</string>
 	<string id="gar_secret_0001_descr">
-		<text>Мы с Васей ходили посмотреть чё как, тут Васю и настигла ментовская пуля. А я тут ни при чем. Пуля - дура. Вещички схоронил на кране в трубе.</text>
+		<text>Мы с Васей ходили посмотреть чё да как, тут Васю и настигла ментовская пуля. А я тут ни при чем. Пуля - дура. Вещички схоронил на кране в трубе.</text>
 	</string>
 	<string id="gar_secret_0001_name">
 		<text>Старый кран</text>
@@ -529,7 +529,7 @@
 		<text>Сортирные запасы</text>
 	</string>
 	<string id="gar_secret_0015_descr">
-		<text>На куче мусора полузакопанный сейф, там то оно все и лежит. Не забыть бы, что.</text>
+		<text>На куче мусора полузакопанный сейф, там-то оно все и лежит. Не забыть бы что.</text>
 	</string>
 	<string id="gar_secret_0015_name">
 		<text>Сейф на Южной куче</text>
@@ -577,7 +577,7 @@
 		<text>Авоська в люке</text>
 	</string>
 	<string id="gar_secret_0023_descr">
-		<text>Возле эскаватора кто-то сгинул в аномалии, рюкзак видно, а достать тяжело.</text>
+		<text>Возле экскаватора кто-то сгинул в аномалии, рюкзак видно, а достать тяжело.</text>
 	</string>
 	<string id="gar_secret_0023_name">
 		<text>Под ковшом</text>
@@ -649,7 +649,7 @@
 		<text>Схрон сталкера</text>
 	</string>
 	<string id="mil_secret_0010_description">
-		<text>Припрятал рюкзачек со снарягой в укромном месте.</text>
+		<text>Припрятал рюкзачок со снарягой в укромном месте.</text>
 	</string>
 	<string id="mil_secret_0010_name">
 		<text>Рюкзак со снаряжением</text>
@@ -847,7 +847,7 @@
 		<text>Ящик под домиком</text>
 	</string>
 	<string id="ros_secret_0003_description">
-		<text>Сунул рюкзак под ступеньки, а там эти гады появились. Блин, как бы достать</text>
+		<text>Сунул рюкзак под ступеньки, а там эти гады появились. Блин, как бы достать?</text>
 	</string>
 	<string id="ros_secret_0003_name">
 		<text>Рюкзак сталкера</text>
@@ -859,7 +859,7 @@
 		<text>Тайник за деревом</text>
 	</string>
 	<string id="ros_secret_0005_description">
-		<text>Все что зхватили во время рейда, спрятали в гараже в ящике</text>
+		<text>Все что захватили во время рейда, спрятали в гараже в ящике</text>
 	</string>
 	<string id="ros_secret_0005_name">
 		<text>Тайник в гараже</text>
@@ -880,7 +880,7 @@
 		<text>Ящичек припрятал в укромном месте</text>
 	</string>
 	<string id="ros_secret_0008_name">
-		<text>Ящик в уромном месте</text>
+		<text>Ящик в укромном месте</text>
 	</string>
 	<string id="ros_secret_0009_description">
 		<text>Под крышей лежит мой рюкзак. Это на черный день</text>
@@ -904,7 +904,7 @@
 		<text>О чем договорились, возьмешь в ящичке, туда обычно никто не заглядывает</text>
 	</string>
 	<string id="ros_secret_0012_name">
-		<text>Спятанный ящичек</text>
+		<text>Спрятанный ящичек</text>
 	</string>
 	<string id="ros_secret_0013_description">
 		<text>Под крестом спрятал, в закоулке</text>
@@ -983,9 +983,6 @@
 	</string>
 	<string id="ros_secret_0025_name">
 		<text>Рюкзак</text>
-	</string>
-	<string id="st_found_new_treasure">
-		<text>Информация о схроне</text>
 	</string>
 	<string id="val_secret_0000_description">
 		<text>Под крестом, возле горы, закопал хабара чуток</text>
@@ -1069,7 +1066,7 @@
 		<text>Все что спер у Борова, припрятал в сейфе, что под елкой. Теперь переждать надо, пока они на нервах все</text>
 	</string>
 	<string id="val_secret_0013_name">
-		<text>Спрятаный сейф</text>
+		<text>Спрятанный сейф</text>
 	</string>
 	<string id="val_secret_0014_description">
 		<text>Временный штаб в вагончике, ящик с припасами там же</text>
@@ -1292,5 +1289,8 @@
 	</string>
 	<string id="yan_secret_0013_name">
 		<text>Ящик с добром</text>
+	</string>
+	<string id="st_found_new_treasure">
+		<text>Информация о схроне</text>
 	</string>
 </string_table>

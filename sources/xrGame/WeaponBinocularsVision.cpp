@@ -14,7 +14,7 @@
 #include "Level.h"
 #include "game_cl_base.h"
 #include "AI/Monsters/BaseMonster/base_monster.h"
-#include "..\XR_3DA\igame_persistent.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
 
 #define RECT_SIZE	16
 

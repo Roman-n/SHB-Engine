@@ -8,7 +8,7 @@
 
 #include "stdafx.h"
 #include "profiler.h"
-#include "..\XR_3DA\gamefont.h"
+#include "..\ENGINE\gamefont.h"
 
 CProfiler	*g_profiler			= 0;
 LPCSTR		indent				= "  ";

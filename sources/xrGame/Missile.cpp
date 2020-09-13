@@ -4,18 +4,18 @@
 #include "WeaponHUD.h"
 #include "PhysicsShell.h"
 #include "actor.h"
-#include "..\XR_3DA\CameraBase.h"
+#include "..\ENGINE\CameraBase.h"
 #include "xrserver_objects_alife.h"
 #include "ActorEffector.h"
 #include "level.h"
 #include "xr_level_controller.h"
-#include "..\XR_3DA\skeletoncustom.h"
+#include "..\ENGINE\skeletoncustom.h"
 #include "ai_object_location.h"
 #include "ExtendedGeom.h"
 #include "MathUtils.h"
 #include "characterphysicssupport.h"
 #include "inventory.h"
-#include "..\XR_3DA\IGame_Persistent.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
 
 #ifdef DEBUG
 #	include "PHDebug.h"

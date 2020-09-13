@@ -2,12 +2,12 @@
 
 #include "phcollisiondamagereceiver.h"
 #include "PhysicsShellHolder.h"
-#include "..\XR_3DA\skeletoncustom.h"
+#include "..\ENGINE\skeletoncustom.h"
 #include "Geometry.h"
 #include "PhysicsShell.h"
 #include "GameMtlLib.h"
 #include "Physics.h"
-#include "../xrNetServer/net_utils.h"
+#include "../ENGINE/net_utils.h"
 #include "xrMessages.h"
 #include "CharacterPhysicsSupport.h"
 

@@ -8,8 +8,8 @@
 #include "MathUtils.h"
 #include "PhysicsShellHolder.h"
 #include "game_object_space.h"
-//#include "..\XR_3DA\skeletoncustom.h"
-#include "..\XR_3DA\skeletonanimated.h"
+//#include "..\ENGINE\skeletoncustom.h"
+#include "..\ENGINE\skeletonanimated.h"
 #include "../xrODE/ode/src/util.h"
 
 #ifdef DEBUG

@@ -1,7 +1,7 @@
 #pragma once
 
 #pragma warning(disable:4995)
-#include "..\XR_3DA\stdafx.h"
+#include "..\ENGINE\stdafx.h"
 #pragma warning(default:4995)
 #pragma warning( 4 : 4018 )
 #pragma warning( 4 : 4244 )
@@ -26,9 +26,9 @@ IC	void		throw_and_log(const xr_string &s) {Msg("! %s",s.c_str()); throw *shared
 #	define		THROW3					VERIFY3
 #endif
 
-#include "../XR_3DA\gamefont.h"
-#include "../XR_3DA\xr_object.h"
-#include "../XR_3DA\igame_level.h"
+#include "../ENGINE\gamefont.h"
+#include "../ENGINE\xr_object.h"
+#include "../ENGINE\igame_level.h"
 
 #ifdef PUBLIC_BUILD
 #ifndef DEBUG

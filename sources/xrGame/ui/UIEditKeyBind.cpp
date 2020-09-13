@@ -175,7 +175,7 @@ void CUIEditKeyBind::SaveValue()
 	m_bChanged			= false;
 }
 
-#include "..\..\XR_3DA\Console.h"
+#include "..\..\ENGINE\Console.h"
 void CUIEditKeyBind::BindAction2Key()
 {
 	xr_string comm_unbind	= (m_bPrimary)?"unbind ":"unbind_sec ";

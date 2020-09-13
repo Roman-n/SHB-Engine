@@ -2,10 +2,10 @@
 
 #include "bloodsucker.h"
 #include "bloodsucker_state_manager.h"
-#include "../../../..\XR_3DA\skeletoncustom.h"
+#include "../../../..\ENGINE\skeletoncustom.h"
 #include "../../../actor.h"
 #include "../../../ActorEffector.h"
-#include "../../../..\XR_3DA\skeletonanimated.h"
+#include "../../../..\ENGINE\skeletonanimated.h"
 #include "../../../level.h"
 #include "../../../material_manager.h"
 #include "bloodsucker_vampire_effector.h"
@@ -20,7 +20,7 @@
 #include "../control_rotation_jump.h"
 
 #include "../../../sound_player.h"
-#include "../../../..\XR_3DA\camerabase.h"
+#include "../../../..\ENGINE\camerabase.h"
 #include "../../../xr_level_controller.h"
 #include "../../../ActorCondition.h"
 

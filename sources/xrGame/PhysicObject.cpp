@@ -4,8 +4,8 @@
 #include "PhysicsShell.h"
 #include "Physics.h"
 #include "xrserver_objects_alife.h"
-#include "..\XR_3DA\skeletonanimated.h"
-#include "..\XR_3DA\xr_collide_form.h"
+#include "..\ENGINE\skeletonanimated.h"
+#include "..\ENGINE\xr_collide_form.h"
 #include "game_object_space.h"
 
 

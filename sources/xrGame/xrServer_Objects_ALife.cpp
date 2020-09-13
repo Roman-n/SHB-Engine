@@ -7,7 +7,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include "../xrNetServer/net_utils.h"
+#include "../ENGINE/net_utils.h"
 #include "xrServer_Objects_ALife.h"
 #include "xrServer_Objects_ALife_Monsters.h"
 #include "game_base_space.h"
@@ -21,8 +21,8 @@
 #	include "defines.h"
 	LPCSTR GAME_CONFIG = "game.ltx";
 #else
-#	include "..\XR_3DA\bone.h"
-#	include "..\XR_3DA\render.h"
+#	include "..\ENGINE\bone.h"
+#	include "..\ENGINE\render.h"
 #endif
 
 bool SortStringsByAlphabetPred (const shared_str& s1, const shared_str& s2)

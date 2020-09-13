@@ -3,7 +3,7 @@
 #include <dinput.h>
 #include "../HUDManager.h"//
 #include "UICustomEdit.h"//
-#include "../..\XR_3DA\LightAnimLibrary.h"
+#include "../..\ENGINE\LightAnimLibrary.h"
 
 
 static u32 DILetters[] = { DIK_A, DIK_B, DIK_C, DIK_D, DIK_E, 

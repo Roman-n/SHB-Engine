@@ -17,7 +17,7 @@
 #include "script_entity_action.h"
 #include "inventory.h"
 #include "xrserver_objects_alife_items.h"
-#include "..\XR_3DA\skeletonanimated.h"
+#include "..\ENGINE\skeletonanimated.h"
 #include "level.h"
 #include "ui/UIMainIngameWnd.h"//
 #include "CarWeapon.h"

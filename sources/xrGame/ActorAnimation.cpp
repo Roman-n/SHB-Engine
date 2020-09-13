@@ -18,11 +18,11 @@
 #include "hit.h"
 #include "PHDestroyable.h"
 #include "Car.h"
-#include "..\XR_3DA\skeletonanimated.h"
+#include "..\ENGINE\skeletonanimated.h"
 #include "clsid_game.h"
 #include "ai_object_location.h"
 #include "game_cl_base.h"
-#include "..\XR_3DA\motion.h"
+#include "..\ENGINE\motion.h"
 #include "Artefact.h"
 #include "IKLimbsController.h"
 

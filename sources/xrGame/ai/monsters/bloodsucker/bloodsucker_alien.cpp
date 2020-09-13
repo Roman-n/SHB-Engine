@@ -5,9 +5,9 @@
 #include "../../../actor.h"
 #include "../../../inventory.h"
 #include "../../../HudItem.h"
-#include "../../../..\XR_3DA\CustomHUD.h"
-#include "../../../..\XR_3DA\effector.h"
-#include "../../../..\XR_3DA\effectorPP.h"
+#include "../../../..\ENGINE\CustomHUD.h"
+#include "../../../..\ENGINE\effector.h"
+#include "../../../..\ENGINE\effectorPP.h"
 
 #define EFFECTOR_ID_GEN(type) (type( u32(u64(this) & u32(-1)) ))
 

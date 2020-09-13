@@ -25,7 +25,7 @@
 #include "../../xr_level_controller.h"
 #include "../../HUDManager.h"//
 #include "../../clsid_game.h"
-#include "../../..\XR_3DA\skeletoncustom.h"
+#include "../../..\ENGINE\skeletoncustom.h"
 #include "../../character_info.h"
 #include "../../actor.h"
 #include "../../relation_registry.h"

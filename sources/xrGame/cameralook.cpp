@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "CameraLook.h"
-#include "..\XR_3DA\Cameramanager.h"
+#include "..\ENGINE\Cameramanager.h"
 #include "xr_level_controller.h"
 #include "actor.h"
 
@@ -75,7 +75,7 @@ void CCameraLook::OnActivate(CCameraBase* old_cam)
 	if (yaw < -PI_MUL_2)yaw += PI_MUL_2;
 }
 
-#include "..\XR_3DA\xr_input.h"
+#include "..\ENGINE\xr_input.h"
 #include "visual_memory_manager.h"
 #include "actor_memory.h"
 

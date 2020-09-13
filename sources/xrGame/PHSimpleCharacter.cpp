@@ -2,7 +2,7 @@
 
 #include "PHDynamicData.h"
 #include "ExtendedGeom.h"
-#include "..\XR_3DA\cl_intersect.h"
+#include "..\ENGINE\cl_intersect.h"
 #include "tri-colliderKNoOPC\__aabb_tri.h"
 #include "PHSimpleCharacter.h"
 #include "PHContactBodyEffector.h"
@@ -14,7 +14,7 @@
 #include "gamemtllib.h"
 #include "gameobject.h"
 #include "physicsshellholder.h"
-#include "..\XR_3DA\skeletoncustom.h"
+#include "..\ENGINE\skeletoncustom.h"
 #include "PHSimpleCharacterInline.h"
 #include "IDamageSource.h"
 #include "PHCollideValidator.h"

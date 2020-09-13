@@ -3,13 +3,13 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "..\XR_3DA\igame_level.h"
-#include "../xrNetServer/net_client.h"
+#include "..\ENGINE\igame_level.h"
+#include "../ENGINE/net_client.h"
 #include "script_export_space.h"
-#include "..\XR_3DA\StatGraph.h"//
+#include "..\ENGINE\StatGraph.h"//
 #include "xrMessages.h"
 #include "alife_space.h"
-#include "..\xrCore\xrDebug.h"
+#include "..\Core\xrDebug.h"
 #include "xrServer.h"
 
 class	CHUDManager;
@@ -41,7 +41,7 @@ class CFogOfWarMngr;
 class CBulletManager;
 class CMapManager;
 
-#include "..\XR_3DA\feel_touch.h"
+#include "..\ENGINE\feel_touch.h"
 
 class GlobalFeelTouch : public Feel::Touch
 {

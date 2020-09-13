@@ -1,8 +1,8 @@
 #pragma once
 
-#include "..\XR_3DA\envelope.h"
-#include "..\XR_3DA\EffectorPP.h"
-#include "..\XR_3DA\cameramanager.h"
+#include "..\ENGINE\envelope.h"
+#include "..\ENGINE\EffectorPP.h"
+#include "..\ENGINE\cameramanager.h"
 
 class CEffectorController;
 

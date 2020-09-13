@@ -18,8 +18,8 @@
 #include "light_render_direct.h"
 #include "..\xrRender\LightTrack.h"
 
-#include "..\XR_3DA\irenderable.h"
-#include "..\XR_3DA\fmesh.h"
+#include "..\ENGINE\irenderable.h"
+#include "..\ENGINE\fmesh.h"
 
 // definition
 class CRender													:	public R_dsgraph_structure

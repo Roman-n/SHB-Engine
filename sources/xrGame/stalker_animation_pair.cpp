@@ -8,7 +8,7 @@
 
 #include "stdafx.h"
 #include "stalker_animation_pair.h"
-#include "..\XR_3DA\motion.h"
+#include "..\ENGINE\motion.h"
 #include "ai_debug.h"
 #include "ai/stalker/ai_stalker.h"
 #include "ai/ai_monsters_anims.h"

@@ -16,7 +16,7 @@
 #include "lightPPA.h"
 #include "..\xrRender\light_DB.h"
 
-#include "..\XR_3DA\Fmesh.h"
+#include "..\ENGINE\Fmesh.h"
 
 // definition
 class CRender													:	public R_dsgraph_structure

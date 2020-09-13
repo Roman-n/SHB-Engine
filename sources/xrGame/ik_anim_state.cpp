@@ -2,7 +2,7 @@
 
 #include	"ik_anim_state.h"
 
-#include	"..\XR_3DA\skeletonanimated.h"
+#include	"..\ENGINE\skeletonanimated.h"
 
 
 IC bool is_in( const motion_marks::interval &i, float v )

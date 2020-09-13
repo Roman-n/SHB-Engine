@@ -4,11 +4,11 @@
 #include "stdafx.h"
 
 #include "ParticlesObject.h"
-#include "..\XR_3DA\defines.h"
-#include "..\XR_3DA\fbasicvisual.h"
-#include "..\XR_3DA\ParticleCustom.h"
-#include "..\XR_3DA\render.h"
-#include "..\XR_3DA\IGame_Persistent.h"
+#include "..\ENGINE\defines.h"
+#include "..\ENGINE\fbasicvisual.h"
+#include "..\ENGINE\ParticleCustom.h"
+#include "..\ENGINE\render.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
 
 const Fvector zero_vel		= {0.f,0.f,0.f};
 

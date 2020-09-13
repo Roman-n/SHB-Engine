@@ -40,7 +40,7 @@
 		<text>ночь</text>
 	</string>
 	<string id="Rain">
-		<text>дождливая</text>
+		<text>дождь</text>
 	</string>
 	<string id="renderer_r1">
 		<text>Статичное освещение</text>
@@ -97,7 +97,7 @@
 		<text>Бассейн</text>
 	</string>
 	<string id="testers_mp_railroad">
-		<text>Железнодорожная станция</text>
+		<text>Ж/Д станция</text>
 	</string>
 	<string id="testers_mp_rostok">
 		<text>Завод "Росток"</text>
@@ -106,13 +106,13 @@
 		<text>Брошенная фабрика</text>
 	</string>
 	<string id="ui_mm_60_hz">
-		<text>Частота 60гц</text>
+		<text>Частота 60Гц</text>
 	</string>
 	<string id="ui_mm_action">
-		<text>действие</text>
+		<text>Действие</text>
 	</string>
 	<string id="ui_mm_advanced">
-		<text>расширенные</text>
+		<text>Расширенные</text>
 	</string>
 	<string id="ui_mm_anisotropic">
 		<text>Фильтрация текстур</text>
@@ -154,7 +154,7 @@
 		<text>Отсоединиться</text>
 	</string>
 	<string id="ui_mm_disconnect_message">
-		<text>Действительно ли вы желаете отсоединится?</text>
+		<text>Действительно ли вы желаете отсоединиться?</text>
 	</string>
 	<string id="ui_mm_dyn_crosshair">
 		<text>Динамический прицел</text>
@@ -175,10 +175,10 @@
 		<text>Детализация объектов</text>
 	</string>
 	<string id="ui_mm_invert_mouse">
-		<text>Инвертировать Мышь</text>
+		<text>Инвертировать мышь</text>
 	</string>
 	<string id="ui_mm_key">
-		<text>кнопка</text>
+		<text>Кнопка</text>
 	</string>
 	<string id="ui_mm_keyboard_setup">
 		<text>Настройка клавиатуры</text>
@@ -219,14 +219,11 @@
 	<string id="ui_mm_newgame">
 		<text>Новая игра</text>
 	</string>
-	<string id="ui_mm_vsync">
-		<text>Верт. синхронизация</text>
-	</string>
 	<string id="ui_mm_novice">
 		<text>Новичок</text>
 	</string>
 	<string id="ui_mm_npc_torch">
-		<text>Cвет фонариков НПС</text>
+		<text>Свет фонариков НПС</text>
 	</string>
 	<string id="ui_mm_options">
 		<text>ОПЦИИ</text>
@@ -274,7 +271,7 @@
 		<text>Показывать оружие</text>
 	</string>
 	<string id="ui_mm_simply">
-		<text>базовые</text>
+		<text>Базовые</text>
 	</string>
 	<string id="ui_mm_sound">
 		<text>Звук</text>
@@ -289,7 +286,7 @@
 		<text>Качество теней</text>
 	</string>
 	<string id="ui_mm_supersample">
-		<text>Cглаживание</text>
+		<text>Сглаживание</text>
 	</string>
 	<string id="ui_mm_switch_torch">
 		<text>Использование фонариков AI</text>
@@ -308,6 +305,9 @@
 	</string>
 	<string id="ui_mm_vis_distance">
 		<text>Дальность видимости</text>
+	</string>
+	<string id="ui_mm_vsync">
+		<text>Верт. синхронизация</text>
 	</string>
 	<string id="ui_st_last_set">
 		<text>Посл. набор</text>

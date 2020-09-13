@@ -1,10 +1,10 @@
 #include "stdafx.h"
 
 #include "gamepersistent.h"
-#include "..\XR_3DA\fmesh.h"
-#include "..\XR_3DA\Console.h"
+#include "..\ENGINE\fmesh.h"
+#include "..\ENGINE\Console.h"
 #include "gamemtllib.h"
-#include "..\XR_3DA\skeletoncustom.h"
+#include "..\ENGINE\skeletoncustom.h"
 #include "profiler.h"
 #include "MainMenu.h"
 #include "ui/UICursor.h"//
@@ -17,7 +17,7 @@
 #include "stalker_animation_data_storage.h"
 #include "stalker_velocity_holder.h"
 
-#include "..\XR_3DA\CameraManager.h"
+#include "..\ENGINE\CameraManager.h"
 #include "actor.h"
 
 #ifndef MASTER_GOLD
@@ -480,7 +480,7 @@ void CGamePersistent::OnRenderPPUI_PP()
 	MainMenu()->OnRenderPPUI_PP();
 }
 #include "string_table.h"
-#include "..\XR_3DA\x_ray.h"
+#include "..\ENGINE\x_ray.h"
 void CGamePersistent::LoadTitle(LPCSTR str)
 {
 	string512			buff;

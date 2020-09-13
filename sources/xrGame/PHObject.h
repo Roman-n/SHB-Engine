@@ -1,6 +1,6 @@
 #pragma once
 
-#include "..\XR_3DA\ispatial.h"
+#include "..\ENGINE\ispatial.h"
 #include "PHItemList.h"
 #include "PHIsland.h"
 

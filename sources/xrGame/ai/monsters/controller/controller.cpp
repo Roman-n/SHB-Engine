@@ -7,7 +7,7 @@
 #include "../../../ActorEffector.h"
 #include "../ai_monster_effector.h"
 #include "../../../HUDManager.h"//
-#include "../../../..\XR_3DA\skeletonanimated.h"
+#include "../../../..\ENGINE\skeletonanimated.h"
 #include "../../../level.h"
 #include "../../../sound_player.h"
 #include "../../../ai_monster_space.h"

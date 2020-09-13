@@ -4,8 +4,8 @@
 ///////////////////////////////////////////////////////////////
 #include "stdafx.h"
 #include "ParticlesPlayer.h"
-#include "..\XR_3DA\xr_object.h"
-#include "..\XR_3DA\skeletoncustom.h"
+#include "..\ENGINE\xr_object.h"
+#include "..\ENGINE\skeletoncustom.h"
 //-------------------------------------------------------------------------------------
 static void generate_orthonormal_basis(const Fvector& dir,Fmatrix &result)
 {

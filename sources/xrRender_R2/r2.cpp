@@ -1,11 +1,12 @@
 #include "stdafx.h"
+
 #include "r2.h"
-#include "..\XR_3DA\fbasicvisual.h"
-#include "..\XR_3DA\xr_object.h"
-#include "..\XR_3DA\CustomHUD.h"
-#include "..\XR_3DA\igame_persistent.h"
-#include "..\XR_3DA\environment.h"
-#include "..\XR_3DA\SkeletonCustom.h"
+#include "..\ENGINE\fbasicvisual.h"
+#include "..\ENGINE\xr_object.h"
+#include "..\ENGINE\CustomHUD.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\environment.h"
+#include "..\ENGINE\SkeletonCustom.h"
 #include "..\xrRender\LightTrack.h"
 
 CRender										RImplementation;
@@ -423,7 +424,7 @@ CRender::~CRender()
 {
 }
 
-#include "..\XR_3DA\GameFont.h"
+#include "..\ENGINE\GameFont.h"
 void	CRender::Statistics	(CGameFont* _F)
 {
 	CGameFont&	F	= *_F;

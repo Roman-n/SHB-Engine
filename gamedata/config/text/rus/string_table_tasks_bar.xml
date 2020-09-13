@@ -1,8 +1,8 @@
 	<string id="bar_bring_hunter_rifle">
 		<text>Вернуть охотнику фамильное ружье</text>
 	</string>
-	<string id="bar_bring_pda_lucky">
-		<text>Принести ПДА лидера бармену</text>
+	<string id="bar_bring_PDA_lucky">
+		<text>Принести КПК лидера бармену</text>
 	</string>
 	<string id="bar_crazy_veterans_quest">
 		<text>Уничтожить безумных ветеранов</text>
@@ -17,7 +17,7 @@
 		<text>Найти начальника охраны Долга и отметиться у него</text>
 	</string>
 	<string id="bar_dolg_bring_rg6">
-		<text>Добыть РГ-6 для генерала Воронина</text>
+		<text>Добыть Бульдог-6 для генерала Воронина</text>
 	</string>
 	<string id="bar_dolg_community_quest">
 		<text>Вступление в группировку "Долг"</text>
@@ -32,10 +32,10 @@
 		<text>Доказать свою верность "Долгу"</text>
 	</string>
 	<string id="bar_dolg_find_cook">
-		<text>Втереться в доверие к повару Свободы и узнать, где хранится РГ-6</text>
+		<text>Втереться в доверие к повару Свободы и узнать, где хранится Бульдог 6</text>
 	</string>
 	<string id="bar_dolg_find_rg6">
-		<text>Проникнуть на территорию группировки Свободы, найти и выкрасть РГ-6</text>
+		<text>Проникнуть на территорию группировки Свободы, найти и выкрасть Бульдог-6</text>
 	</string>
 	<string id="bar_dolg_info_gain">
 		<text>Найти перехваченную информацию о лаборатории X18</text>
@@ -47,7 +47,7 @@
 		<text>Вернуть информацию о лаборатории X18 генералу Воронину</text>
 	</string>
 	<string id="bar_dolg_return_rg6">
-		<text>Принести РГ-6 генералу Воронину</text>
+		<text>Принести Бульдог-6 генералу Воронину</text>
 	</string>
 	<string id="bar_dolg_rg6_quest">
 		<text>Задание для вступления в Долг</text>
@@ -58,8 +58,8 @@
 	<string id="bar_dolg_svoboda_ambush_return">
 		<text>Отдать нашивки генералу Воронину</text>
 	</string>
-	<string id="bar_dolg_tiran_pda">
-		<text>Взять ПДА Тирана</text>
+	<string id="bar_dolg_tiran_PDA">
+		<text>Взять КПК Тирана</text>
 	</string>
 	<string id="bar_hunter_find_rifle">
 		<text>Найти фамильное ружье</text>
@@ -73,11 +73,14 @@
 	<string id="bar_kill_crazy_veterans">
 		<text>Убить лидера ветеранов</text>
 	</string>
-	<string id="bar_kill_crazy_veterans_pda">
-		<text>Взять ПДА их лидера</text>
+	<string id="bar_kill_crazy_veterans_PDA">
+		<text>Взять КПК их лидера</text>
 	</string>
 	<string id="bar_kill_veterans">
 		<text>Уничтожить лагерь сумасшедших ветеранов</text>
+	</string>
+	<string id="bar_radar_deactivate">
+		<text>Отключить Выжигатель Мозгов</text>
 	</string>
 	<string id="bar_resque_information">
 		<text>Встретиться с Кругловым</text>
@@ -100,14 +103,14 @@
 	<string id="bar_resque_scientific_information_get_2">
 		<text>Поговорить с профессором Кругловым</text>
 	</string>
+	<string id="bar_x16_documents">
+		<text>Найти документы в лаборатории X16</text>
+	</string>
 	<string id="bring_x16_documents">
 		<text>Принести документы бармену</text>
 	</string>
 	<string id="deactivate_radar_now">
 		<text>Отключить установку</text>
-	</string>
-	<string id="descr_deactivate_radar">
-		<text>Отключить Выжигатель Мозгов</text>
 	</string>
 	<string id="find_and_deactivate_radar">
 		<text>Найти вход в бункер управления</text>
@@ -119,13 +122,10 @@
 		<text>Исследования Круглова</text>
 	</string>
 	<string id="look_for_x16_lab">
-		<text>Найти документы x16</text>
+		<text>Найти документы Х-16</text>
 	</string>
 	<string id="wpn-winchester_m1">
-		<text>Боевой винчестер</text>
-	</string>
-	<string id="x16_documents">
-		<text>Найти документы в лаборатории X16</text>
+		<text>Боевой чейзер</text>
 	</string>
 	<string id="x16_yantar">
 		<text>Поговорить с учеными</text>

@@ -7,7 +7,7 @@
 #include "hit_immunity.h"
 #include "DamageManager.h"
 #include "DestroyablePhysicsObject.h"
-#include "..\XR_3DA\SkeletonCustom.h"
+#include "..\ENGINE\SkeletonCustom.h"
 #include "xrServer_Objects_ALife.h"
 #include "game_object_space.h"
 #include "script_callback_ex.h"

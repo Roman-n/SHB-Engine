@@ -13,7 +13,7 @@
 #include "PHMovementControl.h"
 #include "entity_alive.h"
 #include "CharacterPhysicsSupport.h"
-#include "..\XR_3DA\skeletoncustom.h"
+#include "..\ENGINE\skeletoncustom.h"
 
 CMaterialManager::CMaterialManager	(CObject *object, CPHMovementControl *movement_control)
 {

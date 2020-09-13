@@ -2,7 +2,7 @@
 
 #include "pp_effector_custom.h"
 #include "actor.h"
-#include "..\XR_3DA\CameraManager.h"
+#include "..\ENGINE\CameraManager.h"
 
 #define TRANSLATE_TYPE(val) EEffectorPPType(val ? u32(u64(typeid(this).name())) : u32(u64(this) & u32(-1)))
 

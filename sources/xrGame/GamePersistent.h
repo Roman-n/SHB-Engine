@@ -1,6 +1,7 @@
 #pragma once
 
-#include "..\XR_3DA\IGame_Persistent.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
+
 class CMainMenu;
 class CUICursor;
 class CParticlesObject;
@@ -66,8 +67,6 @@ public:
 	virtual void		OnRenderPPUI_main		();
 	virtual void		OnRenderPPUI_PP			();
 	virtual	void		LoadTitle				(LPCSTR str);
-
-//	virtual bool		CanBePaused				();
 };
 
 IC CGamePersistent&		GamePersistent()		{ return *((CGamePersistent*) g_pGamePersistent);			}

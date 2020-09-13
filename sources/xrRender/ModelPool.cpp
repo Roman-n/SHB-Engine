@@ -2,10 +2,10 @@
 
 #include "ModelPool.h"
 
-#include "..\XR_3DA\IGame_Persistent.h"
-#include "..\XR_3DA\fmesh.h"
-#include "..\XR_3DA\fhierrarhyvisual.h"
-#include "..\XR_3DA\SkeletonAnimated.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\fmesh.h"
+#include "..\ENGINE\fhierrarhyvisual.h"
+#include "..\ENGINE\SkeletonAnimated.h"
 #include "fvisual.h"
 #include "fprogressive.h"
 #include "fskinned.h"

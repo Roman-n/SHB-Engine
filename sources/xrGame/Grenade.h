@@ -1,7 +1,7 @@
 #pragma once
 #include "missile.h"
 #include "explosive.h"
-#include "..\XR_3DA\feel_touch.h"
+#include "..\ENGINE\feel_touch.h"
 
 #define SND_RIC_COUNT 5
 

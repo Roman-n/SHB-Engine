@@ -18,10 +18,10 @@
 #include "game_cl_base.h"
 #include "Actor.h"
 #include "string_table.h"
-#include "..\XR_3DA\skeletoncustom.h"
+#include "..\ENGINE\skeletoncustom.h"
 #include "ai_object_location.h"
 #include "object_broker.h"
-#include "..\XR_3DA\igame_persistent.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
 
 #ifdef DEBUG
 #	include "debug_renderer.h"

@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "..\XR_3DA\cl_intersect.h"
+#include "..\ENGINE\cl_intersect.h"
 #include "alife_space.h"
 #include "PHMovementControl.h"
 #include "entity.h"
@@ -15,7 +15,7 @@
 #include "Level.h"
 #include "ElevatorState.h"
 #include "CalculateTriangle.h"
-#include "..\XR_3DA\SkeletonCustom.h"
+#include "..\ENGINE\SkeletonCustom.h"
 
 #define GROUND_FRICTION	10.0f
 #define AIR_FRICTION	0.01f

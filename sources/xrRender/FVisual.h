@@ -3,7 +3,7 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "..\XR_3DA\fbasicvisual.h"
+#include "..\ENGINE\fbasicvisual.h"
 
 class	Fvisual					: public		IRender_Visual, public IRender_Mesh
 {

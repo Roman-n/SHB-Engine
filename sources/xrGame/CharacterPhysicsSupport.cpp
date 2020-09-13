@@ -7,7 +7,7 @@
 #include "PHMovementControl.h"
 #include "CustomMonster.h"
 #include "PhysicsShell.h"
-//#include "..\XR_3DA\skeletonanimated.h"
+//#include "..\ENGINE\skeletonanimated.h"
 #include "Actor.h"
 #include "CustomZone.h"
 #include "Extendedgeom.h"
@@ -26,7 +26,7 @@
 #	include "PHDebug.h"
 #endif // DEBUG
 
-#include "..\XR_3DA\device.h"
+#include "..\ENGINE\RenderDevice.h"
 
 void  NodynamicsCollide(bool& do_colide, bool bo1, dContact& c, SGameMtl* /*material_1*/, SGameMtl* /*material_2*/)
 {

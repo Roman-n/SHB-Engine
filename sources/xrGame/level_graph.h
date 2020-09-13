@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include "..\XR_3DA\xrLevel.h"
+#include "..\ENGINE\xrLevel.h"
 
 #include "alife_space.h"
 #include "level_graph_space.h"

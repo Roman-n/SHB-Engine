@@ -17,7 +17,7 @@
 #include "../../../squad_hierarchy_holder.h"
 #include "../../../group_hierarchy_holder.h"
 //#include "../../../phdestroyable.h"
-#include "../../../..\XR_3DA\skeletoncustom.h"
+#include "../../../..\ENGINE\skeletoncustom.h"
 #include "../../../detail_path_manager.h"
 #include "../../../HUDManager.h"//
 #include "../../../memory_manager.h"

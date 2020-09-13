@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "..\xrRender\light.h"
-#include "..\XR_3DA\cl_intersect.h"
+#include "..\ENGINE\cl_intersect.h"
 
 const	u32	delay_small_min			= 1;
 const	u32	delay_small_max			= 3;

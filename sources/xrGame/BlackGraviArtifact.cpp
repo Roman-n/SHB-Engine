@@ -14,7 +14,7 @@
 #include "xrmessages.h"
 #include "physicsshellholder.h"
 #include "explosive.h"
-#include "../../xrNetServer/net_utils.h"
+#include "../ENGINE/net_utils.h"
 #include "PHWorld.h"
 #include "CharacterPhysicsSupport.h"
 

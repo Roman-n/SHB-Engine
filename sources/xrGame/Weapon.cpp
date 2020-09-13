@@ -20,12 +20,12 @@
 
 #include "xr_level_controller.h"
 #include "game_cl_base.h"
-#include "..\XR_3DA\skeletoncustom.h"
+#include "..\ENGINE\skeletoncustom.h"
 #include "ai_object_location.h"
 #include "clsid_game.h"
 #include "MathUtils.h"
 #include "object_broker.h"
-#include "..\XR_3DA\igame_persistent.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
 
 #define WEAPON_REMOVE_TIME		60000
 #define ROTATION_TIME			0.25f

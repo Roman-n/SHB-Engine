@@ -1,8 +1,8 @@
 #include "stdafx.h"
 
 #include "HitMarker.h"//
-#include "..\XR_3DA\render.h"
-#include "..\XR_3DA\LightAnimLibrary.h"
+#include "..\ENGINE\render.h"
+#include "..\ENGINE\LightAnimLibrary.h"
 #include "ui/UIStaticItem.h"//
 
 static Fvector2			as_PC[5];

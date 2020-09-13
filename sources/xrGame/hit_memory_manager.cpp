@@ -21,7 +21,7 @@
 #include "profiler.h"
 #include "client_spawn_manager.h"
 #include "memory_manager.h"
-#include "..\XR_3DA\IGame_Persistent.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
 
 #ifndef MASTER_GOLD
 #	include "clsid_game.h"

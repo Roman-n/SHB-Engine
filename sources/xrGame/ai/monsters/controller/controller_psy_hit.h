@@ -1,6 +1,6 @@
 #pragma once
 #include "../control_combase.h"
-#include "../../../..\XR_3DA\SkeletonAnimated.h"
+#include "../../../..\ENGINE\SkeletonAnimated.h"
 
 class CControllerPsyHit : public CControl_ComCustom<> {
 	typedef CControl_ComCustom<> inherited;

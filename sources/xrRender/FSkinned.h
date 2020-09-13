@@ -5,7 +5,7 @@
 
 #include "FVisual.h"
 #include "FProgressive.h"
-#include "..\XR_3DA\SkeletonX.h"
+#include "..\ENGINE\SkeletonX.h"
 
 struct	SEnumVerticesCallback;
 class		CSkeletonX_ext	: public CSkeletonX	// shared code for SkeletonX derivates

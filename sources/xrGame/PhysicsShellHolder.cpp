@@ -4,7 +4,7 @@
 #include "PhysicsShell.h"
 #include "xrMessages.h"
 #include "IPhysicShellCreator.h"
-#include "..\XR_3DA\skeletoncustom.h"
+#include "..\ENGINE\skeletoncustom.h"
 #include "script_callback_ex.h"
 #include "Level.h"
 #include "PHCommander.h"

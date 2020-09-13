@@ -6,11 +6,11 @@
 #include "level.h"
 #include "ai_sounds.h"
 #include "clsid_game.h"
-#include "..\XR_3DA\skeletonanimated.h"
+#include "..\ENGINE\skeletonanimated.h"
 #include "script_callback_ex.h"
 #include "game_object_space.h"
 #include "script_game_object.h"
-#include "..\XR_3DA\LightAnimLibrary.h"
+#include "..\ENGINE\LightAnimLibrary.h"
 #include "HUDManager.h"//
 #include "PhysicsCommon.h"
 

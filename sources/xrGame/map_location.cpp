@@ -4,7 +4,7 @@
 #include "map_manager.h"
 
 #include "level.h"
-#include "..\XR_3DA\xr_object.h"
+#include "..\ENGINE\xr_object.h"
 #include "ai_space.h"
 #include "game_graph.h"
 #include "xrServer.h"

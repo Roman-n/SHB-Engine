@@ -1,7 +1,7 @@
 #pragma once
 
 #include "CameraEffector.h"
-#include "..\XR_3DA\cameramanager.h"
+#include "..\ENGINE\cameramanager.h"
 
 class CEffectorBobbing : public CEffectorCam
 {

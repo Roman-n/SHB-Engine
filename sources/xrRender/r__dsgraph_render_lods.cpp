@@ -1,8 +1,9 @@
 #include "stdafx.h"
+
 #include "flod.h"
 
-#include "..\XR_3DA\igame_persistent.h"
-#include "..\XR_3DA\environment.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\environment.h"
 
 extern float	r_ssaLOD_A;
 extern float	r_ssaLOD_B;

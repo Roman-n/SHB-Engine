@@ -5,9 +5,9 @@
 #include "stdafx.h"
 #include "LightShadows.h"
 #include "..\xrRender\LightTrack.h"
-#include "..\XR_3DA\xr_object.h"
-#include "..\XR_3DA\fbasicvisual.h"
-#include "..\XR_3DA\CustomHUD.h"
+#include "..\ENGINE\xr_object.h"
+#include "..\ENGINE\fbasicvisual.h"
+#include "..\ENGINE\CustomHUD.h"
  
 const	float		S_distance		= 48;
 const	float		S_distance2		= S_distance*S_distance;

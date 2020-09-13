@@ -1,6 +1,6 @@
 #pragma once
 
-#include "..\XR_3DA\SkeletonAnimated.h"
+#include "..\ENGINE\SkeletonAnimated.h"
 
 struct SAnimState
 {

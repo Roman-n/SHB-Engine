@@ -1,10 +1,10 @@
 #include "stdafx.h"
 
 #include "phantom.h"
-#include "../../../xrNetServer/net_utils.h"
+#include "../../../ENGINE/net_utils.h"
 #include "../../level.h"
 #include "../../xrServer_Objects_ALife_Monsters.h"
-#include "../../..\XR_3DA\motion.h"
+#include "../../..\ENGINE\motion.h"
 
 CPhantom::CPhantom()
 {

@@ -2,7 +2,7 @@
 #ifndef PropertiesListTypesH
 #define PropertiesListTypesH
 
-#include "..\XR_3DA\WaveForm.H"
+#include "..\ENGINE\WaveForm.H"
 
 //---------------------------------------------------------------------------
 enum EPropType{
@@ -39,7 +39,7 @@ class PropItem;
 DEFINE_VECTOR			(PropItem*,PropItemVec,PropItemIt);
 
 //------------------------------------------------------------------------------
-#include "..\..\xrCore\ChooseTypes.h"
+#include "..\..\Core\ChooseTypes.h"
 #include "fastdelegate.h"
 //------------------------------------------------------------------------------
 typedef fastdelegate::FastDelegate2<PropValue*, xr_string&> 	TOnDrawTextEvent; 

@@ -5,10 +5,10 @@
 #include "stdafx.h"
 #include "WallmarksEngine.h"
 
-#include "..\XR_3DA\xr_object.h"
-#include "..\XR_3DA\x_ray.h"
-#include "..\XR_3DA\GameFont.h"
-#include "..\XR_3DA\SkeletonCustom.h"
+#include "..\ENGINE\xr_object.h"
+#include "..\ENGINE\x_ray.h"
+#include "..\ENGINE\GameFont.h"
+#include "..\ENGINE\SkeletonCustom.h"
 
 u32 g_r = 1;
 

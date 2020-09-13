@@ -7,7 +7,7 @@
 #include "../../../CharacterPhysicsSupport.h"
 #include "../../../PHMovementControl.h"
 #include "../ai_monster_squad_manager.h"
-#include "../../../..\XR_3DA\skeletonanimated.h"
+#include "../../../..\ENGINE\skeletonanimated.h"
 #include "../../../detail_path_manager.h"
 #include "../../../level_graph.h"
 #include "../corpse_cover.h"

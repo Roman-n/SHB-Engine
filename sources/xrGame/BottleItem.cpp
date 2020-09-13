@@ -4,7 +4,7 @@
 
 #include "BottleItem.h"//==>
 #include "xrmessages.h"
-#include "../../xrNetServer/net_utils.h"
+#include "../ENGINE/net_utils.h"
 #include "entity_alive.h"
 #include "EntityCondition.h"
 

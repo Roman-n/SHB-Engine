@@ -8,7 +8,7 @@
 
 #include "stdafx.h"
 #include "script_particles.h"
-#include "..\XR_3DA\objectanimator.h"
+#include "..\ENGINE\objectanimator.h"
 
 CScriptParticlesCustom::CScriptParticlesCustom(CScriptParticles* owner, LPCSTR caParticlesName):CParticlesObject(caParticlesName,FALSE,true)
 {

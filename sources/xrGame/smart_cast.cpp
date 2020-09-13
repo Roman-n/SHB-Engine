@@ -10,7 +10,7 @@
 
 #ifndef PURE_DYNAMIC_CAST
 #	ifdef XRGAME_EXPORTS
-#		include "../XR_3DA\fbasicvisual.h"
+#		include "../ENGINE\fbasicvisual.h"
 #		include "alife_space.h"
 #		include "hit.h"
 #		include "actor.h"

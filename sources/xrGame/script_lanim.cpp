@@ -8,7 +8,7 @@
 #include "stdafx.h"
 
 #include "script_lanim.h"
-#include "..\XR_3DA\LightAnimLibrary.h"
+#include "..\ENGINE\LightAnimLibrary.h"
 
 using namespace luabind;
 

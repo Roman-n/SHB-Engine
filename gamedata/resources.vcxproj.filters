@@ -115,6 +115,36 @@
     <Filter Include="config\ui\map_spots">
       <UniqueIdentifier>{bc493cb1-c36c-4d3a-a3bc-948b123df5e7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ai">
+      <UniqueIdentifier>{9f007d14-6504-4d3e-8611-5eb4a78614d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ai\alife">
+      <UniqueIdentifier>{ac2f7d33-d641-439b-9871-b5e94d463477}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ai\common">
+      <UniqueIdentifier>{e2ebcd2c-f39d-4538-9ae6-8278934794a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="anims">
+      <UniqueIdentifier>{6b1ccadd-c1f4-4c69-8b40-0e892ec2add0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="anims\camera_effects">
+      <UniqueIdentifier>{24347c25-a2c7-41f4-999d-3a4f2801fb65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="anims\editor">
+      <UniqueIdentifier>{6269866c-2684-4a18-94c0-d0e964e36f1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="anims\helicopter">
+      <UniqueIdentifier>{c1159174-8cfd-40ba-8058-bd44ea2315be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="anims\path">
+      <UniqueIdentifier>{b7999126-56da-4740-be70-0df51be756ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="spawns">
+      <UniqueIdentifier>{665b1012-80fc-4336-8265-dd909110bfeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="spawns\unpack">
+      <UniqueIdentifier>{62f843be-df0f-4d20-8f36-dc8a82b38356}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="config\creatures\actor.ltx">
@@ -2774,6 +2804,624 @@
     </None>
     <None Include="scripts\zone_spawner.script">
       <Filter>scripts</Filter>
+    </None>
+    <None Include="ai\alife\anomalydetectprobability.efd">
+      <Filter>ai\alife</Filter>
+    </None>
+    <None Include="ai\alife\anomalyinteractprobability.efd">
+      <Filter>ai\alife</Filter>
+    </None>
+    <None Include="ai\alife\anomalyretreatprobability.efd">
+      <Filter>ai\alife</Filter>
+    </None>
+    <None Include="ai\alife\birthpercentage.efd">
+      <Filter>ai\alife</Filter>
+    </None>
+    <None Include="ai\alife\birthprobability.efd">
+      <Filter>ai\alife</Filter>
+    </None>
+    <None Include="ai\alife\birthspeed.efd">
+      <Filter>ai\alife</Filter>
+    </None>
+    <None Include="ai\alife\enemydetectability.efd">
+      <Filter>ai\alife</Filter>
+    </None>
+    <None Include="ai\alife\enemydetectprobability.efd">
+      <Filter>ai\alife</Filter>
+    </None>
+    <None Include="ai\alife\enemyretreatprobability.efd">
+      <Filter>ai\alife</Filter>
+    </None>
+    <None Include="ai\alife\terraintype.efd">
+      <Filter>ai\alife</Filter>
+    </None>
+    <None Include="ai\alife\weaponattacktimes.efd">
+      <Filter>ai\alife</Filter>
+    </None>
+    <None Include="ai\alife\weaponsuccessprobability.efd">
+      <Filter>ai\alife</Filter>
+    </None>
+    <None Include="ai\common\accweaponeffectiveness.efd">
+      <Filter>ai\common</Filter>
+    </None>
+    <None Include="ai\common\creatureeffectiveness.efd">
+      <Filter>ai\common</Filter>
+    </None>
+    <None Include="ai\common\entitycost.efd">
+      <Filter>ai\common</Filter>
+    </None>
+    <None Include="ai\common\equipmentvalue.efd">
+      <Filter>ai\common</Filter>
+    </None>
+    <None Include="ai\common\expediency.efd">
+      <Filter>ai\common</Filter>
+    </None>
+    <None Include="ai\common\fincreatureeffectiveness.efd">
+      <Filter>ai\common</Filter>
+    </None>
+    <None Include="ai\common\intcreatureeffectiveness.efd">
+      <Filter>ai\common</Filter>
+    </None>
+    <None Include="ai\common\mainweaponvalue.efd">
+      <Filter>ai\common</Filter>
+    </None>
+    <None Include="ai\common\smallweaponvalue.efd">
+      <Filter>ai\common</Filter>
+    </None>
+    <None Include="ai\common\surgedeathprobability.efd">
+      <Filter>ai\common</Filter>
+    </None>
+    <None Include="ai\common\victoryprobability.efd">
+      <Filter>ai\common</Filter>
+    </None>
+    <None Include="ai\common\weaponeffectiveness.efd">
+      <Filter>ai\common</Filter>
+    </None>
+    <None Include="anims\camera_effects\agroprom_demo.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\agroprom_demo_nah.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\agroprom_demo_nah1.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\agroprom_doctor_cam.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\arena.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\bar_fly.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\cut_scene1.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\dis_consciousness.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\dream.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\drunk.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\earthquake.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\fatigue.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\fusker.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\head_shot.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\hit_back.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\hit_back_left.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\hit_back_right.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\hit_front.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\hit_front_left.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\hit_front_right.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\hit_left.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\hit_right.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\oso_cam.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\pl_test.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\pri_fly_to_aes.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\prison_0.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\prison_1.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\radar_stop.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\rostok_camera.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\camera_effects\shell_shock.anm">
+      <Filter>anims\camera_effects</Filter>
+    </None>
+    <None Include="anims\editor\8_negative.anm">
+      <Filter>anims\editor</Filter>
+    </None>
+    <None Include="anims\editor\8_positive.anm">
+      <Filter>anims\editor</Filter>
+    </None>
+    <None Include="anims\editor\eight.anm">
+      <Filter>anims\editor</Filter>
+    </None>
+    <None Include="anims\helicopter\aaa.anm">
+      <Filter>anims\helicopter</Filter>
+    </None>
+    <None Include="anims\helicopter\bbb.anm">
+      <Filter>anims\helicopter</Filter>
+    </None>
+    <None Include="anims\helicopter\vert_path.anm">
+      <Filter>anims\helicopter</Filter>
+    </None>
+    <None Include="anims\path\agroprom_zharka.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\atp_zharka.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\bar_rostok_jarka.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\boloto_zharka_1.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\dandy_phys.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\darkvalley_torrid_path.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\deadcity_zharka.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\garbage_zharka.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\generators_torrid_path.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\generators_torrid_path_2.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\generators_torrid_path_3.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\generators_torrid_path_4.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\lestat_military1.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\lestat_test.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\military_fireball1.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\military_torrid1.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\mp_workshop_fireball.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\mp_workshop_fireball1.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\path.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\path_111.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\path_jip_test.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\pripyat_zharka1.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\rostok_jarka_krondor.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\rostok_jarka_krondor_2.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\rostok_jarka_krondor_3.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\ssss.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\ssss1.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\test.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\torid_stancia_vxod1.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\torrid_anims.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\yantar_torrid_path.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\path\zone_path.anm">
+      <Filter>anims\path</Filter>
+    </None>
+    <None Include="anims\agr_u_fade.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\agroprom_demo.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\alcohol.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\arena.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\blink.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\controller_hit.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\dead_zone.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\deadcity_wake.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\deadcity_wake_old.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\duality_circle.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\dx9_w.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\dx9_wn.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\effector_test.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\escape.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\fire_hit.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\garbage1.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\l2.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\labx18_1floor_1.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\labx18_1floor_2.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\labx18_1floor_3.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\labx18_1floor_4.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\labx18_1floor_5.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\labx18_1floor_6.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\labx18_1floor_6_2.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\labx18_1floor_6_3.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\labx18_1floor_6_4.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\labx18_poltr_1.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\labx18_poltr_2.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\labx18_poltr_3.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\mil_zharka.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\monolith_off.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\nightvision.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\nightvision_bad.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\nightvision_good.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\nightvision2.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\p_proba.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\particle_test.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\pl_test_doc.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\proba.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\proba_gray.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\proba_test.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\proba2.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\psy_antenna.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\psy_antenna_indoor.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\punch_effector.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\radar_psi.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\radar_stop.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\radar_wake.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\radiation.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\snd_shock.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\teleport.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\test.anm">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\total_recall.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\vibros.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\vibros_p.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="anims\yantar_underground_psi.ppe">
+      <Filter>anims</Filter>
+    </None>
+    <None Include="spawns\all.spawn">
+      <Filter>spawns</Filter>
+    </None>
+    <None Include="spawns\unpack\af_spawn_places.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l01_escape.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l02_garbage.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l03_agroprom.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l03u_agr_underground.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l04_darkvalley.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l04u_labx18.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l05_bar.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l06_rostok.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l07_military.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l08_yantar.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l08u_brainlab.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l10_radar.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l10u_bunker.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l11_pripyat.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l12_stancia.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l12_stancia_2.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l12u_control_monolith.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\alife_l12u_sarcofag.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\all.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l01_escape.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l02_garbage.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l03_agroprom.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l03u_agr_underground.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l04_darkvalley.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l04u_labx18.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l05_bar.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l06_rostok.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l07_military.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l08_yantar.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l08u_brainlab.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l10_radar.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l10u_bunker.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l11_pripyat.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l12_stancia.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l12_stancia_2.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l12u_control_monolith.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\l12u_sarcofag.sections">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way__level_unknown.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l01_escape.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l02_garbage.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l03_agroprom.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l03u_agr_underground.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l04_darkvalley.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l04u_labx18.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l05_bar.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l06_rostok.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l07_military.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l08_yantar.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l08u_brainlab.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l10_radar.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l10u_bunker.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l11_pripyat.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l12_stancia.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l12_stancia_2.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l12u_control_monolith.ltx">
+      <Filter>spawns\unpack</Filter>
+    </None>
+    <None Include="spawns\unpack\way_l12u_sarcofag.ltx">
+      <Filter>spawns\unpack</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -11,7 +11,7 @@
 #include "level.h"
 #include "xrmessages.h"
 #include "game_cl_base.h"
-#include "..\XR_3DA\skeletoncustom.h"
+#include "..\ENGINE\skeletoncustom.h"
 #include "PHWorld.h"
 
 extern CPHWorld* ph_world;

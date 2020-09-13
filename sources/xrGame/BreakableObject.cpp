@@ -5,10 +5,10 @@
 #include "PHStaticGeomShell.h"
 #include "PhysicsShell.h"
 #include "Physics.h"
-#include "..\XR_3DA\xr_collide_form.h"
-#include "../xrNetServer/net_utils.h"
+#include "..\ENGINE\xr_collide_form.h"
+#include "../ENGINE/net_utils.h"
 #include "clsid_game.h"
-#include "..\XR_3DA\skeletoncustom.h"
+#include "..\ENGINE\skeletoncustom.h"
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction

@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "../../xrNetServer/net_server.h"
+#include "../../ENGINE/net_server.h"
 #include "game_sv_base.h"
 #include "id_generator.h"
 

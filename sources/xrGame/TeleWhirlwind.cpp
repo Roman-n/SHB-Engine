@@ -7,7 +7,7 @@
 #include "hit.h"
 #include "phdestroyable.h"
 #include "xrmessages.h"
-#include "..\XR_3DA\SkeletonCustom.h"
+#include "..\ENGINE\SkeletonCustom.h"
 #include "PHWorld.h"
 
 CTeleWhirlwind ::CTeleWhirlwind () 

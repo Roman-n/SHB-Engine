@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 
-#pragma comment(lib,"xr_3DA")
+#pragma comment(lib,"ENGINE.lib")
 
 BOOL APIENTRY DllMain( HANDLE hModule, 
                        DWORD  ul_reason_for_call, 

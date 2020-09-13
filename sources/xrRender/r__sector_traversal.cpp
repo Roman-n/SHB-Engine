@@ -1,7 +1,8 @@
 #include "stdafx.h"
-#include "..\XR_3DA\igame_persistent.h"
-#include "..\XR_3DA\environment.h"
-#include "..\XR_3DA\fvf.h"
+
+#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\environment.h"
+#include "..\ENGINE\fvf.h"
 
 CPortalTraverser	PortalTraverser;
 

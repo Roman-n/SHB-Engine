@@ -9,11 +9,11 @@
 
 #include "base_client_classes.h"
 #include "base_client_classes_wrappers.h"
-#include "..\XR_3DA\feel_sound.h"
-#include "..\XR_3DA\fbasicvisual.h"
-#include "..\XR_3DA\skeletonanimated.h"
+#include "..\ENGINE\feel_sound.h"
+#include "..\ENGINE\fbasicvisual.h"
+#include "..\ENGINE\skeletonanimated.h"
 #include "ai/stalker/ai_stalker.h"
-#include "..\xrNetServer/net_utils.h"
+#include "..\ENGINE/net_utils.h"
 
 using namespace luabind;
 

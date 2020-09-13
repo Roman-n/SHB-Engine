@@ -26,6 +26,8 @@
 #include "sound_collection_storage.h"
 #include "relation_registry.h"
 
+#include "..\ENGINE\IGame_Persistent.h"//==>
+
 typedef xr_vector<std::pair<shared_str,int> >	STORY_PAIRS;
 extern STORY_PAIRS								story_ids;
 extern STORY_PAIRS								spawn_story_ids;
@@ -41,7 +43,6 @@ extern void dump_list_xmls							();
 extern void CreateUIGeom							();
 extern void DestroyUIGeom							();
 
-#include "..\XR_3DA\IGame_Persistent.h"
 void init_game_globals()
 {
 	CreateUIGeom									();

@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
-#include "..\XR_3DA\skeletonX.h"
-#include "..\XR_3DA\skeletoncustom.h"
+#include "..\ENGINE\skeletonX.h"
+#include "..\ENGINE\skeletoncustom.h"
 
 void __stdcall xrSkin1W_x86(	vertRender*		D,
 								vertBoned1W*	S,

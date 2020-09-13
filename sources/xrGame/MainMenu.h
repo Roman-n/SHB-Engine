@@ -5,8 +5,8 @@ class CUIDialogWnd;
 class CUICursor;
 class CUIMessageBoxEx;
 
-#include "..\XR_3DA\IInputReceiver.h"
-#include "..\XR_3DA\IGame_Persistent.h"
+#include "..\ENGINE\IInputReceiver.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
 #include "ui/UIDialogHolder.h"//
 #include "ui/UIWndCallback.h"//
 #include "ui/ui_base.h"//

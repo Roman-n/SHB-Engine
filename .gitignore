@@ -1,11 +1,7 @@
 ﻿/.vs
 /sources/.vs/SHB-Engine/v16
-/gamedata/ai
-/gamedata/anims
 /gamedata/levels
-/gamedata/meshes
 /gamedata/sounds
-/gamedata/spawns
 /gamedata/textures
 /Debug-Win32/binaries
 /Debug-Win32/intermediate
@@ -13,5 +9,3 @@
 /Release-Win32/binaries
 /Release-Win32/intermediate
 /Release-Win32/libraries
-/Release-Win32/app_data/logs
-/Release-Win32/app_data/savedgames

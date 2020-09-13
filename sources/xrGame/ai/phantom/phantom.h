@@ -2,7 +2,7 @@
 
 #include "../../entity.h"
 #include "../../fastdelegate.h"
-#include "../../..\XR_3DA\SkeletonAnimated.h"
+#include "../../..\ENGINE\SkeletonAnimated.h"
 
 class CParticlesObject;
 

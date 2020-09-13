@@ -4,7 +4,7 @@
 
 #include "stdafx.h"
 #include "LightProjector.h"
-#include "..\XR_3DA\xr_object.h"
+#include "..\ENGINE\xr_object.h"
 #include "..\xrRender\lighttrack.h"
 
 // tir2.xrdemo		-> 45.2
@@ -117,7 +117,7 @@ void CLightProjector::OnAppActivate()
 }
 
 //
-#include "..\XR_3DA\SkeletonCustom.h"
+#include "..\ENGINE\SkeletonCustom.h"
 void CLightProjector::calculate	()
 {
 	if (receivers.empty())		return;

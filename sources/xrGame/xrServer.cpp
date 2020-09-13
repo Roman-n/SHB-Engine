@@ -9,9 +9,9 @@
 #include "level.h"
 #include "game_cl_base.h"
 #include "ai_space.h"
-#include "..\XR_3DA\IGame_Persistent.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
 
-#include "..\XR_3DA\Console.h"
+#include "..\ENGINE\Console.h"
 #include "ui/UIInventoryUtilities.h"//
 
 xrClientData::xrClientData	():IClient(Device.GetTimerGlobal())

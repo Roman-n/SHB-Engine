@@ -1,9 +1,9 @@
 #include "stdafx.h"
 
-#include "..\XR_3DA\fhierrarhyvisual.h"
-#include "..\XR_3DA\SkeletonCustom.h"
-#include "..\XR_3DA\fmesh.h"
-#include "..\XR_3DA\irenderable.h"
+#include "..\ENGINE\fhierrarhyvisual.h"
+#include "..\ENGINE\SkeletonCustom.h"
+#include "..\ENGINE\fmesh.h"
+#include "..\ENGINE\irenderable.h"
 
 #include "flod.h"
 #include "particlegroup.h"

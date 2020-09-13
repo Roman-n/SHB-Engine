@@ -1,7 +1,7 @@
 #pragma once
 
-#include "..\XR_3DA\effectorPP.h"
-#include "..\XR_3DA\cameramanager.h"
+#include "..\ENGINE\effectorPP.h"
+#include "..\ENGINE\cameramanager.h"
 
 //////////////////////////////////////////////////////////////////////////
 

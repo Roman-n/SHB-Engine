@@ -7,7 +7,7 @@
 #pragma once
 
 #include "alife_space.h"
-#include "..\XR_3DA\render.h"
+#include "..\ENGINE\render.h"
 
 class CCartridge;
 class CParticlesObject;

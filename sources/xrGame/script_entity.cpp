@@ -9,8 +9,8 @@
 
 #include "script_entity.h"
 #include "CustomMonster.h"
-#include "..\XR_3DA\feel_vision.h"
-#include "..\XR_3DA\skeletonanimated.h"
+#include "..\ENGINE\feel_vision.h"
+#include "..\ENGINE\skeletonanimated.h"
 #include "script_entity_action.h"
 #include "weapon.h"
 #include "ParticlesObject.h"

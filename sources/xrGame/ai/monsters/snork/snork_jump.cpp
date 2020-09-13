@@ -2,7 +2,7 @@
 #include "snork.h"
 #include "snork_jump.h"
 //#include "../jump_ability.h"
-#include "../../../..\XR_3DA\skeletonanimated.h"
+#include "../../../..\ENGINE\skeletonanimated.h"
 #include "../../../level.h"
 
 //CSnorkJump::CSnorkJump(CSnork *monster)

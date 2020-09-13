@@ -9,7 +9,7 @@
 #include "wound.h"
 #include "xrmessages.h"
 #include "level.h"
-#include "..\XR_3DA\skeletoncustom.h"
+#include "..\ENGINE\skeletoncustom.h"
 #include "relation_registry.h"
 #include "monster_community.h"
 #include "entitycondition.h"

@@ -16,12 +16,13 @@
 #include "team_hierarchy_holder.h"
 #include "squad_hierarchy_holder.h"
 #include "group_hierarchy_holder.h"
-#include "..\XR_3DA\CameraManager.h"
+#include "..\ENGINE\CameraManager.h"
 #include "Inventory.h"
 #include "HudItem.h"
 #include "clsid_game.h"
 #include "string_table.h"
 #include "map_manager.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
@@ -342,7 +343,7 @@ BOOL			CSpectator::net_Spawn				( CSE_Abstract*	DC )
 	return TRUE;
 };
 
-#include "..\XR_3DA\IGame_Persistent.h"
+
 void			CSpectator::net_Destroy	()
 {
 	inherited::net_Destroy	();

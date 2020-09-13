@@ -11,7 +11,7 @@
 #include "ai_sounds.h"
 #include "level.h"
 #include "xr_level_controller.h"
-#include "..\XR_3DA\skeletoncustom.h"
+#include "..\ENGINE\skeletoncustom.h"
 #include "game_object_space.h"
 
 //----------------------------------------------------------------------------------------

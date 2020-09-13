@@ -4,10 +4,10 @@
 #include "xrserver.h"
 #include "game_cl_base.h"
 #include "xrmessages.h"
-#include "..\XR_3DA\x_ray.h"
-#include "..\XR_3DA\device.h"
-#include "..\XR_3DA\IGame_Persistent.h"
-#include "..\XR_3DA\Console.h"
+#include "..\ENGINE\x_ray.h"
+#include "..\ENGINE\RenderDevice.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\Console.h"
 #include "MainMenu.h"
 #include "HUDManager.h"//
 

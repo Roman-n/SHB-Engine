@@ -9,12 +9,12 @@
 #include "HUDManager.h"//
 #include "GameMtlLib.h"
 
-#include "..\XR_3DA\Environment.h"
-#include "..\XR_3DA\CustomHUD.h"
+#include "..\ENGINE\Environment.h"
+#include "..\ENGINE\CustomHUD.h"
 #include "Entity.h"
 #include "level.h"
 #include "game_cl_base.h"
-#include "..\XR_3DA\igame_persistent.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
 
 #include "InventoryOwner.h"
 #include "relation_registry.h"

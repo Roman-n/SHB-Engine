@@ -10,8 +10,8 @@
 #include "physic_item.h"
 #include "PhysicsShell.h"
 #include "xrserver_objects.h"
-#include "..\XR_3DA\fbasicvisual.h"
-#include "..\XR_3DA\SkeletonCustom.h"
+#include "..\ENGINE\fbasicvisual.h"
+#include "..\ENGINE\SkeletonCustom.h"
 #define CHOOSE_MAX(x,inst_x,y,inst_y,z,inst_z)\
 	if(x>y)\
 	if(x>z){inst_x;}\

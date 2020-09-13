@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "actor.h"
-#include "..\XR_3DA\CameraBase.h"
+#include "..\ENGINE\CameraBase.h"
 
 #include "ActorEffector.h"
 #include "holder_custom.h"
@@ -14,7 +14,7 @@
 #include "hit.h"
 //#include "PHDestroyable.h"
 #include "Car.h"
-#include "..\XR_3DA\skeletonanimated.h"
+#include "..\ENGINE\skeletonanimated.h"
 #include "PHShellSplitter.h"
 
 #include "actor_anim_defs.h"

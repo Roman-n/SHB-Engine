@@ -9,7 +9,7 @@
 #include "PHSplitedShell.h"
 #include "gameobject.h"
 #include "physicsshellholder.h"
-#include "..\XR_3DA\skeletoncustom.h"
+#include "..\ENGINE\skeletoncustom.h"
 
 extern CPHWorld* ph_world;
 

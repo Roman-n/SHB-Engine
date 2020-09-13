@@ -3,12 +3,13 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include "..\XR_3DA\igame_persistent.h"
-#include "..\XR_3DA\environment.h"
-#include "..\XR_3DA\x_ray.h"
-#include "..\XR_3DA\GameFont.h"
+
+#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\environment.h"
+#include "..\ENGINE\x_ray.h"
+#include "..\ENGINE\GameFont.h"
 #include "GlowManager.h"
-#include "..\XR_3DA\xr_object.h"
+#include "..\ENGINE\xr_object.h"
 
 #define FADE_SCALE_UP		4096.f
 #define FADE_SCALE_DOWN		1024.f

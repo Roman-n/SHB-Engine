@@ -1,11 +1,11 @@
 #include "stdafx.h"
-#include "..\XR_3DA\resourcemanager.h"
+#include "..\ENGINE\resourcemanager.h"
 #include "HUDManager.h"//
 #include "PHdynamicdata.h"
 #include "Physics.h"
 #include "level.h"
-#include "..\XR_3DA\x_ray.h"
-#include "..\XR_3DA\igame_persistent.h"
+#include "..\ENGINE\x_ray.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
 #include "PhysicsGamePars.h"
 #include "ai_space.h"
 

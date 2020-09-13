@@ -9,7 +9,7 @@
 
 #ifdef DEBUG
 #include "level_graph.h"
-#include "..\XR_3DA\customhud.h"
+#include "..\ENGINE\customhud.h"
 #include "ai_space.h"
 #include "HUDManager.h"//
 #include "game_graph.h"

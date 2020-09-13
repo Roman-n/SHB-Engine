@@ -28,7 +28,7 @@
 #include "game_cl_base_weapon_usage_statistic.h"
 
 // breakpoints
-#include "..\XR_3DA\xr_input.h"
+#include "..\ENGINE\xr_input.h"
 
 //
 #include "Actor.h"
@@ -47,10 +47,10 @@
 #include "xrmessages.h"
 #include "string_table.h"
 #include "usablescriptobject.h"
-#include "..\XR_3DA\cl_intersect.h"
+#include "..\ENGINE\cl_intersect.h"
 #include "ExtendedGeom.h"
 #include "alife_registry_wrappers.h"
-#include "..\XR_3DA\skeletonanimated.h"
+#include "..\ENGINE\skeletonanimated.h"
 #include "Artefact.h"
 #include "CharacterPhysicsSupport.h"
 #include "material_manager.h"

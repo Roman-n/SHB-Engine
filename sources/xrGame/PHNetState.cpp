@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "PHNetState.h"
-#include "../../xrNetServer/net_utils.h"
+#include "../ENGINE/net_utils.h"
 
 //////////////////////////////////////8/////////////////////////////////////////////////////
 

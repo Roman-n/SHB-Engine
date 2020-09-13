@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
 	<string id="kb_active_jobs">
-		<text>Активные задачи в ПДА</text>
+		<text>Активные задачи в КПК</text>
 	</string>
 	<string id="kb_always_run">
-		<text>Всегда бежать</text>
+		<text>Шаг</text>
 	</string>
 	<string id="kb_artefact">
 		<text>Артефакт</text>
@@ -28,7 +28,7 @@
 		<text>Консоль</text>
 	</string>
 	<string id="kb_contacts">
-		<text>Контакты в ПДА</text>
+		<text>Контакты в КПК</text>
 	</string>
 	<string id="kb_crouch">
 		<text>Присесть</text>
@@ -70,7 +70,7 @@
 		<text>Движение</text>
 	</string>
 	<string id="kb_grp_multiplayer">
-		<text>Мультиплеер</text>
+		<text>Сетевая игра</text>
 	</string>
 	<string id="kb_grp_weapons">
 		<text>Оружие</text>
@@ -91,7 +91,7 @@
 		<text>Шаг влево</text>
 	</string>
 	<string id="kb_map">
-		<text>Карта в ПДА</text>
+		<text>Карта в КПК</text>
 	</string>
 	<string id="kb_next_slot">
 		<text>Оружие из следующего слота</text>
@@ -103,7 +103,7 @@
 		<text>Пауза</text>
 	</string>
 	<string id="kb_pda">
-		<text>ПДА</text>
+		<text>КПК</text>
 	</string>
 	<string id="kb_prev_slot">
 		<text>Оружие из предыдущего слота</text>
@@ -136,7 +136,7 @@
 		<text>Меню выбора модели</text>
 	</string>
 	<string id="kb_sprint">
-		<text>Спринт</text>
+		<text>Бег</text>
 	</string>
 	<string id="kb_team_menu">
 		<text>Меню выбора команды</text>
@@ -196,7 +196,7 @@
 		<text>Предыдущее оружие этого типа</text>
 	</string>
 	<string id="kb_zoom">
-		<text>Увеличить</text>
+		<text>Приблизить</text>
 	</string>
 	<string id="speech_menu_group">
 		<text>Голосовые сообщения (1)</text>

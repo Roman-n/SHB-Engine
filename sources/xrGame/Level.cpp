@@ -2,10 +2,10 @@
 
 #include <functional>// раньше небыло
 
-#include "..\XR_3DA\fdemorecord.h"
-#include "..\XR_3DA\fdemoplay.h"
-#include "..\XR_3DA\environment.h"
-#include "..\XR_3DA\igame_persistent.h"
+#include "..\ENGINE\fdemorecord.h"
+#include "..\ENGINE\fdemoplay.h"
+#include "..\ENGINE\environment.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
 #include "ParticlesObject.h"
 #include "Level.h"
 #include "xrServer.h"
@@ -37,14 +37,14 @@
 #include "mt_config.h"
 #include "PHCommander.h"
 #include "map_manager.h"
-#include "..\XR_3DA\CameraManager.h"
+#include "..\ENGINE\CameraManager.h"
 #include "level_sounds.h"
 #include "car.h"
 #include "trade_parameters.h"
 #include "game_cl_base_weapon_usage_statistic.h"
 #include "clsid_game.h"
 #include "MainMenu.h"
-#include "..\XR_3DA\Console.h"
+#include "..\ENGINE\Console.h"
 
 #ifdef DEBUG
 #	include "level_debug.h"
@@ -873,8 +873,6 @@ u32	GameID()
 {
 	return Game().Type();
 }
-
-#include "..\XR_3DA\IGame_Persistent.h"
 
 GlobalFeelTouch::GlobalFeelTouch()
 {

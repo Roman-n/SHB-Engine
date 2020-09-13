@@ -1,6 +1,7 @@
 #include "stdafx.h"
+
 #include "fstaticrender_rendertarget.h"
-#include "..\XR_3DA\IGame_Persistent.h"
+#include "..\ENGINE\IGame_Persistent.h"//==>
 
 
 static const char* RTname			= "$user$rendertarget";

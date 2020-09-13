@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "animation_movement_controller.h"
-#include "..\XR_3DA\SkeletonAnimated.h" 
+#include "..\ENGINE\SkeletonAnimated.h" 
 #include "game_object_space.h"
 
 animation_movement_controller::animation_movement_controller( Fmatrix *_pObjXForm, CKinematics* _pKinematicsC, CBlend* b ):

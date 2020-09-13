@@ -2,7 +2,7 @@
 		<text>Арена.</text>
 	</string>
 	<string id="bar_bar_locator">
-		<text>Бар "100 рентген".</text>
+		<text>Бар "100 Рентген".</text>
 	</string>
 	<string id="bar_dolg_locator">
 		<text>База группировки "Долг".</text>
@@ -11,7 +11,7 @@
 		<text>Волкодав с головорезами возле вертолета</text>
 	</string>
 	<string id="rostok_kruglov">
-		<text>Профессор Круглов.</text>
+		<text>Круглов</text>
 	</string>
 	<string id="rostok_tainyi_hod">
 		<text>Засада возле завода</text>
