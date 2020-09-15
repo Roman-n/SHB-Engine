@@ -758,7 +758,7 @@ void CApplication::LoadDraw		()
 	Device.End					();
 }
 
-void CApplication::LoadTitleInt(LPCSTR str)
+void CApplication::LoadTitleInt(const char* str)
 {
 	load_stage++;
 
@@ -830,15 +830,15 @@ void CApplication::Level_Scan()
 #endif
 }
 
-void CApplication::Level_Set(u32 L)
+void CApplication::Level_Set(u32 ID)
 {
-	if (L>=Levels.size())	return;
-	Level_Current = L;
-	FS.get_path	("$level$")->_set	(Levels[L].folder);
+	if (ID >=Levels.size())	return;
+	Level_Current = ID;
+	FS.get_path	("$level$")->_set	(Levels[ID].folder);
 
 	string_path					temp;
 	string_path					temp2;
-	strconcat					(sizeof(temp),temp,"intro\\intro_",Levels[L].folder);
+	strconcat					(sizeof(temp),temp,"intro\\intro_",Levels[ID].folder);
 	temp[xr_strlen(temp)-1] = 0;
 	if (FS.exist(temp2, "$game_textures$", temp, ".dds"))
 		hLevelLogo.create	("font", temp);
@@ -846,14 +846,18 @@ void CApplication::Level_Set(u32 L)
 		hLevelLogo.create	("font", "intro\\intro_no_start_picture");
 }
 
-int CApplication::Level_ID(LPCSTR name)
+int CApplication::Level_ID(const char* name)
 {
-	char buffer	[256];
-	strconcat	(sizeof(buffer),buffer,name,"\\");
-	for (u32 I=0; I<Levels.size(); I++)
+	char buffer[256];
+	strconcat(sizeof(buffer), buffer, name, "\\");
+	for (u32 I = 0; I < Levels.size( ); I++)
 	{
-		if (0==stricmp(buffer,Levels[I].folder))	return int(I);
+		if (0 == stricmp(buffer, Levels[I].folder))
+		{
+			return int(I);
+		}
 	}
+
 	return -1;
 }
 

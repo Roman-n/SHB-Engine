@@ -30,7 +30,7 @@ void CUIMessagesWindow::Init(float x, float y, float width, float height){
 
 	CUIXml		 xml;
 
-	xml.Init(CONFIG_PATH, UI_PATH, "messages_window.xml");
+	xml.Init("$game_config$", "ui", "messages_window.xml");
 
 	m_pGameLog = xr_new<CUIGameLog>();m_pGameLog->SetAutoDelete(true);
 	m_pGameLog->Show(true);

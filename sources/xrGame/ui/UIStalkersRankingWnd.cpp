@@ -30,7 +30,7 @@ TOP_LIST						g_all_statistic_humans;
 void CUIStalkersRankingWnd::Init()
 {
 	CUIXml								uiXml;
-	uiXml.Init							(CONFIG_PATH, UI_PATH,STALKERS_RANKING_XML);
+	uiXml.Init							("$game_config$", "ui",STALKERS_RANKING_XML);
 
 	CUIXmlInit							xml_init;
 
@@ -106,7 +106,7 @@ int get_actor_ranking()
 void CUIStalkersRankingWnd::FillList()
 {
 	CUIXml									uiXml;
-	uiXml.Init								(CONFIG_PATH, UI_PATH,STALKERS_RANKING_XML);
+	uiXml.Init								("$game_config$", "ui",STALKERS_RANKING_XML);
 
 	UIList->Clear							();
 

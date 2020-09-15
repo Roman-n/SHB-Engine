@@ -30,7 +30,7 @@ void CUIActorInfoWnd::Init()
 {
 	CUIXml									uiXml;
 	CUIXmlInit								xml_init;
-	uiXml.Init								(CONFIG_PATH, UI_PATH,ACTOR_STATISTIC_XML);
+	uiXml.Init								("$game_config$", "ui",ACTOR_STATISTIC_XML);
 
 	xml_init.InitWindow						(uiXml, "main_wnd", 0, this);
 
@@ -89,7 +89,7 @@ void CUIActorInfoWnd::Show(bool status)
 void CUIActorInfoWnd::FillPointsInfo			()
 {
 	CUIXml									uiXml;
-	uiXml.Init								(CONFIG_PATH, UI_PATH,ACTOR_STATISTIC_XML);
+	uiXml.Init								("$game_config$", "ui",ACTOR_STATISTIC_XML);
 
 	UIMasterList->Clear						();
 
@@ -164,7 +164,7 @@ void CUIActorInfoWnd::FillPointsDetail(const shared_str& id)
 {
 	UIDetailList->Clear						();
 	CUIXml									uiXml;
-	uiXml.Init								(CONFIG_PATH, UI_PATH,ACTOR_STATISTIC_XML);
+	uiXml.Init								("$game_config$", "ui",ACTOR_STATISTIC_XML);
 	uiXml.SetLocalRoot						(uiXml.NavigateToNode("actor_stats_wnd",0));
 	
 	string512 path;

@@ -48,7 +48,7 @@ void RearrangeTabButtons(CUITabControl* pTab, xr_vector<Fvector2>& vec_sign_plac
 void CUIDiaryWnd::Init()
 {
 	CUIXml uiXml;
-	bool xml_result = uiXml.Init(CONFIG_PATH, UI_PATH, "events_new.xml");
+	bool xml_result = uiXml.Init("$game_config$", "ui", "events_new.xml");
 	R_ASSERT3(xml_result, "xml file not found", "events_new.xml");
 	CUIXmlInit xml_init;
 

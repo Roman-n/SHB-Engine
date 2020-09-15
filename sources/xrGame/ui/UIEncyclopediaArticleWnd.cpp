@@ -16,7 +16,7 @@ CUIEncyclopediaArticleWnd::~CUIEncyclopediaArticleWnd	()
 void CUIEncyclopediaArticleWnd::Init(LPCSTR xml_name, LPCSTR start_from)
 {
 	CUIXml uiXml;
-	bool xml_result = uiXml.Init(CONFIG_PATH, UI_PATH, xml_name);
+	bool xml_result = uiXml.Init("$game_config$", "ui", xml_name);
 	R_ASSERT3(xml_result, "xml file not found", xml_name);
 
 	CUIXmlInit				xml_init;

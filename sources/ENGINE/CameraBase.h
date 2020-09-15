@@ -38,7 +38,7 @@ public:
 public:
 					CCameraBase		( CObject* p, u32 flags );
 	virtual			~CCameraBase	( );
-	virtual void	Load			(LPCSTR section);
+	virtual void	Load			(const char* section);
 	void			SetParent		( CObject* p )								{parent=p; VERIFY(p);}
 	virtual	void	OnActivate		( CCameraBase* old_cam )					{;}
 	virtual	void	OnDeactivate	( )											{;}

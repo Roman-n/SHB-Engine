@@ -53,7 +53,7 @@ void CUIMessageBox::Init	(LPCSTR box_template)
 {
 	Clear();
 	CUIXml uiXml;
-	bool xml_result = uiXml.Init	(CONFIG_PATH, UI_PATH, "message_box.xml");
+	bool xml_result = uiXml.Init	("$game_config$", "ui", "message_box.xml");
 	R_ASSERT3						(xml_result, "xml file not found", "message_box.xml");
 
 	CUIXmlInit xml_init;

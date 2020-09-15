@@ -1153,7 +1153,7 @@ void CUIXmlInit::InitColorDefs()
 	m_pColorDefs = xr_new<ColorDefs>();
 
 	CUIXml uiXml;
-	bool flag = uiXml.Init(CONFIG_PATH, UI_PATH, COLOR_DEFINITIONS);
+	bool flag = uiXml.Init("$game_config$", "ui", COLOR_DEFINITIONS);
 	R_ASSERT3(flag, "xml file not found", COLOR_DEFINITIONS);
 
 	int num = uiXml.GetNodesNum("colors", 0, "color");

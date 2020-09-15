@@ -29,7 +29,7 @@ void CUIPropertiesBox::Init(float x, float y, float width, float height)
 	AttachChild				(&m_UIListWnd);
 
 	CUIXml					xml_doc;
-	xml_doc.Init			(CONFIG_PATH, UI_PATH, "inventory_new.xml");
+	xml_doc.Init			("$game_config$", "ui", "inventory_new.xml");
 
 	LPCSTR t = xml_doc.Read	("properties_box:texture", 0, "");
 	R_ASSERT				(t);

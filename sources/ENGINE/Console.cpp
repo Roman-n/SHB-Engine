@@ -84,7 +84,7 @@ void CConsole::OnFrame	()
 */
 }
 
-void out_font(CGameFont* pFont, LPCSTR text, float& pos_y)
+void out_font(CGameFont* pFont, const char* text, float& pos_y)
 {
 	float str_length = pFont->SizeOf_(text);
 	if(str_length>1024.0f)
@@ -155,7 +155,7 @@ void CConsole::OnRender	()
 	{
 		ypos-=LDIST;
 		if (ypos<-1.f)	break;
-		LPCSTR			ls = *(*LogFile)[i];
+		const char* ls = *(*LogFile)[i];
 		if	(0==ls)		continue;
 		switch (ls[0]) {
 		case '~':
@@ -217,7 +217,7 @@ void CConsole::OnPressKey(int dik, BOOL bHold)
 		break;
 	case DIK_TAB:
 		{
-			LPCSTR radmin_cmd_name = "ra ";
+		const char* radmin_cmd_name = "ra ";
 			bool b_ra = (editor==strstr(editor, radmin_cmd_name));
 			int offset = (b_ra)?xr_strlen(radmin_cmd_name):0;
 			vecCMD_IT I = Commands.lower_bound(editor+offset);
@@ -358,7 +358,7 @@ void CConsole::OnPressKey(int dik, BOOL bHold)
 		{
 			HGLOBAL hmem = GetClipboardData(CF_TEXT);
 			if( hmem ){
-				LPCSTR	clipdata = (LPCSTR)GlobalLock(hmem);
+				const char* clipdata = (const char*)GlobalLock(hmem);
 				strncpy (editor,clipdata,MAX_LEN-1); editor[MAX_LEN-1]=0;
 //				std::locale loc ("English");
 				for (u32 i=0; i<xr_strlen(editor); i++)
@@ -525,14 +525,14 @@ void CConsole::SelectCommand()
 	}
 }
 
-void CConsole::Execute		(LPCSTR cmd)
+void CConsole::Execute		(const char* cmd)
 {
 	strncpy			(editor,cmd,MAX_LEN-1); editor[MAX_LEN-1]=0;
 	RecordCommands	= false;
 	ExecuteCommand	();
 	RecordCommands	= true;
 }
-void CConsole::ExecuteScript(LPCSTR N)
+void CConsole::ExecuteScript(const char* N)
 {
 	string128		cmd;
 	strconcat		(sizeof(cmd),cmd,"cfg_load ",N);
@@ -540,7 +540,7 @@ void CConsole::ExecuteScript(LPCSTR N)
 }
 
 
-BOOL CConsole::GetBool(LPCSTR cmd, BOOL& val)
+BOOL CConsole::GetBool(const char* cmd, BOOL& val)
 {
 	vecCMD_IT I = Commands.find(cmd);
 	if (I!=Commands.end()) {
@@ -556,7 +556,7 @@ BOOL CConsole::GetBool(LPCSTR cmd, BOOL& val)
 	return val;
 }
 
-float CConsole::GetFloat(LPCSTR cmd, float& val, float& min, float& max)
+float CConsole::GetFloat(const char* cmd, float& val, float& min, float& max)
 {
 	vecCMD_IT I = Commands.find(cmd);
 	if (I!=Commands.end()) {
@@ -570,7 +570,7 @@ float CConsole::GetFloat(LPCSTR cmd, float& val, float& min, float& max)
 	return val;
 }
 
-int CConsole::GetInteger(LPCSTR cmd, int& val, int& min, int& max)
+int CConsole::GetInteger(const char* cmd, int& val, int& min, int& max)
 {
 	vecCMD_IT I = Commands.find(cmd);
 	if (I!=Commands.end()) {
@@ -594,7 +594,7 @@ int CConsole::GetInteger(LPCSTR cmd, int& val, int& min, int& max)
 }
 
 
-char * CConsole::GetString(LPCSTR cmd)
+char * CConsole::GetString(const char* cmd)
 {
 	static IConsole_Command::TStatus stat;
 	vecCMD_IT I = Commands.find(cmd);
@@ -619,12 +619,12 @@ char * CConsole::GetString(LPCSTR cmd)
 */
 	return NULL;
 }
-char * CConsole::GetToken(LPCSTR cmd)
+char * CConsole::GetToken(const char* cmd)
 {
 	return GetString(cmd);
 }
 
-xr_token* CConsole::GetXRToken(LPCSTR cmd)
+xr_token* CConsole::GetXRToken(const char* cmd)
 {
 	vecCMD_IT I = Commands.find(cmd);
 	if (I!=Commands.end()) {

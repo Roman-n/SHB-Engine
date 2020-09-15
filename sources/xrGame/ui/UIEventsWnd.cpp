@@ -35,7 +35,7 @@ CUIEventsWnd::~CUIEventsWnd			()
 void CUIEventsWnd::Init				()
 {
 	CUIXml uiXml;
-	bool xml_result					= uiXml.Init(CONFIG_PATH, UI_PATH, "pda_events.xml");
+	bool xml_result					= uiXml.Init("$game_config$", "ui", "pda_events.xml");
 	R_ASSERT3						(xml_result, "xml file not found", "pda_events.xml");
 
 	CUIXmlInit xml_init;
@@ -90,7 +90,7 @@ void CUIEventsWnd::Init				()
    m_currFilter						= eActiveTask;
    SetDescriptionMode				(true);
 
-   m_ui_task_item_xml.Init			(CONFIG_PATH, UI_PATH, "job_item.xml");
+   m_ui_task_item_xml.Init			("$game_config$", "ui", "job_item.xml");
 }
 
 void CUIEventsWnd::Update			()

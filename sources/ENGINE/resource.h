@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by resource.rc
+// Включаемый файл, созданный в Microsoft Visual C++.
+// Используется resource.rc
 //
 #define IDDEBUG                         3
 #define IDD_STARTUP                     106
@@ -12,6 +12,7 @@
 #define IDC_DESC                        1003
 #define IDSTOP                          1004
 #define IDC_STACK                       1006
+#define IDC_IPADDRESS1                  1007
 #define RC_VIRT_MEM_ERROR               2071
 #define RC_VIRT_MEM_TEXT                2072
 
@@ -19,9 +20,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        118
+#define _APS_NEXT_RESOURCE_VALUE        119
 #define _APS_NEXT_COMMAND_VALUE         40001
-#define _APS_NEXT_CONTROL_VALUE         1007
+#define _APS_NEXT_CONTROL_VALUE         1010
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

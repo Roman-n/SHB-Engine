@@ -89,8 +89,6 @@ CUIMainIngameWnd::CUIMainIngameWnd()
 	UIZoneMap					= xr_new<CUIZoneMap>();
 	m_pPickUpItem				= NULL;
 	m_artefactPanel				= xr_new<CUIArtefactPanel>();
-	m_pMPChatWnd				= NULL;
-	m_pMPLogWnd					= NULL;	
 }
 
 extern CUIProgressShape* g_MissileForceShape;
@@ -107,13 +105,12 @@ CUIMainIngameWnd::~CUIMainIngameWnd()
 void CUIMainIngameWnd::Init()
 {
 	CUIXml						uiXml;
-	uiXml.Init					(CONFIG_PATH, UI_PATH, MAININGAME_XML);
+	uiXml.Init					("$game_config$", "ui", MAININGAME_XML);
 	
 	CUIXmlInit					xml_init;
 	CUIWindow::Init				(0,0, UI_BASE_WIDTH, UI_BASE_HEIGHT);
 
 	Enable(false);
-
 
 	AttachChild					(&UIStaticHealth);
 	xml_init.InitStatic			(uiXml, "static_health", 0, &UIStaticHealth);
@@ -144,7 +141,6 @@ void CUIMainIngameWnd::Init()
 	m_iPickUpItemIconY			= UIPickUpItemIcon.GetWndRect().top;
 	//---------------------------------------------------------
 
-
 	UIWeaponIcon.Enable			(false);
 
 	//индикаторы 
@@ -163,8 +159,6 @@ void CUIMainIngameWnd::Init()
 	UIStaticArmor.AttachChild	(&UIArmorBar);
 //.	xml_init.InitAutoStaticGroup(uiXml,"static_armor", &UIStaticArmor);
 	xml_init.InitProgressBar	(uiXml, "progress_bar_armor", 0, &UIArmorBar);
-
-	
 
 	// Подсказки, которые возникают при наведении прицела на объект
 	AttachChild					(&UIStaticQuickHelp);
@@ -282,12 +276,6 @@ void CUIMainIngameWnd::Draw()
 #endif
 }
 
-
-void CUIMainIngameWnd::SetMPChatLog(CUIWindow* pChat, CUIWindow* pLog){
-	m_pMPChatWnd = pChat;
-	m_pMPLogWnd  = pLog;
-}
-
 void CUIMainIngameWnd::SetAmmoIcon (const shared_str& sect_name)
 {
 	if ( !sect_name.size() )
@@ -330,12 +318,6 @@ void CUIMainIngameWnd::Update()
 #ifdef DEBUG
 	test_update();
 #endif
-	if (m_pMPChatWnd)
-		m_pMPChatWnd->Update();
-	if (m_pMPLogWnd)
-		m_pMPLogWnd->Update();
-
-
 
 	m_pActor = smart_cast<CActor*>(Level().CurrentViewEntity());
 	if (!m_pActor) 
@@ -1163,7 +1145,7 @@ void test_key	(int dik)
 		if(!pUIFrame)
 		{
 			CUIXml uiXML;
-			uiXML.Init(CONFIG_PATH, UI_PATH, "talk.xml");
+			uiXML.Init("$game_config$", "ui", "talk.xml");
 
 			pUIFrame					= xr_new<CUIFrameWindow>();
 			CUIXmlInit::InitFrameWindow	(uiXML, "frame_window", 0, pUIFrame);

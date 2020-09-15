@@ -38,7 +38,7 @@ public:
 
 	void	OnFrame			();
 	void	Dump			();
-	BOOL	Peek			(LPCSTR EName);
+	BOOL	Peek			(const char* EName);
 
 	void	_destroy		();
 };

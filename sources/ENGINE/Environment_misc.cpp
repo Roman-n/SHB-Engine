@@ -50,7 +50,7 @@ void CEnvAmbient::load(const shared_str& sect)
 		Fvector2 t		= pSettings->r_fvector2	(sect,"sound_period");
 		sound_period.set(iFloor(t.x*1000.f),iFloor(t.y*1000.f));
 		sound_dist		= pSettings->r_fvector2	(sect,"sound_dist"); if (sound_dist[0]>sound_dist[1]) std::swap(sound_dist[0],sound_dist[1]);
-		LPCSTR snds		= pSettings->r_string	(sect,"sounds");
+		const char* snds		= pSettings->r_string	(sect,"sounds");
 		u32 cnt			= _GetItemCount(snds);
 		if (cnt){
 			sounds.resize(cnt);
@@ -62,7 +62,7 @@ void CEnvAmbient::load(const shared_str& sect)
 	if (pSettings->line_exist(sect,"effects")){
 		Fvector2 t		= pSettings->r_fvector2	(sect,"effect_period");
 		effect_period.set(iFloor(t.x*1000.f),iFloor(t.y*1000.f));
-		LPCSTR effs		= pSettings->r_string	(sect,"effects");
+		const char* effs		= pSettings->r_string	(sect,"effects");
 		u32 cnt			= _GetItemCount(effs);
 		if (cnt){
 			effects.resize(cnt);
@@ -119,7 +119,7 @@ CEnvDescriptor::CEnvDescriptor()
 }
 
 #define	C_CHECK(C)	if (C.x<0 || C.x>2 || C.y<0 || C.y>2 || C.z<0 || C.z>2)	{ Msg("! Invalid '%s' in env-section '%s'",#C,S);}
-void CEnvDescriptor::load	(LPCSTR exec_tm, LPCSTR S, CEnvironment* parent)
+void CEnvDescriptor::load	(const char* exec_tm, const char* S, CEnvironment* parent)
 {
 	Ivector3 tm				={0,0,0};
 	sscanf					(exec_tm,"%d:%d:%d",&tm.x,&tm.y,&tm.z);
@@ -132,7 +132,7 @@ void CEnvDescriptor::load	(LPCSTR exec_tm, LPCSTR S, CEnvironment* parent)
 	sky_texture_name		= st;
 	sky_texture_env_name	= st_env;
 	clouds_texture_name		= pSettings->r_string	(S,"clouds_texture");
-	LPCSTR	cldclr			= pSettings->r_string	(S,"clouds_color");
+	const char* cldclr			= pSettings->r_string	(S,"clouds_color");
 	float	multiplier		= 0, save=0;
 	sscanf					(cldclr,"%f,%f,%f,%f,%f",&clouds_color.x,&clouds_color.y,&clouds_color.z,&clouds_color.w,&multiplier);
 	save=clouds_color.w;	clouds_color.mul		(.5f*multiplier);		clouds_color.w	= save; 

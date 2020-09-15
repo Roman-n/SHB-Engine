@@ -34,7 +34,7 @@ void CUIPdaContactsWnd::Show(bool status)
 void CUIPdaContactsWnd::Init()
 {
 	CUIXml		uiXml;
-	bool xml_result =uiXml.Init(CONFIG_PATH, UI_PATH, PDA_CONTACTS_XML);
+	bool xml_result =uiXml.Init("$game_config$", "ui", PDA_CONTACTS_XML);
 	R_ASSERT3(xml_result, "xml file not found", PDA_CONTACTS_XML);
 
 	CUIXmlInit	xml_init;

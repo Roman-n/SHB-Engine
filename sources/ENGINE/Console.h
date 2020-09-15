@@ -14,12 +14,12 @@ public:
 	//t-defs
 	struct str_pred : public std::binary_function<char*, char*, bool>
 	{
-		IC bool operator()(LPCSTR x, LPCSTR y) const
+		IC bool operator()(const char* x, const char* y) const
 		{
 			return xr_strcmp(x, y) < 0;
 		}
 	};
-	typedef xr_map<LPCSTR, IConsole_Command*, str_pred>	vecCMD;
+	typedef xr_map<const char*, IConsole_Command*, str_pred>	vecCMD;
 	typedef vecCMD::iterator							vecCMD_IT;
 	enum
 	{
@@ -63,17 +63,17 @@ public:
 	void			Hide( );
 
 	void			Save( );
-	void			Execute(LPCSTR cmd);
-	void			ExecuteScript(LPCSTR name);
+	void			Execute(const char* cmd);
+	void			ExecuteScript(const char* name);
 	void			ExecuteCommand( );
 
 	// get
-	BOOL			GetBool(LPCSTR cmd, BOOL& val);
-	float			GetFloat(LPCSTR cmd, float& val, float& min, float& max);
-	char* GetString(LPCSTR cmd);
-	int				GetInteger(LPCSTR cmd, int& val, int& min, int& max);
-	char* GetToken(LPCSTR cmd);
-	xr_token* GetXRToken(LPCSTR cmd);
+	BOOL			GetBool(const char* cmd, BOOL& val);
+	float			GetFloat(const char* cmd, float& val, float& min, float& max);
+	char* GetString(const char* cmd);
+	int				GetInteger(const char* cmd, int& val, int& min, int& max);
+	char* GetToken(const char* cmd);
+	xr_token* GetXRToken(const char* cmd);
 
 	void			SelectCommand( );
 

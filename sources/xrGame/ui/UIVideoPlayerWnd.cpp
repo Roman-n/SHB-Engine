@@ -16,7 +16,7 @@ void CUIVideoPlayerWnd::SendMessage	(CUIWindow* pWnd, s16 msg, void* pData)
 void CUIVideoPlayerWnd::Init	(LPCSTR file_name)
 {
 	CUIXml uiXml;
-	bool xml_result					= uiXml.Init(CONFIG_PATH, UI_PATH, "video_templ.xml");
+	bool xml_result					= uiXml.Init("$game_config$", "ui", "video_templ.xml");
 	R_ASSERT3						(xml_result, "xml file not found", "video_templ.xml");
 	Init							(&uiXml,"video_player");
 	SetFile							(file_name);

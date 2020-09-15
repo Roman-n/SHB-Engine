@@ -26,7 +26,7 @@ void CUIPdaMsgListItem::Init(float x, float y, float width, float height)
 	CUIStatic::Init			(x, y, width, height);
 
 	CUIXml uiXml;
-	bool xml_result			= uiXml.Init(CONFIG_PATH, UI_PATH,PDA_MSG_MAINGAME_CHAR);
+	bool xml_result			= uiXml.Init("$game_config$", "ui",PDA_MSG_MAINGAME_CHAR);
 	R_ASSERT3				(xml_result, "xml file not found", PDA_MSG_MAINGAME_CHAR);
 
 	CUIXmlInit				xml_init;

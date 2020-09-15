@@ -83,7 +83,7 @@ void CGameTask::Load(const TASK_ID& id)
 
 	if(!g_gameTaskXml){
 		g_gameTaskXml				= xr_new<CUIXml>();
-		g_gameTaskXml->Init			(CONFIG_PATH, "gameplay", "game_tasks.xml");
+		g_gameTaskXml->Init			("$game_config$", "gameplay", "game_tasks.xml");
 	}
 	XML_NODE* task_node				= g_gameTaskXml->NavigateToNodeWithAttribute("game_task","id",*id);
 

@@ -52,7 +52,7 @@ CScriptXmlInit&		CScriptXmlInit::operator =			(const CScriptXmlInit& other)
 
 void				CScriptXmlInit::ParseFile			(const char* xml_file)
 {
-	m_xml.Init							(CONFIG_PATH, UI_PATH, xml_file);
+	m_xml.Init							("$game_config$", "ui", xml_file);
 }
 
 void				CScriptXmlInit::InitWindow			(const char* path, int index, CUIWindow* pWnd)

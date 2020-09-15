@@ -20,7 +20,7 @@ class ENGINE_API	CPerlinNoise1D;
 class CBlender_skybox		: public IBlender  
 {
 public:
-	virtual		LPCSTR		getComment()	{ return "INTERNAL: combiner";	}
+	virtual		const char* getComment()	{ return "INTERNAL: combiner";	}
 	virtual		BOOL		canBeDetailed()	{ return FALSE;	}
 	virtual		BOOL		canBeLMAPped()	{ return FALSE;	}
 
@@ -129,7 +129,7 @@ public:
 
 						CEnvDescriptor	();
 
-	void				load			(LPCSTR exec_tm, LPCSTR sect, CEnvironment* parent);
+	void				load			(const char* exec_tm, const char* sect, CEnvironment* parent);
 	void				copy			(const CEnvDescriptor& src)
 	{
 		float tm0		= exec_time;

@@ -32,7 +32,7 @@ void create_force_progress()
 {
 	VERIFY							(!g_MissileForceShape);
 	CUIXml uiXml;
-	bool xml_result					= uiXml.Init(CONFIG_PATH, UI_PATH, "grenade.xml");
+	bool xml_result					= uiXml.Init("$game_config$", "ui", "grenade.xml");
 	R_ASSERT3						(xml_result, "xml file not found", "grenade.xml");
 
 	CUIXmlInit xml_init;

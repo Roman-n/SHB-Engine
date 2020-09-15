@@ -3,7 +3,7 @@
 #include "Console.h"
 
 extern	void msRead			();
-extern	void msCreate		(LPCSTR name);
+extern	void msCreate		(const char* name);
 
 //---------------------------------------------------------------------
 class ENGINE_API CEvent
@@ -17,7 +17,7 @@ public:
 	CEvent	(const char* S);
 	~CEvent	();
 
-	LPCSTR	GetFull()
+	const char* GetFull()
 	{	return Name; }
 	u32	RefCount()
 	{	return dwRefCount; }
@@ -147,7 +147,7 @@ void	CEventAPI::Defer(const char* N, u64 P1, u64 P2)
 }
 
 #ifdef DEBUG
-void msParse			(LPCSTR c)
+void msParse			(const char* c)
 {
 	if (0==stricmp(c,"exit")) 
 	{
@@ -180,7 +180,7 @@ void	CEventAPI::OnFrame	()
 	CS.Leave	();
 }
 
-BOOL CEventAPI::Peek(LPCSTR EName)
+BOOL CEventAPI::Peek(const char* EName)
 {
 	CS.Enter	();
 	if (Events_Deferred.empty())	{ CS.Leave(); return FALSE; }
