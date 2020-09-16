@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "resourcemanager.h"
-#include "xr_effgamma.h"
+#include "GammaControl.h"
 #include "render.h"
 
 void CRenderDevice::_SetupStates	()

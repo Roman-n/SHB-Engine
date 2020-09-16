@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "igame_level.h"
 
-#include "xr_effgamma.h"
+#include "GammaControl.h"
 #include "x_ray.h"
 #include "Console.h"
 #include "IConsole_Command.h"

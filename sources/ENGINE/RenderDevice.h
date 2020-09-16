@@ -11,7 +11,7 @@ class	ENGINE_API	CGammaControl;
 #include "hw.h"
 #include "..\Core\ftimer.h"
 #include "stats.h"
-#include "xr_effgamma.h"
+#include "GammaControl.h"
 #include "shader.h"
 #include "R_Backend.h"
 
@@ -38,7 +38,7 @@ private:
 	void									_SetupStates();
 public:
     HWND									m_hWnd;
-	LRESULT									MsgProc		(HWND,UINT,WPARAM,LPARAM);
+//	LRESULT									MsgProc		(HWND,UINT,WPARAM,LPARAM);
 
 	u32										dwFrame;
 	u32										dwPrecacheFrame;
@@ -136,7 +136,7 @@ public:
 	void Reset								(bool precache = true);
 
 	void Initialize							(void);
-	void ShutDown							(void);
+//	void ShutDown							(void);
 
 public:
 	void time_factor						(const float &time_factor)

@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "..\ENGINE\xr_effgamma.h"
+#include "..\ENGINE\GammaControl.h"
 #include "..\xrRender\tga.h"
 #include "..\ENGINE\xrImage_Resampler.h"
 

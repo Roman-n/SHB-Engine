@@ -330,9 +330,6 @@
     <ClInclude Include="HWCaps.h">
       <Filter>Render\Execution &amp; 3D\HW</Filter>
     </ClInclude>
-    <ClInclude Include="xr_effgamma.h">
-      <Filter>Render\Execution &amp; 3D\Gamma</Filter>
-    </ClInclude>
     <ClInclude Include="WaveForm.h">
       <Filter>Render\Execution &amp; 3D\Shaders</Filter>
     </ClInclude>
@@ -503,6 +500,9 @@
     </ClInclude>
     <ClInclude Include="NET_utils.h">
       <Filter>NET</Filter>
+    </ClInclude>
+    <ClInclude Include="GammaControl.h">
+      <Filter>Render\Execution &amp; 3D\Gamma</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -710,9 +710,6 @@
     <ClCompile Include="HWCaps.cpp">
       <Filter>Render\Execution &amp; 3D\HW</Filter>
     </ClCompile>
-    <ClCompile Include="xr_effgamma.cpp">
-      <Filter>Render\Execution &amp; 3D\Gamma</Filter>
-    </ClCompile>
     <ClCompile Include="Blenders\Blender.cpp">
       <Filter>Render\Execution &amp; 3D\Shaders\Blender</Filter>
     </ClCompile>
@@ -868,6 +865,9 @@
     </ClCompile>
     <ClCompile Include="NET_Server.cpp">
       <Filter>NET</Filter>
+    </ClCompile>
+    <ClCompile Include="GammaControl.cpp">
+      <Filter>Render\Execution &amp; 3D\Gamma</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

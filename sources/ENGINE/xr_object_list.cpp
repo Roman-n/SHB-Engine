@@ -213,18 +213,19 @@ void CObjectList::Update		(bool bForce)
 	}
 }
 
-void CObjectList::net_Register		(CObject* O)
+void CObjectList::net_Register(CObject* O)
 {
-	R_ASSERT		(O);
-	map_NETID.insert(mk_pair(O->ID(),O));
-	//Msg			("-------------------------------- Register: %s",O->cName());
+	R_ASSERT(O);
+	map_NETID.insert(mk_pair(O->ID( ), O));
+	Msg("-------------------------------- Register: %s", O->cName( ));
 }
 
-void CObjectList::net_Unregister	(CObject* O)
+void CObjectList::net_Unregister(CObject* O)
 {
-	xr_map<u32,CObject*>::iterator	it = map_NETID.find(O->ID());
-	if ((it!=map_NETID.end()) && (it->second == O))	{
-		// Msg			("-------------------------------- Unregster: %s",O->cName());
+	xr_map<u32, CObject*>::iterator	it = map_NETID.find(O->ID( ));
+	if ((it != map_NETID.end( )) && (it->second == O))
+	{
+		Msg("-------------------------------- Unregster: %s", O->cName( ));
 		map_NETID.erase(it);
 	}
 }

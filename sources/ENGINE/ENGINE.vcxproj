@@ -288,7 +288,7 @@
     <ClInclude Include="xr_area.h" />
     <ClInclude Include="xr_collide_defs.h" />
     <ClInclude Include="xr_collide_form.h" />
-    <ClInclude Include="xr_effgamma.h" />
+    <ClInclude Include="GammaControl.h" />
     <ClInclude Include="xr_efflensflare.h" />
     <ClInclude Include="xr_input.h" />
     <ClInclude Include="Console.h" />
@@ -428,7 +428,7 @@
     <ClCompile Include="xr_area.cpp" />
     <ClCompile Include="xr_area_raypick.cpp" />
     <ClCompile Include="xr_collide_form.cpp" />
-    <ClCompile Include="xr_effgamma.cpp" />
+    <ClCompile Include="GammaControl.cpp" />
     <ClCompile Include="xr_efflensflare.cpp" />
     <ClCompile Include="Xr_input.cpp" />
     <ClCompile Include="Console.cpp" />
