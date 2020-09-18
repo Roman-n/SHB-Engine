@@ -263,7 +263,7 @@ public:
 	void						g_sv_Spawn				(CSE_Abstract* E);					// server reply/command spawning
 	
 	// Save/Load/State
-	void						SLS_Load				(LPCSTR name);		// Game Load
+//	void						SLS_Load				(LPCSTR name);		// Game Load
 	void						SLS_Default				();					// Default/Editor Load
 	
 	IC CSpaceRestrictionManager		&space_restriction_manager	();

@@ -206,13 +206,9 @@ CLevel::~CLevel()
 	static_Sounds.clear			();
 
 	xr_delete					(m_level_sound_manager);
-
 	xr_delete					(m_space_restriction_manager);
-
-	xr_delete					(m_seniority_hierarchy_holder);
-	
+	xr_delete					(m_seniority_hierarchy_holder);	
 	xr_delete					(m_client_spawn_manager);
-
 	xr_delete					(m_autosave_manager);
 	
 #ifdef DEBUG
@@ -260,7 +256,6 @@ CLevel::~CLevel()
 
 	if (m_we_used_old_crach_handler)
 		Debug.set_crashhandler	(m_pOldCrashHandler);
-
 }
 
 shared_str	CLevel::name		() const
@@ -272,7 +267,6 @@ void CLevel::GetLevelInfo( CServerInfo* si )
 {
 	Server->GetServerInfo( si );
 }
-
 
 void CLevel::PrefetchSound		(LPCSTR name)
 {
@@ -411,14 +405,11 @@ void CLevel::OnFrame	()
 	BulletManager().CommitEvents		();
 	Device.Statistic->TEST0.End			();
 
-		Device.Statistic->netClient1.Begin();
-
-		ClientReceive					();
-
-		Device.Statistic->netClient1.End	();
+	Device.Statistic->netClient1.Begin	();
+	ClientReceive						();
+	Device.Statistic->netClient1.End	();
 
 	ProcessGameEvents	();
-
 
 	if (m_bNeed_CrPr)					make_NetCorrectionPrediction();
 
