@@ -211,12 +211,12 @@ void	CMainMenu::IR_OnMouseHold(int btn)
 
 };
 
-void	CMainMenu::IR_OnMouseMove(int x, int y)
+void	CMainMenu::IR_OnMouseMove(int dx, int dy)
 {
 	if(!IsActive()) return;
 
 	if(MainInputReceiver())
-		MainInputReceiver()->IR_OnMouseMove(x, y);
+		MainInputReceiver()->IR_OnMouseMove(dx, dy);
 
 };
 

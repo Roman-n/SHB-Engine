@@ -2,8 +2,8 @@
 
 #include <dinput.h>
 #include "..\ENGINE\Console.h"
+#include "..\ENGINE\IConsoleCommand.h"
 #include "..\ENGINE\xr_input.h"
-#include "..\ENGINE\IConsole_Command.h"
 #include "xr_level_controller.h"
 #include "string_table.h"
 
@@ -416,11 +416,11 @@ void GetActionAllBinding(const char* _action, char* dst_buff, int dst_buff_sz)
 ConsoleBindCmds	bindConsoleCmds;
 bool bRemapped = false;
 
-class CCC_Bind : public IConsole_Command
+class CCC_Bind : public IConsoleCommand
 {
 	int m_work_idx;
 public:
-	CCC_Bind(LPCSTR N, int idx) : IConsole_Command(N), m_work_idx(idx)
+	CCC_Bind(LPCSTR N, int idx) : IConsoleCommand(N), m_work_idx(idx)
 	{ };
 	virtual void Execute(LPCSTR args)
 	{
@@ -492,11 +492,11 @@ public:
 	}
 };
 
-class CCC_UnBind : public IConsole_Command
+class CCC_UnBind : public IConsoleCommand
 {
 	int m_work_idx;
 public:
-	CCC_UnBind(LPCSTR N, int idx) : IConsole_Command(N), m_work_idx(idx)
+	CCC_UnBind(LPCSTR N, int idx) : IConsoleCommand(N), m_work_idx(idx)
 	{
 		bEmptyArgsHandled = true;
 	};
@@ -510,10 +510,10 @@ public:
 	}
 };
 
-class CCC_ListActions : public IConsole_Command
+class CCC_ListActions : public IConsoleCommand
 {
 public:
-	CCC_ListActions(LPCSTR N) : IConsole_Command(N)
+	CCC_ListActions(LPCSTR N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
@@ -531,10 +531,10 @@ public:
 	}
 };
 
-class CCC_UnBindAll : public IConsole_Command
+class CCC_UnBindAll : public IConsoleCommand
 {
 public:
-	CCC_UnBindAll(LPCSTR N) : IConsole_Command(N)
+	CCC_UnBindAll(LPCSTR N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
@@ -558,10 +558,10 @@ public:
 	}
 };
 
-class CCC_BindList : public IConsole_Command
+class CCC_BindList : public IConsoleCommand
 {
 public:
-	CCC_BindList(LPCSTR N) : IConsole_Command(N)
+	CCC_BindList(LPCSTR N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
@@ -585,10 +585,10 @@ public:
 	}
 };
 
-class CCC_BindConsoleCmd : public IConsole_Command
+class CCC_BindConsoleCmd : public IConsoleCommand
 {
 public:
-	CCC_BindConsoleCmd(LPCSTR N) : IConsole_Command(N)
+	CCC_BindConsoleCmd(LPCSTR N) : IConsoleCommand(N)
 	{ };
 	virtual void Execute(LPCSTR args)
 	{
@@ -608,10 +608,10 @@ public:
 	}
 };
 
-class CCC_UnBindConsoleCmd : public IConsole_Command
+class CCC_UnBindConsoleCmd : public IConsoleCommand
 {
 public:
-	CCC_UnBindConsoleCmd(LPCSTR N) : IConsole_Command(N)
+	CCC_UnBindConsoleCmd(LPCSTR N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = false;
 	};

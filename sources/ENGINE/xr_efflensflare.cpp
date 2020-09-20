@@ -20,7 +20,7 @@
 #define BLEND_DEC_SPEED 4.0f
 
 //------------------------------------------------------------------------------
-void CLensFlareDescriptor::SetSource(float fRadius, BOOL ign_color, LPCSTR tex_name, LPCSTR sh_name)
+void CLensFlareDescriptor::SetSource(float fRadius, BOOL ign_color, const char* tex_name, const char* sh_name)
 {
 	m_Source.fRadius	= fRadius;
     m_Source.shader		= sh_name;
@@ -28,7 +28,7 @@ void CLensFlareDescriptor::SetSource(float fRadius, BOOL ign_color, LPCSTR tex_n
     m_Source.ignore_color=ign_color;
 }
 
-void CLensFlareDescriptor::SetGradient(float fMaxRadius, float fOpacity, LPCSTR tex_name, LPCSTR sh_name)
+void CLensFlareDescriptor::SetGradient(float fMaxRadius, float fOpacity, const char* tex_name, const char* sh_name)
 {
 	m_Gradient.fRadius	= fMaxRadius;
 	m_Gradient.fOpacity	= fOpacity;
@@ -36,7 +36,7 @@ void CLensFlareDescriptor::SetGradient(float fMaxRadius, float fOpacity, LPCSTR 
     m_Gradient.texture	= tex_name;
 }
 
-void CLensFlareDescriptor::AddFlare(float fRadius, float fOpacity, float fPosition, LPCSTR tex_name, LPCSTR sh_name)
+void CLensFlareDescriptor::AddFlare(float fRadius, float fOpacity, float fPosition, const char* tex_name, const char* sh_name)
 {
 	SFlare F;
 	F.fRadius	= fRadius;
@@ -47,31 +47,31 @@ void CLensFlareDescriptor::AddFlare(float fRadius, float fOpacity, float fPositi
 	m_Flares.push_back	(F);
 }
 
-ref_shader CLensFlareDescriptor::CreateShader(LPCSTR tex_name, LPCSTR sh_name)
+ref_shader CLensFlareDescriptor::CreateShader(const char* tex_name, const char* sh_name)
 {
 	ref_shader	R;
 	if			(tex_name&&tex_name[0])	R.create(sh_name,tex_name);
 	return		R;
 }
 
-void CLensFlareDescriptor::load(CInifile* pIni, LPCSTR sect)
+void CLensFlareDescriptor::load(CInifile* pIni, const char* sect)
 {
 	section		= sect;
 	m_Flags.set	(flSource,pIni->r_bool(sect,"source" ));
 	if (m_Flags.is(flSource)){
-		LPCSTR S= pIni->r_string 	( sect,"source_shader" );
-		LPCSTR T= pIni->r_string 	( sect,"source_texture" );
+		const char* S= pIni->r_string 	( sect,"source_shader" );
+		const char* T= pIni->r_string 	( sect,"source_texture" );
 		float r = pIni->r_float		( sect,"source_radius" );
 		BOOL i 	= pIni->r_bool		( sect,"source_ignore_color" );
 		SetSource(r,i,T,S);
 	}
 	m_Flags.set	(flFlare,pIni->r_bool ( sect,"flares" ));
 	if (m_Flags.is(flFlare)){
-	    LPCSTR S= pIni->r_string 	( sect,"flare_shader" );
-		LPCSTR T= pIni->r_string 	( sect,"flare_textures" );
-		LPCSTR R= pIni->r_string 	( sect,"flare_radius" );
-		LPCSTR O= pIni->r_string 	( sect,"flare_opacity");
-		LPCSTR P= pIni->r_string 	( sect,"flare_position");
+		const char* S= pIni->r_string 	( sect,"flare_shader" );
+		const char* T= pIni->r_string 	( sect,"flare_textures" );
+		const char* R= pIni->r_string 	( sect,"flare_radius" );
+		const char* O= pIni->r_string 	( sect,"flare_opacity");
+		const char* P= pIni->r_string 	( sect,"flare_position");
 		u32 tcnt= _GetItemCount(T);
         string256 name;
 		for (u32 i=0; i<tcnt; i++){
@@ -84,8 +84,8 @@ void CLensFlareDescriptor::load(CInifile* pIni, LPCSTR sect)
 	}
 	m_Flags.set	(flGradient,CInifile::IsBOOL(pIni->r_string( sect, "gradient")));
 	if (m_Flags.is(flGradient)){
-		LPCSTR S= pIni->r_string 	( sect,"gradient_shader" );
-		LPCSTR T= pIni->r_string	( sect,"gradient_texture" );
+		const char* S= pIni->r_string 	( sect,"gradient_shader" );
+		const char* T= pIni->r_string	( sect,"gradient_texture" );
 		float r	= pIni->r_float		( sect,"gradient_radius"  );
 		float o = pIni->r_float		( sect,"gradient_opacity" );
 		SetGradient(r,o,T,S);
@@ -401,7 +401,7 @@ void CLensFlare::Render(BOOL bSun, BOOL bFlares, BOOL bGradient)
 	}
 }
 
-int	CLensFlare::AppendDef(CInifile* pIni, LPCSTR sect)
+int	CLensFlare::AppendDef(CInifile* pIni, const char* sect)
 {
 	if (!sect||(0==sect[0])) return -1;
     for (LensFlareDescIt it=m_Palette.begin(); it!=m_Palette.end(); it++)

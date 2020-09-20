@@ -40,15 +40,15 @@ public:
     float				m_StateBlendUpSpeed;
     float				m_StateBlendDnSpeed;
     
-	void				SetGradient		(float fMaxRadius, float fOpacity, LPCSTR tex_name, LPCSTR sh_name);
-    void				SetSource		(float fRadius, BOOL ign_color, LPCSTR tex_name, LPCSTR sh_name);
-    void				AddFlare		(float fRadius, float fOpacity, float fPosition, LPCSTR tex_name, LPCSTR sh_name);
-    ref_shader			CreateShader	(LPCSTR tex_name, LPCSTR sh_name);
+	void				SetGradient		(float fMaxRadius, float fOpacity, const char* tex_name, const char* sh_name);
+    void				SetSource		(float fRadius, BOOL ign_color, const char* tex_name, const char* sh_name);
+    void				AddFlare		(float fRadius, float fOpacity, float fPosition, const char* tex_name, const char* sh_name);
+    ref_shader			CreateShader	(const char* tex_name, const char* sh_name);
 
 	shared_str			section;
 public:
     					CLensFlareDescriptor(){m_Flags.zero();section=0;m_StateBlendUpSpeed=m_StateBlendDnSpeed=0.1f;}
-    void				load				(CInifile* pIni, LPCSTR section);
+    void				load				(CInifile* pIni, const char* section);
 	void 				OnDeviceCreate	();
 	void 				OnDeviceDestroy	();
 };
@@ -99,7 +99,7 @@ public:
 	void 				OnDeviceCreate	();         
 	void 				OnDeviceDestroy	();
 
-    int					AppendDef		(CInifile* pIni, LPCSTR sect);
+    int					AppendDef		(CInifile* pIni, const char* sect);
 
 	void				Invalidate		(){m_State=lfsNone;}
 };

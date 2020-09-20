@@ -2,11 +2,11 @@
 
 #pragma once
 
-#include "iinputreceiver.h"
+#include "IInputReceiver.h"
 
 //refs
 class ENGINE_API CGameFont;
-class ENGINE_API IConsole_Command;
+class ENGINE_API IConsoleCommand;
 
 class ENGINE_API CConsole : public IInputReceiver, public pureRender, public pureFrame
 {
@@ -19,7 +19,7 @@ public:
 			return xr_strcmp(x, y) < 0;
 		}
 	};
-	typedef xr_map<const char*, IConsole_Command*, str_pred>	vecCMD;
+	typedef xr_map<const char*, IConsoleCommand*, str_pred>	vecCMD;
 	typedef vecCMD::iterator							vecCMD_IT;
 	enum
 	{
@@ -55,8 +55,8 @@ public:
 	BOOL			bVisible;
 	vecCMD			Commands;
 
-	void			AddCommand(IConsole_Command*);
-	void			RemoveCommand(IConsole_Command*);
+	void			AddCommand(IConsoleCommand*);
+	void			RemoveCommand(IConsoleCommand*);
 	void			Reset( );
 
 	void			Show( );

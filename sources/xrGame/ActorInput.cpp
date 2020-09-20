@@ -29,15 +29,15 @@
 
 bool g_bAutoClearCrouch = true;
 
-void CActor::IR_OnKeyboardPress(int cmd)
+void CActor::IR_OnKeyboardPress(int dik)
 {
 	if (Remote())		return;
 
 //	if (conditions().IsSleeping())	return;
 	if (IsTalking())	return;
-	if (m_input_external_handler && !m_input_external_handler->authorized(cmd))	return;
+	if (m_input_external_handler && !m_input_external_handler->authorized(dik))	return;
 	
-	switch (cmd)
+	switch (dik)
 	{
 	case kWPN_FIRE:
 		{
@@ -58,15 +58,15 @@ void CActor::IR_OnKeyboardPress(int cmd)
 
 	if (!g_Alive()) return;
 
-	if(m_holder && kUSE != cmd)
+	if(m_holder && kUSE != dik)
 	{
-		m_holder->OnKeyboardPress			(cmd);
-		if(m_holder->allowWeapon() && inventory().Action(cmd, CMD_START))		return;
+		m_holder->OnKeyboardPress			(dik);
+		if(m_holder->allowWeapon() && inventory().Action(dik, CMD_START))		return;
 		return;
 	}else
-		if(inventory().Action(cmd, CMD_START))					return;
+		if(inventory().Action(dik, CMD_START))					return;
 
-	switch(cmd){
+	switch(dik){
 	case kJUMP:		
 		{
 			mstate_wishful |= mcJump;
@@ -146,7 +146,7 @@ void CActor::IR_OnKeyboardPress(int cmd)
 	case kUSE_BANDAGE:
 	case kUSE_MEDKIT:
 		{
-				PIItem itm = inventory().item((cmd==kUSE_BANDAGE)?  CLSID_IITEM_BANDAGE:CLSID_IITEM_MEDKIT );	
+				PIItem itm = inventory().item((dik ==kUSE_BANDAGE)?  CLSID_IITEM_BANDAGE:CLSID_IITEM_MEDKIT );
 				if(itm)
 				{
 					inventory().Eat				(itm);
@@ -170,30 +170,30 @@ void CActor::IR_OnMouseWheel(int direction)
 	else
 		OnPrevWeaponSlot				();
 }
-void CActor::IR_OnKeyboardRelease(int cmd)
+void CActor::IR_OnKeyboardRelease(int dik)
 {
 	if (Remote())		return;
 
 //	if (conditions().IsSleeping())	return;
-	if (m_input_external_handler && !m_input_external_handler->authorized(cmd))	return;
+	if (m_input_external_handler && !m_input_external_handler->authorized(dik))	return;
 
 	if (g_Alive())	
 	{
-		if (cmd == kUSE) 
+		if (dik == kUSE)
 			PickupModeOff();
 
 		if(m_holder)
 		{
-			m_holder->OnKeyboardRelease(cmd);
+			m_holder->OnKeyboardRelease(dik);
 			
-			if(m_holder->allowWeapon() && inventory().Action(cmd, CMD_STOP))		return;
+			if(m_holder->allowWeapon() && inventory().Action(dik, CMD_STOP))		return;
 			return;
 		}else
-			if(inventory().Action(cmd, CMD_STOP))		return;
+			if(inventory().Action(dik, CMD_STOP))		return;
 
 
 
-		switch(cmd)
+		switch(dik)
 		{
 		case kJUMP:		mstate_wishful &=~mcJump;		break;
 		case kDROP:		if(GAME_PHASE_INPROGRESS == Game().Phase()) g_PerformDrop();				break;
@@ -202,31 +202,31 @@ void CActor::IR_OnKeyboardRelease(int cmd)
 	}
 }
 
-void CActor::IR_OnKeyboardHold(int cmd)
+void CActor::IR_OnKeyboardHold(int dik)
 {
 	if (Remote() || !g_Alive())					return;
 //	if (conditions().IsSleeping())				return;
-	if (m_input_external_handler && !m_input_external_handler->authorized(cmd))	return;
+	if (m_input_external_handler && !m_input_external_handler->authorized(dik))	return;
 	if (IsTalking())							return;
 
 	if(m_holder)
 	{
-		m_holder->OnKeyboardHold(cmd);
+		m_holder->OnKeyboardHold(dik);
 		return;
 	}
 
 	float LookFactor = GetLookFactor();
-	switch(cmd)
+	switch(dik)
 	{
 	case kUP:
 	case kDOWN: 
-		cam_Active()->Move( (cmd==kUP) ? kDOWN : kUP, 0, LookFactor);									break;
+		cam_Active()->Move( (dik ==kUP) ? kDOWN : kUP, 0, LookFactor);									break;
 	case kCAM_ZOOM_IN: 
 	case kCAM_ZOOM_OUT: 
-		cam_Active()->Move(cmd);												break;
+		cam_Active()->Move(dik);												break;
 	case kLEFT:
 	case kRIGHT:
-		if (eacFreeLook!=cam_active) cam_Active()->Move(cmd, 0, LookFactor);	break;
+		if (eacFreeLook!=cam_active) cam_Active()->Move(dik, 0, LookFactor);	break;
 
 	case kACCEL:	mstate_wishful |= mcAccel;									break;
 	case kL_STRAFE:	mstate_wishful |= mcLStrafe;								break;
@@ -236,8 +236,6 @@ void CActor::IR_OnKeyboardHold(int cmd)
 	case kFWD:		mstate_wishful |= mcFwd;									break;
 	case kBACK:		mstate_wishful |= mcBack;									break;
 	case kCROUCH:	mstate_wishful |= mcCrouch;									break;
-
-
 	}
 }
 

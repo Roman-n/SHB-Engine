@@ -172,7 +172,7 @@ void CTextureDescrMngr::UnLoad()
 	m_texture_details.clear	();
 }
 /*
-		LPCSTR		descr			=	Device.Resources->m_description->r_string("specification",*cName);
+		const char*		descr			=	Device.Resources->m_description->r_string("specification",*cName);
 		string256	bmode;
 		sscanf		(descr,"bump_mode[%[^]]], material[%f]",bmode,&m_material);
 		if ((bmode[0]=='u')&&(bmode[1]=='s')&&(bmode[2]=='e')&&(bmode[3]==':'))
@@ -207,7 +207,7 @@ float CTextureDescrMngr::GetMaterial(const shared_str& tex_name) const
 	return 1.0f;
 }
 /*
-		LPCSTR		descr			=	Device.Resources->m_description->r_string("association",base);
+		const char*		descr			=	Device.Resources->m_description->r_string("association",base);
 		if (strstr(descr,"usage[diffuse_or_bump]"))	
 		{ 
 			bDetail_Diffuse	= TRUE; 
@@ -238,7 +238,7 @@ void CTextureDescrMngr::GetTextureUsage	(const shared_str& tex_name, BOOL& bDiff
 	}
 }
 
-BOOL CTextureDescrMngr::GetDetailTexture(const shared_str& tex_name, LPCSTR& res, R_constant_setup* &CS) const
+BOOL CTextureDescrMngr::GetDetailTexture(const shared_str& tex_name, const char*& res, R_constant_setup* &CS) const
 {
 	map_TD::const_iterator I = m_texture_details.find	(tex_name);
 	if (I!=m_texture_details.end())
@@ -257,7 +257,7 @@ BOOL CTextureDescrMngr::GetDetailTexture(const shared_str& tex_name, LPCSTR& res
 	// Load detail textures association
 	string256		fname;		
 	FS.update_path	(fname,"$game_textures$","textures.ltx");
-	LPCSTR	Iname	= fname;
+	const char*	Iname	= fname;
 	if (FS.exist(Iname))
 	{
 		xr_delete		(m_description);

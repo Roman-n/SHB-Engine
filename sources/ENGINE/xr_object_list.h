@@ -40,13 +40,13 @@ public:
 								~CObjectList		( );
 
 	CObject*					FindObjectByName	( shared_str	name	);
-	CObject*					FindObjectByName	( LPCSTR		name	);
+	CObject*					FindObjectByName	(const char* name	);
 	CObject*					FindObjectByCLS_ID	( CLASS_ID		cls		);
 
 	void						Load				( );
 	void						Unload				( );
 
-	CObject*					Create				( LPCSTR		name	);
+	CObject*					Create				(const char* name	);
 	void						Destroy				( CObject*		O		);
 
 	void						SingleUpdate		( CObject*		O		);

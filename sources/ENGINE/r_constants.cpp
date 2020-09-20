@@ -55,7 +55,7 @@ BOOL	R_constant_table::parse	(void* _desc, u16 destination)
 	for (u32 dwCount = desc->Constants; dwCount; dwCount--,it++)
 	{
 		// Name
-		LPCSTR	name		=	LPCSTR(ptr+it->Name);
+		const char* name		= (const char*) (ptr+it->Name);
 
 		// Type
 		u16		type		=	RC_float;

@@ -11,7 +11,7 @@
 #define		PRIORITY_NORMAL	8
 #define		PRIORITY_LOW	4
 
-void resptrcode_texture::create(LPCSTR _name)
+void resptrcode_texture::create(const char* _name)
 {
 	_set(Device.Resources->_CreateTexture(_name));
 }
@@ -135,7 +135,7 @@ void CTexture::Preload	()
 /*
 	if (Device.Resources->m_description->line_exist("specification",*cName))	{
 //		if (strstr(*cName,"ston_stena"))	__asm int 3;
-		LPCSTR		descr			=	Device.Resources->m_description->r_string("specification",*cName);
+		const char*		descr			=	Device.Resources->m_description->r_string("specification",*cName);
 		string256	bmode;
 		sscanf		(descr,"bump_mode[%[^]]], material[%f]",bmode,&m_material);
 		if ((bmode[0]=='u')&&(bmode[1]=='s')&&(bmode[2]=='e')&&(bmode[3]==':'))

@@ -1,6 +1,8 @@
 #include "stdafx.h"
 
 #include "xrRender_console.h"
+#include	"..\ENGINE\Console.h"
+#include	"..\ENGINE\IConsoleCommand.h"
 
 u32			ps_Preset				=	2	;
 xr_token							qpreset_token							[ ]={
@@ -112,8 +114,7 @@ float		ps_r2_slight_fade			= 1.f;				// 1.f
 float		ps_r2_gloss_factor			= 1.0f;
 //- Mad Max
 
-#include	"..\ENGINE\Console.h"
-#include	"..\ENGINE\IConsole_Command.h"
+
 
 //-----------------------------------------------------------------------
 class CCC_tf_Aniso		: public CCC_Integer
@@ -181,10 +182,10 @@ public:
 		}
 	}
 };
-class CCC_Screenshot : public IConsole_Command
+class CCC_Screenshot : public IConsoleCommand
 {
 public:
-	CCC_Screenshot(const char* N) : IConsole_Command(N)  { };
+	CCC_Screenshot(const char* N) : IConsoleCommand(N)  { };
 	virtual void Execute(const char* args) {
 		string_path	name;	name[0]=0;
 		sscanf		(args,"%s",	name);
@@ -192,10 +193,10 @@ public:
 		::Render->Screenshot(IRender_interface::SM_NORMAL,image);
 	}
 };
-class CCC_ModelPoolStat : public IConsole_Command
+class CCC_ModelPoolStat : public IConsoleCommand
 {
 public:
-	CCC_ModelPoolStat(const char* N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+	CCC_ModelPoolStat(const char* N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(const char* args) {
 		RImplementation.Models->dump();
 	}
@@ -226,10 +227,10 @@ public:
 
 #if RENDER==R_R2
 #include "r__pixel_calculator.h"
-class CCC_BuildSSA : public IConsole_Command
+class CCC_BuildSSA : public IConsoleCommand
 {
 public:
-	CCC_BuildSSA(const char* N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+	CCC_BuildSSA(const char* N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(const char* args) {
 		r_pixel_calculator	c;
 		c.run				();

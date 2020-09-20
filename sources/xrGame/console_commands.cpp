@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "..\ENGINE\Console.h"
-#include "..\ENGINE\IConsole_Command.h"
+#include "..\ENGINE\IConsoleCommand.h"
 #include "..\ENGINE\customhud.h"
 #include "..\ENGINE\fdemorecord.h"
 #include "..\ENGINE\fdemoplay.h"
@@ -117,10 +117,10 @@ enum E_COMMON_FLAGS{
 	extern		u32 game_lua_memory_usage	();
 #endif // SEVERAL_ALLOCATORS
 
-class CCC_MemStats : public IConsole_Command
+class CCC_MemStats : public IConsoleCommand
 {
 public:
-	CCC_MemStats(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+	CCC_MemStats(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 		Memory.mem_compact		();
 //		u32		_crt_heap		= mem_usage_impl((HANDLE)_get_heap_handle(),0,0);
@@ -176,9 +176,10 @@ public:
 };
 
 #ifdef DEBUG
-class CCC_ALifePath : public IConsole_Command {
+class CCC_ALifePath : public IConsoleCommand
+{
 public:
-	CCC_ALifePath(LPCSTR N) : IConsole_Command(N)  { };
+	CCC_ALifePath(LPCSTR N) : IConsoleCommand(N)  { };
 	virtual void Execute(LPCSTR args) {
 		if (!ai().get_level_graph())
 			Msg("! there is no graph!");
@@ -205,9 +206,10 @@ public:
 };
 #endif // DEBUG
 
-class CCC_ALifeTimeFactor : public IConsole_Command {
+class CCC_ALifeTimeFactor : public IConsoleCommand
+{
 public:
-	CCC_ALifeTimeFactor(LPCSTR N) : IConsole_Command(N)  { };
+	CCC_ALifeTimeFactor(LPCSTR N) : IConsoleCommand(N)  { };
 	virtual void Execute(LPCSTR args) {
 		float id1 = 0.0f;
 		sscanf(args ,"%f",&id1);
@@ -222,9 +224,10 @@ public:
 	}
 };
 
-class CCC_ALifeSwitchDistance : public IConsole_Command {
+class CCC_ALifeSwitchDistance : public IConsoleCommand
+{
 public:
-	CCC_ALifeSwitchDistance(LPCSTR N) : IConsole_Command(N)  { };
+	CCC_ALifeSwitchDistance(LPCSTR N) : IConsoleCommand(N)  { };
 	virtual void Execute(LPCSTR args) {
 		if (ai().get_alife()) {
 			float id1 = 0.0f;
@@ -243,9 +246,10 @@ public:
 	}
 };
 
-class CCC_ALifeProcessTime : public IConsole_Command {
+class CCC_ALifeProcessTime : public IConsoleCommand
+{
 public:
-	CCC_ALifeProcessTime(LPCSTR N) : IConsole_Command(N)  { };
+	CCC_ALifeProcessTime(LPCSTR N) : IConsoleCommand(N)  { };
 	virtual void Execute(LPCSTR args) {
 		if (ai().get_alife()) {
 			game_sv_Single	*tpGame = smart_cast<game_sv_Single *>(Level().Server->game);
@@ -263,9 +267,10 @@ public:
 };
 
 
-class CCC_ALifeObjectsPerUpdate : public IConsole_Command {
+class CCC_ALifeObjectsPerUpdate : public IConsoleCommand
+{
 public:
-	CCC_ALifeObjectsPerUpdate(LPCSTR N) : IConsole_Command(N)  { };
+	CCC_ALifeObjectsPerUpdate(LPCSTR N) : IConsoleCommand(N)  { };
 	virtual void Execute(LPCSTR args) {
 		if (ai().get_alife()) {
 			game_sv_Single	*tpGame = smart_cast<game_sv_Single *>(Level().Server->game);
@@ -279,9 +284,10 @@ public:
 	}
 };
 
-class CCC_ALifeSwitchFactor : public IConsole_Command {
+class CCC_ALifeSwitchFactor : public IConsoleCommand
+{
 public:
-	CCC_ALifeSwitchFactor(LPCSTR N) : IConsole_Command(N)  { };
+	CCC_ALifeSwitchFactor(LPCSTR N) : IConsoleCommand(N)  { };
 	virtual void Execute(LPCSTR args) {
 		if (ai().get_alife()) {
 			game_sv_Single	*tpGame = smart_cast<game_sv_Single *>(Level().Server->game);
@@ -297,9 +303,10 @@ public:
 };
 
 #ifndef MASTER_GOLD
-class CCC_TimeFactor : public IConsole_Command {
+class CCC_TimeFactor : public IConsoleCommand
+{
 public:
-					CCC_TimeFactor	(LPCSTR N) : IConsole_Command(N) {}
+					CCC_TimeFactor	(LPCSTR N) : IConsoleCommand(N) {}
 	virtual void	Execute			(LPCSTR args)
 	{
 		float				time_factor = (float)atof(args);
@@ -310,11 +317,11 @@ public:
 #endif // MASTER_GOLD
 
 //-----------------------------------------------------------------------
-class CCC_DemoRecord : public IConsole_Command
+class CCC_DemoRecord : public IConsoleCommand
 {
 public:
 
-	CCC_DemoRecord(LPCSTR N) : IConsole_Command(N) {};
+	CCC_DemoRecord(LPCSTR N) : IConsoleCommand(N) {};
 	virtual void Execute(LPCSTR args) {
 		if (!g_pGameLevel)
 		{ // level not loaded
@@ -335,11 +342,11 @@ public:
 		g_pGameLevel->Cameras().AddCamEffector(xr_new<CDemoRecord> (fn));
 	}
 };
-class CCC_DemoPlay : public IConsole_Command
+class CCC_DemoPlay : public IConsoleCommand
 {
 public:
 	CCC_DemoPlay(LPCSTR N) : 
-	  IConsole_Command(N) 
+		IConsoleCommand(N)
 	  { bEmptyArgsHandled = true; };
 	  virtual void Execute(LPCSTR args) {
 		  if (0==g_pGameLevel)
@@ -376,9 +383,10 @@ bool valid_file_name(LPCSTR file_name)
 	return		(true);
 }
 
-class CCC_ALifeSave : public IConsole_Command {
+class CCC_ALifeSave : public IConsoleCommand
+{
 public:
-	CCC_ALifeSave(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+	CCC_ALifeSave(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 
 		if(!g_actor || !Actor()->g_Alive())
@@ -438,9 +446,10 @@ public:
 	}
 };
 
-class CCC_ALifeLoadFrom : public IConsole_Command {
+class CCC_ALifeLoadFrom : public IConsoleCommand
+{
 public:
-	CCC_ALifeLoadFrom(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+	CCC_ALifeLoadFrom(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args)
 	{
 		if (!ai().get_alife()) {
@@ -494,9 +503,10 @@ public:
 	}
 };
 
-class CCC_LoadLastSave : public IConsole_Command {
+class CCC_LoadLastSave : public IConsoleCommand
+{
 public:
-					CCC_LoadLastSave	(LPCSTR N) : IConsole_Command(N)
+					CCC_LoadLastSave	(LPCSTR N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled		= true;
 	}
@@ -533,18 +543,20 @@ public:
 	}
 };
 
-class CCC_FlushLog : public IConsole_Command {
+class CCC_FlushLog : public IConsoleCommand
+{
 public:
-	CCC_FlushLog(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+	CCC_FlushLog(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR /**args/**/) {
 		FlushLog();
 		Msg		("* Log file has been saved successfully!");
 	}
 };
 
-class CCC_ClearLog : public IConsole_Command {
+class CCC_ClearLog : public IConsoleCommand
+{
 public:
-	CCC_ClearLog(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+	CCC_ClearLog(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR) {
 		LogFile->clear_not_free	();
 		FlushLog				();
@@ -587,9 +599,10 @@ public:
 
 
 #ifndef MASTER_GOLD
-class CCC_Script : public IConsole_Command {
+class CCC_Script : public IConsoleCommand
+{
 public:
-	CCC_Script(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+	CCC_Script(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 		string256	S;
 		S[0]		= 0;
@@ -608,9 +621,10 @@ public:
 	}
 };
 
-class CCC_ScriptCommand : public IConsole_Command {
+class CCC_ScriptCommand : public IConsoleCommand
+{
 public:
-	CCC_ScriptCommand	(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+	CCC_ScriptCommand	(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 	virtual void	Execute				(LPCSTR args) {
 		if (!xr_strlen(args))
 			Log("* Specify string to run!");
@@ -642,9 +656,10 @@ public:
 
 #ifdef DEBUG
 
-class CCC_DrawGameGraphAll : public IConsole_Command {
+class CCC_DrawGameGraphAll : public IConsoleCommand
+{
 public:
-				 CCC_DrawGameGraphAll	(LPCSTR N) : IConsole_Command(N)
+				 CCC_DrawGameGraphAll	(LPCSTR N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	}
@@ -658,9 +673,10 @@ public:
 	}
 };
 
-class CCC_DrawGameGraphCurrent : public IConsole_Command {
+class CCC_DrawGameGraphCurrent : public IConsoleCommand
+{
 public:
-				 CCC_DrawGameGraphCurrent	(LPCSTR N) : IConsole_Command(N)
+				 CCC_DrawGameGraphCurrent	(LPCSTR N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	}
@@ -676,9 +692,10 @@ public:
 	}
 };
 
-class CCC_DrawGameGraphLevel : public IConsole_Command {
+class CCC_DrawGameGraphLevel : public IConsoleCommand
+{
 public:
-				 CCC_DrawGameGraphLevel	(LPCSTR N) : IConsole_Command(N)
+				 CCC_DrawGameGraphLevel	(LPCSTR N) : IConsoleCommand(N)
 	{
 	}
 
@@ -706,9 +723,10 @@ public:
 	}
 };
 
-class CCC_ScriptDbg : public IConsole_Command {
+class CCC_ScriptDbg : public IConsoleCommand
+{
 public:
-	CCC_ScriptDbg(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+	CCC_ScriptDbg(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 		
 		if(strstr(cName,"script_debug_break")==cName ){
@@ -744,9 +762,10 @@ public:
 	}
 };
 
-class CCC_DumpInfos : public IConsole_Command {
+class CCC_DumpInfos : public IConsoleCommand
+{
 public:
-	CCC_DumpInfos	(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+	CCC_DumpInfos	(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 	virtual void	Execute				(LPCSTR args) {
 		CActor* A =smart_cast<CActor*>(Level().CurrentEntity());
 		if(A)
@@ -758,9 +777,10 @@ public:
 	}
 };
 #include "map_manager.h"
-class CCC_DumpMap : public IConsole_Command {
+class CCC_DumpMap : public IConsoleCommand
+{
 public:
-	CCC_DumpMap	(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+	CCC_DumpMap	(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 	virtual void	Execute				(LPCSTR args) {
 		Level().MapManager().Dump();
 	}
@@ -772,9 +792,10 @@ public:
 };
 
 #include "alife_graph_registry.h"
-class CCC_DumpCreatures : public IConsole_Command {
+class CCC_DumpCreatures : public IConsoleCommand
+{
 public:
-	CCC_DumpCreatures	(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+	CCC_DumpCreatures	(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 	virtual void	Execute				(LPCSTR args) {
 		
 		typedef CSafeMapIterator<ALife::_OBJECT_ID,CSE_ALifeDynamicObject>::_REGISTRY::const_iterator const_iterator;
@@ -798,17 +819,19 @@ public:
 
 
 
-class CCC_DebugFonts : public IConsole_Command {
+class CCC_DebugFonts : public IConsoleCommand
+{
 public:
-	CCC_DebugFonts (LPCSTR N) : IConsole_Command(N) {bEmptyArgsHandled = true; }
+	CCC_DebugFonts (LPCSTR N) : IConsoleCommand(N) {bEmptyArgsHandled = true; }
 	virtual void Execute				(LPCSTR args) {
 		HUD().GetUI()->StartStopMenu( xr_new<CUIDebugFonts>(), true);		
 	}
 };
 
-class CCC_DebugNode : public IConsole_Command {
+class CCC_DebugNode : public IConsoleCommand
+{
 public:
-	CCC_DebugNode(LPCSTR N) : IConsole_Command(N)  { };
+	CCC_DebugNode(LPCSTR N) : IConsoleCommand(N)  { };
 
 	virtual void Execute(LPCSTR args) {
 
@@ -832,9 +855,10 @@ public:
 	}
 };
 
-class CCC_ShowMonsterInfo : public IConsole_Command {
+class CCC_ShowMonsterInfo : public IConsoleCommand
+{
 public:
-				CCC_ShowMonsterInfo(LPCSTR N) : IConsole_Command(N)  { };
+				CCC_ShowMonsterInfo(LPCSTR N) : IConsoleCommand(N)  { };
 
 	virtual void Execute(LPCSTR args) {
 
@@ -852,9 +876,10 @@ public:
 		monster->set_show_debug_info (u8(value2));
 	}
 };
-class CCC_DbgPhTrackObj : public IConsole_Command {
+class CCC_DbgPhTrackObj : public IConsoleCommand
+{
 public:
-	CCC_DbgPhTrackObj(LPCSTR N) : IConsole_Command(N)  { };
+	CCC_DbgPhTrackObj(LPCSTR N) : IConsoleCommand(N)  { };
 	virtual void Execute(LPCSTR args/**/) {
 			ph_dbg_draw_mask1.set(ph_m1_DbgTrackObject,TRUE);
 			PH_DBG_SetTrackObject(args);
@@ -887,10 +912,11 @@ public:
 };
 
 #ifdef DEBUG
-class CCC_PHGravity : public IConsole_Command {
+class CCC_PHGravity : public IConsoleCommand
+{
 public:
 		CCC_PHGravity(LPCSTR N) :
-		IConsole_Command(N)
+			IConsoleCommand(N)
 		{};
 	  virtual void	Execute	(LPCSTR args)
 	  {
@@ -909,10 +935,10 @@ public:
 };
 #endif // DEBUG
 
-class CCC_PHFps : public IConsole_Command
+class CCC_PHFps : public IConsoleCommand
 {
 public:
-	CCC_PHFps(LPCSTR N) : IConsole_Command(N)
+	CCC_PHFps(LPCSTR N) : IConsoleCommand(N)
 	{ };
 	virtual void	Execute(LPCSTR args)
 	{
@@ -929,24 +955,27 @@ public:
 #ifdef DEBUG
 extern void print_help(lua_State *L);
 
-struct CCC_LuaHelp : public IConsole_Command {
-	CCC_LuaHelp(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+struct CCC_LuaHelp : public IConsoleCommand
+{
+	CCC_LuaHelp(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 
 	virtual void Execute(LPCSTR args) {
 		print_help(ai().script_engine().lua());
 	}
 };
 
-struct CCC_ShowSmartCastStats : public IConsole_Command {
-	CCC_ShowSmartCastStats(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+struct CCC_ShowSmartCastStats : public IConsoleCommand
+{
+	CCC_ShowSmartCastStats(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 
 	virtual void Execute(LPCSTR args) {
 		show_smart_cast_stats();
 	}
 };
 
-struct CCC_ClearSmartCastStats : public IConsole_Command {
-	CCC_ClearSmartCastStats(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+struct CCC_ClearSmartCastStats : public IConsoleCommand
+{
+	CCC_ClearSmartCastStats(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 
 	virtual void Execute(LPCSTR args) {
 		clear_smart_cast_stats();
@@ -956,8 +985,9 @@ struct CCC_ClearSmartCastStats : public IConsole_Command {
 
 #ifndef MASTER_GOLD
 #	include "game_graph.h"
-struct CCC_JumpToLevel : public IConsole_Command {
-	CCC_JumpToLevel(LPCSTR N) : IConsole_Command(N)  {};
+struct CCC_JumpToLevel : public IConsoleCommand
+{
+	CCC_JumpToLevel(LPCSTR N) : IConsoleCommand(N)  {};
 
 	virtual void Execute(LPCSTR args) {
 		if (!ai().get_alife()) {
@@ -982,9 +1012,10 @@ struct CCC_JumpToLevel : public IConsole_Command {
 #include "GamePersistent.h"
 
 
-class CCC_MainMenu : public IConsole_Command {
+class CCC_MainMenu : public IConsoleCommand
+{
 public:
-	CCC_MainMenu(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+	CCC_MainMenu(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR args) {
 
 		bool bWhatToDo = TRUE;
@@ -1002,8 +1033,9 @@ public:
 	}
 };
 
-struct CCC_StartTimeSingle : public IConsole_Command {
-	CCC_StartTimeSingle(LPCSTR N) : IConsole_Command(N) {};
+struct CCC_StartTimeSingle : public IConsoleCommand
+{
+	CCC_StartTimeSingle(LPCSTR N) : IConsoleCommand(N) {};
 	virtual void	Execute	(LPCSTR args)
 	{
 		u32 year = 1, month = 1, day = 1, hours = 0, mins = 0, secs = 0, milisecs = 0;
@@ -1129,10 +1161,10 @@ struct CCC_DbgBullets : public CCC_Integer {
 
 #include "attachable_item.h"
 #include "attachment_owner.h"
-class CCC_TuneAttachableItem : public IConsole_Command
+class CCC_TuneAttachableItem : public IConsoleCommand
 {
 public		:
-	CCC_TuneAttachableItem(LPCSTR N):IConsole_Command(N){};
+	CCC_TuneAttachableItem(LPCSTR N):IConsoleCommand(N){};
 	virtual void	Execute	(LPCSTR args)
 	{
 		if( CAttachableItem::m_dbgItem){
@@ -1158,9 +1190,10 @@ public		:
 	}
 };
 
-class CCC_Crash : public IConsole_Command {
+class CCC_Crash : public IConsoleCommand
+{
 public:
-	CCC_Crash(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+	CCC_Crash(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR /**args/**/) {
 		VERIFY3					(false,"This is a test crash","Do not post it as a bug");
 		int						*pointer = 0;
@@ -1168,9 +1201,10 @@ public:
 	}
 };
 
-class CCC_DumpModelBones : public IConsole_Command {
+class CCC_DumpModelBones : public IConsoleCommand
+{
 public:
-	CCC_DumpModelBones	(LPCSTR N) : IConsole_Command(N)
+	CCC_DumpModelBones	(LPCSTR N) : IConsoleCommand(N)
 	{
 	}
 	
@@ -1212,9 +1246,10 @@ public:
 
 extern void show_animation_stats	();
 
-class CCC_ShowAnimationStats : public IConsole_Command {
+class CCC_ShowAnimationStats : public IConsoleCommand
+{
 public:
-	CCC_ShowAnimationStats(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+	CCC_ShowAnimationStats(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR)
 	{
 		show_animation_stats	();
@@ -1223,9 +1258,10 @@ public:
 
 #endif // DEBUG
 
-class CCC_DumpObjects : public IConsole_Command {
+class CCC_DumpObjects : public IConsoleCommand
+{
 public:
-	CCC_DumpObjects(LPCSTR N) : IConsole_Command(N)  { bEmptyArgsHandled = true; };
+	CCC_DumpObjects(LPCSTR N) : IConsoleCommand(N)  { bEmptyArgsHandled = true; };
 	virtual void Execute(LPCSTR)
 	{
 		Level().Objects.dump_all_objects();

@@ -1,0 +1,1883 @@
+* Detected CPU: GenuineIntel P3 family, F6/M10/S7, 1994.00 mhz, 32-clk 'rdtsc'
+* CPU Features: RDTSC, MMX, SSE, SSE2
+
+Initializing File System...
+using fs-ltx fsgame.ltx
+FS: 28137 files cached, 4581Kb memory used.
+Init FileSystem 3.533330 sec
+'Core' build 7897, Sep 20 2020
+
+CRT heap 0x018f0000
+Process heap 0x018f0000
+Initializing Engine...
+Executing config-script "user.ltx"...
+[..\app_data\user.ltx] successfully loaded.
+Starting INPUT device...
+Loading DLL: xrRender_R1.dll
+Loading DLL: xrGame.dll
+* [win32]: free[4064864 K], reserved[26304 K], committed[103072 K]
+* [ D3D ]: textures[0 K]
+* [x-ray]: process heap[6697 K]
+* [x-ray]: economy: strings[879 K], smem[0 K]
+* [x-ray]: file mapping: memory[0 K], count[0]
+* active file mappings (0):
+Executing config-script "c:\engine\shb-engine\debug-win32\..\gamedata\config\default_controls.ltx"...
+! cant convert dik_name for dik[144], prop=[
+! cant find corresponding [id] for action_name artefact
+[c:\engine\shb-engine\debug-win32\..\gamedata\config\default_controls.ltx] successfully loaded.
+Executing config-script "user.ltx"...
+Executing config-script "c:\engine\shb-engine\debug-win32\..\gamedata\config\rspec_default.ltx"...
+[c:\engine\shb-engine\debug-win32\..\gamedata\config\rspec_default.ltx] successfully loaded.
+Executing config-script "c:\engine\shb-engine\debug-win32\..\gamedata\config\default_controls.ltx"...
+! cant find corresponding [id] for action_name artefact
+[c:\engine\shb-engine\debug-win32\..\gamedata\config\default_controls.ltx] successfully loaded.
+[..\app_data\user.ltx] successfully loaded.
+SOUND: OpenAL: enumerate devices...
+SOUND: OpenAL: EnumerationExtension Present
+devices Generic Software
+SOUND: OpenAL: system  default SndDevice name is Generic Software
+SOUND: OpenAL: All available devices:
+1. Generic Software, Spec Version 1.1 (default)
+SOUND: OpenAL: SelectBestDevice is Generic Software 1.1
+SOUND: OpenAL: Required device: Generic Software. Created device: Generic Software.
+* sound: EAX 2.0 extension: absent
+* sound: EAX 2.0 deferred: absent
+* sound : cache: 32773 kb, 3805 lines, 8820 bpl
+Starting RENDER device...
+* GPU [vendor:10DE]-[device:1050]: NVIDIA GeForce GT 520M
+* GPU driver: 21.21.13.7654
+Available video modes[4]:
+[800x600]
+[1024x768]
+[1280x720]
+[1366x768]
+* CREATE: DeviceREF: 1
+* Vertex Processor: PURE HARDWARE
+*     Texture memory: 4039 M
+*          DDI-level: 9.0
+* GPU shading: vs(fffe0300/3.0/30), ps(ffff0300/3.0/30)
+* GPU vertex cache: recognized, 24
+* DVB created: 1536K
+* DIB created: 512K
+count of .thm files=0
+load time=220 ms
+* distortion: used, dev(30),need(14)
+* SSample: 1024x768
+* created RT($user$rendertarget), 1024x768
+* created RT($user$distort), 1024x768
+* SSample: enabled
+~ Invalid syntax in call to 'r__tf_aniso'
+~ Valid arguments: integer value in range [1,16]
+Script debugger succesfully restarted.
+* loading script _G.script
+* loading script class_registrator.script
+* loading script ui_main_menu.script
+* loading script smart_terrain.script
+* loading script se_respawn.script
+* loading script ce_switcher.script
+* loading script se_switcher.script
+* loading script se_stalker.script
+* loading script se_car.script
+* loading script se_zones.script
+* loading script se_item.script
+* loading script se_artefact.script
+* loading script se_monster.script
+* loading script game_registrator.script
+Starting engine...
+pause [ON] timer=[OFF] sound=[ON] reason=mm_activate1
+snd_emitters_[true] 2
+pause [ON] timer=[ON] sound=[OFF] reason=mm_activate2
+pause [OFF] timer=[ON] sound=[OFF] reason=mm_deactivate1
+pause [OFF] timer=[OFF] sound=[ON] reason=mm_deactivate2
+snd_emitters_[false] 1
+*ref -CRenderDevice::ResetTotal: DeviceREF: 93
+* DVB created: 1536K
+* DIB created: 512K
+~ Invalid syntax in call to 'r__tf_aniso'
+~ Valid arguments: integer value in range [1,16]
+* SSample: 1024x768
+* created RT($user$rendertarget), 1024x768
+* created RT($user$distort), 1024x768
+* SSample: enabled
+* GPU shading: vs(fffe0300/3.0/30), ps(ffff0300/3.0/30)
+* GPU vertex cache: recognized, 24
+*** RESET [41 ms]
+*ref +CRenderDevice::ResetTotal: DeviceREF: 92
+"c:\engine\shb-engine\sources\..\debug-win32\binaries\engine.exe" 
+* phase time: 0 ms
+* phase cmem: 78679 K
+Кэширование объектов...
+Loading objects...
+Loading models...
+* [prefetch] time:    21611 ms
+* [prefetch] memory:  291843Kb
+* phase time: 21672 ms
+* phase cmem: 357490 K
+Сервер: Старт...
+* sv_Connect: all/single/alife/new
+* Created server_game single
+* Initializing game script process
+* loading script _G.script
+* loading script class_registrator.script
+* loading script ui_main_menu.script
+* loading script smart_terrain.script
+* loading script se_respawn.script
+* loading script ce_switcher.script
+* loading script se_switcher.script
+* loading script se_stalker.script
+* loading script se_car.script
+* loading script se_zones.script
+* loading script se_item.script
+* loading script se_artefact.script
+* loading script se_monster.script
+* loading script game_registrator.script
+* loading script task_manager.script
+* loading script treasure_manager.script
+* loading script xr_sound.script
+* loading script dialog_manager.script
+* phase time: 777 ms
+* phase cmem: 358081 K
+Сервер: Загрузка симуляции жизни...
+* phase time: 90 ms
+* phase cmem: 358076 K
+Создание новой игры...
+* Creating new game...
+* Loading spawn registry...
+* loading script smart_terrain_params.script
+* loading script xr_gulag.script
+* loading script gulag_general.script
+* loading script gulag_escape.script
+* loading script gulag_garbage.script
+* loading script gulag_agroprom.script
+* loading script gulag_agroprom_underground.script
+* loading script gulag_dark_valley.script
+* loading script gulag_labx18.script
+* loading script gulag_bar.script
+* loading script gulag_military.script
+* loading script gulag_radar.script
+* loading script gulag_radar_u.script
+* loading script gulag_yantar.script
+* loading script gulag_pripyat.script
+* loading script gulag_kishka.script
+* loading script gulag_sarcofag.script
+* loading script gulag_deadcity.script
+* loading script utils.script
+* loading script xr_logic.script
+* 8641 spawn points are successfully loaded
+* Loading ai space is successfully completed (1.083s,  13.141 Mb)
+* loading script db.script
+* loading script actor_proxy.script
+* loading script gulag_tasks.script
+* loading script sim_statistic.script
+* loading script ranks.script
+* loading script modules.script
+* Saving spawns...
+* Saving objects...
+* 16862 objects are successfully saved
+* Game all.sav is successfully saved to file '..\app_data\savedgames\all.sav' (3558655 bytes compressed to 896074)
+* New game is successfully created!
+* Loading alife simulator is successfully completed ( 57.273 Mb)
+* phase time: 62318 ms
+* phase cmem: 416723 K
+Сервер: Соединяемся...
+* phase time: 269 ms
+* phase cmem: 416933 K
+Клиент: Соединение с localhost...
+# Player not found. New player created.
+* client : connection accepted - <>
+* phase time: 83 ms
+* phase cmem: 416941 K
+Открытие потока...
+* phase time: 76 ms
+* phase cmem: 416941 K
+Загрузка формы объектов...
+* phase time: 23020 ms
+* phase cmem: 489535 K
+Загрузка шейдеров...
+* created RT($user$shadow), 512x512
+* created RT($user$temp), 512x512
+* created RT($user$projector), 512x512
+* phase time: 4168 ms
+* phase cmem: 491029 K
+Загрузка геометрии...
+* [Loading VB] 65532 verts, 2047 Kb
+* [Loading VB] 65525 verts, 2047 Kb
+* [Loading VB] 65535 verts, 2047 Kb
+* [Loading VB] 65466 verts, 2045 Kb
+* [Loading VB] 17208 verts, 537 Kb
+* [Loading VB] 65533 verts, 2047 Kb
+* [Loading VB] 65534 verts, 2047 Kb
+* [Loading VB] 65534 verts, 2047 Kb
+* [Loading VB] 65531 verts, 2047 Kb
+* [Loading VB] 65535 verts, 2047 Kb
+* [Loading VB] 65535 verts, 2047 Kb
+* [Loading VB] 46595 verts, 1456 Kb
+* [Loading VB] 65534 verts, 2047 Kb
+* [Loading VB] 65533 verts, 2047 Kb
+* [Loading VB] 65535 verts, 2047 Kb
+* [Loading VB] 65532 verts, 2047 Kb
+* [Loading VB] 65533 verts, 2047 Kb
+* [Loading VB] 65533 verts, 2047 Kb
+* [Loading VB] 53181 verts, 1661 Kb
+* [Loading IB] 1048575 indices, 2047 Kb
+* [Loading IB] 1048572 indices, 2047 Kb
+* [Loading IB] 1048572 indices, 2047 Kb
+* [Loading IB] 1048572 indices, 2047 Kb
+* [Loading IB] 1048572 indices, 2047 Kb
+* [Loading IB] 1048572 indices, 2047 Kb
+* [Loading IB] 1048575 indices, 2047 Kb
+* [Loading IB] 1048572 indices, 2047 Kb
+* [Loading IB] 1048575 indices, 2047 Kb
+* [Loading IB] 228285 indices, 445 Kb
+* phase time: 467 ms
+* phase cmem: 546763 K
+Загрузка базы пространств...
+* phase time: 32770 ms
+* phase cmem: 550658 K
+Загрузка детальных объектов...
+* [DETAILS] VertexConsts(256), Batch(61)
+* [DETAILS] 40687 v(20), 26352 p
+* [DETAILS] Batch(61), VB(794K), IB(154K)
+* phase time: 321 ms
+* phase cmem: 551658 K
+Загрузка секторов и порталов...
+* Loading HOM: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\level.hom
+* phase time: 276 ms
+* phase cmem: 551817 K
+Загрузка ИИ объектов...
+- Loading music tracks from 'l01_escape_musics'...
+* Initializing level script process
+* phase time: 94 ms
+* phase cmem: 551857 K
+Клиент: Создание...
+_our = 0
+_him = 0
+- Game configuring : Started 
+- Game configuring : Finished 
+ --incorrect global rect definition for map [l08u_brainlab]  kw=0.006669 kh=0.031627
+ --try x2=181.484863 or  y2=1612.421753
+ --error-incorrect map definition global rect of map [l12u_control_monolith] intersects with [l12_stancia]
+ --error-incorrect map definition global rect of map [l12u_control_monolith] intersects with [l12_stancia_2]
+ --error-incorrect map definition global rect of map [l12u_control_monolith] intersects with [l12u_sarcofag]
+ --error-incorrect map definition global rect of map [l03u_agr_underground] intersects with [l03_agroprom]
+ --error-incorrect map definition global rect of map [l01_escape] intersects with [l04_darkvalley]
+ --error-incorrect map definition global rect of map [l05_bar] intersects with [l06_rostok]
+ --error-incorrect map definition global rect of map [l07_military] intersects with [l10_radar]
+ --error-incorrect map definition global rect of map [l08_yantar] intersects with [l08u_brainlab]
+ --error-incorrect map definition global rect of map [l10_radar] intersects with [l10u_bunker]
+ --error-incorrect map definition global rect of map [l12_stancia] intersects with [l12_stancia_2]
+ --error-incorrect map definition global rect of map [l12_stancia] intersects with [l12u_sarcofag]
+ --error-incorrect map definition global rect of map [l12_stancia_2] intersects with [l12u_sarcofag]
+ --incorrect global rect definition for map [l08u_brainlab]  kw=0.006669 kh=0.031627
+ --try x2=181.484863 or  y2=1612.421753
+ --error-incorrect map definition global rect of map [l12u_control_monolith] intersects with [l12_stancia]
+ --error-incorrect map definition global rect of map [l12u_control_monolith] intersects with [l12_stancia_2]
+ --error-incorrect map definition global rect of map [l12u_control_monolith] intersects with [l12u_sarcofag]
+ --error-incorrect map definition global rect of map [l03u_agr_underground] intersects with [l03_agroprom]
+ --error-incorrect map definition global rect of map [l01_escape] intersects with [l04_darkvalley]
+ --error-incorrect map definition global rect of map [l05_bar] intersects with [l06_rostok]
+ --error-incorrect map definition global rect of map [l07_military] intersects with [l10_radar]
+ --error-incorrect map definition global rect of map [l08_yantar] intersects with [l08u_brainlab]
+ --error-incorrect map definition global rect of map [l10_radar] intersects with [l10u_bunker]
+ --error-incorrect map definition global rect of map [l12_stancia] intersects with [l12_stancia_2]
+ --error-incorrect map definition global rect of map [l12_stancia] intersects with [l12u_sarcofag]
+ --error-incorrect map definition global rect of map [l12_stancia_2] intersects with [l12u_sarcofag]
+* phase time: 6499 ms
+* phase cmem: 559209 K
+Загрузка текстур...
+* t-report - base: 864, 249783 K
+* t-report - lmap: 10, 10241 K
+***FATAL***: Too many lmap-textures (limit: 8 textures or 32M).
+        Reduce pixel density (worse) or use more vertex lighting (better).
+* phase time: 1515 ms
+* phase cmem: 698007 K
+Клиент: Синхронизация...
+* phase time: 56 ms
+* phase cmem: 698007 K
+* [win32]: free[3247024 K], reserved[66012 K], committed[881204 K]
+* [ D3D ]: textures[260025 K]
+* [x-ray]: process heap[698007 K]
+* [x-ray]: economy: strings[3733 K], smem[28221 K]
+* [x-ray]: file mapping: memory[31835 K], count[4]
+* active file mappings (4):
+* [0x0a910000][8128486][c:\engine\shb-engine\debug-win32\..\gamedata\game.graph]
+* [0x0c880000][3573054][c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\level.gct]
+* [0x23290000][12505535][c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\level.ai]
+* [0x2ca80000][8392388][c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\level.details]
+-------------------------------- Register: 
+* loading script bind_stalker.script
+* loading script level_weathers.script
+* loading script xr_detector.script
+* loading script death_manager.script
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#0.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#1.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#2.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#3.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#4.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#5.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#6.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#7.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#8.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#9.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#10.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#11.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#12.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#13.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#14.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#15.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#16.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#17.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#18.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#19.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#20.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#21.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#22.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#23.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#24.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#25.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#26.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#27.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#28.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#29.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#30.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#31.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#32.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#33.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#34.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#35.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#36.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#37.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#38.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#39.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#40.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#41.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#42.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#43.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#44.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#45.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#46.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#47.ogf
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\levels\l01_escape\meshes\brkbl#48.ogf
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+* loading script level_tasks.script
+* loading script escape_tasks.script
+* loading script garbage_tasks.script
+* loading script agroprom_tasks.script
+* loading script darkvalley_tasks.script
+* loading script bar_rostok_tasks.script
+* loading script yantar_tasks.script
+* loading script mil_tasks.script
+* loading script radar_tasks.script
+* loading script pripyat_tasks.script
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+* loading script bind_physic_object.script
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+- Uninitialized light position.
+- Uninitialized light position.
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+- Uninitialized light position.
+-------------------------------- Register: 
+-------------------------------- Register: 
+* loading script bind_monster.script
+* loading script mob_combat.script
+* loading script mob_trade.script
+* loading script mob_death.script
+* loading script mob_panic.script
+* loading script trade_manager.script
+* loading script xr_meet.script
+* loading script mob_trader.script
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+* loading script bind_restrictor.script
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+- Uninitialized light position.
+-------------------------------- Register: 
+* loading script mob_walker.script
+* loading script mob_alife_mgr.script
+* loading script mob_state_mgr.script
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+* loading script xr_motivator.script
+- There are no sounds with prefix fight\death\anomaly_
+- There are no sounds with prefix fight\friendly_grenade\friendly_grenade_
+* loading script state_mgr.script
+* loading script xr_evaluators_id.script
+* loading script xr_actions_id.script
+* loading script state_mgr_goap.script
+* loading script state_mgr_weapon.script
+* loading script state_mgr_movement.script
+* loading script state_mgr_mental.script
+* loading script state_mgr_bodystate.script
+* loading script state_mgr_direction.script
+* loading script state_mgr_animstate.script
+* loading script state_mgr_animation.script
+* loading script move_mgr.script
+* loading script xr_info.script
+* loading script sound_theme.script
+- There are no sounds with prefix talk\stories\legend005_part_
+- There are no sounds with prefix reactions\story\disbelief_story_
+- There are no sounds with prefix talk\use\yes_sleep_
+- There are no sounds with prefix reactions\story\old_story_
+- There are no sounds with prefix weather\bad_weather\bad_weather_
+- There are no sounds with prefix reactions\story\action_wrong_
+- There are no sounds with prefix reactions\story\disbelief_teller_
+- There are no sounds with prefix reactions\see_something\see_
+- There are no sounds with prefix reactions\story\continue_
+- There are no sounds with prefix talk\stories\legend003_part_
+- There are no sounds with prefix help\wounded_psy\psy_
+- There are no sounds with prefix threat\stop\stop_
+- There are no sounds with prefix talk\trade\no\no_
+- There are no sounds with prefix reactions\story\wonder_
+- There are no sounds with prefix reactions\story\cool_teller_
+- There are no sounds with prefix reactions\story\advice_sceptic_
+- There are no sounds with prefix talk\stories\legend002_part_
+- There are no sounds with prefix talk\stories\story006_part_
+- There are no sounds with prefix reactions\story\yes_
+- There are no sounds with prefix talk\stories\story002_part_
+- There are no sounds with prefix help\wounded_not_see_helper\help_
+- There are no sounds with prefix help\wounded_see_helper\help_
+- There are no sounds with prefix help\wounded_psy\suicide_
+- There are no sounds with prefix reactions\story\disbelief_
+- There are no sounds with prefix reactions\nothing\nothing_
+- There are no sounds with prefix talk\stories\legend001_part_
+- There are no sounds with prefix talk\use\yes_default_
+- There are no sounds with prefix talk\stories\story005_part_
+- There are no sounds with prefix hail\deleted_
+- There are no sounds with prefix reactions\story\final_happy_
+- There are no sounds with prefix talk\stories\legend004_part_
+- There are no sounds with prefix reactions\story\cool_info_
+- There are no sounds with prefix talk\use\yes_fight_
+- There are no sounds with prefix reactions\story\final_tragic_
+- There are no sounds with prefix waiting\wait_
+- There are no sounds with prefix talk\stories\story003_part_
+- There are no sounds with prefix reactions\story\belief_story_
+- There are no sounds with prefix reactions\story\fear_
+- There are no sounds with prefix talk\stories\story001_part_
+- There are no sounds with prefix reactions\story\action_right_
+- There are no sounds with prefix scenario\bar\barman\bar_barman_psycho_
+- There are no sounds with prefix talk\rejection\rejection_2
+- There are no sounds with prefix help\not_wounded\help_
+- There are no sounds with prefix reactions\story\uncertain_
+- There are no sounds with prefix reactions\story\doubt_
+- There are no sounds with prefix reactions\story\advice_support_
+- There are no sounds with prefix talk\stories\story004_part_
+- There are no sounds with prefix talk\use\yes_kamp_
+- There are no sounds with prefix talk\trade\yes\yes_
+* loading script xr_combat.script
+* loading script xr_use.script
+* loading script xr_hit.script
+* loading script xr_heli_hunter.script
+* loading script xr_combat_ignore.script
+* loading script xr_danger.script
+* loading script xr_wounded.script
+* loading script xr_abuse.script
+* loading script xr_death.script
+* loading script stalker_generic.script
+* loading script xr_walker.script
+* loading script state_lib.script
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+- There are no sounds with prefix fight\death\anomaly_
+- There are no sounds with prefix fight\friendly_grenade\friendly_grenade_
+- There are no sounds with prefix talk\stories\legend005_part_
+- There are no sounds with prefix reactions\story\disbelief_story_
+- There are no sounds with prefix talk\use\yes_sleep_
+- There are no sounds with prefix reactions\story\old_story_
+- There are no sounds with prefix weather\bad_weather\bad_weather_
+- There are no sounds with prefix reactions\story\action_wrong_
+- There are no sounds with prefix reactions\story\disbelief_teller_
+- There are no sounds with prefix reactions\see_something\see_
+- There are no sounds with prefix reactions\story\continue_
+- There are no sounds with prefix talk\stories\legend003_part_
+- There are no sounds with prefix fight\attack\attack_5
+- There are no sounds with prefix help\wounded_psy\psy_
+- There are no sounds with prefix threat\stop\stop_
+- There are no sounds with prefix talk\trade\no\no_
+- There are no sounds with prefix reactions\story\wonder_
+- There are no sounds with prefix reactions\story\cool_teller_
+- There are no sounds with prefix reactions\story\advice_sceptic_
+- There are no sounds with prefix talk\stories\legend002_part_
+- There are no sounds with prefix talk\stories\story006_part_
+- There are no sounds with prefix reactions\story\yes_
+- There are no sounds with prefix talk\stories\story002_part_
+- There are no sounds with prefix help\wounded_not_see_helper\help_
+- There are no sounds with prefix help\wounded_see_helper\help_
+- There are no sounds with prefix help\wounded_psy\suicide_
+- There are no sounds with prefix reactions\story\disbelief_
+- There are no sounds with prefix reactions\nothing\nothing_
+- There are no sounds with prefix talk\stories\legend001_part_
+- There are no sounds with prefix talk\use\yes_default_
+- There are no sounds with prefix talk\stories\story005_part_
+- There are no sounds with prefix hail\deleted_
+- There are no sounds with prefix reactions\story\final_happy_
+- There are no sounds with prefix talk\stories\legend004_part_
+- There are no sounds with prefix reactions\story\cool_info_
+- There are no sounds with prefix talk\use\yes_fight_
+- There are no sounds with prefix reactions\story\final_tragic_
+- There are no sounds with prefix waiting\wait_
+- There are no sounds with prefix talk\stories\story003_part_
+- There are no sounds with prefix reactions\story\belief_story_
+- There are no sounds with prefix reactions\story\fear_
+- There are no sounds with prefix talk\stories\story001_part_
+- There are no sounds with prefix reactions\story\action_right_
+- There are no sounds with prefix talk\rejection\rejection_2
+- There are no sounds with prefix help\not_wounded\help_
+- There are no sounds with prefix reactions\story\uncertain_
+- There are no sounds with prefix reactions\story\doubt_
+- There are no sounds with prefix reactions\story\advice_support_
+- There are no sounds with prefix talk\stories\story004_part_
+- There are no sounds with prefix talk\use\yes_kamp_
+- There are no sounds with prefix talk\trade\yes\yes_
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+- There are no sounds with prefix fight\death\anomaly_
+- There are no sounds with prefix fight\friendly_grenade\friendly_grenade_
+- There are no sounds with prefix talk\stories\legend005_part_
+- There are no sounds with prefix reactions\story\disbelief_story_
+- There are no sounds with prefix talk\use\yes_sleep_
+- There are no sounds with prefix reactions\story\old_story_
+- There are no sounds with prefix weather\bad_weather\bad_weather_
+- There are no sounds with prefix reactions\story\action_wrong_
+- There are no sounds with prefix reactions\story\disbelief_teller_
+- There are no sounds with prefix reactions\see_something\see_
+- There are no sounds with prefix reactions\story\continue_
+- There are no sounds with prefix talk\stories\legend003_part_
+- There are no sounds with prefix help\wounded_psy\psy_
+- There are no sounds with prefix threat\stop\stop_
+- There are no sounds with prefix talk\trade\no\no_
+- There are no sounds with prefix reactions\story\wonder_
+- There are no sounds with prefix reactions\story\cool_teller_
+- There are no sounds with prefix reactions\story\advice_sceptic_
+- There are no sounds with prefix talk\stories\legend002_part_
+- There are no sounds with prefix talk\stories\story006_part_
+- There are no sounds with prefix reactions\story\yes_
+- There are no sounds with prefix talk\stories\story002_part_
+- There are no sounds with prefix help\wounded_not_see_helper\help_
+- There are no sounds with prefix help\wounded_see_helper\help_
+- There are no sounds with prefix help\wounded_psy\suicide_
+- There are no sounds with prefix reactions\story\disbelief_
+- There are no sounds with prefix reactions\nothing\nothing_
+- There are no sounds with prefix talk\stories\legend001_part_
+- There are no sounds with prefix talk\use\yes_default_
+- There are no sounds with prefix talk\stories\story005_part_
+- There are no sounds with prefix hail\deleted_
+- There are no sounds with prefix reactions\story\final_happy_
+- There are no sounds with prefix talk\stories\legend004_part_
+- There are no sounds with prefix reactions\story\cool_info_
+- There are no sounds with prefix talk\use\yes_fight_
+- There are no sounds with prefix reactions\story\final_tragic_
+- There are no sounds with prefix waiting\wait_
+- There are no sounds with prefix talk\stories\story003_part_
+- There are no sounds with prefix reactions\story\belief_story_
+- There are no sounds with prefix reactions\story\fear_
+- There are no sounds with prefix talk\stories\story001_part_
+- There are no sounds with prefix reactions\story\action_right_
+- There are no sounds with prefix talk\rejection\rejection_2
+- There are no sounds with prefix help\not_wounded\help_
+- There are no sounds with prefix reactions\story\uncertain_
+- There are no sounds with prefix reactions\story\doubt_
+- There are no sounds with prefix reactions\story\advice_support_
+- There are no sounds with prefix talk\stories\story004_part_
+- There are no sounds with prefix talk\use\yes_kamp_
+- There are no sounds with prefix talk\trade\yes\yes_
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+- There are no sounds with prefix fight\death\anomaly_
+- There are no sounds with prefix fight\friendly_grenade\friendly_grenade_
+- There are no sounds with prefix reactions\story\disbelief_story_
+- There are no sounds with prefix talk\use\yes_sleep_
+- There are no sounds with prefix reactions\story\old_story_
+- There are no sounds with prefix weather\bad_weather\bad_weather_
+- There are no sounds with prefix reactions\story\action_wrong_
+- There are no sounds with prefix reactions\story\disbelief_teller_
+- There are no sounds with prefix reactions\story\continue_
+- There are no sounds with prefix fight\attack\attack_5
+- There are no sounds with prefix reactions\story\wonder_
+- There are no sounds with prefix reactions\story\cool_teller_
+- There are no sounds with prefix reactions\story\advice_sceptic_
+- There are no sounds with prefix reactions\story\yes_
+- There are no sounds with prefix reactions\story\disbelief_
+- There are no sounds with prefix talk\use\yes_default_
+- There are no sounds with prefix hail\deleted_
+- There are no sounds with prefix reactions\story\final_happy_
+- There are no sounds with prefix reactions\story\cool_info_
+- There are no sounds with prefix talk\use\yes_fight_
+- There are no sounds with prefix reactions\story\final_tragic_
+- There are no sounds with prefix reactions\story\belief_story_
+- There are no sounds with prefix reactions\story\fear_
+- There are no sounds with prefix reactions\story\action_right_
+- There are no sounds with prefix reactions\story\uncertain_
+- There are no sounds with prefix reactions\story\doubt_
+- There are no sounds with prefix reactions\story\advice_support_
+- There are no sounds with prefix talk\use\yes_kamp_
+* loading script xr_kamp.script
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+* loading script bind_smart_terrain.script
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+* loading script bind_heli.script
+* loading script heli_combat.script
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+- Uninitialized light position.
+- Uninitialized light position.
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+- Uninitialized light position.
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+- There are no sounds with prefix fight\death\anomaly_
+- There are no sounds with prefix fight\friendly_grenade\friendly_grenade_
+- There are no sounds with prefix reactions\box\box_
+- There are no sounds with prefix weather\bad_weather\bad_weather_
+- There are no sounds with prefix fight\attack\attack_5
+- There are no sounds with prefix hail\deleted_
+- There are no sounds with prefix help\wounded_thanx\thanx_
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+- There are no sounds with prefix fight\death\anomaly_
+- There are no sounds with prefix fight\friendly_grenade\friendly_grenade_
+- There are no sounds with prefix reactions\box\box_
+- There are no sounds with prefix weather\bad_weather\bad_weather_
+- There are no sounds with prefix fight\attack\attack_5
+- There are no sounds with prefix hail\deleted_
+- There are no sounds with prefix help\wounded_thanx\thanx_
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+* loading script xr_patrol.script
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+* loading script xr_camper.script
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+- There are no sounds with prefix fight\fire\fire_,fight\threat\threat_distant_
+- There are no sounds with prefix fight\threat\threat_distant_
+- There are no sounds with prefix fight\enemy_hit\enemy_hit_
+- There are no sounds with prefix fight\enemy_down\enemy_down_
+shell for esc_stalker_corpse[474] created in 1.939757 ms
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+shell for esc_tutorial_dead_novice[560] created in 3.461286 ms
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 	
+-------------------------------- Register: 	
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+* loading script bind_respawn.script
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+shell for esc_stalker_corps1[708] created in 4.695956 ms
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+shell for esc_stalker_corps1_0000[710] created in 3.756867 ms
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+shell for esc_stalker_corps1_0001[712] created in 1.769387 ms
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 	
+-------------------------------- Register: 
+shell for esc_trup_bratka[755] created in 1.915125 ms
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 	
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+shell for esc_stalker_0000[881] created in 1.992613 ms
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+shell for esc_trup_scene[885] created in 1.730386 ms
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+* loading script xr_box.script
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\meshes\physics\balon\balon_02.ogf
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+- Uncached model loading: c:\engine\shb-engine\debug-win32\..\gamedata\meshes\physics\decor\fire_vedro.ogf
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+* loading script game_stats.script
+* loading script sr_idle.script
+* loading script xr_conditions.script
+* loading script sr_no_weapon.script
+Game Task [storyline_eliminate_gunslinger] has no priority
+* loading script news_manager.script
+* loading script xr_effects.script
+* loading script sr_psy_antenna.script
+* loading script xr_spawner.script
+* loading script xr_statistic.script
+* xrSheduler: too much time consumed by object [alife_simulator] (499ms)
+-------------------------------- Register: (
+-------------------------------- Register: *
+-------------------------------- Register: ,
+-------------------------------- Register: .
+-------------------------------- Register: 0
+-------------------------------- Register: 2
+-------------------------------- Register: 4
+-------------------------------- Register: 6
+-------------------------------- Register: 8
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: :
+-------------------------------- Register: <
+-------------------------------- Register: >
+-------------------------------- Register: @
+-------------------------------- Register: B
+-------------------------------- Register: D
+-------------------------------- Register: F
+-------------------------------- Register: H
+-------------------------------- Register: J
+-------------------------------- Register: L
+-------------------------------- Register: N
+-------------------------------- Register: P
+-------------------------------- Register: R
+-------------------------------- Register: T
+-------------------------------- Register: V
+-------------------------------- Register: X
+-------------------------------- Register: Z
+-------------------------------- Register: \
+-------------------------------- Register: ^
+-------------------------------- Register: `
+-------------------------------- Register: b
+-------------------------------- Register: d
+-------------------------------- Register: f
+-------------------------------- Register: h
+-------------------------------- Register: j
+* loading script ph_on_hit.script
+* loading script sr_light.script
+* loading script xr_sleeper.script
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (37ms)
+* xrSheduler: too much time consumed by object [device_pda0068] (26ms)
+cl setDestroy [713][148]
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Unregster: 
+cl setDestroy [711][149]
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Unregster: 
+cl setDestroy [709][150]
+-------------------------------- Unregster: 
+* xrSheduler: too much time consumed by object [esc_lager7] (51ms)
+* MEMORY USAGE: 732959 K
+- Play music track: music\amb01
+cl setDestroy [561][172]
+-------------------------------- Register: 
+-------------------------------- Unregster: 
+* loading script ph_idle.script
+* loading script ph_door.script
+* xrSheduler: too much time consumed by object [level_prefix_physic_destroyable_object_0005] (23ms)
+cl setDestroy [886][179]
+-------------------------------- Register: 
+-------------------------------- Unregster: 
+cl setDestroy [882][180]
+cl setDestroy [883][180]
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Unregster: 
+-------------------------------- Unregster: 
+* xrSheduler: too much time consumed by object [esc_specnaz1] (77ms)
+* xrSheduler: too much time consumed by object [escape_trader] (93ms)
+cl setDestroy [90][183]
+cl setDestroy [91][183]
+cl setDestroy [93][183]
+-------------------------------- Register: к
+-------------------------------- Register: V
+-------------------------------- Register: X
+-------------------------------- Register: Z
+-------------------------------- Register: µ
+-------------------------------- Register: ·
+-------------------------------- Register: №
+-------------------------------- Register: »
+-------------------------------- Register: Ѕ
+-------------------------------- Register: ї
+-------------------------------- Register: Б
+-------------------------------- Register: й
+-------------------------------- Register: л
+-------------------------------- Register: н
+-------------------------------- Register: п
+-------------------------------- Register: с
+-------------------------------- Register: у
+-------------------------------- Register: &
+-------------------------------- Register: (
+-------------------------------- Register: *
+-------------------------------- Register: {
+-------------------------------- Register: }
+-------------------------------- Register: 
+-------------------------------- Register: Ѓ
+-------------------------------- Register: ѓ
+-------------------------------- Register: …
+-------------------------------- Register: §
+-------------------------------- Register: ©
+-------------------------------- Register: «
+-------------------------------- Unregster: 
+-------------------------------- Unregster: 
+-------------------------------- Unregster: 
+* WARNING: c_EVENT[19] to [91]: unknown dest
+cl setDestroy [475][187]
+cl setDestroy [476][187]
+cl setDestroy [477][187]
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Unregster: 
+-------------------------------- Unregster: 
+-------------------------------- Unregster: 
+* loading script ph_sound.script
+* loading script heli_move.script
+cl setDestroy [756][191]
+-------------------------------- Unregster: 
+* xrSheduler: too much time consumed by object [esc_specnaz6] (18ms)
+* xrSheduler: too much time consumed by object [particle_instance] (30ms)
+* loading script mob_sound.script
+* xrSheduler: too much time consumed by object [escape_trader] (19ms)
+-------------------------------- Register: 
+* loading script mob_home.script
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+* xrSheduler: too much time consumed by object [esc_specnaz6] (19ms)
+* loading script state_mgr_animation_list.script
+* xrSheduler: too much time consumed by object [esc_shustryi] (28ms)
+* xrSheduler: too much time consumed by object [esc_lager2] (16ms)
+* xrSheduler: too much time consumed by object [esc_wolf] (22ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier3] (18ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier4] (38ms)
+* xrSheduler: too much time consumed by object [esc_lager7] (18ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier2] (19ms)
+* xrSheduler: too much time consumed by object [esc_lager7] (19ms)
+* xrSheduler: too much time consumed by object [esc_lager6] (17ms)
+* loading script escape_dialog.script
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier2] (38ms)
+* xrSheduler: too much time consumed by object [esc_dog_swarm_0001] (49ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (27ms)
+* xrSheduler: too much time consumed by object [esc_specnaz5] (16ms)
+* xrSheduler: too much time consumed by object [esc_specnaz1] (18ms)
+-------------------------------- Register: 
+shell for esc_stalker[743] created in 2.812134 ms
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: Џ
+cl setDestroy [744][650]
+-------------------------------- Unregster: 
+* loading script dialogs.script
+* xrSheduler: too much time consumed by object [esc_lager1] (16ms)
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: “
+* xrSheduler: too much time consumed by object [esc_blokpost_commander] (17ms)
+* xrSheduler: too much time consumed by object [esc_zone_witches_galantine_0002] (17ms)
+* xrSheduler: too much time consumed by object [esc_specnaz5] (34ms)
+* xrSheduler: too much time consumed by object [esc_surprise_box_013_0004] (20ms)
+* xrSheduler: too much time consumed by object [esc_lager2] (41ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (18ms)
+* xrSheduler: too much time consumed by object [esc_lager3] (18ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier4] (19ms)
+* xrSheduler: too much time consumed by object [esc_lager6] (22ms)
+[LSS][851] Going offline [318454][esc_dog_swarm_0001][483] ([-250.617691][-19.589895][-126.806084] : [68.933334][-0.459507][541.996887]), on '*SERVER*'
+[LSS][851] Going offline [318454][mutant_dog_tail0484][484] with parent [483][esc_dog_swarm_0001] on '*SERVER*'
+[LSS][851] Going offline [318454][esc_dog_swarm_0002][485] ([-250.617691][-19.589895][-126.806084] : [83.379318][2.178168][555.474915]), on '*SERVER*'
+[LSS][851] Going offline [318454][esc_dog_swarm_0004][486] ([-250.617691][-19.589895][-126.806084] : [69.574348][-1.874412][524.552856]), on '*SERVER*'
+[LSS][851] Going offline [318454][esc_dog_swarm_0007][487] ([-250.617691][-19.589895][-126.806084] : [93.404449][0.772027][521.388916]), on '*SERVER*'
+[LSS][851] Going offline [318454][mutant_dog_tail0488][488] with parent [487][esc_dog_swarm_0007] on '*SERVER*'
+cl setDestroy [484][852]
+cl setDestroy [483][852]
+cl setDestroy [485][852]
+cl setDestroy [486][852]
+cl setDestroy [488][852]
+cl setDestroy [487][852]
+-------------------------------- Unregster: 
+dumping client spawn manager stuff for object with id 487
+-------------------------------- Unregster: 
+-------------------------------- Unregster: 
+dumping client spawn manager stuff for object with id 486
+-------------------------------- Unregster: 
+dumping client spawn manager stuff for object with id 485
+-------------------------------- Unregster: 
+dumping client spawn manager stuff for object with id 483
+-------------------------------- Unregster: 
+* xrSheduler: too much time consumed by object [vision_client[single_player]] (27ms)
+* xrSheduler: too much time consumed by object [esc_lager5] (19ms)
+* xrSheduler: too much time consumed by object [esc_lager7] (17ms)
+* xrSheduler: too much time consumed by object [esc_specnaz6] (17ms)
+* xrSheduler: too much time consumed by object [esc_specnaz6] (17ms)
+* xrSheduler: too much time consumed by object [esc_wolf] (20ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (18ms)
+* xrSheduler: too much time consumed by object [esc_matugalnik] (22ms)
+* loading script xr_remark.script
+* xrSheduler: too much time consumed by object [esc_wolf] (27ms)
+* xrSheduler: too much time consumed by object [esc_specnaz4] (18ms)
+* xrSheduler: too much time consumed by object [esc_wolf] (27ms)
+* xrSheduler: too much time consumed by object [esc_surprise_box_007_0000] (22ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (18ms)
+* xrSheduler: too much time consumed by object [esc_specnaz6] (16ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (23ms)
+* xrSheduler: too much time consumed by object [esc_lager2] (23ms)
+* xrSheduler: too much time consumed by object [esc_lager2] (17ms)
+* xrSheduler: too much time consumed by object [esc_specnaz3] (16ms)
+-------------------------------- Register: 
+correction attempts 1
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier2] (19ms)
+* xrSheduler: too much time consumed by object [esc_lager7] (17ms)
+-------------------------------- Register: 
+* xrSheduler: too much time consumed by object [esc_specnaz1] (16ms)
+* xrSheduler: too much time consumed by object [esc_lager5] (16ms)
+* xrSheduler: too much time consumed by object [esc_lager5] (16ms)
+* xrSheduler: too much time consumed by object [esc_lager4] (29ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (16ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (18ms)
+* xrSheduler: too much time consumed by object [esc_lager3] (43ms)
+* xrSheduler: too much time consumed by object [esc_specnaz1] (18ms)
+* xrSheduler: too much time consumed by object [esc_lager1] (18ms)
+* xrSheduler: too much time consumed by object [esc_shustryi] (16ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (18ms)
+* xrSheduler: too much time consumed by object [esc_wolf] (17ms)
+-------------------------------- Register: 
+correction attempts 1
+* xrSheduler: too much time consumed by object [esc_lager7] (28ms)
+* xrSheduler: too much time consumed by object [esc_specnaz3] (16ms)
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+* xrSheduler: too much time consumed by object [esc_boar_most1] (19ms)
+* xrSheduler: too much time consumed by object [esc_specnaz5] (18ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (20ms)
+* xrSheduler: too much time consumed by object [esc_dog_swarm_0001] (48ms)
+* xrSheduler: too much time consumed by object [esc_specnaz6] (17ms)
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+correction attempts 1
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: 
+-------------------------------- Register: ™
+-------------------------------- Register: ›
+-------------------------------- Register: ќ
+* xrSheduler: too much time consumed by object [esc_dog_swarm_0002] (53ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier4] (16ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (16ms)
+* xrSheduler: too much time consumed by object [esc_wolf] (34ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier9] (21ms)
+* xrSheduler: too much time consumed by object [esc_dog_swarm_0001] (69ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_commander] (17ms)
+* xrSheduler: too much time consumed by object [esc_novice_attacker2] (17ms)
+* xrSheduler: too much time consumed by object [esc_lager3] (16ms)
+[LSS][1538] Going offline [411240][esc_dog_swarm_0001][483] ([-200.546310][-19.893385][-138.027588] : [101.710785][1.877338][437.900909]), on '*SERVER*'
+[LSS][1538] Going offline [411240][mutant_dog_tail0484][484] with parent [483][esc_dog_swarm_0001] on '*SERVER*'
+[LSS][1538] Going offline [411240][esc_dog_swarm_0002][485] ([-200.546310][-19.893385][-138.027588] : [99.239235][1.879962][432.996368]), on '*SERVER*'
+[LSS][1538] Going offline [411240][esc_dog_swarm_0004][486] ([-200.546310][-19.893385][-138.027588] : [141.850067][3.166159][440.125854]), on '*SERVER*'
+[LSS][1538] Going offline [411240][esc_dog_swarm_0007][487] ([-200.546310][-19.893385][-138.027588] : [142.466507][3.223055][440.011932]), on '*SERVER*'
+[LSS][1538] Going offline [411240][mutant_dog_tail0488][488] with parent [487][esc_dog_swarm_0007] on '*SERVER*'
+cl setDestroy [484][1539]
+cl setDestroy [483][1539]
+cl setDestroy [485][1539]
+cl setDestroy [486][1539]
+cl setDestroy [488][1539]
+cl setDestroy [487][1539]
+-------------------------------- Unregster: 
+dumping client spawn manager stuff for object with id 487
+-------------------------------- Unregster: 
+-------------------------------- Unregster: 
+dumping client spawn manager stuff for object with id 486
+-------------------------------- Unregster: 
+dumping client spawn manager stuff for object with id 485
+-------------------------------- Unregster: 
+dumping client spawn manager stuff for object with id 483
+-------------------------------- Unregster: 
+* xrSheduler: too much time consumed by object [esc_wolf] (18ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier8] (28ms)
+* xrSheduler: too much time consumed by object [esc_specnaz5] (29ms)
+* xrSheduler: too much time consumed by object [esc_wolf] (16ms)
+* xrSheduler: too much time consumed by object [esc_physic_destroyable_object_0037] (45ms)
+* xrSheduler: too much time consumed by object [esc_wolf] (17ms)
+* xrSheduler: too much time consumed by object [esc_lager4] (23ms)
+* xrSheduler: too much time consumed by object [esc_wolf] (16ms)
+* xrSheduler: too much time consumed by object [esc_lager1] (23ms)
+* xrSheduler: too much time consumed by object [esc_wolf] (20ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier6] (19ms)
+* xrSheduler: too much time consumed by object [esc_specnaz2] (17ms)
+* xrSheduler: too much time consumed by object [esc_lager7] (18ms)
+* xrSheduler: too much time consumed by object [esc_lager2] (20ms)
+* xrSheduler: too much time consumed by object [esc_blokpost_soldier5] (18ms)
+* xrSheduler: too much time consumed by object [esc_specnaz6] (16ms)
+* xrSheduler: too much time consumed by object [esc_wolf] (18ms)
+* xrSheduler: too much time consumed by object [esc_novice_attacker2] (16ms)
+* xrSheduler: too much time consumed by object [esc_lager6] (16ms)
+* xrSheduler: too much time consumed by object [esc_lager1] (19ms)
+* xrSheduler: too much time consumed by object [esc_wolf] (17ms)
+* xrSheduler: too much time consumed by object [esc_lager6] (19ms)
+* xrSheduler: too much time consumed by object [esc_specnaz2] (19ms)
+* xrSheduler: too much time consumed by object [particle_instance] (21ms)
+* xrSheduler: too much time consumed by object [esc_lager2] (30ms)
+* xrSheduler: too much time consumed by object [esc_wolf] (16ms)
+pause [ON] timer=[OFF] sound=[ON] reason=mm_activate1
+snd_emitters_[true] 2
+pause [ON] timer=[ON] sound=[OFF] reason=mm_activate2
+* loading script ui_load_dialog.script
+* loading script ui_base_dialog.script
+* loading script ui_save_dialog.script
+* loading script ui_mm_opt_main.script
+* loading script ui_mm_opt_video.script
+* loading script ui_mm_opt_sound.script
+* loading script ui_mm_opt_gameplay.script
+* loading script ui_mm_opt_controls.script
+* loading script ui_mm_opt_video_adv.script
+*ref -CRenderDevice::ResetTotal: DeviceREF: 3422
+* DVB created: 1536K
+* DIB created: 512K
+* created RT($user$shadow), 512x512
+* created RT($user$temp), 512x512
+* created RT($user$projector), 512x512
+~ Invalid syntax in call to 'r__tf_aniso'
+~ Valid arguments: integer value in range [1,16]
+* SSample: 1024x768
+* created RT($user$rendertarget), 1024x768
+* created RT($user$distort), 1024x768
+* SSample: enabled
+* GPU shading: vs(fffe0300/3.0/30), ps(ffff0300/3.0/30)
+* GPU vertex cache: recognized, 24
+*** RESET [0 ms]
+*ref +CRenderDevice::ResetTotal: DeviceREF: 3422
+* MEMORY USAGE: 780173 K
+ 
+FATAL ERROR
+ 
+[error]Expression    : assertion failed
+[error]Function      : CUISequencer::Start
+[error]File          : ui\UIGameTutorial.cpp
+[error]Line          : 90
+[error]Description   : items_count>0
+ 
+

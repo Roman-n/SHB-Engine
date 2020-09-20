@@ -477,9 +477,6 @@
     <ClInclude Include="Console.h">
       <Filter>Engine\Console</Filter>
     </ClInclude>
-    <ClInclude Include="IConsole_Command.h">
-      <Filter>Engine\Console</Filter>
-    </ClInclude>
     <ClInclude Include="RenderDevice.h">
       <Filter>Render\Execution &amp; 3D</Filter>
     </ClInclude>
@@ -503,6 +500,9 @@
     </ClInclude>
     <ClInclude Include="GammaControl.h">
       <Filter>Render\Execution &amp; 3D\Gamma</Filter>
+    </ClInclude>
+    <ClInclude Include="IConsoleCommand.h">
+      <Filter>Engine\Console</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -854,9 +854,6 @@
     <ClCompile Include="Console.cpp">
       <Filter>Engine\Console</Filter>
     </ClCompile>
-    <ClCompile Include="IConsole_Command.cpp">
-      <Filter>Engine\Console</Filter>
-    </ClCompile>
     <ClCompile Include="RenderDevice.h.cpp">
       <Filter>Render\Execution &amp; 3D</Filter>
     </ClCompile>
@@ -868,6 +865,9 @@
     </ClCompile>
     <ClCompile Include="GammaControl.cpp">
       <Filter>Render\Execution &amp; 3D\Gamma</Filter>
+    </ClCompile>
+    <ClCompile Include="IConsoleCommand.cpp">
+      <Filter>Engine\Console</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

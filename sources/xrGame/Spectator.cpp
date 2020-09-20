@@ -108,14 +108,14 @@ void CSpectator::shedule_Update		(u32 DT)
 #define START_ACCEL		16.0f
 static float Accel_mul = START_ACCEL;
 
-void CSpectator::IR_OnKeyboardPress(int cmd)
+void CSpectator::IR_OnKeyboardPress(int dik)
 {
 	if (Remote( ))
 	{
 		return;
 	}
 
-	switch(cmd) 
+	switch(dik)
 	{
 	case kACCEL:
 		{
@@ -146,9 +146,9 @@ void CSpectator::IR_OnKeyboardPress(int cmd)
 	}
 }
 
-void CSpectator::IR_OnKeyboardRelease(int cmd)
+void CSpectator::IR_OnKeyboardRelease(int dik)
 {
-	switch (cmd)
+	switch (dik)
 	{
 	case kACCEL:
 		{
@@ -157,22 +157,22 @@ void CSpectator::IR_OnKeyboardRelease(int cmd)
 	}
 }
 
-void CSpectator::IR_OnKeyboardHold(int cmd)
+void CSpectator::IR_OnKeyboardHold(int dik)
 {
 	if (Remote())		return;
 
 	if ((cam_active==eacFreeFly)||(cam_active==eacFreeLook)){
 		CCameraBase* C	= cameras	[cam_active];
 		Fvector vmove={0,0,0};
-		switch(cmd){
+		switch(dik){
 		case kUP:
 		case kDOWN: 
 		case kCAM_ZOOM_IN: 
 		case kCAM_ZOOM_OUT: 
-			cameras[cam_active]->Move(cmd); break;
+			cameras[cam_active]->Move(dik); break;
 		case kLEFT:
 		case kRIGHT:
-			if (eacFreeLook!=cam_active) cameras[cam_active]->Move(cmd); break;
+			if (eacFreeLook!=cam_active) cameras[cam_active]->Move(dik); break;
 		case kFWD:			
 			vmove.mad( C->vDirection, Device.fTimeDelta*Accel_mul );
 			break;

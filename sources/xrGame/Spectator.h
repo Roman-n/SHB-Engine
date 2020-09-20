@@ -1,7 +1,7 @@
 #pragma once
 
 #include "..\ENGINE\feel_touch.h"
-#include "..\ENGINE\iinputreceiver.h"
+#include "..\ENGINE\IInputReceiver.h"
 
 #include "entity.h"
 #include "actor_flags.h"
@@ -43,7 +43,7 @@ public:
 							CSpectator				( );
 	virtual					~CSpectator				( );
 
-	virtual void			IR_OnMouseMove			(int x, int y);
+	virtual void			IR_OnMouseMove			(int dx, int dy);
 	virtual void			IR_OnKeyboardPress		(int dik);
 	virtual void			IR_OnKeyboardRelease	(int dik);
 	virtual void			IR_OnKeyboardHold		(int dik);

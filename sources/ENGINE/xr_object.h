@@ -2,7 +2,7 @@
 
 #include "ispatial.h"
 #include "isheduled.h"
-//#include "iinputreceiver.h"
+//#include "IInputReceiver.h"
 #include "irenderable.h"
 #include "icollidable.h"
 
@@ -156,7 +156,7 @@ public:
 										CObject				();
 	virtual								~CObject			();
 
-	virtual void						Load				(LPCSTR section);
+	virtual void						Load				(const char* section);
 	
 	// Update
 	virtual void						shedule_Update		(u32 dt);							// Called by sheduler

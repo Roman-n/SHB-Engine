@@ -43,7 +43,7 @@ CObject*	CObjectList::FindObjectByName	( shared_str name )
 		if ((*I)->cName().equal(name))	return (*I);
 	return	NULL;
 }
-CObject*	CObjectList::FindObjectByName	( LPCSTR name )
+CObject*	CObjectList::FindObjectByName	(const char* name )
 {
 	return	FindObjectByName				(shared_str(name));
 }
@@ -340,7 +340,7 @@ void CObjectList::Unload	( )
 	}
 }
 
-CObject*	CObjectList::Create				( LPCSTR	name	)
+CObject*	CObjectList::Create				(const char* name	)
 {
 	CObject*	O				= g_pGamePersistent->ObjectPool.create(name);
 //	Msg("CObjectList::Create [%x]%s", O, name);
@@ -391,7 +391,7 @@ void CObjectList::relcase_unregister	(int* ID)
 	m_relcase_callbacks.pop_back	();
 }
 
-void dump_list(xr_vector<CObject*>& v, LPCSTR reason)
+void dump_list(xr_vector<CObject*>& v, const char* reason)
 {
 	xr_vector<CObject*>::iterator it = v.begin();
 	xr_vector<CObject*>::iterator it_e = v.end();

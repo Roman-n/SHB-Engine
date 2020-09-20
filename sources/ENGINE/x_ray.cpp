@@ -12,6 +12,7 @@
 
 #include "xr_input.h"
 #include "Console.h"
+#include "IConsoleCommand.h"
 #include "x_ray.h"
 #include "std_classes.h"
 #include "GameFont.h"
@@ -26,7 +27,7 @@ BOOL	g_bIntroFinished			= FALSE;
 int		max_load_stage = 0;
 
 // computing build id
-CORE_API	LPCSTR	build_date;
+CORE_API	const char* build_date;
 CORE_API	u32		build_id;
 
 #define NO_MULTI_INSTANCES
@@ -88,7 +89,7 @@ struct _SoundProcessor	: public pureFrame
 ENGINE_API	CApplication*	pApp			= NULL;
 static		HWND			logoWindow		= NULL;
 
-			void			doBenchmark		(LPCSTR name);
+			void			doBenchmark		(const char* name);
 ENGINE_API	bool			g_bBenchmark	= false;
 			string512		g_sBenchmarkName;
 
@@ -213,11 +214,11 @@ void Startup					( )
 
 	// ...command line for auto start
 	{
-		LPCSTR	pStartup			= strstr				(Core.Params,"-start ");
+		const char* pStartup			= strstr				(Core.Params,"-start ");
 		if (pStartup)				Console->Execute		(pStartup+1);
 	}
 	{
-		LPCSTR	pStartup			= strstr				(Core.Params,"-load ");
+		const char* pStartup			= strstr				(Core.Params,"-load ");
 		if (pStartup)				Console->Execute		(pStartup+1);
 	}
 
@@ -380,7 +381,7 @@ struct damn_keys_filter {
 #undef dwFilterKeysStructSize
 #undef dwToggleKeysStructSize
 
-#include "IConsole_Command.h"
+
 
 typedef void DUMMY_STUFF (const void*,const u32&,void*);
 CORE_API DUMMY_STUFF	*g_temporary_stuff;
@@ -438,7 +439,7 @@ int APIENTRY WinMain_impl(HINSTANCE hInstance,
 	g_sLaunchOnExit_app[0]		= NULL;
 	g_sLaunchOnExit_params[0]	= NULL;
 
-	LPCSTR						fsgame_ltx_name = "-fsltx ";
+	const char* fsgame_ltx_name = "-fsltx ";
 	string_path					fsgame = "";
 	if (strstr(lpCmdLine, fsgame_ltx_name)) {
 		int						sz = xr_strlen(fsgame_ltx_name);
@@ -459,7 +460,7 @@ int APIENTRY WinMain_impl(HINSTANCE hInstance,
 		InitEngine				();
 		InitConsole				();
 
-		LPCSTR benchName = "-batch_benchmark ";
+		const char* benchName = "-batch_benchmark ";
 		if(strstr(lpCmdLine, benchName))
 		{
 			int sz = xr_strlen(benchName);
@@ -550,7 +551,7 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 	return					(0);
 }
 
-LPCSTR _GetFontTexName (LPCSTR section)
+const char* _GetFontTexName (const char* section)
 {
 	static char* tex_names[]={"texture800","texture","texture1600"};
 	int def_idx		= 1;//default 1024x768
@@ -579,9 +580,9 @@ LPCSTR _GetFontTexName (LPCSTR section)
 	return pSettings->r_string(section,tex_names[def_idx]);
 }
 
-void _InitializeFont(CGameFont*& F, LPCSTR section, u32 flags)
+void _InitializeFont(CGameFont*& F, const char* section, u32 flags)
 {
-	LPCSTR font_tex_name = _GetFontTexName(section);
+	const char* font_tex_name = _GetFontTexName(section);
 	R_ASSERT(font_tex_name);
 
 	if(!F){
@@ -861,14 +862,15 @@ int CApplication::Level_ID(const char* name)
 	return -1;
 }
 
-void doBenchmark(LPCSTR name)
+void doBenchmark(const char* name)
 {
 	g_bBenchmark = true;
 	string_path in_file;
 	FS.update_path(in_file,"$app_data_root$", name);
 	CInifile ini(in_file);
 	int test_count = ini.line_count("benchmark");
-	LPCSTR test_name,t;
+	const char* test_name;
+	const char* t;
 	shared_str test_command;
 	for(int i=0;i<test_count;++i){
 		ini.r_line			( "benchmark", i, &test_name, &t);

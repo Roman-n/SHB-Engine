@@ -209,10 +209,10 @@ void CUISequencer::IR_OnMouseHold		(int btn)
 		m_pStoredInputReceiver->IR_OnMouseHold(btn);
 }
 
-void CUISequencer::IR_OnMouseMove		(int x, int y)
+void CUISequencer::IR_OnMouseMove		(int dx, int dy)
 {
 	if(!GrabInput()&&m_pStoredInputReceiver)
-		m_pStoredInputReceiver->IR_OnMouseMove(x, y);
+		m_pStoredInputReceiver->IR_OnMouseMove(dx, dy);
 }
 
 void CUISequencer::IR_OnMouseStop		(int x, int y)

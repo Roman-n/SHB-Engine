@@ -292,7 +292,7 @@
     <ClInclude Include="xr_efflensflare.h" />
     <ClInclude Include="xr_input.h" />
     <ClInclude Include="Console.h" />
-    <ClInclude Include="IConsole_Command.h" />
+    <ClInclude Include="IConsoleCommand.h" />
     <ClInclude Include="xr_object.h" />
     <ClInclude Include="xr_object_list.h" />
     <ClInclude Include="x_ray.h" />
@@ -432,7 +432,7 @@
     <ClCompile Include="xr_efflensflare.cpp" />
     <ClCompile Include="Xr_input.cpp" />
     <ClCompile Include="Console.cpp" />
-    <ClCompile Include="IConsole_Command.cpp" />
+    <ClCompile Include="IConsoleCommand.cpp" />
     <ClCompile Include="xr_object.cpp" />
     <ClCompile Include="xr_object_list.cpp" />
     <ClCompile Include="x_ray.cpp" />

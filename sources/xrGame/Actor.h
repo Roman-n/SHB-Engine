@@ -2,7 +2,7 @@
 
 #include "..\ENGINE\feel_touch.h"
 #include "..\ENGINE\feel_sound.h"
-#include "..\ENGINE\iinputreceiver.h"
+#include "..\ENGINE\IInputReceiver.h"
 #include "..\ENGINE\SkeletonAnimated.h"
 #include "actor_flags.h"
 #include "actor_defs.h"
@@ -466,7 +466,7 @@ protected:
 	// User input/output
 	//////////////////////////////////////////////////////////////////////////
 public:
-	virtual void			IR_OnMouseMove			(int x, int y);
+	virtual void			IR_OnMouseMove			(int dx, int dy);
 	virtual void			IR_OnKeyboardPress		(int dik);
 	virtual void			IR_OnKeyboardRelease	(int dik);
 	virtual void			IR_OnKeyboardHold		(int dik);

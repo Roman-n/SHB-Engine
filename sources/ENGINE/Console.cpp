@@ -9,8 +9,8 @@
 
 #include "x_ray.h"
 #include "Console.h"
+#include "IConsoleCommand.h"
 #include "xr_input.h"
-#include "IConsole_Command.h"
 #include "GameFont.h"
 #include "CustomHUD.h"
 
@@ -22,11 +22,11 @@ const char*				ioc_prompt	=	">>> ";
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
-void CConsole::AddCommand(IConsole_Command* C)
+void CConsole::AddCommand(IConsoleCommand* C)
 {
 	Commands[C->Name()] = C;
 }
-void CConsole::RemoveCommand(IConsole_Command* C)
+void CConsole::RemoveCommand(IConsoleCommand* C)
 {
 	vecCMD_IT it = Commands.find(C->Name());
 	if(Commands.end()!=it)
@@ -222,7 +222,7 @@ void CConsole::OnPressKey(int dik, BOOL bHold)
 			int offset = (b_ra)?xr_strlen(radmin_cmd_name):0;
 			vecCMD_IT I = Commands.lower_bound(editor+offset);
 			if (I!=Commands.end()) {
-				IConsole_Command &O = *(I->second);
+				IConsoleCommand&O = *(I->second);
 				strcpy_s(editor+offset, sizeof(editor)-offset, O.Name());
 				strcat(	editor+offset," ");
 			}
@@ -459,13 +459,13 @@ outloop:
 	// search
 	vecCMD_IT I = Commands.find(first_word);
 	if (I!=Commands.end()) {
-		IConsole_Command &C = *(I->second);
+		IConsoleCommand&C = *(I->second);
 		if (C.bEnabled) {
 			if (C.bLowerCaseArgs) strlwr(last_word);
 			if (last_word[0]==0) {
 				if (C.bEmptyArgsHandled) C.Execute(last_word);
 				else {
-					IConsole_Command::TStatus S; C.Status(S);
+					IConsoleCommand::TStatus S; C.Status(S);
 					Msg("- %s %s",C.Name(),S);
 				}
 			} else C.Execute(last_word);
@@ -544,7 +544,7 @@ BOOL CConsole::GetBool(const char* cmd, BOOL& val)
 {
 	vecCMD_IT I = Commands.find(cmd);
 	if (I!=Commands.end()) {
-		IConsole_Command* C = I->second;
+		IConsoleCommand* C = I->second;
 		CCC_Mask* cf = dynamic_cast<CCC_Mask*>(C);
 		if(cf){
 			val = cf->GetValue();
@@ -560,7 +560,7 @@ float CConsole::GetFloat(const char* cmd, float& val, float& min, float& max)
 {
 	vecCMD_IT I = Commands.find(cmd);
 	if (I!=Commands.end()) {
-		IConsole_Command* C = I->second;
+		IConsoleCommand* C = I->second;
 		CCC_Float* cf = dynamic_cast<CCC_Float*>(C);
 		val = cf->GetValue();
 		min = cf->GetMin();
@@ -574,7 +574,7 @@ int CConsole::GetInteger(const char* cmd, int& val, int& min, int& max)
 {
 	vecCMD_IT I = Commands.find(cmd);
 	if (I!=Commands.end()) {
-		IConsole_Command* C = I->second;
+		IConsoleCommand* C = I->second;
 		CCC_Integer* cf = dynamic_cast<CCC_Integer*>(C);
 		if(cf)
 		{
@@ -596,10 +596,10 @@ int CConsole::GetInteger(const char* cmd, int& val, int& min, int& max)
 
 char * CConsole::GetString(const char* cmd)
 {
-	static IConsole_Command::TStatus stat;
+	static IConsoleCommand::TStatus stat;
 	vecCMD_IT I = Commands.find(cmd);
 	if (I!=Commands.end()) {
-		IConsole_Command* C = I->second;
+		IConsoleCommand* C = I->second;
 		C->Status(stat);
 		return stat;
 	}
@@ -628,7 +628,7 @@ xr_token* CConsole::GetXRToken(const char* cmd)
 {
 	vecCMD_IT I = Commands.find(cmd);
 	if (I!=Commands.end()) {
-		IConsole_Command* C = I->second;
+		IConsoleCommand* C = I->second;
 		CCC_Token* cf = dynamic_cast<CCC_Token*>(C);
 		return cf->GetToken();
 	}

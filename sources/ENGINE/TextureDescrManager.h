@@ -35,5 +35,5 @@ public:
 	shared_str	GetBumpName		(const shared_str& tex_name) const;
 	float		GetMaterial		(const shared_str& tex_name) const;
 	void		GetTextureUsage	(const shared_str& tex_name, BOOL& bDiffuse, BOOL& bBump) const;
-	BOOL		GetDetailTexture(const shared_str& tex_name, LPCSTR& res, R_constant_setup* &CS) const;
+	BOOL		GetDetailTexture(const shared_str& tex_name, const char*& res, R_constant_setup* &CS) const;
 };
