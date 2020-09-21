@@ -93,8 +93,8 @@ public:
 	virtual BOOL				Load_GameSpecific_After	( )										{ return TRUE; };		// after object loading
 	virtual void				Load_GameSpecific_CFORM	( CDB::TRI* T, u32 count )				= 0;
 
-	virtual void				OnFrame					( void );
-	virtual void				OnRender				( void );
+	virtual void				OnFrame					( );
+	virtual void				OnRender				( );
 
 	// Main interface
 	CObject*					CurrentEntity			( void ) const							{ return pCurrentEntity;				}
