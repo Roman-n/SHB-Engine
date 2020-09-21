@@ -3,7 +3,7 @@
 #include <dinput.h>
 #include "..\ENGINE\Console.h"
 #include "..\ENGINE\IConsoleCommand.h"
-#include "..\ENGINE\xr_input.h"
+#include "..\ENGINE\Input.h"
 #include "xr_level_controller.h"
 #include "string_table.h"
 

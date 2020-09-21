@@ -2,7 +2,7 @@
 
 //const LPCSTR GAMEDATA_PATH			= "$game_data$";
 //const LPCSTR CONFIG_PATH			= "$game_config$";
-//const LPCSTR UI_PATH				= "ui";
+#define UI_PATH "ui"
 //const LPCSTR GAME_PATH				= "gameplay";
 //const LPCSTR STRING_TABLE_PATH		= "text";
 

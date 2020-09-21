@@ -9,7 +9,7 @@
 #include "gamefont.h"
 #include "fDemoRecord.h"
 #include "Console.h"
-#include "xr_input.h"
+#include "Input.h"
 #include "xr_object.h"
 #include "render.h"
 #include "CustomHUD.h"

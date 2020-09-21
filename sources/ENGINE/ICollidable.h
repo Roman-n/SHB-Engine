@@ -1,14 +1,15 @@
 #pragma once
 
-class	ENGINE_API	ICollisionForm;
+class ENGINE_API ICollisionForm;
 
-class	ENGINE_API	ICollidable	{
+class ENGINE_API ICollidable
+{
 public:
-	struct 
+	struct
 	{
-		ICollisionForm*			model;
+		ICollisionForm* model;
 	}							collidable;
 public:
-	ICollidable();
-	virtual ~ICollidable();
+	ICollidable( );
+	virtual ~ICollidable( );
 };

@@ -159,9 +159,6 @@
     <ClInclude Include="IInputReceiver.h">
       <Filter>Interfaces\Input</Filter>
     </ClInclude>
-    <ClInclude Include="xr_input.h">
-      <Filter>Interfaces\Input</Filter>
-    </ClInclude>
     <ClInclude Include="ISheduled.h">
       <Filter>Interfaces\Sheduler</Filter>
     </ClInclude>
@@ -504,6 +501,9 @@
     <ClInclude Include="IConsoleCommand.h">
       <Filter>Engine\Console</Filter>
     </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Interfaces\Input</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="defines.cpp">
@@ -516,9 +516,6 @@
       <Filter>General</Filter>
     </ClCompile>
     <ClCompile Include="IInputReceiver.cpp">
-      <Filter>Interfaces\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="Xr_input.cpp">
       <Filter>Interfaces\Input</Filter>
     </ClCompile>
     <ClCompile Include="ISheduled.cpp">
@@ -868,6 +865,9 @@
     </ClCompile>
     <ClCompile Include="IConsoleCommand.cpp">
       <Filter>Engine\Console</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Interfaces\Input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

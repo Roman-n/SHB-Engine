@@ -21,7 +21,7 @@
 #endif
 
 // Our headers
-#include "engine.h"
+#include "Engine.h"
 #include "defines.h"
 #include "RenderDevice.h"
 

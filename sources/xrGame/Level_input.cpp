@@ -21,7 +21,7 @@
 #include "HudItem.h"
 #include "ui/UIDialogWnd.h"//
 #include "clsid_game.h"
-#include "..\ENGINE\xr_input.h"
+#include "..\ENGINE\Input.h"
 #include "saved_game_wrapper.h"
 
 #ifdef DEBUG

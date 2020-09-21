@@ -75,7 +75,7 @@ void CCameraLook::OnActivate(CCameraBase* old_cam)
 	if (yaw < -PI_MUL_2)yaw += PI_MUL_2;
 }
 
-#include "..\ENGINE\xr_input.h"
+#include "..\ENGINE\Input.h"
 #include "visual_memory_manager.h"
 #include "actor_memory.h"
 

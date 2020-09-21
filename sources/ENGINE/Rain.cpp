@@ -146,7 +146,6 @@ void	CEffect_Rain::OnFrame	()
 	}
 }
 
-//#include "xr_input.h"
 void	CEffect_Rain::Render	()
 {
 	if (!g_pGameLevel)			return;

@@ -3,7 +3,7 @@
 #include "igame_level.h"
 #include "IGame_Persistent.h"//==>
 
-#include "xrSheduler.h"
+//#include "xrSheduler.h"
 #include "xr_object_list.h"
 #include "std_classes.h"
 

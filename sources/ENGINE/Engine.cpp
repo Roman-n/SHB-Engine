@@ -1,9 +1,4 @@
-// Engine.cpp: implementation of the CEngine class.
-//
-//////////////////////////////////////////////////////////////////////
-
 #include "stdafx.h"
-#include "Engine.h"
 
 CEngine				Engine;
 xrDispatchTable		PSGP;

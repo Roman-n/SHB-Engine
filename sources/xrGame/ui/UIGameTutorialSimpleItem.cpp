@@ -5,7 +5,7 @@
 #include "UIStatic.h"//
 #include "UIXmlInit.h"//
 #include "../object_broker.h"
-#include "../..\ENGINE\xr_input.h"
+//#include "..\..\ENGINE\Input.h"
 #include "../xr_level_controller.h"
 #include "UIGameSp.h"//
 #include "../HUDManager.h"//

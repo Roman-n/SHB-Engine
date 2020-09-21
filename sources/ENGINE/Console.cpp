@@ -10,7 +10,7 @@
 #include "x_ray.h"
 #include "Console.h"
 #include "IConsoleCommand.h"
-#include "xr_input.h"
+#include "Input.h"
 #include "GameFont.h"
 #include "CustomHUD.h"
 

@@ -5,7 +5,7 @@
 #include "UIStatic.h"//
 #include "UIXmlInit.h"//
 #include "../object_broker.h"
-#include "../..\ENGINE\xr_input.h"
+#include "..\..\ENGINE\Input.h"
 #include "../xr_level_controller.h"
 #include "../script_engine.h"
 #include "../ai_space.h"
@@ -85,7 +85,7 @@ void CUISequencer::Start(LPCSTR tutor_name)
 	m_UIWindow					= xr_new<CUIWindow>();
 
 	CUIXml uiXml;
-	uiXml.Init					("$game_config$", "ui", "game_tutorials.xml");
+	uiXml.Init					("$game_config$", UI_PATH, "game_tutorials.xml");
 	
 	int items_count				= uiXml.GetNodesNum	(tutor_name,0,"item");	VERIFY(items_count>0);
 	uiXml.SetLocalRoot			(uiXml.NavigateToNode(tutor_name,0));

@@ -26,7 +26,7 @@
 #	include "PHDebug.h"
 #endif // DEBUG
 
-#include "..\ENGINE\RenderDevice.h"
+//#include "..\ENGINE\RenderDevice.h"
 
 void  NodynamicsCollide(bool& do_colide, bool bo1, dContact& c, SGameMtl* /*material_1*/, SGameMtl* /*material_2*/)
 {

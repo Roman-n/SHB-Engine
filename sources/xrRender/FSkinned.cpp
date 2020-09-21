@@ -9,7 +9,7 @@
 #pragma warning(default:4995)
 
 #include "..\ENGINE\fmesh.h"
-#include "..\ENGINE\xrCPU_Pipe.h"
+//#include "..\ENGINE\xrCPU_Pipe.h"
 #include "FSkinned.h"
 
 #include	"..\ENGINE\EnnumerateVertices.h"
