@@ -6,7 +6,7 @@
 
 #include "..\ENGINE\IGame_Persistent.h"//==>
 #include "..\ENGINE\environment.h"
-#include "..\ENGINE\x_ray.h"
+//#include "..\ENGINE\Application.h"
 #include "..\ENGINE\GameFont.h"
 #include "GlowManager.h"
 #include "..\ENGINE\xr_object.h"

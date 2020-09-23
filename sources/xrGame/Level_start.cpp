@@ -4,7 +4,7 @@
 #include "xrserver.h"
 #include "game_cl_base.h"
 #include "xrmessages.h"
-#include "..\ENGINE\x_ray.h"
+#include "..\ENGINE\Application.h"
 //#include "..\ENGINE\RenderDevice.h"
 #include "..\ENGINE\IGame_Persistent.h"//==>
 #include "..\ENGINE\Console.h"

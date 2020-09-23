@@ -3,7 +3,7 @@
 #include "IGame_Persistent.h"//==>
 #include "environment.h"
 
-#include "x_ray.h"
+//#include "Application.h"
 #include "IGame_Level.h"
 #include "Console.h"
 #include "resourcemanager.h"
@@ -11,7 +11,7 @@
 #include "ps_instance.h"
 #include "CustomHUD.h"
 
-ENGINE_API	IGame_Persistent*		g_pGamePersistent	= NULL;
+ENGINE_API	IGame_Persistent*		g_pGamePersistent	= nullptr;
 
 IGame_Persistent::IGame_Persistent	()
 {

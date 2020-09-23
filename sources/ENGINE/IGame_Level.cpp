@@ -3,7 +3,7 @@
 #include "igame_level.h"
 #include "IGame_Persistent.h"//==>
 
-#include "x_ray.h"
+#include "Application.h"
 #include "std_classes.h"
 #include "customHUD.h"
 #include "render.h"

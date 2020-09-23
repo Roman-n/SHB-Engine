@@ -295,7 +295,7 @@
     <ClInclude Include="IConsoleCommand.h" />
     <ClInclude Include="xr_object.h" />
     <ClInclude Include="xr_object_list.h" />
-    <ClInclude Include="x_ray.h" />
+    <ClInclude Include="Application.h" />
     <ClInclude Include="_d3d_extensions.h" />
   </ItemGroup>
   <ItemGroup>
@@ -313,7 +313,7 @@
     <ClCompile Include="defines.cpp" />
     <ClCompile Include="NET_Client.cpp" />
     <ClCompile Include="NET_Server.cpp" />
-    <ClCompile Include="RenderDevice.h.cpp" />
+    <ClCompile Include="RenderDevice.cpp" />
     <ClCompile Include="Device_create.cpp" />
     <ClCompile Include="Device_destroy.cpp" />
     <ClCompile Include="Device_Initialize.cpp" />
@@ -435,7 +435,7 @@
     <ClCompile Include="IConsoleCommand.cpp" />
     <ClCompile Include="xr_object.cpp" />
     <ClCompile Include="xr_object_list.cpp" />
-    <ClCompile Include="x_ray.cpp" />
+    <ClCompile Include="Application.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="OutOfVirtError.RES" />

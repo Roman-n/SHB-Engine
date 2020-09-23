@@ -14,7 +14,7 @@
 #include <d3dx9.h>
 #pragma warning(default:4995)
 
-#include "x_ray.h"
+#include "Application.h"
 #include "render.h"
 
 ENGINE_API CRenderDevice Device;

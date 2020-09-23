@@ -18,7 +18,7 @@
 #include "xrserver.h"
 #include "level.h"
 #include "graph_engine.h"
-#include "..\ENGINE\x_ray.h"
+//#include "..\ENGINE\Application.h"
 #include "restriction_space.h"
 #include "profiler.h"
 #include "mt_config.h"

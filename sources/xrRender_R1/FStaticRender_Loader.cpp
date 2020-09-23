@@ -3,7 +3,7 @@
 #include "..\ENGINE\fbasicvisual.h"
 #include "..\ENGINE\fmesh.h"
 #include "..\ENGINE\xrLevel.h"
-#include "..\ENGINE\x_ray.h"
+#include "..\ENGINE\Application.h"
 #include "..\ENGINE\IGame_Persistent.h"//==>
 #include "..\Core\stream_reader.h"
 

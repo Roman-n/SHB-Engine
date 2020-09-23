@@ -13,7 +13,7 @@
 #include "Input.h"
 #include "Console.h"
 #include "IConsoleCommand.h"
-#include "x_ray.h"
+#include "Application.h"
 #include "std_classes.h"
 #include "GameFont.h"
 #include "resource.h"
@@ -22,7 +22,7 @@
 #include <process.h>
 
 //---------------------------------------------------------------------
-ENGINE_API CInifile* pGameIni		= NULL;
+ENGINE_API CInifile* pGameIni		= nullptr;
 BOOL	g_bIntroFinished			= FALSE;
 int		max_load_stage = 0;
 
@@ -314,7 +314,6 @@ struct damn_keys_filter {
 		dwStickyKeysFlags = 0;
 		dwFilterKeysFlags = 0;
 		dwToggleKeysFlags = 0;
-
 
 		ZeroMemory( &StickyKeysStruct , dwStickyKeysStructSize );
 		ZeroMemory( &FilterKeysStruct , dwFilterKeysStructSize );

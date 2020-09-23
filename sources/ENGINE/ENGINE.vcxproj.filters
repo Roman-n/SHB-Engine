@@ -150,9 +150,6 @@
     <ClInclude Include="trivial_encryptor.h">
       <Filter>General</Filter>
     </ClInclude>
-    <ClInclude Include="x_ray.h">
-      <Filter>General</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>General\Resources</Filter>
     </ClInclude>
@@ -504,15 +501,15 @@
     <ClInclude Include="Input.h">
       <Filter>Interfaces\Input</Filter>
     </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>General</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="defines.cpp">
       <Filter>General</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
-      <Filter>General</Filter>
-    </ClCompile>
-    <ClCompile Include="x_ray.cpp">
       <Filter>General</Filter>
     </ClCompile>
     <ClCompile Include="IInputReceiver.cpp">
@@ -851,9 +848,6 @@
     <ClCompile Include="Console.cpp">
       <Filter>Engine\Console</Filter>
     </ClCompile>
-    <ClCompile Include="RenderDevice.h.cpp">
-      <Filter>Render\Execution &amp; 3D</Filter>
-    </ClCompile>
     <ClCompile Include="NET_Client.cpp">
       <Filter>NET</Filter>
     </ClCompile>
@@ -868,6 +862,12 @@
     </ClCompile>
     <ClCompile Include="Input.cpp">
       <Filter>Interfaces\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderDevice.cpp">
+      <Filter>Render\Execution &amp; 3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>General</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

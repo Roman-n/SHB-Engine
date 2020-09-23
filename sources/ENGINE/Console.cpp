@@ -6,7 +6,7 @@
 
 #include "igame_level.h"
 #include "IGame_Persistent.h"//==>
-#include "x_ray.h"
+//#include "Application.h"
 #include "Console.h"
 #include "IConsoleCommand.h"
 #include "Input.h"
