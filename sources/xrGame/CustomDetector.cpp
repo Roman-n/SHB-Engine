@@ -276,7 +276,7 @@ void CCustomDetector::UpdateMapLocations() // called on turn on/off only
 #include "game_base_space.h"
 void CCustomDetector::UpdateNightVisionMode()
 {
-	bool bNightVision = Actor()->Cameras().GetPPEffector(EEffectorPPType(effNightvision))!=NULL;
+	bool bNightVision = Actor()->Cameras().GetPPEffector(EEffectorPostProcessType(effNightvision))!=NULL;
 
 	bool bOn =	bNightVision && 
 				m_pCurrentActor &&

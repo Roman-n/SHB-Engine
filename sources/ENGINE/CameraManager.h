@@ -115,12 +115,12 @@ public:
 
 	void					Dump					(void);
 	CEffectorCam*			AddCamEffector			(CEffectorCam*			ef);
-	CEffectorCam*			GetCamEffector			(ECamEffectorType		type);
-	void					RemoveCamEffector		(ECamEffectorType		type);
+	CEffectorCam*			GetCamEffector			(ECameraEffectorType		type);
+	void					RemoveCamEffector		(ECameraEffectorType		type);
 
-	CEffectorPP*			GetPPEffector			(EEffectorPPType	type);
+	CEffectorPP*			GetPPEffector			(EEffectorPostProcessType	type);
 	CEffectorPP*			AddPPEffector			(CEffectorPP*		ef);
-	void					RemovePPEffector		(EEffectorPPType	type);
+	void					RemovePPEffector		(EEffectorPostProcessType	type);
 
 	IC Fvector				Pos					()	const { return vPosition;	}
 	IC Fvector				Dir					()	const { return vDirection;}

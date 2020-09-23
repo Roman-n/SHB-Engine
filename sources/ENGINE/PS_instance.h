@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ispatial.h"
-#include "isheduled.h"
+#include "ISheduled.h"
 #include "irenderable.h"
 
 class ENGINE_API CPS_Instance	:

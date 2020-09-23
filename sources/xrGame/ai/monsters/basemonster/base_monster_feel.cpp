@@ -131,7 +131,7 @@ void CBaseMonster::HitEntity(const CEntity *pEntity, float fDamage, float impuls
 			//
 			//////////////////////////////////////////////////////////////////////////
 			
-			CEffectorCam* ce = Actor()->Cameras().GetCamEffector((ECamEffectorType)effBigMonsterHit);
+			CEffectorCam* ce = Actor()->Cameras().GetCamEffector((ECameraEffectorType)effBigMonsterHit);
 			if(!ce)
 			{
 				const shared_str&	eff_sect = pSettings->r_string(cNameSect(), "actor_hit_effect");	

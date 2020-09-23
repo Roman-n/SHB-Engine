@@ -148,7 +148,7 @@ void CActorCondition::UpdateCondition( )
 	m_fAlcohol += m_fV_Alcohol * m_fDeltaTime;
 	clamp(m_fAlcohol, 0.0f, 1.0f);
 
-	CEffectorCam* ce = Actor( )->Cameras( ).GetCamEffector((ECamEffectorType) effAlcohol);
+	CEffectorCam* ce = Actor( )->Cameras( ).GetCamEffector((ECameraEffectorType) effAlcohol);
 	if ((m_fAlcohol > 0.0001f))
 	{
 		if (!ce)
@@ -164,7 +164,7 @@ void CActorCondition::UpdateCondition( )
 		}
 	}
 
-	CEffectorPP* ppe = object( ).Cameras( ).GetPPEffector((EEffectorPPType) effPsyHealth);
+	CEffectorPP* ppe = object( ).Cameras( ).GetPPEffector((EEffectorPostProcessType) effPsyHealth);
 
 	string64 pp_sect_name;
 	shared_str ln = Level( ).name( );

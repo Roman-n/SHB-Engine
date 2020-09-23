@@ -10,7 +10,7 @@
 // CMonsterEffector
 //////////////////////////////////////////////////////////////////////////
 CSleepEffectorPP::CSleepEffectorPP(const SPPInfo &ppi, float life_time, float attack_time, float release_time) 
-: CEffectorPP(EEffectorPPType(SLEEP_EFFECTOR_TYPE_ID), life_time)
+: CEffectorPP(EEffectorPostProcessType(SLEEP_EFFECTOR_TYPE_ID), life_time)
 {
 	state		= ppi;
 	m_total		= life_time;

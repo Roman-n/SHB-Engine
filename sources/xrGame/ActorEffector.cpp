@@ -12,7 +12,7 @@ void AddEffector		(CActor* A, int type, const shared_str& sect_name)
 	if(pSettings->line_exist(sect_name,"pp_eff_name")){
 		bool bCyclic						= !!pSettings->r_bool(sect_name,"pp_eff_cyclic");
 		CPostprocessAnimator* pp_anm		= xr_new<CPostprocessAnimator>();
-		pp_anm->SetType						((EEffectorPPType)type);
+		pp_anm->SetType						((EEffectorPostProcessType)type);
 		pp_anm->SetCyclic					(bCyclic);
 
 		LPCSTR fn = pSettings->r_string		(sect_name,"pp_eff_name");
@@ -22,7 +22,7 @@ void AddEffector		(CActor* A, int type, const shared_str& sect_name)
 	if(pSettings->line_exist(sect_name,"cam_eff_name")){
 		bool bCyclic						= !!pSettings->r_bool(sect_name,"cam_eff_cyclic");
 		CAnimatorCamEffector* cam_anm		= xr_new<CAnimatorCamEffector>();
-		cam_anm->SetType					((ECamEffectorType)type);
+		cam_anm->SetType					((ECameraEffectorType)type);
 		cam_anm->SetCyclic					(bCyclic);
 		LPCSTR fn = pSettings->r_string		(sect_name,"cam_eff_name");
 		cam_anm->Start						(fn);
@@ -35,7 +35,7 @@ void AddEffector		(CActor* A, int type, const shared_str& sect_name, CEffectorCo
 	if(pSettings->line_exist(sect_name,"pp_eff_name")){
 		bool bCyclic						= !!pSettings->r_bool(sect_name,"pp_eff_cyclic");
 		CPostprocessAnimatorControlled* pp_anm	= xr_new<CPostprocessAnimatorControlled>(ec);
-		pp_anm->SetType						((EEffectorPPType)type);
+		pp_anm->SetType						((EEffectorPostProcessType)type);
 		pp_anm->SetCyclic					(bCyclic);
 		LPCSTR fn = pSettings->r_string		(sect_name,"pp_eff_name");
 		pp_anm->Load						(fn);
@@ -44,7 +44,7 @@ void AddEffector		(CActor* A, int type, const shared_str& sect_name, CEffectorCo
 	if(pSettings->line_exist(sect_name,"cam_eff_name")){
 		bool bCyclic						= !!pSettings->r_bool(sect_name,"cam_eff_cyclic");
 		CCameraEffectorControlled* cam_anm	= xr_new<CCameraEffectorControlled>(ec);
-		cam_anm->SetType					((ECamEffectorType)type);
+		cam_anm->SetType					((ECameraEffectorType)type);
 		cam_anm->SetCyclic					(bCyclic);
 		LPCSTR fn = pSettings->r_string		(sect_name,"cam_eff_name");
 		cam_anm->Start						(fn);
@@ -57,7 +57,7 @@ void AddEffector		(CActor* A, int type, const shared_str& sect_name, GET_KOEFF_F
 	if(pSettings->line_exist(sect_name,"pp_eff_name")){
 		bool bCyclic						= !!pSettings->r_bool(sect_name,"pp_eff_cyclic");
 		CPostprocessAnimatorLerp* pp_anm	= xr_new<CPostprocessAnimatorLerp>();
-		pp_anm->SetType						((EEffectorPPType)type);
+		pp_anm->SetType						((EEffectorPostProcessType)type);
 		pp_anm->SetCyclic					(bCyclic);
 		LPCSTR fn = pSettings->r_string		(sect_name,"pp_eff_name");
 		pp_anm->SetFactorFunc				(k_func);
@@ -68,7 +68,7 @@ void AddEffector		(CActor* A, int type, const shared_str& sect_name, GET_KOEFF_F
 		bool bCyclic						= !!pSettings->r_bool(sect_name,"cam_eff_cyclic");
 		CAnimatorCamLerpEffector* cam_anm	= xr_new<CAnimatorCamLerpEffector>();
 		cam_anm->SetFactorFunc				(k_func);
-		cam_anm->SetType					((ECamEffectorType)type);
+		cam_anm->SetType					((ECameraEffectorType)type);
 		cam_anm->SetCyclic					(bCyclic);
 		LPCSTR fn = pSettings->r_string		(sect_name,"cam_eff_name");
 		cam_anm->Start						(fn);
@@ -82,7 +82,7 @@ void AddEffector(CActor* A, int type, const shared_str& sect_name, float factor)
 	if(pSettings->line_exist(sect_name,"pp_eff_name")){
 		bool bCyclic						= !!pSettings->r_bool(sect_name,"pp_eff_cyclic");
 		CPostprocessAnimatorLerpConst* pp_anm= xr_new<CPostprocessAnimatorLerpConst>();
-		pp_anm->SetType						((EEffectorPPType)type);
+		pp_anm->SetType						((EEffectorPostProcessType)type);
 		pp_anm->SetCyclic					(bCyclic);
 		pp_anm->SetPower					(factor);
 		LPCSTR fn = pSettings->r_string		(sect_name,"pp_eff_name");
@@ -93,7 +93,7 @@ void AddEffector(CActor* A, int type, const shared_str& sect_name, float factor)
 		bool bCyclic						= !!pSettings->r_bool(sect_name,"cam_eff_cyclic");
 		CAnimatorCamLerpEffectorConst* cam_anm	= xr_new<CAnimatorCamLerpEffectorConst>();
 		cam_anm->SetFactor					(factor);
-		cam_anm->SetType					((ECamEffectorType)type);
+		cam_anm->SetType					((ECameraEffectorType)type);
 		cam_anm->SetCyclic					(bCyclic);
 		LPCSTR fn = pSettings->r_string		(sect_name,"cam_eff_name");
 		cam_anm->Start						(fn);
@@ -104,8 +104,8 @@ void AddEffector(CActor* A, int type, const shared_str& sect_name, float factor)
 
 void RemoveEffector		(CActor* A, int type)
 {
-	A->Cameras().RemoveCamEffector	((ECamEffectorType)type);
-	A->Cameras().RemovePPEffector		((EEffectorPPType)type);
+	A->Cameras().RemoveCamEffector	((ECameraEffectorType)type);
+	A->Cameras().RemovePPEffector		((EEffectorPostProcessType)type);
 }
 
 
@@ -307,7 +307,7 @@ void SndShockEffector::Update()
 #define DELTA_ANGLE_Z	0.5f * PI / 180
 #define ANGLE_SPEED		1.5f	
 
-CControllerPsyHitCamEffector::CControllerPsyHitCamEffector(ECamEffectorType type, const Fvector &src_pos, const Fvector &target_pos, float time)
+CControllerPsyHitCamEffector::CControllerPsyHitCamEffector(ECameraEffectorType type, const Fvector &src_pos, const Fvector &target_pos, float time)
 	:inherited(eCEControllerPsyHit, flt_max)
 {
 	m_time_total			= time;

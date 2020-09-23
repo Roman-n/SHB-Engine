@@ -138,7 +138,7 @@ CCameraManager::~CCameraManager()
 		xr_delete(*it);
 }
 
-CEffectorCam* CCameraManager::GetCamEffector(ECamEffectorType type)	
+CEffectorCam* CCameraManager::GetCamEffector(ECameraEffectorType type)
 { 
 	for (EffectorCamIt it=m_EffectorsCam.begin(); it!=m_EffectorsCam.end(); it++ )
 		if ((*it)->eType==type) return *it;
@@ -163,7 +163,7 @@ void CCameraManager::UpdateDeffered()
 	m_EffectorsCam_added_deffered.clear	();
 }
 
-void CCameraManager::RemoveCamEffector(ECamEffectorType type)
+void CCameraManager::RemoveCamEffector(ECameraEffectorType type)
 {
 	for (EffectorCamIt it=m_EffectorsCam.begin(); it!=m_EffectorsCam.end(); it++ )
 		if ((*it)->eType==type)
@@ -174,7 +174,7 @@ void CCameraManager::RemoveCamEffector(ECamEffectorType type)
 		}
 }
 
-CEffectorPP* CCameraManager::GetPPEffector(EEffectorPPType type)	
+CEffectorPP* CCameraManager::GetPPEffector(EEffectorPostProcessType type)
 { 
 	for (EffectorPPIt it=m_EffectorsPP.begin(); it!=m_EffectorsPP.end(); it++ )
 		if ((*it)->Type()==type) return *it;
@@ -188,7 +188,7 @@ CEffectorPP* CCameraManager::AddPPEffector(CEffectorPP* ef)
 	return m_EffectorsPP.back		();
 }
 
-void CCameraManager::RemovePPEffector(EEffectorPPType type)
+void CCameraManager::RemovePPEffector(EEffectorPostProcessType type)
 {
 	for (EffectorPPIt it=m_EffectorsPP.begin(); it!=m_EffectorsPP.end(); it++ )
 		if ((*it)->Type()==type){ 

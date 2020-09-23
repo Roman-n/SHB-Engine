@@ -143,7 +143,7 @@ void CTorch::SwitchNightVision(bool vision_on)
 	}
 
 	if(m_bNightVisionOn){
-		CEffectorPP* pp = pA->Cameras().GetPPEffector((EEffectorPPType)effNightvision);
+		CEffectorPP* pp = pA->Cameras().GetPPEffector((EEffectorPostProcessType)effNightvision);
 		if(!pp){
 			if (pCO&&pCO->m_NightVisionSect.size())
 			{
@@ -153,7 +153,7 @@ void CTorch::SwitchNightVision(bool vision_on)
 			}
 		}
 	}else{
- 		CEffectorPP* pp = pA->Cameras().GetPPEffector((EEffectorPPType)effNightvision);
+ 		CEffectorPP* pp = pA->Cameras().GetPPEffector((EEffectorPostProcessType)effNightvision);
 		if(pp){
 			pp->Stop			(1.0f);
 			HUD_SOUND::PlaySound(m_NightVisionOffSnd, pA->Position(), pA, bPlaySoundFirstPerson);

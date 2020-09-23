@@ -1,21 +1,24 @@
 #pragma once
 
-enum ECameraStyle       {
+enum ECameraStyle
+{
 	csCamDebug,
 	csFirstEye,
 	csLookAt,
-    csMax,
+	csMax,
 	csFixed,
 	cs_forcedword = u32(-1)
 };
 
-enum ECamEffectorType		{
-	cefDemo		=0,
-	cefNext
+enum ECameraEffectorType
+{
+	cetDemo = 0,
+	cetNext
 };
 
-enum EEffectorPPType	{
-	ppeNext		=0,
+enum EEffectorPostProcessType
+{
+	epptNext = 0
 };
 
 // refs

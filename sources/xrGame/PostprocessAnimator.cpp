@@ -37,7 +37,7 @@ CPostprocessAnimator::CPostprocessAnimator( )
 	Create( );
 }
 
-CPostprocessAnimator::CPostprocessAnimator(int id, bool cyclic) :CEffectorPP((EEffectorPPType) id, 100000, true), m_bCyclic(cyclic)
+CPostprocessAnimator::CPostprocessAnimator(int id, bool cyclic) :CEffectorPP((EEffectorPostProcessType) id, 100000, true), m_bCyclic(cyclic)
 {
 	Create( );
 }

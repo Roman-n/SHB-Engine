@@ -15,7 +15,7 @@
 class CScriptEffector : public CEffectorPP {
 public:
 	typedef CEffectorPP inherited;
-	EEffectorPPType		m_tEffectorType;
+	EEffectorPostProcessType		m_tEffectorType;
 
 	IC					CScriptEffector		(int iType, float time);
 	virtual				~CScriptEffector	();

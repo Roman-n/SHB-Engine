@@ -1,5 +1,5 @@
 #include "stdafx.h"
-//#include "xrSheduler.h"
+
 #include "xr_object.h"
 
 //#define DEBUG_SCHEDULER
@@ -7,7 +7,7 @@
 float			psShedulerCurrent		= 10.f	;
 float			psShedulerTarget		= 10.f	;
 const	float	psShedulerReaction		= 0.1f	;
-BOOL			g_bSheduleInProgress	= FALSE	;
+// not use? bool			g_bSheduleInProgress	= false	;
 
 //-------------------------------------------------------------------------------------
 void CSheduler::Initialize		()
@@ -419,7 +419,7 @@ void CSheduler::Update				()
 	cycles_start					= CPU::QPC			();
 	cycles_limit					= CPU::qpc_freq * u64 (iCeil(psShedulerCurrent)) / 1000i64 + cycles_start;
 	internal_Registration			();
-	g_bSheduleInProgress			= TRUE;
+// not use?	g_bSheduleInProgress			= true;
 
 #ifdef DEBUG_SCHEDULER
 	Msg								("SCHEDULER: PROCESS STEP %d",Device.dwFrame);
@@ -462,7 +462,7 @@ void CSheduler::Update				()
 	Device.Statistic->fShedulerLoad	= psShedulerCurrent;
 
 	// Finalize
-	g_bSheduleInProgress			= FALSE;
+// not use?	g_bSheduleInProgress			= false;
 	internal_Registration			();
 	Device.Statistic->Sheduler.End	();
 }

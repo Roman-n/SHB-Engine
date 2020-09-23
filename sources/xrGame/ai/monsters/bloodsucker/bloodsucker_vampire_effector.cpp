@@ -6,7 +6,7 @@
 //////////////////////////////////////////////////////////////////////////
 
 CVampirePPEffector::CVampirePPEffector(const SPPInfo &ppi, float life_time) :
-	inherited(EEffectorPPType(eCEHit), life_time)
+	inherited(EEffectorPostProcessType(eCEHit), life_time)
 {
 	state		= ppi;
 	m_total		= life_time;

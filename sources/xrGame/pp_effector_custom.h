@@ -9,7 +9,7 @@ class CPPEffectorCustom : public CEffectorPP {
 	typedef CEffectorPP inherited;
 public:
 					CPPEffectorCustom	(const SPPInfo &ppi, bool one_instance = false, bool destroy_from_engine = true);
-	EEffectorPPType	get_type			(){return m_type;}
+					EEffectorPostProcessType	get_type			(){return m_type;}
 
 protected:
 	virtual	BOOL	Process				(SPPInfo& pp);
@@ -19,7 +19,7 @@ protected:
 
 private:
 	SPPInfo			m_state;
-	EEffectorPPType	m_type;
+	EEffectorPostProcessType	m_type;
 protected:
 	float			m_factor;
 };

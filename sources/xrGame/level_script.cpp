@@ -408,7 +408,7 @@ void iterate_sounds2				(LPCSTR prefix, u32 max_count, luabind::object object, l
 float add_cam_effector(LPCSTR fn, int id, bool cyclic, LPCSTR cb_func)
 {
 	CAnimatorCamEffectorScriptCB* e		= xr_new<CAnimatorCamEffectorScriptCB>(cb_func);
-	e->SetType					((ECamEffectorType)id);
+	e->SetType					((ECameraEffectorType)id);
 	e->SetCyclic				(cyclic);
 	e->Start					(fn);
 	Actor()->Cameras().AddCamEffector(e);
@@ -419,7 +419,7 @@ float add_cam_effector2(LPCSTR fn, int id, bool cyclic, LPCSTR cb_func)
 {
 	CAnimatorCamEffectorScriptCB* e		= xr_new<CAnimatorCamEffectorScriptCB>(cb_func);
 	e->m_bAbsolutePositioning	= true;
-	e->SetType					((ECamEffectorType)id);
+	e->SetType					((ECameraEffectorType)id);
 	e->SetCyclic				(cyclic);
 	e->Start					(fn);
 	Actor()->Cameras().AddCamEffector(e);
@@ -428,7 +428,7 @@ float add_cam_effector2(LPCSTR fn, int id, bool cyclic, LPCSTR cb_func)
 
 void remove_cam_effector(int id)
 {
-	Actor()->Cameras().RemoveCamEffector((ECamEffectorType)id );
+	Actor()->Cameras().RemoveCamEffector((ECameraEffectorType)id );
 }
 
 float get_snd_volume()
@@ -482,7 +482,7 @@ void add_pp_effector(LPCSTR fn, int id, bool cyclic)
 
 void remove_pp_effector(int id)
 {
-	CPostprocessAnimator*	pp	= smart_cast<CPostprocessAnimator*>(Actor()->Cameras().GetPPEffector((EEffectorPPType)id));
+	CPostprocessAnimator*	pp	= smart_cast<CPostprocessAnimator*>(Actor()->Cameras().GetPPEffector((EEffectorPostProcessType)id));
 
 	if (pp)
 	{
@@ -492,7 +492,7 @@ void remove_pp_effector(int id)
 
 void set_pp_effector_factor(int id, float f, float f_sp)
 {
-	CPostprocessAnimator*	pp	= smart_cast<CPostprocessAnimator*>(Actor()->Cameras().GetPPEffector((EEffectorPPType)id));
+	CPostprocessAnimator*	pp	= smart_cast<CPostprocessAnimator*>(Actor()->Cameras().GetPPEffector((EEffectorPostProcessType)id));
 
 	if (pp)
 	{
@@ -502,7 +502,7 @@ void set_pp_effector_factor(int id, float f, float f_sp)
 
 void set_pp_effector_factor2(int id, float f)
 {
-	CPostprocessAnimator*	pp	= smart_cast<CPostprocessAnimator*>(Actor()->Cameras().GetPPEffector((EEffectorPPType)id));
+	CPostprocessAnimator*	pp	= smart_cast<CPostprocessAnimator*>(Actor()->Cameras().GetPPEffector((EEffectorPostProcessType)id));
 
 	if (pp)
 	{

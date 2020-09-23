@@ -14,7 +14,7 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-CDemoPlay::CDemoPlay(const char *name, float ms, u32 cycles, float life_time) : CEffectorCam(cefDemo,life_time/*,FALSE*/)
+CDemoPlay::CDemoPlay(const char *name, float ms, u32 cycles, float life_time) : CEffectorCam(cetDemo,life_time/*,FALSE*/)
 {
 	Msg					("*** Playing demo: %s",name);
 	Console->Execute	("hud_weapon 0");
@@ -40,14 +40,14 @@ CDemoPlay::CDemoPlay(const char *name, float ms, u32 cycles, float life_time) : 
 		m_MParam->Play			();
 	}else{
 		if (!FS.exist(name))						{
-			g_pGameLevel->Cameras().RemoveCamEffector	(cefDemo);
+			g_pGameLevel->Cameras().RemoveCamEffector	(cetDemo);
 			return		;
 		}
 		IReader*	fs	= FS.r_open	(name);
 		u32 sz			= fs->length();
 		if				(sz%sizeof(Fmatrix) != 0)	{
 			FS.r_close	(fs);
-			g_pGameLevel->Cameras().RemoveCamEffector	(cefDemo);
+			g_pGameLevel->Cameras().RemoveCamEffector	(cetDemo);
 			return		;
 		}
 		
@@ -191,7 +191,7 @@ BOOL CDemoPlay::Process(Fvector &P, Fvector &D, Fvector &N, float& fFov, float& 
 	else
 	{
 		if (seq.empty()) {
-			g_pGameLevel->Cameras().RemoveCamEffector(cefDemo);
+			g_pGameLevel->Cameras().RemoveCamEffector(cetDemo);
 			return		TRUE;
 		}
 

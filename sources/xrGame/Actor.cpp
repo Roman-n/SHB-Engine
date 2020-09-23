@@ -534,7 +534,7 @@ void CActor::HitMark	(float P,
 		HUD().Hit(0, P, dir);
 
 	{
-		CEffectorCam* ce = Cameras().GetCamEffector((ECamEffectorType)effFireHit);
+		CEffectorCam* ce = Cameras().GetCamEffector((ECameraEffectorType)effFireHit);
 		if(!ce)
 			{
 			int id						= -1;

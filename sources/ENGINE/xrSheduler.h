@@ -43,7 +43,7 @@ public:
 	u64				cycles_limit;
 public:
 	void			ProcessStep	();
-	void			Process		();
+//	void			Process		();
 	void			Update		();
 
 #ifdef DEBUG

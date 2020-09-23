@@ -23,7 +23,7 @@ class CAlienEffectorPP : public CEffectorPP {
 	float		target_factor;
 
 public:
-					CAlienEffectorPP	(const SPPInfo &ppi, EEffectorPPType type);
+					CAlienEffectorPP	(const SPPInfo &ppi, EEffectorPostProcessType type);
 	virtual			~CAlienEffectorPP	();
 
 	void	Update			(float new_factor) {factor = new_factor;}
@@ -34,7 +34,7 @@ private:
 };
 
 
-CAlienEffectorPP::CAlienEffectorPP(const SPPInfo &ppi, EEffectorPPType type) :
+CAlienEffectorPP::CAlienEffectorPP(const SPPInfo &ppi, EEffectorPostProcessType type) :
 CEffectorPP(type, flt_max, false)
 {
 	state			= ppi;
@@ -89,7 +89,7 @@ class CAlienEffector : public CEffectorCam {
 	float		m_inertion;
 
 public:
-					CAlienEffector	(ECamEffectorType type, CAI_Bloodsucker *obj);
+					CAlienEffector	(ECameraEffectorType type, CAI_Bloodsucker *obj);
 	virtual	BOOL	Process			(Fvector &p, Fvector &d, Fvector &n, float& fFov, float& fFar, float& fAspect);
 };
 
@@ -105,7 +105,7 @@ public:
 #define	MAX_CAMERA_DIST		3.5f
 
 
-CAlienEffector::CAlienEffector(ECamEffectorType type, CAI_Bloodsucker *obj) :
+CAlienEffector::CAlienEffector(ECameraEffectorType type, CAI_Bloodsucker *obj) :
 	inherited(type, flt_max)
 {
 	dangle_target.set		(angle_normalize(Random.randFs(DELTA_ANGLE_X)),angle_normalize(Random.randFs(DELTA_ANGLE_Y)),angle_normalize(Random.randFs(DELTA_ANGLE_Z)));
@@ -229,10 +229,10 @@ void CBloodsuckerAlien::activate()
 	if (m_crosshair_show)		psHUD_Flags.set(HUD_CROSSHAIR_RT,FALSE);
 
 	// Start effector
-	m_effector_pp				= xr_new<CAlienEffectorPP>	(m_object->pp_vampire_effector, EFFECTOR_ID_GEN(EEffectorPPType));
+	m_effector_pp				= xr_new<CAlienEffectorPP>	(m_object->pp_vampire_effector, EFFECTOR_ID_GEN(EEffectorPostProcessType));
 	Actor()->Cameras().AddPPEffector	(m_effector_pp);
 	
-	m_effector					= xr_new<CAlienEffector>	(EFFECTOR_ID_GEN(ECamEffectorType),m_object);
+	m_effector					= xr_new<CAlienEffector>	(EFFECTOR_ID_GEN(ECameraEffectorType),m_object);
 	Actor()->Cameras().AddCamEffector	(m_effector);
 
 	// make invisible
@@ -252,11 +252,11 @@ void CBloodsuckerAlien::deactivate()
 	if (m_crosshair_show)							psHUD_Flags.set(HUD_CROSSHAIR_RT,TRUE);
 
 	// Stop camera effector
-	Actor()->Cameras().RemoveCamEffector	(EFFECTOR_ID_GEN(ECamEffectorType));
+	Actor()->Cameras().RemoveCamEffector	(EFFECTOR_ID_GEN(ECameraEffectorType));
 	m_effector						= 0;
 	
 	// Stop postprocess effector
-	Actor()->Cameras().RemovePPEffector	(EFFECTOR_ID_GEN(EEffectorPPType));
+	Actor()->Cameras().RemovePPEffector	(EFFECTOR_ID_GEN(EEffectorPostProcessType));
 	m_effector_pp->Destroy			();
 	m_effector_pp					= 0;
 
