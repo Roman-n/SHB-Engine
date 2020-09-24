@@ -3,11 +3,10 @@
 #include "Rain.h"
 #include "IGamePersistent.h"//==>
 #include "environment.h"
-
 #include "render.h"
-#include "igame_level.h"
+#include "IGameLevel.h"
 #include "xr_area.h"
-#include "xr_object.h"
+#include "Object.h"
 
 static const int	max_desired_items	= 2500;
 static const float	source_radius		= 12.5f;

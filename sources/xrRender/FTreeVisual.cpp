@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "..\ENGINE\IGamePersistent.h"//==>
-#include "..\ENGINE\igame_level.h"
+//#include "..\ENGINE\IGameLevel.h"
 #include "..\ENGINE\environment.h"
 #include "..\ENGINE\fmesh.h"
 

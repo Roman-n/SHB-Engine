@@ -16,6 +16,8 @@
 
 #include "Application.h"
 #include "render.h"
+#include "IGameLevel.h"
+#include "ResourceManager.h"
 
 ENGINE_API CRenderDevice Device;
 ENGINE_API BOOL g_bRendering = FALSE; 
@@ -64,7 +66,6 @@ void CRenderDevice::Clear	()
 }
 
 extern void CheckPrivilegySlowdown();
-#include "resourcemanager.h"
 
 void CRenderDevice::End		(void)
 {
@@ -132,7 +133,6 @@ void 			mt_Thread	(void *ptr)	{
 	}
 }
 
-#include "igame_level.h"
 void CRenderDevice::PreCache	(u32 amount)
 {
 	if (HW.Caps.bForceGPU_REF)	amount=0;

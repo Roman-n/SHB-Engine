@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "igame_level.h"
+//#include "IGameLevel.h"
 #include "GammaControl.h"
 //#include "Application.h"
 #include "Console.h"
@@ -12,7 +12,7 @@
 #include "CustomHUD.h"
 #include "SkeletonAnimated.h"
 #include "ResourceManager.h"
-#include "xr_object.h"
+//#include "Object.h"
 
 xr_token							snd_freq_token[ ] = {
 	{ "22khz",						sf_22K										},

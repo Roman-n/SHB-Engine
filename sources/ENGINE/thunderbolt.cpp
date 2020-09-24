@@ -5,9 +5,9 @@
 #include "IGamePersistent.h"//==>
 #include "LightAnimLibrary.h"
 
-#include "igame_level.h"
+#include "IGameLevel.h"
 #include "xr_area.h"
-#include "xr_object.h"
+//#include "Object.h"
 
 static const float MAX_DIST_FACTOR = 0.95f;
 

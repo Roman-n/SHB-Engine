@@ -190,5 +190,4 @@ public:
 public:
 	virtual bool						register_schedule	() const {return true;}
 };
-
 #pragma pack(pop)

@@ -3,8 +3,9 @@
 // интерфейс для проигрывания партиклов на объекте
 ///////////////////////////////////////////////////////////////
 #include "stdafx.h"
+
 #include "ParticlesPlayer.h"
-#include "..\ENGINE\xr_object.h"
+//#include "..\ENGINE\Object.h"
 #include "..\ENGINE\skeletoncustom.h"
 //-------------------------------------------------------------------------------------
 static void generate_orthonormal_basis(const Fvector& dir,Fmatrix &result)

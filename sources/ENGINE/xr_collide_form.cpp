@@ -1,8 +1,8 @@
 #include "stdafx.h"
 
-#include "igame_level.h"
+//#include "IGameLevel.h"
 #include "xr_collide_form.h"
-#include "xr_object.h"
+#include "Object.h"
 #include "xr_area.h"
 //#include "Application.h"
 #include "xrLevel.h"

@@ -66,11 +66,11 @@ void CObjectAnimator::LoadMotions(LPCSTR fname)
     }
 }
 
-void CObjectAnimator::Load(const char * name)
+void CObjectAnimator::Load(const char* name)
 {
-	m_Name				= name;
-	LoadMotions			(name); 
-	SetActiveMotion		(0);
+	m_Name = name;
+	LoadMotions(name);
+	SetActiveMotion(0);
 }
 
 void CObjectAnimator::Update(float dt)

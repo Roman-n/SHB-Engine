@@ -3,8 +3,9 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "LightTrack.h"
-#include "..\ENGINE\xr_object.h"
+#include "..\ENGINE\Object.h"
 
 #include "..\ENGINE\IGamePersistent.h"//==>
 #include "..\ENGINE\environment.h"

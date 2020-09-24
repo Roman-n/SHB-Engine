@@ -1,9 +1,9 @@
 #include "stdafx.h"
 
-#include "igame_level.h"
+//#include "IGameLevel.h"
 #include "IGamePersistent.h"//==>
 #include "igame_objectpool.h"
-#include "xr_object.h"
+#include "Object.h"
 
 IGame_ObjectPool::IGame_ObjectPool(void)
 {

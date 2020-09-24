@@ -1,10 +1,11 @@
 #include "stdafx.h"
+
 #include "map_location.h"
 #include "MapSpot.h"//
 #include "map_manager.h"
 
 #include "level.h"
-#include "..\ENGINE\xr_object.h"
+//#include "..\ENGINE\Object.h"
 #include "ai_space.h"
 #include "game_graph.h"
 #include "xrServer.h"

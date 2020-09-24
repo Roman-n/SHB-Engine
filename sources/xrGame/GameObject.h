@@ -4,7 +4,7 @@
 #pragma once
 
 #include <depr/dplay8.h>// раньше небыло
-#include "..\ENGINE\xr_object.h"
+#include "..\ENGINE\Object.h"
 #include "xrServer_Space.h"
 #include "alife_space.h"
 #include "UsableScriptObject.h"

@@ -1,7 +1,6 @@
 #include "stdafx.h"
 
 #include "render.h"
-
 #include "Environment.h"
 #include "xr_efflensflare.h"
 #include "rain.h"
@@ -11,12 +10,9 @@
 
 //#include "Input.h"
 
-#include "resourcemanager.h"
-
-#include "IGame_Level.h"
-
+#include "ResourceManager.h"
+#include "IGameLevel.h"
 #include "D3DUtils.h"
-
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction

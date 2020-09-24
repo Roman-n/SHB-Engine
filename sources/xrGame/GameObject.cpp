@@ -20,7 +20,7 @@
 #include "ai_object_location_impl.h"
 #include "game_graph.h"
 #include "ai_debug.h"
-#include "..\ENGINE\igame_level.h"
+//#include "..\ENGINE\IGameLevel.h"
 #include "level.h"
 #include "../ENGINE/net_utils.h"
 #include "script_callback_ex.h"

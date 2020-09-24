@@ -7,7 +7,7 @@
 //-----------------------------------------------------------------------------
 #include "stdafx.h"
 
-#include "igame_level.h"
+#include "IGameLevel.h"
 #include "IGamePersistent.h"//==>
 
 #include "Input.h"
@@ -675,7 +675,7 @@ void CApplication::OnEvent(EVENT E, u64 P1, u64 P2)
 			//-----------------------------------------------------------
 			g_pGamePersistent->PreStart		(op_server);
 			//-----------------------------------------------------------
-			g_pGameLevel					= (IGame_Level*)NEW_INSTANCE(CLSID_GAME_LEVEL);
+			g_pGameLevel					= (IGameLevel*)NEW_INSTANCE(CLSID_GAME_LEVEL);
 			pApp->LoadBegin					(); 
 			g_pGamePersistent->Start		(op_server);
 			g_pGameLevel->net_Start			(op_server,op_client);

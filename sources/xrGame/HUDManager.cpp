@@ -4,7 +4,7 @@
 #include "HUDTarget.h"//
 
 #include "actor.h"
-#include "..\ENGINE\igame_level.h"
+//#include "..\ENGINE\IGameLevel.h"
 #include "clsid_game.h"
 #include "GamePersistent.h"
 #include "ui\UIMainInGameWnd.h"//

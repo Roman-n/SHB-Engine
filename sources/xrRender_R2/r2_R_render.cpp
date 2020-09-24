@@ -3,7 +3,7 @@
 #include "..\ENGINE\IGamePersistent.h"//==>
 #include "..\ENGINE\fbasicvisual.h"
 #include "..\ENGINE\customhud.h"
-#include "..\ENGINE\xr_object.h"
+#include "..\ENGINE\Object.h"
 
 IC	bool	pred_sp_sort	(ISpatial*	_1, ISpatial* _2)
 {

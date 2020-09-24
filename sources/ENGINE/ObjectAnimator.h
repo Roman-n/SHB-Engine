@@ -20,13 +20,13 @@ protected:
     COMotion*			m_Current;
 	void				LoadMotions		(LPCSTR fname);
 	void				SetActiveMotion	(COMotion* mot);
-	COMotion*			FindMotionByName(LPCSTR name);
+//	COMotion*			FindMotionByName(const char* name);
 public:
 						CObjectAnimator	();
 	virtual				~CObjectAnimator();
 
 	void				Clear			();
-	void				Load			(LPCSTR name);
+	void				Load			(const char* name);
     IC LPCSTR			Name			(){return *m_Name;}
     float&				Speed			(){return m_Speed;}
 
@@ -39,5 +39,5 @@ public:
 	float				GetLength		();
 	// Update
 	void				Update			(float dt);
-    void				DrawPath		();
+//	void				DrawPath		();
 };

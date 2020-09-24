@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "r2.h"
-#include "..\ENGINE\resourcemanager.h"
+//#include "..\ENGINE\ResourceManager.h"
 #include "..\ENGINE\fbasicvisual.h"
 #include "..\ENGINE\fmesh.h"
 #include "..\ENGINE\xrLevel.h"

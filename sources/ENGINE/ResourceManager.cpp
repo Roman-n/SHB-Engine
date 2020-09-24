@@ -153,7 +153,6 @@ Shader*	CResourceManager::_cpp_Create	(IBlender* B, LPCSTR s_shader, LPCSTR s_te
 	{
 		C.iElement			= 0;
 		C.bDetail			= m_textures_description.GetDetailTexture(C.L_textures[0],C.detail_texture,C.detail_scaler);
-//.		C.bDetail			= _GetDetailTexture(*C.L_textures[0],C.detail_texture,C.detail_scaler);
 		ShaderElement		E;
 		C._cpp_Compile		(&E);
 		S.E[0]				= _CreateElement	(E);
@@ -162,7 +161,6 @@ Shader*	CResourceManager::_cpp_Create	(IBlender* B, LPCSTR s_shader, LPCSTR s_te
 	// Compile element	(LOD1)
 	{
 		C.iElement			= 1;
-//.		C.bDetail			= _GetDetailTexture(*C.L_textures[0],C.detail_texture,C.detail_scaler);
 		C.bDetail			= m_textures_description.GetDetailTexture(C.L_textures[0],C.detail_texture,C.detail_scaler);
 		ShaderElement		E;
 		C._cpp_Compile		(&E);
@@ -304,17 +302,3 @@ void	CResourceManager::Evict()
 {
 	CHK_DX	(HW.pDevice->EvictManagedResources());
 }
-/*
-BOOL	CResourceManager::_GetDetailTexture(LPCSTR Name,LPCSTR& T, R_constant_setup* &CS)
-{
-	LPSTR N = LPSTR(Name);
-	map_TD::iterator I = m_td.find	(N);
-	if (I!=m_td.end())
-	{
-		T	= I->second.T;
-		CS	= I->second.cs;
-		return TRUE;
-	} else {
-		return FALSE;
-	}
-}*/

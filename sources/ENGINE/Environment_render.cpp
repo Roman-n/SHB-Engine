@@ -2,12 +2,10 @@
 
 #include "Environment.h"
 #include "render.h"
-
 #include "xr_efflensflare.h"
 #include "rain.h"
 #include "thunderbolt.h"
-
-#include "igame_level.h"
+#include "IGameLevel.h"
 
 //////////////////////////////////////////////////////////////////////////
 // half box def

@@ -3,8 +3,9 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include "igame_level.h"
-#include "fdemoplay.h"
+
+#include "IGameLevel.h"
+#include "DemoPlay.h"
 #include "Console.h"
 #include "motion.h"
 #include "Render.h"

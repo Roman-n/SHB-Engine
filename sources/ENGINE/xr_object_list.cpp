@@ -1,15 +1,12 @@
 #include "stdafx.h"
 
-#include "igame_level.h"
+#include "IGameLevel.h"
 #include "IGamePersistent.h"//==>
-
-#include "xrSheduler.h"
+//#include "Sheduler.h"
 #include "xr_object_list.h"
 #include "std_classes.h"
-
-#include "xr_object.h"
+#include "Object.h"
 #include "net_utils.h"
-
 #include "CustomHUD.h"
 
 class fClassEQ {

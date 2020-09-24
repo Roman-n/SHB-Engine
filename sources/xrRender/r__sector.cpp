@@ -5,7 +5,7 @@
 #include "stdafx.h"
 #include "r__sector.h"
 #include "..\ENGINE\xrLevel.h"
-#include "..\ENGINE\xr_object.h"
+//#include "..\ENGINE\Object.h"
 #include "..\ENGINE\fbasicvisual.h"
 #include "..\ENGINE\IGamePersistent.h"//==>
 

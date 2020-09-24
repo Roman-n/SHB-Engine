@@ -1,10 +1,10 @@
 #include "stdafx.h"
 
 #include "GameFont.h"
-#include "ISpatial.h"
+//#include "ISpatial.h"
 #include "IGamePersistent.h"//==>
 #include "render.h"
-#include "xr_object.h"
+#include "Object.h"
 
 int		g_ErrorLineCount	= 15;
 Flags32 g_stats_flags		= {0};

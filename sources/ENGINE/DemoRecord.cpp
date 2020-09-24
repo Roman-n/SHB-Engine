@@ -3,14 +3,14 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include "igame_level.h"
-#include "Application.h"
 
+#include "IGameLevel.h"
+#include "Application.h"
 #include "gamefont.h"
-#include "fDemoRecord.h"
+#include "DemoRecord.h"
 #include "Console.h"
 #include "Input.h"
-#include "xr_object.h"
+#include "Object.h"
 #include "render.h"
 #include "CustomHUD.h"
 

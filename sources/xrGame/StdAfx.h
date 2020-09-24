@@ -27,8 +27,8 @@ IC	void		throw_and_log(const xr_string &s) {Msg("! %s",s.c_str()); throw *shared
 #endif
 
 #include "../ENGINE\gamefont.h"
-#include "../ENGINE\xr_object.h"
-#include "../ENGINE\igame_level.h"
+#include "..\ENGINE\Object.h"
+#include "..\ENGINE\IGameLevel.h"
 
 #ifdef PUBLIC_BUILD
 #ifndef DEBUG

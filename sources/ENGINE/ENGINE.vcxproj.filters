@@ -159,9 +159,6 @@
     <ClInclude Include="ISheduled.h">
       <Filter>Interfaces\Sheduler</Filter>
     </ClInclude>
-    <ClInclude Include="xrSheduler.h">
-      <Filter>Interfaces\Sheduler</Filter>
-    </ClInclude>
     <ClInclude Include="IRenderable.h">
       <Filter>Interfaces\Render</Filter>
     </ClInclude>
@@ -177,9 +174,6 @@
     <ClInclude Include="ICollidable.h">
       <Filter>Interfaces\Collidable</Filter>
     </ClInclude>
-    <ClInclude Include="IGame_Level.h">
-      <Filter>Game API</Filter>
-    </ClInclude>
     <ClInclude Include="xrLevel.h">
       <Filter>Game API</Filter>
     </ClInclude>
@@ -187,9 +181,6 @@
       <Filter>Game API\Objects</Filter>
     </ClInclude>
     <ClInclude Include="pure_relcase.h">
-      <Filter>Game API\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="xr_object.h">
       <Filter>Game API\Objects</Filter>
     </ClInclude>
     <ClInclude Include="xr_object_list.h">
@@ -257,12 +248,6 @@
     </ClInclude>
     <ClInclude Include="Feel_Vision.h">
       <Filter>Game API\Feelers</Filter>
-    </ClInclude>
-    <ClInclude Include="FDemoPlay.h">
-      <Filter>Game API\Demo</Filter>
-    </ClInclude>
-    <ClInclude Include="FDemoRecord.h">
-      <Filter>Game API\Demo</Filter>
     </ClInclude>
     <ClInclude Include="FBasicVisual.h">
       <Filter>Render\Visuals</Filter>
@@ -504,6 +489,21 @@
     <ClInclude Include="IGamePersistent.h">
       <Filter>Game API</Filter>
     </ClInclude>
+    <ClInclude Include="IGameLevel.h">
+      <Filter>Game API</Filter>
+    </ClInclude>
+    <ClInclude Include="Sheduler.h">
+      <Filter>Interfaces\Sheduler</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoPlay.h">
+      <Filter>Game API\Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="DemoRecord.h">
+      <Filter>Game API\Demo</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Game API\Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="defines.cpp">
@@ -516,9 +516,6 @@
       <Filter>Interfaces\Input</Filter>
     </ClCompile>
     <ClCompile Include="ISheduled.cpp">
-      <Filter>Interfaces\Sheduler</Filter>
-    </ClCompile>
-    <ClCompile Include="xrSheduler.cpp">
       <Filter>Interfaces\Sheduler</Filter>
     </ClCompile>
     <ClCompile Include="IRenderable.cpp">
@@ -545,19 +542,10 @@
     <ClCompile Include="ICollidable.cpp">
       <Filter>Interfaces\Collidable</Filter>
     </ClCompile>
-    <ClCompile Include="IGame_Level.cpp">
-      <Filter>Game API</Filter>
-    </ClCompile>
-    <ClCompile Include="IGame_Level_check_textures.cpp">
-      <Filter>Game API</Filter>
-    </ClCompile>
     <ClCompile Include="IGame_ObjectPool.cpp">
       <Filter>Game API\Objects</Filter>
     </ClCompile>
     <ClCompile Include="pure_relcase.cpp">
-      <Filter>Game API\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="xr_object.cpp">
       <Filter>Game API\Objects</Filter>
     </ClCompile>
     <ClCompile Include="xr_object_list.cpp">
@@ -622,12 +610,6 @@
     </ClCompile>
     <ClCompile Include="Feel_Vision.cpp">
       <Filter>Game API\Feelers</Filter>
-    </ClCompile>
-    <ClCompile Include="FDemoPlay.cpp">
-      <Filter>Game API\Demo</Filter>
-    </ClCompile>
-    <ClCompile Include="FDemoRecord.cpp">
-      <Filter>Game API\Demo</Filter>
     </ClCompile>
     <ClCompile Include="FBasicVisual.cpp">
       <Filter>Render\Visuals</Filter>
@@ -868,6 +850,21 @@
     </ClCompile>
     <ClCompile Include="IGamePersistent.cpp">
       <Filter>Game API</Filter>
+    </ClCompile>
+    <ClCompile Include="IGameLevel.cpp">
+      <Filter>Game API</Filter>
+    </ClCompile>
+    <ClCompile Include="Sheduler.cpp">
+      <Filter>Interfaces\Sheduler</Filter>
+    </ClCompile>
+    <ClCompile Include="DemoPlay.cpp">
+      <Filter>Game API\Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="DemoRecord.cpp">
+      <Filter>Game API\Demo</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Game API\Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

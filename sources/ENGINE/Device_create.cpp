@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "resourcemanager.h"
+#include "ResourceManager.h"
 #include "GammaControl.h"
 #include "render.h"
 

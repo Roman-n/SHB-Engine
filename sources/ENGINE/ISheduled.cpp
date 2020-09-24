@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "xr_object.h"
+#include "Object.h"
 
 ISheduled::ISheduled( )
 {

@@ -3,9 +3,10 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "LightShadows.h"
 #include "..\xrRender\LightTrack.h"
-#include "..\ENGINE\xr_object.h"
+#include "..\ENGINE\Object.h"
 #include "..\ENGINE\fbasicvisual.h"
 #include "..\ENGINE\CustomHUD.h"
  

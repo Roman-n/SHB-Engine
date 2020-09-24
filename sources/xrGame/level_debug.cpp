@@ -1,6 +1,7 @@
 #include "stdafx.h"
+
 #include "level_debug.h"
-#include "..\ENGINE\xr_object.h"
+//#include "..\ENGINE\Object.h"
 #include "level.h"
 #include "HUDManager.h"//
 
@@ -96,7 +97,6 @@ void CLevelDebug::free_mem()
 
 void CLevelDebug::draw_object_info()
 {
-
 	// handle all of the objects
 	for (OBJECT_INFO_MAP_IT it = m_objects_info.begin(); it != m_objects_info.end(); ++it) {
 

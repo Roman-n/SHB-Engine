@@ -2,8 +2,8 @@
 
 #include <functional>// раньше небыло
 
-#include "..\ENGINE\fdemorecord.h"
-#include "..\ENGINE\fdemoplay.h"
+//#include "..\ENGINE\DemoRecord.h"
+#include "..\ENGINE\DemoPlay.h"
 #include "..\ENGINE\environment.h"
 #include "..\ENGINE\IGamePersistent.h"//==>
 #include "ParticlesObject.h"

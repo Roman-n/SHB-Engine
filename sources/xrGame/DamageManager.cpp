@@ -9,7 +9,7 @@
 #include "stdafx.h"
 
 #include "DamageManager.h"
-#include "..\ENGINE\xr_object.h"
+//#include "..\ENGINE\Object.h"
 #include "..\ENGINE\skeletoncustom.h"
 
 CDamageManager::CDamageManager( )

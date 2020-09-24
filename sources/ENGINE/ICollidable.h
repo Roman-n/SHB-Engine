@@ -7,9 +7,9 @@ class ENGINE_API ICollidable
 public:
 	struct
 	{
-		ICollisionForm*		model;
-	}						collidable;
+		ICollisionForm*			model;
+	}							collidable;
 
-							ICollidable		( );
-	virtual					~ICollidable	( );
+				ICollidable		( );
+	virtual		~ICollidable	( );
 };

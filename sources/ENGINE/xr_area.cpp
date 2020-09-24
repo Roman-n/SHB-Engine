@@ -1,8 +1,8 @@
 #include "stdafx.h"
-#include "igame_level.h"
 
+#include "IGameLevel.h"
 #include "xr_area.h"
-#include "xr_object.h"
+#include "Object.h"
 #include "xrLevel.h"
 #include "feel_sound.h"
 //#include "Application.h"
@@ -12,7 +12,7 @@ using namespace	collide;
 
 extern	BOOL g_bLoaded;
 
-void	IGame_Level::SoundEvent_Register	( ref_sound_data_ptr S, float range )
+void	IGameLevel::SoundEvent_Register	( ref_sound_data_ptr S, float range )
 {
 	if (!g_bLoaded)									return;
 	if (!S)											return;
@@ -67,7 +67,7 @@ void	IGame_Level::SoundEvent_Register	( ref_sound_data_ptr S, float range )
 	snd_ER.clear_not_free	();
 }
 
-void	IGame_Level::SoundEvent_Dispatch	( )
+void	IGameLevel::SoundEvent_Dispatch	( )
 {
 	while	(!snd_Events.empty())	{
 		_esound_delegate&	D	= snd_Events.back	();

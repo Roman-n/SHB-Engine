@@ -22,7 +22,7 @@ private:
 		BOOL		RT;
 		ISheduled*	Object;
 	};
-private:
+
 	xr_vector<Item>			ItemsRT			;
 	xr_vector<Item>			Items			;
 	xr_vector<Item>			ItemsProcessed	;

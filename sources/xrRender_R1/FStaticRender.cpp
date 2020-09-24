@@ -8,7 +8,7 @@
 #include "..\ENGINE\environment.h"
 #include "..\ENGINE\fbasicvisual.h"
 #include "..\ENGINE\CustomHUD.h"
-#include "..\ENGINE\xr_object.h"
+#include "..\ENGINE\Object.h"
 #include "..\ENGINE\fmesh.h"
 #include "..\ENGINE\SkeletonCustom.h"
 #include "..\xrRender\lighttrack.h"

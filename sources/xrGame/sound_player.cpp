@@ -7,11 +7,12 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "sound_player.h"
 #include "script_engine.h"
 #include "ai/stalker/ai_stalker_space.h"
 #include "ai_space.h"
-#include "..\ENGINE\xr_object.h"
+//#include "..\ENGINE\Object.h"
 #include "..\ENGINE\skeletoncustom.h"
 #include "profiler.h"
 #include "sound_collection_storage.h"

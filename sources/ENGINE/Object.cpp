@@ -1,12 +1,11 @@
 #include "stdafx.h"
-#include "igame_level.h"
 
-#include "xr_object.h"
+#include "IGameLevel.h"
+#include "Object.h"
 #include "xr_area.h"
 #include "render.h"
 #include "xrLevel.h"
 #include "fbasicvisual.h"
-
 //#include "Application.h"
 #include "GameFont.h"
 

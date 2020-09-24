@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include <dinput.h>
 #include "HUDManager.h"//
 #include "..\ENGINE\Console.h"
@@ -7,7 +8,7 @@
 #include "alife_simulator.h"
 #include "alife_simulator_header.h"
 #include "level_graph.h"
-#include "..\ENGINE\fdemorecord.h"
+//#include "..\ENGINE\DemoRecord.h"
 #include "level.h"
 #include "xr_level_controller.h"
 #include "game_cl_base.h"

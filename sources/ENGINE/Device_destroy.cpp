@@ -3,6 +3,8 @@
 #include "ResourceManager.h"
 #include "render.h"
 #include "IGamePersistent.h"//==>
+#include "IGameLevel.h"
+#include "CustomHUD.h"
 
 void CRenderDevice::_Destroy	(BOOL bKeepTextures)
 {
@@ -48,8 +50,6 @@ void CRenderDevice::Destroy	(void) {
 	xr_delete					(Statistic);
 }
 
-#include "IGame_Level.h"
-#include "CustomHUD.h"
 extern BOOL bNeed_re_create_env;
 void CRenderDevice::Reset		(bool precache)
 {

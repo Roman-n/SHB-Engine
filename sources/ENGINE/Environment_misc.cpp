@@ -4,7 +4,7 @@
 #include "xr_efflensflare.h"
 #include "thunderbolt.h"
 #include "rain.h"
-#include "resourcemanager.h"
+#include "ResourceManager.h"
 
 //-----------------------------------------------------------------------------
 // Environment modifier

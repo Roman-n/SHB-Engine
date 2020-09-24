@@ -38,7 +38,7 @@ public:
 
 
 //-----------------------------------------------------------------------------------------------------------
-class ENGINE_API	IGame_Level		: 
+class ENGINE_API	IGameLevel		: 
 	public DLL_Pure,
 	public IInputReceiver,
 	public pureRender,
@@ -76,8 +76,8 @@ public:	// deferred sound events
 	xr_vector<_esound_delegate>	snd_Events;
 public:
 	// Main, global functions
-	IGame_Level					();
-	virtual ~IGame_Level		();
+	IGameLevel();
+	virtual ~IGameLevel();
 
 	virtual shared_str			name					() const = 0;
 	virtual void				GetLevelInfo			( CServerInfo* si ) = 0;
@@ -110,7 +110,7 @@ public:
 };
 
 //-----------------------------------------------------------------------------------------------------------
-extern ENGINE_API	IGame_Level*	g_pGameLevel;
+extern ENGINE_API	IGameLevel*	g_pGameLevel;
 
 template <typename _class_type>
 	void relcase_register	(_class_type *self, void (xr_stdcall _class_type::* function_to_bind)(CObject*))

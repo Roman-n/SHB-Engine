@@ -3,7 +3,7 @@
 #include "zone_effector.h"
 #include "level.h"
 #include "clsid_game.h"
-#include "..\ENGINE\xr_object.h"
+//#include "..\ENGINE\Object.h"
 #include "..\ENGINE\cameramanager.h"
 #include "actor.h"
 #include "actoreffector.h"

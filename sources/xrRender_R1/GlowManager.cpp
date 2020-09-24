@@ -9,7 +9,7 @@
 //#include "..\ENGINE\Application.h"
 #include "..\ENGINE\GameFont.h"
 #include "GlowManager.h"
-#include "..\ENGINE\xr_object.h"
+//#include "..\ENGINE\Object.h"
 
 #define FADE_SCALE_UP		4096.f
 #define FADE_SCALE_DOWN		1024.f

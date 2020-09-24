@@ -1,5 +1,6 @@
 #include "stdafx.h"
-#include "..\ENGINE\resourcemanager.h"
+
+#include "..\ENGINE\ResourceManager.h"
 #include "HUDManager.h"//
 #include "PHdynamicdata.h"
 #include "Physics.h"
@@ -8,6 +9,7 @@
 #include "..\ENGINE\IGamePersistent.h"//==>
 #include "PhysicsGamePars.h"
 #include "ai_space.h"
+#include "string_table.h"
 
 extern	pureFrame*				g_pNetProcessor;
 
@@ -15,7 +17,7 @@ BOOL CLevel::net_Start_client	( LPCSTR options )
 {
 	return FALSE;
 }
-#include "string_table.h"
+
 bool	CLevel::net_start_client1				()
 {
 	pApp->LoadBegin	();

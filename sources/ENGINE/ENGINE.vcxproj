@@ -213,8 +213,8 @@
     <ClInclude Include="ETextureParams.h" />
     <ClInclude Include="EventAPI.h" />
     <ClInclude Include="FBasicVisual.h" />
-    <ClInclude Include="FDemoPlay.h" />
-    <ClInclude Include="FDemoRecord.h" />
+    <ClInclude Include="DemoPlay.h" />
+    <ClInclude Include="DemoRecord.h" />
     <ClInclude Include="Feel_Sound.h" />
     <ClInclude Include="Feel_Touch.h" />
     <ClInclude Include="Feel_Vision.h" />
@@ -226,7 +226,7 @@
     <ClInclude Include="HW.h" />
     <ClInclude Include="HWCaps.h" />
     <ClInclude Include="ICollidable.h" />
-    <ClInclude Include="IGame_Level.h" />
+    <ClInclude Include="IGameLevel.h" />
     <ClInclude Include="IGame_ObjectPool.h" />
     <ClInclude Include="IGamePersistent.h" />
     <ClInclude Include="IInputReceiver.h" />
@@ -280,7 +280,7 @@
     <ClInclude Include="xrHemisphere.h" />
     <ClInclude Include="xrImage_Resampler.h" />
     <ClInclude Include="xrLevel.h" />
-    <ClInclude Include="xrSheduler.h" />
+    <ClInclude Include="Sheduler.h" />
     <ClInclude Include="xrTheora_Stream.h" />
     <ClInclude Include="xrTheora_Surface.h" />
     <ClInclude Include="xrTheora_Surface_mmx.h" />
@@ -293,7 +293,7 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="IConsoleCommand.h" />
-    <ClInclude Include="xr_object.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="xr_object_list.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="_d3d_extensions.h" />
@@ -343,8 +343,8 @@
     <ClCompile Include="ETextureParams.cpp" />
     <ClCompile Include="EventAPI.cpp" />
     <ClCompile Include="FBasicVisual.cpp" />
-    <ClCompile Include="FDemoPlay.cpp" />
-    <ClCompile Include="FDemoRecord.cpp" />
+    <ClCompile Include="DemoPlay.cpp" />
+    <ClCompile Include="DemoRecord.cpp" />
     <ClCompile Include="Feel_Touch.cpp" />
     <ClCompile Include="Feel_Vision.cpp" />
     <ClCompile Include="FHierrarhyVisual.cpp" />
@@ -354,8 +354,7 @@
     <ClCompile Include="HW.cpp" />
     <ClCompile Include="HWCaps.cpp" />
     <ClCompile Include="ICollidable.cpp" />
-    <ClCompile Include="IGame_Level.cpp" />
-    <ClCompile Include="IGame_Level_check_textures.cpp" />
+    <ClCompile Include="IGameLevel.cpp" />
     <ClCompile Include="IGame_ObjectPool.cpp" />
     <ClCompile Include="IGamePersistent.cpp" />
     <ClCompile Include="IInputReceiver.cpp" />
@@ -420,7 +419,7 @@
     <ClCompile Include="tss_def.cpp" />
     <ClCompile Include="xrHemisphere.cpp" />
     <ClCompile Include="xrImage_Resampler.cpp" />
-    <ClCompile Include="xrSheduler.cpp" />
+    <ClCompile Include="Sheduler.cpp" />
     <ClCompile Include="xrTheora_Stream.cpp" />
     <ClCompile Include="xrTheora_Surface.cpp" />
     <ClCompile Include="xrTheora_Surface_mmx.cpp" />
@@ -433,7 +432,7 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="IConsoleCommand.cpp" />
-    <ClCompile Include="xr_object.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="xr_object_list.cpp" />
     <ClCompile Include="Application.cpp" />
   </ItemGroup>

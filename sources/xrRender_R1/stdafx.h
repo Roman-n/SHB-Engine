@@ -17,10 +17,10 @@
 #define		R_R2	2
 #define		RENDER	R_R1
 
-#include "..\ENGINE\resourcemanager.h"
+#include "..\ENGINE\ResourceManager.h"
 #include "..\ENGINE\vis_common.h"
 #include "..\ENGINE\render.h"
-#include "..\ENGINE\igame_level.h"
+#include "..\ENGINE\IGameLevel.h"
 #include "..\ENGINE\blenders\blender.h"
 #include "..\ENGINE\blenders\blender_clsid.h"
 #include "..\xrParticles\psystem.h"

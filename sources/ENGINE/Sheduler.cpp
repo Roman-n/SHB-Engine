@@ -1,8 +1,7 @@
 #include "stdafx.h"
 
-#include "xr_object.h"
-
 //#define DEBUG_SCHEDULER
+//#include "Object.h"
 
 float			psShedulerCurrent		= 10.f	;
 float			psShedulerTarget		= 10.f	;

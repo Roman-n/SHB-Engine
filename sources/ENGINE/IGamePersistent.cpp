@@ -2,11 +2,10 @@
 
 #include "IGamePersistent.h"//==>
 #include "environment.h"
-
 //#include "Application.h"
-#include "IGame_Level.h"
+#include "IGameLevel.h"
 #include "Console.h"
-#include "resourcemanager.h"
+#include "ResourceManager.h"
 #include "Render.h"
 #include "ps_instance.h"
 #include "CustomHUD.h"

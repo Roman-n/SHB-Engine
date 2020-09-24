@@ -4,7 +4,7 @@
 #include "ui/UIDialogWnd.h"//
 #include "ui/UIMessageBoxEx.h"//
 #include "..\ENGINE\Console.h"
-#include "..\ENGINE\IGame_Level.h"
+#include "..\ENGINE\IGameLevel.h"
 #include "..\ENGINE\CameraManager.h"
 #include "xr_Level_controller.h"
 #include "ui\UITextureMaster.h"//
