@@ -180,9 +180,6 @@
     <ClInclude Include="IGame_Level.h">
       <Filter>Game API</Filter>
     </ClInclude>
-    <ClInclude Include="IGame_Persistent.h">
-      <Filter>Game API</Filter>
-    </ClInclude>
     <ClInclude Include="xrLevel.h">
       <Filter>Game API</Filter>
     </ClInclude>
@@ -504,6 +501,9 @@
     <ClInclude Include="Application.h">
       <Filter>General</Filter>
     </ClInclude>
+    <ClInclude Include="IGamePersistent.h">
+      <Filter>Game API</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="defines.cpp">
@@ -549,9 +549,6 @@
       <Filter>Game API</Filter>
     </ClCompile>
     <ClCompile Include="IGame_Level_check_textures.cpp">
-      <Filter>Game API</Filter>
-    </ClCompile>
-    <ClCompile Include="IGame_Persistent.cpp">
       <Filter>Game API</Filter>
     </ClCompile>
     <ClCompile Include="IGame_ObjectPool.cpp">
@@ -868,6 +865,9 @@
     </ClCompile>
     <ClCompile Include="Application.cpp">
       <Filter>General</Filter>
+    </ClCompile>
+    <ClCompile Include="IGamePersistent.cpp">
+      <Filter>Game API</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

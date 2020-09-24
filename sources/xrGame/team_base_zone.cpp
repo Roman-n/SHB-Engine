@@ -19,7 +19,7 @@
 #include "clsid_game.h"
 #include "map_manager.h"
 #include "map_location.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 
 #ifdef DEBUG
 #	include "debug_renderer.h"

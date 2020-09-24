@@ -8,7 +8,7 @@
 #include "stdafx.h"
 
 #include "igame_level.h"
-#include "IGame_Persistent.h"//==>
+#include "IGamePersistent.h"//==>
 
 #include "Input.h"
 #include "Console.h"
@@ -227,7 +227,7 @@ void Startup					( )
 	Device.Create				( );
 	LALib.OnCreate				( );
 	pApp						= xr_new<CApplication>	();
-	g_pGamePersistent			= (IGame_Persistent*)	NEW_INSTANCE (CLSID_GAME_PERSISTANT);
+	g_pGamePersistent			= (IGamePersistent*)	NEW_INSTANCE (CLSID_GAME_PERSISTANT);
 	g_SpatialSpace				= xr_new<ISpatial_DB>	();
 	g_SpatialSpacePhysic		= xr_new<ISpatial_DB>	();
 	

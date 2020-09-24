@@ -2,7 +2,7 @@
 
 #include "ModelPool.h"
 
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 #include "..\ENGINE\fmesh.h"
 #include "..\ENGINE\fhierrarhyvisual.h"
 #include "..\ENGINE\SkeletonAnimated.h"

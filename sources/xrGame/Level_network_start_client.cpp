@@ -5,7 +5,7 @@
 #include "Physics.h"
 #include "level.h"
 #include "..\ENGINE\Application.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 #include "PhysicsGamePars.h"
 #include "ai_space.h"
 

@@ -22,7 +22,7 @@
 #include "clsid_game.h"
 #include "string_table.h"
 #include "map_manager.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction

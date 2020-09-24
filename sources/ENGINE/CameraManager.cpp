@@ -5,7 +5,7 @@
 #include "stdafx.h"
 
 #include "igame_level.h"
-#include "IGame_Persistent.h"//==>
+#include "IGamePersistent.h"//==>
 
 #include "Environment.h"
 #include "CameraBase.h"

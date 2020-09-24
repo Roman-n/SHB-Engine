@@ -2,7 +2,7 @@
 
 #include "..\ENGINE\render.h"
 #include "..\ENGINE\irenderable.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 #include "..\ENGINE\environment.h"
 #include "..\ENGINE\fhierrarhyvisual.h"
 #include "..\ENGINE\SkeletonCustom.h"

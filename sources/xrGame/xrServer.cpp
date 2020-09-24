@@ -9,7 +9,7 @@
 #include "level.h"
 #include "game_cl_base.h"
 #include "ai_space.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 
 #include "..\ENGINE\Console.h"
 #include "ui/UIInventoryUtilities.h"//

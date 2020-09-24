@@ -2,7 +2,7 @@
 
 #include "render.h"
 #include "Thunderbolt.h"
-#include "IGame_Persistent.h"//==>
+#include "IGamePersistent.h"//==>
 #include "LightAnimLibrary.h"
 
 #include "igame_level.h"

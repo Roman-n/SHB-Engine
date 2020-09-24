@@ -320,7 +320,7 @@ void ProcessLoading				(RP_FUNC *f)
 }
 
 ENGINE_API BOOL bShowPauseString = TRUE;
-#include "IGame_Persistent.h"//==>
+#include "IGamePersistent.h"//==>
 
 void CRenderDevice::Pause(BOOL bOn, BOOL bTimer, BOOL bSound, LPCSTR reason)
 {

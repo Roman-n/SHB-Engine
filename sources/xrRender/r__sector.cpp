@@ -7,7 +7,7 @@
 #include "..\ENGINE\xrLevel.h"
 #include "..\ENGINE\xr_object.h"
 #include "..\ENGINE\fbasicvisual.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction

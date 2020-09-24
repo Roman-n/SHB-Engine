@@ -6,7 +6,7 @@ class CUICursor;
 class CUIMessageBoxEx;
 
 #include "..\ENGINE\IInputReceiver.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 #include "ui/UIDialogHolder.h"//
 #include "ui/UIWndCallback.h"//
 #include "ui/ui_base.h"//

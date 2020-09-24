@@ -2,7 +2,7 @@
 
 #include "..\ENGINE\_d3d_extensions.h"
 #include "..\ENGINE\xrLevel.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 #include "..\ENGINE\environment.h"
 #include "light_db.h"
 

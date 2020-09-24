@@ -4,7 +4,7 @@
 #include "..\ENGINE\fbasicvisual.h"
 #include "..\ENGINE\xr_object.h"
 #include "..\ENGINE\CustomHUD.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 #include "..\ENGINE\environment.h"
 #include "..\ENGINE\SkeletonCustom.h"
 #include "..\xrRender\LightTrack.h"

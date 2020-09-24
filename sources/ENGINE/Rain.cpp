@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "Rain.h"
-#include "IGame_Persistent.h"//==>
+#include "IGamePersistent.h"//==>
 #include "environment.h"
 
 #include "render.h"

@@ -2,7 +2,7 @@
 
 #include "GameFont.h"
 #include "ISpatial.h"
-#include "IGame_Persistent.h"//==>
+#include "IGamePersistent.h"//==>
 #include "render.h"
 #include "xr_object.h"
 

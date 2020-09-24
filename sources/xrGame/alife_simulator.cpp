@@ -10,7 +10,7 @@
 #include "alife_simulator.h"
 #include "xrServer_Objects_ALife.h"
 #include "ai_space.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 #include "script_engine.h"
 #include "mainmenu.h"
 #include "object_factory.h"
@@ -41,7 +41,7 @@ CALifeSimulator::CALifeSimulator		(xrServer *server, shared_str *command_line) :
 
 	setup_command_line			(command_line);
 
-	typedef IGame_Persistent::params params;
+	typedef IGamePersistent::params params;
 	params						&p = g_pGamePersistent->m_game_params;
 	
 	R_ASSERT2					(

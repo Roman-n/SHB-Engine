@@ -11,7 +11,7 @@
 #include "..\ENGINE\LightAnimLibrary.h"
 #include "level.h"
 #include "game_cl_base.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 #include "Artefact.h"
 #include "ai_object_location.h"
 #include "..\ENGINE\skeletoncustom.h"

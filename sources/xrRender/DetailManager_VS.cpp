@@ -2,7 +2,7 @@
 
 #include "detailmanager.h"
 
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 #include "..\ENGINE\environment.h"
 
 const int			quant	= 16384;

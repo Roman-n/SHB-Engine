@@ -21,7 +21,7 @@
 #include "..\ENGINE\skeletoncustom.h"
 #include "ai_object_location.h"
 #include "object_broker.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 
 #ifdef DEBUG
 #	include "debug_renderer.h"

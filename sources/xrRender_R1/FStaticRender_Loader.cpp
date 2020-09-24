@@ -4,7 +4,7 @@
 #include "..\ENGINE\fmesh.h"
 #include "..\ENGINE\xrLevel.h"
 #include "..\ENGINE\Application.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 #include "..\Core\stream_reader.h"
 
 #pragma warning(push)

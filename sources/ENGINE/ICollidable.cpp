@@ -2,7 +2,7 @@
 
 #include "ispatial.h"
 #include "ICollidable.h"
-//#include "xr_collide_form.h"
+#include "xr_collide_form.h"
 
 ICollidable::ICollidable()
 {

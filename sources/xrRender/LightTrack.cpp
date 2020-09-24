@@ -6,7 +6,7 @@
 #include "LightTrack.h"
 #include "..\ENGINE\xr_object.h"
 
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 #include "..\ENGINE\environment.h"
 
 //////////////////////////////////////////////////////////////////////

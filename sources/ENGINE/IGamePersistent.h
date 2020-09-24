@@ -6,7 +6,7 @@
 class IMainMenu;
 class ENGINE_API CPS_Instance;
 
-class ENGINE_API IGame_Persistent :
+class ENGINE_API IGamePersistent :
 	public DLL_Pure,
 	public pureAppStart,
 	public pureAppEnd,
@@ -99,8 +99,8 @@ public:
 
 	virtual float						MtlTransparent		(u32 mtl_idx) = 0;
 
-										IGame_Persistent	( );
-	virtual								~IGame_Persistent	( );
+	IGamePersistent( );
+	virtual								~IGamePersistent( );
 
 	u32									GameType			( )
 	{
@@ -122,4 +122,4 @@ public:
 	virtual void						DestroyInternal		(bool bForce) = 0;
 };
 
-extern ENGINE_API IGame_Persistent*		g_pGamePersistent;
+extern ENGINE_API IGamePersistent*		g_pGamePersistent;

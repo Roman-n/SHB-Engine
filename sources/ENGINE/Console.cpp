@@ -5,7 +5,7 @@
 #include "stdafx.h"
 
 #include "igame_level.h"
-#include "IGame_Persistent.h"//==>
+#include "IGamePersistent.h"//==>
 //#include "Application.h"
 #include "Console.h"
 #include "IConsoleCommand.h"

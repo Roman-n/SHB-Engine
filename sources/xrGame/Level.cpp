@@ -5,7 +5,7 @@
 #include "..\ENGINE\fdemorecord.h"
 #include "..\ENGINE\fdemoplay.h"
 #include "..\ENGINE\environment.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 #include "ParticlesObject.h"
 #include "Level.h"
 #include "xrServer.h"

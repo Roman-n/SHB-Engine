@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "IGame_Persistent.h"//==>
+#include "IGamePersistent.h"//==>
 #include "environment.h"
 
 //#include "Application.h"
@@ -11,9 +11,9 @@
 #include "ps_instance.h"
 #include "CustomHUD.h"
 
-ENGINE_API	IGame_Persistent*		g_pGamePersistent	= nullptr;
+ENGINE_API	IGamePersistent*		g_pGamePersistent	= nullptr;
 
-IGame_Persistent::IGame_Persistent	()
+IGamePersistent::IGamePersistent()
 {
 	Device.seqAppStart.Add			(this);
 	Device.seqAppEnd.Add			(this);
@@ -26,7 +26,7 @@ IGame_Persistent::IGame_Persistent	()
 	pEnvironment					= xr_new<CEnvironment>();
 }
 
-IGame_Persistent::~IGame_Persistent	()
+IGamePersistent::~IGamePersistent	()
 {
 	Device.seqFrame.Remove			(this);
 	Device.seqAppStart.Remove		(this);
@@ -36,20 +36,20 @@ IGame_Persistent::~IGame_Persistent	()
 	xr_delete						(pEnvironment);
 }
 
-void IGame_Persistent::OnAppActivate		()
+void IGamePersistent::OnAppActivate		()
 {
 }
 
-void IGame_Persistent::OnAppDeactivate		()
+void IGamePersistent::OnAppDeactivate		()
 {
 }
 
-void IGame_Persistent::OnAppStart	()
+void IGamePersistent::OnAppStart	()
 {
 	Environment().load				();
 }
 
-void IGame_Persistent::OnAppEnd		()
+void IGamePersistent::OnAppEnd		()
 {
 	Environment().unload				();
 	OnGameEnd						();
@@ -58,7 +58,7 @@ void IGame_Persistent::OnAppEnd		()
 }
 
 
-void IGame_Persistent::PreStart		(LPCSTR op)
+void IGamePersistent::PreStart		(LPCSTR op)
 {
 	string256						prev_type;
 	params							new_game_params;
@@ -70,7 +70,7 @@ void IGame_Persistent::PreStart		(LPCSTR op)
 		OnGameEnd					();
 	}
 }
-void IGame_Persistent::Start		(LPCSTR op)
+void IGamePersistent::Start		(LPCSTR op)
 {
 	string256						prev_type;
 	strcpy_s							(prev_type,m_game_params.m_game_type);
@@ -89,7 +89,7 @@ void IGame_Persistent::Start		(LPCSTR op)
 	VERIFY							(ps_destroy.empty());
 }
 
-void IGame_Persistent::Disconnect	()
+void IGamePersistent::Disconnect	()
 {
 	// clear "need to play" particles
 	destroy_particles					(true);
@@ -98,7 +98,7 @@ void IGame_Persistent::Disconnect	()
 		g_hud->OnDisconnected			();
 }
 
-void IGame_Persistent::OnGameStart()
+void IGamePersistent::OnGameStart()
 {
 	LoadTitle								("st_prefetching_objects");
 	if (strstr(Core.Params,"-noprefetch"))	return;
@@ -120,13 +120,13 @@ void IGame_Persistent::OnGameStart()
 	Msg					("* [prefetch] memory:  %dKb",	p_mem/1024);
 }
 
-void IGame_Persistent::OnGameEnd	()
+void IGamePersistent::OnGameEnd	()
 {
 	ObjectPool.clear					();
 	Render->models_Clear				(TRUE);
 }
 
-void IGame_Persistent::OnFrame		()
+void IGamePersistent::OnFrame		()
 {
 	if(!Device.Paused() || Device.dwPrecacheFrame)
 		Environment().OnFrame				();
@@ -158,7 +158,7 @@ void IGame_Persistent::OnFrame		()
 	}
 }
 
-void IGame_Persistent::destroy_particles		(const bool &all_particles)
+void IGamePersistent::destroy_particles		(const bool &all_particles)
 {
 	ps_needtoplay.clear				();
 

@@ -25,7 +25,7 @@
 #include "clsid_game.h"
 #include "MathUtils.h"
 #include "object_broker.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 
 #define WEAPON_REMOVE_TIME		60000
 #define ROTATION_TIME			0.25f

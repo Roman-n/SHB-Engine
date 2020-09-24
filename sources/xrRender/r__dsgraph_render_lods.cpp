@@ -2,7 +2,7 @@
 
 #include "flod.h"
 
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 #include "..\ENGINE\environment.h"
 
 extern float	r_ssaLOD_A;

@@ -20,7 +20,7 @@
 //#include "..\ENGINE\Application.h"
 #include "saved_game_wrapper.h"
 #include "string_table.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 
 using namespace ALife;
 

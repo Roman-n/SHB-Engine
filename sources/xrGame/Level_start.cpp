@@ -6,7 +6,7 @@
 #include "xrmessages.h"
 #include "..\ENGINE\Application.h"
 //#include "..\ENGINE\RenderDevice.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 #include "..\ENGINE\Console.h"
 #include "MainMenu.h"
 #include "HUDManager.h"//
@@ -96,7 +96,7 @@ bool CLevel::net_start1				()
 	{
 		g_pGamePersistent->LoadTitle		("st_server_starting");
 
-		typedef IGame_Persistent::params params;
+		typedef IGamePersistent::params params;
 		params							&p = g_pGamePersistent->m_game_params;
 		// Connect
 		Server					= xr_new<xrServer>();

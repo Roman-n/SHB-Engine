@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 #include "..\ENGINE\igame_level.h"
 #include "..\ENGINE\environment.h"
 #include "..\ENGINE\fmesh.h"

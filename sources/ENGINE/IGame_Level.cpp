@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "igame_level.h"
-#include "IGame_Persistent.h"//==>
+#include "IGamePersistent.h"//==>
 
 #include "Application.h"
 #include "std_classes.h"

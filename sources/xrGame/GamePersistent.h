@@ -1,6 +1,6 @@
 #pragma once
 
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 
 class CMainMenu;
 class CUICursor;
@@ -9,7 +9,7 @@ class CUISequencer;
 class ui_core;
 
 class CGamePersistent: 
-	public IGame_Persistent, 
+	public IGamePersistent,
 	public IEventReceiver
 {
 	// ambient particles

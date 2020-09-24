@@ -14,7 +14,7 @@
 #include "Entity.h"
 #include "level.h"
 #include "game_cl_base.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 
 #include "InventoryOwner.h"
 #include "relation_registry.h"

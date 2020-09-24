@@ -5,7 +5,7 @@
 #include "stdafx.h"
 
 #include "LightPPA.h"
-#include "..\ENGINE\IGame_Persistent.h"//==>
+#include "..\ENGINE\IGamePersistent.h"//==>
 #include "..\ENGINE\environment.h"
 #include "..\ENGINE\fbasicvisual.h"
 #include "..\ENGINE\CustomHUD.h"

@@ -9,7 +9,7 @@
 #include "blenders\Blender_Recorder.h"
 #include "blenders\Blender.h"
 
-#include "IGame_Persistent.h"//==>
+#include "IGamePersistent.h"//==>
 #include "environment.h"
 
 // matrices
