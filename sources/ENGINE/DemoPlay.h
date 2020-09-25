@@ -1,38 +1,34 @@
-// CDemoPlay.h: interface for the CDemoPlay class.
-//
-//////////////////////////////////////////////////////////////////////
 #pragma once
 
 #include "effector.h"
 
-// refs
-class	COMotion;
-struct	SAnimParams;
+class COMotion;
+struct SAnimParams;
 
-// class
-class ENGINE_API CDemoPlay :	public CEffectorCam
+class ENGINE_API CDemoPlay : public CEffectorCam
 {
-    COMotion*			m_pMotion			;
-    SAnimParams*		m_MParam			;
+	COMotion*						m_pMotion;
+	SAnimParams*					m_MParam;
 
-	xr_vector<Fmatrix>	seq					;
-	int					m_count				;
-	float				fStartTime			;
-	float				fSpeed				;
-	u32					dwCyclesLeft		;
+	xr_vector<Fmatrix>				seq;
+	int								m_count;
+	float							fStartTime;
+	float							fSpeed;
+	u32								dwCyclesLeft;
 
 	// statistics
-	BOOL				stat_started		;
-	CTimer				stat_Timer_frame	;
-	CTimer				stat_Timer_total	;
-	u32					stat_StartFrame		;
-	xr_vector<float>	stat_table			;
-	
-	void				stat_Start	()		;
-	void				stat_Stop	()		;
-public:
-	virtual	BOOL		Process		(Fvector &p, Fvector &d, Fvector &n, float& fFov, float& fFar, float& fAspect);
+	bool							stat_started;
+	CTimer							stat_Timer_frame;
+	CTimer							stat_Timer_total;
+	u32								stat_StartFrame;
+	xr_vector<float>				stat_table;
 
-						CDemoPlay	(const char *name, float ms, u32 cycles, float life_time=60*60*1000);
-	virtual				~CDemoPlay	();
+	void			stat_Start		( );
+	void			stat_Stop		( );
+
+public:
+	virtual BOOL	Process			(Fvector& p, Fvector& d, Fvector& n, float& fFov, float& fFar, float& fAspect);
+
+					CDemoPlay		(const char* name, float ms, u32 cycles, float life_time = 60 * 60 * 1000);
+	virtual			~CDemoPlay		( );
 };

@@ -2,7 +2,7 @@
 
 #include "IInputReceiver.h"
 //#include "CameraManager.h"
-#include "xr_object_list.h"
+#include "ObjectList.h"
 #include "xr_area.h"
 
 // refs

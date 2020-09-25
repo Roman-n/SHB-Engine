@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Environment.h"
-#include "IGame_ObjectPool.h"
+#include "IGameObjectPool.h"
 
 class IMainMenu;
 class ENGINE_API CPS_Instance;
@@ -63,7 +63,7 @@ public:
 	virtual void						Start				(const char* op);
 	virtual void						Disconnect			( );
 
-	IGame_ObjectPool					ObjectPool;
+	IGameObjectPool					ObjectPool;
 
 	IMainMenu*							m_pMainMenu;
 

@@ -4,7 +4,7 @@
 class ENGINE_API				CObject;
 
 //-----------------------------------------------------------------------------------------------------------
-class ENGINE_API 				IGame_ObjectPool
+class ENGINE_API 				IGameObjectPool
 {
 /*
 private:
@@ -28,7 +28,7 @@ public:
 	CObject*					create				( LPCSTR	name	);
 	void						destroy				( CObject*	O		);
 
-	IGame_ObjectPool			();
-	virtual ~IGame_ObjectPool	();
+	IGameObjectPool();
+	virtual ~IGameObjectPool();
 };
 //-----------------------------------------------------------------------------------------------------------

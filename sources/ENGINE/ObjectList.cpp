@@ -3,7 +3,7 @@
 #include "IGameLevel.h"
 #include "IGamePersistent.h"//==>
 //#include "Sheduler.h"
-#include "xr_object_list.h"
+#include "ObjectList.h"
 #include "std_classes.h"
 #include "Object.h"
 #include "net_utils.h"
@@ -79,6 +79,7 @@ void	CObjectList::o_activate		( CObject*		O		)
 	objects_active.push_back	(O);
 	O->MakeMeCrow				();
 }
+
 void	CObjectList::o_sleep		( CObject*		O		)
 {
 	VERIFY	(O && !O->processing_enabled());
@@ -364,8 +365,8 @@ void		CObjectList::Destroy			( CObject*	O		)
 		if	(_ii!=objects_sleeping.end())	objects_sleeping.erase	(_ii);
 		else	FATAL						("! Unregistered object being destroyed");
 	}
-	g_pGamePersistent->ObjectPool.destroy	(O);
 
+	g_pGamePersistent->ObjectPool.destroy	(O);
 }
 
 void CObjectList::relcase_register		(RELCASE_CALLBACK cb, int *ID)

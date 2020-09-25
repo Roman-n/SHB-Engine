@@ -8,6 +8,7 @@
 #include "fbasicvisual.h"
 //#include "Application.h"
 #include "GameFont.h"
+#include "SkeletonCustom.h"
 
 void CObject::MakeMeCrow_internal	()
 {
@@ -18,11 +19,12 @@ void CObject::cName_set			(shared_str N)
 { 
 	NameObject	=	N; 
 }
+
 void CObject::cNameSect_set		(shared_str N)
 { 
 	NameSection	=	N; 
 }
-#include "SkeletonCustom.h"
+
 void CObject::cNameVisual_set	(shared_str N)
 { 
 	// check if equal
@@ -59,6 +61,7 @@ void CObject::processing_activate	()
 	Props.bActiveCounter			++;
 	if (0==(Props.bActiveCounter-1))	g_pGameLevel->Objects.o_activate	(this);
 }
+
 void CObject::processing_deactivate	()
 {
 	VERIFY3	(0	!= Props.bActiveCounter, "Invalid sequence of processing enable/disable calls: underflow",*cName());
@@ -66,24 +69,37 @@ void CObject::processing_deactivate	()
 	if (0==Props.bActiveCounter)		g_pGameLevel->Objects.o_sleep		(this);
 }
 
-void CObject::setEnabled			(BOOL _enabled)
+void CObject::setEnabled(BOOL _enabled)
 {
-	if (_enabled){
-		Props.bEnabled							=	1;	
-		if (collidable.model)	spatial.type	|=	STYPE_COLLIDEABLE;
-	}else{
-		Props.bEnabled							=	0;
-		spatial.type							&=	~STYPE_COLLIDEABLE;
+	if (_enabled)
+	{
+		Props.bEnabled = 1;
+		if (collidable.model)
+		{
+			spatial.type |= STYPE_COLLIDEABLE;
+		}
+	}
+	else
+	{
+		Props.bEnabled = 0;
+		spatial.type &= ~STYPE_COLLIDEABLE;
 	}
 }
-void CObject::setVisible			(BOOL _visible)
+
+void CObject::setVisible(BOOL _visible)
 {
-	if (_visible){				// Parent should control object visibility itself (??????)
-		Props.bVisible							= 1;
-		if (renderable.visual)	spatial.type	|=	STYPE_RENDERABLE;
-	}else{
-		Props.bVisible							= 0;
-		spatial.type							&=	~STYPE_RENDERABLE;
+	if (_visible)
+	{	// Parent should control object visibility itself (??????)
+		Props.bVisible = 1;
+		if (renderable.visual)
+		{
+			spatial.type |= STYPE_RENDERABLE;
+		}
+	}
+	else
+	{
+		Props.bVisible = 0;
+		spatial.type &= ~STYPE_RENDERABLE;
 	}
 }
 
@@ -91,10 +107,6 @@ void	CObject::Center					(Fvector& C)	const	{ VERIFY2(renderable.visual,*cName()
 float	CObject::Radius					()				const	{ VERIFY2(renderable.visual,*cName()); return renderable.visual->vis.sphere.R;								}
 const	Fbox&	CObject::BoundingBox	()				const	{ VERIFY2(renderable.visual,*cName()); return renderable.visual->vis.box;									}
 
-//----------------------------------------------------------------------
-// Class	: CXR_Object
-// Purpose	:
-//----------------------------------------------------------------------
 CObject::CObject		( )		: ISpatial(g_SpatialSpace)
 {
 	// Transform
@@ -322,31 +334,43 @@ CObject* CObject::H_SetParent	(CObject* new_parent, bool just_before_destroy)
 }
 
 void CObject::OnH_A_Chield		()
-{
-}
+{ }
+
 void CObject::OnH_B_Chield		()
 {
 	setVisible	(false);
 }
+
 void CObject::OnH_A_Independent	()
 {
 	setVisible	(true);
 }
+
 void CObject::OnH_B_Independent	(bool just_before_destroy)
-{
-}
+{ }
+
 void CObject::MakeMeCrow			()
 {
-		if (Props.crow)					return	;
-		if (!processing_enabled())		return	;
+	if (Props.crow)
+	{
+		return;
+	}
+
+	if (!processing_enabled( ))
+	{
+		return;
+	}
+
 		Props.crow						= true	;
 		MakeMeCrow_internal				()		;
 }
 
 void CObject::setDestroy			(BOOL _destroy)
 {
-	if (_destroy == (BOOL)Props.bDestroy)
+	if (_destroy == (BOOL) Props.bDestroy)
+	{
 		return;
+	}
 
 	Props.bDestroy	= _destroy?1:0;
 	if (_destroy)
@@ -355,6 +379,9 @@ void CObject::setDestroy			(BOOL _destroy)
 #ifdef DEBUG
 		Msg("cl setDestroy [%d][%d]",ID(),Device.dwFrame);
 #endif
-	}else
-		VERIFY		(!g_pGameLevel->Objects.registered_object_to_destroy(this));
+	}
+	else
+	{
+		VERIFY(!g_pGameLevel->Objects.registered_object_to_destroy(this));
+	}
 }

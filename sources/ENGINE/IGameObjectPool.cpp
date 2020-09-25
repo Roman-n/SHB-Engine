@@ -2,19 +2,19 @@
 
 //#include "IGameLevel.h"
 #include "IGamePersistent.h"//==>
-#include "igame_objectpool.h"
+#include "IGameObjectPool.h"
 #include "Object.h"
 
-IGame_ObjectPool::IGame_ObjectPool(void)
+IGameObjectPool::IGameObjectPool(void)
 {
 }
 
-IGame_ObjectPool::~IGame_ObjectPool(void)
+IGameObjectPool::~IGameObjectPool(void)
 {
 	R_ASSERT			(m_PrefetchObjects.empty());
 }
 
-void IGame_ObjectPool::prefetch	()
+void IGameObjectPool::prefetch	()
 {
 	R_ASSERT			(m_PrefetchObjects.empty());
 
@@ -39,7 +39,7 @@ void IGame_ObjectPool::prefetch	()
 	::Render->model_Logging	(TRUE);
 }
 
-void IGame_ObjectPool::clear()
+void IGameObjectPool::clear()
 {
 	// Clear POOL
 	ObjectVecIt it			= m_PrefetchObjects.begin();
@@ -49,7 +49,7 @@ void IGame_ObjectPool::clear()
 	m_PrefetchObjects.clear	(); 
 }
 
-CObject*	IGame_ObjectPool::create			( LPCSTR	name	)
+CObject* IGameObjectPool::create			( LPCSTR	name	)
 {
 	CLASS_ID CLS		=	pSettings->r_clsid		(name,"class");
 	CObject* O			=	(CObject*) NEW_INSTANCE	(CLS);
@@ -57,13 +57,13 @@ CObject*	IGame_ObjectPool::create			( LPCSTR	name	)
 	return				O;
 }
 
-void		IGame_ObjectPool::destroy			( CObject*	O		)
+void		IGameObjectPool::destroy			( CObject*	O		)
 {
 	xr_delete				(O);
 }
 
 /*
-void IGame_ObjectPool::prefetch	()
+void IGameObjectPool::prefetch	()
 {
 	R_ASSERT			(map_POOL.empty());
 
@@ -104,7 +104,7 @@ void IGame_ObjectPool::prefetch	()
 	}
 }
 
-void IGame_ObjectPool::clear	( )
+void IGameObjectPool::clear	( )
 {
 	// Clear POOL
 	for (POOL_IT it=map_POOL.begin(); it!=map_POOL.end(); it++)	
@@ -112,7 +112,7 @@ void IGame_ObjectPool::clear	( )
 	map_POOL.clear(); 
 }
 
-CObject*	IGame_ObjectPool::create			( LPCSTR	name	)
+CObject*	IGameObjectPool::create			( LPCSTR	name	)
 {
 	string256			l_name;
 	POOL_IT	it			=	map_POOL.find	(shared_str(strlwr(strcpy_s(l_name,name))));
@@ -132,7 +132,7 @@ CObject*	IGame_ObjectPool::create			( LPCSTR	name	)
 	}
 }
 
-void		IGame_ObjectPool::destroy			( CObject*	O		)
+void		IGameObjectPool::destroy			( CObject*	O		)
 {
 	map_POOL.insert			(mk_pair(O->cNameSect(),O));
 }

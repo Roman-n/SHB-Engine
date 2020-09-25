@@ -177,13 +177,7 @@
     <ClInclude Include="xrLevel.h">
       <Filter>Game API</Filter>
     </ClInclude>
-    <ClInclude Include="IGame_ObjectPool.h">
-      <Filter>Game API\Objects</Filter>
-    </ClInclude>
     <ClInclude Include="pure_relcase.h">
-      <Filter>Game API\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="xr_object_list.h">
       <Filter>Game API\Objects</Filter>
     </ClInclude>
     <ClInclude Include="CustomHUD.h">
@@ -504,6 +498,12 @@
     <ClInclude Include="Object.h">
       <Filter>Game API\Objects</Filter>
     </ClInclude>
+    <ClInclude Include="ObjectList.h">
+      <Filter>Game API\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="IGameObjectPool.h">
+      <Filter>Game API\Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="defines.cpp">
@@ -542,13 +542,7 @@
     <ClCompile Include="ICollidable.cpp">
       <Filter>Interfaces\Collidable</Filter>
     </ClCompile>
-    <ClCompile Include="IGame_ObjectPool.cpp">
-      <Filter>Game API\Objects</Filter>
-    </ClCompile>
     <ClCompile Include="pure_relcase.cpp">
-      <Filter>Game API\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="xr_object_list.cpp">
       <Filter>Game API\Objects</Filter>
     </ClCompile>
     <ClCompile Include="CustomHUD.cpp">
@@ -864,6 +858,12 @@
       <Filter>Game API\Demo</Filter>
     </ClCompile>
     <ClCompile Include="Object.cpp">
+      <Filter>Game API\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectList.cpp">
+      <Filter>Game API\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="IGameObjectPool.cpp">
       <Filter>Game API\Objects</Filter>
     </ClCompile>
   </ItemGroup>
