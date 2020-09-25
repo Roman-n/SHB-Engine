@@ -7,8 +7,10 @@
 INetQueue::INetQueue()
 {
 	unused.reserve	(128);
-	for (int i=0; i<16; i++)
-		unused.push_back	(xr_new<NET_Packet>());
+	for (int i = 0; i < 16; i++)
+	{
+		unused.push_back(xr_new<NET_Packet>( ));
+	}
 }
 
 INetQueue::~INetQueue()

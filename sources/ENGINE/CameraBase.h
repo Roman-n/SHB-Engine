@@ -20,7 +20,7 @@ public:
 	enum{
 		flRelativeLink		= (1<<0),
 		flPositionRigid		= (1<<1),
-		flDirectionRigid	= (1<<2),
+		flDirectionRigid	= (1<<2)
 	};
 	Flags32			m_Flags;
 
@@ -35,7 +35,7 @@ public:
 	float			f_aspect;
 
 	int				tag;
-public:
+
 					CCameraBase		( CObject* p, u32 flags );
 	virtual			~CCameraBase	( );
 	virtual void	Load			(const char* section);
