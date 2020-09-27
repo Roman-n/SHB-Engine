@@ -169,10 +169,10 @@ public:
 
 public:
 			void						init								();
-	virtual void						Load								(LPCSTR	section );
+	virtual void						Load								(const char* section );
 	virtual	void						reinit								();
 	virtual void						reload								(const char* section );
-	virtual void						LoadSounds							(LPCSTR section );
+	virtual void						LoadSounds							(const char* section );
 	
 	virtual BOOL						net_Spawn							(CSE_Abstract* DC);
 	virtual void						net_Export							(NET_Packet& P);
@@ -291,7 +291,7 @@ public:
 	IC		float						start_pick_distance		() const;
 			bool						fire_make_sense			();
 			
-	virtual LPCSTR						Name					() const;
+	virtual const char* Name					() const;
 	virtual BOOL						feel_touch_contact		(CObject* O);
 	virtual BOOL						feel_touch_on_contact	(CObject* O);
 
@@ -511,7 +511,7 @@ private:
 	virtual bool						critical_wound_external_conditions_suitable	();
 	virtual void						critical_wounded_state_start				();
 
-			void						fill_bones_body_parts						(LPCSTR bone_id, const ECriticalWoundType &wound_type);
+			void						fill_bones_body_parts						(const char* bone_id, const ECriticalWoundType &wound_type);
 public:
 	typedef xr_vector<float>			CRITICAL_WOUND_WEIGHTS;
 

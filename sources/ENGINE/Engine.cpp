@@ -9,14 +9,15 @@ CEngine::CEngine( )
 CEngine::~CEngine( )
 { }
 
-extern	void msCreate(const char* name);
+extern void msCreate(const char* name);
 
 void CEngine::Initialize(void)
 {
 	// Bind PSGP
 	hPSGP = LoadLibrary("xrCPU_Pipe.dll");
 	R_ASSERT(hPSGP);
-	xrBinder* bindCPU = (xrBinder*) GetProcAddress(hPSGP, "xrBind_PSGP");	R_ASSERT(bindCPU);
+	xrBinder* bindCPU = (xrBinder*) GetProcAddress(hPSGP, "xrBind_PSGP");
+	R_ASSERT(bindCPU);
 	bindCPU(&PSGP, CPU::ID.feature & CPU::ID.os_support);
 
 	// Other stuff

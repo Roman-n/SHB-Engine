@@ -33,8 +33,8 @@ private:
 			void					init					(const shared_str &patrol_path_name, const u32 &patrol_point_index);
 
 public:
-									CALifeSmartTerrainTask	(LPCSTR patrol_path_name);
-									CALifeSmartTerrainTask	(LPCSTR patrol_path_name, const u32 &patrol_point_index);
+									CALifeSmartTerrainTask	(const char* patrol_path_name);
+									CALifeSmartTerrainTask	(const char* patrol_path_name, const u32 &patrol_point_index);
 									CALifeSmartTerrainTask	(const shared_str &patrol_path_name);
 									CALifeSmartTerrainTask	(const shared_str &patrol_path_name, const u32 &patrol_point_index = 0);
 			GameGraph::_GRAPH_ID	game_vertex_id			() const;
@@ -43,6 +43,7 @@ public:
 
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
+
 add_to_type_list(CALifeSmartTerrainTask)
 #undef script_type_list
 #define script_type_list save_type_list(CALifeSmartTerrainTask)

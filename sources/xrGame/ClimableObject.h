@@ -19,10 +19,11 @@ class CClimableObject: public CPhysicsShellHolder
 	Fvector				m_side;
 	Fvector				m_norm;
 	float				m_radius;
+
 public:
 					CClimableObject		();
 					~CClimableObject	();
-	virtual void	Load				( LPCSTR section);
+	virtual void	Load				(const char* section);
 	virtual BOOL	net_Spawn			( CSE_Abstract* DC);
 	virtual	void	net_Destroy			();
 	virtual void	shedule_Update		( u32 dt);							// Called by sheduler

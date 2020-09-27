@@ -6,8 +6,9 @@
 //	Description : XRay Script extensions
 ////////////////////////////////////////////////////////////////////////////
 
-#include <stdarg.h>
 #include "stdafx.h"
+
+#include <stdarg.h>
 #include "ai_script_lua_extension.h"
 #include "ai_script_space.h"
 
@@ -17,7 +18,7 @@
 
 using namespace Script;
 
-int __cdecl Lua::LuaOut(Lua::ELuaMessageType tLuaMessageType, LPCSTR caFormat, ...)
+int __cdecl Lua::LuaOut(Lua::ELuaMessageType tLuaMessageType, const char* caFormat, ...)
 {
 #ifndef ENGINE_BUILD
 	if (!psAI_Flags.test(aiLua))
@@ -162,7 +163,7 @@ bool Script::bfLoadFile(CLuaVirtualMachine *tpLuaVM, LPCSTR caScriptName, bool b
 }
 #endif
 
-bool bfCreateNamespaceTable(CLuaVirtualMachine *tpLuaVM, LPCSTR caNamespaceName)
+bool bfCreateNamespaceTable(CLuaVirtualMachine *tpLuaVM, const char* caNamespaceName)
 {
 	lua_pushstring	(tpLuaVM,"_G");
 	lua_gettable	(tpLuaVM,LUA_GLOBALSINDEX);

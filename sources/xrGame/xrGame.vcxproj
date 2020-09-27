@@ -1302,7 +1302,7 @@
     <ClInclude Include="ui\UIActorInfo.h" />
     <ClInclude Include="ui\UIAnimatedStatic.h" />
     <ClInclude Include="ui\UIArtefactPanel.h" />
-    <ClInclude Include="ui\UIBtnHint.h" />
+    <ClInclude Include="ui\UIButtonHint.h" />
     <ClInclude Include="ui\UIButton.h" />
     <ClInclude Include="ui\UICarBodyWnd.h" />
     <ClInclude Include="ui\UICarPanel.h" />
@@ -2254,7 +2254,7 @@
     <ClCompile Include="ui\UIActorInfo.cpp" />
     <ClCompile Include="ui\UIAnimatedStatic.cpp" />
     <ClCompile Include="ui\UIArtefactPanel.cpp" />
-    <ClCompile Include="ui\UIBtnHint.cpp" />
+    <ClCompile Include="ui\UIButtonHint.cpp" />
     <ClCompile Include="ui\UIButton.cpp" />
     <ClCompile Include="ui\UIButton_script.cpp" />
     <ClCompile Include="ui\UICarBodyWnd.cpp" />
@@ -2503,9 +2503,6 @@
     </ProjectReference>
     <ProjectReference Include="..\xrSound\xrSound.vcxproj">
       <Project>{ccca7859-eb86-493e-9b53-c4235f45b3c5}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\xrXMLParser\xrXMLParser.vcxproj">
-      <Project>{94a1c366-3d19-48e6-8170-4adc2e70df98}</Project>
     </ProjectReference>
     <ProjectReference Include="..\xrCPU_Pipe\xrCPU_Pipe.vcxproj">
       <Project>{ca0649dd-d089-423a-981c-46b57a884eb9}</Project>

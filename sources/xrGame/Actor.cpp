@@ -252,7 +252,7 @@ void CActor::reload	(const char* section)
 	m_location_manager->reload	(section);
 }
 
-void CActor::Load	(LPCSTR section )
+void CActor::Load	(const char* section )
 {
 	// Msg						("Loading actor: %s",section);
 	inherited::Load				(section);
@@ -345,11 +345,11 @@ void CActor::Load	(LPCSTR section )
 	//Weapons				= xr_new<CWeaponList> (this);
 
 
-	LPCSTR hit_snd_sect = pSettings->r_string(section,"hit_sounds");
+	const char* hit_snd_sect = pSettings->r_string(section,"hit_sounds");
 	for(int hit_type=0; hit_type<(int)ALife::eHitTypeMax; ++hit_type)
 	{
-		LPCSTR hit_name = ALife::g_cafHitType2String((ALife::EHitType)hit_type);
-		LPCSTR hit_snds = READ_IF_EXISTS(pSettings, r_string, hit_snd_sect, hit_name, "");
+		const char* hit_name = ALife::g_cafHitType2String((ALife::EHitType)hit_type);
+		const char* hit_snds = READ_IF_EXISTS(pSettings, r_string, hit_snd_sect, hit_name, "");
 		int cnt = _GetItemCount(hit_snds);
 		string128		tmp;
 		VERIFY			(cnt!=0);
@@ -389,7 +389,7 @@ void CActor::Load	(LPCSTR section )
 	m_fDispCrouchFactor			= pSettings->r_float		(section,"disp_crouch_factor");
 	m_fDispCrouchNoAccelFactor	= pSettings->r_float		(section,"disp_crouch_no_acc_factor");
 
-	LPCSTR							default_outfit = READ_IF_EXISTS(pSettings,r_string,section,"default_outfit",0);
+	const char* default_outfit = READ_IF_EXISTS(pSettings,r_string,section,"default_outfit",0);
 	SetDefaultVisualOutfit			(default_outfit);
 
 	invincibility_fire_shield_1st	= READ_IF_EXISTS(pSettings,r_string,section,"Invincibility_Shield_1st",0);
@@ -612,7 +612,7 @@ void CActor::HitSignal(float perc, Fvector& vLocalDir, CObject* who, s16 element
 		tpKinematics->PlayFX(motion_ID,power_factor);
 	}
 }
-void start_tutorial(LPCSTR name);
+void start_tutorial(const char* name);
 void CActor::Die(CObject* who)
 {
 	inherited::Die		(who);
@@ -1204,7 +1204,7 @@ void CActor::RenderIndicator			(Fvector dpos, float r1, float r2, ref_shader Ind
 static float mid_size = 0.097f;
 static float fontsize = 15.0f;
 static float upsize	= 0.33f;
-void CActor::RenderText				(LPCSTR Text, Fvector dpos, float* pdup, u32 color)
+void CActor::RenderText				(const char* Text, Fvector dpos, float* pdup, u32 color)
 {
 	if (!g_Alive()) return;
 	

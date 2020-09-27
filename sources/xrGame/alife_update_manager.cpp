@@ -53,7 +53,7 @@ public:
 	}
 };
 
-CALifeUpdateManager::CALifeUpdateManager	(xrServer *server, LPCSTR section) :
+CALifeUpdateManager::CALifeUpdateManager	(xrServer *server, const char* section) :
 	CALifeSwitchManager		(server,section),
 	CALifeSurgeManager		(server,section),
 	CALifeStorageManager	(server,section),
@@ -204,7 +204,7 @@ bool CALifeUpdateManager::change_level	(NET_Packet &net_packet)
 
 	string256						autoave_name;
 	strconcat						(sizeof(autoave_name),autoave_name,Core.UserName,"_","autosave");
-	LPCSTR							temp0 = strstr(**m_server_command_line,"/");
+	const char* temp0 = strstr(**m_server_command_line,"/");
 	VERIFY							(temp0);
 	string256						temp;
 	*m_server_command_line			= strconcat(sizeof(temp),temp,autoave_name,temp0);
@@ -228,7 +228,7 @@ bool CALifeUpdateManager::change_level	(NET_Packet &net_packet)
 	return							(true);
 }
 
-void CALifeUpdateManager::new_game			(LPCSTR save_name)
+void CALifeUpdateManager::new_game			(const char* save_name)
 {
 	g_pGamePersistent->LoadTitle		("st_creating_new_game");
 	Msg									("* Creating new game...");
@@ -255,7 +255,7 @@ void CALifeUpdateManager::new_game			(LPCSTR save_name)
 	Msg									("* New game is successfully created!");
 }
 
-void CALifeUpdateManager::load			(LPCSTR game_name, bool no_assert, bool new_only)
+void CALifeUpdateManager::load			(const char* game_name, bool no_assert, bool new_only)
 {
 	g_pGamePersistent->LoadTitle		("st_loading_alife_simulator");
 
@@ -284,7 +284,7 @@ void CALifeUpdateManager::reload		(const char* section)
 	objects_per_update					(m_objects_per_update);
 }
 
-bool CALifeUpdateManager::load_game		(LPCSTR game_name, bool no_assert)
+bool CALifeUpdateManager::load_game		(const char* game_name, bool no_assert)
 {
 	{
 		string_path				temp,file_name;
@@ -325,7 +325,7 @@ void CALifeUpdateManager::set_interactive		(ALife::_OBJECT_ID id, bool value)
 	object->interactive				(value);
 }
 
-void CALifeUpdateManager::jump_to_level			(LPCSTR level_name) const
+void CALifeUpdateManager::jump_to_level			(const char* level_name) const
 {
 	const CGameGraph::SLevel			&level = ai().game_graph().header().level(level_name);
 	GameGraph::_GRAPH_ID				dest = GameGraph::_GRAPH_ID(-1);

@@ -41,7 +41,7 @@ void			HitData::net_load			(NET_Packet* P)
 	Completed = true;
 };
 
-Weapon_Statistic::Weapon_Statistic(LPCSTR Name)
+Weapon_Statistic::Weapon_Statistic(const char* Name)
 {
 	WName = Name;
 	InvName = NULL;
@@ -103,7 +103,7 @@ void Weapon_Statistic::net_load(NET_Packet* P)
 	}
 };
 
-Player_Statistic::Player_Statistic(LPCSTR Name)
+Player_Statistic::Player_Statistic(const char* Name)
 {
 	PName					= Name;
 	m_dwTotalShots			= 0;
@@ -177,7 +177,7 @@ WeaponUsageStatistic::~WeaponUsageStatistic()
 	m_dwLastRequestSenderID			= 0;
 };
 
-bool WeaponUsageStatistic::GetPlayer(LPCSTR PlayerName, PLAYERS_STATS_it& pPlayerI)
+bool WeaponUsageStatistic::GetPlayer(const char* PlayerName, PLAYERS_STATS_it& pPlayerI)
 {
 	pPlayerI	= std::find(aPlayersStatistic.begin(), aPlayersStatistic.end(), PlayerName);
 	if (pPlayerI == aPlayersStatistic.end() || !((*pPlayerI) == PlayerName))
@@ -185,7 +185,7 @@ bool WeaponUsageStatistic::GetPlayer(LPCSTR PlayerName, PLAYERS_STATS_it& pPlaye
 	return true;
 }
 
-PLAYERS_STATS_it WeaponUsageStatistic::FindPlayer(LPCSTR PlayerName)
+PLAYERS_STATS_it WeaponUsageStatistic::FindPlayer(const char* PlayerName)
 {
 	PLAYERS_STATS_it pPlayerI;
 	if (!GetPlayer(PlayerName, pPlayerI))
@@ -196,14 +196,14 @@ PLAYERS_STATS_it WeaponUsageStatistic::FindPlayer(LPCSTR PlayerName)
 	return pPlayerI;
 };
 
-void WeaponUsageStatistic::ChangePlayerName( LPCSTR from, LPCSTR to )
+void WeaponUsageStatistic::ChangePlayerName(const char* from, const char* to )
 {
 	if ( !CollectData() ) return;
 	PLAYERS_STATS_it pPlayerI = FindPlayer( from );
 	pPlayerI->PName = to;
 }
 
-WEAPON_STATS_it	Player_Statistic::FindPlayersWeapon	(LPCSTR WeaponName)
+WEAPON_STATS_it	Player_Statistic::FindPlayersWeapon	(const char* WeaponName)
 {
 	WEAPON_STATS_it pWeaponI = std::find(aWeaponStats.begin(), aWeaponStats.end(), WeaponName);
 	if (pWeaponI == aWeaponStats.end() || !((*pWeaponI) == WeaponName))
@@ -246,7 +246,7 @@ void WeaponUsageStatistic::RemoveBullet(ABULLETS_it& Bullet_it)
 	ActiveBullets.pop_back();
 }
 
-void WeaponUsageStatistic::OnWeaponBought(game_PlayerState* ps, LPCSTR WeaponName)
+void WeaponUsageStatistic::OnWeaponBought(game_PlayerState* ps, const char* WeaponName)
 {
 	if (!CollectData()) return;
 	if (!ps) return;

@@ -13,7 +13,7 @@ class CCameraLook : public CCameraBase
 public:
 					CCameraLook		(CObject* p, u32 flags = 0);
 	virtual			~CCameraLook	( );
-	virtual void	Load			(LPCSTR section);
+	virtual void	Load			(const char* section);
 	virtual void	Move			(int cmd, float val = 0, float factor = 1.0f);
 
 	virtual void	OnActivate		(CCameraBase* old_cam);
@@ -49,5 +49,5 @@ public:
 	{ }
 	virtual	void	OnActivate		(CCameraBase* old_cam);
 	virtual void	Update			(Fvector& point, Fvector& noise_dangle);
-	virtual void	Load			(LPCSTR section);
+	virtual void	Load			(const char* section);
 };

@@ -103,7 +103,7 @@ void  CActor::VehicleHeadCallback(CBoneInstance* B)
 	B->mTransform.c		= c;
 }
 
-void STorsoWpn::Create(CKinematicsAnimated* K, LPCSTR base0, LPCSTR base1)
+void STorsoWpn::Create(CKinematicsAnimated* K, const char* base0, const char* base1)
 {
 	char			buf[128];
 	moving[eIdle]	= K->ID_Cycle_Safe(strconcat(sizeof(buf),buf,base0,"_torso",base1,"_aim_1"));
@@ -125,7 +125,7 @@ void STorsoWpn::Create(CKinematicsAnimated* K, LPCSTR base0, LPCSTR base1)
 	all_attack_1	= K->ID_Cycle_Safe(strconcat(sizeof(buf),buf,base0,"_all",base1,"_attack_1"));
 	all_attack_2	= K->ID_Cycle_Safe(strconcat(sizeof(buf),buf,base0,"_all",base1,"_attack_2"));
 }
-void SAnimState::Create(CKinematicsAnimated* K, LPCSTR base0, LPCSTR base1)
+void SAnimState::Create(CKinematicsAnimated* K, const char* base0, const char* base1)
 {
 	char			buf[128];
 	legs_fwd		= K->ID_Cycle(strconcat(sizeof(buf),buf,base0,base1,"_fwd_0"));
@@ -177,7 +177,7 @@ void SActorState::CreateClimb(CKinematicsAnimated* K)
 }
 
 
-void SActorState::Create(CKinematicsAnimated* K, LPCSTR base)
+void SActorState::Create(CKinematicsAnimated* K, const char* base)
 {
 	string128		buf,buf1;
 	legs_turn		= K->ID_Cycle(strconcat(sizeof(buf),buf,base,"_turn"));

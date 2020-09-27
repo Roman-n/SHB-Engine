@@ -76,7 +76,7 @@ public:
 	virtual	void			PHHit							(float P,Fvector &dir, CObject *who,s16 element,Fvector p_in_object_space, float impulse, ALife::EHitType hit_type = ALife::eHitTypeWound);
 	virtual void			SelectAnimation					(const Fvector& _view, const Fvector& _move, float speed );
 
-	virtual void			Load							(LPCSTR section);
+	virtual void			Load							(const char* section);
 	virtual DLL_Pure		*_construct						();
 
 	virtual BOOL			net_Spawn						(CSE_Abstract* DC);
@@ -223,8 +223,8 @@ public:
 	ref_smem<SMonsterSettings>	m_base_settings;
 	ref_smem<SMonsterSettings>	m_current_settings;
 	
-	void						settings_read			(CInifile *ini, LPCSTR section, SMonsterSettings &data);
-	void						settings_load			(LPCSTR section);
+	void						settings_read			(CInifile *ini, const char* section, SMonsterSettings &data);
+	void						settings_load			(const char* section);
 	void						settings_overrides		();
 
 	SMonsterSettings			&db						() {return *(*m_current_settings);}
@@ -294,7 +294,7 @@ public:
 //	// Spawn Inventory Item
 //	//-----------------------------------------------------------------
 //private:
-//	LPCSTR					m_item_section;
+//	const char*					m_item_section;
 //	float					m_spawn_probability;
 
 	//--------------------------------------------------------------------
@@ -322,7 +322,7 @@ public:
 	void				Hit_Psy						(CObject *object, float value);
 	void				Hit_Wound					(CObject *object, float value, const Fvector &dir, float impulse);
 	CParticlesObject	*PlayParticles				(const shared_str& name, const Fvector &position, const Fvector &dir, BOOL auto_remove = TRUE, BOOL xformed = TRUE);
-	void				load_effector				(LPCSTR section, LPCSTR line, SAttackEffector &effector);
+	void				load_effector				(const char* section, const char* line, SAttackEffector &effector);
 
 	// --------------------------------------------------------------------------------------
 	// Kill From Here
@@ -409,22 +409,14 @@ protected:
 	virtual bool			critical_wound_external_conditions_suitable	();
 	virtual void			critical_wounded_state_start				();
 	
-			void			fill_bones_body_parts						(LPCSTR body_part, CriticalWoundType wound_type);
+			void			fill_bones_body_parts						(const char* body_part, CriticalWoundType wound_type);
 	
-	LPCSTR					m_critical_wound_anim_head;
-	LPCSTR					m_critical_wound_anim_torso;
-	LPCSTR					m_critical_wound_anim_legs;
+			const char* m_critical_wound_anim_head;
+			const char* m_critical_wound_anim_torso;
+			const char* m_critical_wound_anim_legs;
 
-	//////////////////////////////////////////////////////////////////////////
-	
-
-public:	
-
-
-//////////////////////////////////////////////////////////////////////////
-// DEBUG stuff
-#ifdef DEBUG
 public:
+#ifdef DEBUG
 	struct SDebugInfo {
 		bool	active;
 		float	x;

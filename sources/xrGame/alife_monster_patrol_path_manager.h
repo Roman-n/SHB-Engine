@@ -56,7 +56,7 @@ public:
 public:
 	IC		object_type				&object						() const;
 	IC		void					path						(const CPatrolPath *path);
-	IC		void					path						(LPCSTR path_name);
+	IC		void					path						(const char* path_name);
 	IC		void					start_type					(const EPatrolStartType	&start_type);
 	IC		void					route_type					(const EPatrolRouteType	&route_type);
 	IC		const EPatrolStartType	&start_type					() const;
@@ -73,6 +73,7 @@ public:
 
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
+
 add_to_type_list(CALifeMonsterPatrolPathManager)
 #undef script_type_list
 #define script_type_list save_type_list(CALifeMonsterPatrolPathManager)

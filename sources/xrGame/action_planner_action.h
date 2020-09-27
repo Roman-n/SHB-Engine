@@ -32,11 +32,11 @@ public:
 #ifdef LOG_ACTION
 public:
 	virtual	void		set_use_log				(bool value);
-	virtual void		show					(LPCSTR offset = "");
+	virtual void		show					(const char* offset = "");
 #endif
 
 public:
-	IC					CActionPlannerAction	(_object_type *object = 0, LPCSTR action_name = "");
+	IC					CActionPlannerAction	(_object_type *object = 0, const char* action_name = "");
 	virtual				~CActionPlannerAction	();
 	virtual	void		setup					(_object_type *object, CPropertyStorage *storage);
 	virtual void		initialize				();
@@ -52,6 +52,7 @@ public:
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
 typedef CActionPlannerAction<CScriptGameObject> CScriptActionPlannerAction;
+
 add_to_type_list(CScriptActionPlannerAction)
 #undef script_type_list
 #define script_type_list save_type_list(CScriptActionPlannerAction)

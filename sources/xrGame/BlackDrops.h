@@ -14,7 +14,7 @@ public:
 	CBlackDrops( );
 	virtual ~CBlackDrops( );
 
-	virtual void Load				(LPCSTR section);
+	virtual void Load				(const char* section);
 
 protected:
 };

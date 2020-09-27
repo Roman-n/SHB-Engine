@@ -29,7 +29,7 @@ CPsyDog::~CPsyDog()
 	xr_delete(m_aura);
 }
 
-void CPsyDog::Load(LPCSTR section)
+void CPsyDog::Load(const char* section)
 {
 	inherited::Load(section);
 	

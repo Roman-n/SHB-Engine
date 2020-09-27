@@ -73,14 +73,17 @@ void CPHLeaderGeomShell::near_callback	(CPHObject* obj)
 {
 	m_pStaticShell=NULL;
 }
+
 	CClimableObject::~CClimableObject	()
 {
 
 }
-void CClimableObject::	Load				( LPCSTR section)
+
+void CClimableObject::	Load				(const char* section)
 {
 	inherited::Load(section);
 }
+
 BOOL CClimableObject::	net_Spawn			( CSE_Abstract* DC)
 {
 	CSE_Abstract				*e = (CSE_Abstract*)(DC);

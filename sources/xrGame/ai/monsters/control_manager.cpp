@@ -50,7 +50,7 @@ void CControl_Manager::init_external()
 	//	it->second->init_external(this, m_object);
 }
 
-void CControl_Manager::load(LPCSTR section)
+void CControl_Manager::load(const char* section)
 {
 	init_external	();
 
@@ -388,7 +388,7 @@ void CControl_Manager::check_active_com(CControl_Com *com, bool b_add)
 }
 
 
-void CControl_Manager::dump(CControl_Com *com, LPCSTR action, ControlCom::EControlType type)
+void CControl_Manager::dump(CControl_Com *com, const char* action, ControlCom::EControlType type)
 {
 	Msg("---------------------------------------------------------------------------");
 	Msg("-- [%s] %s [%s]",dbg_control_name_table[com_type(com)], action, dbg_control_name_table[type]);

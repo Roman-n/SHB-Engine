@@ -14,7 +14,7 @@ public:
 					CControl_Com			()											{m_inited = false;}
 	// common routines
 			void	init_external			(CControl_Manager *cm, CBaseMonster *obj)	{m_man = cm; m_object = obj;}
-	virtual void	load					(LPCSTR section)							{}
+	virtual void	load					(const char* section)							{}
 	virtual void	reinit					()											{m_active = false; m_inited = true;}
 	virtual void	reload					(const char* section)							{}
 

@@ -2,24 +2,20 @@
 // character_community.h:	структура представления группировки
 //							
 //////////////////////////////////////////////////////////////////////////
-
 #pragma once
 
 #include "ini_id_loader.h"
 #include "ini_table_loader.h"
-
 #include "character_info_defs.h"
-
 
 struct COMMUNITY_DATA
 {
-	COMMUNITY_DATA (CHARACTER_COMMUNITY_INDEX, CHARACTER_COMMUNITY_ID, LPCSTR);
+	COMMUNITY_DATA (CHARACTER_COMMUNITY_INDEX, CHARACTER_COMMUNITY_ID, const char*);
 
 	CHARACTER_COMMUNITY_ID		id;
 	CHARACTER_COMMUNITY_INDEX	index;
 	u8 team;
 };
-
 
 class CHARACTER_COMMUNITY;
 

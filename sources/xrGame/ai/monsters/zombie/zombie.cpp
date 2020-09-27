@@ -26,7 +26,7 @@ CZombie::~CZombie()
 	xr_delete		(StateMan);
 }
 
-void CZombie::Load(LPCSTR section)
+void CZombie::Load(const char* section)
 {
 	inherited::Load	(section);
 

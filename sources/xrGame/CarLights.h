@@ -19,7 +19,7 @@ struct SCarLight
 	bool	isOn			();
 	void	Init			(CCarLights* holder);
 	void	Update			();
-	void	ParseDefinitions(LPCSTR section);
+	void	ParseDefinitions(const char* section);
 };
 
 DEFINE_VECTOR(SCarLight*,LIGHTS_STORAGE,LIGHTS_I)

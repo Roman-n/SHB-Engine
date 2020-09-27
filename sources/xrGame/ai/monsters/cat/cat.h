@@ -8,7 +8,7 @@ public:
 					CCat				();
 	virtual			~CCat				();	
 
-	virtual void	Load				(LPCSTR section);
+	virtual void	Load				(const char* section);
 	virtual void	reinit				();
 
 	virtual	void	UpdateCL			();
@@ -25,5 +25,3 @@ public:
 add_to_type_list(CCat)
 #undef script_type_list
 #define script_type_list save_type_list(CCat)
-
-

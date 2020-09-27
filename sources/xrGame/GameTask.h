@@ -77,26 +77,26 @@ public:
 	xr_vector<luabind::functor<bool> >	m_lua_functions_on_fail;
 
 // for scripting access
-	void					SetDescription_script	(LPCSTR _descr);
-	void					SetArticleID_script		(LPCSTR _id);
+	void					SetDescription_script	(const char* _descr);
+	void					SetArticleID_script		(const char* _id);
 	int						GetIDX_script			()					{return idx;};
-	void					SetMapHint_script		(LPCSTR _str);
-	void					SetMapLocation_script	(LPCSTR _str);
+	void					SetMapHint_script		(const char* _str);
+	void					SetMapLocation_script	(const char* _str);
 	void					SetObjectID_script		(u16 id);
-	void					SetArticleKey_script	(LPCSTR _str);
+	void					SetArticleKey_script	(const char* _str);
 
-	void					SetIconName_script		(LPCSTR _str);
+	void					SetIconName_script		(const char* _str);
 
-	void					AddCompleteInfo_script	(LPCSTR _str);
-	void					AddFailInfo_script		(LPCSTR _str);
-	void					AddOnCompleteInfo_script(LPCSTR _str);
-	void					AddOnFailInfo_script	(LPCSTR _str);
+	void					AddCompleteInfo_script	(const char* _str);
+	void					AddFailInfo_script		(const char* _str);
+	void					AddOnCompleteInfo_script(const char* _str);
+	void					AddOnFailInfo_script	(const char* _str);
 
-	void					AddCompleteFunc_script	(LPCSTR _str);
-	void					AddFailFunc_script		(LPCSTR _str);
-	void					AddOnCompleteFunc_script(LPCSTR _str);
-	void					AddOnFailFunc_script	(LPCSTR _str);
-	LPCSTR					GetDescription_script	()					{return *description;};
+	void					AddCompleteFunc_script	(const char* _str);
+	void					AddFailFunc_script		(const char* _str);
+	void					AddOnCompleteFunc_script(const char* _str);
+	void					AddOnFailFunc_script	(const char* _str);
+	const char* GetDescription_script	()					{return *description;};
 	void					ChangeStateCallback		();
 };
 
@@ -126,19 +126,20 @@ public:
 	u32						m_priority;
 
 // for scripting access
-	void					Load_script				(LPCSTR _id);
-	void					SetTitle_script			(LPCSTR _title);
-	LPCSTR					GetTitle_script			()							{return *m_Title;};
+	void					Load_script				(const char* _id);
+	void					SetTitle_script			(const char* _title);
+	const char* GetTitle_script			()							{return *m_Title;};
 	void					SetPriority_script		(int _prio);
 	int						GetPriority_script		()							{return m_priority;};
 	void					AddObjective_script		(SGameTaskObjective* O);
 	SGameTaskObjective*		GetObjective_script		(int objective_id)			{return &(Objective(objective_id));}
-	LPCSTR					GetID_script			()							{return *m_ID;}
-	void					SetID_script			(LPCSTR _id)				{m_ID = _id;}
+	const char* GetID_script			()							{return *m_ID;}
+	void					SetID_script			(const char* _id)				{m_ID = _id;}
 	int						GetObjectiveSize_script	()							{return m_Objectives.size();}
 
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
+
 add_to_type_list(CGameTask)
 #undef script_type_list
 #define script_type_list save_type_list(CGameTask)

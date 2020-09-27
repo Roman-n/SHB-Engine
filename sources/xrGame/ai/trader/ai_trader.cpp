@@ -35,7 +35,7 @@ CAI_Trader::~CAI_Trader()
 	xr_delete		(AnimMan);
 }
 
-void CAI_Trader::Load(LPCSTR section)
+void CAI_Trader::Load(const char* section)
 {
 	//	setEnabled						(FALSE);
 	inherited::Load					(section);
@@ -377,7 +377,7 @@ bool CAI_Trader::AllowItemToTrade 	(CInventoryItem const * item, EItemPlace plac
 	return						(CInventoryOwner::AllowItemToTrade(item,place));
 }
 
-void CAI_Trader::dialog_sound_start(LPCSTR phrase)
+void CAI_Trader::dialog_sound_start(const char* phrase)
 {
 	animation().external_sound_start(phrase);
 }

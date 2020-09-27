@@ -10,7 +10,7 @@
 #include "ui\UITextureMaster.h"//
 #include "ui\UIXmlInit.h"//
 #include <dinput.h>
-#include "ui\UIBtnHint.h"//
+#include "ui\UIButtonHint.h"//
 #include "ui/UICursor.h"//
 #include "string_table.h"
 
@@ -36,7 +36,11 @@ CMainMenu::CMainMenu	()
 	m_startDialog					= NULL;
 	m_screenshotFrame				= u32(-1);
 	g_pGamePersistent->m_pMainMenu	= this;
-	if (Device.b_is_Ready)			OnDeviceCreate();
+	if (Device.b_is_Ready)
+	{
+		OnDeviceCreate( );
+	}
+
 	ReadTextureInfo					();
 	CUIXmlInit::InitColorDefs		();
 	g_btnHint						= NULL;
@@ -79,7 +83,7 @@ void CMainMenu::ReadTextureInfo()
 			_GetItem(itemsList.c_str(), i, single_item);
 			strcat(single_item,".xml");
 			CUITextureMaster::ParseShTexInfo(single_item);
-		}		
+		}
 	}
 }
 

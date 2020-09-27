@@ -79,8 +79,8 @@ public:
 			bool	testFlag				(u16 f) const;
 			void	setFlag					(u16 f);
 			void	resetFlag				(u16 f);
-			LPCSTR	getName					(){return name;}
-			void	setName					(LPCSTR s){strcpy(name,s);}
+			const char* getName					(){return name;}
+			void	setName					(const char* s){strcpy(name,s);}
 			void	SetGameID				(u16 NewID);
 			bool	HasOldID				(u16 ID);
 			bool	IsSkip					() const {return testFlag(GAME_PLAYER_FLAG_SKIP);}
@@ -108,7 +108,6 @@ public:
 add_to_type_list(game_PlayerState)
 #undef script_type_list
 #define script_type_list save_type_list(game_PlayerState)
-
 
 struct	game_TeamState
 {
@@ -152,9 +151,9 @@ public:
 				s32					Round					() const						{return m_round;};
 				u32					StartTime				() const						{return m_start_time;};
 	virtual		void				Create					(shared_str& options)				{};
-	virtual		LPCSTR				type_name				() const						{return "base game";};
+	virtual		const char* type_name				() const						{return "base game";};
 //for scripting enhancement
-	static		CLASS_ID			getCLASS_ID				(LPCSTR game_type_name, bool bServer);
+	static		CLASS_ID			getCLASS_ID				(const char* game_type_name, bool bServer);
 	virtual		game_PlayerState*	createPlayerState()		{return xr_new<game_PlayerState>(); };
 
 //moved from game_sv_base (time routines)
@@ -183,6 +182,7 @@ public:
 
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
+
 add_to_type_list(game_GameState)
 #undef script_type_list
 #define script_type_list save_type_list(game_GameState)

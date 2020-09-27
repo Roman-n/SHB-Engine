@@ -2,24 +2,20 @@
 // character_reputation.h:		структура представления репутаций и 
 //								отношений между ними		
 //////////////////////////////////////////////////////////////////////////
-
 #pragma once
 
 #include "ini_id_loader.h"
 #include "ini_table_loader.h"
-
 #include "character_info_defs.h"
-
 
 struct REPUTATION_DATA
 {
-	REPUTATION_DATA (int, shared_str, LPCSTR);
+	REPUTATION_DATA (int, shared_str, const char*);
 
 	shared_str					id;
 	int							index;
 	CHARACTER_REPUTATION_VALUE	threshold;
 };
-
 
 class CHARACTER_REPUTATION;
 

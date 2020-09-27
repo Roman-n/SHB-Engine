@@ -6,14 +6,13 @@
 #include "stdafx.h"
 #include "character_rank.h"
 
-
 #define GAME_RELATIONS_SECT		"game_relations"
 #define RANK_LINE				"rating"
 #define RANK_TABLE				"rank_relations"
 #define RANK_KILL_TABLE_SECT	"rank_kill_points"
 
 //////////////////////////////////////////////////////////////////////////
-RANK_DATA::RANK_DATA (int idx, shared_str idn, LPCSTR threshold_str)
+RANK_DATA::RANK_DATA (int idx, shared_str idn, const char* threshold_str)
 {
 	index		= idx;
 	id			= idn;
@@ -22,7 +21,6 @@ RANK_DATA::RANK_DATA (int idx, shared_str idn, LPCSTR threshold_str)
 //////////////////////////////////////////////////////////////////////////
 CHARACTER_RANK::GOODWILL_TABLE		CHARACTER_RANK::m_relation_table;
 CHARACTER_RANK::RANK_KILL_TABLE		CHARACTER_RANK::m_rank_kill_table;
-
 
 int   CHARACTER_RANK::ValueToIndex    (CHARACTER_RANK_VALUE val)
 {

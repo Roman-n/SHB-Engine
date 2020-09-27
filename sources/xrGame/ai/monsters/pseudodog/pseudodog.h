@@ -25,7 +25,7 @@ public:
 
 	virtual DLL_Pure	*_construct		();
 
-	virtual void	Load				(LPCSTR section);
+	virtual void	Load				(const char* section);
 
 	virtual void	reinit				();
 	virtual void	reload				(const char* section);

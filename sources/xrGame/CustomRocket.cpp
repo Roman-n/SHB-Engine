@@ -273,14 +273,14 @@ void CCustomRocket::ObjectContactCallback(bool& do_colide,bool bo1,dContact& c ,
 	} else {}
 }
 
-void CCustomRocket::Load(LPCSTR section) 
+void CCustomRocket::Load(const char* section)
 {
 	inherited::Load	(section);
 
 	reload(section);
 }
 
-void  CCustomRocket::reload		(LPCSTR section)
+void  CCustomRocket::reload		(const char* section)
 {
 	inherited::reload	(section);
 	m_eState = eInactive;

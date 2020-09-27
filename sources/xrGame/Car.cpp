@@ -110,7 +110,7 @@ void CCar::reinit		()
 		m_memory->reinit	();
 }
 
-void CCar::reload		(LPCSTR section)
+void CCar::reload		(const char* section)
 {
 	CEntity::reload			(section);
 	if(m_memory)
@@ -137,7 +137,7 @@ void CCar::cb_Steer			(CBoneInstance* B)
 }
 
 // Core events
-void	CCar::Load					( LPCSTR section )
+void	CCar::Load					(const char* section )
 {
 	inherited::Load					(section);
 	//CPHSkeleton::Load(section);
@@ -1840,7 +1840,7 @@ void CCar::CarExplode()
 //	}
 //}
 
-template <class T> IC void CCar::fill_wheel_vector(LPCSTR S,xr_vector<T>& type_wheels)
+template <class T> IC void CCar::fill_wheel_vector(const char* S,xr_vector<T>& type_wheels)
 {
 	CKinematics* pKinematics	=smart_cast<CKinematics*>(Visual());
 	string64					S1;
@@ -1875,7 +1875,7 @@ template <class T> IC void CCar::fill_wheel_vector(LPCSTR S,xr_vector<T>& type_w
 	}
 }
 
-IC void CCar::fill_exhaust_vector(LPCSTR S,xr_vector<SExhaust>& exhausts)
+IC void CCar::fill_exhaust_vector(const char* S,xr_vector<SExhaust>& exhausts)
 {
 	CKinematics* pKinematics	=smart_cast<CKinematics*>(Visual());
 	string64					S1;
@@ -1899,7 +1899,7 @@ IC void CCar::fill_exhaust_vector(LPCSTR S,xr_vector<SExhaust>& exhausts)
 	}
 }
 
-IC void CCar::fill_doors_map(LPCSTR S,xr_map<u16,SDoor>& doors)
+IC void CCar::fill_doors_map(const char* S,xr_map<u16,SDoor>& doors)
 {
 	CKinematics* pKinematics	=smart_cast<CKinematics*>(Visual());
 	string64					S1;

@@ -39,9 +39,9 @@ public:
 DECLARE_SCRIPT_REGISTER_FUNCTION
 };
 
-add_to_type_list( CPHExpireOnStepCondition)
+add_to_type_list(CPHExpireOnStepCondition)
 #undef script_type_list
-#define script_type_list save_type_list( CPHExpireOnStepCondition)
+#define script_type_list save_type_list(CPHExpireOnStepCondition)
 
 class CPHShellBasedAction:
 	public	CPHAction
@@ -69,9 +69,10 @@ public:
 	virtual				bool				compare					(const	CPhysicsShell	* shl)		const		{return CPHShellBasedAction::compare(shl);}
 DECLARE_SCRIPT_REGISTER_FUNCTION
 };
-add_to_type_list( CPHConstForceAction)
+
+add_to_type_list(CPHConstForceAction)
 #undef script_type_list
-#define script_type_list save_type_list( CPHConstForceAction)
+#define script_type_list save_type_list(CPHConstForceAction)
 
 class CPHReqComparerHasShell	:
 	public CPHReqComparerV

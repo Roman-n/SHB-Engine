@@ -2,24 +2,20 @@
 // character_rank.h:	структура представления рангов и отношений между 
 //						ними		
 //////////////////////////////////////////////////////////////////////////
-
 #pragma once
 
 #include "ini_id_loader.h"
 #include "ini_table_loader.h"
-
 #include "character_info_defs.h"
-
 
 struct RANK_DATA
 {
-	RANK_DATA (int, shared_str, LPCSTR);
+	RANK_DATA (int, shared_str, const char*);
 
 	shared_str				id;
 	int						index;
 	CHARACTER_RANK_VALUE	threshold;
 };
-
 
 class CHARACTER_RANK;
 

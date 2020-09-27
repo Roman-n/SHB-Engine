@@ -78,6 +78,7 @@ CUISequencer::CUISequencer()
 
 void CUISequencer::Start(LPCSTR tutor_name)
 {
+	Msg(tutor_name);
 	VERIFY(m_items.size()==0);
 	Device.seqFrame.Add			(this, REG_PRIORITY_LOW-10000);
 	Device.seqRender.Add		(this, 3);
@@ -85,9 +86,10 @@ void CUISequencer::Start(LPCSTR tutor_name)
 	m_UIWindow					= xr_new<CUIWindow>();
 
 	CUIXml uiXml;
-	uiXml.Init					("$game_config$", UI_PATH, "game_tutorials.xml");
+	uiXml.Init					(CONFIG_PATH, UI_PATH, "game_tutorials.xml");
 	
-	int items_count				= uiXml.GetNodesNum	(tutor_name,0,"item");	VERIFY(items_count>0);
+	int items_count				= uiXml.GetNodesNum	(tutor_name,0,"item");
+	VERIFY(items_count>0);
 	uiXml.SetLocalRoot			(uiXml.NavigateToNode(tutor_name,0));
 
 	m_bPlayEachItem				= !!uiXml.ReadInt("play_each_item",0,0);

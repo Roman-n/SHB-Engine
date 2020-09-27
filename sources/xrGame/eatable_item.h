@@ -18,7 +18,7 @@ public:
 	virtual	DLL_Pure*		_construct					();
 	virtual CEatableItem	*cast_eatable_item			()	{return this;}
 
-	virtual void			Load						(LPCSTR section);
+	virtual void			Load						(const char* section);
 	virtual bool			Useful						() const;
 
 	virtual BOOL			net_Spawn					(CSE_Abstract* DC);

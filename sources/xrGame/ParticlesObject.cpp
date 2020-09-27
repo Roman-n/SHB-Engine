@@ -4,7 +4,7 @@
 #include "stdafx.h"
 
 #include "ParticlesObject.h"
-#include "..\ENGINE\defines.h"
+//#include "..\ENGINE\defines.h"
 #include "..\ENGINE\fbasicvisual.h"
 #include "..\ENGINE\ParticleCustom.h"
 #include "..\ENGINE\render.h"

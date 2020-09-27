@@ -49,7 +49,7 @@ CAI_Bloodsucker::~CAI_Bloodsucker()
 	xr_delete	(StateMan);
 }
 
-void CAI_Bloodsucker::Load(LPCSTR section) 
+void CAI_Bloodsucker::Load(const char* section)
 {
 	inherited::Load(section);
 
@@ -187,7 +187,7 @@ void CAI_Bloodsucker::reload(const char* section)
 	sound().add(pSettings->r_string(section,"Sound_Alien"),						DEFAULT_SAMPLE_COUNT,	SOUND_TYPE_MONSTER_ATTACKING, MonsterSound::eCriticalPriority,	u32(MonsterSound::eCaptureAllChannels),	eAlien,				"bip01_head");
 }
 
-void CAI_Bloodsucker::LoadVampirePPEffector(LPCSTR section)
+void CAI_Bloodsucker::LoadVampirePPEffector(const char* section)
 {
 	pp_vampire_effector.duality.h			= pSettings->r_float(section,"duality_h");
 	pp_vampire_effector.duality.v			= pSettings->r_float(section,"duality_v");

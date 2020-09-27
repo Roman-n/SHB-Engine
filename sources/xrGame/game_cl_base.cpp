@@ -236,9 +236,7 @@ ClientID game_cl_GameState::GetClientIDByOrderID	(u32 idx)
 	return I->first;
 }
 
-
-
-void game_cl_GameState::CommonMessageOut (LPCSTR msg)
+void game_cl_GameState::CommonMessageOut (const char* msg)
 {
 	if (!HUD().GetUI()) return;
 	HUD().GetUI()->m_pMessagesWnd->AddLogMessage(msg);
@@ -248,7 +246,6 @@ float game_cl_GameState::shedule_Scale		()
 {
 	return 1.0f;
 }
-
 
 void game_cl_GameState::shedule_Update		(u32 dt)
 {
@@ -348,7 +345,7 @@ void				game_cl_GameState::SendPickUpEvent		(u16 ID_who, u16 ID_what)
 	u_EventSend(P);
 };
 
-void game_cl_GameState::set_type_name(LPCSTR s)	
+void game_cl_GameState::set_type_name(const char* s)
 { 
 	m_game_type_name		=s; 
 	if(OnClient()){

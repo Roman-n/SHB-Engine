@@ -109,7 +109,6 @@ public:
 public:
 	////////////// network ////////////////////////
 	u32							GetInterpolationSteps	();
-//--	void						SetInterpolationSteps	(u32 InterpSteps);
 	bool						InterpolationDisabled	();
 	void						ReculcInterpolationSteps();
 	u32							GetNumCrSteps			() const	{return m_dwNumSteps; };
@@ -134,6 +133,7 @@ private:
 
 	CObject*					pCurrentControlEntity;
 	xrServer::EConnect			m_connect_server_err;
+
 public:
 	void						AddObject_To_Objects4CrPr	(CGameObject* pObj);
 	void						AddActor_To_Actors4CrPr		(CGameObject* pActor);
@@ -142,8 +142,8 @@ public:
 
 	CObject*					CurrentControlEntity	( void ) const		{ return pCurrentControlEntity; }
 	void						SetControlEntity		( CObject* O  )		{ pCurrentControlEntity=O; }
-private:
-	
+
+private:	
 	void						make_NetCorrectionPrediction	();
 
 	u32							m_dwDeltaUpdate ;
@@ -151,18 +151,16 @@ private:
 	void						UpdateDeltaUpd					( u32 LastTime );
 
 	BOOL						Connect2Server					(LPCSTR options);
+
 private:
 	bool						m_bConnectResultReceived;
 	bool						m_bConnectResult;
 	xr_string					m_sConnectResult;
+
 public:	
-//	void						OnGameSpyChallenge(NET_Packet* P) //KRodin: удалить, если не вызывается!
-//	{
-//		Msg("!!Called OnGameSpyChallenge!");
-//	}
 	void						OnBuildVersionChallenge			();
 	void						OnConnectResult					(NET_Packet* P);
-public:
+
 	//////////////////////////////////////////////	
 	// static particles
 	DEFINE_VECTOR				(CParticlesObject*,POVec,POIt);
@@ -222,7 +220,6 @@ public:
 	virtual BOOL				net_Start_client		( LPCSTR name );
 	virtual void				net_Update				( );
 
-
 	virtual BOOL				Load_GameSpecific_Before( );
 	virtual BOOL				Load_GameSpecific_After ( );
 	virtual void				Load_GameSpecific_CFORM	( CDB::TRI* T, u32 count );
@@ -250,7 +247,6 @@ public:
 	
 			int					get_RPID				(LPCSTR name);
 
-
 	// Game
 	void						InitializeClientGame	(NET_Packet& P);
 	void						ClientReceive			();
@@ -263,7 +259,6 @@ public:
 	void						g_sv_Spawn				(CSE_Abstract* E);					// server reply/command spawning
 	
 	// Save/Load/State
-//	void						SLS_Load				(LPCSTR name);		// Game Load
 	void						SLS_Default				();					// Default/Editor Load
 	
 	IC CSpaceRestrictionManager		&space_restriction_manager	();
@@ -339,6 +334,7 @@ public:
 
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
+
 add_to_type_list(CLevel)
 #undef script_type_list
 #define script_type_list save_type_list(CLevel)

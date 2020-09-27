@@ -23,7 +23,7 @@ public:
 	virtual void			shedule_Update			(u32 dt);
 	virtual void			Die						(CObject* who);
 	virtual BOOL			net_Spawn				(CSE_Abstract* DC);
-	virtual	void			Load					(LPCSTR section);
+	virtual	void			Load					(const char* section);
 
 	virtual	void			CheckSpecParams			(u32 spec_params);
 	virtual bool			ability_invisibility	() {return true;}
@@ -58,7 +58,7 @@ private:
 	//--------------------------------------------------------------------
 private:
 	SMotionVel				invisible_vel;
-	LPCSTR					invisible_particle_name;
+	const char* invisible_particle_name;
 
 public:
 			void			start_invisible_predator	();
@@ -84,7 +84,7 @@ private:
 	float					m_vampire_want_speed;		// load from ltx
 	float					m_vampire_wound;
 	
-			void			LoadVampirePPEffector	(LPCSTR section);	
+			void			LoadVampirePPEffector	(const char* section);
 
 	//--------------------------------------------------------------------
 	// Alien
@@ -101,7 +101,7 @@ public:
 	//--------------------------------------------------------------------
 public:
 	shared_str				m_visual_default;
-	LPCSTR					m_visual_predator;
+	const char* m_visual_predator;
 	bool					m_predator;
 			
 			void			predator_start			();

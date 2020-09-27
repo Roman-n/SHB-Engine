@@ -31,7 +31,7 @@ IC	CSightManager &CAI_Stalker::sight							() const
 	return					(*m_sight_manager);
 }
 
-IC	LPCSTR CAI_Stalker::Name									() const
+IC	const char* CAI_Stalker::Name									() const
 {
 	return					(CInventoryOwner::Name());
 }

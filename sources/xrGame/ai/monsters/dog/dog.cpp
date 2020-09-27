@@ -25,7 +25,7 @@ CAI_Dog::~CAI_Dog()
 	xr_delete(StateMan);
 }
 
-void CAI_Dog::Load(LPCSTR section)
+void CAI_Dog::Load(const char* section)
 {
 	inherited::Load	(section);
 	

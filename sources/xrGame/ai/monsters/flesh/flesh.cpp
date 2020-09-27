@@ -29,7 +29,7 @@ BOOL CAI_Flesh::net_Spawn (CSE_Abstract* DC)
 	return TRUE;
 }
 
-void CAI_Flesh::Load(LPCSTR section)
+void CAI_Flesh::Load(const char* section)
 {
 	inherited::Load(section);
 

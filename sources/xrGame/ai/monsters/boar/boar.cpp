@@ -22,7 +22,7 @@ CAI_Boar::~CAI_Boar()
 	xr_delete(StateMan);
 }
 
-void CAI_Boar::Load(LPCSTR section)
+void CAI_Boar::Load(const char* section)
 {
 	inherited::Load	(section);
 

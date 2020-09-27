@@ -16,13 +16,14 @@
 
 //#define LUABIND_NO_EXCEPTIONS
 
-extern "C" {
+extern "C"
+{
 	//#define BOOST_NO_TEMPLATE_PARTIAL_SPECIALIZATION
 
-	#include "..\xrLua\src\lua.h"
-	#include "..\xrLua\src\lualib.h"
-	#include "..\xrLua\src\lauxlib.h"
-	#include "..\xrLua\src\luajit.h"
+#include "..\xrLua\src\lua.h"
+#include "..\xrLua\src\lualib.h"
+#include "..\xrLua\src\lauxlib.h"
+#include "..\xrLua\src\luajit.h"
 }
 
 // Lua-bind
@@ -33,12 +34,15 @@ extern "C" {
 #pragma warning(default:4995)
 #pragma warning(default:4267)
 
-typedef lua_State CLuaVirtualMachine;
+using CLuaVirtualMachine = lua_State;
 
-struct SMemberCallback {
-	luabind::functor<void>	*m_lua_function;
-	luabind::object			*m_lua_object;
-	shared_str				m_method_name;
+//typedef lua_State CLuaVirtualMachine;
+
+struct SMemberCallback
+{
+	luabind::functor<void>*		m_lua_function;
+	luabind::object*			m_lua_object;
+	shared_str					m_method_name;
 };
 
 #include "ai_script_lua_space.h"

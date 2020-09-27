@@ -5,7 +5,7 @@
 #include "UIButton.h"//
 #include "../HUDManager.h"//
 #include "UILines.h"//
-#include "UIBtnHint.h"//
+#include "UIButtonHint.h"//
 
 #define PUSH_OFFSET_RIGHT 1
 #define PUSH_OFFSET_DOWN  1

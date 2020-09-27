@@ -70,7 +70,7 @@ CCustomZone::~CCustomZone(void)
 	xr_delete					(m_effector);
 }
 
-void CCustomZone::Load(LPCSTR section) 
+void CCustomZone::Load(const char* section)
 {
 	inherited::Load(section);
 
@@ -97,7 +97,7 @@ void CCustomZone::Load(LPCSTR section)
 	if (self)		self->spatial.type	|=	(STYPE_COLLIDEABLE|STYPE_SHAPE);
 //////////////////////////////////////////////////////////////////////////
 
-	LPCSTR sound_str = NULL;
+	const char* sound_str = nullptr;
 	
 	if(pSettings->line_exist(section,"idle_sound")) 
 	{
@@ -247,7 +247,7 @@ void CCustomZone::Load(LPCSTR section)
 	{
 		m_fIdleLightRange = pSettings->r_float(section,"idle_light_range");
 		m_fIdleLightRangeDelta = pSettings->r_float(section,"idle_light_range_delta");
-		LPCSTR light_anim = pSettings->r_string(section,"idle_light_anim");
+		const char* light_anim = pSettings->r_string(section,"idle_light_anim");
 		m_pIdleLAnim	 = LALib.FindItem(light_anim);
 		m_fIdleLightHeight = pSettings->r_float(section,"idle_light_height");
 	}
@@ -271,7 +271,7 @@ void CCustomZone::Load(LPCSTR section)
 		m_fThrowOutPower = pSettings->r_float (section,			"throw_out_power");
 		m_fArtefactSpawnHeight = pSettings->r_float (section,	"artefact_spawn_height");
 
-		LPCSTR						l_caParameters = pSettings->r_string(section, "artefacts");
+		const char* l_caParameters = pSettings->r_string(section, "artefacts");
 		u16 m_wItemCount			= (u16)_GetItemCount(l_caParameters);
 		R_ASSERT2					(!(m_wItemCount & 1),"Invalid number of parameters in string 'artefacts' in the 'system.ltx'!");
 		m_wItemCount				>>= 1;

@@ -73,7 +73,7 @@ class	adopt_blend
 public:
 };
 
-void LuaLog(LPCSTR caMessage)
+void LuaLog(const char* caMessage)
 {
 	MDB;	
 	Lua::LuaOut	(Lua::eLuaMessageTypeMessage,"%s",caMessage);

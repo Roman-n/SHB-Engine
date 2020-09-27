@@ -761,17 +761,14 @@ void				CLevel::SetNumCrSteps		( u32 NumSteps )
 	}
 };
 
-
 ALife::_TIME_ID CLevel::GetGameTime()
 {
 	return			(game->GetGameTime());
-//	return			(Server->game->GetGameTime());
 }
 
 ALife::_TIME_ID CLevel::GetEnvironmentGameTime()
 {
 	return			(game->GetEnvironmentGameTime());
-//	return			(Server->game->GetGameTime());
 }
 
 u8 CLevel::GetDayTime() 
@@ -803,50 +800,43 @@ void CLevel::GetGameDateTime	(u32& year, u32& month, u32& day, u32& hours, u32& 
 	split_time(GetGameTime(), year, month, day, hours, mins, secs, milisecs);
 }
 
-
 float CLevel::GetGameTimeFactor()
 {
 	return			(game->GetGameTimeFactor());
-//	return			(Server->game->GetGameTimeFactor());
 }
 
 void CLevel::SetGameTimeFactor(const float fTimeFactor)
 {
 	game->SetGameTimeFactor(fTimeFactor);
-//	Server->game->SetGameTimeFactor(fTimeFactor);
 }
 
 void CLevel::SetGameTimeFactor(ALife::_TIME_ID GameTime, const float fTimeFactor)
 {
 	game->SetGameTimeFactor(GameTime, fTimeFactor);
-//	Server->game->SetGameTimeFactor(fTimeFactor);
 }
+
 void CLevel::SetEnvironmentGameTimeFactor(ALife::_TIME_ID GameTime, const float fTimeFactor)
 {
 	game->SetEnvironmentGameTimeFactor(GameTime, fTimeFactor);
-//	Server->game->SetGameTimeFactor(fTimeFactor);
-}/*
-void CLevel::SetGameTime(ALife::_TIME_ID GameTime)
-{
-	game->SetGameTime(GameTime);
-//	Server->game->SetGameTime(GameTime);
 }
-*/
+
 bool CLevel::IsServer ()
 {
-//	return (!!Server);
 	if (IsDemoPlay())
 	{
 		return IsServerDemo();
-	};	
-	if (!Server) return false;
-	return (Server->client_Count() != 0);
+	}
 
+	if (!Server)
+	{
+		return false;
+	}
+
+	return (Server->client_Count() != 0);
 }
 
 bool CLevel::IsClient ()
 {
-//	return (!Server);
 	if (IsDemoPlay())
 	{
 		return IsClientDemo();
@@ -903,8 +893,6 @@ void GlobalFeelTouch::update()
 
 bool GlobalFeelTouch::is_object_denied(CObject const * O)
 {
-	/*Fvector temp_vector;
-	feel_touch_update(temp_vector, 0.f);*/
 	if (std::find_if(feel_touch_disable.begin(), feel_touch_disable.end(),
 		std::bind2nd(objects_ptrs_equal(), O)) == feel_touch_disable.end())
 	{

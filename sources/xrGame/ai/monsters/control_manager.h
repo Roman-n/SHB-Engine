@@ -37,7 +37,7 @@ public:
 
 					// common routines
 					void	init_external				();
-					void	load						(LPCSTR section);
+					void	load						(const char* section);
 					void	reinit						();
 					void	reload						(const char* section);
 					void	update_schedule				();
@@ -96,7 +96,7 @@ private:
 		bool				is_base						(CControl_Com*);
 		bool				is_locked					(CControl_Com*);
 
-		void				dump						(CControl_Com *com, LPCSTR action, ControlCom::EControlType type);
+		void				dump						(CControl_Com *com, const char* action, ControlCom::EControlType type);
 
 		void				check_active_com			(CControl_Com *com, bool b_add);
 };

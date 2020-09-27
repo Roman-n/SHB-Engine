@@ -5691,9 +5691,6 @@
     <ClInclude Include="ui\uiabstract.h">
       <Filter>UI\UIWindows</Filter>
     </ClInclude>
-    <ClInclude Include="ui\UIBtnHint.h">
-      <Filter>UI\UIWindows</Filter>
-    </ClInclude>
     <ClInclude Include="ui\UIMessages.h">
       <Filter>UI\UIWindows</Filter>
     </ClInclude>
@@ -5984,6 +5981,9 @@
     </ClInclude>
     <ClInclude Include="DamageManager.h">
       <Filter>AI\AComponents\DamageManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\UIButtonHint.h">
+      <Filter>UI\UIWindows</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -8414,9 +8414,6 @@
     <ClCompile Include="ui\UIInventoryUtilities.cpp">
       <Filter>UI\Common\InventoryUtilities</Filter>
     </ClCompile>
-    <ClCompile Include="ui\UIBtnHint.cpp">
-      <Filter>UI\UIWindows</Filter>
-    </ClCompile>
     <ClCompile Include="ui\UIWndCallback.cpp">
       <Filter>UI\UIWindows</Filter>
     </ClCompile>
@@ -8713,6 +8710,9 @@
     </ClCompile>
     <ClCompile Include="DamageManager.cpp">
       <Filter>AI\AComponents\DamageManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\UIButtonHint.cpp">
+      <Filter>UI\UIWindows</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

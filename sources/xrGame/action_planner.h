@@ -74,10 +74,10 @@ public:
 
 #ifdef LOG_ACTION
 public:
-	virtual LPCSTR				action2string			(const _action_id_type &action_id);
-	virtual LPCSTR				property2string			(const _condition_type &action_id);
-	virtual LPCSTR				object_name				() const;
-	virtual void				show					(LPCSTR offset = "");
+	virtual const char* action2string			(const _action_id_type &action_id);
+	virtual const char* property2string			(const _condition_type &action_id);
+	virtual const char* object_name				() const;
+	virtual void				show					(const char* offset = "");
 	IC		void				show_current_world_state();
 	IC		void				show_target_world_state	();
 #endif
@@ -103,6 +103,7 @@ public:
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
 typedef CActionPlanner<CScriptGameObject> CScriptActionPlanner;
+
 add_to_type_list(CScriptActionPlanner)
 #undef script_type_list
 #define script_type_list save_type_list(CScriptActionPlanner)

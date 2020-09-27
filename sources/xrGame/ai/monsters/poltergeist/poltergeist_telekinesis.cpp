@@ -10,7 +10,7 @@ CPolterTele::CPolterTele(CPoltergeist *polter) : inherited (polter)
 CPolterTele::~CPolterTele()
 { }
 
-void CPolterTele::load(LPCSTR section)
+void CPolterTele::load(const char* section)
 {
 	inherited::load(section);
 

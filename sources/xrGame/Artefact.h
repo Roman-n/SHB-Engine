@@ -15,7 +15,7 @@ public:
 									CArtefact						();
 	virtual							~CArtefact						();
 
-	virtual void					Load							(LPCSTR section);
+	virtual void					Load							(const char* section);
 	
 	virtual BOOL					net_Spawn						(CSE_Abstract* DC);
 	virtual void					net_Destroy						();
@@ -117,7 +117,7 @@ public:
 
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
+
 add_to_type_list(CArtefact)
 #undef script_type_list
 #define script_type_list save_type_list(CArtefact)
-

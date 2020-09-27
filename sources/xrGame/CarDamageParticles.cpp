@@ -16,7 +16,7 @@
 
 extern CPHWorld* ph_world;
 
-void read_bones(CKinematics *K, LPCSTR S , xr_vector<u16>& bones)
+void read_bones(CKinematics *K, const char* S , xr_vector<u16>& bones)
 {
 	string64					S1;
 	int count =					_GetItemCount(S);

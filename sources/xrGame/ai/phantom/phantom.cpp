@@ -20,7 +20,7 @@ CPhantom::~CPhantom()
 { }
 
 //---------------------------------------------------------------------
-void CPhantom::Load( LPCSTR section )
+void CPhantom::Load(const char* section )
 {
 	inherited::Load		(section);
 	//////////////////////////////////////////////////////////////////////////
@@ -34,7 +34,7 @@ void CPhantom::Load( LPCSTR section )
 	fASpeed							= pSettings->r_float(section,"angular_speed");
 	fContactHit						= pSettings->r_float(section,"contact_hit");
 
-	LPCSTR snd_name			= 0;
+	const char* snd_name			= 0;
 	m_state_data[stBirth].particles	= pSettings->r_string(section,"particles_birth");
 	snd_name						= pSettings->r_string(section,"sound_birth");
 	if (snd_name&&snd_name[0])		m_state_data[stBirth].sound.create(snd_name,st_Effect,sg_SourceType);
@@ -57,9 +57,9 @@ BOOL CPhantom::net_Spawn(CSE_Abstract* DC)
 	CSE_ALifeCreaturePhantom*	OBJ	= smart_cast<CSE_ALifeCreaturePhantom*>(DC); VERIFY(OBJ);
 	
 	// select visual at first
-	LPCSTR vis_name = OBJ->get_visual();
+	const char* vis_name = OBJ->get_visual();
 	if (!(vis_name&&vis_name[0])){
-		LPCSTR visuals	= pSettings->r_string(cNameSect(),"visuals");
+		const char* visuals	= pSettings->r_string(cNameSect(),"visuals");
 		u32 cnt			= _GetItemCount(visuals);
 		string256 tmp;
 		OBJ->set_visual	(_GetItem(visuals,Random.randI(cnt),tmp));

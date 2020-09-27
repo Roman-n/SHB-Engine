@@ -73,7 +73,7 @@ CController::~CController()
 	xr_delete(m_aura);
 }
 
-void CController::Load(LPCSTR section)
+void CController::Load(const char* section)
 {
 	inherited::Load	(section);
 
@@ -96,7 +96,7 @@ void CController::Load(LPCSTR section)
 	anim().AddReplacedAnim(&m_bDamaged, eAnimWalkFwd,	eAnimWalkDamaged);
 
 	// Load control postprocess --------------------------------------------------------
-	LPCSTR ppi_section = pSettings->r_string(section, "control_effector");
+	const char* ppi_section = pSettings->r_string(section, "control_effector");
 	m_control_effector.ppi.duality.h		= pSettings->r_float(ppi_section,"duality_h");
 	m_control_effector.ppi.duality.v		= pSettings->r_float(ppi_section,"duality_v");
 	m_control_effector.ppi.gray				= pSettings->r_float(ppi_section,"gray");
@@ -232,9 +232,9 @@ void CController::Load(LPCSTR section)
 	m_aura->load		(section);
 }
 
-void CController::load_friend_community_overrides(LPCSTR section)
+void CController::load_friend_community_overrides(const char* section)
 {
-	LPCSTR src = pSettings->r_string(section,"Friend_Community_Overrides");
+	const char* src = pSettings->r_string(section,"Friend_Community_Overrides");
 	
 	// parse src
 	int item_count = _GetItemCount(src);

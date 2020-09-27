@@ -75,7 +75,7 @@ void CCharacterInfo::InitSpecificCharacter (shared_str new_id)
 
 #endif
 
-void CCharacterInfo::load_shared	(LPCSTR)
+void CCharacterInfo::load_shared	(const char*)
 {
 	const ITEM_DATA& item_data = *id_to_index::GetById(m_ProfileId);
 
@@ -87,14 +87,12 @@ void CCharacterInfo::load_shared	(LPCSTR)
 
 	pXML->SetLocalRoot(item_node);
 
-
-
-	LPCSTR spec_char = pXML->Read("specific_character", 0, NULL);
+	const char* spec_char = pXML->Read("specific_character", 0, NULL);
 	if(!spec_char)
 	{
 		data()->m_CharacterId	= NULL;
 		
-		LPCSTR char_class			= pXML->Read	("class",		0,	NULL);
+		const char* char_class			= pXML->Read	("class",		0,	NULL);
 
 		if(char_class)
 		{
@@ -123,13 +121,12 @@ void CCharacterInfo::Init	(CSE_ALifeTraderAbstract* trader)
 	InitSpecificCharacter		(trader->specific_character());
 }
 
-
 shared_str CCharacterInfo::Profile()			const
 {
 	return m_ProfileId;
 }
 
-LPCSTR CCharacterInfo::Name() const
+const char* CCharacterInfo::Name() const
 {
 	R_ASSERT2(m_SpecificCharacterId.size(), m_SpecificCharacter.Name());
 	return	m_SpecificCharacter.Name();

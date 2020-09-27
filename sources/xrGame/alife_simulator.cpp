@@ -15,7 +15,7 @@
 #include "mainmenu.h"
 #include "object_factory.h"
 
-LPCSTR alife_section = "alife";
+const char* alife_section = "alife";
 
 extern void destroy_lua_wpn_params	();
 
@@ -59,7 +59,7 @@ CALifeSimulator::CALifeSimulator		(xrServer *server, shared_str *command_line) :
 	strcat						(temp,p.m_alife);
 	*command_line				= temp;
 	
-	LPCSTR						start_game_callback = pSettings->r_string(alife_section,"start_game_callback");
+	const char* start_game_callback = pSettings->r_string(alife_section,"start_game_callback");
 	luabind::functor<void>		functor;
 	R_ASSERT2					(ai().script_engine().functor(start_game_callback,functor),"failed to get start game callback");
 	functor						();

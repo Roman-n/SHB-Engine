@@ -95,7 +95,7 @@ public:
 			CHolderCustom*				Holder						()						{return m_holder;}
 public:
 
-	virtual void						Load				( LPCSTR section );
+	virtual void						Load				(const char* section );
 
 	virtual void						shedule_Update		( u32 T ); 
 	virtual void						UpdateCL			( );
@@ -152,14 +152,14 @@ public:
 	CGameNewsRegistryWrapper		*game_news_registry;
 	CCharacterPhysicsSupport		*m_pPhysics_support;
 
-	virtual LPCSTR	Name        () const {return CInventoryOwner::Name();}
+	virtual const char* Name        () const {return CInventoryOwner::Name();}
 
 public:
 	//PhraseDialogManager
 	virtual void ReceivePhrase				(DIALOG_SHARED_PTR& phrase_dialog);
 	virtual void UpdateAvailableDialogs		(CPhraseDialogManager* partner);
 	virtual void TryToTalk					();
-			bool OnDialogSoundHandlerStart	(CInventoryOwner *inv_owner, LPCSTR phrase);
+			bool OnDialogSoundHandlerStart	(CInventoryOwner *inv_owner, const char* phrase);
 			bool OnDialogSoundHandlerStop	(CInventoryOwner *inv_owner);
 
 
@@ -360,10 +360,10 @@ protected:
 	float					fCurAVelocity;
 	CEffectorBobbing*		pCamBobbing;
 
-//	void					LoadShootingEffector	(LPCSTR section);
+//	void					LoadShootingEffector	(const char* section);
 //	SShootingEffector*		m_pShootingEffector;
 
-	void					LoadSleepEffector		(LPCSTR section);
+	void					LoadSleepEffector		(const char* section);
 	SSleepEffector*			m_pSleepEffector;
 	CSleepEffectorPP*		m_pSleepEffectorPP;
 
@@ -382,7 +382,7 @@ public:
 
 	CGameObject*			ObjectWeLookingAt			() {return m_pObjectWeLookingAt;}
 	CInventoryOwner*		PersonWeLookingAt			() {return m_pPersonWeLookingAt;}
-	LPCSTR					GetDefaultActionForObject	() {return *m_sDefaultObjAction;}
+	const char* GetDefaultActionForObject	() {return *m_sDefaultObjAction;}
 //.	void					AddFollower					(u16 id);
 //.	void					RemoveFollower				(u16 id);
 //.	void					SendCmdToFollowers			(int cmd);
@@ -637,7 +637,7 @@ public:
 	virtual void			OnChangeVisual			();
 
 	virtual void			RenderIndicator			(Fvector dpos, float r1, float r2, ref_shader IndShader);
-	virtual void			RenderText				(LPCSTR Text, Fvector dpos, float* pdup, u32 color);
+	virtual void			RenderText				(const char* Text, Fvector dpos, float* pdup, u32 color);
 
 	//////////////////////////////////////////////////////////////////////////
 	// Controlled Routines
@@ -659,8 +659,8 @@ protected:
 
 		shared_str				m_DefaultVisualOutfit;
 
-		LPCSTR					invincibility_fire_shield_3rd;
-		LPCSTR					invincibility_fire_shield_1st;
+		const char* invincibility_fire_shield_3rd;
+		const char* invincibility_fire_shield_1st;
 		shared_str				m_sHeadShotParticle;
 		u32						last_hit_frame;
 #ifdef DEBUG
