@@ -163,18 +163,18 @@ void	CSoundRender_TargetD::fill_parameters()
 	// 2. Set 2D params (volume, freq) + position(rewind)
 	{
 		float	_volume				= pEmitter->smooth_volume;				clamp	(_volume,EPS_S,1.f);
-		s32		hw_volume			= iFloor	(7000.f*logf(_volume)/5.f);	clamp	(hw_volume,DSBVOLUME_MIN,DSBVOLUME_MAX);
+		int		hw_volume			= iFloor	(7000.f*logf(_volume)/5.f);	clamp	(hw_volume,DSBVOLUME_MIN,DSBVOLUME_MAX);
 		if (_abs(hw_volume-cache_hw_volume)>50){
 			cache_hw_volume			= hw_volume;
 			R_CHK(pBuffer->SetVolume(hw_volume));
 		}
 
 		float	_freq				= pEmitter->p_source.freq;
-		s32		hw_freq				= iFloor	(_freq * float(wfx.nSamplesPerSec) + EPS);
+		int		hw_freq				= iFloor	(_freq * float(wfx.nSamplesPerSec) + EPS);
 		if (_abs(hw_freq-cache_hw_freq)>50)	{
 			cache_hw_freq			= hw_freq;
-			s32		hw_freq_set		= hw_freq;
-			clamp	(hw_freq_set,s32(SoundRenderD->dsCaps.dwMinSecondarySampleRate),s32(SoundRenderD->dsCaps.dwMaxSecondarySampleRate));
+			int		hw_freq_set		= hw_freq;
+			clamp	(hw_freq_set, int(SoundRenderD->dsCaps.dwMinSecondarySampleRate), int(SoundRenderD->dsCaps.dwMaxSecondarySampleRate));
 			R_CHK	(pBuffer->SetFrequency	( hw_freq_set	));
 		}
 	}

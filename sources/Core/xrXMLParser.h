@@ -1,10 +1,10 @@
 #pragma once
 
-//const LPCSTR GAMEDATA_PATH			= "$game_data$";
+//const const char* GAMEDATA_PATH			= "$game_data$";
 #define CONFIG_PATH "$game_config$"
 #define UI_PATH "ui"
-//const LPCSTR GAME_PATH				= "gameplay";
-//const LPCSTR STRING_TABLE_PATH		= "text";
+//const const char* GAME_PATH				= "gameplay";
+//const const char* STRING_TABLE_PATH		= "text";
 
 #include "tinyxml.h"
 
@@ -19,57 +19,55 @@ public:
 	virtual				~CXml					();
 	void				ClearInternal			();
 
-	bool 				Init					(LPCSTR path_alias, LPCSTR path, LPCSTR  xml_filename);
-	bool 				Init					(LPCSTR path_alias, LPCSTR xml_filename);
-
+	bool 				Init					(const char* path_alias, const char* path, const char* xml_filename);
+	bool 				Init					(const char* path_alias, const char* xml_filename);
 
 	//чтение элементов
-	LPCSTR 				Read					(LPCSTR path, int index,  LPCSTR   default_str_val);
-	LPCSTR 				Read					(XML_NODE* start_node, LPCSTR path, int index,  LPCSTR   default_str_val );
-	LPCSTR 				Read					(XML_NODE* node,  LPCSTR   default_str_val);
+	const char* Read					(const char* path, int index, const char* default_str_val);
+	const char* Read					(XML_NODE* start_node, const char* path, int index, const char* default_str_val );
+	const char* Read					(XML_NODE* node, const char* default_str_val);
 
-	int   				ReadInt					(LPCSTR path, int index,  int default_int_val);
-	int   				ReadInt					(XML_NODE* start_node,  LPCSTR path, int index,  int default_int_val);
+	int   				ReadInt					(const char* path, int index,  int default_int_val);
+	int   				ReadInt					(XML_NODE* start_node, const char* path, int index,  int default_int_val);
 	int   				ReadInt					(XML_NODE* node,  int default_int_val);
 
-	float   			ReadFlt					(LPCSTR path, int index,  float default_flt_val);
-	float   			ReadFlt					(XML_NODE* start_node,  LPCSTR path, int index,  float default_flt_val);
+	float   			ReadFlt					(const char* path, int index,  float default_flt_val);
+	float   			ReadFlt					(XML_NODE* start_node, const char* path, int index,  float default_flt_val);
 	float   			ReadFlt					(XML_NODE* node,  float default_flt_val);
 
+	const char* ReadAttrib				(const char* path,  int index, const char* attrib, const char* default_str_val = "");
+	const char* ReadAttrib				(XML_NODE* start_node, const char* path,  int index, const char* attrib, const char* default_str_val = "");
+	const char* ReadAttrib				(XML_NODE* node, const char* attrib, const char* default_str_val);
 
-	LPCSTR				ReadAttrib				(LPCSTR path,  int index, LPCSTR attrib, LPCSTR default_str_val = "");
-	LPCSTR				ReadAttrib				(XML_NODE* start_node, LPCSTR path,  int index, LPCSTR attrib, LPCSTR default_str_val = "");
-	LPCSTR				ReadAttrib				(XML_NODE* node, LPCSTR attrib, LPCSTR default_str_val);
+	int					ReadAttribInt			(const char* path, int index, const char* attrib, int default_int_val = 0);
+	int					ReadAttribInt			(XML_NODE* start_node, const char* path, int index, const char* attrib, int default_int_val = 0);
+	int					ReadAttribInt			(XML_NODE* node, const char* attrib, int default_int_val);
 
-	int					ReadAttribInt			(LPCSTR path, int index, LPCSTR attrib, int default_int_val = 0);
-	int					ReadAttribInt			(XML_NODE* start_node, LPCSTR path, int index, LPCSTR attrib, int default_int_val = 0);
-	int					ReadAttribInt			(XML_NODE* node, LPCSTR attrib, int default_int_val);
+	float   			ReadAttribFlt			(const char* path,	int index, const char* attrib, float default_flt_val = 0.0f);
+	float   			ReadAttribFlt			(XML_NODE* start_node, const char* path, int index, const char* attrib, float default_flt_val = 0.0f);
+	float   			ReadAttribFlt			(XML_NODE* node, const char* attrib, float default_flt_val = 0.0f);
 
-	float   			ReadAttribFlt			(LPCSTR path,	int index,  LPCSTR attrib, float default_flt_val = 0.0f);
-	float   			ReadAttribFlt			(XML_NODE* start_node, LPCSTR path, int index,  LPCSTR attrib, float default_flt_val = 0.0f);
-	float   			ReadAttribFlt			(XML_NODE* node,	LPCSTR attrib, float default_flt_val = 0.0f);
-
-	XML_NODE*			SearchForAttribute		(LPCSTR path, int index, LPCSTR tag_name, LPCSTR attrib, LPCSTR attrib_value_pattern);
-	XML_NODE*			SearchForAttribute		(XML_NODE* start_node, LPCSTR tag_name, LPCSTR attrib, LPCSTR attrib_value_pattern);
+	XML_NODE*			SearchForAttribute		(const char* path, int index, const char* tag_name, const char* attrib, const char* attrib_value_pattern);
+	XML_NODE*			SearchForAttribute		(XML_NODE* start_node, const char* tag_name, const char* attrib, const char* attrib_value_pattern);
 
 	//возвращает количество узлов с заданым именем
-	int					GetNodesNum				(LPCSTR path, int index, LPCSTR tag_name);
-	int					GetNodesNum				(XML_NODE* node, LPCSTR  tag_name);
+	int					GetNodesNum				(const char* path, int index, const char* tag_name);
+	int					GetNodesNum				(XML_NODE* node, const char* tag_name);
 
 
 #ifdef DEBUG // debug & mixed
 	//проверка того, что аттрибуты у тегов уникальны
 	//(если не NULL, то уникальность нарушена и возврашается имя 
 	//повторяющегося атрибута)
-	LPCSTR				CheckUniqueAttrib		(XML_NODE* start_node, LPCSTR tag_name, LPCSTR attrib_name);
+	const char* CheckUniqueAttrib		(XML_NODE* start_node, const char* tag_name, const char* attrib_name);
 #endif
 
 	//переместиться по XML дереву 
 	//путь задается в форме PARENT:CHILD:CHIDLS_CHILD
 	//node_index - номер, если узлов с одним именем несколько
-	XML_NODE*			NavigateToNode			(LPCSTR  path, int node_index = 0);
-	XML_NODE*			NavigateToNode			(XML_NODE* start_node, LPCSTR  path, int node_index = 0);
-	XML_NODE*			NavigateToNodeWithAttribute(LPCSTR tag_name, LPCSTR attrib_name, LPCSTR attrib_value);
+	XML_NODE*			NavigateToNode			(const char* path, int node_index = 0);
+	XML_NODE*			NavigateToNode			(XML_NODE* start_node, const char* path, int node_index = 0);
+	XML_NODE*			NavigateToNodeWithAttribute(const char* tag_name, const char* attrib_name, const char* attrib_value);
 
 	void				SetLocalRoot			(XML_NODE* pLocalRoot)		 	{m_pLocalRoot = pLocalRoot;}
 	XML_NODE*			GetLocalRoot			()							 	{return m_pLocalRoot;}

@@ -36,10 +36,10 @@ public:
 	bool					result				[lt_hemisamples];
 	collide::ray_cache		cache				[lt_hemisamples];
 	collide::ray_cache		cache_sun			;
-	s32						result_count		;
+	int						result_count		;
 	u32						result_iterator		;
 	u32						result_frame		;
-	s32						result_sun			;
+	int						result_sun			;
 public:
 	u32						shadow_gen_frame	;
 	u32						shadow_recv_frame	;

@@ -13,7 +13,7 @@ struct CDestroyer {
 	{
 	}
 
-	IC	static void delete_data(LPSTR data)
+	IC	static void delete_data(char* data)
 	{
 		xr_free						(data);
 	}

@@ -10,7 +10,7 @@
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-CEffectorPP::CEffectorPP(EEffectorPostProcessType type, f32 lifeTime, bool free_on_remove)
+CEffectorPP::CEffectorPP(EEffectorPostProcessType type, float lifeTime, bool free_on_remove)
 {
 	eType			= type;
 	fLifeTime		= lifeTime;

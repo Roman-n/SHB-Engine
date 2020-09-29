@@ -774,12 +774,10 @@ void CWeapon::UpdatePosition(const Fmatrix& trans)
 	VERIFY				(!fis_zero(DET(renderable.xform)));
 }
 
-
-bool CWeapon::Action(s32 cmd, u32 flags) 
+bool CWeapon::Action(int cmd, u32 flags)
 {
 	if(inherited::Action(cmd, flags)) return true;
 
-	
 	switch(cmd) 
 	{
 		case kWPN_FIRE: 

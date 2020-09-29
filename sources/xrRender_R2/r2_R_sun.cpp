@@ -1028,7 +1028,7 @@ void CRender::render_sun_near	()
 			Fvector	xf	= wform		(scissor_xf,hull.points[it]);
 			scissor.modify			(xf);
 		}
-		s32		limit					= RImplementation.o.smapsize-1;
+		int		limit					= RImplementation.o.smapsize-1;
 		fuckingsun->X.D.minX			= clampr	(iFloor	(scissor.min.x), 0, limit);
 		fuckingsun->X.D.maxX			= clampr	(iCeil	(scissor.max.x), 0, limit);
 		fuckingsun->X.D.minY			= clampr	(iFloor	(scissor.min.y), 0, limit);

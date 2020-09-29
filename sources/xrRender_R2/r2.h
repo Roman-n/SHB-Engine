@@ -71,7 +71,9 @@ public:
 	struct		_stats		{
 		u32		l_total,	l_visible;
 		u32		l_shadowed,	l_unshadowed;
-		s32		s_used,		s_merged,	s_finalclip;
+		int		s_used;
+		int		s_merged;
+		int		s_finalclip;
 		u32		o_queries,	o_culled;
 		u32		ic_total,	ic_culled;
 	}			stats;

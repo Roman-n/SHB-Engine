@@ -33,8 +33,7 @@ void CWeaponBinoculars::Load	(LPCSTR section)
 	m_bVision = !!pSettings->r_bool(section,"vision_present");
 }
 
-
-bool CWeaponBinoculars::Action(s32 cmd, u32 flags) 
+bool CWeaponBinoculars::Action(int cmd, u32 flags)
 {
 	switch(cmd) 
 	{

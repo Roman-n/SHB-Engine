@@ -18,7 +18,7 @@ CORE_API DUMMY_STUFF	*g_dummy_stuff = 0;
 	typedef std::map<u32,std::pair<u32,shared_str> >	FILE_MAPPINGS;
 	FILE_MAPPINGS					g_file_mappings;
 
-void register_file_mapping			(void *address, const u32 &size, LPCSTR file_name)
+void register_file_mapping			(void *address, const u32 &size, const char* file_name)
 {
 	FILE_MAPPINGS::const_iterator	I = g_file_mappings.find(*(u32*)&address);
 	VERIFY							(I == g_file_mappings.end());
@@ -87,7 +87,7 @@ void VerifyPath(const char* path)
 	}
 }
 
-void* FileDownload(LPCSTR fn, u32* pdwSize)
+void* FileDownload(const char* fn, u32* pdwSize)
 {
 	int		hFile;
 	u32		size;
@@ -116,10 +116,10 @@ void* FileDownload(LPCSTR fn, u32* pdwSize)
 }
 
 typedef char MARK[9];
-IC void mk_mark(MARK& M, LPCSTR S)
+IC void mk_mark(MARK& M, const char* S)
 {	strncpy(M,S,8); }
 
-void  FileCompress	(LPCSTR fn, LPCSTR sign, void* data, u32 size)
+void  FileCompress	(const char* fn, const char* sign, void* data, u32 size)
 {
 	MARK M; mk_mark(M,sign);
 
@@ -130,7 +130,7 @@ void  FileCompress	(LPCSTR fn, LPCSTR sign, void* data, u32 size)
 	_close	(H);
 }
 
-void*  FileDecompress	(LPCSTR fn, LPCSTR sign, u32* size)
+void*  FileDecompress	(const char* fn, const char* sign, u32* size)
 {
 	MARK M,F; mk_mark(M,sign);
 
@@ -142,7 +142,8 @@ void*  FileDecompress	(LPCSTR fn, LPCSTR sign, u32* size)
 	}
     R_ASSERT(strncmp(M,F,8)==0);
 
-	void* ptr = 0; u32 SZ;
+	void* ptr = 0;
+	u32 SZ;
 	SZ = _readLZ (H, ptr, filelength(H)-8);
 	_close	(H);
 	if (size) *size = SZ;
@@ -180,7 +181,7 @@ void CMemoryWriter::w	(const void* ptr, u32 count)
 }
 
 //static const u32 mb_sz = 0x1000000;
-bool CMemoryWriter::save_to	(LPCSTR fn)
+bool CMemoryWriter::save_to	(const char* fn)
 {
 	IWriter* F 		= FS.w_open(fn);
     if (F){
@@ -248,7 +249,7 @@ void 	IWriter::w_sdir	(const Fvector& D)
 	w_dir	(C);
 	w_float (mag);
 }
-void	IWriter::w_printf(LPCSTR format, ...)
+void	IWriter::w_printf(const char* format, ...)
 {
 	va_list mark;
 	char buf[1024];
@@ -393,7 +394,7 @@ CPackReader::~CPackReader()
 };
 //---------------------------------------------------
 // file stream
-CFileReader::CFileReader(LPCSTR name)
+CFileReader::CFileReader(const char* name)
 {
     data	= (char*)FileDownload(name,(u32*)&Size);
     Pos		= 0;
@@ -403,7 +404,7 @@ CFileReader::~CFileReader()
 {	xr_free(data);	};
 //---------------------------------------------------
 // compressed stream
-CCompressedReader::CCompressedReader(LPCSTR name, LPCSTR sign)
+CCompressedReader::CCompressedReader(const char* name, const char* sign)
 {
     data	= (char *)FileDecompress(name,sign,(u32*)&Size);
     Pos		= 0;
@@ -412,7 +413,7 @@ CCompressedReader::~CCompressedReader()
 {	xr_free(data);	};
 
 
-CVirtualFileRW::CVirtualFileRW(LPCSTR cFileName)
+CVirtualFileRW::CVirtualFileRW(const char* cFileName)
 {
 	// Open the file
 	hSrcFile		= CreateFile(cFileName, GENERIC_READ|GENERIC_WRITE, FILE_SHARE_READ, 0, OPEN_EXISTING, 0, 0);
@@ -443,7 +444,7 @@ CVirtualFileRW::~CVirtualFileRW()
 	CloseHandle		(hSrcFile);
 }
 
-CVirtualFileReader::CVirtualFileReader(LPCSTR cFileName)
+CVirtualFileReader::CVirtualFileReader(const char* cFileName)
 {
 	// Open the file
 	hSrcFile		= CreateFile(cFileName, GENERIC_READ, FILE_SHARE_READ|FILE_SHARE_WRITE, 0, OPEN_EXISTING, 0, 0);

@@ -55,7 +55,7 @@ public:
 #define		TEAM_COUNT 4
 
 	bool							NewPlayerName_Exists	(void* pClient, LPCSTR NewName);
-	void							NewPlayerName_Generate	(void* pClient, LPSTR NewPlayerName);
+	void							NewPlayerName_Generate	(void* pClient, char* NewPlayerName);
 	void							NewPlayerName_Replace	(void* pClient, LPCSTR NewPlayerName);
 
 	BOOL							sv_force_sync;
@@ -71,7 +71,7 @@ public:
 	
 public:
 	virtual		void				OnPlayerConnect			(ClientID id_who);
-	virtual		void				OnPlayerDisconnect		(ClientID id_who, LPSTR Name, u16 GameID);
+	virtual		void				OnPlayerDisconnect		(ClientID id_who, char* Name, u16 GameID);
 	virtual		void				OnPlayerReady			(ClientID id_who)							   {};
 	virtual		void				OnPlayerEnteredGame		(ClientID id_who)	{};
 	virtual		void				OnPlayerConnectFinished	(ClientID id_who)	{};
@@ -123,7 +123,7 @@ public:
 
 	// Utilities
 	float							get_option_f			(LPCSTR lst, LPCSTR name, float def = 0.0f);
-	s32								get_option_i			(LPCSTR lst, LPCSTR name, s32 def = 0);
+	int								get_option_i			(LPCSTR lst, LPCSTR name, int def = 0);
 	string64&						get_option_s			(LPCSTR lst, LPCSTR name, LPCSTR def = 0);
 	virtual		u32					get_alive_count			(u32 team);
 	virtual		xr_vector<u16>*		get_children			(ClientID id_who);

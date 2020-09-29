@@ -14,9 +14,9 @@
 #include "blenders\blender_recorder.h"
 
 
-void fix_texture_name(LPSTR fn)
+void fix_texture_name(char* fn)
 {
-	LPSTR _ext = strext(fn);
+	char* _ext = strext(fn);
 	if(  _ext					&&
 	  (0==stricmp(_ext,".tga")	||
 		0==stricmp(_ext,".dds")	||
@@ -40,7 +40,7 @@ IBlender* CResourceManager::_GetBlender		(LPCSTR Name)
 {
 	R_ASSERT(Name && Name[0]);
 
-	LPSTR N = LPSTR(Name);
+	char* N = (char*) Name;
 	map_Blender::iterator I = m_blenders.find	(N);
 
 	if (I==m_blenders.end())	{ Debug.fatal(DEBUG_INFO,"Shader '%s' not found in library.",Name); return 0; }
@@ -51,7 +51,7 @@ IBlender* CResourceManager::_FindBlender		(LPCSTR Name)
 {
 	if (!(Name && Name[0])) return 0;
 
-	LPSTR N = LPSTR(Name);
+	char* N = (char*) Name;
 	map_Blender::iterator I = m_blenders.find	(N);
 	if (I==m_blenders.end())	return 0;
 	else						return I->second;
@@ -59,7 +59,7 @@ IBlender* CResourceManager::_FindBlender		(LPCSTR Name)
 
 void	CResourceManager::ED_UpdateBlender	(LPCSTR Name, IBlender* data)
 {
-	LPSTR N = LPSTR(Name);
+	char* N = (char*) Name;
 	map_Blender::iterator I = m_blenders.find	(N);
 	if (I!=m_blenders.end())	{
 		R_ASSERT	(data->getDescription().CLS == I->second->getDescription().CLS);

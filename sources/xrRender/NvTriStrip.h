@@ -93,7 +93,7 @@ void SetListsOnly(const bool bListsOnly);
 //
 // Be sure to call xr_free on the returned primGroups to avoid leaking mem
 //
-void GenerateStrips(const u16* in_indices, const s32 in_numIndices, xr_vector<PrimitiveGroup> &primGroups);
+void GenerateStrips(const u16* in_indices, const int in_numIndices, xr_vector<PrimitiveGroup> &primGroups);
 
 ////////////////////////////////////////////////////////////////////////////////////////
 // RemapIndices()

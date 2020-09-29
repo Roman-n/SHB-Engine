@@ -13,34 +13,22 @@ public:
 	void 		_initialize		(){}
     void 		_destroy		(){}
 
-	LPCSTR		GenerateName	(LPCSTR base_path, LPCSTR base_name, LPCSTR def_ext, LPSTR out_name);
+	const char* GenerateName	(const char* base_path, const char* base_name, const char* def_ext, char* out_name);
 
-	bool 		GetOpenName		(LPCSTR initial, string_path& buffer, int sz_buf, bool bMulti=false, LPCSTR offset=0, int start_flt_ext=-1 );
-	bool 		GetOpenName		(LPCSTR initial, xr_string& buf, bool bMulti=false, LPCSTR offset=0, int start_flt_ext=-1 );
+	bool 		GetOpenName		(const char* initial, string_path& buffer, int sz_buf, bool bMulti=false, const char* offset=0, int start_flt_ext=-1 );
+	bool 		GetSaveName		(const char* initial, string_path& buffer, const char* offset=0, int start_flt_ext=-1 );
 
-	bool 		GetSaveName		(LPCSTR initial, string_path& buffer, LPCSTR offset=0, int start_flt_ext=-1 );
-	bool 		GetSaveName		(LPCSTR initial, xr_string& buf, LPCSTR offset=0, int start_flt_ext=-1 );
+	const char* AppendFolderToName(char* tex_name, int depth, BOOL full_name);
+	const char* AppendFolderToName(const char* src_name, char* dest_name, int depth, BOOL full_name);
 
-	void 		MarkFile		(LPCSTR fn, bool bDeleteSource);
+    xr_string	ChangeFileExt	(const char* src, const char* ext);
+    xr_string	ChangeFileExt	(const xr_string& src, const char* ext);
 
-	xr_string 	AppendFolderToName(xr_string& tex_name, int depth, BOOL full_name);
-
-	LPCSTR		AppendFolderToName(LPSTR tex_name, int depth, BOOL full_name);
-	LPCSTR		AppendFolderToName(LPCSTR src_name, LPSTR dest_name, int depth, BOOL full_name);
-
-	BOOL		LockFile		(LPCSTR fn, bool bLog=true);
-	BOOL		UnlockFile		(LPCSTR fn, bool bLog=true);
-	BOOL		CheckLocking	(LPCSTR fn, bool bOnlySelf, bool bMsg);//, shared_str* owner=0);
-	void 		WriteAccessLog	(LPCSTR fn, LPCSTR start_msg);
-//.	shared_str 	GetLockOwner	(LPCSTR initial, LPCSTR fn);
-
-    xr_string	ChangeFileExt	(LPCSTR src, LPCSTR ext);
-    xr_string	ChangeFileExt	(const xr_string& src, LPCSTR ext);
-
-    xr_string	ExtractFileName		(LPCSTR src);
-    xr_string	ExtractFilePath		(LPCSTR src);
-    xr_string	ExtractFileExt		(LPCSTR src);
-    xr_string	ExcludeBasePath		(LPCSTR full_path, LPCSTR excl_path);
+    xr_string	ExtractFileName		(const char* src);
+    xr_string	ExtractFilePath		(const char* src);
+    xr_string	ExtractFileExt		(const char* src);
+    xr_string	ExcludeBasePath		(const char* full_path, const char* excl_path);
 };
+
 extern CORE_API	EFS_Utils*	xr_EFS;
 #define EFS (*xr_EFS)

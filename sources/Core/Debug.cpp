@@ -29,9 +29,9 @@ CORE_API	CDebug		Debug;
 
 static bool	error_after_dialog = false;
 
-extern void copy_to_clipboard	(LPCSTR string);
+extern void copy_to_clipboard	(const char* string);
 
-void copy_to_clipboard	(LPCSTR string)
+void copy_to_clipboard	(const char* string)
 {
 	if (IsDebuggerPresent())
 		return;
@@ -53,7 +53,7 @@ void copy_to_clipboard	(LPCSTR string)
 	CloseClipboard		();
 }
 
-void update_clipboard	(LPCSTR string)
+void update_clipboard	(const char* string)
 {
 #ifdef DEBUG
 	if (IsDebuggerPresent())
@@ -69,10 +69,10 @@ void update_clipboard	(LPCSTR string)
 		return;
 	}
 
-	LPSTR				memory = (char*)GlobalLock(handle);
+	char* memory = (char*)GlobalLock(handle);
 	u32					memory_length = xr_strlen(memory);
 	u32					string_length = xr_strlen(string);
-	LPSTR				buffer = (LPSTR)_alloca((memory_length + string_length + 1)*sizeof(char));
+	char* buffer = (char*)_alloca((memory_length + string_length + 1)*sizeof(char));
 	strcpy				(buffer,memory);
 	GlobalUnlock		(handle);
 
@@ -86,7 +86,7 @@ extern void BuildStackTrace();
 extern char g_stackTrace[100][4096];
 extern int	g_stackTraceCount;
 
-void LogStackTrace	(LPCSTR header)
+void LogStackTrace	(const char* header)
 {
 	if (!shared_str_initialized)
 		return;
@@ -99,11 +99,11 @@ void LogStackTrace	(LPCSTR header)
 		Msg			("%s",g_stackTrace[i]);
 }
 
-void gather_info		(LPCSTR expression, LPCSTR description, LPCSTR argument0, LPCSTR argument1, LPCSTR file, int line, LPCSTR function, LPSTR assertion_info)
+void gather_info		(const char* expression, const char* description, const char* argument0, const char* argument1, const char* file, int line, const char* function, char* assertion_info)
 {
-	LPSTR				buffer = assertion_info;
-	LPCSTR				endline = "\n";
-	LPCSTR				prefix = "[error]";
+	char* buffer = assertion_info;
+	const char* endline = "\n";
+	const char* prefix = "[error]";
 	bool				extended_description = (description && !argument0 && strchr(description,'\n'));
 	for (int i=0; i<2; ++i) {
 		if (!i)
@@ -186,7 +186,7 @@ void CDebug::do_exit	(const std::string &message)
 	TerminateProcess	(GetCurrentProcess(),1);
 }
 
-void CDebug::backend	(LPCSTR expression, LPCSTR description, LPCSTR argument0, LPCSTR argument1, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
+void CDebug::backend	(const char* expression, const char* description, const char* argument0, const char* argument1, const char* file, int line, const char* function, bool &ignore_always)
 {
 	static xrCriticalSection CS;
 
@@ -198,8 +198,8 @@ void CDebug::backend	(LPCSTR expression, LPCSTR description, LPCSTR argument0, L
 	gather_info			(expression, description, argument0, argument1, file, line, function, assertion_info);
 
 #ifdef USE_OWN_ERROR_MESSAGE_WINDOW
-	LPCSTR				endline = "\r\n";
-	LPSTR				buffer = assertion_info + xr_strlen(assertion_info);
+	const char* endline = "\r\n";
+	char* buffer = assertion_info + xr_strlen(assertion_info);
 	buffer				+= sprintf(buffer,"%sPress CANCEL to abort execution%s",endline,endline);
 	buffer				+= sprintf(buffer,"Press TRY AGAIN to continue execution%s",endline);
 	buffer				+= sprintf(buffer,"Press CONTINUE to continue execution and ignore all the errors of this type%s%s",endline,endline);
@@ -247,9 +247,9 @@ void CDebug::backend	(LPCSTR expression, LPCSTR description, LPCSTR argument0, L
 	CS.Leave			();
 }
 
-LPCSTR CDebug::error2string	(long code)
+const char* CDebug::error2string	(long code)
 {
-	LPCSTR				result	= 0;
+	const char* result	= 0;
 	static	string1024	desc_storage;
 
 	result				= DXGetErrorDescription	(code);
@@ -262,42 +262,42 @@ LPCSTR CDebug::error2string	(long code)
 	return		result	;
 }
 
-void CDebug::error		(long hr, LPCSTR expr, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
+void CDebug::error		(long hr, const char* expr, const char* file, int line, const char* function, bool &ignore_always)
 {
 	backend		(error2string(hr),expr,0,0,file,line,function,ignore_always);
 }
 
-void CDebug::error		(long hr, LPCSTR expr, LPCSTR e2, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
+void CDebug::error		(long hr, const char* expr, const char* e2, const char* file, int line, const char* function, bool &ignore_always)
 {
 	backend		(error2string(hr),expr,e2,0,file,line,function,ignore_always);
 }
 
-void CDebug::fail		(LPCSTR e1, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
+void CDebug::fail		(const char* e1, const char* file, int line, const char* function, bool &ignore_always)
 {
 	backend		("assertion failed",e1,0,0,file,line,function,ignore_always);
 }
 
-void CDebug::fail		(LPCSTR e1, const std::string &e2, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
+void CDebug::fail		(const char* e1, const std::string &e2, const char* file, int line, const char* function, bool &ignore_always)
 {
 	backend		(e1,e2.c_str(),0,0,file,line,function,ignore_always);
 }
 
-void CDebug::fail		(LPCSTR e1, LPCSTR e2, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
+void CDebug::fail		(const char* e1, const char* e2, const char* file, int line, const char* function, bool &ignore_always)
 {
 	backend		(e1,e2,0,0,file,line,function,ignore_always);
 }
 
-void CDebug::fail		(LPCSTR e1, LPCSTR e2, LPCSTR e3, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
+void CDebug::fail		(const char* e1, const char* e2, const char* e3, const char* file, int line, const char* function, bool &ignore_always)
 {
 	backend		(e1,e2,e3,0,file,line,function,ignore_always);
 }
 
-void CDebug::fail		(LPCSTR e1, LPCSTR e2, LPCSTR e3, LPCSTR e4, LPCSTR file, int line, LPCSTR function, bool &ignore_always)
+void CDebug::fail		(const char* e1, const char* e2, const char* e3, const char* e4, const char* file, int line, const char* function, bool &ignore_always)
 {
 	backend		(e1,e2,e3,e4,file,line,function,ignore_always);
 }
 
-void __cdecl CDebug::fatal(LPCSTR file, int line, LPCSTR function, LPCSTR F,...)
+void __cdecl CDebug::fatal(const char* file, int line, const char* function, const char* F,...)
 {
 	string1024	buffer;
 
@@ -325,7 +325,7 @@ int out_of_memory_handler	(size_t size)
 	return					1;
 }
 
-extern LPCSTR log_name();
+extern const char* log_name();
 
 void CALLBACK PreErrorHandler	(INT_PTR)
 { }
@@ -345,7 +345,7 @@ typedef BOOL (WINAPI *MINIDUMPWRITEDUMP)(HANDLE hProcess, DWORD dwPid, HANDLE hF
 										 CONST PMINIDUMP_CALLBACK_INFORMATION CallbackParam
 										 );
 
-void FlushLog				(LPCSTR file_name);
+void FlushLog				(const char* file_name);
 
 void save_mini_dump			(_EXCEPTION_POINTERS *pExceptionInfo)
 {
@@ -456,7 +456,7 @@ void save_mini_dump			(_EXCEPTION_POINTERS *pExceptionInfo)
 }
 #endif // USE_OWN_MINI_DUMP
 
-void format_message	(LPSTR buffer, const u32 &buffer_size)
+void format_message	(char* buffer, const u32 &buffer_size)
 {
     LPVOID		message;
     DWORD		error_code = GetLastError(); 
@@ -472,7 +472,7 @@ void format_message	(LPSTR buffer, const u32 &buffer_size)
         NULL,
         error_code,
         MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
-        (LPSTR)&message,
+        (char*)&message,
         0,
 		NULL
 	);
@@ -571,8 +571,8 @@ _CRTIMP _PNH	__cdecl _set_new_handler( _PNH );
 			assertion_info
 		);
 		
-		LPCSTR					endline = "\r\n";
-		LPSTR					buffer = assertion_info + xr_strlen(assertion_info);
+		const char* endline = "\r\n";
+		char* buffer = assertion_info + xr_strlen(assertion_info);
 		buffer					+= sprintf(buffer,"Press OK to abort execution%s",endline);
 
 		MessageBox				(
@@ -591,7 +591,7 @@ _CRTIMP _PNH	__cdecl _set_new_handler( _PNH );
 		std::set_terminate				(_terminate);
 	}
 
-	static void handler_base				(LPCSTR reason_string)
+	static void handler_base				(const char* reason_string)
 	{
 		bool							ignore_always = false;
 		Debug.backend					(

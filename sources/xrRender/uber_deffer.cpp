@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "uber_deffer.h"
-void fix_texture_name(LPSTR fn);
+void fix_texture_name(char* fn);
 
 void	uber_deffer	(CBlender_Compile& C, bool hq, LPCSTR _vspec, LPCSTR _pspec, BOOL _aref, LPCSTR _detail_replace, bool DO_NOT_FINISH)
 {
@@ -15,11 +15,10 @@ void	uber_deffer	(CBlender_Compile& C, bool hq, LPCSTR _vspec, LPCSTR _pspec, BO
 	bool			lmap	= true;
 	if	(C.L_textures.size()<3)	lmap = false;
 	else {
-		pcstr		tex		= C.L_textures[2].c_str();
+		const char* tex		= C.L_textures[2].c_str();
 		if (tex[0]=='l' && tex[1]=='m' && tex[2]=='a' && tex[3]=='p')	lmap = true	;
 		else															lmap = false;
 	}
-
 
 	string256		ps,vs,dt;
 	strconcat		(sizeof(vs),vs,"deffer_", _vspec, lmap?"_lmh":""	);

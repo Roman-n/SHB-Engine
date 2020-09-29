@@ -116,7 +116,7 @@ CSE_Abstract::CSE_Abstract					(LPCSTR caSection)
 			VERIFY				(reader);
 			{
 				int				size = reader->length()*sizeof(char);
-				LPSTR			temp = (LPSTR)_alloca(size + 1);
+				char* temp = (char*)_alloca(size + 1);
 				CopyMemory		(temp,reader->pointer(),size);
 				temp[size]		= 0;
 				m_ini_string	= temp;

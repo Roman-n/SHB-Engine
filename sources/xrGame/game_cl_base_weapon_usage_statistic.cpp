@@ -506,7 +506,7 @@ void WeaponUsageStatistic::OnPlayerSpawned(game_PlayerState* ps)
 	PlayerStat.m_dwCurrentTeam			= ps->team;
 }
 
-void WeaponUsageStatistic::OnPlayerAddMoney(game_PlayerState* ps, s32 MoneyAmount)
+void WeaponUsageStatistic::OnPlayerAddMoney(game_PlayerState* ps, int MoneyAmount)
 {
 	if (!CollectData())							return;
 	if (!ps || MoneyAmount<=0)					return;

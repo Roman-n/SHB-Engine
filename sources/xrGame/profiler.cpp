@@ -67,7 +67,8 @@ void CProfiler::setup_timer			(LPCSTR timer_id, const u64 &timer_time, const u32
 	TIMERS::iterator			i = m_timers.find(timer_id);
 	if (i == m_timers.end()) {
 		strcpy					(m_temp,timer_id);
-		LPSTR					j,k = m_temp;
+		char* j;
+		char* k = m_temp;
 		while ((j = strchr(k,'/')) != 0) {
 			*j					= 0;
 			TIMERS::iterator	m = m_timers.find(m_temp);

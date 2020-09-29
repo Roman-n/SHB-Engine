@@ -21,7 +21,7 @@ struct lua_State;
 
 struct SBreakPoint{
 	shared_str	fileName;
-	s32			nLine;
+	int			nLine;
 	SBreakPoint()	{nLine=0;};
 	SBreakPoint(const SBreakPoint& other)
 	{
@@ -81,7 +81,7 @@ protected:
 	void			DrawThreadInfo		(int nThreadID);
 	void			GetBreakPointsFromIde();
 	void			FillBreakPointsIn	(CMailSlotMsg* msg);
-	bool			HasBreakPoint		(LPCSTR fileName, s32 lineNum);
+	bool			HasBreakPoint		(LPCSTR fileName, int lineNum);
 	void			CheckNewMessages	();
 	LRESULT			DebugMessage		(UINT nMsg, WPARAM wParam, LPARAM lParam);
 	void			WaitForReply		(bool bWaitForModalResult);

@@ -172,7 +172,7 @@ xr_vector<u16>*		game_sv_GameState::get_children				(ClientID id)
 	return	&(E->children);
 }
 
-s32					game_sv_GameState::get_option_i				(LPCSTR lst, LPCSTR name, s32 def)
+int					game_sv_GameState::get_option_i				(LPCSTR lst, LPCSTR name, int def)
 {
 	string64		op;
 	strconcat		(sizeof(op),op,"/",name,"=");
@@ -311,7 +311,7 @@ void game_sv_GameState::OnPlayerConnect			(ClientID /**id_who/**/)
 	signal_Syncronize	();
 }
 
-void game_sv_GameState::OnPlayerDisconnect		(ClientID /**id_who/**/, LPSTR, u16 )
+void game_sv_GameState::OnPlayerDisconnect		(ClientID /**id_who/**/, char*, u16 )
 {
 	signal_Syncronize	();
 }
@@ -686,7 +686,7 @@ bool game_sv_GameState::NewPlayerName_Exists( void* pClient, LPCSTR NewName )
 	return false;
 }
 
-void game_sv_GameState::NewPlayerName_Generate( void* pClient, LPSTR NewPlayerName )
+void game_sv_GameState::NewPlayerName_Generate( void* pClient, char* NewPlayerName )
 {
 	if ( !pClient || !NewPlayerName ) return;
 	NewPlayerName[21] = 0;

@@ -2,17 +2,17 @@
 
 #define VPUSH(a)	a.x,a.y,a.z
 
-void 	CORE_API	__cdecl		Msg			(LPCSTR format, ...);
-void 	CORE_API		Log			(LPCSTR msg);
-void 	CORE_API		Log			(LPCSTR msg, LPCSTR			dop);
-void 	CORE_API		Log			(LPCSTR msg, u32			dop);
-void 	CORE_API		Log			(LPCSTR msg, int  			dop);
-void 	CORE_API		Log			(LPCSTR msg, float			dop);
-void 	CORE_API		Log			(LPCSTR msg, const Fvector& dop);
-void 	CORE_API		Log			(LPCSTR msg, const Fmatrix& dop);
-void 	CORE_API		LogWinErr	(LPCSTR msg, long 			err_code);
+void 	CORE_API	__cdecl		Msg			(const char* format, ...);
+void 	CORE_API		Log			(const char* msg);
+void 	CORE_API		Log			(const char* msg, const char* dop);
+void 	CORE_API		Log			(const char* msg, u32			dop);
+void 	CORE_API		Log			(const char* msg, int  			dop);
+void 	CORE_API		Log			(const char* msg, float			dop);
+void 	CORE_API		Log			(const char* msg, const Fvector& dop);
+void 	CORE_API		Log			(const char* msg, const Fmatrix& dop);
+void 	CORE_API		LogWinErr	(const char* msg, long 			err_code);
 
-typedef void	( * LogCallback)	(LPCSTR string);
+typedef void	( * LogCallback)	(const char* string);
 void	CORE_API				SetLogCB	(LogCallback cb);
 void 							CreateLog	(BOOL no_log=FALSE);
 void 							InitLog		();

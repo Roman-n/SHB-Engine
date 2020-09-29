@@ -22,7 +22,7 @@ public:
 
 const float			occQ_s32	= float(0x40000000);	// [-2..2]
 const float			occQ_s16	= float(16384-1);		// [-2..2]
-typedef	s32			occD;
+typedef	int			occD;
 
 class occRasterizer  
 {
@@ -39,7 +39,7 @@ public:
 	IC s16			df_2_s16		(float d)	{ return s16(iFloor	(d*occQ_s16));			}
 	IC int			df_2_s32up		(float d)	{ return iCeil	(d*occQ_s32);				}
 	IC s16			df_2_s16up		(float d)	{ return s16(iCeil	(d*occQ_s16));			}
-	IC float		ds32_2_f		(s32 d)		{ return float(d)/occQ_s32;					}
+	IC float		ds32_2_f		(int d)		{ return float(d)/occQ_s32;					}
 	IC float		ds16_2_f		(s16 d)		{ return float(d)/occQ_s16;					}
 
 	void			clear		();

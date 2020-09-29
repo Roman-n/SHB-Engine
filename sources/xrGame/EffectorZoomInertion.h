@@ -47,7 +47,7 @@ public:
 	virtual	BOOL	Process				(Fvector &delta_p, Fvector &delta_d,
 											Fvector &delta_n, float& fFov,
 											float& fFar, float& fAspect);
-	virtual	void	SetRndSeed				(s32 Seed) { m_Random.seed(Seed); };
+	virtual	void	SetRndSeed				(int Seed) { m_Random.seed(Seed); };
 	virtual	void	Init				(CWeaponMagazined*	pWeapon);
 
 	virtual CEffectorZoomInertion	*cast_effector_zoom_inertion	()	{return this;}

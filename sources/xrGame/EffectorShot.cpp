@@ -150,7 +150,7 @@ void CWeaponShotEffector::GetLastDelta		(Fvector& delta_angle)
 	delta_angle.z			= 0.0f;
 };
 
-void CWeaponShotEffector::SetRndSeed	(s32 Seed)
+void CWeaponShotEffector::SetRndSeed	(int Seed)
 {
 	if (m_LastSeed == 0){
 		m_LastSeed			= Seed;

@@ -143,7 +143,7 @@ public:
 	};
 public:
 	// options
-	s32								m_skinning;
+	int								m_skinning;
 
 	// data
 	CFrustum						ViewBase;
@@ -162,7 +162,7 @@ public:
 	virtual void					level_Unload			()											= 0;
 
 	virtual IDirect3DBaseTexture9*	texture_load			(LPCSTR	fname, u32& msize)					= 0;
-			void					shader_option_skinning	(s32 mode)									{ m_skinning=mode;	}
+			void					shader_option_skinning	(int mode)									{ m_skinning=mode;	}
 	virtual HRESULT					shader_compile			(
 		LPCSTR							name,
 		LPCSTR                          pSrcData,

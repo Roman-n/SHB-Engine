@@ -27,10 +27,10 @@ add_to_type_list(RPoint)
 #define script_type_list save_type_list(RPoint)
 
 struct Bonus_Money_Struct {
-	s32		Money;
+	int		Money;
 	u8		Reason;
 	u8		Kills;
-	Bonus_Money_Struct(s32 M, u8 R, u8 K) {Money = M; Reason = R; Kills = K;}
+	Bonus_Money_Struct(int M, u8 R, u8 K) {Money = M; Reason = R; Kills = K;}
 	Bonus_Money_Struct() {Money = 0; Reason = 0; Kills=0;}
 };
 
@@ -45,7 +45,7 @@ struct	game_PlayerState
 	s16			m_iKillsInRowCurr;
 	s16			m_iKillsInRowMax;
 	s16			m_iDeaths;
-	s32			money_for_round;	
+	int			money_for_round;
 
 	float		experience_Real;
 	float		experience_New;
@@ -67,7 +67,7 @@ struct	game_PlayerState
 	u8			m_bCurrentVoteAgreed;
 	DEF_DEQUE	(OLD_GAME_ID, u16);
 	OLD_GAME_ID	mOldIDs;
-	s32			money_added;
+	int			money_added;
 	DEF_VECTOR	(MONEY_BONUS, Bonus_Money_Struct);
 	MONEY_BONUS	m_aBonusMoney;
 	bool		m_bPayForSpawn;
@@ -100,7 +100,7 @@ public:
 	SPAWN_POINTS_LIST	pSpawnPointsList;
 	s16					m_s16LastSRoint;
 
-	s32					LastBuyAcount;
+	int					LastBuyAcount;
 	bool				m_bClearRun;
 	DECLARE_SCRIPT_REGISTER_FUNCTION_STRUCT
 };
@@ -123,22 +123,14 @@ struct	game_TeamState
 class	game_GameState : public DLL_Pure
 {
 protected:
-	s32								m_type;
+	int								m_type;
 	u16								m_phase;
-	s32								m_round;
+	int								m_round;
 	u32								m_start_time;
 
 	u32								m_round_start_time;
 	string64						m_round_start_time_str;
-//	u32								buy_time;
-//	s32								fraglimit; //dm,tdm,ah
-//	s32								timelimit; //dm
-//	u32								damageblocklimit;//dm,tdm
-//	xr_vector<game_TeamState>		teams;//dm,tdm,ah
-	// for Artefact Hunt
-//	u8								artefactsNum;//ah
-//	u16								artefactBearerID;//ah,ZoneMap
-//	u8								teamInPossession;//ah,ZoneMap
+
 protected:
 	virtual		void				switch_Phase			(u32 new_phase);
 	virtual		void				OnSwitchPhase			(u32 old_phase, u32 new_phase)	{};	
@@ -148,7 +140,7 @@ public:
 	virtual							~game_GameState			()								{}
 				u32					Type					() const						{return m_type;};
 				u16					Phase					() const						{return m_phase;};
-				s32					Round					() const						{return m_round;};
+				int					Round					() const						{return m_round;};
 				u32					StartTime				() const						{return m_start_time;};
 	virtual		void				Create					(shared_str& options)				{};
 	virtual		const char* type_name				() const						{return "base game";};

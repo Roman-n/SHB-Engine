@@ -11,7 +11,7 @@
 #include "blenders\blender.h"
 #include "blenders\blender_recorder.h"
 
-void fix_texture_name(LPSTR fn);
+void fix_texture_name(char* fn);
 
 template <class T>
 BOOL	reclaim		(xr_vector<T*>& vec, const T* ptr)
@@ -152,7 +152,7 @@ SVS*	CResourceManager::_CreateVS		(LPCSTR _name)
 	if (0 == ::Render->m_skinning)	strcat(name,"_0");
 	if (1 == ::Render->m_skinning)	strcat(name,"_1");
 	if (2 == ::Render->m_skinning)	strcat(name,"_2");
-	LPSTR N				= LPSTR		(name);
+	char* N				= (char*) name;
 	map_VS::iterator I	= m_vs.find	(N);
 	if (I!=m_vs.end())	return I->second;
 	else
@@ -185,7 +185,7 @@ SVS*	CResourceManager::_CreateVS		(LPCSTR _name)
 		else*/ if (HW.Caps.geometry_major>=2)						c_target="vs_2_0";
 		else 														c_target="vs_1_1";
 
-		LPSTR pfs					= xr_alloc<char>(fs->length() + 1);
+		char* pfs					= xr_alloc<char>(fs->length() + 1);
 		strncpy						(pfs, (LPCSTR)fs->pointer(), fs->length());
 		pfs							[fs->length()] = 0;
 
@@ -231,7 +231,7 @@ SVS*	CResourceManager::_CreateVS		(LPCSTR _name)
 void	CResourceManager::_DeleteVS			(const SVS* vs)
 {
 	if (0==(vs->dwFlags&xr_resource_flagged::RF_REGISTERED))	return;
-	LPSTR N				= LPSTR		(*vs->cName);
+	char* N				= (char*) (*vs->cName);
 	map_VS::iterator I	= m_vs.find	(N);
 	if (I!=m_vs.end())	{
 		m_vs.erase(I);
@@ -243,7 +243,7 @@ void	CResourceManager::_DeleteVS			(const SVS* vs)
 //--------------------------------------------------------------------------------------------------------------
 SPS*	CResourceManager::_CreatePS			(LPCSTR name)
 {
-	LPSTR N				= LPSTR(name);
+	char* N				= (char*) name;
 	map_PS::iterator I	= m_ps.find	(N);
 	if (I!=m_ps.end())	return		I->second;
 	else
@@ -326,7 +326,7 @@ SPS*	CResourceManager::_CreatePS			(LPCSTR name)
 void	CResourceManager::_DeletePS			(const SPS* ps)
 {
 	if (0==(ps->dwFlags&xr_resource_flagged::RF_REGISTERED))	return;
-	LPSTR N				= LPSTR		(*ps->cName);
+	char* N				= (char*) (*ps->cName);
 	map_PS::iterator I	= m_ps.find	(N);
 	if (I!=m_ps.end())	{
 		m_ps.erase(I);
@@ -357,7 +357,7 @@ CRT*	CResourceManager::_CreateRT		(LPCSTR Name, u32 w, u32 h,	D3DFORMAT f)
 	R_ASSERT(Name && Name[0] && w && h);
 
 	// ***** first pass - search already created RT
-	LPSTR N = LPSTR(Name);
+	char* N = (char*) Name;
 	map_RT::iterator I = m_rtargets.find	(N);
 	if (I!=m_rtargets.end())	return		I->second;
 	else
@@ -372,7 +372,7 @@ CRT*	CResourceManager::_CreateRT		(LPCSTR Name, u32 w, u32 h,	D3DFORMAT f)
 void	CResourceManager::_DeleteRT		(const CRT* RT)
 {
 	if (0==(RT->dwFlags&xr_resource_flagged::RF_REGISTERED))	return;
-	LPSTR N				= LPSTR		(*RT->cName);
+	char* N				= (char*) (*RT->cName);
 	map_RT::iterator I	= m_rtargets.find	(N);
 	if (I!=m_rtargets.end())	{
 		m_rtargets.erase(I);
@@ -386,7 +386,7 @@ CRTC*	CResourceManager::_CreateRTC		(LPCSTR Name, u32 size,	D3DFORMAT f)
 	R_ASSERT(Name && Name[0] && size);
 
 	// ***** first pass - search already created RTC
-	LPSTR N = LPSTR(Name);
+	char* N = (char*) Name;
 	map_RTC::iterator I = m_rtargets_c.find	(N);
 	if (I!=m_rtargets_c.end())	return I->second;
 	else
@@ -401,7 +401,7 @@ CRTC*	CResourceManager::_CreateRTC		(LPCSTR Name, u32 size,	D3DFORMAT f)
 void	CResourceManager::_DeleteRTC		(const CRTC* RT)
 {
 	if (0==(RT->dwFlags&xr_resource_flagged::RF_REGISTERED))	return;
-	LPSTR N				= LPSTR		(*RT->cName);
+	char* N				= (char*) (*RT->cName);
 	map_RTC::iterator I	= m_rtargets_c.find	(N);
 	if (I!=m_rtargets_c.end())	{
 		m_rtargets_c.erase(I);
@@ -475,7 +475,7 @@ CTexture* CResourceManager::_CreateTexture	(LPCSTR _Name)
 	strcpy_s			(Name,_Name); //. andy if (strext(Name)) *strext(Name)=0;
 	fix_texture_name (Name);
 	// ***** first pass - search already loaded texture
-	LPSTR N			= LPSTR(Name);
+	char* N			= (char*) Name;
 	map_TextureIt I = m_textures.find	(N);
 	if (I!=m_textures.end())	return	I->second;
 	else
@@ -493,7 +493,7 @@ void	CResourceManager::_DeleteTexture		(const CTexture* T)
 	// DBG_VerifyTextures	();
 
 	if (0==(T->dwFlags&xr_resource_flagged::RF_REGISTERED))	return;
-	LPSTR N					= LPSTR		(*T->cName);
+	char* N					= (char*) (*T->cName);
 	map_Texture::iterator I	= m_textures.find	(N);
 	if (I!=m_textures.end())	{
 		m_textures.erase(I);
@@ -523,7 +523,7 @@ CMatrix*	CResourceManager::_CreateMatrix	(LPCSTR Name)
 	R_ASSERT(Name && Name[0]);
 	if (0==stricmp(Name,"$null"))	return NULL;
 
-	LPSTR N = LPSTR(Name);
+	char* N = (char*) Name;
 	map_Matrix::iterator I = m_matrices.find	(N);
 	if (I!=m_matrices.end())	return I->second;
 	else
@@ -538,7 +538,7 @@ CMatrix*	CResourceManager::_CreateMatrix	(LPCSTR Name)
 void	CResourceManager::_DeleteMatrix		(const CMatrix* M)
 {
 	if (0==(M->dwFlags&xr_resource_flagged::RF_REGISTERED))	return;
-	LPSTR N					= LPSTR		(*M->cName);
+	char* N					= (char*) (*M->cName);
 	map_Matrix::iterator I	= m_matrices.find	(N);
 	if (I!=m_matrices.end())	{
 		m_matrices.erase(I);
@@ -557,7 +557,7 @@ CConstant*	CResourceManager::_CreateConstant	(LPCSTR Name)
 	R_ASSERT(Name && Name[0]);
 	if (0==stricmp(Name,"$null"))	return NULL;
 
-	LPSTR N = LPSTR(Name);
+	char* N = (char*) Name;
 	map_Constant::iterator I	= m_constants.find	(N);
 	if (I!=m_constants.end())	return I->second;
 	else
@@ -572,7 +572,7 @@ CConstant*	CResourceManager::_CreateConstant	(LPCSTR Name)
 void	CResourceManager::_DeleteConstant		(const CConstant* C)
 {
 	if (0==(C->dwFlags&xr_resource_flagged::RF_REGISTERED))	return;
-	LPSTR N				= LPSTR				(*C->cName);
+	char* N				= (char*) (*C->cName);
 	map_Constant::iterator I	= m_constants.find	(N);
 	if (I!=m_constants.end())	{
 		m_constants.erase(I);

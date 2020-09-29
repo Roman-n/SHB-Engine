@@ -23,7 +23,7 @@ void msRead			(void)
 {
     DWORD	cbMessage, cMessage, cbRead;
 	BOOL	fResult;
-	LPSTR	lpszBuffer;
+	char* lpszBuffer;
 
     cbMessage = cMessage = cbRead = 0;
     fResult = GetMailslotInfo(hLocalSlot,	// mailslot handle
@@ -36,7 +36,7 @@ void msRead			(void)
     while (cMessage != 0)  // retrieve all messages
 	{ 
 		// Allocate memory for the message.
-		lpszBuffer = (LPSTR) GlobalAlloc(GPTR, cbMessage);
+		lpszBuffer = (char*) GlobalAlloc(GPTR, cbMessage);
 		lpszBuffer[0] = '\0';
 		fResult = ReadFile	(hLocalSlot, lpszBuffer, cbMessage, &cbRead, (LPOVERLAPPED) NULL);
 		if (!fResult) {

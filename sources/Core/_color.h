@@ -3,7 +3,7 @@
 // maps unsigned 8 bits/channel to D3DCOLOR
 ICF u32	color_argb	(u32 a, u32 r, u32 g, u32 b)	{	return ((a&0xff)<<24)|((r&0xff)<<16)|((g&0xff)<<8)|(b&0xff);	}
 ICF u32	color_rgba	(u32 r, u32 g, u32 b, u32 a)	{	return color_argb(a,r,g,b);		}
-ICF	u32	color_argb_f(f32 a, f32 r, f32 g, f32 b)	
+ICF	u32	color_argb_f(float a, float r, float g, float b)
 {
 	int	 _r = clampr(iFloor(r*255.f),0,255);
 	int	 _g = clampr(iFloor(g*255.f),0,255);
@@ -11,7 +11,7 @@ ICF	u32	color_argb_f(f32 a, f32 r, f32 g, f32 b)
 	int	 _a = clampr(iFloor(a*255.f),0,255);
 	return color_argb(_a,_r,_g,_b);
 }
-ICF u32	color_rgba_f(f32 r, f32 g, f32 b, f32 a)	{	return color_argb_f(a,r,g,b);	}
+ICF u32	color_rgba_f(float r, float g, float b, float a)	{	return color_argb_f(a,r,g,b);	}
 ICF u32	color_xrgb	(u32 r, u32 g, u32 b)			{	return color_argb(0xff,r,g,b);	}
 ICF	u32	color_get_R	(u32 rgba)						{	return (((rgba) >> 16) & 0xff);	}
 ICF	u32	color_get_G	(u32 rgba)						{	return (((rgba) >> 8) & 0xff);	}

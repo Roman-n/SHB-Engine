@@ -168,7 +168,7 @@ void	CROS_impl::update	(IRenderable* O)
 		// Trace visibility
 		lights.clear	();
 		float traceR	= radius*.5f;
-		for (s32 id=0; id<s32(track.size()); id++)
+		for (int id=0; id<int(track.size()); id++)
 		{
 			// remove untouched lights
 			xr_vector<CROS_impl::Item>::iterator I	= track.begin()+id;

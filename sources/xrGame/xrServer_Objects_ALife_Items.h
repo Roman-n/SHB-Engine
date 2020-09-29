@@ -41,8 +41,8 @@ public:
 	float							m_fCondition;
 	float							m_fMass;
 	u32								m_dwCost;
-	s32								m_iHealthValue;
-	s32								m_iFoodValue;
+	int								m_iHealthValue;
+	int								m_iFoodValue;
 	float							m_fDeteriorationValue;
 	CSE_ALifeObject					*m_self;
 	u32								m_last_update_time;

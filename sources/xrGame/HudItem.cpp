@@ -107,7 +107,7 @@ void CHudItem::renderable_Render()
 	}
 }
 
-bool CHudItem::Action(s32 cmd, u32 flags) 
+bool CHudItem::Action(int cmd, u32 flags)
 {
 	return false;
 }

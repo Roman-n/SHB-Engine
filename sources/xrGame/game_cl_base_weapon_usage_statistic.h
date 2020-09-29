@@ -88,7 +88,7 @@ struct Player_Statistic
 	u32				m_dwTotalShots_d;
 	//-----------------------------------------------
 	u32				m_dwTotalAliveTime[3];
-	s32				m_dwTotalMoneyRound[3];
+	int				m_dwTotalMoneyRound[3];
 	u32				m_dwNumRespawned[3];
 	u8				m_dwArtefacts[3];
 	
@@ -155,7 +155,7 @@ struct WeaponUsageStatistic {
 	PLAYERS_STATS	aPlayersStatistic;
 	//-----------------------------------------------
 	u32				m_dwTotalPlayersAliveTime[3];
-	s32				m_dwTotalPlayersMoneyRound[3];
+	int				m_dwTotalPlayersMoneyRound[3];
 	u32				m_dwTotalNumRespawns[3];
 	//-----------------------------------------------
 	u32				m_dwLastUpdateTime;
@@ -191,7 +191,7 @@ struct WeaponUsageStatistic {
 
 	void				OnPlayerKilled				(game_PlayerState* ps);
 	void				OnPlayerSpawned				(game_PlayerState* ps);
-	void				OnPlayerAddMoney			(game_PlayerState* ps, s32 MoneyAmount);
+	void				OnPlayerAddMoney			(game_PlayerState* ps, int MoneyAmount);
 	void				OnPlayerBringArtefact		(game_PlayerState* ps);
 	void				OnPlayerKillPlayer			(game_PlayerState* ps, KILL_TYPE KillType, SPECIAL_KILL_TYPE SpecialKillType);
 	void				OnExplosionKill				(game_PlayerState* ps, const SHit& hit);

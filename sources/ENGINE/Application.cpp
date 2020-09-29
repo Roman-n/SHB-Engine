@@ -32,7 +32,7 @@ CORE_API	u32		build_id;
 
 #define NO_MULTI_INSTANCES
 
-static LPSTR month_id[12] = {
+static char* month_id[12] = {
 	"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"
 };
 
@@ -663,8 +663,8 @@ void CApplication::OnEvent(EVENT E, u64 P1, u64 P2)
 	}
 	else if(E==eStart) 
 	{
-		LPSTR		op_server		= LPSTR	(P1);
-		LPSTR		op_client		= LPSTR	(P2);
+		char* op_server		= (char*) P1;
+		char* op_client		= (char*) P2;
 		R_ASSERT	(0==g_pGameLevel);
 		R_ASSERT	(0!=g_pGamePersistent);
 

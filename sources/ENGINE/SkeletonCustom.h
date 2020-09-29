@@ -255,7 +255,7 @@ protected:
 
 	BOOL						Update_Visibility;
 	u32							UCalc_Time;
-	s32							UCalc_Visibox;
+	int							UCalc_Visibox;
 
 	Flags64						visimask;
 

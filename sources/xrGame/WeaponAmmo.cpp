@@ -133,14 +133,13 @@ void CWeaponAmmo::OnH_B_Independent(bool just_before_destroy)
 	inherited::OnH_B_Independent(just_before_destroy);
 }
 
-
 bool CWeaponAmmo::Useful() const
 {
 	// Если IItem еще не полностью использованый, вернуть true
 	return !!m_boxCurr;
 }
 /*
-s32 CWeaponAmmo::Sort(PIItem pIItem) 
+int CWeaponAmmo::Sort(PIItem pIItem)
 {
 	// Если нужно разместить IItem после this - вернуть 1, если
 	// перед - -1. Если пофиг то 0.

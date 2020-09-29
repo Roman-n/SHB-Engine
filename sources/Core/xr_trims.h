@@ -4,18 +4,18 @@
 struct xr_token;
 
 CORE_API int		    	_GetItemCount			( LPCSTR , char separator=',');
-CORE_API LPSTR	    	_GetItem				( LPCSTR, int, LPSTR, char separator=',', LPCSTR ="", bool trim=true );
-CORE_API LPSTR	    	_GetItems				( LPCSTR, int, int, LPSTR, char separator=',');
+CORE_API char* _GetItem				( LPCSTR, int, char*, char separator=',', LPCSTR ="", bool trim=true );
+CORE_API char* _GetItems				( LPCSTR, int, int, char*, char separator=',');
 CORE_API LPCSTR	    	_SetPos					( LPCSTR src, u32 pos, char separator=',' );
-CORE_API LPCSTR	    	_CopyVal				( LPCSTR src, LPSTR dst, char separator=',' );
-CORE_API LPSTR	    	_Trim					( LPSTR str );
-CORE_API LPSTR	    	_TrimLeft				( LPSTR str );
-CORE_API LPSTR	    	_TrimRight				( LPSTR str );
-CORE_API LPSTR	    	_ChangeSymbol			( LPSTR name, char src, char dest );
+CORE_API LPCSTR	    	_CopyVal				( LPCSTR src, char* dst, char separator=',' );
+CORE_API char* _Trim					(char* str );
+CORE_API char* _TrimLeft				(char* str );
+CORE_API char* _TrimRight				(char* str );
+CORE_API char* _ChangeSymbol			(char* name, char src, char dest );
 CORE_API u32		    	_ParseItem				(const char* src, xr_token* token_list);
 CORE_API u32		    	_ParseItem				(const char* src, int ind, xr_token* token_list);
-CORE_API LPSTR 	    	_ReplaceItem 			( LPCSTR src, int index, LPCSTR new_item, LPSTR dst, char separator );
-CORE_API LPSTR 	    	_ReplaceItems 			( LPCSTR src, int idx_start, int idx_end, LPCSTR new_items, LPSTR dst, char separator );
+CORE_API char* _ReplaceItem 			( LPCSTR src, int index, LPCSTR new_item, char* dst, char separator );
+CORE_API char* _ReplaceItems 			( LPCSTR src, int idx_start, int idx_end, LPCSTR new_items, char* dst, char separator );
 CORE_API void 	    	_SequenceToList			( LPSTRVec& lst, LPCSTR in, char separator=',' );
 CORE_API void 			_SequenceToList			( RStringVec& lst, LPCSTR in, char separator=',' );
 CORE_API void 			_SequenceToList			( SStringVec& lst, LPCSTR in, char separator=',' );

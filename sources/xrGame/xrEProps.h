@@ -80,7 +80,7 @@ public:
 	virtual ChooseValue*		__stdcall	CreateChoose	    (PropItemVec& items, shared_str key, shared_str* val, u32 mode, LPCSTR path=0, void* fill_param=0, u32 sub_item_count=1, u32 choose_flags=cfAllowNone)=0;
 	virtual S8Value* 			__stdcall	CreateS8		    (PropItemVec& items, shared_str key, s8* val, s8 mn=0, s8 mx=100, s8 inc=1)=0;
 	virtual S16Value* 			__stdcall	CreateS16		    (PropItemVec& items, shared_str key, s16* val, s16 mn=0, s16 mx=100, s16 inc=1)=0;
-	virtual S32Value* 	 		__stdcall	CreateS32		    (PropItemVec& items, shared_str key, s32* val, s32 mn=0, s32 mx=100, s32 inc=1)=0;
+	virtual S32Value* 	 		__stdcall	CreateS32		    (PropItemVec& items, shared_str key, int* val, int mn=0, int mx=100, int inc=1)=0;
 	virtual U8Value* 			__stdcall	CreateU8		    (PropItemVec& items, shared_str key, u8* val, u8 mn=0, u8 mx=100, u8 inc=1)=0;
 	virtual U16Value* 			__stdcall	CreateU16		    (PropItemVec& items, shared_str key, u16* val, u16 mn=0, u16 mx=100, u16 inc=1)=0;
 	virtual U32Value* 	  		__stdcall	CreateU32		    (PropItemVec& items, shared_str key, u32* val, u32 mn=0, u32 mx=100, u32 inc=1)=0;
@@ -112,11 +112,11 @@ public:
 	virtual RTextValue* 		__stdcall	CreateNameCB		(PropItemVec& items, shared_str key, shared_str* val, TOnDrawTextEvent=0, RTextValue::TOnBeforeEditEvent=0, RTextValue::TOnAfterEditEvent=0)=0;
 
 	// obsolette    
-	virtual CTextValue* 		__stdcall	CreateCText			(PropItemVec& items, shared_str key, LPSTR val, u32 sz)=0;
-	virtual CListValue* 	 	__stdcall	CreateCList		    (PropItemVec& items, shared_str key, LPSTR val, u32 sz, xr_string* lst, u32 cnt)=0;
-	virtual CTextValue* 		__stdcall	CreateCName		    (PropItemVec& items, shared_str key, LPSTR val, u32 sz, ListItem* owner)=0;
+	virtual CTextValue* 		__stdcall	CreateCText			(PropItemVec& items, shared_str key, char* val, u32 sz)=0;
+	virtual CListValue* 	 	__stdcall	CreateCList		    (PropItemVec& items, shared_str key, char* val, u32 sz, xr_string* lst, u32 cnt)=0;
+	virtual CTextValue* 		__stdcall	CreateCName		    (PropItemVec& items, shared_str key, char* val, u32 sz, ListItem* owner)=0;
 	virtual TokenValueSH*   	__stdcall	CreateTokenSH	    (PropItemVec& items, shared_str key, u32* val, const TokenValueSH::Item* lst, u32 cnt)=0;
-	virtual CTextValue* 		__stdcall	CreateTexture		(PropItemVec& items, shared_str key, LPSTR val, u32 sz)=0;
+	virtual CTextValue* 		__stdcall	CreateTexture		(PropItemVec& items, shared_str key, char* val, u32 sz)=0;
 };
 //---------------------------------------------------------------------------
 extern IPropHelper &PHelper();

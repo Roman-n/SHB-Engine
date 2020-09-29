@@ -225,7 +225,7 @@ public:
 	IC u16				GetMaterialIdx	(int ID)		{GameMtlIt it=GetMaterialItByID(ID);VERIFY(materials.end() != it); return (u16)(it-materials.begin());}
 	IC u16				GetMaterialIdx	(const char* name)	{GameMtlIt it=GetMaterialIt(name);VERIFY(materials.end() != it); return (u16)(it-materials.begin());}
 	IC SGameMtl*		GetMaterialByIdx(u16 idx)		{VERIFY(idx<materials.size()); return materials[idx];}
-	IC SGameMtl*		GetMaterialByID (s32 id)		{return GetMaterialByIdx(GetMaterialIdx(id));}
+	IC SGameMtl*		GetMaterialByID (int id)		{return GetMaterialByIdx(GetMaterialIdx(id));}
 
 	IC GameMtlIt		FirstMaterial	(){return materials.begin();}
 	IC GameMtlIt		LastMaterial	(){return materials.end();}

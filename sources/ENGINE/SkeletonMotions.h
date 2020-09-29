@@ -11,10 +11,10 @@ typedef void	( * PlayCallback)		(CBlend*		P);
 
 const	u32		MAX_PARTS			=	4;
 const	u32		MAX_CHANNELS		=	4;
-const	f32		SAMPLE_FPS			=	30.f;
-const	f32		SAMPLE_SPF			=	(1.f/SAMPLE_FPS);
-const	f32		KEY_Quant			=	32767.f;
-const	f32		KEY_QuantI			=	1.f/KEY_Quant;
+const	float		SAMPLE_FPS			=	30.0f;
+const	float		SAMPLE_SPF			=	(1.0f/SAMPLE_FPS);
+const	float		KEY_Quant			=	32767.0f;
+const	float		KEY_QuantI			=	1.0f/KEY_Quant;
 
 //*** Key frame definition ************************************************************************
 enum{
@@ -99,7 +99,7 @@ public:
 	xr_vector<motion_marks>	marks;
 
 	IC float				Dequantize			(u16 V)		{	return  float(V)/655.35f; }
-	IC u16					Quantize			(float V)	{	s32		t = iFloor(V*655.35f); clamp(t,0,65535); return u16(t); }
+	IC u16					Quantize			(float V)	{ int		t = iFloor(V*655.35f); clamp(t,0,65535); return u16(t); }
 
 	void					Load				(IReader* MP, u32 fl, u16 vers);
 	u32						mem_usage			(){ return sizeof(*this);}

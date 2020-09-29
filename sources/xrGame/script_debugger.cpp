@@ -465,7 +465,7 @@ bool CScriptDebugger::TranslateIdeMessage (CMailSlotMsg* msg)
 	}
 }
 
-bool CScriptDebugger::HasBreakPoint(LPCSTR fileName, s32 lineNum)
+bool CScriptDebugger::HasBreakPoint(LPCSTR fileName, int lineNum)
 {
 	string256 sFileName;
 	char drive[_MAX_DRIVE];
@@ -491,17 +491,17 @@ bool CScriptDebugger::HasBreakPoint(LPCSTR fileName, s32 lineNum)
 void CScriptDebugger::FillBreakPointsIn(CMailSlotMsg* msg)
 {
 	m_breakPoints.clear();
-	s32 nCount = 0;
+	int nCount = 0;
 	msg->r_int(nCount);
-	for(s32 i=0; i<nCount; ++i){
+	for(int i=0; i<nCount; ++i){
 		SBreakPoint bp;
 		string256	fn;
 		msg->r_string	(fn);
 		bp.fileName	=	fn;
-		s32 bpCount =	0;
+		int bpCount =	0;
 		msg->r_int(bpCount);
 
-		for(s32 j=0; j<bpCount; ++j)	{
+		for(int j=0; j<bpCount; ++j)	{
 			msg->r_int(bp.nLine);
 			m_breakPoints.push_back(bp);
 		}

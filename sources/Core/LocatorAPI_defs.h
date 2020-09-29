@@ -18,19 +18,19 @@ public:
     	flNeedRescan= (1<<2)
     };
 public:
-	LPSTR		m_Path;
-	LPSTR		m_Root;
-	LPSTR		m_Add;
-	LPSTR		m_DefExt;
-	LPSTR		m_FilterCaption;
+	char* m_Path;
+	char* m_Root;
+	char* m_Add;
+	char* m_DefExt;
+	char* m_FilterCaption;
     Flags32		m_Flags;
 public:
-				FS_Path		(LPCSTR _Root, LPCSTR _Add, LPCSTR _DefExt=0, LPCSTR _FilterString=0, u32 flags=0);
+				FS_Path		(const char* _Root, const char* _Add, const char* _DefExt=0, const char* _FilterString=0, u32 flags=0);
 				~FS_Path	();
-	LPCSTR		_update		(string_path& dest, LPCSTR src) const;
-//.	void		_update		(xr_string& dest, LPCSTR src) const;
-	void		_set		(LPSTR add);
-	void		_set_root	(LPSTR root);
+				const char* _update		(string_path& dest, const char* src) const;
+//.	void		_update		(xr_string& dest, const char* src) const;
+	void		_set		(char* add);
+	void		_set_root	(char* root);
 
     void __stdcall rescan_path_cb	();
 };
@@ -58,4 +58,4 @@ public:
 };
 DEFINE_SET		(FS_File,FS_FileSet,FS_FileSetIt);
 
-extern bool	CORE_API PatternMatch(LPCSTR s, LPCSTR mask);
+extern bool	CORE_API PatternMatch(const char* s, const char* mask);

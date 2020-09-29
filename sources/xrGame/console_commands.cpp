@@ -97,7 +97,7 @@ extern	BOOL	g_bDrawBulletHit;
 		float	debug_on_frame_gather_stats_frequency	= 0.f;
 #endif
 #ifdef DEBUG 
-extern LPSTR	dbg_stalker_death_anim;
+extern char* dbg_stalker_death_anim;
 extern BOOL		b_death_anim_velocity;
 #endif
 int g_AI_inactive_time = 0;
@@ -356,7 +356,7 @@ public:
 			  Console->Hide			();
 			  string_path			fn;
 			  u32		loops	=	0;
-			  LPSTR		comma	=	strchr(const_cast<LPSTR>(args),',');
+			  char* comma	=	strchr(const_cast<char*>(args),',');
 			  if (comma)	{
 				  loops			=	atoi	(comma+1);
 				  *comma		=	0;	//. :)

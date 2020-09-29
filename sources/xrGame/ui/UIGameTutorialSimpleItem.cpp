@@ -82,7 +82,6 @@ void CUISequenceSimpleItem::Load(CUIXml* xml, int idx)
 	m_flags.set						(etiCanBeStopped,	(m_continue_dik_guard==-1));
 	m_flags.set						(etiGrabInput,		1==xml->ReadInt("grab_input",0,1));
 
-
 	//ui-components
 	m_UIWindow						= xr_new<CUIWindow>();
 	m_UIWindow->SetAutoDelete		(false);

@@ -1174,8 +1174,8 @@ void CDrawUtilities::OutText(const Fvector& pos, LPCSTR text, u32 color, u32 sha
 		p.x = (float)iFloor(_x2real(p.x)); p.y = (float)iFloor(_y2real(-p.y));
 
 		m_Font->SetColor(shadow_color);
-		m_Font->Out(p.x,p.y,(LPSTR)text);
+		m_Font->Out(p.x,p.y,(char*)text);
 		m_Font->SetColor(color);
-		m_Font->Out(p.x-1,p.y-1,(LPSTR)text);
+		m_Font->Out(p.x-1,p.y-1,(char*)text);
 	}
 }

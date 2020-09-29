@@ -11,7 +11,7 @@ enum EPropType{
 	PROP_SHORTCUT,
 	PROP_BUTTON,
     PROP_CHOOSE,
-	PROP_NUMERIC,	// {u8,u16,u32,s8,s16,s32,f32}
+	PROP_NUMERIC,	// {u8,u16,u32,s8,s16,int,float}
 	PROP_BOOLEAN,
 	PROP_FLAG,
     PROP_VECTOR, 
@@ -353,7 +353,7 @@ public:
 class CTextValue: public PropValue{
 	xr_string			init_value;
 public:
-	LPSTR				value;
+    char* value;
 public:
 	typedef fastdelegate::FastDelegate2<PropValue*, xr_string&> 		TOnBeforeEditEvent;
 	typedef fastdelegate::FastDelegate2<PropValue*, xr_string&, bool> 	TOnAfterEditEvent;
@@ -362,7 +362,7 @@ public:
 public:
 	int					lim;
 public:
-						CTextValue		(LPSTR val, int _lim):value(val),init_value(val),lim(_lim)
+						CTextValue		(char* val, int _lim):value(val),init_value(val),lim(_lim)
     {
     	OnBeforeEditEvent 	= 0;
         OnAfterEditEvent	= 0;
@@ -385,7 +385,7 @@ public:
         }
         return 			false;
     }
-    LPSTR				GetValue		(){return value;}
+    char* GetValue		(){return value;}
     virtual void		ResetValue		(){strcpy(value,init_value.c_str());}
 };
 //------------------------------------------------------------------------------
@@ -493,7 +493,7 @@ typedef NumericValue<u16>	U16Value;
 typedef NumericValue<u32>	U32Value;
 typedef NumericValue<s8>	S8Value;
 typedef NumericValue<s16>	S16Value;
-typedef NumericValue<s32>	S32Value;
+typedef NumericValue<int>	S32Value;
 typedef NumericValue<float>	FloatValue;
 class VectorValue: public NumericValue<Fvector>{
 public:
@@ -653,7 +653,7 @@ public:
 	xr_string*		items;
     u32					item_count;
 public:                                   
-						CListValue		(LPSTR val, u32 sz, xr_string* _items, u32 cnt):CTextValue(val,sz),items(_items),item_count(cnt){};
+						CListValue		(char* val, u32 sz, xr_string* _items, u32 cnt):CTextValue(val,sz),items(_items),item_count(cnt){};
 	virtual bool		Equal			(PropValue* val)
     {
         if (items!=((CListValue*)val)->items){

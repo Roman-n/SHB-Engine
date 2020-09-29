@@ -166,7 +166,7 @@ void 			crashthread(void*)
 	Msg("~ crash thread activated");
 	u64			clk = CPU::GetCLK( );
 	CRandom		rndg;
-	rndg.seed(s32(clk));
+	rndg.seed(int(clk));
 	for (;;)
 	{
 		Sleep(1);
@@ -333,7 +333,7 @@ bool CCC_LoadCFG_custom::allow(const char* cmd)
 //-----------------------------------------------------------------------
 class CCC_Start : public IConsoleCommand
 {
-	void	parse(LPSTR dest, LPCSTR args, LPCSTR name)
+	void	parse(char* dest, LPCSTR args, LPCSTR name)
 	{
 		dest[0] = 0;
 		if (strstr(args, name))

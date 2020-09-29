@@ -111,7 +111,7 @@ void CUIActorInfoWnd::FillPointsInfo			()
 				itm->m_text2->SetTextColor			(InventoryUtilities::GetReputationColor(Actor()->Reputation()));
 			}else
 			{
-				s32 _totl = Actor()->StatisticMgr().GetSectionPoints(itm->m_id);
+				int _totl = Actor()->StatisticMgr().GetSectionPoints(itm->m_id);
 				
 				if(_totl==-1)
 				{
@@ -145,7 +145,7 @@ void CUIActorInfoWnd::FillMasterPart(CUIXml* xml, const shared_str& key_name)
 			itm->m_text2->SetTextColor			(InventoryUtilities::GetReputationColor(Actor()->Reputation()));
 		}else
 		{
-			s32 _totl = Actor()->StatisticMgr().GetSectionPoints(key_name);
+			int _totl = Actor()->StatisticMgr().GetSectionPoints(key_name);
 			
 			if(_totl==-1)
 			{

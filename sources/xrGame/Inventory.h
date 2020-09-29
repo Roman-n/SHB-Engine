@@ -63,7 +63,7 @@ public:
 	PIItem					ActiveItem			()const					{return m_iActiveSlot==NO_ACTIVE_SLOT ? NULL :m_slots[m_iActiveSlot].m_pIItem;}
 	PIItem					ItemFromSlot		(u32 slot) const;
 	void					ActivateNextItemInActiveSlot();
-	bool					Action				(s32 cmd, u32 flags);
+	bool					Action				(int cmd, u32 flags);
 	void					Update				();
 	// »щет на по€се аналогичный IItem
 	PIItem					Same				(const PIItem pIItem, bool bSearchRuck) const;
@@ -168,5 +168,5 @@ protected:
 
 	bool				m_drop_last_frame;
 
-	void				SendActionEvent		(s32 cmd, u32 flags);
+	void				SendActionEvent		(int cmd, u32 flags);
 };

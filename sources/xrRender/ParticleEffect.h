@@ -16,7 +16,7 @@ namespace PS
 		int					m_HandleEffect;
 		int					m_HandleActionList;
 
-		s32					m_MemDT;
+		int					m_MemDT;
 
 		Fvector				m_InitialPosition;
 	public:

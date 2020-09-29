@@ -16,9 +16,9 @@ public:
 	}
 };
 
-void fix_texture_thm_name(LPSTR fn)
+void fix_texture_thm_name(char* fn)
 {
-	LPSTR _ext = strext(fn);
+	char* _ext = strext(fn);
 	if(  _ext					&&
 	  (0==stricmp(_ext,".tga")	||
 		0==stricmp(_ext,".thm")	||
@@ -278,7 +278,7 @@ BOOL CTextureDescrMngr::GetDetailTexture(const shared_str& tex_name, const char*
 				//
 				D.T				= xr_strdup				(T);
 				D.cs			= xr_new<cl_dt_scaler>	(s);
-				LPSTR N			= xr_strdup				(*item.first);
+				char* N			= xr_strdup				(*item.first);
 				m_td.insert		(mk_pair(N,D));
 			}
 		}

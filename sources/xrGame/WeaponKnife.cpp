@@ -220,7 +220,6 @@ void CWeaponKnife::switch2_Showing	()
 //	m_bPending				= true;
 }
 
-
 void CWeaponKnife::FireStart()
 {	
 	inherited::FireStart();
@@ -233,13 +232,11 @@ void CWeaponKnife::Fire2Start ()
 	SwitchState(eFire2);
 }
 
-
-bool CWeaponKnife::Action(s32 cmd, u32 flags) 
+bool CWeaponKnife::Action(int cmd, u32 flags)
 {
 	if(inherited::Action(cmd, flags)) return true;
 	switch(cmd) 
 	{
-
 		case kWPN_ZOOM : 
 			if(flags&CMD_START) Fire2Start();
 			else Fire2End();

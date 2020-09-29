@@ -36,7 +36,7 @@ void CRender::level_Load(IReader *fs)
 			chunk->skip_stringZ		();
 			if (0==n[0])			continue;
 			strcpy					(n_sh,n);
-			LPSTR			delim	= strchr(n_sh,'/');
+			char* delim	= strchr(n_sh,'/');
 			*delim					= 0;
 			strcpy					(n_tlist,delim+1);
 			Shaders[i]				= Device.Resources->Create(n_sh,n_tlist);

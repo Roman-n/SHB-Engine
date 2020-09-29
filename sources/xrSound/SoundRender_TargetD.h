@@ -10,7 +10,7 @@ class CSoundRender_TargetD: public CSoundRender_Target
 	typedef CSoundRender_Target	inherited;
 
 	IDirectSoundBuffer*			pBuffer_base;
-	IDirectSoundBuffer*		pBuffer;
+	IDirectSoundBuffer*			pBuffer;
 	IDirectSound3DBuffer*		pControl;
 
 	BOOL						bDX7;
@@ -18,8 +18,8 @@ class CSoundRender_TargetD: public CSoundRender_Target
 	u32							buf_size;		// bytes
 	u32							buf_block;
 
-	s32							cache_hw_volume;
-	s32							cache_hw_freq;
+	int							cache_hw_volume;
+	int							cache_hw_freq;
 	u32							pos_write;		// bytes
 private:
 	void						fill_block				();

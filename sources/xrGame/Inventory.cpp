@@ -528,7 +528,7 @@ PIItem CInventory::ItemFromSlot(u32 slot) const
 	return m_slots[slot].m_pIItem;
 }
 
-void CInventory::SendActionEvent(s32 cmd, u32 flags) 
+void CInventory::SendActionEvent(int cmd, u32 flags)
 {
 	CActor *pActor = smart_cast<CActor*>(m_pOwner);
 	if (!pActor) return;
@@ -542,7 +542,7 @@ void CInventory::SendActionEvent(s32 cmd, u32 flags)
 	pActor->u_EventSend		(P, net_flags(TRUE, TRUE, FALSE, TRUE));
 };
 
-bool CInventory::Action(s32 cmd, u32 flags) 
+bool CInventory::Action(int cmd, u32 flags)
 {
 	CActor *pActor = smart_cast<CActor*>(m_pOwner);
 	

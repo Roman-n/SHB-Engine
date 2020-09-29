@@ -11,7 +11,7 @@ class ENGINE_API CEffectorPP
 protected:
 	float				fLifeTime;
 public:
-						CEffectorPP		(EEffectorPostProcessType type, f32 lifeTime, bool free_on_remove=true);
+						CEffectorPP		(EEffectorPostProcessType type, float lifeTime, bool free_on_remove=true);
 						CEffectorPP		():bFreeOnRemove(true),fLifeTime(0.0f){};
 	virtual				~CEffectorPP	();
 	virtual	BOOL		Process			(SPPInfo &PPInfo);

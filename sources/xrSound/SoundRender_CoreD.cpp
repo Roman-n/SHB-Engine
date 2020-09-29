@@ -165,7 +165,7 @@ void CSoundRender_CoreD::set_master_volume(float f )
 	if		(pBuffer)	
 	{
 		float	_volume		= f;									clamp	(_volume,EPS_S,1.f);
-		s32		hw_volume	= iFloor	(7000.f*logf(_volume)/5.f);	clamp	(hw_volume,DSBVOLUME_MIN,DSBVOLUME_MAX);
+		int		hw_volume	= iFloor	(7000.f*logf(_volume)/5.f);	clamp	(hw_volume,DSBVOLUME_MIN,DSBVOLUME_MAX);
 		pBuffer->SetVolume	(hw_volume);
 	}
 }

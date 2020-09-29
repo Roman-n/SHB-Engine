@@ -98,16 +98,16 @@ void	CRenderTarget::u_compute_texgen_jitter	(Fmatrix&		m_Texgen_J)
 }
 
 u8		fpack			(float v)				{
-	s32	_v	= iFloor	(((v+1)*.5f)*255.f + .5f);
+	int	_v	= iFloor	(((v+1)*.5f)*255.f + .5f);
 	clamp	(_v,0,255);
 	return	u8(_v);
 }
 u8		fpackZ			(float v)				{
-	s32	_v	= iFloor	(_abs(v)*255.f + .5f);
+	int	_v	= iFloor	(_abs(v)*255.f + .5f);
 	clamp	(_v,0,255);
 	return	u8(_v);
 }
-Fvector	vunpack			(s32 x, s32 y, s32 z)	{
+Fvector	vunpack			(int x, int y, int z)	{
 	Fvector	pck;
 	pck.x	= (float(x)/255.f - .5f)*2.f;
 	pck.y	= (float(y)/255.f - .5f)*2.f;
@@ -400,8 +400,8 @@ CRenderTarget::CRenderTarget		()
 						default:
 							fd	= fs = 0;
 						}
-						s32		_d	=	clampr	(iFloor	(fd*255.5f),	0,255);
-						s32		_s	=	clampr	(iFloor	(fs*255.5f),	0,255);
+						int		_d	=	clampr	(iFloor	(fd*255.5f),	0,255);
+						int		_s	=	clampr	(iFloor	(fs*255.5f),	0,255);
 						if ((y==(TEX_material_LdotH-1)) && (x==(TEX_material_LdotN-1)))	{ _d = 255; _s=255;	}
 						*p			=	u16		(_s*256 + _d);
 					}

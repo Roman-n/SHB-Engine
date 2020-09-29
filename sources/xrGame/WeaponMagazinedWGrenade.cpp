@@ -234,7 +234,7 @@ void  CWeaponMagazinedWGrenade::PerformSwitchGL()
 	}
 }
 
-bool CWeaponMagazinedWGrenade::Action(s32 cmd, u32 flags) 
+bool CWeaponMagazinedWGrenade::Action(int cmd, u32 flags)
 {
 	if(inherited::Action(cmd, flags)) return true;
 	

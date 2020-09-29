@@ -11,9 +11,9 @@
 // #include "std_classes.h"
 // #include "xr_avi.h"
 
-void fix_texture_name(LPSTR fn)
+void fix_texture_name(char* fn)
 {
-	LPSTR _ext = strext(fn);
+	char* _ext = strext(fn);
 	if(  _ext					&&
 	  (0==stricmp(_ext,".tga")	||
 		0==stricmp(_ext,".dds")	||

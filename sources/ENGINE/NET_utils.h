@@ -57,7 +57,7 @@ public:
 	IC void w_u64		( u64 a			)	{ w(&a,8);					}			// qword (8b)
 	IC void w_s64		( s64 a			)	{ w(&a,8);					}			// qword (8b)
 	IC void w_u32		( u32 a			)	{ w(&a,4);					}			// dword (4b)
-	IC void w_s32		( s32 a			)	{ w(&a,4);					}			// dword (4b)
+	IC void w_s32		(int a			)	{ w(&a,4);					}			// dword (4b)
 	IC void w_u24		( u32 a			)	{ w(&a,3);					}			// dword (3b)
 	IC void w_u16		( u16 a			)	{ w(&a,2);					}			// word (2b)
 	IC void w_s16		( s16 a			)	{ w(&a,2);					}			// word (2b)
@@ -193,7 +193,7 @@ public:
 	IC void 	r_u64			(u64& A)		{ r(&A,8);						} // qword (8b)
 	IC void 	r_s64			(s64& A)		{ r(&A,8);						} // qword (8b)
 	IC void 	r_u32			(u32& A)		{ r(&A,4);						} // dword (4b)
-	IC void		r_s32			(s32& A)		{ r(&A,4);						} // dword (4b)
+	IC void		r_s32			(int& A)		{ r(&A,4);						} // dword (4b)
 	IC void		r_u24			(u32& A)		{ A=0; r(&A,3);					} // dword (3b)
 	IC void		r_u16			(u16& A)		{ r(&A,2);						} // word (2b)
 	IC void		r_s16			(s16& A)		{ r(&A,2);						} // word (2b)
@@ -208,7 +208,7 @@ public:
 	IC u64 		r_u64			()		{ u64 	A; r(&A,8);					return(A);		} // qword (8b)
 	IC s64 		r_s64			()		{ s64 	A; r(&A,8);					return(A);		} // qword (8b)
 	IC u32 		r_u32			()		{ u32 	A; r(&A,4);					return(A);		} // dword (4b)
-	IC s32		r_s32			()		{ s32	A; r(&A,4);					return(A);		} // dword (4b)
+	IC int		r_s32			()		{ int	A; r(&A,4);					return(A);		} // dword (4b)
 	IC u32		r_u24			()		{ u32	A=0; r(&A,3);				return(A);		} // dword (3b)
 	IC u16		r_u16			()		{ u16	A; r(&A,2);					return(A);		} // word (2b)
 	IC s16		r_s16			()		{ s16	A; r(&A,2);					return(A);		} // word (2b)
@@ -241,7 +241,7 @@ public:
 		A.mul			(s);
 	}
 
-	IC void		r_stringZ		( LPSTR S )
+	IC void		r_stringZ		(char* S )
 	{
 		LPCSTR	data	= LPCSTR(&B.data[r_pos]);
 		size_t	len		= xr_strlen(data);

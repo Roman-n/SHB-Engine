@@ -8,7 +8,7 @@
 
 namespace memory_monitor {
 	CORE_API void flush_each_time	(const bool &value);
-	CORE_API void monitor_alloc	(const void *pointer, const u32 &size, LPCSTR description);
+	CORE_API void monitor_alloc	(const void *pointer, const u32 &size, const char* description);
 	CORE_API void	monitor_free	(const void *pointer);
 }
 

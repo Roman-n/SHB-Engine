@@ -216,7 +216,7 @@ void CGrenade::UpdateCL()
 }
 
 
-bool CGrenade::Action(s32 cmd, u32 flags) 
+bool CGrenade::Action(int cmd, u32 flags)
 {
 	if(inherited::Action(cmd, flags)) return true;
 
