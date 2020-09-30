@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #ifdef BREAK_AT_STRCMP
-int								xr_strcmp				(LPCSTR S1, LPCSTR S2 )
+int								xr_strcmp				(const char* S1, const char* S2 )
 {
 	int res				= (int)strcmp(S1,S2);
 	return				res;

@@ -39,10 +39,10 @@ extern CORE_API	void	_initialize_cpu_thread	();
 
 // threading
 typedef				void	thread_t				( void * );
-extern CORE_API	void	thread_name				(LPCSTR name);
+extern CORE_API	void	thread_name				(const char* name);
 extern CORE_API	void	thread_spawn			(
 	thread_t*	entry,
-	LPCSTR	name,
+	const char* name,
 	unsigned	stack,
 	void*		arglist 
 	);

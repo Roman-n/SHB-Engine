@@ -178,7 +178,7 @@ void	CInifile::Load(IReader* F, const char* path)
 			Current->Name		= 0;
 			// start new section
 			R_ASSERT3(strchr(str,']'),"Bad ini section found: ",str);
-			LPCSTR inherited_names = strstr(str,"]:");
+			const char* inherited_names = strstr(str,"]:");
 			if (0!=inherited_names){
 				VERIFY2			(bReadOnly,"Allow for readonly mode only.");
 				inherited_names	+= 2;

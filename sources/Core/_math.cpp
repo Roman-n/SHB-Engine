@@ -233,11 +233,11 @@ void _initialize_cpu_thread	()
 #pragma pack(push,8)
 struct THREAD_NAME	{
 	DWORD	dwType;
-	LPCSTR	szName;
+	const char* szName;
 	DWORD	dwThreadID;
 	DWORD	dwFlags;
 };
-void	thread_name	(LPCSTR name)
+void	thread_name	(const char* name)
 {
 	THREAD_NAME		tn;
 	tn.dwType		= 0x1000;
@@ -273,7 +273,7 @@ void	__cdecl			thread_entry	(void*	_params )	{
 	entry				(arglist);
 }
 
-void	thread_spawn	(thread_t*	entry, LPCSTR	name, unsigned	stack, void* arglist )
+void	thread_spawn	(thread_t*	entry, const char* name, unsigned	stack, void* arglist )
 {
 	THREAD_STARTUP*		startup	= xr_new<THREAD_STARTUP>	();
 	startup->entry		= entry;

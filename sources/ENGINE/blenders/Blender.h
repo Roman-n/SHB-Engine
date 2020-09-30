@@ -25,7 +25,7 @@ public:
 		version		= 0;
 	}
 
-	void						Setup	(LPCSTR N);
+	void						Setup	(const char* N);
 };
 
 class ENGINE_API IBlender	: public CPropertyBase
@@ -46,8 +46,8 @@ public:
 	static			void		CreatePalette	(xr_vector<IBlender*> & palette);
 	
 	CBlender_DESC&				getDescription	()	{return description;}
-	virtual 		LPCSTR		getName			()	{return description.cName;}
-	virtual			LPCSTR		getComment		()	= 0;
+	virtual 		const char* getName			()	{return description.cName;}
+	virtual			const char* getComment		()	= 0;
 
 	virtual			BOOL		canBeDetailed	()	{ return FALSE; }
 	virtual			BOOL		canBeLMAPped	()	= 0;

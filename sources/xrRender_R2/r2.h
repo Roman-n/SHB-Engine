@@ -267,7 +267,7 @@ public:
 	// Main
 	virtual void					Calculate					();
 	virtual void					Render						();
-	virtual void					Screenshot					(ScreenshotMode mode=SM_NORMAL, LPCSTR name = 0);
+	virtual void					Screenshot					(ScreenshotMode mode=SM_NORMAL, const char* name = 0);
 	virtual void					OnFrame					();
 
 	// Render mode

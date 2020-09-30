@@ -32,7 +32,7 @@ namespace Script
 	void				vfExportToLua					(CLuaVirtualMachine* tpLuaVM);
 	void				vfExportActionManagement		(CLuaVirtualMachine* tpLuaVM);
 	void				vfExportMotivationManagement	(CLuaVirtualMachine* tpLuaVM);
-	bool				bfLoadFile						(CLuaVirtualMachine* tpLuaVM, LPCSTR caScriptName, bool bCall = true);
+	bool				bfLoadFile						(CLuaVirtualMachine* tpLuaVM, const char* caScriptName, bool bCall = true);
 	void				LuaHookCall						(CLuaVirtualMachine* tpLuaVM, lua_Debug* tpLuaDebug);
 	int					LuaPanic						(CLuaVirtualMachine* tpLuaVM);
 #endif

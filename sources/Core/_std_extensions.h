@@ -135,10 +135,10 @@ IC s64		_abs	(s64 x)			{ return (x>=0)? x : s64(-x); }
 IC s64		_min	(s64 x, s64 y)	{ return y + ((x - y) & ((x - y) >> (sizeof(s64) * 8 - 1))); };
 IC s64		_max	(s64 x, s64 y)	{ return x - ((x - y) & ((x - y) >> (sizeof(s64) * 8 - 1))); };
 
-IC u32							xr_strlen				(LPCSTR S );
+IC u32							xr_strlen				(const char* S );
 
 // string management
-IC LPCSTR						strconcat				( int dest_sz, char* dest, LPCSTR S1, LPCSTR S2)
+IC const char* strconcat				( int dest_sz, char* dest, const char* S1, const char* S2)
 {
 	u32 l1 = xr_strlen(S1);
 	strcpy_s(dest,dest_sz,S1);
@@ -148,7 +148,7 @@ IC LPCSTR						strconcat				( int dest_sz, char* dest, LPCSTR S1, LPCSTR S2)
 }
 
 // dest = S1+S2+S3
-IC LPCSTR						strconcat				( int dest_sz, char* dest, LPCSTR S1, LPCSTR S2, LPCSTR S3)
+IC const char* strconcat				( int dest_sz, char* dest, const char* S1, const char* S2, const char* S3)
 {
 	u32 l1 = xr_strlen(S1);
 	u32 l2 = xr_strlen(S2);
@@ -161,7 +161,7 @@ IC LPCSTR						strconcat				( int dest_sz, char* dest, LPCSTR S1, LPCSTR S2, LPC
 }
 
 // dest = S1+S2+S3+S4
-IC LPCSTR						strconcat				( int dest_sz, char* dest, LPCSTR S1, LPCSTR S2, LPCSTR S3, LPCSTR S4)
+IC const char* strconcat				( int dest_sz, char* dest, const char* S1, const char* S2, const char* S3, const char* S4)
 {
 	u32 l1 = xr_strlen(S1);
 	u32 l2 = xr_strlen(S2);
@@ -176,7 +176,7 @@ IC LPCSTR						strconcat				( int dest_sz, char* dest, LPCSTR S1, LPCSTR S2, LPC
 }
 
 // dest = S1+S2+S3+S4+S5
-IC LPCSTR						strconcat				(int dest_sz, char* dest, LPCSTR S1, LPCSTR S2, LPCSTR S3, LPCSTR S4, LPCSTR S5)
+IC const char* strconcat				(int dest_sz, char* dest, const char* S1, const char* S2, const char* S3, const char* S4, const char* S5)
 {
 	u32 l1 = xr_strlen(S1);
 	u32 l2 = xr_strlen(S2);
@@ -193,7 +193,7 @@ IC LPCSTR						strconcat				(int dest_sz, char* dest, LPCSTR S1, LPCSTR S2, LPCS
 }
 
 // dest = S1+S2+S3+S4+S5+S6
-IC LPCSTR						strconcat				( int dest_sz, char* dest, LPCSTR S1, LPCSTR S2, LPCSTR S3, LPCSTR S4, LPCSTR S5, LPCSTR S6)
+IC const char* strconcat				( int dest_sz, char* dest, const char* S1, const char* S2, const char* S3, const char* S4, const char* S5, const char* S6)
 {
 	u32 l1 = xr_strlen(S1);
 	u32 l2 = xr_strlen(S2);
@@ -212,19 +212,19 @@ IC LPCSTR						strconcat				( int dest_sz, char* dest, LPCSTR S1, LPCSTR S2, LPC
 }
 
 // return pointer to ".ext"
-IC char*						strext					(LPCSTR S )
+IC char*						strext					(const char* S )
 {	return (char*) strrchr(S,'.');	}
 
-IC u32							xr_strlen				(LPCSTR S )
+IC u32							xr_strlen				(const char* S )
 {	return (u32)strlen(S);			}
 
 IC char*						xr_strlwr				(char* S)
 {	return strlwr(S);				}
 
 #ifdef BREAK_AT_STRCMP
-CORE_API	int					xr_strcmp				(LPCSTR S1, LPCSTR S2 );
+CORE_API	int					xr_strcmp				(const char* S1, const char* S2 );
 #else
-IC int							xr_strcmp				(LPCSTR S1, LPCSTR S2 )
+IC int							xr_strcmp				(const char* S1, const char* S2 )
 {	return (int)strcmp(S1,S2);  }
 #endif
 

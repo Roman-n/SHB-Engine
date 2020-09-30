@@ -157,10 +157,10 @@ template	<typename K, class V, class P=std::less<K>, typename allocator = xalloc
 template	<class _Ty1, class _Ty2> inline	std::pair<_Ty1, _Ty2>		mk_pair		(_Ty1 _Val1, _Ty2 _Val2)	{	return (std::pair<_Ty1, _Ty2>(_Val1, _Val2));	}
 
 struct pred_str		: public std::binary_function<char*, char*, bool>	{	
-	IC bool operator()(LPCSTR x, LPCSTR y) const				{	return xr_strcmp(x,y)<0;	}
+	IC bool operator()(const char* x, const char* y) const				{	return xr_strcmp(x,y)<0;	}
 };
 struct pred_stri	: public std::binary_function<char*, char*, bool>	{	
-	IC bool operator()(LPCSTR x, LPCSTR y) const				{	return stricmp(x,y)<0;	}
+	IC bool operator()(const char* x, LPCSTR y) const				{	return stricmp(x,y)<0;	}
 };
 
 // STL extensions
@@ -195,7 +195,7 @@ DEFINE_VECTOR(Fvector*,LPFvectorVec,LPFvectorIt);
 DEFINE_VECTOR(Fcolor,FcolorVec,FcolorIt);
 DEFINE_VECTOR(Fcolor*,LPFcolorVec,LPFcolorIt);
 DEFINE_VECTOR(char*,LPSTRVec,LPSTRIt);
-DEFINE_VECTOR(LPCSTR,LPCSTRVec,LPCSTRIt);
+DEFINE_VECTOR(const char*,LPCSTRVec,LPCSTRIt);
 //DEFINE_VECTOR(string64,string64Vec,string64It);
 DEFINE_VECTOR(xr_string,SStringVec,SStringVecIt);
 
