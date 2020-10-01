@@ -87,7 +87,7 @@ public:
 	CLASS_ID						m_tClassID;
 	int								m_script_clsid;
 	shared_str						m_ini_string;
-	CInifile						*m_ini_file;
+	CIniFile*m_ini_file;
 
 	// for ALife control
 	bool							m_bALifeControl;
@@ -137,7 +137,7 @@ public:
 	virtual bool					match_configuration () const {return true;}
 	// end of the virtual inheritance dependant code
 	IC		int						script_clsid	() const					{VERIFY(m_script_clsid >= 0); return (m_script_clsid);}
-			CInifile				&spawn_ini		();
+	CIniFile&spawn_ini		();
 
 // for smart cast
 	virtual CSE_ALifeGroupAbstract		*cast_group_abstract		() {return 0;};

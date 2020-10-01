@@ -18,7 +18,7 @@ protected:
     float				m_Speed;
 
     COMotion*			m_Current;
-	void				LoadMotions		(LPCSTR fname);
+	void				LoadMotions		(const char* fname);
 	void				SetActiveMotion	(COMotion* mot);
 //	COMotion*			FindMotionByName(const char* name);
 public:
@@ -27,10 +27,10 @@ public:
 
 	void				Clear			();
 	void				Load			(const char* name);
-    IC LPCSTR			Name			(){return *m_Name;}
+    IC const char* Name			(){return *m_Name;}
     float&				Speed			(){return m_Speed;}
 
-	COMotion*			Play			(bool bLoop, LPCSTR name=0);
+	COMotion*			Play			(bool bLoop, const char* name=0);
 	void				Pause			(bool val){return m_MParam.Pause(val);}
 	void				Stop			();
 	IC BOOL				IsPlaying		(){return m_MParam.bPlay;}

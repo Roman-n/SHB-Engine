@@ -52,7 +52,7 @@ ref_shader CLensFlareDescriptor::CreateShader(const char* tex_name, const char* 
 	return		R;
 }
 
-void CLensFlareDescriptor::load(CInifile* pIni, const char* sect)
+void CLensFlareDescriptor::load(CIniFile* pIni, const char* sect)
 {
 	section		= sect;
 	m_Flags.set	(flSource,pIni->r_bool(sect,"source" ));
@@ -80,7 +80,7 @@ void CLensFlareDescriptor::load(CInifile* pIni, const char* sect)
 			AddFlare(r,o,p,name,S);
 		}
 	}
-	m_Flags.set	(flGradient,CInifile::IsBOOL(pIni->r_string( sect, "gradient")));
+	m_Flags.set	(flGradient, CIniFile::IsBOOL(pIni->r_string( sect, "gradient")));
 	if (m_Flags.is(flGradient)){
 		const char* S= pIni->r_string 	( sect,"gradient_shader" );
 		const char* T= pIni->r_string	( sect,"gradient_texture" );
@@ -399,7 +399,7 @@ void CLensFlare::Render(BOOL bSun, BOOL bFlares, BOOL bGradient)
 	}
 }
 
-int	CLensFlare::AppendDef(CInifile* pIni, const char* sect)
+int	CLensFlare::AppendDef(CIniFile* pIni, const char* sect)
 {
 	if (!sect||(0==sect[0])) return -1;
     for (LensFlareDescIt it=m_Palette.begin(); it!=m_Palette.end(); it++)

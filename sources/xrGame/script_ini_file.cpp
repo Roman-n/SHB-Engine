@@ -142,7 +142,7 @@ CScriptIniFile* create_ini_file(LPCSTR ini_string)
 {
 	return			(
 		(CScriptIniFile*)
-		xr_new<CInifile>(
+		xr_new<CIniFile>(
 			&IReader(
 				(void*) ini_string,
 				xr_strlen(ini_string)

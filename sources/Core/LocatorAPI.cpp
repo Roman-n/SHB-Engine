@@ -613,11 +613,11 @@ void CLocatorAPI::_initialize	(u32 flags, const char* target_folder, const char*
 			u32 fl				= 0;
 			_GetItem			(temp,0,b_v,_delimiter);	
 			
-			if (CInifile::IsBOOL(b_v)) 
+			if (CIniFile::IsBOOL(b_v))
 				fl				|= FS_Path::flRecurse;
 
 			_GetItem			(temp,1,b_v,_delimiter);	
-			if (CInifile::IsBOOL(b_v)) 
+			if (CIniFile::IsBOOL(b_v))
 				fl				|= FS_Path::flNotif;
 
 			_GetItem			(temp,2,root,_delimiter);

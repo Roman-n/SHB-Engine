@@ -24,12 +24,12 @@ void fix_texture_name(char* fn)
 
 int get_texture_load_lod(const char* fn)
 {
-	CInifile::Sect& sect	= pSettings->r_section("reduce_lod_texture_list");
-	CInifile::SectCIt it_	= sect.Data.begin();
-	CInifile::SectCIt it_e_	= sect.Data.end();
+	CIniFile::Sect& sect	= pSettings->r_section("reduce_lod_texture_list");
+	CIniFile::SectCIt it_	= sect.Data.begin();
+	CIniFile::SectCIt it_e_	= sect.Data.end();
 
-	CInifile::SectCIt it	= it_;
-	CInifile::SectCIt it_e	= it_e_;
+	CIniFile::SectCIt it	= it_;
+	CIniFile::SectCIt it_e	= it_e_;
 
 	for(;it!=it_e;++it)
 	{

@@ -91,7 +91,7 @@ public:
 	virtual bool						use						(CGameObject* who_use)		{return CUsableScriptObject::use(who_use);};
 
 public:
-	CInifile				*m_ini_file;
+	CIniFile*m_ini_file;
 
 	// Utilities
 	static void				u_EventGen			(NET_Packet& P, u32 type, u32 dest	);
@@ -225,7 +225,7 @@ public:
 		return				(m_script_clsid);
 	}
 public:
-	IC		CInifile		*spawn_ini			()
+	IC		CIniFile*spawn_ini			()
 	{
 		return				(m_ini_file);
 	}

@@ -115,22 +115,22 @@ void	CResourceManager::OnDeviceCreate	(IReader* F)
 	// Load detail textures association
 	string256		fname;		
 	FS.update_path	(fname,"$game_textures$","textures.ltx");
-	LPCSTR	Iname	= fname;
+	const char*	Iname	= fname;
 	if (FS.exist(Iname))
 	{
 		xr_delete		(m_description);
-		m_description	= xr_new<CInifile>	(Iname);
-		CInifile&	ini	= *m_description;
+		m_description	= xr_new<CIniFile>	(Iname);
+		CIniFile&	ini	= *m_description;
 		if (ini.section_exist("association"))
 		{
-			CInifile::Sect& 	data = ini.r_section("association");
-			for (CInifile::SectIt I=data.begin(); I!=data.end(); I++)	
+			CIniFile::Sect& 	data = ini.r_section("association");
+			for (CIniFile::SectIt I=data.begin(); I!=data.end(); I++)	
 			{
 				texture_detail			D;
 				string256				T;
 				float					s;
 
-				CInifile::Item& item	= *I;
+				CIniFile::Item& item	= *I;
 				sscanf					(*item.second,"%[^,],%f",T,&s);
 
 				//
@@ -144,7 +144,7 @@ void	CResourceManager::OnDeviceCreate	(IReader* F)
 */
 }
 
-void	CResourceManager::OnDeviceCreate	(LPCSTR shName)
+void	CResourceManager::OnDeviceCreate	(const char* shName)
 {
 	// Check if file is compressed already
 	string32	ID			= "shENGINE";
@@ -170,7 +170,7 @@ void CResourceManager::StoreNecessaryTextures()
 
 	for (;it!=it_e;++it)
 	{
-		LPCSTR texture_name		= it->first;
+		const char* texture_name		= it->first;
 		if(strstr(texture_name,"\\levels\\"))	continue;
 		if(!strchr(texture_name,'\\'))			continue;
 

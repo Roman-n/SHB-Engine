@@ -24,9 +24,9 @@ void IGameObjectPool::prefetch	()
 	string256				section;
 	// prefetch objects
 	strconcat				(sizeof(section),section,"prefetch_objects_",g_pGamePersistent->m_game_params.m_game_type);
-	CInifile::Sect& sect	= pSettings->r_section(section);
-	for (CInifile::SectCIt I=sect.Data.begin(); I!=sect.Data.end(); I++)	{
-		const CInifile::Item& item= *I;
+	CIniFile::Sect& sect	= pSettings->r_section(section);
+	for (CIniFile::SectCIt I=sect.Data.begin(); I!=sect.Data.end(); I++)	{
+		const CIniFile::Item& item= *I;
 		CLASS_ID CLS		= pSettings->r_clsid(item.first.c_str(),"class");
 		p_count				++;
 		CObject* pObject	= (CObject*) NEW_INSTANCE(CLS);
@@ -49,7 +49,7 @@ void IGameObjectPool::clear()
 	m_PrefetchObjects.clear	(); 
 }
 
-CObject* IGameObjectPool::create			( LPCSTR	name	)
+CObject* IGameObjectPool::create			(const char* name	)
 {
 	CLASS_ID CLS		=	pSettings->r_clsid		(name,"class");
 	CObject* O			=	(CObject*) NEW_INSTANCE	(CLS);
@@ -75,9 +75,9 @@ void IGameObjectPool::prefetch	()
 	string256 section;
 	// prefetch objects
 	strconcat				(section,"prefetch_objects_",g_pGamePersistent->m_game_params.m_game_type);
-	CInifile::Sect& sect	= pSettings->r_section(section);
-	for (CInifile::SectIt I=sect.begin(); I!=sect.end(); I++)	{
-		CInifile::Item& item= *I;
+	CIniFile::Sect& sect	= pSettings->r_section(section);
+	for (CIniFile::SectIt I=sect.begin(); I!=sect.end(); I++)	{
+		CIniFile::Item& item= *I;
 		CLASS_ID CLS		= pSettings->r_clsid(item.first.c_str(),"class");
 		int count			= atoi(item.second.c_str());
 		count				+= (count==0)?1:0;
@@ -112,7 +112,7 @@ void IGameObjectPool::clear	( )
 	map_POOL.clear(); 
 }
 
-CObject*	IGameObjectPool::create			( LPCSTR	name	)
+CObject*	IGameObjectPool::create			( const char*	name	)
 {
 	string256			l_name;
 	POOL_IT	it			=	map_POOL.find	(shared_str(strlwr(strcpy_s(l_name,name))));

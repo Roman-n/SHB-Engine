@@ -67,7 +67,7 @@ CPHCapture::CPHCapture	(CPHCharacter   *a_character, CPhysicsShellHolder	*a_tage
 		return;
 	}
 
-	CInifile* ini=p_kinematics->LL_UserData();
+	CIniFile* ini=p_kinematics->LL_UserData();
 
 	if(!ini)
 	{
@@ -146,7 +146,7 @@ CPHCapture::CPHCapture(CPHCharacter   *a_character,CPhysicsShellHolder	*a_taget_
 		return;
 	}
 
-	CInifile* ini=p_kinematics->LL_UserData();
+	CIniFile* ini=p_kinematics->LL_UserData();
 
 	if(!ini)
 	{
@@ -212,12 +212,9 @@ CPHCapture::CPHCapture(CPHCharacter   *a_character,CPhysicsShellHolder	*a_taget_
 	}
 
 	Init(ini);
-
 }
 
-
-
-void CPHCapture::Init(CInifile* ini)
+void CPHCapture::Init(CIniFile* ini)
 {
 	Fvector dir;
 	Fvector capture_bone_position;
@@ -225,10 +222,8 @@ void CPHCapture::Init(CInifile* ini)
 	b_character_feedback=true;
 	(m_character->PhysicsRefObject())->XFORM().transform_tiny(capture_bone_position);
 
-
 	m_taget_element->GetGlobalPositionDynamic(&dir);
 	dir.sub(capture_bone_position,dir);
-
 
 	m_pull_distance=ini->r_float("capture","pull_distance");
 	if(dir.magnitude()>m_pull_distance)

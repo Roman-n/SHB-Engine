@@ -29,7 +29,7 @@ struct st_BoneMotion
 	CEnvelope*	envs			[ctMaxChannel];
 	Flags8		m_Flags;
     			st_BoneMotion()	{name=0; m_Flags.zero(); ZeroMemory(envs,sizeof(CEnvelope*)*ctMaxChannel);}
-    void        SetName(LPCSTR nm)	{	name=nm;	}
+    void        SetName(const char* nm)	{	name=nm;	}
 };
 // vector по костям
 DEFINE_VECTOR(st_BoneMotion,BoneMotionVec,BoneMotionIt);
@@ -55,7 +55,7 @@ public:
 	virtual			~CCustomMotion	();
 
 	void			SetName			(const char* n)	{string256 tmp; tmp[0]=0; if(n){strcpy_s(tmp,n); strlwr(tmp);} name=tmp;}
-	LPCSTR			Name			()				{return name.c_str();}
+	const char* Name			()				{return name.c_str();}
     int				FrameStart		()				{return iFrameStart;}
     int				FrameEnd		()				{return iFrameEnd;}
     float			FPS				()				{return fFPS;}

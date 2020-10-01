@@ -22,7 +22,7 @@ CZoneEffector::~CZoneEffector()
 	Stop		();
 }
 
-void CZoneEffector::Load(LPCSTR section)
+void CZoneEffector::Load(const char* section)
 {
 	VERIFY2(pSettings->line_exist(section,"ppe_file"), section);
 	m_pp_fname				= pSettings->r_string(section,"ppe_file");

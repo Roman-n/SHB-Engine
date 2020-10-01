@@ -102,12 +102,6 @@
     <ClCompile Include="LocatorAPI_defs.cpp">
       <Filter>FS</Filter>
     </ClCompile>
-    <ClCompile Include="log.cpp">
-      <Filter>FS</Filter>
-    </ClCompile>
-    <ClCompile Include="Xr_ini.cpp">
-      <Filter>FS</Filter>
-    </ClCompile>
     <ClCompile Include="stream_reader.cpp">
       <Filter>FS\stream_reader</Filter>
     </ClCompile>
@@ -223,6 +217,12 @@
     <ClCompile Include="Debug.cpp">
       <Filter>Debug core</Filter>
     </ClCompile>
+    <ClCompile Include="IniFile.cpp">
+      <Filter>FS</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>FS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FTimer.h">
@@ -337,12 +337,6 @@
       <Filter>FS</Filter>
     </ClInclude>
     <ClInclude Include="LocatorAPI_defs.h">
-      <Filter>FS</Filter>
-    </ClInclude>
-    <ClInclude Include="log.h">
-      <Filter>FS</Filter>
-    </ClInclude>
-    <ClInclude Include="xr_ini.h">
       <Filter>FS</Filter>
     </ClInclude>
     <ClInclude Include="stream_reader.h">
@@ -471,6 +465,12 @@
     </ClInclude>
     <ClInclude Include="Debug_macros.h">
       <Filter>Debug core</Filter>
+    </ClInclude>
+    <ClInclude Include="IniFile.h">
+      <Filter>FS</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>FS</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

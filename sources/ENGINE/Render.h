@@ -37,7 +37,7 @@ public:
 	virtual void					set_cone			(float angle)						= 0;
 	virtual void					set_range			(float R)							= 0;
 	virtual void					set_virtual_size	(float R)							= 0;
-	virtual void					set_texture			(LPCSTR name)						= 0;
+	virtual void					set_texture			(const char* name)						= 0;
 	virtual void					set_color			(const Fcolor& C)					= 0;
 	virtual void					set_color			(float r, float g, float b)			= 0;
 	virtual ~IRender_Light()		;
@@ -57,7 +57,7 @@ public:
 	virtual void					set_position		(const Fvector& P)					= 0;
 	virtual void					set_direction		(const Fvector& P)					= 0;
 	virtual void					set_radius			(float R)							= 0;
-	virtual void					set_texture			(LPCSTR name)						= 0;
+	virtual void					set_texture			(const char* name)						= 0;
 	virtual void					set_color			(const Fcolor& C)					= 0;
 	virtual void					set_color			(float r, float g, float b)			= 0;
 	virtual ~IRender_Glow()			;
@@ -161,16 +161,16 @@ public:
 	virtual	void					level_Load				(IReader*)									= 0;
 	virtual void					level_Unload			()											= 0;
 
-	virtual IDirect3DBaseTexture9*	texture_load			(LPCSTR	fname, u32& msize)					= 0;
+	virtual IDirect3DBaseTexture9*	texture_load			(const char* fname, u32& msize)					= 0;
 			void					shader_option_skinning	(int mode)									{ m_skinning=mode;	}
 	virtual HRESULT					shader_compile			(
-		LPCSTR							name,
-		LPCSTR                          pSrcData,
+		const char* name,
+		const char* pSrcData,
 		UINT                            SrcDataLen,
 		void*							pDefines,
 		void*							pInclude,
-		LPCSTR                          pFunctionName,
-		LPCSTR                          pTarget,
+		const char* pFunctionName,
+		const char* pTarget,
 		DWORD                           Flags,
 		void*							ppShader,
 		void*							ppErrorMsgs,
@@ -179,7 +179,7 @@ public:
 	// Information
 	virtual	void					Statistics				(CGameFont* F	)							{};
 
-	virtual LPCSTR					getShaderPath			()											= 0;
+	virtual const char* getShaderPath			()											= 0;
 	virtual ref_shader				getShader				(int id)									= 0;
 	virtual IRender_Sector*			getSector				(int id)									= 0;
 	virtual IRender_Visual*			getVisual				(int id)									= 0;
@@ -215,10 +215,10 @@ public:
 	virtual void					glow_destroy			(IRender_Glow* p_)							{ };
 
 	// Models
-	virtual IRender_Visual*			model_CreateParticles	(LPCSTR name)								= 0;
+	virtual IRender_Visual*			model_CreateParticles	(const char* name)								= 0;
 	virtual IRender_DetailModel*	model_CreateDM			(IReader*	F)								= 0;
-	virtual IRender_Visual*			model_Create			(LPCSTR name, IReader*	data=0)				= 0;
-	virtual IRender_Visual*			model_CreateChild		(LPCSTR name, IReader*	data)				= 0;
+	virtual IRender_Visual*			model_Create			(const char* name, IReader*	data=0)				= 0;
+	virtual IRender_Visual*			model_CreateChild		(const char* name, IReader*	data)				= 0;
 	virtual IRender_Visual*			model_Duplicate			(IRender_Visual*	V)						= 0;
 	virtual void					model_Delete			(IRender_Visual* &	V, BOOL bDiscard=FALSE)	= 0;
 	virtual void 					model_Delete			(IRender_DetailModel* & F)					= 0;
@@ -234,7 +234,7 @@ public:
 	// Main
 	virtual void					Calculate				()											= 0;
 	virtual void					Render					()											= 0;
-	virtual void					Screenshot				(ScreenshotMode mode=SM_NORMAL, LPCSTR name = 0) = 0;
+	virtual void					Screenshot				(ScreenshotMode mode=SM_NORMAL, const char* name = 0) = 0;
 
 	// Render mode
 	virtual void					rmNear					()											= 0;

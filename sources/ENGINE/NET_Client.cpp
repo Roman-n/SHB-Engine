@@ -98,7 +98,7 @@ IPureClient::IPureClient	(CTimer* timer)
 IPureClient::~IPureClient	()
 { }
 
-BOOL IPureClient::Connect	(LPCSTR options)
+BOOL IPureClient::Connect	(const char* options)
 {
 	return			TRUE;
 }

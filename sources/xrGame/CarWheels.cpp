@@ -71,7 +71,7 @@ void CCar::SWheel::Init()
 void CCar::SWheel::Load(const char* section)
 {
 	CKinematics		*K			=PKinematics(car->Visual())		;
-	CInifile		*ini		=K->LL_UserData()				;
+	CIniFile*ini		=K->LL_UserData()				;
 	VERIFY						(ini)							;
 	if(ini->section_exist(section))
 	{
@@ -336,7 +336,7 @@ void CCar::SWheelBreak::Init()
 void CCar::SWheelBreak::Load(const char* section)
 {
 	CKinematics		*K			=PKinematics(pwheel->car->Visual())												;
-	CInifile		*ini		=K->LL_UserData()																;
+	CIniFile*ini		=K->LL_UserData()																;
 	VERIFY						(ini)																			;
 	break_torque		=		ini->r_float("car_definition","break_torque")									;
 	hand_break_torque	=		READ_IF_EXISTS(ini,r_float,"car_definition","hand_break_torque",break_torque)	;

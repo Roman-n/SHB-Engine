@@ -370,9 +370,7 @@ void CMainMenu::OnFrame()
 }
 
 void CMainMenu::OnDeviceCreate()
-{
-}
-
+{ }
 
 void CMainMenu::Screenshot(IRender_interface::ScreenshotMode mode, LPCSTR name)
 {

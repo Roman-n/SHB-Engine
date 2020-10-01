@@ -16,10 +16,10 @@ CContextMenu::~CContextMenu( )
 	xr_free(Name);
 }
 
-void CContextMenu::Load(CInifile* INI, const char* SECT)
+void CContextMenu::Load(CIniFile* INI, const char* SECT)
 {
-	CInifile::Sect& S = INI->r_section(SECT);
-	for (CInifile::SectCIt I = S.Data.begin( ); S.Data.end( ) != I; ++I)
+	CIniFile::Sect& S = INI->r_section(SECT);
+	for (CIniFile::SectCIt I = S.Data.begin( ); S.Data.end( ) != I; ++I)
 	{
 		char	Event[128], Param[128];
 		Event[0] = 0; Param[0] = 0;

@@ -6,7 +6,7 @@
 
 ENGINE_API ClientID BroadcastCID(0xffffffff);
 
-void ip_address::set(LPCSTR src_string)
+void ip_address::set(const char* src_string)
 {
 	u32		buff[4];
 	int cnt = sscanf(src_string, "%d.%d.%d.%d", &buff[0], &buff[1], &buff[2], &buff[3]);
@@ -84,7 +84,7 @@ IPureServer::~IPureServer	()
 	SV_Client					= NULL;
 }
 
-IPureServer::EConnect IPureServer::Connect(LPCSTR options)
+IPureServer::EConnect IPureServer::Connect(const char* options)
 {
 	connect_options			= options;
 	return	ErrNoError;

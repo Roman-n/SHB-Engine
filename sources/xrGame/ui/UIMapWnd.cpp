@@ -180,9 +180,8 @@ void CUIMapWnd::Init(LPCSTR xml_name, LPCSTR start_from)
 	m_hint->Init						();
 	m_hint->SetAutoDelete				(false);
 
-// Load maps
-
-	CInifile& gameLtx						= *pGameIni;
+	// Load maps
+	CIniFile& gameLtx						= *pGameIni;
 
 	m_GlobalMap								= xr_new<CUIGlobalMap>(this);
 	m_GlobalMap->SetAutoDelete				(true);
@@ -198,8 +197,8 @@ void CUIMapWnd::Init(LPCSTR xml_name, LPCSTR start_from)
 	sect_name = "level_maps_single";
 
 	if (gameLtx.section_exist(sect_name.c_str())){
-		CInifile::Sect& S		= gameLtx.r_section(sect_name.c_str());
-		CInifile::SectCIt	it	= S.Data.begin(), end = S.Data.end();
+		CIniFile::Sect& S		= gameLtx.r_section(sect_name.c_str());
+		CIniFile::SectCIt	it	= S.Data.begin(), end = S.Data.end();
 		for (;it!=end; it++){
 			shared_str map_name = it->first;
 			xr_strlwr(map_name);

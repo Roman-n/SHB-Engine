@@ -1,7 +1,7 @@
 #pragma once
 
 // refs
-class CInifile;
+class CIniFile;
 class CFontBase;
 
 class CContextMenu
@@ -17,7 +17,7 @@ public:
 	xr_vector<MenuItem>			Items;
 public:
 				~CContextMenu	();
-	void		Load			(CInifile* INI, const char* S);
+	void		Load			(CIniFile* INI, const char* S);
 	void		Render			(CGameFont* F, u32 cT, u32 cI, float s);
 	void		Select			(int num);
 };

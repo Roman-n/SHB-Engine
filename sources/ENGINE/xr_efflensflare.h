@@ -2,7 +2,7 @@
 
 #include "xr_collide_defs.h"
 
-class ENGINE_API CInifile;
+class ENGINE_API CIniFile;
 
 class ENGINE_API CLensFlareDescriptor
 {
@@ -48,7 +48,7 @@ public:
 	shared_str			section;
 public:
     					CLensFlareDescriptor(){m_Flags.zero();section=0;m_StateBlendUpSpeed=m_StateBlendDnSpeed=0.1f;}
-    void				load				(CInifile* pIni, const char* section);
+    void				load				(CIniFile* pIni, const char* section);
 	void 				OnDeviceCreate	();
 	void 				OnDeviceDestroy	();
 };
@@ -99,7 +99,7 @@ public:
 	void 				OnDeviceCreate	();         
 	void 				OnDeviceDestroy	();
 
-    int					AppendDef		(CInifile* pIni, const char* sect);
+    int					AppendDef		(CIniFile* pIni, const char* sect);
 
 	void				Invalidate		(){m_State=lfsNone;}
 };

@@ -27,7 +27,7 @@ BOOL	reclaim		(xr_vector<T*>& vec, const T* ptr)
 class	includer				: public ID3DXInclude
 {
 public:
-	HRESULT __stdcall	Open	(D3DXINCLUDE_TYPE IncludeType, LPCSTR pFileName, LPCVOID pParentData, LPCVOID *ppData, UINT *pBytes)
+	HRESULT __stdcall	Open	(D3DXINCLUDE_TYPE IncludeType, const char* pFileName, LPCVOID pParentData, LPCVOID *ppData, UINT *pBytes)
 	{
 		string_path				pname;
 		strconcat				(sizeof(pname),pname,::Render->getShaderPath(),pFileName);
@@ -145,7 +145,7 @@ void		CResourceManager::_DeleteDecl		(const SDeclaration* dcl)
 }
 
 //--------------------------------------------------------------------------------------------------------------
-SVS*	CResourceManager::_CreateVS		(LPCSTR _name)
+SVS*	CResourceManager::_CreateVS		(const char* _name)
 {
 	string_path			name;
 	strcpy_s				(name,_name);
@@ -173,20 +173,20 @@ SVS*	CResourceManager::_CreateVS		(LPCSTR _name)
 		string_path					cname;
 		strconcat					(sizeof(cname),cname,::Render->getShaderPath(),_name,".vs");
 		FS.update_path				(cname,	"$game_shaders$", cname);
-//		LPCSTR						target		= NULL;
+//		const char*						target		= NULL;
 
 		IReader*					fs			= FS.r_open(cname);
 		R_ASSERT3					(fs, "shader file doesnt exist", cname);
 
 		// Select target
-		LPCSTR						c_target	= "vs_2_0";
-		LPCSTR						c_entry		= "main";
+		const char* c_target	= "vs_2_0";
+		const char* c_entry		= "main";
 		/*if (HW.Caps.geometry.dwVersion>=CAP_VERSION(3,0))			target="vs_3_0";
 		else*/ if (HW.Caps.geometry_major>=2)						c_target="vs_2_0";
 		else 														c_target="vs_1_1";
 
 		char* pfs					= xr_alloc<char>(fs->length() + 1);
-		strncpy						(pfs, (LPCSTR)fs->pointer(), fs->length());
+		strncpy						(pfs, (const char*)fs->pointer(), fs->length());
 		pfs							[fs->length()] = 0;
 
 		if (strstr(pfs, "main_vs_1_1"))			{ c_target = "vs_1_1"; c_entry = "main_vs_1_1";	}
@@ -196,8 +196,8 @@ SVS*	CResourceManager::_CreateVS		(LPCSTR _name)
 
 		// vertex
 		R_ASSERT2					(fs,cname);
-		_hr = ::Render->shader_compile(name,LPCSTR(fs->pointer()),fs->length(), NULL, &Includer, c_entry, c_target, D3DXSHADER_DEBUG | D3DXSHADER_PACKMATRIX_ROWMAJOR /*| D3DXSHADER_PREFER_FLOW_CONTROL*/, &pShaderBuf, &pErrorBuf, NULL);
-//		_hr = D3DXCompileShader		(LPCSTR(fs->pointer()),fs->length(), NULL, &Includer, "main", target, D3DXSHADER_DEBUG | D3DXSHADER_PACKMATRIX_ROWMAJOR, &pShaderBuf, &pErrorBuf, NULL);
+		_hr = ::Render->shader_compile(name, (const char*) (fs->pointer()),fs->length(), NULL, &Includer, c_entry, c_target, D3DXSHADER_DEBUG | D3DXSHADER_PACKMATRIX_ROWMAJOR /*| D3DXSHADER_PREFER_FLOW_CONTROL*/, &pShaderBuf, &pErrorBuf, NULL);
+//		_hr = D3DXCompileShader		((const char*)(fs->pointer()),fs->length(), NULL, &Includer, "main", target, D3DXSHADER_DEBUG | D3DXSHADER_PACKMATRIX_ROWMAJOR, &pShaderBuf, &pErrorBuf, NULL);
 		FS.r_close					(fs);
 
 		if (SUCCEEDED(_hr))
@@ -218,7 +218,7 @@ SVS*	CResourceManager::_CreateVS		(LPCSTR _name)
 			else	_hr = E_FAIL;
 		} else {
 			VERIFY	(pErrorBuf);
-			Log		("! error: ",(LPCSTR)pErrorBuf->GetBufferPointer());
+			Log		("! error: ",(const char*)pErrorBuf->GetBufferPointer());
 		}
 		_RELEASE	(pShaderBuf);
 		_RELEASE	(pErrorBuf);
@@ -241,7 +241,7 @@ void	CResourceManager::_DeleteVS			(const SVS* vs)
 }
 
 //--------------------------------------------------------------------------------------------------------------
-SPS*	CResourceManager::_CreatePS			(LPCSTR name)
+SPS*	CResourceManager::_CreatePS			(const char* name)
 {
 	char* N				= (char*) name;
 	map_PS::iterator I	= m_ps.find	(N);
@@ -272,8 +272,8 @@ SPS*	CResourceManager::_CreatePS			(LPCSTR name)
 		FS.r_close				(R);
 
 		// Select target
-		LPCSTR						c_target	= "ps_2_0";
-		LPCSTR						c_entry		= "main";
+		const char* c_target	= "ps_2_0";
+		const char* c_entry		= "main";
 		if (strstr(data,"main_ps_1_1"))			{ c_target = "ps_1_1"; c_entry = "main_ps_1_1";	}
 		if (strstr(data,"main_ps_1_2"))			{ c_target = "ps_1_2"; c_entry = "main_ps_1_2";	}
 		if (strstr(data,"main_ps_1_3"))			{ c_target = "ps_1_3"; c_entry = "main_ps_1_3";	}
@@ -307,7 +307,7 @@ SPS*	CResourceManager::_CreatePS			(LPCSTR name)
 			else	_hr = E_FAIL;
 		}else
 		{
-			Msg("error is %s", (LPCSTR)pErrorBuf->GetBufferPointer());
+			Msg("error is %s", (const char*)pErrorBuf->GetBufferPointer());
 		}
 		_RELEASE		(pShaderBuf);
 		_RELEASE		(pErrorBuf);
@@ -352,7 +352,7 @@ void				CResourceManager::_DeleteConstantTable	(const R_constant_table* C)
 }
 
 //--------------------------------------------------------------------------------------------------------------
-CRT*	CResourceManager::_CreateRT		(LPCSTR Name, u32 w, u32 h,	D3DFORMAT f)
+CRT*	CResourceManager::_CreateRT		(const char* Name, u32 w, u32 h,	D3DFORMAT f)
 {
 	R_ASSERT(Name && Name[0] && w && h);
 
@@ -381,7 +381,7 @@ void	CResourceManager::_DeleteRT		(const CRT* RT)
 	Msg	("! ERROR: Failed to find render-target '%s'",*RT->cName);
 }
 //--------------------------------------------------------------------------------------------------------------
-CRTC*	CResourceManager::_CreateRTC		(LPCSTR Name, u32 size,	D3DFORMAT f)
+CRTC*	CResourceManager::_CreateRTC		(const char* Name, u32 size,	D3DFORMAT f)
 {
 	R_ASSERT(Name && Name[0] && size);
 
@@ -466,7 +466,7 @@ void		CResourceManager::DeleteGeom		(const SGeometry* Geom)
 }
 
 //--------------------------------------------------------------------------------------------------------------
-CTexture* CResourceManager::_CreateTexture	(LPCSTR _Name)
+CTexture* CResourceManager::_CreateTexture	(const char* _Name)
 {
 	// DBG_VerifyTextures	();
 	if (0==xr_strcmp(_Name,"null"))	return 0;
@@ -518,7 +518,7 @@ void	CResourceManager::DBG_VerifyTextures	()
 #endif // DEBUG
 
 //--------------------------------------------------------------------------------------------------------------
-CMatrix*	CResourceManager::_CreateMatrix	(LPCSTR Name)
+CMatrix*	CResourceManager::_CreateMatrix	(const char* Name)
 {
 	R_ASSERT(Name && Name[0]);
 	if (0==stricmp(Name,"$null"))	return NULL;
@@ -546,13 +546,13 @@ void	CResourceManager::_DeleteMatrix		(const CMatrix* M)
 	}
 	Msg	("! ERROR: Failed to find xform-def '%s'",*M->cName);
 }
-void	CResourceManager::ED_UpdateMatrix		(LPCSTR Name, CMatrix* data)
+void	CResourceManager::ED_UpdateMatrix		(const char* Name, CMatrix* data)
 {
 	CMatrix*	M	= _CreateMatrix	(Name);
 	*M				= *data;
 }
 //--------------------------------------------------------------------------------------------------------------
-CConstant*	CResourceManager::_CreateConstant	(LPCSTR Name)
+CConstant*	CResourceManager::_CreateConstant	(const char* Name)
 {
 	R_ASSERT(Name && Name[0]);
 	if (0==stricmp(Name,"$null"))	return NULL;
@@ -581,7 +581,7 @@ void	CResourceManager::_DeleteConstant		(const CConstant* C)
 	Msg	("! ERROR: Failed to find R1-constant-def '%s'",*C->cName);
 }
 
-void	CResourceManager::ED_UpdateConstant	(LPCSTR Name, CConstant* data)
+void	CResourceManager::ED_UpdateConstant	(const char* Name, CConstant* data)
 {
 	CConstant*	C	= _CreateConstant	(Name);
 	*C				= *data;

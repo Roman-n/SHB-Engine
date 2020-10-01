@@ -34,7 +34,7 @@ void CUICustomMap::Update()
 	CUIStatic::Update		();
 }
 
-void CUICustomMap::Init	(shared_str name, CInifile& gameLtx, LPCSTR sh_name)
+void CUICustomMap::Init	(shared_str name, CIniFile& gameLtx, LPCSTR sh_name)
 {
 	m_name				= name;
 	LPCSTR tex;
@@ -231,10 +231,9 @@ CUIGlobalMap::CUIGlobalMap(CUIMapWnd*	pMapWnd)
 }
 
 CUIGlobalMap::~CUIGlobalMap()
-{
-}
+{ }
 
-void CUIGlobalMap::Init		(shared_str name, CInifile& gameLtx, LPCSTR sh_name)
+void CUIGlobalMap::Init		(shared_str name, CIniFile& gameLtx, LPCSTR sh_name)
 {
 	inherited::Init			(name, gameLtx, sh_name);
 	SetMaxZoom				(gameLtx.r_float(m_name,"max_zoom"));
@@ -347,7 +346,7 @@ void CUILevelMap::Draw()
 	inherited::Draw();
 }
 
-void CUILevelMap::Init	(shared_str name, CInifile& gameLtx, LPCSTR sh_name)
+void CUILevelMap::Init	(shared_str name, CIniFile& gameLtx, LPCSTR sh_name)
 {
 	inherited::Init(name, gameLtx, sh_name);
 	Fvector4 tmp = gameLtx.r_fvector4(MapName(),"global_rect");
@@ -502,7 +501,7 @@ CUIMiniMap::CUIMiniMap()
 CUIMiniMap::~CUIMiniMap()
 {}
 
-void CUIMiniMap::Init(shared_str name, CInifile& gameLtx, LPCSTR sh_name)
+void CUIMiniMap::Init(shared_str name, CIniFile& gameLtx, LPCSTR sh_name)
 {
 	inherited::Init(name, gameLtx, sh_name);
 	CUIStatic::SetColor(0x7fffffff);

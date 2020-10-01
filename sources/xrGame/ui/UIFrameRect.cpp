@@ -31,7 +31,7 @@ void CUIFrameRect::InitTexture(LPCSTR texture){
 	if (FS.exist(fn,"$game_textures$",buf,".ini")){
 		Fvector4	v;
 		//uFlags.set	(flSingleTex,TRUE);
-		CInifile* ini= CInifile::Create(fn,TRUE);
+		CIniFile* ini= CIniFile::Create(fn,TRUE);
 		LPCSTR sh	= ini->r_string("frame","shader");
 		frame[fmBK].CreateShader(texture,sh);
 		frame[fmL].CreateShader	(texture,sh);
@@ -51,7 +51,7 @@ void CUIFrameRect::InitTexture(LPCSTR texture){
 		v = ini->r_fvector4("frame","rt");		frame[fmRT].SetOriginalRect	(v.x,v.y,v.z,v.w);	frame[fmRT].SetRect	(0,0,v.z,v.w);
 		v = ini->r_fvector4("frame","rb");		frame[fmRB].SetOriginalRect	(v.x,v.y,v.z,v.w);	frame[fmRB].SetRect	(0,0,v.z,v.w);
 		v = ini->r_fvector4("frame","lb");		frame[fmLB].SetOriginalRect	(v.x,v.y,v.z,v.w);	frame[fmLB].SetRect	(0,0,v.z,v.w);
-		CInifile::Destroy(ini);
+		CIniFile::Destroy(ini);
 	}
 	else
 	{

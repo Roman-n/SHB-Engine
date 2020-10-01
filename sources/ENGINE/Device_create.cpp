@@ -54,7 +54,7 @@ void CRenderDevice::_SetupStates	()
 	}
 }
 
-void CRenderDevice::_Create	(LPCSTR shName)
+void CRenderDevice::_Create	(const char* shName)
 {
 	Memory.mem_compact			();
 

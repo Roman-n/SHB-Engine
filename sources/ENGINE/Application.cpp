@@ -22,7 +22,7 @@
 #include <process.h>
 
 //---------------------------------------------------------------------
-ENGINE_API CInifile* pGameIni		= nullptr;
+ENGINE_API CIniFile* pGameIni		= nullptr;
 BOOL	g_bIntroFinished			= FALSE;
 int		max_load_stage = 0;
 
@@ -109,11 +109,11 @@ void InitSettings	()
 {
 	string_path					fname; 
 	FS.update_path				(fname,"$game_config$","system.ltx");
-	pSettings					= xr_new<CInifile>	(fname,TRUE);
+	pSettings					= xr_new<CIniFile>	(fname,TRUE);
 	CHECK_OR_EXIT				(!pSettings->sections().empty(),make_string("Cannot find file %s.\nReinstalling application may fix this problem.",fname));
 
 	FS.update_path				(fname,"$game_config$","game.ltx");
-	pGameIni					= xr_new<CInifile>	(fname,TRUE);
+	pGameIni					= xr_new<CIniFile>	(fname,TRUE);
 	CHECK_OR_EXIT				(!pGameIni->sections().empty(),make_string("Cannot find file %s.\nReinstalling application may fix this problem.",fname));
 }
 
@@ -866,7 +866,7 @@ void doBenchmark(const char* name)
 	g_bBenchmark = true;
 	string_path in_file;
 	FS.update_path(in_file,"$app_data_root$", name);
-	CInifile ini(in_file);
+	CIniFile ini(in_file);
 	int test_count = ini.line_count("benchmark");
 	const char* test_name;
 	const char* t;

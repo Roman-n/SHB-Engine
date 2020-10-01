@@ -169,9 +169,8 @@ BOOL	CCar::net_Spawn				(CSE_Abstract* DC)
 	else							b_exploded=false;
 									
 	CDamagableItem::RestoreEffect();
-	
-	
-	CInifile* pUserData		= PKinematics(Visual())->LL_UserData(); 
+
+	CIniFile* pUserData		= PKinematics(Visual())->LL_UserData();
 	if(pUserData->section_exist("destroyed"))
 		CPHDestroyable::Load(pUserData,"destroyed");
 	if(pUserData->section_exist("mounted_weapon_definition"))
@@ -621,7 +620,7 @@ bool CCar::attach_Actor(CGameObject* actor)
 	CHolderCustom::attach_Actor(actor);
 
 	CKinematics* K	= smart_cast<CKinematics*>(Visual());
-	CInifile* ini	= K->LL_UserData();
+	CIniFile* ini	= K->LL_UserData();
 	int id;
 	if(ini->line_exist("car_definition","driver_place"))
 		id=K->LL_BoneID(ini->r_string("car_definition","driver_place"));
@@ -718,7 +717,7 @@ void CCar::ParseDefinitions()
 
 	CKinematics* pKinematics=smart_cast<CKinematics*>(Visual());
 	bone_map.insert(mk_pair(pKinematics->LL_GetBoneRoot(),physicsBone()));
-	CInifile* ini = pKinematics->LL_UserData();
+	CIniFile* ini = pKinematics->LL_UserData();
 	R_ASSERT2(ini,"Car has no description !!! See ActorEditor Object - UserData");
 	CExplosive::Load(ini,"explosion");
 	//CExplosive::SetInitiator(ID());
@@ -849,7 +848,7 @@ void CCar::Init()
 
 	//get reference wheel radius
 	CKinematics* pKinematics=smart_cast<CKinematics*>(Visual());
-	CInifile* ini = pKinematics->LL_UserData();
+	CIniFile* ini = pKinematics->LL_UserData();
 	R_ASSERT2(ini,"Car has no description !!! See ActorEditor Object - UserData");
 	///SWheel& ref_wheel=m_wheels_map.find(pKinematics->LL_BoneID(ini->r_string("car_definition","reference_wheel")))->second;
 
@@ -937,9 +936,9 @@ void CCar::Init()
 
 	if(ini->section_exist("damage_items"))
 	{
-		CInifile::Sect& data		= ini->r_section("damage_items");
-		for (CInifile::SectCIt		I=data.Data.begin(); I!=data.Data.end(); I++){
-			const CInifile::Item& item	= *I;
+		CIniFile::Sect& data		= ini->r_section("damage_items");
+		for (CIniFile::SectCIt		I=data.Data.begin(); I!=data.Data.end(); I++){
+			const CIniFile::Item& item	= *I;
 			u16 index				= pKinematics->LL_BoneID(*item.first); 
 			R_ASSERT3(index != BI_NONE, "Wrong bone name", *item.first);
 			xr_map   <u16,SWheel>::iterator i=m_wheels_map.find(index);

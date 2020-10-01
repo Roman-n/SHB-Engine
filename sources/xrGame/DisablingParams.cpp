@@ -24,7 +24,7 @@ void SAllDDOParams::Reset()
 	*this=worldDisablingParams.objects_params;
 }
 
-void SAllDDOParams::Load(CInifile* ini)
+void SAllDDOParams::Load(CIniFile* ini)
 {
 	Reset()										;
 	if(!ini)							return	;

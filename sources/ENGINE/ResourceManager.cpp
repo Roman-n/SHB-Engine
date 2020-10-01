@@ -36,7 +36,7 @@ BOOL	reclaim		(xr_vector<T*>& vec, const T* ptr)
 }
 
 //--------------------------------------------------------------------------------------------------------------
-IBlender* CResourceManager::_GetBlender		(LPCSTR Name)
+IBlender* CResourceManager::_GetBlender		(const char* Name)
 {
 	R_ASSERT(Name && Name[0]);
 
@@ -47,7 +47,7 @@ IBlender* CResourceManager::_GetBlender		(LPCSTR Name)
 	else					return I->second;
 }
 
-IBlender* CResourceManager::_FindBlender		(LPCSTR Name)
+IBlender* CResourceManager::_FindBlender		(const char* Name)
 {
 	if (!(Name && Name[0])) return 0;
 
@@ -57,7 +57,7 @@ IBlender* CResourceManager::_FindBlender		(LPCSTR Name)
 	else						return I->second;
 }
 
-void	CResourceManager::ED_UpdateBlender	(LPCSTR Name, IBlender* data)
+void	CResourceManager::ED_UpdateBlender	(const char* Name, IBlender* data)
 {
 	char* N = (char*) Name;
 	map_Blender::iterator I = m_blenders.find	(N);
@@ -73,7 +73,7 @@ void	CResourceManager::ED_UpdateBlender	(LPCSTR Name, IBlender* data)
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
-void	CResourceManager::_ParseList(sh_list& dest, LPCSTR names)
+void	CResourceManager::_ParseList(sh_list& dest, const char* names)
 {
 	if (0==names) 		names 	= "$null";
 
@@ -131,7 +131,7 @@ void CResourceManager::_DeleteElement(const ShaderElement* S)
 	Msg	("! ERROR: Failed to find compiled 'shader-element'");
 }
 
-Shader*	CResourceManager::_cpp_Create	(IBlender* B, LPCSTR s_shader, LPCSTR s_textures, LPCSTR s_constants, LPCSTR s_matrices)
+Shader*	CResourceManager::_cpp_Create	(IBlender* B, const char* s_shader, const char* s_textures, const char* s_constants, const char* s_matrices)
 {
 	CBlender_Compile	C;
 	Shader				S;
@@ -214,17 +214,17 @@ Shader*	CResourceManager::_cpp_Create	(IBlender* B, LPCSTR s_shader, LPCSTR s_te
 	return N;
 }
 
-Shader*	CResourceManager::_cpp_Create	(LPCSTR s_shader, LPCSTR s_textures, LPCSTR s_constants, LPCSTR s_matrices)
+Shader*	CResourceManager::_cpp_Create	(const char* s_shader, const char* s_textures, const char* s_constants, const char* s_matrices)
 {
 	return	_cpp_Create(_GetBlender(s_shader?s_shader:"null"),s_shader,s_textures,s_constants,s_matrices);
 }
 
-Shader*		CResourceManager::Create	(IBlender*	B,		LPCSTR s_shader,	LPCSTR s_textures,	LPCSTR s_constants, LPCSTR s_matrices)
+Shader*		CResourceManager::Create	(IBlender*	B, const char* s_shader, const char* s_textures, const char* s_constants, const char* s_matrices)
 {
 	return	_cpp_Create	(B,s_shader,s_textures,s_constants,s_matrices);
 }
 
-Shader*		CResourceManager::Create	(LPCSTR s_shader,	LPCSTR s_textures,	LPCSTR s_constants,	LPCSTR s_matrices)
+Shader*		CResourceManager::Create	(const char* s_shader, const char* s_textures, const char* s_constants, const char* s_matrices)
 {
 	if	(_lua_HasShader(s_shader))		return	_lua_Create	(s_shader,s_textures);
 	else								return	_cpp_Create	(s_shader,s_textures,s_constants,s_matrices);

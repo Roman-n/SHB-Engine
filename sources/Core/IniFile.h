@@ -1,7 +1,7 @@
 #pragma once
 
 // refs
-class	CInifile;
+class	CIniFile;
 struct xr_token;
 
 
@@ -9,7 +9,7 @@ struct xr_token;
 //Описание Inifile
 //-----------------------------------------------------------------------------------------------------------
 
-class CORE_API CInifile
+class CORE_API CIniFile
 {
 public:
 	struct CORE_API	Item
@@ -46,8 +46,8 @@ public:
 	typedef Root::iterator			RootIt;
 
 	// factorisation
-	static CInifile*	Create		(const char* szFileName, BOOL ReadOnly=TRUE);
-	static void			Destroy		( CInifile*);
+	static CIniFile*	Create		(const char* szFileName, BOOL ReadOnly=TRUE);
+	static void			Destroy		(CIniFile*);
     static IC BOOL		IsBOOL		(const char* B)	{ return (xr_strcmp(B,"on")==0 || xr_strcmp(B,"yes")==0 || xr_strcmp(B,"true")==0 || xr_strcmp(B,"1")==0);}
 private:
 	char* fName;
@@ -57,9 +57,9 @@ private:
 public:
     BOOL		bSaveAtEnd;
 public:
-				CInifile		( IReader* F, const char* path=0 );
-				CInifile		(const char* szFileName, BOOL ReadOnly=TRUE, BOOL bLoadAtStart=TRUE, BOOL SaveAtEnd=TRUE);
-	virtual 	~CInifile		( );
+	CIniFile( IReader* F, const char* path=0 );
+	CIniFile(const char* szFileName, BOOL ReadOnly=TRUE, BOOL bLoadAtStart=TRUE, BOOL SaveAtEnd=TRUE);
+	virtual 	~CIniFile( );
     bool		save_as         (const char* new_fname=0 );
 
 	const char* fname			( ) { return fName; };
@@ -138,4 +138,4 @@ public:
 };
 
 // Main configuration file
-extern CORE_API CInifile *pSettings;
+extern CORE_API CIniFile* pSettings;

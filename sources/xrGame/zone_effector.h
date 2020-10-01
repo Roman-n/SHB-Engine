@@ -18,7 +18,7 @@ public:
 
 	CActor* m_pActor;
 
-	void	Load(LPCSTR section);
+	void	Load(const char* section);
 	void	SetRadius(float r);
 	void	Update(float dist);
 	void	Stop( );

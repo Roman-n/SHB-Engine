@@ -157,9 +157,9 @@ DEFINE_SET		(shared_str,RStringSet,RStringSetIt);
 DEFINE_VECTOR	(xr_rtoken,RTokenVec,RTokenVecIt);
 
 #include "FS.h"
-#include "log.h"
+#include "Log.h"
 #include "xr_trims.h"
-#include "xr_ini.h"
+#include "IniFile.h"
 #include "LocatorAPI.h"
 #include "FileSystem.h"
 #include "FTimer.h"

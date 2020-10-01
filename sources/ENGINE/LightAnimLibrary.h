@@ -58,8 +58,8 @@ class ENGINE_API ELightAnimLibrary
 {
 public:
 	LAItemVec		Items;
-	LAItemIt		FindItemI(LPCSTR name);
-	CLAItem*		FindItem(LPCSTR name);
+	LAItemIt		FindItemI(const char* name);
+	CLAItem*		FindItem(const char* name);
 
 public:
 					ELightAnimLibrary( );
@@ -71,7 +71,7 @@ public:
 	void			Save( );
 	void			Reload( );
 	void			Unload( );
-	CLAItem*		AppendItem(LPCSTR name, CLAItem* src);
+	CLAItem*		AppendItem(const char* name, CLAItem* src);
 	LAItemVec&		Objects( )
 	{
 		return Items;

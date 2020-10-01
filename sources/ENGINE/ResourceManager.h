@@ -13,25 +13,25 @@ class ENGINE_API CResourceManager
 private:
 	struct str_pred : public std::binary_function<char*, char*, bool>
 	{
-		IC bool operator()(LPCSTR x, LPCSTR y) const
+		IC bool operator()(const char* x, const char* y) const
 		{	return xr_strcmp(x,y)<0;	}
 	};
 	struct texture_detail
 	{
-		LPCSTR												T;
+		const char* T;
 		R_constant_setup*									cs;
 	};
 
 public:
-	DEFINE_MAP_PRED(LPCSTR,IBlender*,		map_Blender,	map_BlenderIt,		str_pred);
-	DEFINE_MAP_PRED(LPCSTR,CTexture*,		map_Texture,	map_TextureIt,		str_pred);
-	DEFINE_MAP_PRED(LPCSTR,CMatrix*,		map_Matrix,		map_MatrixIt,		str_pred);
-	DEFINE_MAP_PRED(LPCSTR,CConstant*,		map_Constant,	map_ConstantIt,		str_pred);
-	DEFINE_MAP_PRED(LPCSTR,CRT*,			map_RT,			map_RTIt,			str_pred);
-	DEFINE_MAP_PRED(LPCSTR,CRTC*,			map_RTC,		map_RTCIt,			str_pred);
-	DEFINE_MAP_PRED(LPCSTR,SVS*,			map_VS,			map_VSIt,			str_pred);
-	DEFINE_MAP_PRED(LPCSTR,SPS*,			map_PS,			map_PSIt,			str_pred);
-	DEFINE_MAP_PRED(LPCSTR,texture_detail,	map_TD,			map_TDIt,			str_pred);
+	DEFINE_MAP_PRED(const char*,IBlender*,		map_Blender,	map_BlenderIt,		str_pred);
+	DEFINE_MAP_PRED(const char*,CTexture*,		map_Texture,	map_TextureIt,		str_pred);
+	DEFINE_MAP_PRED(const char*,CMatrix*,		map_Matrix,		map_MatrixIt,		str_pred);
+	DEFINE_MAP_PRED(const char*,CConstant*,		map_Constant,	map_ConstantIt,		str_pred);
+	DEFINE_MAP_PRED(const char*,CRT*,			map_RT,			map_RTIt,			str_pred);
+	DEFINE_MAP_PRED(const char*,CRTC*,			map_RTC,		map_RTCIt,			str_pred);
+	DEFINE_MAP_PRED(const char*,SVS*,			map_VS,			map_VSIt,			str_pred);
+	DEFINE_MAP_PRED(const char*,SPS*,			map_PS,			map_PSIt,			str_pred);
+	DEFINE_MAP_PRED(const char*,texture_detail,	map_TD,			map_TDIt,			str_pred);
 
 private:
 	// data
@@ -75,9 +75,9 @@ private:
 
 public:
 	// Miscelaneous
-	void							_ParseList				(sh_list& dest, LPCSTR names);
-	IBlender*						_GetBlender				(LPCSTR Name);
-	IBlender* 						_FindBlender			(LPCSTR Name);
+	void							_ParseList				(sh_list& dest, const char* names);
+	IBlender*						_GetBlender				(const char* Name);
+	IBlender* 						_FindBlender			(const char* Name);
 	void							_GetMemoryUsage			(u32& m_base, u32& c_base, u32& m_lmaps, u32& c_lmaps);
 	void							_DumpMemoryUsage		( );
 
@@ -88,33 +88,33 @@ public:
 	void							DBG_VerifyTextures		( );
 
 	// Editor cooperation
-	void							ED_UpdateBlender		(LPCSTR Name, IBlender*		data);
-	void							ED_UpdateMatrix			(LPCSTR Name, CMatrix*		data);
-	void							ED_UpdateConstant		(LPCSTR Name, CConstant*	data);
+	void							ED_UpdateBlender		(const char* Name, IBlender*		data);
+	void							ED_UpdateMatrix			(const char* Name, CMatrix*		data);
+	void							ED_UpdateConstant		(const char* Name, CConstant*	data);
 
 	// Low level resource creation
-	CTexture*						_CreateTexture			(LPCSTR Name);
+	CTexture*						_CreateTexture			(const char* Name);
 	void							_DeleteTexture			(const CTexture* T);
 
-	CMatrix*						_CreateMatrix			(LPCSTR Name);
+	CMatrix*						_CreateMatrix			(const char* Name);
 	void							_DeleteMatrix			(const CMatrix*  M);
 
-	CConstant*						_CreateConstant			(LPCSTR Name);
+	CConstant*						_CreateConstant			(const char* Name);
 	void							_DeleteConstant			(const CConstant* C);
 
 	R_constant_table*				_CreateConstantTable	(R_constant_table& C);
 	void							_DeleteConstantTable	(const R_constant_table* C);
 
-	CRT*							_CreateRT				(LPCSTR Name, u32 w, u32 h,	D3DFORMAT f);
+	CRT*							_CreateRT				(const char* Name, u32 w, u32 h,	D3DFORMAT f);
 	void							_DeleteRT				(const CRT*	RT	);
 
-	CRTC*							_CreateRTC				(LPCSTR Name, u32 size,	D3DFORMAT f);
+	CRTC*							_CreateRTC				(const char* Name, u32 size,	D3DFORMAT f);
 	void							_DeleteRTC				(const CRTC*	RT	);
 
-	SPS*							_CreatePS				(LPCSTR Name);
+	SPS*							_CreatePS				(const char* Name);
 	void							_DeletePS				(const SPS*	PS	);
 
-	SVS*							_CreateVS				(LPCSTR Name);
+	SVS*							_CreateVS				(const char* Name);
 	void							_DeleteVS				(const SVS*	VS	);
 
 	SPass*							_CreatePass				(ref_state& _state, ref_ps& _ps, ref_vs& _vs, ref_ctable& _ctable, ref_texture_list& _T, ref_matrix_list& _M, ref_constant_list& _C);
@@ -139,26 +139,26 @@ public:
 	ShaderElement*					_CreateElement			(ShaderElement& L);
 	void							_DeleteElement			(const ShaderElement* L);
 
-	Shader*							_cpp_Create				(LPCSTR		s_shader,	LPCSTR s_textures=0,	LPCSTR s_constants=0,	LPCSTR s_matrices=0);
-	Shader*							_cpp_Create				(IBlender*	B,			LPCSTR s_shader=0,		LPCSTR s_textures=0,	LPCSTR s_constants=0, LPCSTR s_matrices=0);
-	Shader*							_lua_Create				(LPCSTR		s_shader,	LPCSTR s_textures);
-	BOOL							_lua_HasShader			(LPCSTR		s_shader);
+	Shader*							_cpp_Create				(const char* s_shader, const char* s_textures=0, const char* s_constants=0, const char* s_matrices=0);
+	Shader*							_cpp_Create				(IBlender*	B, const char* s_shader=0, const char* s_textures=0, const char* s_constants=0, const char* s_matrices=0);
+	Shader*							_lua_Create				(const char* s_shader, const char* s_textures);
+	BOOL							_lua_HasShader			(const char* s_shader);
 
 									CResourceManager			( ) : bDeferredLoad(TRUE)/*, m_description(0)*/	{	}
 									~CResourceManager			( )	;
 
 	void							OnDeviceCreate				(IReader* F);
-	void							OnDeviceCreate				(LPCSTR name);
+	void							OnDeviceCreate				(const char* name);
 	void							OnDeviceDestroy				(BOOL   bKeepTextures);
 
 	void							reset_begin					( );
 	void							reset_end					( );
 
 	// Creation/Destroying
-	Shader*							Create						(LPCSTR s_shader=0, LPCSTR s_textures=0,	LPCSTR s_constants=0,	LPCSTR s_matrices=0);
-	Shader*							Create						(IBlender*	B,		LPCSTR s_shader=0,		LPCSTR s_textures=0,	LPCSTR s_constants=0, LPCSTR s_matrices=0);
+	Shader*							Create						(const char* s_shader=0, const char* s_textures=0, const char* s_constants=0, const char* s_matrices=0);
+	Shader*							Create						(IBlender*	B, const char* s_shader=0, const char* s_textures=0, const char* s_constants=0, const char* s_matrices=0);
 	void							Delete						(const Shader*		S	);
-	void							RegisterConstantSetup		(LPCSTR name,		R_constant_setup* s)	{	v_constant_setup.push_back(mk_pair(shared_str(name),s));	}
+	void							RegisterConstantSetup		(const char* name,		R_constant_setup* s)	{	v_constant_setup.push_back(mk_pair(shared_str(name),s));	}
 
 	SGeometry*						CreateGeom					(D3DVERTEXELEMENT9* decl, IDirect3DVertexBuffer9* vb, IDirect3DIndexBuffer9* ib);
 	SGeometry*						CreateGeom					(u32 FVF				, IDirect3DVertexBuffer9* vb, IDirect3DIndexBuffer9* ib);

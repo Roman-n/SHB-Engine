@@ -29,7 +29,7 @@ struct ENGINE_API ip_address
 		};
 		u32		data;
 	}m_data;
-	void		set		(LPCSTR src_string);
+	void		set		(const char* src_string);
 	xr_string	to_string	()	const;
 
 	bool operator == (const ip_address& other) const
@@ -103,7 +103,7 @@ public:
 							IPureServer			(CTimer* timer);
 	virtual					~IPureServer		();
 
-	virtual EConnect		Connect				(LPCSTR session_name);
+	virtual EConnect		Connect				(const char* session_name);
 	virtual void			Disconnect			();
 
 	// send

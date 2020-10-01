@@ -84,7 +84,7 @@ void generate_story_ids		(
 {
 	result.clear			();
 
-    CInifile				*Ini = pGameIni;
+	CIniFile*Ini = pGameIni;
     
 	const char* N;
 	const char* V;

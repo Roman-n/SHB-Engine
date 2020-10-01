@@ -158,16 +158,16 @@ void CPHDestroyable::Destroy(u16 source_id, LPCSTR section)
 	return;
 }
 
-void CPHDestroyable::Load(CInifile* ini,LPCSTR section)
+void CPHDestroyable::Load(CIniFile* ini,LPCSTR section)
 {
 	m_flags.set(fl_destroyable,FALSE);
 	if(ini->line_exist(section,"destroyed_vis_name")){
 		m_flags.set(fl_destroyable,TRUE);
 		m_destroyed_obj_visual_names.push_back(ini->r_string(section,"destroyed_vis_name"));
 	}else{
-		CInifile::Sect& data		= ini->r_section(section);
+		CIniFile::Sect& data		= ini->r_section(section);
 		if(data.Data.size()>0) m_flags.set(fl_destroyable,TRUE);
-		for (CInifile::SectCIt I=data.Data.begin(); I!=data.Data.end(); I++)
+		for (CIniFile::SectCIt I=data.Data.begin(); I!=data.Data.end(); I++)
 			if(I->first.size())		m_destroyed_obj_visual_names.push_back(I->first);
 	}
 }
@@ -213,8 +213,8 @@ void CPHDestroyable::NotificatePart(CPHDestroyableNotificate *dn)
 	CKinematics		*own_K	  =PKinematics(PPhysicsShellHolder()->Visual())		;
 	CKinematics		*new_K	  =PKinematics(dn->PPhysicsShellHolder()->Visual())	;
 	VERIFY			(own_K&&new_K&&own_shell&&new_shell)						;
-	CInifile		*own_ini  =own_K->LL_UserData()								;
-	CInifile		*new_ini  =new_K->LL_UserData()								;
+	CIniFile*own_ini  =own_K->LL_UserData()								;
+	CIniFile*new_ini  =new_K->LL_UserData()								;
 	//////////////////////////////////////////////////////////////////////////////////	
 	Fmatrix			own_transform;
 	own_shell		->GetGlobalTransformDynamic		(&own_transform)			;

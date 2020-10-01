@@ -108,7 +108,7 @@ bool CPHSkeleton::Spawn(CSE_Abstract *D)
 
 		if(K)
 		{
-			CInifile* ini=K->LL_UserData();
+			CIniFile* ini=K->LL_UserData();
 			if(ini&&ini->section_exist("collide"))
 			{
 				if(ini->line_exist("collide","not_collide_parts"))

@@ -106,16 +106,16 @@ IC	const CTradeFactors &CTradeParameters::factors			(_action_type type, const sh
 }
 
 template <typename _action_type>
-IC	void CTradeParameters::process							(_action_type type, CInifile &ini_file, const shared_str &section)
+IC	void CTradeParameters::process							(_action_type type, CIniFile&ini_file, const shared_str &section)
 {
 	R_ASSERT2				(ini_file.section_exist(section),make_string("cannot find section %s",*section));
 
 	CTradeActionParameters	&_action = action(type);
 	_action.clear			();
 
-	CInifile::Sect			&S = ini_file.r_section(section);
-	CInifile::SectCIt		I = S.Data.begin();
-	CInifile::SectCIt		E = S.Data.end();
+	CIniFile::Sect			&S = ini_file.r_section(section);
+	CIniFile::SectCIt		I = S.Data.begin();
+	CIniFile::SectCIt		E = S.Data.end();
 	for ( ; I != E; ++I) {
 		if (!(*I).second.size()) {
 			_action.disable	((*I).first);

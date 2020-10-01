@@ -61,7 +61,7 @@ BOOL IGameLevel::Load			(u32 dwNum)
 	string_path					temp;
 	if (!FS.exist(temp, "$level$", "level.ltx"))
 		Debug.fatal	(DEBUG_INFO,"Can't find level configuration file '%s'.",temp);
-	pLevel						= xr_new<CInifile>	( temp );
+	pLevel						= xr_new<CIniFile>	( temp );
 	
 	// Open
 	g_pGamePersistent->LoadTitle	("st_opening_stream");
@@ -146,13 +146,13 @@ void	IGameLevel::OnFrame		( )
 
 // ==================================================================================================
 
-void CServerInfo::AddItem( LPCSTR name_, LPCSTR value_, u32 color_ )
+void CServerInfo::AddItem(const char* name_, const char* value_, u32 color_ )
 {
 	shared_str s_name( name_ );
 	AddItem( s_name, value_, color_ );
 }
 
-void CServerInfo::AddItem( shared_str& name_, LPCSTR value_, u32 color_ )
+void CServerInfo::AddItem( shared_str& name_, const char* value_, u32 color_ )
 {
 	SItem_ServerInfo it;
 //	shared_str s_name = CStringTable().translate( name_ );
@@ -179,13 +179,13 @@ void IGameLevel::LL_CheckTextures( )
 	BOOL	bError = FALSE;
 	if (m_base > 64 * 1024 * 1024 || c_base > 400)
 	{
-		// LPCSTR msg	= "Too many base-textures (limit: 400 textures or 64M).\n        Reduce number of textures (better) or their resolution (worse).";
+		// const char* msg	= "Too many base-textures (limit: 400 textures or 64M).\n        Reduce number of textures (better) or their resolution (worse).";
 		// Msg		("***FATAL***: %s",msg);
 		bError = TRUE;
 	}
 	if (m_lmaps > 32 * 1024 * 1024 || c_lmaps > 8)
 	{
-		LPCSTR msg = "Too many lmap-textures (limit: 8 textures or 32M).\n        Reduce pixel density (worse) or use more vertex lighting (better).";
+		const char* msg = "Too many lmap-textures (limit: 8 textures or 32M).\n        Reduce pixel density (worse) or use more vertex lighting (better).";
 		Msg("***FATAL***: %s", msg);
 		bError = TRUE;
 	}

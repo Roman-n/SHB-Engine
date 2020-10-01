@@ -473,7 +473,7 @@ float CInventoryOwner::deficit_factor			(const shared_str &section) const
 	return						(m_purchase_list->deficit(section));
 }
 
-void CInventoryOwner::buy_supplies				(CInifile &ini_file, LPCSTR section)
+void CInventoryOwner::buy_supplies				(CIniFile&ini_file, LPCSTR section)
 {
 	if (!m_purchase_list)
 		m_purchase_list			= xr_new<CPurchaseList>();

@@ -45,11 +45,11 @@ xr_token							vid_bpp_token[ ] = {
 class CCC_Quit : public IConsoleCommand
 {
 public:
-	CCC_Quit(LPCSTR N) : IConsoleCommand(N)
+	CCC_Quit(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 //		TerminateProcess(GetCurrentProcess(),0);
 		Console->Hide( );
@@ -62,11 +62,11 @@ public:
 class CCC_DbgStrCheck : public IConsoleCommand
 {
 public:
-	CCC_DbgStrCheck(LPCSTR N) : IConsoleCommand(N)
+	CCC_DbgStrCheck(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		g_pStringContainer->verify( );
 	}
@@ -75,11 +75,11 @@ public:
 class CCC_DbgStrDump : public IConsoleCommand
 {
 public:
-	CCC_DbgStrDump(LPCSTR N) : IConsoleCommand(N)
+	CCC_DbgStrDump(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		g_pStringContainer->dump( );
 	}
@@ -89,11 +89,11 @@ public:
 class CCC_MotionsStat : public IConsoleCommand
 {
 public:
-	CCC_MotionsStat(LPCSTR N) : IConsoleCommand(N)
+	CCC_MotionsStat(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		g_pMotionsContainer->dump( );
 	}
@@ -101,11 +101,11 @@ public:
 class CCC_TexturesStat : public IConsoleCommand
 {
 public:
-	CCC_TexturesStat(LPCSTR N) : IConsoleCommand(N)
+	CCC_TexturesStat(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		Device.Resources->_DumpMemoryUsage( );
 	}
@@ -114,11 +114,11 @@ public:
 class CCC_E_Dump : public IConsoleCommand
 {
 public:
-	CCC_E_Dump(LPCSTR N) : IConsoleCommand(N)
+	CCC_E_Dump(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		Engine.Event.Dump( );
 	}
@@ -126,9 +126,9 @@ public:
 class CCC_E_Signal : public IConsoleCommand
 {
 public:
-	CCC_E_Signal(LPCSTR N) : IConsoleCommand(N)
+	CCC_E_Signal(const char* N) : IConsoleCommand(N)
 	{ };
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		char	Event[128], Param[128];
 		Event[0] = 0; Param[0] = 0;
@@ -140,11 +140,11 @@ public:
 class CCC_Help : public IConsoleCommand
 {
 public:
-	CCC_Help(LPCSTR N) : IConsoleCommand(N)
+	CCC_Help(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		Log("- --- Command listing: start ---");
 		CConsole::vecCMD_IT it;
@@ -204,11 +204,11 @@ void 			crashthread(void*)
 class CCC_Crash : public IConsoleCommand
 {
 public:
-	CCC_Crash(LPCSTR N) : IConsoleCommand(N)
+	CCC_Crash(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		thread_spawn(crashthread, "crash", 0, 0);
 	}
@@ -217,11 +217,11 @@ public:
 class CCC_DumpResources : public IConsoleCommand
 {
 public:
-	CCC_DumpResources(LPCSTR N) : IConsoleCommand(N)
+	CCC_DumpResources(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		Device.Resources->Dump(args != NULL);
 	}
@@ -231,11 +231,11 @@ CORE_API void _dump_open_files(int mode);
 class CCC_DumpOpenFiles : public IConsoleCommand
 {
 public:
-	CCC_DumpOpenFiles(LPCSTR N) : IConsoleCommand(N)
+	CCC_DumpOpenFiles(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = false;
 	};
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		int _mode = atoi(args);
 		_dump_open_files(_mode);
@@ -246,11 +246,11 @@ public:
 class CCC_SaveCFG : public IConsoleCommand
 {
 public:
-	CCC_SaveCFG(LPCSTR N) : IConsoleCommand(N)
+	CCC_SaveCFG(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		string_path			cfg_full_name;
 		strcpy_s(cfg_full_name, (xr_strlen(args) > 0) ? args : Console->ConfigFile);
@@ -333,16 +333,16 @@ bool CCC_LoadCFG_custom::allow(const char* cmd)
 //-----------------------------------------------------------------------
 class CCC_Start : public IConsoleCommand
 {
-	void	parse(char* dest, LPCSTR args, LPCSTR name)
+	void	parse(char* dest, const char* args, const char* name)
 	{
 		dest[0] = 0;
 		if (strstr(args, name))
 			sscanf(strstr(args, name) + xr_strlen(name), "(%[^)])", dest);
 	}
 public:
-	CCC_Start(LPCSTR N) : IConsoleCommand(N)
+	CCC_Start(const char* N) : IConsoleCommand(N)
 	{ };
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 /*		if (g_pGameLevel)	{
 			Log		("! Please disconnect/unload first");
@@ -371,11 +371,11 @@ public:
 class CCC_Disconnect : public IConsoleCommand
 {
 public:
-	CCC_Disconnect(LPCSTR N) : IConsoleCommand(N)
+	CCC_Disconnect(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		Engine.Event.Defer("KERNEL:disconnect");
 	}
@@ -384,11 +384,11 @@ public:
 class CCC_VID_Reset : public IConsoleCommand
 {
 public:
-	CCC_VID_Reset(LPCSTR N) : IConsoleCommand(N)
+	CCC_VID_Reset(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		if (Device.b_is_Ready)
 		{
@@ -400,11 +400,11 @@ class CCC_VidMode : public CCC_Token
 {
 	u32		_dummy;
 public:
-	CCC_VidMode(LPCSTR N) : CCC_Token(N, &_dummy, NULL)
+	CCC_VidMode(const char* N) : CCC_Token(N, &_dummy, NULL)
 	{
 		bEmptyArgsHandled = false;
 	};
-	virtual void	Execute(LPCSTR args)
+	virtual void	Execute(const char* args)
 	{
 		u32 _w, _h;
 		int cnt = sscanf(args, "%dx%d", &_w, &_h);
@@ -436,11 +436,11 @@ public:
 class CCC_SND_Restart : public IConsoleCommand
 {
 public:
-	CCC_SND_Restart(LPCSTR N) : IConsoleCommand(N)
+	CCC_SND_Restart(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		Sound->_restart( );
 	}
@@ -451,10 +451,10 @@ float	ps_gamma = 1.f, ps_brightness = 1.f, ps_contrast = 1.f;
 class CCC_Gamma : public CCC_Float
 {
 public:
-	CCC_Gamma(LPCSTR N, float* V) : CCC_Float(N, V, 0.5f, 1.5f)
+	CCC_Gamma(const char* N, float* V) : CCC_Float(N, V, 0.5f, 1.5f)
 	{ }
 
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		CCC_Float::Execute(args);
 		Device.Gamma.Gamma(ps_gamma);
@@ -474,11 +474,11 @@ extern	Fvector	g_DR_LM_Min, g_DR_LM_Max;
 class CCC_DR_ClearPoint : public IConsoleCommand
 {
 public:
-	CCC_DR_ClearPoint(LPCSTR N) : IConsoleCommand(N)
+	CCC_DR_ClearPoint(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		g_DR_LM_Min.x = 1000000.0f;
 		g_DR_LM_Min.z = 1000000.0f;
@@ -493,11 +493,11 @@ public:
 class CCC_DR_TakePoint : public IConsoleCommand
 {
 public:
-	CCC_DR_TakePoint(LPCSTR N) : IConsoleCommand(N)
+	CCC_DR_TakePoint(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		Fvector CamPos = Device.vCameraPosition;
 
@@ -514,7 +514,7 @@ public:
 class CCC_DR_UsePoints : public CCC_Integer
 {
 public:
-	CCC_DR_UsePoints(LPCSTR N, int* V, int _min = 0, int _max = 999) : CCC_Integer(N, V, _min, _max)
+	CCC_DR_UsePoints(const char* N, int* V, int _min = 0, int _max = 999) : CCC_Integer(N, V, _min, _max)
 	{ };
 	virtual void	Save(IWriter* F)
 	{ };
@@ -527,12 +527,12 @@ class CCC_r2 : public CCC_Token
 {
 	typedef CCC_Token inherited;
 public:
-	CCC_r2(LPCSTR N) : inherited(N, &renderer_value, vid_quality_token)
+	CCC_r2(const char* N) : inherited(N, &renderer_value, vid_quality_token)
 	{
 		renderer_value = 0;
 	};
 
-	virtual void	Execute(LPCSTR args)
+	virtual void	Execute(const char* args)
 	{
 		inherited::Execute(args);
 

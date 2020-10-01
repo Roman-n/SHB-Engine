@@ -370,7 +370,7 @@ void game_sv_GameState::Create					(shared_str &options)
 	ai().script_engine().remove_script_process(ScriptEngine::eScriptProcessorGame);
 	string_path					S;
 	FS.update_path				(S,"$game_config$","script.ltx");
-	CInifile					*l_tpIniFile = xr_new<CInifile>(S);
+	CIniFile*l_tpIniFile = xr_new<CIniFile>(S);
 	R_ASSERT					(l_tpIniFile);
 
 	if( l_tpIniFile->section_exist( type_name() ) )

@@ -33,7 +33,7 @@ private:
 	CTimer_paused							TimerGlobal;
 	CTimer									TimerMM;
 
-	void									_Create		(LPCSTR shName);
+	void									_Create		(const char* shName);
 	void									_Destroy	(BOOL	bKeepTextures);
 	void									_SetupStates();
 public:
@@ -110,7 +110,7 @@ public:
 		m_bNearer			= FALSE;
 	};
 
-	void	Pause							(BOOL bOn, BOOL bTimer, BOOL bSound, LPCSTR reason);
+	void	Pause							(BOOL bOn, BOOL bTimer, BOOL bSound, const char* reason);
 	BOOL	Paused							();
 
 	// Scene control

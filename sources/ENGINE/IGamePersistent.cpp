@@ -57,7 +57,7 @@ void IGamePersistent::OnAppEnd		()
 }
 
 
-void IGamePersistent::PreStart		(LPCSTR op)
+void IGamePersistent::PreStart		(const char* op)
 {
 	string256						prev_type;
 	params							new_game_params;
@@ -69,7 +69,7 @@ void IGamePersistent::PreStart		(LPCSTR op)
 		OnGameEnd					();
 	}
 }
-void IGamePersistent::Start		(LPCSTR op)
+void IGamePersistent::Start		(const char* op)
 {
 	string256						prev_type;
 	strcpy_s							(prev_type,m_game_params.m_game_type);

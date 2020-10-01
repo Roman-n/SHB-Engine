@@ -16,6 +16,6 @@ public:
 	virtual void	net_Destroy						()						;
 	virtual void    AffectObjects					()						;
 	virtual void	SwitchZoneState					(EZoneState new_state)	;
-	virtual void	Load							(LPCSTR section)		;
+	virtual void	Load							(const char* section)		;
 	virtual void	UpdateBlowout					()						;
 };

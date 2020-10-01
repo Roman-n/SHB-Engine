@@ -311,14 +311,16 @@ void CEnvironment::load		()
 	if (!eff_Thunderbolt)	eff_Thunderbolt	= xr_new<CEffect_Thunderbolt>();
 	// load weathers
 	if (WeatherCycles.empty()){
-		LPCSTR first_weather=0;
+		const char* first_weather=0;
 		int weather_count	= pSettings->line_count("weathers");
 		for (int w_idx=0; w_idx<weather_count; w_idx++){
-			LPCSTR weather, sect_w;
+			const char* weather;
+			const char* sect_w;
 			if (pSettings->r_line("weathers",w_idx,&weather,&sect_w)){
 				if (0==first_weather) first_weather=weather;
 				int env_count	= pSettings->line_count(sect_w);
-				LPCSTR exec_tm, sect_e;
+				const char* exec_tm;
+				const char* sect_e;
 				for (int env_idx=0; env_idx<env_count; env_idx++){
 					if (pSettings->r_line(sect_w,env_idx,&exec_tm,&sect_e)){
 						CEnvDescriptor*		D=xr_new<CEnvDescriptor>();
@@ -347,13 +349,15 @@ void CEnvironment::load		()
 	if (WeatherFXs.empty()){
 		int line_count	= pSettings->line_count("weather_effects");
 		for (int w_idx=0; w_idx<line_count; w_idx++){
-			LPCSTR weather, sect_w;
+			const char* weather;
+			const char* sect_w;
 			if (pSettings->r_line("weather_effects",w_idx,&weather,&sect_w)){
 				EnvVec& env		= WeatherFXs[weather];
 				env.push_back	(xr_new<CEnvDescriptor>()); env.back()->exec_time_loaded = 0;
 				env.push_back	(xr_new<CEnvDescriptor>()); env.back()->exec_time_loaded = 0;
 				int env_count	= pSettings->line_count(sect_w);
-				LPCSTR exec_tm, sect_e;
+				const char* exec_tm;
+				const char* sect_e;
 				for (int env_idx=0; env_idx<env_count; env_idx++){
 					if (pSettings->r_line(sect_w,env_idx,&exec_tm,&sect_e)){
 						CEnvDescriptor*	D=xr_new<CEnvDescriptor>();

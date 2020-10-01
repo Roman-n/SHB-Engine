@@ -536,7 +536,7 @@ IC float 				_x2real			(float x)
 IC float 				_y2real			(float y)
 { return (y+1)*Device.dwHeight*0.5f;}
 
-void CDrawUtilities::dbgDrawPlacement(const Fvector& p, int sz, u32 clr, LPCSTR caption, u32 clr_font)
+void CDrawUtilities::dbgDrawPlacement(const Fvector& p, int sz, u32 clr, const char* caption, u32 clr_font)
 {
 	VERIFY( Device.b_is_Ready );
     Fvector c;
@@ -565,13 +565,13 @@ void CDrawUtilities::dbgDrawPlacement(const Fvector& p, int sz, u32 clr, LPCSTR 
     }
 }
 
-void CDrawUtilities::dbgDrawVert(const Fvector& p0, u32 clr, LPCSTR caption)
+void CDrawUtilities::dbgDrawVert(const Fvector& p0, u32 clr, const char* caption)
 {
 	dbgDrawPlacement(p0,1,clr,caption);
 	DrawCross		(p0,0.01f,0.01f,0.01f, 0.01f,0.01f,0.01f, clr,false);
 }
 
-void CDrawUtilities::dbgDrawEdge(const Fvector& p0,	const Fvector& p1, u32 clr, LPCSTR caption)
+void CDrawUtilities::dbgDrawEdge(const Fvector& p0,	const Fvector& p1, u32 clr, const char* caption)
 {
 	dbgDrawPlacement(p0,1,clr,caption);
 	DrawCross		(p0,0.01f,0.01f,0.01f, 0.01f,0.01f,0.01f, clr,false);
@@ -579,7 +579,7 @@ void CDrawUtilities::dbgDrawEdge(const Fvector& p0,	const Fvector& p1, u32 clr, 
     DrawLine		(p0,p1,clr);
 }
 
-void CDrawUtilities::dbgDrawFace(const Fvector& p0,	const Fvector& p1, const Fvector& p2, u32 clr, LPCSTR caption)
+void CDrawUtilities::dbgDrawFace(const Fvector& p0,	const Fvector& p1, const Fvector& p2, u32 clr, const char* caption)
 {
 	dbgDrawPlacement(p0,1,clr,caption);
 	DrawCross		(p0,0.01f,0.01f,0.01f, 0.01f,0.01f,0.01f, clr,false);
@@ -1165,7 +1165,7 @@ void CDrawUtilities::OnRender()
 	m_Font->OnRender();
 }
 
-void CDrawUtilities::OutText(const Fvector& pos, LPCSTR text, u32 color, u32 shadow_color)
+void CDrawUtilities::OutText(const Fvector& pos, const char* text, u32 color, u32 shadow_color)
 {
 	Fvector p;
 	float w	= pos.x*Device.mFullTransform._14 + pos.y*Device.mFullTransform._24 + pos.z*Device.mFullTransform._34 + Device.mFullTransform._44;

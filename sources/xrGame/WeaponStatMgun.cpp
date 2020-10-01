@@ -70,17 +70,14 @@ void CWeaponStatMgun::Load(LPCSTR section)
 	camMaxAngle			= deg2rad					(camMaxAngle);
 	camRelaxSpeed		= pSettings->r_float		(section,"cam_relax_speed"	); 
 	camRelaxSpeed		= deg2rad					(camRelaxSpeed);
-
 }
 
 BOOL CWeaponStatMgun::net_Spawn(CSE_Abstract* DC)
 {
 	if(!inheritedPH::net_Spawn	(DC)) return FALSE;
 
-
-
 	CKinematics* K			= smart_cast<CKinematics*>(Visual());
-	CInifile* pUserData		= K->LL_UserData(); 
+	CIniFile* pUserData		= K->LL_UserData();
 
 	R_ASSERT2				(pUserData,"Empty WeaponStatMgun user data!");
 
