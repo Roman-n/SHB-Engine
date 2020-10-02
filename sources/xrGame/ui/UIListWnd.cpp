@@ -270,7 +270,7 @@ void CUIListWnd::SendMessage(CUIWindow *pWnd, s16 msg, void *pData)
 		{
 			m_iFirstShownIndex = m_ScrollBar->GetScrollPos();
 			UpdateList();
-			GetMessageTarget()->SendMessage(this, SCROLLBAR_VSCROLL, NULL);
+			GetMessageTarget()->SendMessage(this, SCROLLBAR_VSCROLL, nullptr);
 		}
 	}
 	else 

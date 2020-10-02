@@ -63,7 +63,7 @@ bool CUITabControl::AddItem(CUITabButton *pButton)
 
 	// Нажимаем кнопку по умолчанию
 	if (m_iPushedIndex == static_cast<int>(m_TabsArr.size() - 1))
-        m_TabsArr[m_iPushedIndex]->SendMessage(m_TabsArr[m_iPushedIndex], TAB_CHANGED, NULL);
+        m_TabsArr[m_iPushedIndex]->SendMessage(m_TabsArr[m_iPushedIndex], TAB_CHANGED, nullptr);
 
 	AttachChild					(pButton);
 	m_TabsArr.push_back			(pButton);
@@ -148,9 +148,9 @@ void CUITabControl::OnStaticFocusLost(CUIWindow* pWnd){
 
 void CUITabControl::OnTabChange(int iCur, int iPrev)
 {
-	if(iPrev!=-1)	m_TabsArr[iPrev]->SendMessage	(m_TabsArr[iCur],	TAB_CHANGED, NULL);
-	m_TabsArr [iCur]->SendMessage					(m_TabsArr[iCur],	TAB_CHANGED, NULL);	
-	GetMessageTarget()->SendMessage					(this,				TAB_CHANGED, NULL);
+	if(iPrev!=-1)	m_TabsArr[iPrev]->SendMessage	(m_TabsArr[iCur],	TAB_CHANGED, nullptr);
+	m_TabsArr [iCur]->SendMessage					(m_TabsArr[iCur],	TAB_CHANGED, nullptr);
+	GetMessageTarget()->SendMessage					(this,				TAB_CHANGED, nullptr);
 }
 
 void CUITabControl::SetNewActiveTab(const int iNewTab)

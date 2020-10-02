@@ -8,9 +8,9 @@
 #include "../HUDManager.h"//
 #include <dinput.h>
 
-void CUIVideoPlayerWnd::SendMessage	(CUIWindow* pWnd, s16 msg, void* pData)
+void CUIVideoPlayerWnd::SendMessage(CUIWindow* pWnd, s16 msg, void* pData)
 {
-	CUIWndCallback::OnEvent			(pWnd, msg, pData);
+	CUIWndCallback::OnEvent(pWnd, msg, pData);
 }
 
 void CUIVideoPlayerWnd::Init	(LPCSTR file_name)

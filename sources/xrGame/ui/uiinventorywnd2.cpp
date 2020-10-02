@@ -36,15 +36,14 @@ void CUIInventoryWnd::SendMessage(CUIWindow *pWnd, s16 msg, void *pData)
 	if(pWnd == &UIPropertiesBox &&	msg==PROPERTY_CLICKED)
 	{
 		ProcessPropertiesBoxClicked	();
-	}else 
-	if (UIExitButton == pWnd && BUTTON_CLICKED == msg)
+	}
+	else if (UIExitButton == pWnd && BUTTON_CLICKED == msg)
 	{
 		GetHolder()->StartStopMenu			(this,true);
 	}
 
 	CUIWindow::SendMessage(pWnd, msg, pData);
 }
-
 
 void CUIInventoryWnd::InitInventory_delayed()
 {

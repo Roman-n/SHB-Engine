@@ -25,7 +25,7 @@ private:
 public:
 	void			Init					(CUIXml* doc, LPCSTR start_from);
 	void			Init					(LPCSTR name);
-	virtual void	SendMessage				(CUIWindow* pWnd, s16 msg, void* pData);
+	virtual void	SendMessage(CUIWindow* pWnd, s16 msg, void* pData);
 	void			SetFile					(LPCSTR fn);
 
 	virtual void	Draw					();

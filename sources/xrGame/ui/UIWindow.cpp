@@ -387,9 +387,13 @@ void CUIWindow::OnMouseMove(){
 void CUIWindow::OnMouseScroll(float iDirection){
 }
 
-bool CUIWindow::OnDbClick(){
-	if (GetMessageTarget())
-		GetMessageTarget()->SendMessage(this, WINDOW_LBUTTON_DB_CLICK);
+bool CUIWindow::OnDbClick( )
+{
+	if (GetMessageTarget( ))
+	{
+		GetMessageTarget( )->SendMessage(this, WINDOW_LBUTTON_DB_CLICK);
+	}
+
 	return false;
 }
 
@@ -417,25 +421,29 @@ void CUIWindow::OnFocusLost()
 //о том, что окно хочет захватить мышь,
 //все сообщения от нее будут направляться только
 //ему в независимости от того где мышь
-void CUIWindow::SetCapture(CUIWindow *pChildWindow, bool capture_status)
+void CUIWindow::SetCapture(CUIWindow* pChildWindow, bool capture_status)
 {
-	if(NULL != GetParent())
+	if (NULL != GetParent( ))
 	{
-		if(m_pOrignMouseCapturer == NULL || m_pOrignMouseCapturer == pChildWindow)
-			GetParent()->SetCapture(this, capture_status);
+		if (m_pOrignMouseCapturer == NULL || m_pOrignMouseCapturer == pChildWindow)
+		{
+			GetParent( )->SetCapture(this, capture_status);
+		}
 	}
 
-	if(capture_status)
+	if (capture_status)
 	{
 		//оповестить дочернее окно о потере фокуса мыши
-		if(NULL!=m_pMouseCapturer)
+		if (NULL != m_pMouseCapturer)
+		{
 			m_pMouseCapturer->SendMessage(this, WINDOW_MOUSE_CAPTURE_LOST);
+		}
 
 		m_pMouseCapturer = pChildWindow;
 	}
 	else
 	{
-			m_pMouseCapturer = NULL;
+		m_pMouseCapturer = NULL;
 	}
 }
 
@@ -496,30 +504,37 @@ bool CUIWindow::OnKeyboardHold(int dik)
 
 void CUIWindow::SetKeyboardCapture(CUIWindow* pChildWindow, bool capture_status)
 {
-	if(NULL != GetParent())
-		GetParent()->SetKeyboardCapture(this, capture_status);
+	if (NULL != GetParent( ))
+	{
+		GetParent( )->SetKeyboardCapture(this, capture_status);
+	}
 
 	if(capture_status)
 	{
 		//оповестить дочернее окно о потере фокуса клавиатуры
-		if(NULL!=m_pKeyboardCapturer)
+		if (NULL != m_pKeyboardCapturer)
+		{
 			m_pKeyboardCapturer->SendMessage(this, WINDOW_KEYBOARD_CAPTURE_LOST);
+		}
 			
 		m_pKeyboardCapturer = pChildWindow;
 	}
 	else
+	{
 		m_pKeyboardCapturer = NULL;
+	}
 }
 
-
-//обработка сообщений 
-void CUIWindow::SendMessage(CUIWindow *pWnd, s16 msg, void *pData)
+//обработка сообщений
+void CUIWindow::SendMessage(CUIWindow* pWnd, s16 msg, void* pData)
 {
 	//оповестить дочерние окна
-	for(WINDOW_LIST_it it = m_ChildWndList.begin(); m_ChildWndList.end()!=it; ++it)
+	for (WINDOW_LIST_it it = m_ChildWndList.begin( ); m_ChildWndList.end( ) != it; ++it)
 	{
-		if((*it)->IsEnabled())
-			(*it)->SendMessage(pWnd,msg,pData);
+		if ((*it)->IsEnabled( ))
+		{
+			(*it)->SendMessage(pWnd, msg, pData);
+		}
 	}
 }
 

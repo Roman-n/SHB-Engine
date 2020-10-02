@@ -17,7 +17,7 @@ class CUIStalkersRankingWnd: public CUIWindow
 public:
 			void			Init				();
 	virtual void			Show				(bool status);
-			void			ShowHumanDetails	();
+
 protected:
 	CUIFrameWindow*			UIInfoFrame;
 	CUIFrameWindow*			UICharIconFrame;

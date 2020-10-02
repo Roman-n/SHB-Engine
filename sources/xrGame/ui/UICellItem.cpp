@@ -36,19 +36,19 @@ void CUICellItem::Draw()
 bool CUICellItem::OnMouse(float x, float y, EUIMessages mouse_action)
 {
 	if(mouse_action == WINDOW_LBUTTON_DOWN){
-		GetMessageTarget()->SendMessage(this, DRAG_DROP_ITEM_SELECTED, NULL);
+		GetMessageTarget()->SendMessage(this, DRAG_DROP_ITEM_SELECTED, nullptr);
 		return false;
 	}else
 	if(mouse_action == WINDOW_MOUSE_MOVE && pInput->iGetAsyncBtnState(0)){
-		GetMessageTarget()->SendMessage(this, DRAG_DROP_ITEM_DRAG, NULL);
+		GetMessageTarget()->SendMessage(this, DRAG_DROP_ITEM_DRAG, nullptr);
 		return true;
 	}else
 	if(mouse_action==WINDOW_LBUTTON_DB_CLICK){
-		GetMessageTarget()->SendMessage(this, DRAG_DROP_ITEM_DB_CLICK, NULL);
+		GetMessageTarget()->SendMessage(this, DRAG_DROP_ITEM_DB_CLICK, nullptr);
 		return true;
 	}else
 	if(mouse_action==WINDOW_RBUTTON_DOWN){
-		GetMessageTarget()->SendMessage(this, DRAG_DROP_ITEM_RBUTTON_CLICK, NULL);
+		GetMessageTarget()->SendMessage(this, DRAG_DROP_ITEM_RBUTTON_CLICK, nullptr);
 		return true;
 	}
 	
@@ -61,7 +61,7 @@ bool CUICellItem::OnKeyboard(int dik, EUIMessages keyboard_action)
 	{
 		if (GetAccelerator() == dik)
 		{
-			GetMessageTarget()->SendMessage(this, DRAG_DROP_ITEM_DB_CLICK, NULL);
+			GetMessageTarget()->SendMessage(this, DRAG_DROP_ITEM_DB_CLICK, nullptr);
 			return		true;
 		}
 	}
@@ -168,7 +168,7 @@ bool CUIDragItem::OnMouse(float x, float y, EUIMessages mouse_action)
 {
 	if(mouse_action == WINDOW_LBUTTON_UP)
 	{
-		m_pParent->GetMessageTarget()->SendMessage(m_pParent,DRAG_DROP_ITEM_DROP,NULL);
+		m_pParent->GetMessageTarget()->SendMessage(m_pParent,DRAG_DROP_ITEM_DROP, nullptr);
 		return true;
 	}
 	return false;

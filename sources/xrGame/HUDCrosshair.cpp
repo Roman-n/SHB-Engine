@@ -118,5 +118,5 @@ void CHUDCrosshair::OnRender ()
 			radius -= radius_change;
 		else
 			radius += radius_change;
-	};
+	}
 }

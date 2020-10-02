@@ -22,7 +22,8 @@ CUIOutfitInfo::~CUIOutfitInfo( )
 	}
 }
 
-LPCSTR _imm_names[ ] = {
+const char* _imm_names[ ] =
+{
 	"burn_immunity",
 	"strike_immunity",
 	"shock_immunity",
@@ -31,10 +32,11 @@ LPCSTR _imm_names[ ] = {
 	"telepatic_immunity",
 	"chemical_burn_immunity",
 	"explosion_immunity",
-	"fire_wound_immunity",
+	"fire_wound_immunity"
 };
 
-LPCSTR _imm_st_names[ ] = {
+const char* _imm_st_names[ ] =
+{
 	"ui_inv_outfit_burn_protection",
 	"ui_inv_outfit_shock_protection",
 	"ui_inv_outfit_strike_protection",
@@ -43,12 +45,12 @@ LPCSTR _imm_st_names[ ] = {
 	"ui_inv_outfit_telepatic_protection",
 	"ui_inv_outfit_chemical_burn_protection",
 	"ui_inv_outfit_explosion_protection",
-	"ui_inv_outfit_fire_wound_protection",
+	"ui_inv_outfit_fire_wound_protection"
 };
 
 void CUIOutfitInfo::InitFromXml(CUIXml& xml_doc)
 {
-	LPCSTR _base = "outfit_info";
+	const char* _base = "outfit_info";
 
 	string256					_buff;
 	CUIXmlInit::InitWindow(xml_doc, _base, 0, this);
@@ -100,12 +102,16 @@ void CUIOutfitInfo::SetItem(u32 hitType, bool force_add)
 	if (fsimilar(_val_outfit, 0.0f) && fsimilar(_val_af, 0.0f) && !force_add)
 	{
 		if (_s->GetParent( ) != NULL)
+		{
 			m_listWnd->RemoveWindow(_s);
+		}
+
 		return;
 	}
 
-//	LPCSTR			_clr_outfit, _clr_af;
-	LPCSTR			_imm_name = *CStringTable( ).translate(_imm_st_names[hitType]);
+//	const char*			_clr_outfit;
+//	const char* _clr_af;
+	const char* _imm_name = *CStringTable( ).translate(_imm_st_names[hitType]);
 
 	int _sz = sprintf_s(_buff, sizeof(_buff), "%s ", _imm_name);
 	_sz += sprintf_s(_buff + _sz, sizeof(_buff) - _sz, "%s %+3.0f%%", (_val_outfit > 0.0f) ? "%c[green]" : "%c[red]", _val_outfit * 100.0f);
@@ -114,8 +120,11 @@ void CUIOutfitInfo::SetItem(u32 hitType, bool force_add)
 	{
 		_sz += sprintf_s(_buff + _sz, sizeof(_buff) - _sz, "%s %+3.0f%%", (_val_af > 0.0f) ? "%c[green]" : "%c[red]", _val_af * 100.0f);
 	}
+
 	_s->SetText(_buff);
 
 	if (_s->GetParent( ) == NULL)
+	{
 		m_listWnd->AddWindow(_s, false);
+	}
 }

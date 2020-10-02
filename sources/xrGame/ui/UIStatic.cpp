@@ -544,14 +544,14 @@ void CUIStatic::OnFocusReceive()
 {
 	inherited::OnFocusReceive();
 	if (GetMessageTarget())
-        GetMessageTarget()->SendMessage(this, STATIC_FOCUS_RECEIVED, NULL);
+        GetMessageTarget()->SendMessage(this, STATIC_FOCUS_RECEIVED, nullptr);
 }
 
 void CUIStatic::OnFocusLost(){
 
 	inherited::OnFocusLost();
 	if (GetMessageTarget())
-		GetMessageTarget()->SendMessage(this, STATIC_FOCUS_LOST, NULL);
+		GetMessageTarget()->SendMessage(this, STATIC_FOCUS_LOST, nullptr);
 }
 
 void CUIStatic::AdjustHeightToText(){

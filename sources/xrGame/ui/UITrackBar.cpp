@@ -148,19 +148,23 @@ void CUITrackBar::UpdatePosRelativeToMouse()
 		_bki = m_i_val; 
 	}
 
-
 	float btn_width				= m_pSlider->GetWidth();
 	float window_width			= GetWidth();		
 	float fpos					= cursor_pos.x;
 
-	if( GetInvert() )
-		fpos					= window_width - fpos;
+	if (GetInvert( ))
+	{
+		fpos = window_width - fpos;
+	}
 
-	if (fpos < btn_width/2)
-		fpos = btn_width/2;
-	else 
-	if (fpos > window_width - btn_width/2)
-		fpos = window_width - btn_width/2;
+	if (fpos < btn_width / 2)
+	{
+		fpos = btn_width / 2;
+	}
+	else if (fpos > window_width - btn_width / 2)
+	{
+		fpos = window_width - btn_width / 2;
+	}
 
 	float __fval;
 	float __fmax	= (m_b_is_float)?m_f_max:(float)m_i_max;
@@ -175,18 +179,23 @@ void CUITrackBar::UpdatePosRelativeToMouse()
 	int _vi		= iFloor(_v);
 	float _vf	= __fstep*_vi;
 	
-	if(_d-_vf>__fstep/2.0f)	
-		_vf		+= __fstep;
+	if (_d - _vf > __fstep / 2.0f)
+	{
+		_vf += __fstep;
+	}
 
 	__fval		= __fmin+_vf;
 	
 	clamp		(__fval, __fmin, __fmax);
 
-	if(m_b_is_float)
-		m_f_val	= __fval;
+	if (m_b_is_float)
+	{
+		m_f_val = __fval;
+	}
 	else
-		m_i_val	= iFloor(__fval);
-	
+	{
+		m_i_val = iFloor(__fval);
+	}
 
 	bool b_ch = false;
 	if(m_b_is_float)
@@ -197,8 +206,10 @@ void CUITrackBar::UpdatePosRelativeToMouse()
 		b_ch  =  (_bki != m_i_val);
 	}
 
-	if(b_ch)
-		GetMessageTarget()->SendMessage(this, BUTTON_CLICKED, NULL);
+	if (b_ch)
+	{
+		GetMessageTarget( )->SendMessage(this, BUTTON_CLICKED, nullptr);
+	}
 
 	UpdatePos	();
 }

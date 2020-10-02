@@ -242,13 +242,13 @@ void CUITreeViewItem::SetText(LPCSTR str)
 
 void CUITreeViewItem::SendMessage(CUIWindow* pWnd, s16 msg, void* pData)
 {
-	static CUITreeViewItem *pPrevFocusedItem = NULL;
+	static CUITreeViewItem* pPrevFocusedItem = nullptr;
 
 	if (pWnd == this && BUTTON_CLICKED == msg)
 	{
-		if (IsRoot())
+		if (IsRoot( ))
 		{
-			IsOpened() ? Close() : Open();
+			IsOpened( ) ? Close( ) : Open( );
 		}
 		else
 		{
@@ -257,21 +257,24 @@ void CUITreeViewItem::SendMessage(CUIWindow* pWnd, s16 msg, void* pData)
 	}
 	else if (pWnd == this && STATIC_FOCUS_RECEIVED == msg)
 	{
-		UIBkg.TextureOn();
+		UIBkg.TextureOn( );
 
 		if (pPrevFocusedItem)
 		{
-			pPrevFocusedItem->UIBkg.TextureOff();
+			pPrevFocusedItem->UIBkg.TextureOff( );
 		}
+
 		pPrevFocusedItem = this;
 	}
 	else if (pWnd == this && STATIC_FOCUS_LOST == msg)
 	{
-		UIBkg.TextureOff();
-		pPrevFocusedItem = NULL;
+		UIBkg.TextureOff( );
+		pPrevFocusedItem = nullptr;
 	}
 	else
+	{
 		inherited::SendMessage(pWnd, msg, pData);
+	}
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -280,7 +283,7 @@ CUITreeViewItem * CUITreeViewItem::Find(LPCSTR text) const
 {
 	// Пробегаемся по списку подчиненных элементов, и ищем элемент с заданным текстом
 	// Если среди подч. эл-тов есть root'ы, то ищем рекурсивно в них
-	CUITreeViewItem *pResult = NULL;
+	CUITreeViewItem *pResult = nullptr;
 	xr_string caption;
 
 	for (SubItems::const_iterator it = vSubItems.begin(); it != vSubItems.end(); ++it)
@@ -308,7 +311,7 @@ CUITreeViewItem * CUITreeViewItem::Find(LPCSTR text) const
 
 CUITreeViewItem * CUITreeViewItem::Find(int value) const
 {
-	CUITreeViewItem *pResult = NULL;
+	CUITreeViewItem *pResult = nullptr;
 
 	for (SubItems::const_iterator it = vSubItems.begin(); it != vSubItems.end(); ++it)
 	{
@@ -327,7 +330,7 @@ CUITreeViewItem * CUITreeViewItem::Find(int value) const
 
 CUITreeViewItem * CUITreeViewItem::Find(CUITreeViewItem * pItem) const
 {
-	CUITreeViewItem *pResult = NULL;
+	CUITreeViewItem *pResult = nullptr;
 
 	for (SubItems::const_iterator it = vSubItems.begin(); it != vSubItems.end(); ++it)
 	{

@@ -196,15 +196,15 @@ void CUITradeWnd::InitTrade(CInventoryOwner* pOur, CInventoryOwner* pOthers)
 	UpdateLists							(eBoth);
 }  
 
-void CUITradeWnd::SendMessage(CUIWindow *pWnd, s16 msg, void *pData)
+void CUITradeWnd::SendMessage(CUIWindow* pWnd, s16 msg, void* pData)
 {
-	if(pWnd == &m_uidata->UIToTalkButton && msg == BUTTON_CLICKED)
+	if (pWnd == &m_uidata->UIToTalkButton && msg == BUTTON_CLICKED)
 	{
-		SwitchToTalk();
+		SwitchToTalk( );
 	}
-	else if(pWnd == &m_uidata->UIPerformTradeButton && msg == BUTTON_CLICKED)
+	else if (pWnd == &m_uidata->UIPerformTradeButton && msg == BUTTON_CLICKED)
 	{
-		PerformTrade();
+		PerformTrade( );
 	}
 
 	CUIWindow::SendMessage(pWnd, msg, pData);
@@ -611,9 +611,9 @@ void CUITradeWnd::SetCurrentItem(CUICellItem* itm)
 	}
 }
 
-void CUITradeWnd::SwitchToTalk()
+void CUITradeWnd::SwitchToTalk( )
 {
-	GetMessageTarget()->SendMessage		(this, TRADE_WND_CLOSED);
+	GetMessageTarget( )->SendMessage(this, TRADE_WND_CLOSED);
 }
 
 void CUITradeWnd::BindDragDropListEnents(CUIDragDropListEx* lst)

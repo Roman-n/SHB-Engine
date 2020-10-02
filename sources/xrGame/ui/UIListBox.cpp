@@ -82,7 +82,6 @@ void CUIListBox::SendMessage(CUIWindow* pWnd, s16 msg, void* pData)
 	CUIScrollView::SendMessage(pWnd, msg, pData);
 }
 
-
 CUIListBoxItem* CUIListBox::GetSelectedItem()
 {
 	CUIWindow* w	=	GetSelected();
@@ -91,7 +90,6 @@ CUIListBoxItem* CUIListBox::GetSelectedItem()
 		return smart_cast<CUIListBoxItem*>(w);
 	else
 		return NULL;
-
 }
 
 LPCSTR CUIListBox::GetSelectedText()

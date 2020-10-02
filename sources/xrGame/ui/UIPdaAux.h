@@ -34,7 +34,6 @@ namespace pda_section{
 
 		news			=diary|(1<<1),
 		info			=diary|(1<<2),
-		journal			=diary|(1<<3),
-
+		journal			=diary|(1<<3)
 	};
 };

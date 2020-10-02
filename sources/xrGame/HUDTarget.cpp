@@ -115,7 +115,6 @@ void CHUDTarget::CursorOnFrame ()
 		if(Level().ObjectSpace.RayQuery(RQR,RD, pick_trace_callback, &RQ, NULL, Level().CurrentEntity()))
 			clamp			(RQ.range,NEAR_LIM,RQ.range);
 	}
-
 }
 
 extern ENGINE_API BOOL g_bRendering; 
@@ -235,4 +234,3 @@ void CHUDTarget::Render()
 		HUDCrosshair.OnRender		();
 	}
 }
-

@@ -1,41 +1,38 @@
-///////////////////////////////////
-// class CUIOptionsManager
-///////////////////////////////////
-
 #pragma once
 
 class CUIOptionsItem;
 
-class CUIOptionsManager{
+class CUIOptionsManager
+{
 	friend class CUIOptionsItem;
-public:	
-	CUIOptionsManager();
 
-	void SeveBackupValues(LPCSTR group);
-	void SetCurrentValues(LPCSTR group);
-	void SaveValues(LPCSTR group);
-	bool IsGroupChanged(LPCSTR group);
-	void UndoGroup(LPCSTR group);
+public:
+				CUIOptionsManager( );
 
-	void OptionsPostAccept();
-	void DoVidRestart();
-	void DoSndRestart();
+	void		SeveBackupValues		(const char* group);
+	void		SetCurrentValues		(const char* group);
+	void		SaveValues				(const char* group);
+	bool		IsGroupChanged			(const char* group);
+	void		UndoGroup				(const char* group);
 
-	void SendMessage2Group(LPCSTR group, LPCSTR message);
+	void		OptionsPostAccept		( );
+	void		DoVidRestart			( );
+	void		DoSndRestart			( );
 
-protected:	
-	void RegisterItem(CUIOptionsItem* item, LPCSTR group);
-	void UnRegisterGroup(LPCSTR group);
-	void UnRegisterItem(CUIOptionsItem* item);
+	void		SendMessage2Group		(const char* group, const char* message);
 
+protected:
+	void		RegisterItem			(CUIOptionsItem* item, const char* group);
+	void		UnRegisterGroup			(const char* group);
+	void		UnRegisterItem			(CUIOptionsItem* item);
 
-	typedef	xr_string									group_name;
-	typedef xr_vector<CUIOptionsItem*>					items_list;
-    typedef xr_map<group_name, items_list>				groups;
-	typedef xr_map<group_name, items_list>::iterator	groups_it;
+	using group_name					= xr_string;
+	using items_list					= xr_vector<CUIOptionsItem*>;
+	using groups						= xr_map<group_name, items_list>;
+	using groups_it						= xr_map<group_name, items_list>::iterator;
 
-	groups	m_groups;
+	groups								m_groups;
 
-	bool	m_b_vid_restart;
-	bool	m_b_snd_restart;
+	bool								m_b_vid_restart;
+	bool								m_b_snd_restart;
 };
