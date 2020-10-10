@@ -10,7 +10,7 @@
 #include "xrServer_Objects_ALife_Items.h"
 #include "level.h"
 
-#include "specific_character.h"
+//#include "SpecificCharacter.h"
 #include "alife_registry_wrappers.h"
 
 CPda::CPda(void)						

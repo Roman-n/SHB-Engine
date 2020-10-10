@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "xrserver.h"
 #include "xrserver_objects.h"
 
@@ -58,5 +59,4 @@ void xrServer::Process_event_ownership(NET_Packet& P, ClientID sender, u32 time,
 		// Signal to everyone (including sender)
 		SendBroadcast		(BroadcastCID,P,MODE);
 	}
-
 }

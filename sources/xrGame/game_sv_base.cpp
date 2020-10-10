@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "xrServer.h"
 #include "LevelGameDef.h"
 #include "script_process.h"
@@ -11,8 +12,7 @@
 #include "game_sv_event_queue.h"
 #include "..\ENGINE\Console.h"
 //#include "..\ENGINE\IConsoleCommand.h"
-#include "string_table.h"
-
+#include "StringTable.h"
 #include "debug_renderer.h"
 
 #define			MAPROT_LIST_NAME		"maprot_list.ltx"

@@ -6,16 +6,17 @@
 //	Description : Server objects
 ////////////////////////////////////////////////////////////////////////////
 
-#ifndef xrServer_Objects_AbstractH
-#define xrServer_Objects_AbstractH
+#pragma once
 
 #pragma pack(push,4)
 #include "xrServer_Space.h"
+
 #ifdef XRGAME_EXPORTS
 #	include "../../xrCDB/xrCDB.h"
 #else // XRGAME_EXPORTS
 #	include "../xrCDB/xrCDB.h"
 #endif // XRGAME_EXPORTS
+
 #include "ShapeData.h"
 
 class NET_Packet;
@@ -117,6 +118,4 @@ public:
 };
 
 #pragma warning(pop)
-
 #pragma pack(pop)
-#endif // xrServer_Objects_AbstractH

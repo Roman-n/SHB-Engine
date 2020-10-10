@@ -9,7 +9,7 @@
 #include "..\ENGINE\IGamePersistent.h"//==>
 #include "PhysicsGamePars.h"
 #include "ai_space.h"
-#include "string_table.h"
+#include "StringTable.h"
 
 extern	pureFrame*				g_pNetProcessor;
 

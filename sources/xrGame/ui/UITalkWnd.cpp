@@ -15,7 +15,7 @@
 #include "../PhraseDialogManager.h"
 
 #include "../game_cl_base.h"
-#include "../string_table.h"
+#include "..\StringTable.h"
 #include "../xr_level_controller.h"
 #include "../..\ENGINE\cameraBase.h"
 #include "UIXmlInit.h"//

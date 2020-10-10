@@ -20,7 +20,7 @@
 #include "Inventory.h"
 #include "HudItem.h"
 #include "clsid_game.h"
-#include "string_table.h"
+//#include "StringTable.h"
 #include "map_manager.h"
 #include "..\ENGINE\IGamePersistent.h"//==>
 

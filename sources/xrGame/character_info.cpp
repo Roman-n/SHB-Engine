@@ -23,11 +23,7 @@ SCharacterProfile::SCharacterProfile()
 }
 
 SCharacterProfile::~SCharacterProfile()
-{
-}
-
-
-
+{ }
 //////////////////////////////////////////////////////////////////////////
 
 CCharacterInfo::CCharacterInfo()
@@ -40,13 +36,11 @@ CCharacterInfo::CCharacterInfo()
 	m_CurrentReputation.set(NO_REPUTATION);
 	m_StartDialog = NULL;
 #endif
-}
 
+}
 
 CCharacterInfo::~CCharacterInfo()
-{
-}
-
+{ }
 
 void CCharacterInfo::Load(shared_str id)
 {
@@ -55,7 +49,6 @@ void CCharacterInfo::Load(shared_str id)
 }
 
 #ifdef XRGAME_EXPORTS
-
 void CCharacterInfo::InitSpecificCharacter (shared_str new_id)
 {
 	R_ASSERT(new_id.size());
@@ -71,8 +64,6 @@ void CCharacterInfo::InitSpecificCharacter (shared_str new_id)
 	if(!m_StartDialog || !m_StartDialog.size() )
 		m_StartDialog = m_SpecificCharacter.data()->m_StartDialog;
 }
-
-
 #endif
 
 void CCharacterInfo::load_shared	(const char*)
@@ -134,7 +125,7 @@ const char* CCharacterInfo::Name() const
 
 shared_str CCharacterInfo::Bio() const
 {
-	return 	m_SpecificCharacter.Bio();
+	return m_SpecificCharacter.Bio();
 }
 
 void CCharacterInfo::SetRank (CHARACTER_RANK_VALUE rank)
@@ -146,7 +137,6 @@ void CCharacterInfo::SetReputation (CHARACTER_REPUTATION_VALUE reputation)
 {
 	m_CurrentReputation.set(reputation);
 }
-
 
 const shared_str& CCharacterInfo::IconName() const
 {
@@ -174,10 +164,7 @@ void CCharacterInfo::save	(NET_Packet& stream)
 {
 	stream.w_stringZ	(m_StartDialog);
 }
-
 #endif
-
-
 
 void CCharacterInfo::InitXmlIdToIndex()
 {

@@ -6,8 +6,7 @@
 //	Description : Server objects for ALife simulator
 ////////////////////////////////////////////////////////////////////////////
 
-#ifndef xrServer_Objects_ALifeH
-#define xrServer_Objects_ALifeH
+#pragma once
 
 #include "xrServer_Objects.h"
 #include "alife_space.h"
@@ -87,7 +86,7 @@ SERVER_ENTITY_DECLARE_BEGIN2(CSE_ALifeObject,CSE_Abstract,CRandom)
 		flCanSave			= u32(1) << 9,
 		flVisibleForMap		= u32(1) << 10,
 		flUseSmartTerrains	= u32(1) << 11,
-		flCheckForSeparator	= u32(1) << 12,
+		flCheckForSeparator	= u32(1) << 12
 	};
 
 public:
@@ -544,5 +543,3 @@ public:
 };
 
 #pragma warning(pop)
-
-#endif

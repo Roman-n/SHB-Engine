@@ -20,7 +20,7 @@
 #include "relation_registry.h"
 #include "InventoryOwner.h"
 #include "object_broker.h"
-#include "string_table.h"
+#include "StringTable.h"
 #include "level_changer.h"
 #include "actor_memory.h"
 #include "visual_memory_manager.h"

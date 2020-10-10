@@ -782,7 +782,7 @@
     <ClInclude Include="HUDTarget.h" />
     <ClInclude Include="HudItemObject.h" />
     <ClInclude Include="ICollisionDamageInfo.h" />
-    <ClInclude Include="id_generator.h" />
+    <ClInclude Include="ID_Generator.h" />
     <ClInclude Include="IKLimbsController.h" />
     <ClInclude Include="Ik\aint.h" />
     <ClInclude Include="Ik\Dof7control.h" />
@@ -1190,7 +1190,7 @@
     <ClInclude Include="space_restriction_shape_inline.h" />
     <ClInclude Include="space_restrictor.h" />
     <ClInclude Include="space_restrictor_inline.h" />
-    <ClInclude Include="specific_character.h" />
+    <ClInclude Include="SpecificCharacter.h" />
     <ClInclude Include="Spectator.h" />
     <ClInclude Include="squad_hierarchy_holder.h" />
     <ClInclude Include="squad_hierarchy_holder_inline.h" />
@@ -1252,8 +1252,8 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="step_manager.h" />
     <ClInclude Include="step_manager_defs.h" />
-    <ClInclude Include="string_table.h" />
-    <ClInclude Include="string_table_defs.h" />
+    <ClInclude Include="StringTable.h" />
+    <ClInclude Include="StringTable_defs.h" />
     <ClInclude Include="team_base_zone.h" />
     <ClInclude Include="team_hierarchy_holder.h" />
     <ClInclude Include="team_hierarchy_holder_inline.h" />
@@ -2201,7 +2201,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="step_manager.cpp" />
-    <ClCompile Include="string_table.cpp" />
+    <ClCompile Include="StringTable.cpp" />
     <ClCompile Include="team_base_zone.cpp" />
     <ClCompile Include="team_hierarchy_holder.cpp" />
     <ClCompile Include="TeleWhirlwind.cpp" />
@@ -2446,18 +2446,10 @@
     <ClCompile Include="xrServer_Objects_ALife.cpp" />
     <ClCompile Include="xrServer_Objects_ALife_Items.cpp" />
     <ClCompile Include="xrServer_Objects_ALife_Items_script.cpp" />
-    <ClCompile Include="xrServer_Objects_ALife_Items_script2.cpp" />
-    <ClCompile Include="xrServer_Objects_ALife_Items_script3.cpp" />
     <ClCompile Include="xrServer_Objects_ALife_Monsters.cpp" />
     <ClCompile Include="xrServer_Objects_ALife_Monsters_script.cpp" />
-    <ClCompile Include="xrServer_Objects_ALife_Monsters_script2.cpp" />
-    <ClCompile Include="xrserver_objects_Alife_Monsters_script3.cpp" />
-    <ClCompile Include="xrServer_Objects_ALife_Monsters_script4.cpp" />
     <ClCompile Include="xrServer_Objects_ALife_script.cpp" />
-    <ClCompile Include="xrServer_Objects_ALife_script2.cpp" />
-    <ClCompile Include="xrServer_Objects_ALife_script3.cpp" />
     <ClCompile Include="xrServer_Objects_script.cpp" />
-    <ClCompile Include="xrServer_Objects_script2.cpp" />
     <ClCompile Include="xrServer_Object_Base.cpp" />
     <ClCompile Include="xrServer_perform_GameExport.cpp" />
     <ClCompile Include="xrServer_perform_migration.cpp" />

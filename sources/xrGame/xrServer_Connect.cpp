@@ -95,9 +95,9 @@ void xrServer::AttachNewClient			(IClient* CL)
 	// gen message
 	if (!NeedToCheckClient_GameSpy_CDKey(CL))
 	{
-	//-------------------------------------------------------------
-	Check_GameSpy_CDKey_Success(CL);
- }
+		//------------------------------
+		Check_GameSpy_CDKey_Success(CL);
+	}
 
 	CL->m_guid[0]=0;
 }

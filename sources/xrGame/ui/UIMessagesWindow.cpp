@@ -11,7 +11,7 @@
 #include "UIPdaMsgListItem.h"//
 #include "UIColorAnimatorWrapper.h"//
 #include "../InfoPortion.h"
-#include "../string_table.h"
+//#include "..\StringTable.h"
 
 CUIMessagesWindow::CUIMessagesWindow(){
 	m_pGameLog = NULL;

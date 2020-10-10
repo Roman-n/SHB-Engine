@@ -26,7 +26,7 @@
 #include "ui/UIMainIngameWnd.h"//
 #include "PhysicsGamePars.h"
 #include "PHWorld.h"
-#include "string_table.h"
+#include "StringTable.h"
 #include "autosave_manager.h"
 #include "ai_space.h"
 #include "ai/monsters/BaseMonster/base_monster.h"

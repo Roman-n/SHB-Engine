@@ -6,8 +6,7 @@
 //	Description : Server objects monsters for ALife simulator
 ////////////////////////////////////////////////////////////////////////////
 
-#ifndef xrServer_Objects_ALife_MonstersH
-#define xrServer_Objects_ALife_MonstersH
+#pragma once
 
 #include "xrServer_Objects_ALife.h"
 #include "xrServer_Objects_ALife_Items.h"
@@ -37,7 +36,7 @@ SERVER_ENTITY_DECLARE_BEGIN0(CSE_ALifeTraderAbstract)
 
 	shared_str						character_profile		();
 	void							set_character_profile	(shared_str);
-	shared_str			specific_character		();
+	shared_str						specific_character		();
 	void							set_specific_character	(shared_str);
 
 	CHARACTER_COMMUNITY_INDEX		m_community_index;
@@ -57,7 +56,7 @@ SERVER_ENTITY_DECLARE_BEGIN0(CSE_ALifeTraderAbstract)
 #endif
 
 	shared_str						m_sCharacterProfile;
-	shared_str			m_SpecificCharacter;
+	shared_str						m_SpecificCharacter;
 
 	//буферный вектор проверенных персонажей
 	xr_vector<shared_str> m_CheckedCharacters;
@@ -516,5 +515,3 @@ add_to_type_list(CSE_ALifeOnlineOfflineGroup)
 #define script_type_list save_type_list(CSE_ALifeOnlineOfflineGroup)
 
 #pragma warning(pop)
-
-#endif

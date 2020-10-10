@@ -3,7 +3,7 @@
 #include "ai_space.h"
 #include "object_factory.h"
 #include "ai/monsters/ai_monster_squad_manager.h"
-#include "string_table.h"
+#include "StringTable.h"
 
 #include "entity_alive.h"
 #include "ui/UIInventoryUtilities.h"//
@@ -15,7 +15,7 @@
 #include "encyclopedia_article.h"
 
 #include "character_info.h"
-#include "specific_character.h"
+//#include "SpecificCharacter.h"
 #include "character_community.h"
 #include "monster_community.h"
 #include "character_rank.h"

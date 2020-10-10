@@ -12,7 +12,7 @@
 #include <dinput.h>
 #include "ui\UIButtonHint.h"//
 #include "ui/UICursor.h"//
-#include "string_table.h"
+//#include "StringTable.h"
 
 #include "object_broker.h"
 

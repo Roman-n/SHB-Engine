@@ -5,7 +5,7 @@
 #include "..\ENGINE\IConsoleCommand.h"
 #include "..\ENGINE\Input.h"
 #include "xr_level_controller.h"
-#include "string_table.h"
+#include "StringTable.h"
 
 _binding g_key_bindings[bindings_count];
 

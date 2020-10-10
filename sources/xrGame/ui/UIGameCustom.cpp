@@ -7,7 +7,7 @@
 #include "UIMultiTextStatic.h"//
 #include "UIXmlInit.h"//
 #include "..\object_broker.h"
-#include "..\string_table.h"
+//#include "..\StringTable.h"
 #include "UIGameTutorial.h"//
 
 struct predicate_remove_stat {

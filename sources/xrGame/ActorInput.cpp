@@ -22,7 +22,7 @@
 #include "clsid_game.h"
 #include "actorcondition.h"
 #include "actor_input_handler.h"
-#include "string_table.h"
+#include "StringTable.h"
 #include "ui/UIStatic.h"//
 #include "CharacterPhysicsSupport.h"
 #include "InventoryBox.h"

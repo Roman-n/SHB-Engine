@@ -1,14 +1,14 @@
 #include "stdafx.h"
+
 #include "game_sv_event_queue.h"
 
-
-// 
 GameEventQueue::GameEventQueue()
 {
 	unused.reserve	(128);
 	for (int i=0; i<16; i++)
 		unused.push_back	(xr_new<GameEvent>());
 }
+
 GameEventQueue::~GameEventQueue()
 {
 	cs.Enter		();
@@ -41,6 +41,7 @@ GameEvent*		GameEventQueue::Create	()
 	cs.Leave		();
 	return	ge;
 }
+
 GameEvent*		GameEventQueue::Create	(NET_Packet& P, u16 type, u32 time, ClientID clientID)
 {
 	GameEvent*	ge			= 0;
@@ -68,6 +69,7 @@ GameEvent*		GameEventQueue::Create	(NET_Packet& P, u16 type, u32 time, ClientID 
 	cs.Leave		();
 	return			ge;
 }
+
 GameEvent*		GameEventQueue::Retreive	()
 {
 	GameEvent*	ge			= 0;

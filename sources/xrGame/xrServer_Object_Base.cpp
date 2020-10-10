@@ -7,6 +7,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "xrServer_Objects.h"
 #include "xrMessages.h"
 #include "game_base_space.h"
@@ -22,12 +23,14 @@
 
 #include "xrEProps.h"
 
-IPropHelper &PHelper()
+IPropHelper& PHelper( )
 {
 	NODEFAULT;
+
 #ifdef DEBUG
-	return(*(IPropHelper*)0);
-#	endif
+	return(*(IPropHelper*) 0);
+#endif // def DEBUG
+
 }
 
 LPCSTR script_section = "script";

@@ -10,7 +10,7 @@
 #include "ui/UIMainIngameWnd.h"//
 #include "ui/UIGameTutorial.h"//
 #include "ui/UIMessagesWindow.h"//
-#include "string_table.h"
+#include "StringTable.h"
 #include "game_cl_base_weapon_usage_statistic.h"
 
 game_cl_GameState::game_cl_GameState()

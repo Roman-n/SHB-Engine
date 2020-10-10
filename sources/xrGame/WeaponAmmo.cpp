@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "weaponammo.h"
 #include "PhysicsShell.h"
 #include "xrserver_objects_alife_items.h"
@@ -9,7 +10,7 @@
 #include "ai_space.h"
 #include "gamemtllib.h"
 #include "level.h"
-#include "string_table.h"
+#include "StringTable.h"
 
 #define BULLET_MANAGER_SECTION "bullet_manager"
 

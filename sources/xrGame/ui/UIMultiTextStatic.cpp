@@ -6,6 +6,7 @@
 
 #include "UIMultiTextStatic.h"//
 #include "../..\ENGINE\CustomHUD.h"
+#include "..\StringTable.h"
 
 //////////////////////////////////////////////////////////////////////////
 CUIMultiTextStatic::CUIMultiTextStatic				()
@@ -116,8 +117,6 @@ void CUIMultiTextStatic::SPh::SetText(LPCSTR fmt, ...)
 		str = &s.front();
 	}*/
 }
-
-#include "../string_table.h"
 
 void CUICaption::addCustomMessage(const shared_str& msg_name, float x, float y, float font_size, 
 								  CGameFont *pFont, CGameFont::EAligment al, u32 color, LPCSTR def_str)

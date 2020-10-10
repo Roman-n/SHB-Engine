@@ -8,7 +8,7 @@
 #include "UIScrollBar.h"//
 #include "UIListBoxItem.h"//
 
-#include "../string_table.h"
+#include "../StringTable.h"
 
 #define CB_HEIGHT 23.0f
 #define BTN_SIZE  23.0f

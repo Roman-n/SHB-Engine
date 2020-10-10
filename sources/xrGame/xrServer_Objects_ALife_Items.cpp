@@ -7,6 +7,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "xrMessages.h"
 #include "../ENGINE/net_utils.h"
 #include "clsid_game.h"

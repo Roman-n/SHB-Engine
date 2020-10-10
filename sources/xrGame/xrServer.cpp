@@ -56,7 +56,8 @@ xrServer::~xrServer()
 	while (net_Players_disconnected.size())
 	{
 		client_Destroy(net_Players_disconnected[0]);
-	}		
+	}
+
 	m_aUpdatePackets.clear();
 	m_aDelayedPackets.clear();
 }
@@ -77,6 +78,7 @@ IClient*	xrServer::client_Create		()
 {
 	return xr_new<xrClientData> ();
 }
+
 void		xrServer::client_Replicate	()
 { }
 
@@ -114,8 +116,8 @@ void		xrServer::client_Destroy	(IClient* C)
 			xr_delete(C);
 			net_Players_disconnected.erase(net_Players_disconnected.begin()+DI);
 			break;
-		};
-	};
+		}
+	}
 
 	for (u32 I=0; I<net_Players.size(); I++)
 	{
@@ -132,7 +134,7 @@ void		xrServer::client_Destroy	(IClient* C)
 				P.w_u16				(GE_DESTROY);
 				P.w_u16				(pS->ID);
 				SendBroadcast		(BroadcastCID,P,net_flags(TRUE,TRUE));
-			};
+			}
 
 			{
 				DelayedPacket pp;
@@ -159,10 +161,10 @@ void		xrServer::client_Destroy	(IClient* C)
 				C->dwTime_LastUpdate = Device.dwTimeGlobal;
 				net_Players_disconnected.push_back(C);
 				((xrClientData*)C)->Clear();
-			};
+			}
 			net_Players.erase	(net_Players.begin()+I);
 			break;
-		};
+		}
 	}
 
 	csPlayers.Leave();
@@ -206,9 +208,7 @@ void xrServer::Update	()
 		Process_spawn		(Packet,clientID);
 	}
 
-
 	SendUpdatesToAll();
-
 
 	if (game->sv_force_sync)	Perform_game_export();
 
@@ -223,6 +223,7 @@ void xrServer::Update	()
 			client_Destroy(CL);
 			continue;
 		}
+
 		DI++;
 	}
 
@@ -264,7 +265,6 @@ void xrServer::SendUpdatesToAll()
 			SendTo			(Client->ID,Packet,net_flags(FALSE,TRUE));
 			continue;
 		}
-
 
 		if (m_aUpdatePackets[0].B.count != 0) //not a first client in update cycle
 		{

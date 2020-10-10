@@ -4719,9 +4719,6 @@
     <ClInclude Include="monster_community.h">
       <Filter>Core\Client\Objects\inventory\InventoryOwner\character_info</Filter>
     </ClInclude>
-    <ClInclude Include="specific_character.h">
-      <Filter>Core\Client\Objects\inventory\InventoryOwner\character_info</Filter>
-    </ClInclude>
     <ClInclude Include="relation_registry.h">
       <Filter>Core\Client\Objects\inventory\InventoryOwner\relation registry</Filter>
     </ClInclude>
@@ -5178,12 +5175,6 @@
     <ClInclude Include="smart_cast_impl2.h">
       <Filter>Core\Common\SmartCast</Filter>
     </ClInclude>
-    <ClInclude Include="string_table.h">
-      <Filter>Core\Common\StringTable</Filter>
-    </ClInclude>
-    <ClInclude Include="string_table_defs.h">
-      <Filter>Core\Common\StringTable</Filter>
-    </ClInclude>
     <ClInclude Include="associative_vector.h">
       <Filter>Core\Common\associative_vector\vector</Filter>
     </ClInclude>
@@ -5243,9 +5234,6 @@
     </ClInclude>
     <ClInclude Include="game_sv_single.h">
       <Filter>Core\Server\Games\server\single</Filter>
-    </ClInclude>
-    <ClInclude Include="id_generator.h">
-      <Filter>Core\Server\ID_Generator</Filter>
     </ClInclude>
     <ClInclude Include="ShapeData.h">
       <Filter>Core\Server\ServerEntities</Filter>
@@ -5984,6 +5972,18 @@
     </ClInclude>
     <ClInclude Include="ui\UIButtonHint.h">
       <Filter>UI\UIWindows</Filter>
+    </ClInclude>
+    <ClInclude Include="ID_Generator.h">
+      <Filter>Core\Server\ID_Generator</Filter>
+    </ClInclude>
+    <ClInclude Include="StringTable_defs.h">
+      <Filter>Core\Common\StringTable</Filter>
+    </ClInclude>
+    <ClInclude Include="StringTable.h">
+      <Filter>Core\Common\StringTable</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecificCharacter.h">
+      <Filter>Core\Client\Objects\inventory\InventoryOwner\character_info</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -7892,9 +7892,6 @@
     <ClCompile Include="smart_cast_stats.cpp">
       <Filter>Core\Common\SmartCast</Filter>
     </ClCompile>
-    <ClCompile Include="string_table.cpp">
-      <Filter>Core\Common\StringTable</Filter>
-    </ClCompile>
     <ClCompile Include="RegistryFuncs.cpp">
       <Filter>Core\Common\Registry</Filter>
     </ClCompile>
@@ -7964,19 +7961,10 @@
     <ClCompile Include="xrServer_Objects_script.cpp">
       <Filter>Core\Server\ServerEntities\objects</Filter>
     </ClCompile>
-    <ClCompile Include="xrServer_Objects_script2.cpp">
-      <Filter>Core\Server\ServerEntities\objects</Filter>
-    </ClCompile>
     <ClCompile Include="xrServer_Objects_ALife.cpp">
       <Filter>Core\Server\ServerEntities\objects_alife</Filter>
     </ClCompile>
     <ClCompile Include="xrServer_Objects_ALife_script.cpp">
-      <Filter>Core\Server\ServerEntities\objects_alife</Filter>
-    </ClCompile>
-    <ClCompile Include="xrServer_Objects_ALife_script2.cpp">
-      <Filter>Core\Server\ServerEntities\objects_alife</Filter>
-    </ClCompile>
-    <ClCompile Include="xrServer_Objects_ALife_script3.cpp">
       <Filter>Core\Server\ServerEntities\objects_alife</Filter>
     </ClCompile>
     <ClCompile Include="xrServer_Objects_ALife_Items.cpp">
@@ -7985,22 +7973,10 @@
     <ClCompile Include="xrServer_Objects_ALife_Items_script.cpp">
       <Filter>Core\Server\ServerEntities\objects_alife_items</Filter>
     </ClCompile>
-    <ClCompile Include="xrServer_Objects_ALife_Items_script2.cpp">
-      <Filter>Core\Server\ServerEntities\objects_alife_items</Filter>
-    </ClCompile>
-    <ClCompile Include="xrServer_Objects_ALife_Items_script3.cpp">
-      <Filter>Core\Server\ServerEntities\objects_alife_items</Filter>
-    </ClCompile>
     <ClCompile Include="xrServer_Objects_ALife_Monsters.cpp">
       <Filter>Core\Server\ServerEntities\objects_alife_monsters</Filter>
     </ClCompile>
     <ClCompile Include="xrServer_Objects_ALife_Monsters_script.cpp">
-      <Filter>Core\Server\ServerEntities\objects_alife_monsters</Filter>
-    </ClCompile>
-    <ClCompile Include="xrServer_Objects_ALife_Monsters_script2.cpp">
-      <Filter>Core\Server\ServerEntities\objects_alife_monsters</Filter>
-    </ClCompile>
-    <ClCompile Include="xrServer_Objects_ALife_Monsters_script4.cpp">
       <Filter>Core\Server\ServerEntities\objects_alife_monsters</Filter>
     </ClCompile>
     <ClCompile Include="xrServer_perform_GameExport.cpp">
@@ -8624,9 +8600,6 @@
     <ClCompile Include="ui\UIGameLog.cpp">
       <Filter>UI\HUD</Filter>
     </ClCompile>
-    <ClCompile Include="xrserver_objects_Alife_Monsters_script3.cpp">
-      <Filter>Core\Server\ServerEntities\objects_alife_monsters</Filter>
-    </ClCompile>
     <ClCompile Include="ui\UIWpnParams.cpp">
       <Filter>UI\Common\ItemInfo</Filter>
     </ClCompile>
@@ -8713,6 +8686,9 @@
     </ClCompile>
     <ClCompile Include="ui\UIButtonHint.cpp">
       <Filter>UI\UIWindows</Filter>
+    </ClCompile>
+    <ClCompile Include="StringTable.cpp">
+      <Filter>Core\Common\StringTable</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

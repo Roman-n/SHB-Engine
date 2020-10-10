@@ -7,7 +7,7 @@
 #include "../HUDManager.h"//
 #include "../..\ENGINE\LightAnimLibrary.h"
 #include "UILines.h"//
-#include "../string_table.h"
+#include "..\StringTable.h"
 #include "ui_base.h"//
 
 const char * const	clDefault	= "default";

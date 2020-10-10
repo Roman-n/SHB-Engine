@@ -11,7 +11,7 @@
 
 class NET_Packet;
 
-#include "specific_character.h"
+#include "SpecificCharacter.h"
 
 #ifdef XRGAME_EXPORTS
 	#include "PhraseDialogDefs.h"
@@ -88,7 +88,7 @@ protected:
 	
 	//индекс данных о конкретном персонаже, который
 	//используетс€ в данном экземпл€ре класса
-	shared_str		m_SpecificCharacterId;
+	shared_str					m_SpecificCharacterId;
 
 #ifdef XRGAME_EXPORTS
 	shared_str					m_StartDialog;
@@ -100,9 +100,9 @@ protected:
 public:
 
 #ifdef XRGAME_EXPORTS
-	shared_str					Profile()			const;
-	const char* Name()				const;
-	shared_str					Bio()				const;
+	shared_str					Profile() const;
+	const char*					Name() const;
+	shared_str					Bio() const;
 
 	const CHARACTER_COMMUNITY&	Community()			const	{return m_CurrentCommunity;};
 	const CHARACTER_RANK&		Rank()				const	{ return m_CurrentRank;};

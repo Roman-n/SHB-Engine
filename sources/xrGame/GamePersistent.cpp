@@ -26,7 +26,7 @@
 
 #include "ai_debug.h"
 #include "UI/UIGameTutorial.h"//
-#include "string_table.h"
+#include "StringTable.h"
 #include "..\ENGINE\Application.h"
 
 static void*	ode_alloc	(size_t size)								{ return xr_malloc(size);			}

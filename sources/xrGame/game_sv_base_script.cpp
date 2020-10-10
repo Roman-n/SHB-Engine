@@ -13,42 +13,43 @@
 #include "xr_time.h"
 #include "../ENGINE/net_utils.h"
 #include "ui/UIGameTutorial.h"//
-#include "string_table.h"
+#include "StringTable.h"
 #include "object_broker.h"
 
 using namespace luabind;
 
-CUISequencer* g_tutorial = NULL;
-CUISequencer* g_tutorial2 = NULL;
+CUISequencer* g_tutorial = nullptr;
+CUISequencer* g_tutorial2 = nullptr;
 
-void start_tutorial(LPCSTR name)
+void start_tutorial(const char* name)
 {
-	if(g_tutorial){
-		VERIFY				(!g_tutorial2);
-		g_tutorial2			= g_tutorial;
-	};
-		
-	g_tutorial							= xr_new<CUISequencer>();
-	g_tutorial->Start					(name);
-	if(g_tutorial2)
+	if (g_tutorial)
+	{
+		VERIFY(!g_tutorial2);
+		g_tutorial2 = g_tutorial;
+	}
+
+	g_tutorial = xr_new<CUISequencer>( );
+	g_tutorial->Start(name);
+	if (g_tutorial2)
+	{
 		g_tutorial->m_pStoredInputReceiver = g_tutorial2->m_pStoredInputReceiver;
-
+	}
 }
 
-LPCSTR translate_string(LPCSTR str)
+const char* translate_string(const char* str)
 {
-	return *CStringTable().translate(str);
+	return *CStringTable( ).translate(str);
 }
 
-bool has_active_tutotial()
+bool has_active_tutotial( )
 {
-	return (g_tutorial!=NULL);
+	return (g_tutorial != nullptr);
 }
 
 #pragma optimize("s",on)
 void game_sv_GameState::script_register(lua_State *L)
 {
-
 	module(L,"game")
 	[
 	class_< xrTime >("CTime")

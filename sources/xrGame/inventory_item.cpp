@@ -7,6 +7,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "inventory_item.h"
 #include "inventory_item_impl.h"
 #include "inventory.h"
@@ -17,7 +18,7 @@
 #include "Level.h"
 #include "game_cl_base.h"
 #include "Actor.h"
-#include "string_table.h"
+#include "StringTable.h"
 #include "..\ENGINE\skeletoncustom.h"
 #include "ai_object_location.h"
 #include "object_broker.h"

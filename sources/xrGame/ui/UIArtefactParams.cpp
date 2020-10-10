@@ -4,6 +4,7 @@
 #include "UIStatic.h"//
 #include "../object_broker.h"
 #include "UIXmlInit.h"//
+#include "..\StringTable.h"
 
 CUIArtefactParams::CUIArtefactParams()
 {
@@ -87,7 +88,6 @@ bool CUIArtefactParams::Check(const shared_str& af_section)
 	return !!pSettings->line_exist(af_section, "af_actor_properties");
 }
 
-#include "../string_table.h"
 void CUIArtefactParams::SetInfo(const shared_str& af_section)
 {
 	string128					_buff;

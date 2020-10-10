@@ -1,10 +1,10 @@
 #include "stdafx.h"
 
-#include "specific_character.h"
+#include "SpecificCharacter.h"
 
 #ifdef  XRGAME_EXPORTS
 #include "PhraseDialog.h"
-#include "string_table.h"
+#include "StringTable.h"
 
 SSpecificCharacterData::SSpecificCharacterData()
 {
@@ -123,17 +123,14 @@ void CSpecificCharacter::load_shared(LPCSTR)
 	data()->m_sGameName		= pXML->Read("name", 0, "");
 	data()->m_sBioText		= CStringTable().translate(pXML->Read("bio", 0, ""));
 
-
 	data()->m_fPanic_threshold		= pXML->ReadFlt("panic_threshold",0,0.f);
 	data()->m_fHitProbabilityFactor	= pXML->ReadFlt("hit_probability_factor",0,1.f);
 	data()->m_crouch_type			= pXML->ReadInt("crouch_type",0,0);
 
 	data()->m_critical_wound_weights= pXML->Read("critical_wound_weights", 0, "1");
-
 #endif
 
 	data()->m_sVisual		= pXML->Read("visual", 0, "");
-	
 
 #ifdef  XRGAME_EXPORTS
 	data()->m_sSupplySpawn	= pXML->Read("supplies", 0, "");
@@ -154,7 +151,6 @@ void CSpecificCharacter::load_shared(LPCSTR)
 	data()->m_sound_voice_prefix	= pXML->Read("snd_config", 0, "");
 
 	data()->m_terrain_sect			= pXML->Read("terrain_sect", 0, "");
-
 #endif
 
 	data()->m_Classes.clear			();
@@ -200,7 +196,6 @@ void CSpecificCharacter::load_shared(LPCSTR)
 		MoneyDef().max_money	= 0;
 		MoneyDef().inf_money	= false;
 	}
-
 #endif
 
 #if 0
@@ -208,9 +203,7 @@ void CSpecificCharacter::load_shared(LPCSTR)
 #endif
 }
 
-
 #ifdef  XRGAME_EXPORTS
-
 LPCSTR CSpecificCharacter::Name() const 
 {
 	return	data()->m_sGameName.c_str();
@@ -260,7 +253,6 @@ LPCSTR CSpecificCharacter::critical_wound_weights () const
 {
 	return data()->m_critical_wound_weights.c_str();
 }
-
 #endif
 
 shared_str CSpecificCharacter::terrain_sect		() const

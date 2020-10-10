@@ -6,8 +6,7 @@
 //	Description : Server objects items for ALife simulator
 ////////////////////////////////////////////////////////////////////////////
 
-#ifndef xrServer_Objects_ALife_ItemsH
-#define xrServer_Objects_ALife_ItemsH
+#pragma once
 
 #include "xrServer_Objects_ALife.h"
 #include "PHSynchronize.h"
@@ -26,7 +25,7 @@ public:
 	enum {
 		inventory_item_state_enabled	= u8(1) << 0,
 		inventory_item_angular_null		= u8(1) << 1,
-		inventory_item_linear_null		= u8(1) << 2,
+		inventory_item_linear_null		= u8(1) << 2
 	};
 
 	union mask_num_items {
@@ -281,5 +280,3 @@ add_to_type_list(CSE_ALifeItemCustomOutfit)
 #define script_type_list save_type_list(CSE_ALifeItemCustomOutfit)
 
 #pragma warning(pop)
-
-#endif
