@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "control_manager_custom.h"
-#include "BaseMonster/base_monster.h"
+#include "BaseMonster/BaseMonster.h"
 #include "control_sequencer.h"
 #include "control_run_attack.h"
 #include "control_threaten.h"

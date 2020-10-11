@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "anomaly_detector.h"
-#include "BaseMonster/base_monster.h"
+#include "BaseMonster/BaseMonster.h"
 #include "../../restricted_object.h"
 #include "../../customzone.h"
 #include "../../Level.h"

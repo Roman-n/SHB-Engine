@@ -1,6 +1,7 @@
 #include "stdafx.h"
+
 #include "control_rotation_jump.h"
-#include "BaseMonster/base_monster.h"
+#include "BaseMonster/BaseMonster.h"
 #include "control_manager.h"
 #include "monster_velocity_space.h"
 #include "control_direction_base.h"
@@ -19,7 +20,6 @@ void CControlRotationJump::reinit()
 	m_time_next_rotation_jump	= 0;
 	m_skeleton_animated			= smart_cast<CKinematicsAnimated*>(m_object->Visual());
 }
-
 
 void CControlRotationJump::activate()
 {
@@ -135,7 +135,6 @@ void CControlRotationJump::build_line_first()
 
 	// path distance
 	m_dist = (m_target_velocity*m_target_velocity - m_start_velocity*m_start_velocity) / (2*m_accel);
-	
 	
 	// set angular speed in exclusive force mode
 	SControlDirectionData					*ctrl_data_dir = (SControlDirectionData*)m_man->data(this, ControlCom::eControlDir); 

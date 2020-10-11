@@ -1,6 +1,7 @@
 #include "stdafx.h"
+
 #include "control_direction_base.h"
-#include "basemonster/base_monster.h"
+#include "basemonster/BaseMonster.h"
 #include "../../detail_path_manager.h"
 
 void CControlDirectionBase::reinit()

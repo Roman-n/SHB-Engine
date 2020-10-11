@@ -1,5 +1,6 @@
 #include "stdafx.h"
-#include "base_monster.h"
+
+#include "BaseMonster.h"
 #include "../../../Level.h"
 #include "../../../level_debug.h"
 #include "../../../entitycondition.h"

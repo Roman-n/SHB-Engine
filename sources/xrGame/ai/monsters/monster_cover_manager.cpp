@@ -1,6 +1,7 @@
 #include "stdafx.h"
+
 #include "monster_cover_manager.h"
-#include "BaseMonster/base_monster.h"
+#include "BaseMonster/BaseMonster.h"
 #include "../../cover_evaluators.h"
 #include "../../cover_point.h"
 #include "../../ai_space.h"

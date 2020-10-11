@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "base_monster.h"
+#include "BaseMonster.h"
 #include "../../../script_entity_action.h"
 #include "../../../PHMovementControl.h"
 #include "../../../sight_manager.h"

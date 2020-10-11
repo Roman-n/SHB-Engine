@@ -31,7 +31,7 @@
 #include "ui/UITradeWnd.h"//
 #include "inventory.h"
 #include "infoportion.h"
-#include "AI/Monsters/BaseMonster/base_monster.h"
+#include "AI/Monsters/BaseMonster/BaseMonster.h"
 #include "weaponmagazined.h"
 #include "ai/stalker/ai_stalker.h"
 

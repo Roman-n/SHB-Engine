@@ -1,7 +1,8 @@
 #include "stdafx.h"
+
 #include "control_manager.h"
 #include "control_combase.h"
-#include "BaseMonster/base_monster.h"
+#include "BaseMonster/BaseMonster.h"
 
 enum EActiveComAction {
 	eRemove			= u32(0),

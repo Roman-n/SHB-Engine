@@ -1,6 +1,7 @@
 #include "stdafx.h"
+
 #include "monster_enemy_manager.h"
-#include "BaseMonster/base_monster.h"
+#include "BaseMonster/BaseMonster.h"
 #include "../ai_monsters_misc.h"
 #include "../../ai_object_location.h"
 #include "../../memory_manager.h"
@@ -23,14 +24,12 @@ CMonsterEnemyManager::CMonsterEnemyManager()
 }
 
 CMonsterEnemyManager::~CMonsterEnemyManager()
-{
+{ }
 
-}
 void CMonsterEnemyManager::init_external(CBaseMonster *M)
 {
 	monster = M;
 }
-
 
 void CMonsterEnemyManager::update()
 {
@@ -123,8 +122,6 @@ void CMonsterEnemyManager::update()
 	m_time_updated			= time();
 }
 
-
-
 void CMonsterEnemyManager::force_enemy (const CEntityAlive *enemy)
 {
 	this->enemy		= enemy;
@@ -153,7 +150,6 @@ void CMonsterEnemyManager::unforce_enemy()
 	update	();
 }
 
-
 u32	CMonsterEnemyManager::get_enemies_count()
 {
 	return monster->EnemyMemory.get_enemies_count();
@@ -175,12 +171,10 @@ void CMonsterEnemyManager::reinit()
 	m_time_start_see_enemy		= 0;
 }
 
-
 void CMonsterEnemyManager::add_enemy(const CEntityAlive *enemy)
 {
 	monster->EnemyMemory.add_enemy(enemy);
 }
-
 
 bool CMonsterEnemyManager::see_enemy_now()
 {
@@ -248,4 +242,3 @@ u32 CMonsterEnemyManager::see_enemy_duration()
 {
 	return ((m_time_start_see_enemy == 0) ? 0 : (time() - m_time_start_see_enemy));
 }
-

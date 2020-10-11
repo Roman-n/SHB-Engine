@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "ai_monster_motion_stats.h"
-#include "BaseMonster/base_monster.h"
+#include "BaseMonster/BaseMonster.h"
 
 void CMotionStats::update()
 {

@@ -1,28 +1,28 @@
 #include "stdafx.h"
 
-#include "boar.h"
-#include "boar_state_manager.h"
+#include "Boar.h"
+#include "BoarStateManager.h"
 #include "../../../..\ENGINE\skeletoncustom.h"
 #include "../monster_velocity_space.h"
 #include "../../../game_object_space.h"
 #include "../control_animation_base.h"
 #include "../control_movement_base.h"
 
-CAI_Boar::CAI_Boar()
+CBoar::CBoar()
 {
-	StateMan = xr_new<CStateManagerBoar>	(this);
+	StateMan = xr_new<CBoarStateManager>	(this);
 
 	CControlled::init_external(this);
 	com_man().add_ability(ControlCom::eControlRotationJump);
 	com_man().add_ability(ControlCom::eControlRunAttack);
 }
 
-CAI_Boar::~CAI_Boar()
+CBoar::~CBoar()
 {
 	xr_delete(StateMan);
 }
 
-void CAI_Boar::Load(const char* section)
+void CBoar::Load(const char* section)
 {
 	inherited::Load	(section);
 
@@ -101,16 +101,16 @@ void CAI_Boar::Load(const char* section)
 
 }
 
-void CAI_Boar::reinit()
+void CBoar::reinit()
 {
 	inherited::reinit();
 	if(CCustomMonster::use_simplified_visual())	return;
 	com_man().add_rotation_jump_data("stand_jump_left_0",0,"stand_jump_right_0",0, PI - PI_DIV_6, SControlRotationJumpData::eStopAtOnce | SControlRotationJumpData::eRotateOnce);
 }
 
-void  CAI_Boar::BoneCallback(CBoneInstance *B)
+void CBoar::BoneCallback(CBoneInstance *B)
 {
-	CAI_Boar	*P = static_cast<CAI_Boar*>(B->Callback_Param);
+	CBoar *P = static_cast<CBoar*>(B->Callback_Param);
 
 	if (!P->look_at_enemy) return;
 	
@@ -119,7 +119,7 @@ void  CAI_Boar::BoneCallback(CBoneInstance *B)
 	B->mTransform.mulB_43(M);
 }
 
-BOOL CAI_Boar::net_Spawn (CSE_Abstract* DC) 
+BOOL CBoar::net_Spawn (CSE_Abstract* DC)
 {
 	if (!inherited::net_Spawn(DC))
 		return(FALSE);
@@ -136,7 +136,7 @@ BOOL CAI_Boar::net_Spawn (CSE_Abstract* DC)
 	return TRUE;
 }
 
-void CAI_Boar::CheckSpecParams(u32 spec_params)
+void CBoar::CheckSpecParams(u32 spec_params)
 {
 	//if ((spec_params & ASP_ROTATION_JUMP) == ASP_ROTATION_JUMP) {
 	//	float yaw, pitch;
@@ -171,7 +171,7 @@ void CAI_Boar::CheckSpecParams(u32 spec_params)
 	//}
 }
 
-void CAI_Boar::UpdateCL()
+void CBoar::UpdateCL()
 {
 	inherited::UpdateCL();
 	angle_lerp(_cur_delta, _target_delta, _velocity, client_update_fdelta());
@@ -179,12 +179,12 @@ void CAI_Boar::UpdateCL()
 
 using namespace luabind;
 
-#pragma optimize("s",on)
-void CAI_Boar::script_register(lua_State* L)
+#pragma optimize("s", on)
+void CBoar::script_register(lua_State* L)
 {
 	module(L)
 		[
-			class_<CAI_Boar, CGameObject>("CAI_Boar")
+			class_<CBoar, CGameObject>("CBoar")
 			.def(constructor<>( ))
 		];
 }

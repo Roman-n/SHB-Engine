@@ -1,6 +1,7 @@
 #include "stdafx.h"
+
 #include "monster_home.h"
-#include "BaseMonster/base_monster.h"
+#include "BaseMonster/BaseMonster.h"
 #include "../../ai_space.h"
 #include "../../patrol_path_storage.h"
 #include "../../patrol_path.h"
@@ -109,7 +110,6 @@ u32	CMonsterHome::get_place_in_cover()
 	return u32(-1);
 }
 
-
 bool CMonsterHome::at_home()
 {
 	return at_home(m_object->Position());
@@ -135,4 +135,3 @@ void CMonsterHome::remove_home()
 	m_path			= 0;
 	m_aggressive	= false;
 }
-

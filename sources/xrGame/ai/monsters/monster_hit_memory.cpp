@@ -1,6 +1,7 @@
 #include "stdafx.h"
+
 #include "monster_hit_memory.h"
-#include "BaseMonster/base_monster.h"
+#include "BaseMonster/BaseMonster.h"
 
 CMonsterHitMemory::CMonsterHitMemory()
 {
@@ -9,15 +10,13 @@ CMonsterHitMemory::CMonsterHitMemory()
 }
 
 CMonsterHitMemory::~CMonsterHitMemory()
-{
-}
+{ }
 
 void CMonsterHitMemory::init_external(CBaseMonster *M, TTime mem_time) 
 {
 	monster = M; 
 	time_memory = mem_time;
 }
-
 
 void CMonsterHitMemory::update()
 {
@@ -61,7 +60,6 @@ struct predicate_old_hit {
 		}
 		return false;
 	}
-
 };
 
 void CMonsterHitMemory::remove_non_actual() 
@@ -93,8 +91,8 @@ Fvector CMonsterHitMemory::get_last_hit_dir()
 	}
 
 	// если есть хит, вычислить направление
-	if (last_hit.time != 0) {
-
+	if (last_hit.time != 0)
+	{
 		float h,p;
 		dir.getHP(h,p);
 		

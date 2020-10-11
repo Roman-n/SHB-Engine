@@ -1,6 +1,7 @@
 #include "stdafx.h"
+
 #include "control_path_builder_base.h"
-#include "BaseMonster/base_monster.h"
+#include "BaseMonster/BaseMonster.h"
 #include "../../detail_path_manager.h"
 #include "../../profiler.h"
 

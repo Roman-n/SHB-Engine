@@ -28,7 +28,7 @@
 #include "GameTaskManager.h"
 #include "GameTaskdefs.h"
 #include "infoportion.h"
-#include "ai/monsters/basemonster/base_monster.h"
+//#include "ai/monsters/basemonster/BaseMonster.h"
 #include "ai/trader/ai_trader.h"
 
 void CActor::AddEncyclopediaArticle	 (const CInfoPortion* info_portion) const

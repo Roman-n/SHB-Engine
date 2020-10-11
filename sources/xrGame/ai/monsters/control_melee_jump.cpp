@@ -1,6 +1,7 @@
 #include "stdafx.h"
+
 #include "control_melee_jump.h"
-#include "BaseMonster/base_monster.h"
+#include "BaseMonster/BaseMonster.h"
 #include "control_manager.h"
 
 #define CHECK_YAW					165 * PI / 180
@@ -11,10 +12,8 @@
 void CControlMeleeJump::reinit()
 {
 	inherited::reinit();
-
 	m_time_next_melee_jump	= 0;
 }
-
 
 bool CControlMeleeJump::check_start_conditions()
 {

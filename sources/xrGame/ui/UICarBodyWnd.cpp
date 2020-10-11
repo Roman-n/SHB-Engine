@@ -10,7 +10,7 @@
 #include "UIFrameWindow.h"//
 #include "UIItemInfo.h"//
 #include "UIPropertiesBox.h"
-#include "../ai/monsters/BaseMonster/base_monster.h"
+#include "../ai/monsters/BaseMonster/BaseMonster.h"
 #include "../inventory.h"
 #include "UIInventoryUtilities.h"//
 #include "UICellItem.h"//

@@ -33,8 +33,8 @@ void CStringTable::Init( )
 	const char* S = pSettings->r_string("string_table", "files");
 	if (S && S[0])
 	{
-		string128	xml_file;
-		int			count = _GetItemCount(S);
+		string128 xml_file;
+		int count = _GetItemCount(S);
 		for (int it = 0; it < count; ++it)
 		{
 			_GetItem(S, it, xml_file);
@@ -45,10 +45,10 @@ void CStringTable::Init( )
 
 void CStringTable::Load(const char* xml_file)
 {
-	CUIXml						uiXml;
-	string_path					xml_file_full;
+	CUIXml uiXml;
+	string_path xml_file_full;
 	strconcat(sizeof(xml_file_full), xml_file_full, xml_file, ".xml");
-	string_path					_s;
+	string_path _s;
 	strconcat(sizeof(_s), _s, "text", "\\", *(pData->m_sLanguage));
 
 	bool xml_result = uiXml.Init("$game_config$", _s, xml_file_full);
@@ -99,17 +99,17 @@ void CStringTable::ReparseKeyBindings( )
 
 STRING_VALUE CStringTable::ParseLine(const char* str, const char* skey, bool bFirst)
 {
-	xr_string			res;
+	xr_string res;
 	int k = 0;
 	const char* b;
 #define ACTION_STR "$$ACTION_"
 
-//.	int LEN				= (int)xr_strlen(ACTION_STR);
-#define LEN			9
+//.	int LEN = (int)xr_strlen(ACTION_STR);
+#define LEN 9
 
-	string256				buff;
-	string256				srcbuff;
-	bool	b_hit = false;
+	string256 buff;
+	string256 srcbuff;
+	bool b_hit = false;
 
 	while ((b = strstr(str + k, ACTION_STR)) != 0)
 	{
@@ -137,7 +137,10 @@ STRING_VALUE CStringTable::ParseLine(const char* str, const char* skey, bool bFi
 		res.append(str + k);
 	}
 
-	if (b_hit && bFirst) pData->m_string_key_binding[skey] = str;
+	if (b_hit && bFirst)
+	{
+		pData->m_string_key_binding[skey] = str;
+	}
 
 	return STRING_VALUE(res.c_str( ));
 }
@@ -158,5 +161,5 @@ STRING_VALUE CStringTable::translate(const STRING_ID& str_id) const
 		return str_id;
 	}
 
-	return					pData->m_StringTable[str_id];
+	return pData->m_StringTable[str_id];
 }

@@ -443,4 +443,4 @@ public:
 
 };
 
-#include "base_monster_inline.h"
+#include "BaseMonster_inline.h"

@@ -1,5 +1,6 @@
 #include "stdafx.h"
-#include "base_monster.h"
+
+#include "BaseMonster.h"
 
 #include "../../../ai_object_location.h"
 #include "../../../game_graph.h"
@@ -8,6 +9,7 @@
 #include "../../../hit.h"
 #include "../../../PHDestroyable.h"
 #include "../../../CharacterPhysicsSupport.h"
+
 void CBaseMonster::net_Save			(NET_Packet& P)
 {
 	inherited::net_Save(P);
@@ -54,7 +56,6 @@ void CBaseMonster::net_Export(NET_Packet& P)
 		P.w					(&f1,						sizeof(f1));
 		P.w					(&f1,						sizeof(f1));
 	}
-
 }
 
 void CBaseMonster::net_Import(NET_Packet& P)
@@ -101,7 +102,6 @@ void CBaseMonster::net_Import(NET_Packet& P)
 		P.r					(&f1,						sizeof(f1));
 		P.r					(&f1,						sizeof(f1));
 	}
-
 
 	setVisible				(TRUE);
 	setEnabled				(TRUE);

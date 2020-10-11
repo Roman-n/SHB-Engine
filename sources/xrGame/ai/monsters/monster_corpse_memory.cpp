@@ -1,6 +1,7 @@
 #include "stdafx.h"
+
 #include "monster_corpse_memory.h"
-#include "BaseMonster/base_monster.h"
+#include "BaseMonster/BaseMonster.h"
 #include "../../memory_manager.h"
 #include "../../visual_memory_manager.h"
 #include "../../item_manager.h"
@@ -13,8 +14,7 @@ CMonsterCorpseMemory::CMonsterCorpseMemory()
 }
 
 CMonsterCorpseMemory::~CMonsterCorpseMemory()
-{
-}
+{ }
 
 void CMonsterCorpseMemory::init_external(CBaseMonster *M, TTime mem_time) 
 {

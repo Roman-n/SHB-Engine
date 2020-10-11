@@ -7,7 +7,8 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include "base_monster.h"
+
+#include "BaseMonster.h"
 #include "../../../..\ENGINE\skeletonanimated.h"
 #include "../../../sound_player.h"
 #include "../../../ai_monster_space.h"

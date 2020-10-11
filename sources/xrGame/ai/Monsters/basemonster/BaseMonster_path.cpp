@@ -7,7 +7,8 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include "base_monster.h"
+
+#include "BaseMonster.h"
 #include "../corpse_cover.h"
 #include "../../../cover_manager.h"
 #include "../../../cover_point.h"

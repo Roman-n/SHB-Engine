@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "base_monster.h"
+#include "BaseMonster.h"
 #include "../ai_monster_squad.h"
 #include "../ai_monster_squad_manager.h"
 #include "../../../profiler.h"
@@ -62,10 +62,8 @@ void CBaseMonster::post_fsm_update()
 	
 	EMonsterState state = StateMan->get_state_type();
 
-
 	// Look at enemy while running
 	m_bRunTurnLeft = m_bRunTurnRight = false;
-	
 
 	if (is_state(state, eStateAttack) && control().path_builder().is_moving_on_path()) {
 
@@ -108,6 +106,6 @@ void CBaseMonster::squad_notify()
 		goal.type	= MG_Rest;
 		goal.entity	= squad->GetLeader();
 	}
-	
+
 	squad->UpdateGoal(this, goal);
 }

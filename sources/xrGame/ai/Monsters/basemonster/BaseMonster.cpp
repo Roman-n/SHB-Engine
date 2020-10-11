@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "base_monster.h"
+#include "BaseMonster.h"
 #include "../../../PhysicsShell.h"
 #include "../../../hit.h"
 #include "../../../PHDestroyable.h"
@@ -54,7 +54,6 @@ CBaseMonster::CBaseMonster()
 	
 	m_control_manager				= xr_new<CControl_Manager>(this);
 
-
 	EnemyMemory.init_external		(this, 20000);
 	SoundMemory.init_external		(this, 20000);
 	CorpseMemory.init_external		(this, 20000);
@@ -72,12 +71,10 @@ CBaseMonster::CBaseMonster()
 
 	m_controlled					= 0;
 
-	
 	control().add					(&m_com_manager,  ControlCom::eControlCustom);
 	
 	m_com_manager.add_ability		(ControlCom::eControlSequencer);
 	m_com_manager.add_ability		(ControlCom::eControlTripleAnimation);
-
 
 	m_anomaly_detector				= xr_new<CAnomalyDetector>(this);
 	CoverMan						= xr_new<CMonsterCoverManager>(this);
@@ -86,7 +83,6 @@ CBaseMonster::CBaseMonster()
 
 	com_man().add_ability			(ControlCom::eComCriticalWound);
 }
-
 
 CBaseMonster::~CBaseMonster()
 {
@@ -136,11 +132,9 @@ void CBaseMonster::shedule_Update(u32 dt)
 #endif
 }
 
-
 //////////////////////////////////////////////////////////////////////
 // Other functions
 //////////////////////////////////////////////////////////////////////
-
 
 void CBaseMonster::Die(CObject* who)
 {
@@ -158,7 +152,6 @@ void CBaseMonster::Die(CObject* who)
 	if (m_controlled)			m_controlled->on_die();
 }
 
-
 //void CBaseMonster::Hit(float P,Fvector &dir,CObject*who,s16 element,Fvector p_in_object_space,float impulse, ALife::EHitType hit_type)
 void	CBaseMonster::Hit							(SHit* pHDS)
 {
@@ -170,8 +163,6 @@ void	CBaseMonster::Hit							(SHit* pHDS)
 	if (g_Alive())
 		if (!critically_wounded()) 
 			update_critical_wounded(pHDS->boneID,pHDS->power);
-	
-
 
 //	inherited::Hit(P,dir,who,element,p_in_object_space,impulse,hit_type);
 	inherited::Hit(pHDS);
@@ -225,7 +216,6 @@ void CBaseMonster::ChangeTeam(int team, int squad, int group)
 	inherited::ChangeTeam			(team,squad,group);
 	monster_squad().register_member	((u8)g_Team(),(u8)g_Squad(),(u8)g_Group(), this);
 }
-
 
 void CBaseMonster::SetTurnAnimation(bool turn_left)
 {
@@ -431,7 +421,7 @@ void CBaseMonster::net_Relcase(CObject *O)
 	}
 	m_pPhysics_support->in_NetRelcase(O);
 }
-	
+
 void CBaseMonster::create_base_controls()
 {
 	m_anim_base		= xr_new<CControlAnimationBase>		();

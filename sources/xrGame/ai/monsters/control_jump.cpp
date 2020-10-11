@@ -1,6 +1,7 @@
 #include "stdafx.h"
+
 #include "control_jump.h"
-#include "BaseMonster/base_monster.h"
+#include "BaseMonster/BaseMonster.h"
 #include "control_manager.h"
 #include "../../PHMovementControl.h"
 #include "../../..\ENGINE\skeletonanimated.h"
@@ -15,8 +16,9 @@
 #include "../../level_graph.h"
 #include "../../ai_object_location.h"
 #include "../../CharacterPhysicsSupport.h"
+
 #ifdef DEBUG
-#include "../../level_debug.h"
+#	include "../../level_debug.h"
 #endif
 
 void CControlJump::reinit()

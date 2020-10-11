@@ -1,6 +1,7 @@
 #include "stdafx.h"
+
 #include "psy_aura.h"
-#include "BaseMonster/base_monster.h"
+#include "BaseMonster/BaseMonster.h"
 
 CPsyAura::CPsyAura()
 {
@@ -9,8 +10,7 @@ CPsyAura::CPsyAura()
 }
 
 CPsyAura::~CPsyAura()
-{
-}
+{ }
 
 void CPsyAura::schedule_update()
 {

@@ -1,37 +1,38 @@
 #include "stdafx.h"
+
 #include "monster_sound_memory.h"
-#include "BaseMonster/base_monster.h"
+#include "BaseMonster/BaseMonster.h"
 
-#define CHECK_SOUND_TYPE(a,b,c) { if ((a & b) == b) return c; }
+#define CHECK_SOUND_TYPE(a, b, c) { if ((a & b) == b) return c; }
 
-const	u32	time_help_sound_remember = 10000;
+const u32	time_help_sound_remember = 10000;
 
 TSoundDangerValue tagSoundElement::ConvertSoundType(ESoundTypes stype)
-{ 
+{
+	if (((stype & SOUND_TYPE_WEAPON) != SOUND_TYPE_WEAPON) &&
+		((stype & SOUND_TYPE_MONSTER) != SOUND_TYPE_MONSTER) &&
+		((stype & SOUND_TYPE_WORLD) != SOUND_TYPE_WORLD))
+	{
+		return NONE_DANGEROUS_SOUND;
+	}
 
-	if (((stype & SOUND_TYPE_WEAPON) != SOUND_TYPE_WEAPON) && 
-		((stype & SOUND_TYPE_MONSTER) != SOUND_TYPE_MONSTER) && 
-		((stype & SOUND_TYPE_WORLD) != SOUND_TYPE_WORLD)) return NONE_DANGEROUS_SOUND;
-
-	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_WEAPON_RECHARGING,	WEAPON_RECHARGING);
-	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_WEAPON_SHOOTING,		WEAPON_SHOOTING);
-	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_ITEM_TAKING,			WEAPON_TAKING);
-	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_ITEM_HIDING,			WEAPON_HIDING);
+	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_WEAPON_RECHARGING,		WEAPON_RECHARGING);
+	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_WEAPON_SHOOTING,			WEAPON_SHOOTING);
+	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_ITEM_TAKING,				WEAPON_TAKING);
+	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_ITEM_HIDING,				WEAPON_HIDING);
 	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_WEAPON_EMPTY_CLICKING,	WEAPON_EMPTY_CLICKING);
-	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_WEAPON_BULLET_HIT,	WEAPON_BULLET_RICOCHET);
-	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_MONSTER_DYING,		MONSTER_DYING);
-	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_MONSTER_INJURING,	MONSTER_INJURING);
-	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_MONSTER_STEP,		MONSTER_WALKING);
+	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_WEAPON_BULLET_HIT,		WEAPON_BULLET_RICOCHET);
+	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_MONSTER_DYING,			MONSTER_DYING);
+	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_MONSTER_INJURING,		MONSTER_INJURING);
+	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_MONSTER_STEP,			MONSTER_WALKING);
 
-	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_MONSTER_TALKING,		MONSTER_TALKING);
-	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_MONSTER_ATTACKING,	MONSTER_ATTACKING);
+	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_MONSTER_TALKING,			MONSTER_TALKING);
+	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_MONSTER_ATTACKING,		MONSTER_ATTACKING);
 	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_WORLD_OBJECT_BREAKING,	OBJECT_BREAKING);
 	CHECK_SOUND_TYPE(stype,	SOUND_TYPE_WORLD_OBJECT_COLLIDING,	OBJECT_FALLING);
 
-
 	return NONE_DANGEROUS_SOUND;
 }
-
 
 CMonsterSoundMemory::CMonsterSoundMemory()
 {
@@ -39,10 +40,9 @@ CMonsterSoundMemory::CMonsterSoundMemory()
 	m_time_help_sound	= 0;
 	m_help_node			= u32(-1);
 }
-CMonsterSoundMemory::~CMonsterSoundMemory()
-{
 
-}
+CMonsterSoundMemory::~CMonsterSoundMemory()
+{ }
 
 void CMonsterSoundMemory::init_external(CBaseMonster *M, TTime mem_time)
 {
@@ -70,7 +70,6 @@ void CMonsterSoundMemory::HearSound(const SoundElem &s)
 	}
 
 	if (!b_sound_replaced) Sounds.push_back(s);
-
 }
 
 void CMonsterSoundMemory::HearSound(const CObject* who, int eType, const Fvector &Position, float power, TTime time)
@@ -80,7 +79,7 @@ void CMonsterSoundMemory::HearSound(const CObject* who, int eType, const Fvector
 	s.CalcValue(time,monster->Position());
 
 	HearSound(s);
-} 
+}
 
 void CMonsterSoundMemory::GetSound(SoundElem &s, bool &bDangerous)
 {
@@ -100,7 +99,6 @@ SoundElem &CMonsterSoundMemory::GetSound()
 	xr_vector<SoundElem>::iterator it = std::max_element(Sounds.begin(), Sounds.end());
 	return (*it);
 }
-
 
 struct pred_remove_nonactual_sounds {
 	TTime new_time;
@@ -124,7 +122,6 @@ struct pred_remove_nonactual_sounds {
 		return false;
 	}
 };
-
 
 void CMonsterSoundMemory::UpdateHearing()
 {
@@ -210,4 +207,3 @@ void CMonsterSoundMemory::check_help_sound(int eType, u32 node)
 	m_time_help_sound	= time();
 	m_help_node			= node;
 }
-

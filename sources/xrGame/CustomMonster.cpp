@@ -7,7 +7,7 @@
 #include "CustomMonster.h"
 #include "HUDManager.h"//
 #include "ai_space.h"
-#include "ai/monsters/BaseMonster/base_monster.h"
+//#include "ai/monsters/BaseMonster/BaseMonster.h"
 #include "xrserver_objects_alife_monsters.h"
 #include "xrserver.h"
 #include "seniority_hierarchy_holder.h"
