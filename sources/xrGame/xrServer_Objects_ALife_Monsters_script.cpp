@@ -13,7 +13,7 @@
 
 using namespace luabind;
 
-LPCSTR profile_name_script (CSE_ALifeTraderAbstract* ta)
+const char* profile_name_script (CSE_ALifeTraderAbstract* ta)
 {
 	return *ta->character_profile();
 }
@@ -60,7 +60,7 @@ void CSE_ALifeTraderAbstract::script_register(lua_State *L)
 	module(L)[
 		class_<CSE_ALifeTraderAbstract>
 			("cse_alife_trader_abstract")
-//			.def(		constructor<LPCSTR>())
+//			.def(		constructor<const char*>())
 #ifdef XRGAME_EXPORTS
 			.def("community",		&CommunityName)
 			.def("profile_name",	&profile_name_script)

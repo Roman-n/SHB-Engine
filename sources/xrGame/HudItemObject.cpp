@@ -14,8 +14,7 @@ CHudItemObject::CHudItemObject			()
 }
 
 CHudItemObject::~CHudItemObject			()
-{
-}
+{ }
 
 DLL_Pure *CHudItemObject::_construct	()
 {
@@ -24,7 +23,7 @@ DLL_Pure *CHudItemObject::_construct	()
 	return						(this);
 }
 
-void CHudItemObject::Load				(LPCSTR section)
+void CHudItemObject::Load				(const char* section)
 {
 	CInventoryItemObject::Load	(section);
 	CHudItem::Load				(section);

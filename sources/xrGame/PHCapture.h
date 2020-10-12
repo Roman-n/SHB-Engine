@@ -1,7 +1,7 @@
 #pragma once
 
 #include "PHObject.h"
-#include "gameobject.h"
+#include "GameObject.h"
 #include "physicsshellholder.h"
 
 class CPhysicShellHolder;

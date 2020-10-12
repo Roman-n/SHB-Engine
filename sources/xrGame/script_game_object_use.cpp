@@ -10,7 +10,7 @@
 #include "ai/stalker/ai_stalker.h"
 #include "searchlight.h"
 #include "script_callback_ex.h"
-#include "game_object_space.h"
+#include "GameObject_space.h"
 #include "memory_manager.h"
 #include "enemy_manager.h"
 #include "movement_manager.h"

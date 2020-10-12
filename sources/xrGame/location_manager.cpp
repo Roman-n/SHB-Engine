@@ -7,25 +7,24 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
-#include "location_manager.h"
-#include "gameobject.h"
 
-extern void	setup_location_types	(GameGraph::TERRAIN_VECTOR &m_vertex_types, CIniFile*ini, LPCSTR string);
+#include "location_manager.h"
+#include "GameObject.h"
+
+extern void	setup_location_types	(GameGraph::TERRAIN_VECTOR &m_vertex_types, CIniFile*ini, const char* string);
 
 CLocationManager::~CLocationManager	()
-{
-}
+{ }
 
-void CLocationManager::Load			(LPCSTR section)
+void CLocationManager::Load			(const char* section)
 {
 	if(pSettings->line_exist(section,"terrain"))
 		setup_location_types			(m_vertex_types,pSettings,pSettings->r_string(section,"terrain"));
 	else
 		setup_location_types			(m_vertex_types,pSettings,section);
-
 }
 
-void CLocationManager::reload		(LPCSTR section)
+void CLocationManager::reload		(const char* section)
 {
 	if (!m_object->spawn_ini() || !m_object->spawn_ini()->section_exist("alife") || !m_object->spawn_ini()->line_exist("alife","terrain"))
 		return;

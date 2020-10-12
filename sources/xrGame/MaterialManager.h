@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: material_manager.h
+//	Module 		: MaterialManager.h
 //	Created 	: 27.12.2003
 //  Modified 	: 27.12.2003
 //	Author		: Dmitriy Iassenev
@@ -38,4 +38,4 @@ public:
 	IC		SGameMtlPair		*get_current_pair		();
 };
 
-#include "material_manager_inline.h"
+#include "MaterialManager_inline.h"

@@ -7,10 +7,11 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "level_graph.h"
 #include "profiler.h"
 
-LPCSTR LEVEL_GRAPH_NAME = "level.ai";
+const char* LEVEL_GRAPH_NAME = "level.ai";
 
 CLevelGraph::CLevelGraph		()
 {

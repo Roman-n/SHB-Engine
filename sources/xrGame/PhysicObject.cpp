@@ -6,7 +6,7 @@
 #include "xrserver_objects_alife.h"
 #include "..\ENGINE\skeletonanimated.h"
 #include "..\ENGINE\xr_collide_form.h"
-#include "game_object_space.h"
+#include "GameObject_space.h"
 
 
 CPhysicObject::CPhysicObject(void) 

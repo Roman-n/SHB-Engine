@@ -1,4 +1,5 @@
 #include "stdafx.h"
+
 #include "actor.h"
 #include "weapon.h"
 #include "mercuryball.h"
@@ -16,12 +17,12 @@
 #include "game_cl_base.h"
 #include "Level.h"
 
+#include "..\ENGINE\CameraBase.h"
+
 #define PICKUP_INFO_COLOR 0xFFDDDDDD
-//AAAAAA
 
 void CActor::feel_touch_new				(CObject* O)
-{
-}
+{ }
 
 void CActor::feel_touch_delete	(CObject* O)
 {
@@ -135,7 +136,6 @@ void CActor::PickupModeUpdate()
 		if (CanPickItem(frustum,Device.vCameraPosition,*it)) PickupInfoDraw(*it);
 }
 
-#include "..\ENGINE\CameraBase.h"
 BOOL	g_b_COD_PickUpMode = TRUE;
 void	CActor::PickupModeUpdate_COD	()
 {

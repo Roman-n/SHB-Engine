@@ -10,7 +10,7 @@
 
 #include "InfoPortionDefs.h"
 #include "PdaMsg.h"
-#include "encyclopedia_article_defs.h"
+#include "EncyclopediaArticle_defs.h"
 
 #include "character_info_defs.h"
 #include "relation_registry_defs.h"

@@ -7,6 +7,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "level_graph.h"
 #include "cover_manager.h"
 #include "ai_space.h"

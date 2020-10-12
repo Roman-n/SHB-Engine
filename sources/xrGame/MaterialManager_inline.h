@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: material_manager_inline.h
+//	Module 		: MaterialManager_inline.h
 //	Created 	: 27.12.2003
 //  Modified 	: 27.12.2003
 //	Author		: Dmitriy Iassenev

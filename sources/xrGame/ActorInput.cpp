@@ -21,7 +21,7 @@
 #include "UsableScriptObject.h"
 #include "clsid_game.h"
 #include "actorcondition.h"
-#include "actor_input_handler.h"
+#include "ActorInputHandler.h"
 #include "StringTable.h"
 #include "ui/UIStatic.h"//
 #include "CharacterPhysicsSupport.h"
@@ -467,7 +467,6 @@ float	CActor::GetLookFactor()
 	if (m_input_external_handler) 
 		return m_input_external_handler->mouse_scale_factor();
 
-	
 	float factor	= 1.f;
 
 	PIItem pItem	= inventory().ActiveItem();

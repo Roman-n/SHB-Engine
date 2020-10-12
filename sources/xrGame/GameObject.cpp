@@ -28,7 +28,7 @@
 #include "game_cl_base_weapon_usage_statistic.h"
 #include "game_level_cross_table.h"
 #include "animation_movement_controller.h"
-#include "game_object_space.h"
+#include "GameObject_space.h"
 
 #ifdef DEBUG
 #	include "debug_renderer.h"
@@ -94,20 +94,27 @@ void CGameObject::reload	(const char* section)
 
 void CGameObject::net_Destroy	()
 {
+
 #ifdef DEBUG
 	if (psAI_Flags.test(aiDestroy))
-		Msg					("Destroying client object [%d][%s][%x]",ID(),*cName(),this);
+	{
+		Msg("Destroying client object [%d][%s][%x]", ID( ), *cName( ), this);
+	}
 #endif
 
 	VERIFY					(m_spawned);
-	if(animation_movement_controlled())
-					destroy_anim_mov_ctrl	();
+	if (animation_movement_controlled( ))
+	{
+		destroy_anim_mov_ctrl( );
+	}
 
 	xr_delete				(m_ini_file);
 
 	m_script_clsid			= -1;
-	if (Visual() && smart_cast<CKinematics*>(Visual()))
-		smart_cast<CKinematics*>(Visual())->Callback	(0,0);
+	if (Visual( ) && smart_cast<CKinematics*>(Visual( )))
+	{
+		smart_cast<CKinematics*>(Visual( ))->Callback(0, 0);
+	}
 
 	inherited::net_Destroy						();
 	setReady									(FALSE);
@@ -220,12 +227,14 @@ BOOL CGameObject::net_Spawn		(CSE_Abstract*	DC)
 	// XForm
 	XFORM().setXYZ					(E->o_Angle);
 	Position().set					(E->o_Position);
+
 #ifdef DEBUG
 	if(ph_dbg_draw_mask1.test(ph_m1_DbgTrackObject)&&stricmp(PH_DBG_ObjectTrack(),*cName())==0)
 	{
 		Msg("CGameObject::net_Spawn obj %s Position set from CSE_Abstract %f,%f,%f",PH_DBG_ObjectTrack(),Position().x,Position().y,Position().z);
 	}
 #endif
+
 	VERIFY							(_valid(renderable.xform));
 	VERIFY							(!fis_zero(DET(renderable.xform)));
 	CSE_ALifeObject					*O = smart_cast<CSE_ALifeObject*>(E);
@@ -277,6 +286,7 @@ BOOL CGameObject::net_Spawn		(CSE_Abstract*	DC)
 		Msg("CGameObject::net_Spawn obj %s After Script Binder reinit %f,%f,%f",PH_DBG_ObjectTrack(),Position().x,Position().y,Position().z);
 	}
 #endif
+
 	//load custom user data from server
 	if(!E->client_data.empty())
 	{	
@@ -290,9 +300,10 @@ BOOL CGameObject::net_Spawn		(CSE_Abstract*	DC)
 	}
 
 	// if we have a parent
-	if (0xffff != E->ID_Parent) {
-		
-		if (!Parent) {
+	if (0xffff != E->ID_Parent)
+	{
+		if (!Parent)
+		{
 			// // we need this to prevent illegal ref_dec/ref_add
 			// this is obsolete, since ref_dec/ref_add are removed
 			// but I propose do not touch this, or touch and then
@@ -302,10 +313,14 @@ BOOL CGameObject::net_Spawn		(CSE_Abstract*	DC)
 			Parent				= 0;
 		}
 		else
+		{
 			inherited::net_Spawn(DC);
+		}
 	}
-	else {
-		if (ai().get_level_graph()) {
+	else
+	{
+		if (ai().get_level_graph())
+		{
 			CSE_ALifeObject			*l_tpALifeObject = smart_cast<CSE_ALifeObject*>(E);
 			CSE_Temporary			*l_tpTemporary	= smart_cast<CSE_Temporary*>	(E);
 			if (l_tpALifeObject && ai().level_graph().valid_vertex_id(l_tpALifeObject->m_tNodeID))

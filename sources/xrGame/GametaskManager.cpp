@@ -11,7 +11,7 @@
 #include "actor.h"
 #include "ui/UIGameSP.h"//
 #include "ui/UIPdaWnd.h"//
-#include "encyclopedia_article.h"
+#include "EncyclopediaArticle.h"
 #include "ui/UIEventsWnd.h"//
 
 #pragma warning(push)

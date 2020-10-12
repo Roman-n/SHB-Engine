@@ -420,9 +420,9 @@ class CCC_Bind : public IConsoleCommand
 {
 	int m_work_idx;
 public:
-	CCC_Bind(LPCSTR N, int idx) : IConsoleCommand(N), m_work_idx(idx)
+	CCC_Bind(const char* N, int idx) : IConsoleCommand(N), m_work_idx(idx)
 	{ };
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		string256							action;
 		string256							key;
@@ -496,11 +496,11 @@ class CCC_UnBind : public IConsoleCommand
 {
 	int m_work_idx;
 public:
-	CCC_UnBind(LPCSTR N, int idx) : IConsoleCommand(N), m_work_idx(idx)
+	CCC_UnBind(const char* N, int idx) : IConsoleCommand(N), m_work_idx(idx)
 	{
 		bEmptyArgsHandled = true;
 	};
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		int action_id = action_name_to_id(args);
 		_binding* pbinding = &g_key_bindings[action_id];
@@ -513,12 +513,12 @@ public:
 class CCC_ListActions : public IConsoleCommand
 {
 public:
-	CCC_ListActions(LPCSTR N) : IConsoleCommand(N)
+	CCC_ListActions(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
 
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		Log("- --- Action list start ---");
 		for (int idx = 0; idx < bindings_count; ++idx)
@@ -534,12 +534,12 @@ public:
 class CCC_UnBindAll : public IConsoleCommand
 {
 public:
-	CCC_UnBindAll(LPCSTR N) : IConsoleCommand(N)
+	CCC_UnBindAll(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
 
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		for (int idx = 0; idx < bindings_count; ++idx)
 		{
@@ -561,12 +561,12 @@ public:
 class CCC_BindList : public IConsoleCommand
 {
 public:
-	CCC_BindList(LPCSTR N) : IConsoleCommand(N)
+	CCC_BindList(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = true;
 	};
 
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		Log("- --- Bind list start ---");
 		string512		buff;
@@ -588,9 +588,9 @@ public:
 class CCC_BindConsoleCmd : public IConsoleCommand
 {
 public:
-	CCC_BindConsoleCmd(LPCSTR N) : IConsoleCommand(N)
+	CCC_BindConsoleCmd(const char* N) : IConsoleCommand(N)
 	{ };
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		string512				console_command;
 		string256				key;
@@ -611,12 +611,12 @@ public:
 class CCC_UnBindConsoleCmd : public IConsoleCommand
 {
 public:
-	CCC_UnBindConsoleCmd(LPCSTR N) : IConsoleCommand(N)
+	CCC_UnBindConsoleCmd(const char* N) : IConsoleCommand(N)
 	{
 		bEmptyArgsHandled = false;
 	};
 
-	virtual void Execute(LPCSTR args)
+	virtual void Execute(const char* args)
 	{
 		int _dik = keyname_to_dik(args);
 		bindConsoleCmds.unbind(_dik);

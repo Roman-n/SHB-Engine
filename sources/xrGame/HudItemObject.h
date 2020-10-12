@@ -26,7 +26,7 @@ public:
 	virtual CHudItem	*cast_hud_item		()	{return this;}
 
 public:
-	virtual void		Load				(LPCSTR section);
+	virtual void		Load				(const char* section);
 	virtual bool		Action				(int cmd, u32 flags);
 	virtual void		SwitchState			(u32 S);
 	virtual void		OnStateSwitch		(u32 S);

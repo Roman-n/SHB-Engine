@@ -28,7 +28,7 @@ CBaseGraviZone ::CBaseGraviZone (void)
 CBaseGraviZone ::~CBaseGraviZone (void)
 { }
 
-void CBaseGraviZone ::Load(LPCSTR section)
+void CBaseGraviZone ::Load(const char* section)
 {
 	inherited::Load(section);
 

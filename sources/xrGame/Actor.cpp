@@ -53,7 +53,7 @@
 #include "..\ENGINE\skeletonanimated.h"
 #include "Artefact.h"
 #include "CharacterPhysicsSupport.h"
-#include "material_manager.h"
+#include "MaterialManager.h"
 #include "ICollisionDamageInfo.h"
 #include "ui/UIMainIngameWnd.h"//
 #include "ui/UIArtefactPanel.h"//
@@ -61,7 +61,7 @@
 #include "GameTaskManager.h"
 #include "actor_memory.h"
 #include "Script_Game_Object.h"
-#include "Game_Object_Space.h"
+#include "GameObject_space.h"
 #include "script_callback_ex.h"
 #include "InventoryBox.h"
 #include "location_manager.h"

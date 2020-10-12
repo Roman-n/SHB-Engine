@@ -10,7 +10,7 @@
 //T_ID, T_INDEX -	тип индекса и id
 
 //ITEM_DATA		-	структура с полями id и index типа T_ID и T_INDEX,
-//					обязательно имеет конструктор с параметрами (T_INDEX index, T_ID id, LPCSTR r1, ..., LPCSTR rN)
+//					обязательно имеет конструктор с параметрами (T_INDEX index, T_ID id, const char* r1, ..., const char* rN)
 //					N = ITEM_REC_NUM - число доп. параметров в ITEM_DATA 
 
 //T_INIT		-	класс где определена статическая InitIdToIndex
@@ -31,19 +31,19 @@ protected:
 	static	T_VECTOR*				m_pItemDataVector;
 	
 	template <u32 NUM>
-	static void						LoadItemData	(u32, LPCSTR)
+	static void						LoadItemData	(u32, const char*)
 	{
 		STATIC_CHECK(false, Specialization_for_LoadItemData_in_CIni_IdToIndex_not_found);
 		NODEFAULT;
 	}
 
 	template <>
-		static  void				LoadItemData<0>  (u32 count, LPCSTR cfgRecord)
+		static  void				LoadItemData<0>  (u32 count, const char* cfgRecord)
 	{
 		for (u32 k = 0; k < count; k+= 1)
 		{
 			string64 buf;
-			LPCSTR id_str  = _GetItem(cfgRecord, k, buf);
+			const char* id_str  = _GetItem(cfgRecord, k, buf);
 			char* id_str_lwr = xr_strdup(id_str);
 			xr_strlwr(id_str_lwr);
 			ITEM_DATA item_data(T_INDEX(m_pItemDataVector->size()), T_ID(id_str));
@@ -53,15 +53,15 @@ protected:
 	}
 
 	template <>
-		static  void				LoadItemData<1>  (u32 count, LPCSTR cfgRecord)
+		static  void				LoadItemData<1>  (u32 count, const char* cfgRecord)
 	{
 		for (u32 k = 0; k < count; k+= 2)
 		{
 			string64 buf, buf1;
-			LPCSTR id_str  = _GetItem(cfgRecord, k, buf);
+			const char* id_str  = _GetItem(cfgRecord, k, buf);
 			char* id_str_lwr = xr_strdup(id_str);
 			xr_strlwr(id_str_lwr);
-			LPCSTR rec1	   = _GetItem(cfgRecord, k + 1, buf1);
+			const char* rec1	   = _GetItem(cfgRecord, k + 1, buf1);
 			ITEM_DATA item_data(T_INDEX(m_pItemDataVector->size()), T_ID(id_str), rec1);
 			m_pItemDataVector->push_back(item_data);
 			xr_free(id_str_lwr);
@@ -69,8 +69,8 @@ protected:
 	}
 
 	//имя секции и линии откуда будут загружаться id
-	static LPCSTR section_name;
-	static LPCSTR line_name;
+	static const char* section_name;
+	static const char* line_name;
 
 public:
 											CIni_IdToIndex				();
@@ -97,27 +97,22 @@ public:
 	static void								DeleteIdToIndexData			();
 };
 
-
 TEMPLATE_SPECIALIZATION
 typename CSINI_IdToIndex::T_VECTOR* CSINI_IdToIndex::m_pItemDataVector = NULL;
 
 TEMPLATE_SPECIALIZATION
-LPCSTR CSINI_IdToIndex::section_name = NULL;
-TEMPLATE_SPECIALIZATION
-LPCSTR CSINI_IdToIndex::line_name = NULL;
+const char* CSINI_IdToIndex::section_name = NULL;
 
+TEMPLATE_SPECIALIZATION
+const char* CSINI_IdToIndex::line_name = NULL;
 
 TEMPLATE_SPECIALIZATION
 CSINI_IdToIndex::CIni_IdToIndex()
-{
-}
-
+{ }
 
 TEMPLATE_SPECIALIZATION
 CSINI_IdToIndex::~CIni_IdToIndex()
-{
-}
-
+{ }
 
 TEMPLATE_SPECIALIZATION
 const typename ITEM_DATA* CSINI_IdToIndex::GetById (const T_ID& str_id, bool no_assert)
@@ -147,6 +142,7 @@ const typename ITEM_DATA* CSINI_IdToIndex::GetByIndex(T_INDEX index, bool no_ass
 			Debug.fatal(DEBUG_INFO,"item by index not found in section %s, line %s", section_name, line_name);
 		return NULL;
 	}
+
 	return &(m_pItemDataVector->at(index));
 }
 
@@ -167,12 +163,11 @@ typename void	CSINI_IdToIndex::InitInternal ()
 		VERIFY(section_name);
 		VERIFY(line_name);
 
-		LPCSTR	cfgRecord	= pSettings->r_string(section_name, line_name); VERIFY(cfgRecord);
+		const char* cfgRecord	= pSettings->r_string(section_name, line_name);
+		VERIFY(cfgRecord);
 		u32		count		= _GetItemCount(cfgRecord);
 		LoadItemData<ITEM_REC_NUM>(count, cfgRecord);
-
 	}
 }
-	
 
 #undef TEMPLATE_SPECIALIZATION

@@ -18,7 +18,7 @@
 
 #include "CameraLook.h"
 #include "CameraFirstEye.h"
-#include "holder_custom.h"
+#include "HolderCustom.h"
 #include "ui/UIInventoryWnd.h"//
 #include "game_base_space.h"
 
@@ -243,7 +243,7 @@ void CActor::OnEvent		(NET_Packet& P, u16 type)
 	}
 }
 
-void			CActor::MoveActor		(Fvector NewPos, Fvector NewDir)
+void CActor::MoveActor		(Fvector NewPos, Fvector NewDir)
 {
 	Fmatrix	M = XFORM();
 	M.translate(NewPos);

@@ -931,7 +931,7 @@ void CSE_ALifeItemGrenade::UPDATE_Write		(NET_Packet	&tNetPacket)
 	inherited::UPDATE_Write		(tNetPacket);
 }
 
-void CSE_ALifeItemGrenade::FillProps			(LPCSTR pref, PropItemVec& items)
+void CSE_ALifeItemGrenade::FillProps			(const char* pref, PropItemVec& items)
 {
 	inherited::FillProps			(pref,items);
 }
@@ -939,7 +939,7 @@ void CSE_ALifeItemGrenade::FillProps			(LPCSTR pref, PropItemVec& items)
 ////////////////////////////////////////////////////////////////////////////
 // CSE_ALifeItemExplosive
 ////////////////////////////////////////////////////////////////////////////
-CSE_ALifeItemExplosive::CSE_ALifeItemExplosive	(LPCSTR caSection): CSE_ALifeItem(caSection)
+CSE_ALifeItemExplosive::CSE_ALifeItemExplosive	(const char* caSection): CSE_ALifeItem(caSection)
 {
 }
 
@@ -967,7 +967,7 @@ void CSE_ALifeItemExplosive::UPDATE_Write		(NET_Packet	&tNetPacket)
 	inherited::UPDATE_Write		(tNetPacket);
 }
 
-void CSE_ALifeItemExplosive::FillProps			(LPCSTR pref, PropItemVec& items)
+void CSE_ALifeItemExplosive::FillProps			(const char* pref, PropItemVec& items)
 {
 	inherited::FillProps			(pref,items);
 }
@@ -975,7 +975,7 @@ void CSE_ALifeItemExplosive::FillProps			(LPCSTR pref, PropItemVec& items)
 ////////////////////////////////////////////////////////////////////////////
 // CSE_ALifeItemBolt
 ////////////////////////////////////////////////////////////////////////////
-CSE_ALifeItemBolt::CSE_ALifeItemBolt		(LPCSTR caSection) : CSE_ALifeItem(caSection)
+CSE_ALifeItemBolt::CSE_ALifeItemBolt		(const char* caSection) : CSE_ALifeItem(caSection)
 {
 	m_flags.set					(flUseSwitches,FALSE);
 	m_flags.set					(flSwitchOffline,FALSE);
@@ -1020,7 +1020,7 @@ bool CSE_ALifeItemBolt::used_ai_locations		() const
 {
 	return false;
 }
-void CSE_ALifeItemBolt::FillProps			(LPCSTR pref, PropItemVec& values)
+void CSE_ALifeItemBolt::FillProps			(const char* pref, PropItemVec& values)
 {
 	inherited::FillProps			(pref,	 values);
 }
@@ -1028,7 +1028,7 @@ void CSE_ALifeItemBolt::FillProps			(LPCSTR pref, PropItemVec& values)
 ////////////////////////////////////////////////////////////////////////////
 // CSE_ALifeItemCustomOutfit
 ////////////////////////////////////////////////////////////////////////////
-CSE_ALifeItemCustomOutfit::CSE_ALifeItemCustomOutfit	(LPCSTR caSection): CSE_ALifeItem(caSection)
+CSE_ALifeItemCustomOutfit::CSE_ALifeItemCustomOutfit	(const char* caSection): CSE_ALifeItem(caSection)
 {
 	m_ef_equipment_type		= pSettings->r_u32(caSection,"ef_equipment_type");
 }
@@ -1064,7 +1064,7 @@ void CSE_ALifeItemCustomOutfit::UPDATE_Write		(NET_Packet	&tNetPacket)
 	tNetPacket.w_float_q8			(m_fCondition,0.0f,1.0f);
 }
 
-void CSE_ALifeItemCustomOutfit::FillProps			(LPCSTR pref, PropItemVec& items)
+void CSE_ALifeItemCustomOutfit::FillProps			(const char* pref, PropItemVec& items)
 {
 	inherited::FillProps			(pref,items);
 }

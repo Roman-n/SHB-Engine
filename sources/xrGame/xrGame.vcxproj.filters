@@ -1270,12 +1270,6 @@
     <Filter Include="Core\Client\Objects\actor">
       <UniqueIdentifier>{f1e8fd9a-15e8-415d-a351-f5414caccc62}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Client\Objects\actor\base">
-      <UniqueIdentifier>{6eb8e386-c00a-42aa-8e1c-9fb5dc3131c6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Client\Objects\actor\base\memory">
-      <UniqueIdentifier>{da7aec6c-a818-4091-b772-b274985f65d1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core\Client\Objects\base">
       <UniqueIdentifier>{93d4c026-aebb-4c8a-ad5e-a13f1fb1deac}</UniqueIdentifier>
     </Filter>
@@ -1332,9 +1326,6 @@
     </Filter>
     <Filter Include="Core\Client\Objects\physics\PhysicObject">
       <UniqueIdentifier>{96b4f515-605e-464d-8aba-06ec1a8ae424}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Core\Client\Objects\hanging_lamp">
-      <UniqueIdentifier>{a2da5d37-2afc-412b-b4ad-fdac7425a422}</UniqueIdentifier>
     </Filter>
     <Filter Include="Core\Client\Objects\tasks_info_dialogs">
       <UniqueIdentifier>{6a9218ca-f710-4b8d-812d-f7eaa0675813}</UniqueIdentifier>
@@ -2083,6 +2074,12 @@
     <Filter Include="Core\Client\Objects\items &amp; weapons\Artefacts\BastArtefact">
       <UniqueIdentifier>{961ac65b-b051-4140-a4d9-b89a053dcda3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Client\Objects\actor\memory">
+      <UniqueIdentifier>{da7aec6c-a818-4091-b772-b274985f65d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Client\Objects\HangingLamp">
+      <UniqueIdentifier>{a2da5d37-2afc-412b-b4ad-fdac7425a422}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mt_config.h">
@@ -2177,12 +2174,6 @@
     </ClInclude>
     <ClInclude Include="script_property_evaluator_wrapper_inline.h">
       <Filter>AI\AComponents\DecisionManagement\ActionManagement\WorldPropertyEvaluator\ScriptPropertyEvaluatorWrapper</Filter>
-    </ClInclude>
-    <ClInclude Include="material_manager.h">
-      <Filter>AI\AComponents\MaterialManager</Filter>
-    </ClInclude>
-    <ClInclude Include="material_manager_inline.h">
-      <Filter>AI\AComponents\MaterialManager</Filter>
     </ClInclude>
     <ClInclude Include="memory_manager.h">
       <Filter>AI\AComponents\MemoryManager</Filter>
@@ -4500,26 +4491,8 @@
     <ClInclude Include="level_debug.h">
       <Filter>Core\Client\Level Debug</Filter>
     </ClInclude>
-    <ClInclude Include="Actor.h">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClInclude>
-    <ClInclude Include="actor_anim_defs.h">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClInclude>
-    <ClInclude Include="actor_defs.h">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClInclude>
-    <ClInclude Include="Actor_Flags.h">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClInclude>
-    <ClInclude Include="actor_input_handler.h">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClInclude>
-    <ClInclude Include="ActorCondition.h">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClInclude>
     <ClInclude Include="actor_memory.h">
-      <Filter>Core\Client\Objects\actor\base\memory</Filter>
+      <Filter>Core\Client\Objects\actor\memory</Filter>
     </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>Core\Client\Objects\base\Entity</Filter>
@@ -4542,14 +4515,8 @@
     <ClInclude Include="Wound.h">
       <Filter>Core\Client\Objects\base\EntityCondition</Filter>
     </ClInclude>
-    <ClInclude Include="game_object_space.h">
-      <Filter>Core\Client\Objects\base\GameObject</Filter>
-    </ClInclude>
     <ClInclude Include="GameObject.h">
       <Filter>Core\Client\Objects\base\GameObject</Filter>
-    </ClInclude>
-    <ClInclude Include="holder_custom.h">
-      <Filter>Core\Client\Objects\base\GameObject\Holder</Filter>
     </ClInclude>
     <ClInclude Include="ParticlesPlayer.h">
       <Filter>Core\Client\Objects\base\GameObject\Holder\ParticlesPlayer</Filter>
@@ -4591,7 +4558,7 @@
       <Filter>Core\Client\Objects\physics\PhysicObject</Filter>
     </ClInclude>
     <ClInclude Include="HangingLamp.h">
-      <Filter>Core\Client\Objects\hanging_lamp</Filter>
+      <Filter>Core\Client\Objects\HangingLamp</Filter>
     </ClInclude>
     <ClInclude Include="xml_str_id_loader.h">
       <Filter>Core\Client\Objects\tasks_info_dialogs</Filter>
@@ -4604,12 +4571,6 @@
     </ClInclude>
     <ClInclude Include="GametaskManager.h">
       <Filter>Core\Client\Objects\tasks_info_dialogs\game tasks</Filter>
-    </ClInclude>
-    <ClInclude Include="encyclopedia_article.h">
-      <Filter>Core\Client\Objects\tasks_info_dialogs\encyclopedia</Filter>
-    </ClInclude>
-    <ClInclude Include="encyclopedia_article_defs.h">
-      <Filter>Core\Client\Objects\tasks_info_dialogs\encyclopedia</Filter>
     </ClInclude>
     <ClInclude Include="AI_PhraseDialogManager.h">
       <Filter>Core\Client\Objects\tasks_info_dialogs\dialogs</Filter>
@@ -4655,9 +4616,6 @@
     </ClInclude>
     <ClInclude Include="attachment_owner_inline.h">
       <Filter>Core\Client\Objects\inventory\AttachmentOwner</Filter>
-    </ClInclude>
-    <ClInclude Include="eatable_item.h">
-      <Filter>Core\Client\Objects\inventory\EatableItem</Filter>
     </ClInclude>
     <ClInclude Include="eatable_item_object.h">
       <Filter>Core\Client\Objects\inventory\EatableItemObject</Filter>
@@ -4750,9 +4708,6 @@
       <Filter>Core\Client\Objects\inventory\InventoryOwner\trade_parameters\purchase_list</Filter>
     </ClInclude>
     <ClInclude Include="physic_item.h">
-      <Filter>Core\Client\Objects\inventory\PhysicItem</Filter>
-    </ClInclude>
-    <ClInclude Include="physic_item_inline.h">
       <Filter>Core\Client\Objects\inventory\PhysicItem</Filter>
     </ClInclude>
     <ClInclude Include="ShootingObject.h">
@@ -5979,6 +5934,45 @@
     <ClInclude Include="ai\Monsters\Boar\BoarStateManager.h">
       <Filter>AI\AMonsters\monsters\Boar</Filter>
     </ClInclude>
+    <ClInclude Include="MaterialManager.h">
+      <Filter>AI\AComponents\MaterialManager</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialManager_inline.h">
+      <Filter>AI\AComponents\MaterialManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="actor_anim_defs.h">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="actor_defs.h">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor_Flags.h">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorCondition.h">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorInputHandler.h">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClInclude>
+    <ClInclude Include="EatableItem.h">
+      <Filter>Core\Client\Objects\inventory\EatableItem</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject_space.h">
+      <Filter>Core\Client\Objects\base\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="HolderCustom.h">
+      <Filter>Core\Client\Objects\base\GameObject\Holder</Filter>
+    </ClInclude>
+    <ClInclude Include="EncyclopediaArticle.h">
+      <Filter>Core\Client\Objects\tasks_info_dialogs\encyclopedia</Filter>
+    </ClInclude>
+    <ClInclude Include="EncyclopediaArticle_defs.h">
+      <Filter>Core\Client\Objects\tasks_info_dialogs\encyclopedia</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="action_base_script.cpp">
@@ -6007,9 +6001,6 @@
     </ClCompile>
     <ClCompile Include="script_property_evaluator_wrapper.cpp">
       <Filter>AI\AComponents\DecisionManagement\ActionManagement\WorldPropertyEvaluator\ScriptPropertyEvaluatorWrapper</Filter>
-    </ClCompile>
-    <ClCompile Include="material_manager.cpp">
-      <Filter>AI\AComponents\MaterialManager</Filter>
     </ClCompile>
     <ClCompile Include="memory_manager.cpp">
       <Filter>AI\AComponents\MemoryManager</Filter>
@@ -7223,53 +7214,8 @@
     <ClCompile Include="level_debug.cpp">
       <Filter>Core\Client\Level Debug</Filter>
     </ClCompile>
-    <ClCompile Include="Actor.cpp">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClCompile>
-    <ClCompile Include="actor_communication.cpp">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClCompile>
-    <ClCompile Include="Actor_Events.cpp">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClCompile>
-    <ClCompile Include="Actor_Feel.cpp">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClCompile>
-    <ClCompile Include="actor_input_handler.cpp">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClCompile>
-    <ClCompile Include="Actor_Movement.cpp">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClCompile>
-    <ClCompile Include="Actor_Network.cpp">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClCompile>
-    <ClCompile Include="Actor_Sleep.cpp">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClCompile>
-    <ClCompile Include="Actor_Weapon.cpp">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClCompile>
-    <ClCompile Include="ActorAnimation.cpp">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClCompile>
-    <ClCompile Include="ActorCameras.cpp">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClCompile>
-    <ClCompile Include="ActorCondition.cpp">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClCompile>
-    <ClCompile Include="ActorInput.cpp">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClCompile>
-    <ClCompile Include="ActorMountedWeapon.cpp">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClCompile>
-    <ClCompile Include="ActorVehicle.cpp">
-      <Filter>Core\Client\Objects\actor\base</Filter>
-    </ClCompile>
     <ClCompile Include="actor_memory.cpp">
-      <Filter>Core\Client\Objects\actor\base\memory</Filter>
+      <Filter>Core\Client\Objects\actor\memory</Filter>
     </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>Core\Client\Objects\base\Entity</Filter>
@@ -7288,12 +7234,6 @@
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
       <Filter>Core\Client\Objects\base\GameObject</Filter>
-    </ClCompile>
-    <ClCompile Include="holder_custom.cpp">
-      <Filter>Core\Client\Objects\base\GameObject\Holder</Filter>
-    </ClCompile>
-    <ClCompile Include="holder_custom_script.cpp">
-      <Filter>Core\Client\Objects\base\GameObject\Holder</Filter>
     </ClCompile>
     <ClCompile Include="ParticlesPlayer.cpp">
       <Filter>Core\Client\Objects\base\GameObject\Holder\ParticlesPlayer</Filter>
@@ -7338,16 +7278,13 @@
       <Filter>Core\Client\Objects\physics\PhysicObject</Filter>
     </ClCompile>
     <ClCompile Include="HangingLamp.cpp">
-      <Filter>Core\Client\Objects\hanging_lamp</Filter>
+      <Filter>Core\Client\Objects\HangingLamp</Filter>
     </ClCompile>
     <ClCompile Include="GameTask.cpp">
       <Filter>Core\Client\Objects\tasks_info_dialogs\game tasks</Filter>
     </ClCompile>
     <ClCompile Include="GametaskManager.cpp">
       <Filter>Core\Client\Objects\tasks_info_dialogs\game tasks</Filter>
-    </ClCompile>
-    <ClCompile Include="encyclopedia_article.cpp">
-      <Filter>Core\Client\Objects\tasks_info_dialogs\encyclopedia</Filter>
     </ClCompile>
     <ClCompile Include="AI_PhraseDialogManager.cpp">
       <Filter>Core\Client\Objects\tasks_info_dialogs\dialogs</Filter>
@@ -7379,9 +7316,6 @@
     <ClCompile Include="attachment_owner.cpp">
       <Filter>Core\Client\Objects\inventory\AttachmentOwner</Filter>
     </ClCompile>
-    <ClCompile Include="eatable_item.cpp">
-      <Filter>Core\Client\Objects\inventory\EatableItem</Filter>
-    </ClCompile>
     <ClCompile Include="eatable_item_object.cpp">
       <Filter>Core\Client\Objects\inventory\EatableItemObject</Filter>
     </ClCompile>
@@ -7410,9 +7344,6 @@
       <Filter>Core\Client\Objects\inventory\InventoryOwner\character_info</Filter>
     </ClCompile>
     <ClCompile Include="monster_community.cpp">
-      <Filter>Core\Client\Objects\inventory\InventoryOwner\character_info</Filter>
-    </ClCompile>
-    <ClCompile Include="specific_character.cpp">
       <Filter>Core\Client\Objects\inventory\InventoryOwner\character_info</Filter>
     </ClCompile>
     <ClCompile Include="relation_registry.cpp">
@@ -8680,6 +8611,66 @@
     </ClCompile>
     <ClCompile Include="ai\Monsters\Boar\BoarStateManager.cpp">
       <Filter>AI\AMonsters\monsters\Boar</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialManager.cpp">
+      <Filter>AI\AComponents\MaterialManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor_Movement.cpp">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor_Network.cpp">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor_Sleep.cpp">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor_Weapon.cpp">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorAnimation.cpp">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorCameras.cpp">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorCondition.cpp">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorInput.cpp">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorMountedWeapon.cpp">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorVehicle.cpp">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor_communication.cpp">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor_events.cpp">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor_feel.cpp">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorInputHandler.cpp">
+      <Filter>Core\Client\Objects\actor</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecificCharacter.cpp">
+      <Filter>Core\Client\Objects\inventory\InventoryOwner\character_info</Filter>
+    </ClCompile>
+    <ClCompile Include="EatableItem.cpp">
+      <Filter>Core\Client\Objects\inventory\EatableItem</Filter>
+    </ClCompile>
+    <ClCompile Include="HolderCustom.cpp">
+      <Filter>Core\Client\Objects\base\GameObject\Holder</Filter>
+    </ClCompile>
+    <ClCompile Include="EncyclopediaArticle.cpp">
+      <Filter>Core\Client\Objects\tasks_info_dialogs\encyclopedia</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

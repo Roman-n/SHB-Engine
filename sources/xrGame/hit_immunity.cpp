@@ -13,11 +13,10 @@ CHitImmunity::CHitImmunity()
 		m_HitTypeK[i] = 1.0f;
 }
 
-
 CHitImmunity::~CHitImmunity()
-{
-}
-void CHitImmunity::LoadImmunities(LPCSTR imm_sect, CIniFile* ini)
+{ }
+
+void CHitImmunity::LoadImmunities(const char* imm_sect, CIniFile* ini)
 {
 	R_ASSERT2	(ini->section_exist(imm_sect), imm_sect);
 

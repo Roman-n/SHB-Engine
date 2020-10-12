@@ -116,7 +116,7 @@ CInventoryItem::~CInventoryItem()
 	}
 }
 
-void CInventoryItem::Load(LPCSTR section) 
+void CInventoryItem::Load(const char* section)
 {
 	CHitImmunity::LoadImmunities	(pSettings->r_string(section,"immunities_sect"),pSettings);
 
@@ -175,12 +175,12 @@ void	CInventoryItem::Hit					(SHit* pHDS)
 	ChangeCondition(-hit_power);
 }
 
-LPCSTR CInventoryItem::Name()
+const char* CInventoryItem::Name()
 {
 	return *m_name;
 }
 
-LPCSTR CInventoryItem::NameShort()
+const char* CInventoryItem::NameShort()
 {
 	return *m_nameShort;
 }
@@ -293,7 +293,7 @@ void CInventoryItem::OnEvent (NET_Packet& P, u16 type)
 //процесс отсоединения вещи заключается в спауне новой вещи 
 //в инвентаре и установке соответствующих флагов в родительском
 //объекте, поэтому функция должна быть переопределена
-bool CInventoryItem::Detach(LPCSTR item_section_name, bool b_spawn_item)
+bool CInventoryItem::Detach(const char* item_section_name, bool b_spawn_item)
 {
 	if (OnClient()) return true;
 	if(b_spawn_item)
@@ -767,8 +767,7 @@ void CInventoryItem::make_Interpolation	()
 #endif
 }
 
-
-void CInventoryItem::reload		(LPCSTR section)
+void CInventoryItem::reload		(const char* section)
 {
 	inherited::reload		(section);
 	m_holder_range_modifier	= READ_IF_EXISTS(pSettings,r_float,section,"holder_range_modifier",1.f);

@@ -9,7 +9,7 @@
 #pragma once
 
 #include "physic_item.h"
-#include "eatable_item.h"
+#include "EatableItem.h"
 
 class CEatableItemObject : 
 			public CEatableItem, 

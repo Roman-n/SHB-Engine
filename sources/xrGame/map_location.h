@@ -1,4 +1,5 @@
 #pragma once
+
 #include "object_interfaces.h"
 #include "alife_space.h"
 #include "game_graph_space.h"
@@ -53,16 +54,16 @@ private:
 							CMapLocation					(const CMapLocation&){}; //disable copy ctor
 
 protected :
-	void					LoadSpot						(LPCSTR type, bool bReload); 
+	void					LoadSpot						(const char* type, bool bReload);
 	void					UpdateSpot						(CUICustomMap* map, CMapSpot* sp );
 	void					UpdateSpotPointer				(CUICustomMap* map, CMapSpotPointer* sp );
 	CMapSpotPointer*		GetSpotPointer					(CMapSpot* sp);
 	CMapSpot*				GetSpotBorder					(CMapSpot* sp);
 public:
-							CMapLocation					(LPCSTR type, u16 object_id);
+							CMapLocation					(const char* type, u16 object_id);
 	virtual					~CMapLocation					();
 	virtual void			destroy							();
-			LPCSTR			GetHint							();
+	const char* GetHint							();
 	void					SetHint							(const shared_str& hint);
 	bool					PointerEnabled					()					{return SpotEnabled() && !!m_flags.test(ePointerEnabled);};
 	void					EnablePointer					()					{m_flags.set(ePointerEnabled,TRUE);};
@@ -129,7 +130,7 @@ class CUserDefinedMapLocation :public CMapLocation
 	Fvector					m_position;
 public:
 	GameGraph::_GRAPH_ID	m_graph_id;
-							CUserDefinedMapLocation			(LPCSTR type, u16 object_id);
+							CUserDefinedMapLocation			(const char* type, u16 object_id);
 	virtual					~CUserDefinedMapLocation		();
 	virtual bool			Update							(); //returns actual
 	virtual Fvector2		Position						();

@@ -1,10 +1,11 @@
 #include "stdafx.h"
+
 #include "searchlight.h"
 #include "..\ENGINE\LightAnimLibrary.h"
 #include "script_entity_action.h"
 #include "xrServer_Objects_ALife.h"
 #include "..\ENGINE\skeletoncustom.h"
-#include "game_object_space.h"
+#include "GameObject_space.h"
 
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction

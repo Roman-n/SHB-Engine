@@ -7,8 +7,7 @@
 
 #include "HudSound.h"
 
-void HUD_SOUND::LoadSound(	LPCSTR section, LPCSTR line, 
-							HUD_SOUND& hud_snd, int type)
+void HUD_SOUND::LoadSound(const char* section, const char* line, HUD_SOUND& hud_snd, int type)
 {
 	hud_snd.m_activeSnd		= NULL;
 	hud_snd.sounds.clear	();
@@ -27,14 +26,14 @@ void HUD_SOUND::LoadSound(	LPCSTR section, LPCSTR line,
 	R_ASSERT3				(!hud_snd.sounds.empty(), "there is no sounds for:", section);
 }
 
-void  HUD_SOUND::LoadSound(LPCSTR section, LPCSTR line, 
+void  HUD_SOUND::LoadSound(const char* section, const char* line,
 						   ref_sound& snd, 
 						   int type,
 						   float* volume, 
 						   float* delay)
 {
 
-	LPCSTR str = pSettings->r_string(section, line);
+	const char* str = pSettings->r_string(section, line);
 	string256 buf_str;
 
 	int	count = _GetItemCount	(str);

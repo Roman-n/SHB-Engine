@@ -62,21 +62,21 @@ ClientID				game_sv_GameState::get_it_2_id				(u32 it)
 	else				return C->ID;
 }
 
-LPCSTR				game_sv_GameState::get_name_it				(u32 it)
+const char* game_sv_GameState::get_name_it				(u32 it)
 {
 	xrClientData*	C	= (xrClientData*)m_server->client_Get		(it);
 	if (0==C)			return 0;
 	else				return *C->name;
 }
 
-LPCSTR				game_sv_GameState::get_name_id				(ClientID id)
+const char* game_sv_GameState::get_name_id				(ClientID id)
 {
 	xrClientData*	C	= (xrClientData*)m_server->ID_to_client	(id);
 	if (0==C)			return 0;
 	else				return *C->name;
 }
 
-LPCSTR				game_sv_GameState::get_player_name_id				(ClientID id)
+const char* game_sv_GameState::get_player_name_id				(ClientID id)
 {
 	xrClientData* xrCData	=	m_server->ID_to_client(id);
 	if(xrCData)
@@ -172,7 +172,7 @@ xr_vector<u16>*		game_sv_GameState::get_children				(ClientID id)
 	return	&(E->children);
 }
 
-int					game_sv_GameState::get_option_i				(LPCSTR lst, LPCSTR name, int def)
+int					game_sv_GameState::get_option_i				(const char* lst, const char* name, int def)
 {
 	string64		op;
 	strconcat		(sizeof(op),op,"/",name,"=");
@@ -180,11 +180,11 @@ int					game_sv_GameState::get_option_i				(LPCSTR lst, LPCSTR name, int def)
 	else				return def;
 }
 
-float					game_sv_GameState::get_option_f				(LPCSTR lst, LPCSTR name, float def)
+float					game_sv_GameState::get_option_f				(const char* lst, const char* name, float def)
 {
 	string64		op;
 	strconcat		(sizeof(op),op,"/",name,"=");
-	LPCSTR			found =	strstr(lst,op);
+	const char* found =	strstr(lst,op);
 
 	if (found)
 	{	
@@ -197,16 +197,16 @@ float					game_sv_GameState::get_option_f				(LPCSTR lst, LPCSTR name, float def
 		return def;
 }
 
-string64&			game_sv_GameState::get_option_s				(LPCSTR lst, LPCSTR name, LPCSTR def)
+string64&			game_sv_GameState::get_option_s				(const char* lst, const char* name, const char* def)
 {
 	static string64	ret;
 
 	string64		op;
 	strconcat		(sizeof(op),op,"/",name,"=");
-	LPCSTR			start	= strstr(lst,op);
+	const char* start	= strstr(lst,op);
 	if (start)		
 	{
-		LPCSTR			begin	= start + xr_strlen(op);
+		const char* begin	= start + xr_strlen(op);
 		sscanf			(begin, "%[^/]",ret);
 	}
 	else			
@@ -388,7 +388,7 @@ void game_sv_GameState::Create					(shared_str &options)
 //	pTmp->Execute				(Console->ConfigFile);
 //	xr_delete					(pTmp);
 	//---------------------------------------------------------------------
-	LPCSTR		svcfg_ltx_name = "-svcfg ";
+	const char* svcfg_ltx_name = "-svcfg ";
 	if (strstr(Core.Params, svcfg_ltx_name))
 	{
 		string_path svcfg_name = "";
@@ -490,7 +490,7 @@ void				game_sv_GameState::SetPointFreezed		(RPoint* rp)
 	rp->TimeToUnfreeze	= Level().timeServer() + g_sv_base_dwRPointFreezeTime;
 }
 
-CSE_Abstract*		game_sv_GameState::spawn_begin				(LPCSTR N)
+CSE_Abstract*		game_sv_GameState::spawn_begin				(const char* N)
 {
 	CSE_Abstract*	A	=   F_entity_Create(N);	R_ASSERT(A);	// create SE
 	A->s_name			=   N;							// ltx-def
@@ -668,7 +668,7 @@ void game_sv_GameState::OnEvent (NET_Packet &tNetPacket, u16 type, u32 time, Cli
 	};
 }
 
-bool game_sv_GameState::NewPlayerName_Exists( void* pClient, LPCSTR NewName )
+bool game_sv_GameState::NewPlayerName_Exists( void* pClient, const char* NewName )
 {
 	if ( !pClient || !NewName ) return false;
 	IClient* CL = (IClient*)pClient;
@@ -702,7 +702,7 @@ void game_sv_GameState::NewPlayerName_Generate( void* pClient, char* NewPlayerNa
 	}
 }
 
-void game_sv_GameState::NewPlayerName_Replace( void* pClient, LPCSTR NewPlayerName )
+void game_sv_GameState::NewPlayerName_Replace( void* pClient, const char* NewPlayerName )
 {
 	if ( !pClient || !NewPlayerName ) return;
 	IClient* CL = (IClient*)pClient;
@@ -766,7 +766,7 @@ void game_sv_GameState::remove_restriction(NET_Packet &packet, u16 id)
 void game_sv_GameState::remove_all_restrictions	(NET_Packet &packet, u16 id)
 { }
 
-void game_sv_GameState::MapRotation_AddMap		(LPCSTR MapName)
+void game_sv_GameState::MapRotation_AddMap		(const char* MapName)
 {
 	m_pMapRotation_List.push_back(MapName);
 	if (m_pMapRotation_List.size() > 1)

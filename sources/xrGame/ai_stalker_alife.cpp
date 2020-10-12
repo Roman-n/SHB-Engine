@@ -15,7 +15,7 @@
 #include "inventory.h"
 #include "clsid_game.h"
 #include "Pda.h"
-#include "eatable_item.h"
+//#include "EatableItem.h"
 #include "Medkit.h"
 #include "weapon.h"
 #include "CustomDetector.h"

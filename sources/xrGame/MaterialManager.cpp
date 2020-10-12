@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////
-//	Module 		: material_manager.cpp
+//	Module 		: MaterialManager.cpp
 //	Created 	: 27.12.2003
 //  Modified 	: 27.12.2003
 //	Author		: Dmitriy Iassenev
@@ -8,7 +8,7 @@
 
 #include "stdafx.h"
 
-#include "material_manager.h"
+#include "MaterialManager.h"
 #include "alife_space.h"
 #include "PHMovementControl.h"
 #include "entity_alive.h"
@@ -31,7 +31,7 @@ CMaterialManager::~CMaterialManager	()
 {
 }
 
-void CMaterialManager::Load			(LPCSTR section)
+void CMaterialManager::Load			(const char* section)
 {
 	R_ASSERT3				(pSettings->line_exist(section,"material"),"Material not found in the section ",*(m_object->cNameSect()));
 	m_my_material_idx		= GMLib.GetMaterialIdx(pSettings->r_string(section,"material"));

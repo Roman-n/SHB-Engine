@@ -54,9 +54,9 @@ protected:
 public:
 #define		TEAM_COUNT 4
 
-	bool							NewPlayerName_Exists	(void* pClient, LPCSTR NewName);
+	bool							NewPlayerName_Exists	(void* pClient, const char* NewName);
 	void							NewPlayerName_Generate	(void* pClient, char* NewPlayerName);
-	void							NewPlayerName_Replace	(void* pClient, LPCSTR NewPlayerName);
+	void							NewPlayerName_Replace	(void* pClient, const char* NewPlayerName);
 
 	BOOL							sv_force_sync;
 	float							rpoints_MinDist [TEAM_COUNT];
@@ -83,7 +83,7 @@ public:
 	virtual		void				OnRoundStart			();									// старт раунда
 	virtual		void				OnRoundEnd				();	//	round_end_reason			// конец раунда
 
-	virtual		void				MapRotation_AddMap		(LPCSTR MapName);
+	virtual		void				MapRotation_AddMap		(const char* MapName);
 	virtual		void				MapRotation_ListMaps	();
 	virtual		bool				OnNextMap				()									{return false;}
 	virtual		void				OnPrevMap				()									{}
@@ -98,9 +98,9 @@ public:
 	virtual		game_PlayerState*	get_it					(u32 it);
 	virtual		game_PlayerState*	get_id					(ClientID id);
 	
-	virtual		LPCSTR				get_name_it				(u32 it);
-	virtual		LPCSTR				get_name_id				(ClientID id);								
-				LPCSTR				get_player_name_id		(ClientID id);								
+	virtual		const char* get_name_it				(u32 it);
+	virtual		const char* get_name_id				(ClientID id);
+	const char* get_player_name_id		(ClientID id);
 	virtual		u16					get_id_2_eid			(ClientID id);
 	virtual		ClientID			get_it_2_id				(u32 it);
 	virtual		u32					get_players_count		();
@@ -118,13 +118,13 @@ public:
 #endif
 	
 	virtual		void				OnSwitchPhase			(u32 old_phase, u32 new_phase);	
-				CSE_Abstract*		spawn_begin				(LPCSTR N);
+				CSE_Abstract*		spawn_begin				(const char* N);
 				CSE_Abstract*		spawn_end				(CSE_Abstract* E, ClientID id);
 
 	// Utilities
-	float							get_option_f			(LPCSTR lst, LPCSTR name, float def = 0.0f);
-	int								get_option_i			(LPCSTR lst, LPCSTR name, int def = 0);
-	string64&						get_option_s			(LPCSTR lst, LPCSTR name, LPCSTR def = 0);
+	float							get_option_f			(const char* lst, const char* name, float def = 0.0f);
+	int								get_option_i			(const char* lst, const char* name, int def = 0);
+	string64&						get_option_s			(const char* lst, const char* name, const char* def = 0);
 	virtual		u32					get_alive_count			(u32 team);
 	virtual		xr_vector<u16>*		get_children			(ClientID id_who);
 	void							u_EventGen				(NET_Packet& P, u16 type, u16 dest	);

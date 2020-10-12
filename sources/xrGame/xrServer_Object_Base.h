@@ -103,22 +103,22 @@ public:
 
 	//////////////////////////////////////////////////////////////////////////
 	
-									CSE_Abstract	(LPCSTR caSection);
+									CSE_Abstract	(const char* caSection);
 	virtual							~CSE_Abstract	();
 	virtual void					OnEvent			(NET_Packet &tNetPacket, u16 type, u32 time, ClientID sender ){};
-	virtual void					FillProps		(LPCSTR pref, PropItemVec &items);
+	virtual void					FillProps		(const char* pref, PropItemVec &items);
 	virtual BOOL					Net_Relevant	(){return TRUE;};
 	//
 	virtual void		__stdcall	Spawn_Write		(NET_Packet &tNetPacket, BOOL bLocal);
 	virtual BOOL		__stdcall	Spawn_Read		(NET_Packet &tNetPacket);
-	virtual void		__stdcall	FillProp		(LPCSTR pref, PropItemVec &items);
-	virtual LPCSTR		__stdcall	name			() const;
-	virtual LPCSTR		__stdcall	name_replace	() const;
-	virtual void		__stdcall	set_name		(LPCSTR s)
+	virtual void		__stdcall	FillProp		(const char* pref, PropItemVec &items);
+	virtual const char* __stdcall	name			() const;
+	virtual const char* __stdcall	name_replace	() const;
+	virtual void		__stdcall	set_name		(const char* s)
 	{
 		s_name		= s;
 	};
-	virtual void		__stdcall	set_name_replace(LPCSTR s) {xr_free(s_name_replace); s_name_replace = xr_strdup(s);};
+	virtual void		__stdcall	set_name_replace(const char* s) {xr_free(s_name_replace); s_name_replace = xr_strdup(s);};
 	virtual Fvector&	__stdcall	position		();
 	virtual Fvector&	__stdcall	angle			();
 	virtual Flags16&	__stdcall	flags			();

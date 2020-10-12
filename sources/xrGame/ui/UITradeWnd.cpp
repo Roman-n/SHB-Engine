@@ -13,7 +13,7 @@
 #include "UIGameSP.h"//
 #include "UIInventoryUtilities.h"//
 #include "../inventoryowner.h"
-#include "../eatable_item.h"
+//#include "../EatableItem.h"
 #include "../inventory.h"
 #include "../level.h"
 #include "..\StringTable.h"

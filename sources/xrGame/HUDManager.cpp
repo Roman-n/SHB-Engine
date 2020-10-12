@@ -49,7 +49,7 @@ void CFontManager::InitializeFonts()
 	InitializeFont(pFontStat				,"stat_font",					CGameFont::fsDeviceIndependent);
 }
 
-LPCSTR CFontManager::GetFontTexName (LPCSTR section)
+LPCSTR CFontManager::GetFontTexName (const char* section)
 {
 	static char* tex_names[]={"texture800","texture","texture1600"};
 	int def_idx		= 1;//default 1024x768
@@ -77,9 +77,9 @@ LPCSTR CFontManager::GetFontTexName (LPCSTR section)
 	return pSettings->r_string(section,tex_names[def_idx]);
 }
 
-void CFontManager::InitializeFont(CGameFont*& F, LPCSTR section, u32 flags)
+void CFontManager::InitializeFont(CGameFont*& F, const char* section, u32 flags)
 {
-	LPCSTR font_tex_name = GetFontTexName(section);
+	const char* font_tex_name = GetFontTexName(section);
 	R_ASSERT(font_tex_name);
 
 	if(!F)
@@ -221,7 +221,7 @@ void  CHUDManager::RenderUI()
 	if( Device.Paused() && bShowPauseString){
 		CGameFont* pFont	= Font().pFontGraffiti50Russian;
 		pFont->SetColor		(0x80FF0000	);
-		LPCSTR _str			= CStringTable().translate("st_game_paused").c_str();
+		const char* _str			= CStringTable().translate("st_game_paused").c_str();
 		
 		Fvector2			_pos;
 		_pos.set			(UI_BASE_WIDTH/2.0f, UI_BASE_HEIGHT/2.0f);
@@ -255,7 +255,7 @@ void CHUDManager::Hit(int idx, float power, const Fvector& dir)
 	HitMarker.Hit(idx, dir);
 }
 
-void CHUDManager::SetHitmarkType		(LPCSTR tex_name)
+void CHUDManager::SetHitmarkType		(const char* tex_name)
 {
 	HitMarker.InitShader				(tex_name);
 }

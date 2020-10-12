@@ -12,7 +12,7 @@
 #include "xrserver_objects_alife_monsters.h"
 #include "..\ENGINE\xr_collide_form.h"
 #include "script_callback_ex.h"
-#include "game_object_space.h"
+#include "GameObject_space.h"
 
 #ifdef DEBUG
 #	include "level.h"

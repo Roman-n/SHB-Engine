@@ -8,7 +8,7 @@
 #include "clsid_game.h"
 #include "..\ENGINE\skeletonanimated.h"
 #include "script_callback_ex.h"
-#include "game_object_space.h"
+#include "GameObject_space.h"
 #include "script_game_object.h"
 #include "..\ENGINE\LightAnimLibrary.h"
 #include "HUDManager.h"//
@@ -76,7 +76,7 @@ void CHelicopter::reinit(){
 };
 
 
-void CHelicopter::Load(LPCSTR section)
+void CHelicopter::Load(const char* section)
 {
 	inherited::Load						(section);
 	m_movement.Load						(section);
@@ -122,13 +122,11 @@ void CHelicopter::Load(LPCSTR section)
 	m_light_color						= pSettings->r_fcolor(section,"light_color");
 	m_light_color.a						= 1.f;
 	m_light_color.mul_rgb				(m_light_brightness);
-	LPCSTR lanim						= pSettings->r_string	(section,"light_color_animmator");
+	const char* lanim						= pSettings->r_string	(section,"light_color_animmator");
 	m_lanim								= LALib.FindItem(lanim);
-
-
 }
 
-void CHelicopter::reload(LPCSTR section)
+void CHelicopter::reload(const char* section)
 {
 	inherited::reload	(section);
 }
@@ -137,11 +135,10 @@ void CollisionCallbackAlife(bool& do_colide,bool bo1,dContact& c,SGameMtl* mater
 {	do_colide=false; }
 
 void ContactCallbackAlife(CDB::TRI* T,dContactGeom* c)
-{
-}
+{ }
+
 BOOL CHelicopter::net_Spawn(CSE_Abstract*	DC)
 {
-
 	SetfHealth(100.0f);
 	setState(CHelicopter::eAlive);
 	m_flame_started					=false;
@@ -178,13 +175,13 @@ BOOL CHelicopter::net_Spawn(CSE_Abstract*	DC)
 
 	CExplosive::Load		(pUserData,"explosion");
 	CExplosive::SetInitiator(ID());
-	
-	LPCSTR s = pUserData->r_string("helicopter_definition","hit_section");
+
+	const char* s = pUserData->r_string("helicopter_definition","hit_section");
 
 	if( pUserData->section_exist(s) ){
 		int lc = pUserData->line_count(s);
-		LPCSTR name;
-		LPCSTR value;
+		const char* name;
+		const char* value;
 		s16 boneID;
 		for (int i=0 ;i<lc; ++i){
 			pUserData->r_line( s, i, &name, &value);
@@ -449,13 +446,10 @@ void CHelicopter::shedule_Update(u32 time_delta)
 	if(m_ready_explode)ExplodeHelicopter();
 }
 
-
-
-void CHelicopter::goPatrolByPatrolPath (LPCSTR path_name, int start_idx)
+void CHelicopter::goPatrolByPatrolPath (const char* path_name, int start_idx)
 {
 	m_movement.goPatrolByPatrolPath (path_name, start_idx);
 }
-
 
 void CHelicopter::goByRoundPath(Fvector center, float radius, bool clockwise)
 {

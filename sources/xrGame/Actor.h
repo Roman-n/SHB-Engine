@@ -37,12 +37,12 @@ class CUsableScriptObject;
 
 struct SShootingEffector;
 struct SSleepEffector;
-class  CSleepEffectorPP;
+class CSleepEffectorPP;
 class CInventoryBox;
-//class  CActorEffector;
+//class CActorEffector;
 
-class	CHudItem;
-class   CArtefact;
+class CHudItem;
+class CArtefact;
 
 struct SActorMotions;
 struct SActorVehicleAnims;

@@ -17,12 +17,12 @@
 #include "UICellItemFactory.h"//
 #include "../WeaponMagazined.h"
 #include "../Actor.h"
-#include "../eatable_item.h"
+//#include "../EatableItem.h"
 #include "../alife_registry_wrappers.h"
 #include "UI3tButton.h"//
 #include "UIListBoxItem.h"//
 #include "../InventoryBox.h"
-#include "../game_object_space.h"
+#include "../GameObject_space.h"
 #include "../script_callback_ex.h"
 #include "../script_game_object.h"
 #include "../BottleItem.h"//

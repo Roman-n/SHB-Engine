@@ -15,7 +15,7 @@
 #include "../level.h"
 #include "../actor.h"
 #include "../alife_registry_wrappers.h"
-#include "../encyclopedia_article.h"
+#include "../EncyclopediaArticle.h"
 //#include "UIVideoPlayerWnd.h"//
 #include "UIPdaAux.h"//
 

@@ -15,7 +15,7 @@ void interactive_motion::init( )
 	flags.assign(0);
 }
 
-void interactive_motion::setup(LPCSTR m, CPhysicsShell* s)
+void interactive_motion::setup(const char* m, CPhysicsShell* s)
 {
 	VERIFY(s);
 	motion = smart_cast<CKinematicsAnimated*>(s->PKinematics( ))->LL_MotionID(m);

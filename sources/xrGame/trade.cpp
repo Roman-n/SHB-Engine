@@ -12,7 +12,7 @@
 #include "level.h"
 #include "script_callback_ex.h"
 #include "script_game_object.h"
-#include "game_object_space.h"
+#include "GameObject_space.h"
 
 class CInventoryOwner;
 

@@ -13,7 +13,7 @@
 
 extern	pureFrame*				g_pNetProcessor;
 
-BOOL CLevel::net_Start_client	( LPCSTR options )
+BOOL CLevel::net_Start_client	(const char* options )
 {
 	return FALSE;
 }
@@ -52,7 +52,7 @@ bool	CLevel::net_start_client2				()
 bool	CLevel::net_start_client3				()
 {
 	if(connected_to_server){
-		LPCSTR					level_name = NULL;
+		const char* level_name = NULL;
 		level_name	= ai().get_alife() ? *name() : Server->level_name( Server->GetConnectOptions() ).c_str();
 
 		// Determine internal level-ID

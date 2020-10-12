@@ -1,11 +1,12 @@
 #include "stdafx.h"
+
 #include "IKLimb.h"
 #include "..\..\ENGINE\SkeletonCustom.h"
 #include "../ode_include.h"
 #include "../MathUtils.h"
 #include "../GameObject.h"
 #include "../Level.h"
-#include "../game_object_space.h"
+#include "../GameObject_space.h"
 #include "../ik_anim_state.h"
 
 #ifdef DEBUG

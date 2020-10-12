@@ -23,9 +23,8 @@ private:
 	u32				m_state;
 	u32				m_nextState;
 public:
-	virtual void	Load				(LPCSTR section);
+	virtual void	Load				(const char* section);
 	virtual CHudItem*cast_hud_item		()	 { return this; }
-
 
 	virtual void	PlaySound			(HUD_SOUND& snd, const Fvector& position);
 										
@@ -88,9 +87,8 @@ public:
 	//просчет дополнительных вычислений (переопределяется в потомках)
 	virtual void	UpdateHudAdditonal		(Fmatrix&);
 
-
 	virtual	void	UpdateXForm			() = 0;
-	void					animGet		(MotionSVec& lst, LPCSTR prefix);
+	void					animGet		(MotionSVec& lst, const char* prefix);
 
 	CWeaponHUD*		GetHUD				() {return m_pHUD;}
 

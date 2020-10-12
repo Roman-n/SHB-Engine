@@ -16,7 +16,7 @@
 
 #include "../monster_velocity_space.h"
 #include "../../../level_debug.h"
-#include "../../../game_object_space.h"
+#include "../../../GameObject_space.h"
 #include "../../../detail_path_manager.h"
 #include "../../../ai_space.h"
 #include "../../../cover_point.h"

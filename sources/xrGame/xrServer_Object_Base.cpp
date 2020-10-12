@@ -33,8 +33,8 @@ IPropHelper& PHelper( )
 
 }
 
-LPCSTR script_section = "script";
-LPCSTR current_version = "current_server_entity_version";
+const char* script_section = "script";
+const char* current_version = "current_server_entity_version";
 
 IC	u16	script_server_object_version	()
 {
@@ -71,7 +71,7 @@ void CPureServerObject::save				(NET_Packet	&tNetPacket)
 ////////////////////////////////////////////////////////////////////////////
 // CSE_Abstract
 ////////////////////////////////////////////////////////////////////////////
-CSE_Abstract::CSE_Abstract					(LPCSTR caSection)
+CSE_Abstract::CSE_Abstract					(const char* caSection)
 {
 	m_editor_flags.zero			();
 	RespawnTime					= 0;
@@ -337,12 +337,12 @@ CSE_Abstract *CSE_Abstract::init	()
 	return						(this);
 }
 
-LPCSTR		CSE_Abstract::name			() const
+const char* CSE_Abstract::name			() const
 {
 	return	(*s_name);
 }
 
-LPCSTR		CSE_Abstract::name_replace	() const
+const char* CSE_Abstract::name_replace	() const
 {
 	return	(s_name_replace);
 }
@@ -368,7 +368,7 @@ xr_token game_types[]={
 	{ 0,				0				}
 };
 
-void CSE_Abstract::FillProps				(LPCSTR pref, PropItemVec& items)
+void CSE_Abstract::FillProps				(const char* pref, PropItemVec& items)
 {
 	/*
 #ifdef XRGAME_EXPORTS
@@ -376,7 +376,7 @@ void CSE_Abstract::FillProps				(LPCSTR pref, PropItemVec& items)
 	PHelper().CreateToken8		(items,	PrepareKey(pref,"Game Type"),			&s_gameid,		game_types);
     PHelper().CreateU16			(items,	PrepareKey(pref, "Respawn Time (s)"),	&RespawnTime,	0,43200);
 
-//	LPCSTR						gcs = pSettings->r_string(s_name,"GroupControlSection");
+//	const char*						gcs = pSettings->r_string(s_name,"GroupControlSection");
 //	PHelper().CreateChoose		(items,PrepareKey(pref,*s_name,"Spawn\\group control"),				&m_spawn_control,		smSpawnItem,	0,	(void*)gcs,	16);
 	PHelper().CreateFlag32		(items,PrepareKey(pref,*s_name,"Spawn\\enabled"),					&m_spawn_flags,			flSpawnEnabled);
 //	PHelper().CreateFloat		(items,PrepareKey(pref,*s_name,"Spawn\\probability"),				&m_spawn_probability,	0.f,			1.f);
@@ -389,7 +389,7 @@ void CSE_Abstract::FillProps				(LPCSTR pref, PropItemVec& items)
 	*/
 }
 
-void CSE_Abstract::FillProp					(LPCSTR pref, PropItemVec &items)
+void CSE_Abstract::FillProp					(const char* pref, PropItemVec &items)
 {
 	FillProps					(pref,items);
 }

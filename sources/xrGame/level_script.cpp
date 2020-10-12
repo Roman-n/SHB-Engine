@@ -32,10 +32,13 @@
 #include "ui/UIGameCustom.h"//
 
 #include "ActorStatisticMgr.h"
+#include "ActorEffector.h"
+#include "postprocessanimator.h"
+#include "relation_registry.h"
 
 using namespace luabind;
 
-LPCSTR command_line	()
+const char* command_line	()
 {
 	return		(Core.Params);
 }
@@ -65,7 +68,7 @@ CScriptGameObject *tpfGetActor()
 		return	(0);
 }
 
-CScriptGameObject *get_object_by_name(LPCSTR caObjectName)
+CScriptGameObject *get_object_by_name(const char* caObjectName)
 {
 	static bool first_time = true;
 	if (first_time)
@@ -89,17 +92,17 @@ CScriptGameObject *get_object_by_id(u32 id)
 	return pGameObject->lua_game_object();
 }
 
-LPCSTR get_weather	()
+const char* get_weather	()
 {
 	return			(*g_pGamePersistent->Environment().GetWeather());
 }
 
-void set_weather	(LPCSTR weather_name, bool forced)
+void set_weather	(const char* weather_name, bool forced)
 {
 	return			(g_pGamePersistent->Environment().SetWeather(weather_name,forced));
 }
 
-bool set_weather_fx	(LPCSTR weather_name)
+bool set_weather_fx	(const char* weather_name)
 {
 	return			(g_pGamePersistent->Environment().SetWeatherFX(weather_name));
 }
@@ -183,14 +186,14 @@ Fvector vertex_position(u32 level_vertex_id)
 	return			(ai().level_graph().vertex_position(level_vertex_id));
 }
 
-void map_add_object_spot(u16 id, LPCSTR spot_type, LPCSTR text)
+void map_add_object_spot(u16 id, const char* spot_type, const char* text)
 {
 	CMapLocation* ml = Level( ).MapManager( ).AddMapLocation(spot_type, id);
 	if (xr_strlen(text))
 		ml->SetHint(text);
 }
 
-void map_add_object_spot_ser(u16 id, LPCSTR spot_type, LPCSTR text)
+void map_add_object_spot_ser(u16 id, const char* spot_type, const char* text)
 {
 	CMapLocation* ml = Level( ).MapManager( ).AddMapLocation(spot_type, id);
 	if (xr_strlen(text))
@@ -199,34 +202,34 @@ void map_add_object_spot_ser(u16 id, LPCSTR spot_type, LPCSTR text)
 	ml->SetSerializable(true);
 }
 
-void map_change_spot_hint(u16 id, LPCSTR spot_type, LPCSTR text)
+void map_change_spot_hint(u16 id, const char* spot_type, const char* text)
 {
 	CMapLocation* ml	= Level().MapManager().GetMapLocation(spot_type, id);
 	if(!ml)				return;
 	ml->SetHint			(text);
 }
 
-void map_remove_object_spot(u16 id, LPCSTR spot_type)
+void map_remove_object_spot(u16 id, const char* spot_type)
 {
 	Level().MapManager().RemoveMapLocation(spot_type, id);
 }
 
-u16 map_has_object_spot(u16 id, LPCSTR spot_type)
+u16 map_has_object_spot(u16 id, const char* spot_type)
 {
 	return Level().MapManager().HasMapLocation(spot_type, id);
 }
 
-bool patrol_path_exists(LPCSTR patrol_path)
+bool patrol_path_exists(const char* patrol_path)
 {
 	return		(!!ai().patrol_paths().path(patrol_path,true));
 }
 
-LPCSTR get_name()
+const char* get_name()
 {
 	return		(*Level().name());
 }
 
-void prefetch_sound	(LPCSTR name)
+void prefetch_sound	(const char* name)
 {
 	Level().PrefetchSound(name);
 }
@@ -291,7 +294,7 @@ void remove_call(const luabind::functor<bool> &condition,const luabind::functor<
 	Level().ph_commander_scripts().remove_call(&c,&a);
 }
 
-void add_call(const luabind::object &lua_object, LPCSTR condition,LPCSTR action)
+void add_call(const luabind::object &lua_object, const char* condition, const char* action)
 {
 //	try{	
 //		CPHScriptObjectCondition	*c=xr_new<CPHScriptObjectCondition>(lua_object,condition);
@@ -308,7 +311,7 @@ void add_call(const luabind::object &lua_object, LPCSTR condition,LPCSTR action)
 //	}
 }
 
-void remove_call(const luabind::object &lua_object, LPCSTR condition,LPCSTR action)
+void remove_call(const luabind::object &lua_object, const char* condition, const char* action)
 {
 	CPHScriptObjectCondition	c(lua_object,condition);
 	CPHScriptObjectAction		a(lua_object,action);
@@ -371,7 +374,7 @@ Fbox get_bounding_volume()
 	return Level().ObjectSpace.GetBoundingVolume();
 }
 
-void iterate_sounds					(LPCSTR prefix, u32 max_count, const CScriptCallbackEx<void> &callback)
+void iterate_sounds					(const char* prefix, u32 max_count, const CScriptCallbackEx<void> &callback)
 {
 	for (int j=0, N = _GetItemCount(prefix); j<N; ++j) {
 		string_path					fn, s;
@@ -390,22 +393,21 @@ void iterate_sounds					(LPCSTR prefix, u32 max_count, const CScriptCallbackEx<v
 	}
 }
 
-void iterate_sounds1				(LPCSTR prefix, u32 max_count, luabind::functor<void> functor)
+void iterate_sounds1				(const char* prefix, u32 max_count, luabind::functor<void> functor)
 {
 	CScriptCallbackEx<void>		temp;
 	temp.set					(functor);
 	iterate_sounds				(prefix,max_count,temp);
 }
 
-void iterate_sounds2				(LPCSTR prefix, u32 max_count, luabind::object object, luabind::functor<void> functor)
+void iterate_sounds2				(const char* prefix, u32 max_count, luabind::object object, luabind::functor<void> functor)
 {
 	CScriptCallbackEx<void>		temp;
 	temp.set					(functor,object);
 	iterate_sounds				(prefix,max_count,temp);
 }
 
-#include "actoreffector.h"
-float add_cam_effector(LPCSTR fn, int id, bool cyclic, LPCSTR cb_func)
+float add_cam_effector(const char* fn, int id, bool cyclic, const char* cb_func)
 {
 	CAnimatorCamEffectorScriptCB* e		= xr_new<CAnimatorCamEffectorScriptCB>(cb_func);
 	e->SetType					((ECameraEffectorType)id);
@@ -415,7 +417,7 @@ float add_cam_effector(LPCSTR fn, int id, bool cyclic, LPCSTR cb_func)
 	return						e->GetAnimatorLength();
 }
 
-float add_cam_effector2(LPCSTR fn, int id, bool cyclic, LPCSTR cb_func)
+float add_cam_effector2(const char* fn, int id, bool cyclic, const char* cb_func)
 {
 	CAnimatorCamEffectorScriptCB* e		= xr_new<CAnimatorCamEffectorScriptCB>(cb_func);
 	e->m_bAbsolutePositioning	= true;
@@ -442,17 +444,17 @@ void set_snd_volume(float v)
 	clamp(psSoundVFactor,0.0f,1.0f);
 }
 
-void add_actor_points(LPCSTR sect, LPCSTR detail_key, int cnt, int pts)
+void add_actor_points(const char* sect, const char* detail_key, int cnt, int pts)
 {
 	return Actor()->StatisticMgr().AddPoints(sect, detail_key, cnt, pts);
 }
 
-void add_actor_points_str(LPCSTR sect, LPCSTR detail_key, LPCSTR str_value)
+void add_actor_points_str(const char* sect, const char* detail_key, const char* str_value)
 {
 	return Actor()->StatisticMgr().AddPoints(sect, detail_key, str_value);
 }
 
-int get_actor_points(LPCSTR sect)
+int get_actor_points(const char* sect)
 {
 	return Actor()->StatisticMgr().GetSectionPoints(sect);
 }
@@ -461,8 +463,7 @@ extern int get_actor_ranking();
 extern void add_human_to_top_list		(u16 id);
 extern void remove_human_from_top_list	(u16 id);
 
-#include "ActorEffector.h"
-void add_complex_effector(LPCSTR section, int id)
+void add_complex_effector(const char* section, int id)
 {
 	AddEffector(Actor(),id, section);
 }
@@ -472,8 +473,7 @@ void remove_complex_effector(int id)
 	RemoveEffector(Actor(),id);
 }
 
-#include "postprocessanimator.h"
-void add_pp_effector(LPCSTR fn, int id, bool cyclic)
+void add_pp_effector(const char* fn, int id, bool cyclic)
 {
 	CPostprocessAnimator* pp		= xr_new<CPostprocessAnimator>(id, cyclic);
 	pp->Load						(fn);
@@ -510,9 +510,7 @@ void set_pp_effector_factor2(int id, float f)
 	}
 }
 
-#include "relation_registry.h"
-
- int g_community_goodwill(LPCSTR _community, int _entity_id)
+ int g_community_goodwill(const char* _community, int _entity_id)
  {
 	 CHARACTER_COMMUNITY c;
 	 c.set					(_community);
@@ -520,14 +518,14 @@ void set_pp_effector_factor2(int id, float f)
  	return RELATION_REGISTRY().GetCommunityGoodwill(c.index(), u16(_entity_id));
  }
 
-void g_set_community_goodwill(LPCSTR _community, int _entity_id, int val)
+void g_set_community_goodwill(const char* _community, int _entity_id, int val)
 {
 	 CHARACTER_COMMUNITY	c;
 	 c.set					(_community);
 	RELATION_REGISTRY().SetCommunityGoodwill(c.index(), u16(_entity_id), val);
 }
 
-void g_change_community_goodwill(LPCSTR _community, int _entity_id, int val)
+void g_change_community_goodwill(const char* _community, int _entity_id, int val)
 {
 	 CHARACTER_COMMUNITY	c;
 	 c.set					(_community);

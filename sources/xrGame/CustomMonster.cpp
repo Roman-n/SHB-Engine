@@ -32,7 +32,7 @@
 #include "sound_player.h"
 #include "level.h"
 #include "level_debug.h"
-#include "material_manager.h"
+#include "MaterialManager.h"
 #include "sound_user_data_visitor.h"
 #include "mt_config.h"
 #include "PHMovementControl.h"

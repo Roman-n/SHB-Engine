@@ -83,7 +83,7 @@
 #	include "console_registrator.h"
 #	include "PhysicsShell.h"
 #	include "HangingLamp.h"
-#	include "holder_custom.h"
+#	include "HolderCustom.h"
 #	include "GameTask.h"
 #	include "client_spawn_manager.h"
 #	include "script_zone.h"

@@ -7,9 +7,10 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "purchase_list.h"
 #include "inventoryowner.h"
-#include "gameobject.h"
+#include "GameObject.h"
 #include "ai_object_location.h"
 #include "level.h"
 

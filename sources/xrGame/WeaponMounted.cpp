@@ -12,7 +12,7 @@
 #include "level.h"
 #include "xr_level_controller.h"
 #include "..\ENGINE\skeletoncustom.h"
-#include "game_object_space.h"
+#include "GameObject_space.h"
 
 //----------------------------------------------------------------------------------------
 

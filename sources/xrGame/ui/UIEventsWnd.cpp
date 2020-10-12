@@ -19,7 +19,7 @@
 //#include "..\StringTable.h"
 #include "UITaskItem.h"//
 #include "../alife_registry_wrappers.h"
-#include "../encyclopedia_article.h"
+#include "../EncyclopediaArticle.h"
 
 CUIEventsWnd::CUIEventsWnd			()
 {

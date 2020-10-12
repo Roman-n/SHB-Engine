@@ -7,15 +7,14 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "eatable_item_object.h"
 
 CEatableItemObject::CEatableItemObject	()
-{
-}
+{ }
 
 CEatableItemObject::~CEatableItemObject	()
-{
-}
+{ }
 
 DLL_Pure *CEatableItemObject::_construct	()
 {

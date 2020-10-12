@@ -51,7 +51,7 @@ namespace ObjectHandlerSpace {
 
 		eWorldPropertyNoItems				= u32((u16(-1) << 16) | eWorldPropertyItemID),
 		eWorldPropertyNoItemsIdle			= u32((u16(-1) << 16) | eWorldPropertyIdle),
-		eWorldPropertyDummy					= u32(-1),
+		eWorldPropertyDummy					= u32(-1)
 	};
 
 	enum EWorldOperators {
@@ -93,6 +93,6 @@ namespace ObjectHandlerSpace {
 		eWorldOperatorUse,
 
 		eWorldOperatorNoItemsIdle	= u32((u16(-1) << 16) | eWorldOperatorIdle),
-		eWorldOperatorDummy			= u32(-1),
+		eWorldOperatorDummy			= u32(-1)
 	};
 };

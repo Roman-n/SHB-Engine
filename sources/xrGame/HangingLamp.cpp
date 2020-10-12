@@ -8,7 +8,7 @@
 #include "xrserver_objects_alife.h"
 #include "PHElement.h"
 #include "..\ENGINE\skeletonanimated.h"
-#include "game_object_space.h"
+#include "GameObject_space.h"
 #include "script_callback_ex.h"
 #include "script_game_object.h"
 //////////////////////////////////////////////////////////////////////
@@ -61,7 +61,7 @@ float CHangingLamp::Radius	() const
 	return (renderable.visual)?renderable.visual->vis.sphere.R:EPS;
 }
 
-void CHangingLamp::Load		(LPCSTR section)
+void CHangingLamp::Load		(const char* section)
 {
 	inherited::Load			(section);
 }
@@ -301,7 +301,7 @@ void CHangingLamp::CreateBody(CSE_ALifeObjectHangingLamp	*lamp)
 	m_pPhysicsShell			= P_create_Shell();
 
 	bone_map					.clear();
-	LPCSTR	fixed_bones=*lamp->fixed_bones;
+	const char* fixed_bones=*lamp->fixed_bones;
 	if(fixed_bones){
 		int count =					_GetItemCount(fixed_bones);
 		for (int i=0 ;i<count; ++i){

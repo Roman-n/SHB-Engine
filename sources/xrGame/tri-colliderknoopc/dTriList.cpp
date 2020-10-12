@@ -5,9 +5,7 @@
 #include "dcTriListCollider.h"
 #include "../ExtendedGeom.h"
 #include "dcTriListCollider.cpp"	// Allow inlining
-#include "../gameobject.h"
-
-
+#include "../GameObject.h"
 
 int dTriListClass = -1;
 
@@ -16,10 +14,7 @@ dcTriListCollider* GetData(dxGeom* TriList){
 	dxTriList* Data = (dxTriList*)dGeomGetClassData(TriList);
 
 	return Data->Collider;
-
 }
-
-
 
 inline bool ValidateCollision(dxGeom* o1, dxGeom* o2){
 	return dGeomGetUserData(o1)->b_static_colide;
@@ -59,46 +54,28 @@ inline bool ValidateCollision(dxGeom* o1, dxGeom* o2){
 
 int dCollideSTL(dxGeom* TriList, dxGeom* Sphere, int Flags, dContactGeom* Contact, int Stride) throw()
 {
-
 	if (ValidateCollision(Sphere, TriList)){
-
 		return GetData(TriList)->CollideSphere(Sphere, Flags, Contact, Stride);
-
 	}
 
 	else return 0;
-
 }
-
-
 
 int dCollideBTL(dxGeom* TriList, dxGeom* Box, int Flags, dContactGeom* Contact, int Stride)throw()
 {
-
 	if (ValidateCollision(Box, TriList)){
-
 		return GetData(TriList)->CollideBox(Box, Flags, Contact, Stride);
-
 	}
-
 	else return 0;
-
 }
 
 int dCollideCTL(dxGeom* TriList, dxGeom* Cyl, int Flags, dContactGeom* Contact, int Stride)throw()
 {
-
 	if (ValidateCollision(Cyl, TriList)){
-
 		return GetData(TriList)->CollideCylinder(Cyl, Flags, Contact, Stride);
-
 	}
-
 	else return 0;
-
 }
-
-
 
 dColliderFn* dTriListColliderFn(int num)
 {

@@ -7,7 +7,7 @@
 
 #include "ui/UIInventoryUtilities.h"//
 
-#include "eatable_item.h"
+#include "EatableItem.h"
 #include "script_engine.h"
 #include "xrmessages.h"
 //#include "game_cl_base.h"
@@ -17,6 +17,10 @@
 #include "entitycondition.h"
 #include "game_base_space.h"
 #include "clsid_game.h"
+
+#include "GameObject_space.h"
+#include "script_callback_ex.h"
+#include "script_game_object.h"
 
 using namespace InventoryUtilities;
 
@@ -728,7 +732,7 @@ PIItem CInventory::SameSlot(const u32 slot, PIItem pIItem, bool bSearchRuck) con
 }
 
 //найти в инвенторе вещь с указанным именем
-PIItem CInventory::Get(LPCSTR name, bool bSearchRuck) const
+PIItem CInventory::Get(const char* name, bool bSearchRuck) const
 {
 	const TIItemContainer &list = bSearchRuck ? m_ruck : m_belt;
 	
@@ -770,7 +774,7 @@ PIItem CInventory::Get(const u16 id, bool bSearchRuck) const
 }
 
 //search both (ruck and belt)
-PIItem CInventory::GetAny(LPCSTR name) const
+PIItem CInventory::GetAny(const char* name) const
 {
 	PIItem itm = Get(name, false);
 	if(!itm)
@@ -809,8 +813,7 @@ float CInventory::CalcTotalWeight()
 	return m_fTotalWeight;
 }
 
-
-u32 CInventory::dwfGetSameItemCount(LPCSTR caSection, bool SearchAll)
+u32 CInventory::dwfGetSameItemCount(const char* caSection, bool SearchAll)
 {
 	u32			l_dwCount = 0;
 	TIItemContainer	&l_list = SearchAll ? m_all : m_ruck;
@@ -823,7 +826,8 @@ u32 CInventory::dwfGetSameItemCount(LPCSTR caSection, bool SearchAll)
 	
 	return		(l_dwCount);
 }
-u32		CInventory::dwfGetGrenadeCount(LPCSTR caSection, bool SearchAll)
+
+u32		CInventory::dwfGetGrenadeCount(const char* caSection, bool SearchAll)
 {
 	u32			l_dwCount = 0;
 	TIItemContainer	&l_list = SearchAll ? m_all : m_ruck;
@@ -862,9 +866,7 @@ CInventoryItem *CInventory::get_object_by_id(ALife::_OBJECT_ID tObjectID)
 }
 
 //скушать предмет 
-#include "game_object_space.h"
-#include "script_callback_ex.h"
-#include "script_game_object.h"
+
 bool CInventory::Eat(PIItem pIItem)
 {
 	R_ASSERT(pIItem->m_pCurrentInventory==this);
@@ -967,7 +969,7 @@ CInventoryItem	*CInventory::tpfGetObjectByIndex(int iIndex)
 	return		(0);
 }
 
-CInventoryItem	*CInventory::GetItemFromInventory(LPCSTR caItemName)
+CInventoryItem	*CInventory::GetItemFromInventory(const char* caItemName)
 {
 	TIItemContainer	&l_list = m_all;
 

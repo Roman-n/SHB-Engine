@@ -3,15 +3,17 @@
 //////////////////////////////////////////////////////////////////////
 #pragma once
 
-#include "gameobject.h"
+#include "GameObject.h"
 #include "physicsshellholder.h"
 #include "PHSkeleton.h"
 #include "script_export_space.h"
+
 // refs
 class CLAItem;
 class CPhysicsElement;
 class CSE_ALifeObjectHangingLamp;
 class CPHElement;
+
 class CHangingLamp: 
 public CPhysicsShellHolder,
 public CPHSkeleton
@@ -41,7 +43,7 @@ public:
 	virtual			~CHangingLamp	();
 	void			TurnOn			();
 	void			TurnOff			();
-	virtual void	Load			( LPCSTR section);
+	virtual void	Load			(const char* section);
 	virtual BOOL	net_Spawn		( CSE_Abstract* DC);
 	virtual void	net_Destroy		();
 	virtual void	shedule_Update	( u32 dt);							// Called by sheduler

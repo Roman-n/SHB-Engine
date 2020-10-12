@@ -7,11 +7,12 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "stalker_animation_manager.h"
 #include "ai/stalker/ai_stalker.h"
 #include "sight_manager.h"
 #include "stalker_movement_manager.h"
-#include "game_object_space.h"
+#include "GameObject_space.h"
 #include "effectorshot.h"
 
 #define TEMPLATE_SPECIALIZATION\

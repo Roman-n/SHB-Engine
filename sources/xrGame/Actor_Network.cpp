@@ -33,10 +33,10 @@
 #include "ui/UIArtefactPanel.h"//
 #include "ui/UIMainIngameWnd.h"//
 #include "gamepersistent.h"
-#include "game_object_space.h"
+#include "GameObject_space.h"
 #include "GameTaskManager.h"
 #include "game_base_kill_type.h"
-#include "holder_custom.h"
+#include "HolderCustom.h"
 #include "actor_memory.h"
 #include "ActorStatisticMgr.h"
 #include "characterphysicssupport.h"

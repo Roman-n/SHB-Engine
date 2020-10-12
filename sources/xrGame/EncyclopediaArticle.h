@@ -1,11 +1,7 @@
-///////////////////////////////////////////////////////////////
-// encyclopedia_article.h
 // структура, хранящая и загружающая статьи в энциклопедию
-///////////////////////////////////////////////////////////////
-
 #pragma once
 
-#include "encyclopedia_article_defs.h"
+#include "EncyclopediaArticle_defs.h"
 #include "xml_str_id_loader.h"
 #include "shared_data.h"
 

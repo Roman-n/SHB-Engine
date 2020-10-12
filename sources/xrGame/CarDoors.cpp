@@ -12,7 +12,7 @@
 #include "../ENGINE/net_utils.h"
 #include "..\ENGINE\skeletoncustom.h"
 #include "MathUtils.h"
-#include "game_object_space.h"
+#include "GameObject_space.h"
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool CCar::DoorHit(float P,s16 element,ALife::EHitType hit_type)

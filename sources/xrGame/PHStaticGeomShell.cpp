@@ -1,10 +1,12 @@
 #include "stdafx.h"
+
 #include "PHStaticGeomShell.h"
 #include "SpaceUtils.h"
 #include "GameObject.h"
 #include "PhysicsShellHolder.h"
 #include "..\ENGINE\skeletoncustom.h"
 #include "PHCollideValidator.h"
+
 void CPHStaticGeomShell::get_spatial_params()
 {
 	Fvector					AABB;

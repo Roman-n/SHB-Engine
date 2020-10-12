@@ -6,7 +6,7 @@
 #include "entity_alive.h"
 #include "level.h"
 #include "gamepersistent.h"
-#include "material_manager.h"
+#include "MaterialManager.h"
 #include "profiler.h"
 #include "IKLimbsController.h"
 

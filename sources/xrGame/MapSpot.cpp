@@ -20,7 +20,7 @@ CMapSpot::CMapSpot(CMapLocation* ml)
 CMapSpot::~CMapSpot()
 { }
 
-void CMapSpot::Load(CUIXml* xml, LPCSTR path)
+void CMapSpot::Load(CUIXml* xml, const char* path)
 {
 	CUIXmlInit::InitStatic(*xml,path,0,this);
 	int i = xml->ReadAttribInt(path, 0, "scale", 0);
@@ -29,7 +29,7 @@ void CMapSpot::Load(CUIXml* xml, LPCSTR path)
 	m_originSize		= GetWndSize();
 }
 
-LPCSTR CMapSpot::GetHint() 
+const char* CMapSpot::GetHint()
 {
 	return MapLocation()->GetHint();
 };
@@ -72,7 +72,7 @@ CMapSpotPointer::CMapSpotPointer(CMapLocation* ml)
 CMapSpotPointer::~CMapSpotPointer()
 { }
 
-LPCSTR CMapSpotPointer::GetHint()
+const char* CMapSpotPointer::GetHint()
 {
 	return NULL;
 /*
@@ -98,7 +98,7 @@ CMiniMapSpot::~CMiniMapSpot()
 {
 }
 
-void CMiniMapSpot::Load(CUIXml* xml, LPCSTR path)
+void CMiniMapSpot::Load(CUIXml* xml, const char* path)
 {
 	inherited::Load(xml,path);
 
@@ -116,7 +116,7 @@ void CMiniMapSpot::Load(CUIXml* xml, LPCSTR path)
 	strconcat(sizeof(buf), buf, path, ":texture_above");
 	n = xml->NavigateToNode(buf,0);
 	if(n){
-		LPCSTR texture  = xml->Read(buf, 0, NULL);
+		const char* texture  = xml->Read(buf, 0, NULL);
 		CUITextureMaster::InitTexture	(texture, "hud\\default", &m_UIStaticItem);
 		if(strchr(texture,'\\'))
 		{
@@ -134,7 +134,7 @@ void CMiniMapSpot::Load(CUIXml* xml, LPCSTR path)
 	strconcat(sizeof(buf),buf, path, ":texture_below");
 	n = xml->NavigateToNode(buf,0);
 	if(n){
-		LPCSTR texture  = xml->Read(buf, 0, NULL);
+		const char* texture  = xml->Read(buf, 0, NULL);
 		CUITextureMaster::InitTexture	(texture, "hud\\default", &m_UIStaticItem);
 		if(strchr(texture,'\\'))
 		{
@@ -151,7 +151,7 @@ void CMiniMapSpot::Load(CUIXml* xml, LPCSTR path)
 	strconcat(sizeof(buf),buf, path, ":texture");
 	n = xml->NavigateToNode(buf,0);
 	if(n){
-		LPCSTR texture  = xml->Read(buf, 0, NULL);
+		const char* texture  = xml->Read(buf, 0, NULL);
 		CUITextureMaster::InitTexture	(texture, "hud\\default", &m_UIStaticItem);
 		if(strchr(texture,'\\'))
 		{

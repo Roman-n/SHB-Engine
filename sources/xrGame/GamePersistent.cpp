@@ -19,6 +19,7 @@
 
 #include "..\ENGINE\CameraManager.h"
 #include "actor.h"
+#include "HolderCustom.h"
 
 #ifndef MASTER_GOLD
 #	include "custommonster.h"
@@ -306,7 +307,7 @@ void CGamePersistent::update_game_intro			()
 		m_intro_event			= 0;
 	}
 }
-#include "holder_custom.h"
+
 extern CUISequencer * g_tutorial;
 extern CUISequencer * g_tutorial2;
 

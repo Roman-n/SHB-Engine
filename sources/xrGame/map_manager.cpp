@@ -10,7 +10,7 @@
 #include "map_location.h"
 #include "GameTaskManager.h"
 #include "xrServer.h"
-#include "game_object_space.h"
+#include "GameObject_space.h"
 #include "script_callback_ex.h"
 
 struct FindLocationBySpotID{

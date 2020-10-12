@@ -7,7 +7,7 @@
 #include "PHShell.h"
 #include "PHJointDestroyInfo.h"
 #include "PHSplitedShell.h"
-#include "gameobject.h"
+#include "GameObject.h"
 #include "physicsshellholder.h"
 #include "..\ENGINE\skeletoncustom.h"
 

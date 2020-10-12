@@ -17,7 +17,7 @@
 #include "agent_manager.h"
 #include "agent_member_manager.h"
 #include "ai/stalker/ai_stalker.h"
-#include "game_object_space.h"
+#include "GameObject_space.h"
 #include "profiler.h"
 #include "client_spawn_manager.h"
 #include "memory_manager.h"
@@ -72,9 +72,8 @@ void CHitMemoryManager::add					(const CEntityAlive *entity_alive)
 	add						(0,Fvector().set(0,0,1),entity_alive,0);
 }
 
-void CHitMemoryManager::Load				(LPCSTR section)
-{
-}
+void CHitMemoryManager::Load				(const char* section)
+{ }
 
 void CHitMemoryManager::reinit				()
 {
@@ -82,7 +81,7 @@ void CHitMemoryManager::reinit				()
 	m_last_hit_object_id	= ALife::_OBJECT_ID(-1);
 }
 
-void CHitMemoryManager::reload				(LPCSTR section)
+void CHitMemoryManager::reload				(const char* section)
 {
 
 #ifdef USE_SELECTED_HIT

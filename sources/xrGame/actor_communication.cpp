@@ -22,9 +22,9 @@
 #include "ui/UIPdaWnd.h"//
 #include "ui/UIDiaryWnd.h"//
 #include "ui/UITalkWnd.h"//
-#include "game_object_space.h"
+#include "GameObject_space.h"
 #include "script_callback_ex.h"
-#include "encyclopedia_article.h"
+#include "EncyclopediaArticle.h"
 #include "GameTaskManager.h"
 #include "GameTaskdefs.h"
 #include "infoportion.h"
@@ -150,7 +150,7 @@ void CActor::OnDisableInfo(shared_str info_id) const
 		pGame->TalkMenu->NeedUpdateQuestions();
 }
 
-void  CActor::ReceivePhrase		(DIALOG_SHARED_PTR& phrase_dialog)
+void CActor::ReceivePhrase		(DIALOG_SHARED_PTR& phrase_dialog)
 {
 	//только если находимся в режиме single
 	CUIGame* pGame = smart_cast<CUIGame*>(HUD().GetUI()->UIGame());
@@ -162,7 +162,7 @@ void  CActor::ReceivePhrase		(DIALOG_SHARED_PTR& phrase_dialog)
 	CPhraseDialogManager::ReceivePhrase(phrase_dialog);
 }
 
-void   CActor::UpdateAvailableDialogs	(CPhraseDialogManager* partner)
+void CActor::UpdateAvailableDialogs	(CPhraseDialogManager* partner)
 {
 	m_AvailableDialogs.clear();
 	m_CheckedDialogs.clear();
@@ -225,6 +225,7 @@ void CActor::StartTalk (CInventoryOwner* talk_partner)
 
 	CInventoryOwner::StartTalk(talk_partner);
 }
+
 /*
 void CActor::UpdateContact		(u16 contact_id)
 {
@@ -245,6 +246,7 @@ void CActor::UpdateContact		(u16 contact_id)
 	}
 }
 */
+
 void CActor::NewPdaContact		(CInventoryOwner* pInvOwner)
 {	
 	bool b_alive = !!(smart_cast<CEntityAlive*>(pInvOwner))->g_Alive();

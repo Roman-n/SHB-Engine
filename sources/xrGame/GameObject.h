@@ -1,6 +1,3 @@
-// GameObject.h: interface for the CGameObject class.
-//
-//////////////////////////////////////////////////////////////////////
 #pragma once
 
 #include <depr/dplay8.h>// раньше небыло
@@ -38,7 +35,9 @@ class CSpaceRestrictor;
 class CAttachableItem;
 class animation_movement_controller;
 class CBlend;
-namespace GameObject {
+
+namespace GameObject
+{
 	enum ECallbackType;
 };
 
@@ -56,12 +55,15 @@ class CGameObject :
 	CAI_ObjectLocation				*m_ai_location;
 	ALife::_STORY_ID				m_story_id;
 	animation_movement_controller	*m_anim_mov_ctrl;
+
 protected:
 	//время удаления объекта
 	bool					m_bObjectRemoved;
+
 public:
 	CGameObject();
 	virtual ~CGameObject();
+
 public:
 	//functions used for avoiding most of the smart_cast
 	virtual CAttachmentOwner*			cast_attachment_owner		()						{return NULL;}
@@ -155,6 +157,7 @@ const animation_movement_controller*animation_movement		( ) const	{ return	m_ani
 	virtual BOOL			UsedAI_Locations				();
 			BOOL			TestServerFlag					(u32 Flag) const;
 	virtual	bool			can_validate_position_on_spawn	(){return true;}
+
 #ifdef DEBUG
 	virtual void			OnRender			();
 #endif
@@ -171,10 +174,12 @@ public:
 	virtual void			make_Interpolation	() {}; // interpolation from last visible to corrected position/rotation
 	virtual void			PH_B_CrPr			() {}; // actions & operations before physic correction-prediction steps
 	virtual void			PH_I_CrPr			() {}; // actions & operations after correction before prediction steps
+
 #ifdef DEBUG
 	virtual void			PH_Ch_CrPr			() {}; // 
 	virtual	void			dbg_DrawSkeleton	();
 #endif
+
 	virtual void			PH_A_CrPr			() {}; // actions & operations after phisic correction-prediction steps
 	virtual void			CrPr_SetActivationStep	(u32 Step)	{m_dwCrPr_ActivationStep = Step; };
 	virtual u32				CrPr_GetActivationStep	()	{ return m_dwCrPr_ActivationStep; };
@@ -213,10 +218,10 @@ public:
 		return				(m_visual_callback);
 	}
 
-
 private:
 	mutable CScriptGameObject	*m_lua_game_object;
 	int						m_script_clsid;
+
 public:
 			CScriptGameObject	*lua_game_object() const;
 			int				clsid			() const
@@ -224,11 +229,13 @@ public:
 		THROW				(m_script_clsid >= 0);
 		return				(m_script_clsid);
 	}
+
 public:
 	IC		CIniFile*spawn_ini			()
 	{
 		return				(m_ini_file);
 	}
+
 protected:
 	virtual	void			spawn_supplies		();
 
@@ -266,11 +273,9 @@ public:
 	virtual bool			use_center_to_aim	() const {return false;}
 
 public:
-	
 	typedef CScriptCallbackEx<void> CScriptCallbackExVoid;
 
 private:
-	
 	DEFINE_MAP				(GameObject::ECallbackType, CScriptCallbackExVoid, CALLBACK_MAP, CALLBACK_MAP_IT);
 	CALLBACK_MAP			*m_callbacks;
 

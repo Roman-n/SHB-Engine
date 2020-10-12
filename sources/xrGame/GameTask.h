@@ -1,6 +1,6 @@
 #pragma once
 
-#include "encyclopedia_article_defs.h"
+#include "EncyclopediaArticle_defs.h"
 #include "GameTaskDefs.h"
 #include "script_export_space.h"
 

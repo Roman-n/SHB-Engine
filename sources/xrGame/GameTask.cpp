@@ -2,7 +2,7 @@
 
 #include "GameTask.h"
 #include "ui/xrUIXmlParser.h"//
-#include "encyclopedia_article.h"
+#include "EncyclopediaArticle.h"
 #include "map_location.h"
 #include "map_manager.h"
 
@@ -15,7 +15,7 @@
 #include "alife_object_registry.h"
 #include "alife_simulator.h"
 #include "alife_story_registry.h"
-#include "game_object_space.h"
+#include "GameObject_space.h"
 #include "object_broker.h"
 #include "ui/UITextureMaster.h"//
 

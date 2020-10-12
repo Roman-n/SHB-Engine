@@ -20,7 +20,7 @@
 #include "relation_registry.h"
 #include "ai_object_location.h"
 #include "script_callback_ex.h"
-#include "game_object_space.h"
+#include "GameObject_space.h"
 #include "AI/Monsters/BaseMonster/BaseMonster.h"
 #include "trade_parameters.h"
 #include "purchase_list.h"
@@ -68,7 +68,7 @@ CInventoryOwner::~CInventoryOwner			()
 	xr_delete					(m_purchase_list);
 }
 
-void CInventoryOwner::Load					(LPCSTR section)
+void CInventoryOwner::Load					(const char* section)
 {
 	if(pSettings->line_exist(section, "inv_max_weight"))
 		m_inventory->SetMaxWeight( pSettings->r_float(section,"inv_max_weight") );
@@ -83,7 +83,7 @@ void CInventoryOwner::Load					(LPCSTR section)
 	}
 }
 
-void CInventoryOwner::reload				(LPCSTR section)
+void CInventoryOwner::reload				(const char* section)
 {
 	inventory().Clear			();
 	inventory().m_pOwner		= this;
@@ -337,20 +337,17 @@ void CInventoryOwner::spawn_supplies		()
 }
 
 //игровое имя 
-LPCSTR	CInventoryOwner::Name () const
+const char* CInventoryOwner::Name () const
 {
 //	return CharacterInfo().Name();
 	return m_game_name.c_str();
 }
 
-
-
 void CInventoryOwner::NewPdaContact		(CInventoryOwner* pInvOwner)
-{
-}
+{ }
+
 void CInventoryOwner::LostPdaContact	(CInventoryOwner* pInvOwner)
-{
-}
+{ }
 
 //////////////////////////////////////////////////////////////////////////
 //для работы с relation system
@@ -358,7 +355,6 @@ u16 CInventoryOwner::object_id	()  const
 {
 	return smart_cast<const CGameObject*>(this)->ID();
 }
-
 
 //////////////////////////////////////////////////////////////////////////
 //установка группировки на клиентском и серверном объкте
@@ -414,7 +410,6 @@ void CInventoryOwner::ChangeReputation	(CHARACTER_REPUTATION_VALUE delta)
 	SetReputation(Reputation() + delta);
 }
 
-
 void CInventoryOwner::OnItemDrop			(CInventoryItem *inventory_item)
 {
 	CGameObject	*object = smart_cast<CGameObject*>(this);
@@ -425,17 +420,18 @@ void CInventoryOwner::OnItemDrop			(CInventoryItem *inventory_item)
 }
 
 void CInventoryOwner::OnItemDropUpdate ()
-{
-}
+{ }
 
 void CInventoryOwner::OnItemBelt	(CInventoryItem *inventory_item, EItemPlace previous_place)
 {
 //.	attach		(inventory_item);
 }
+
 void CInventoryOwner::OnItemRuck	(CInventoryItem *inventory_item, EItemPlace previous_place)
 {
 	detach		(inventory_item);
 }
+
 void CInventoryOwner::OnItemSlot	(CInventoryItem *inventory_item, EItemPlace previous_place)
 {
 	attach		(inventory_item);
@@ -447,18 +443,15 @@ CInventoryItem* CInventoryOwner::GetCurrentOutfit() const
 }
 
 void CInventoryOwner::on_weapon_shot_start		(CWeapon *weapon)
-{
-}
+{ }
 
 void CInventoryOwner::on_weapon_shot_stop		(CWeapon *weapon)
-{
-}
+{ }
 
 void CInventoryOwner::on_weapon_hide			(CWeapon *weapon)
-{
-}
+{ }
 
-LPCSTR CInventoryOwner::trade_section			() const
+const char* CInventoryOwner::trade_section			() const
 {
 	const CGameObject			*game_object = smart_cast<const CGameObject*>(this);
 	VERIFY						(game_object);
@@ -473,7 +466,7 @@ float CInventoryOwner::deficit_factor			(const shared_str &section) const
 	return						(m_purchase_list->deficit(section));
 }
 
-void CInventoryOwner::buy_supplies				(CIniFile&ini_file, LPCSTR section)
+void CInventoryOwner::buy_supplies				(CIniFile&ini_file, const char* section)
 {
 	if (!m_purchase_list)
 		m_purchase_list			= xr_new<CPurchaseList>();
@@ -514,7 +507,6 @@ bool CInventoryOwner::AllowItemToTrade 			(CInventoryItem const * item, EItemPla
 
 void CInventoryOwner::set_money		(u32 amount, bool bSendEvent)
 {
-
 	if(InfinitiveMoney())
 		m_money					= _max(m_money, amount);
 	else
@@ -538,9 +530,11 @@ bool CInventoryOwner::use_default_throw_force	()
 float CInventoryOwner::missile_throw_force		() 
 {
 	NODEFAULT;
+
 #ifdef DEBUG
 	return						(0.f);
 #endif
+
 }
 
 bool CInventoryOwner::use_throw_randomness		()

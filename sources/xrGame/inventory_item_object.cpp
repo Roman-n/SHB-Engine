@@ -24,23 +24,23 @@ DLL_Pure *CInventoryItemObject::_construct	()
 	return						(this);
 }
 
-void CInventoryItemObject::Load				(LPCSTR section) 
+void CInventoryItemObject::Load				(const char* section)
 {
 	CPhysicItem::Load			(section);
 	CInventoryItem::Load		(section);
 }
 
-LPCSTR CInventoryItemObject::Name			()
+const char* CInventoryItemObject::Name			()
 {
 	return						(CInventoryItem::Name());
 }
 
-LPCSTR CInventoryItemObject::NameShort		()
+const char* CInventoryItemObject::NameShort		()
 {
 	return						(CInventoryItem::NameShort());
 }
 /*
-LPCSTR CInventoryItemObject::NameComplex	()
+const char* CInventoryItemObject::NameComplex	()
 {
 	return						(CInventoryItem::NameComplex());
 }
@@ -151,7 +151,7 @@ void CInventoryItemObject::renderable_Render()
 	CInventoryItem::renderable_Render	();
 }
 
-void CInventoryItemObject::reload			(LPCSTR section)
+void CInventoryItemObject::reload			(const char* section)
 {
 	CPhysicItem::reload					(section);
 	CInventoryItem::reload				(section);

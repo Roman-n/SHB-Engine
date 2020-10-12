@@ -192,7 +192,7 @@
     <ClInclude Include="actor_anim_defs.h" />
     <ClInclude Include="actor_defs.h" />
     <ClInclude Include="Actor_Flags.h" />
-    <ClInclude Include="actor_input_handler.h" />
+    <ClInclude Include="ActorInputHandler.h" />
     <ClInclude Include="actor_memory.h" />
     <ClInclude Include="actor_statistic_defs.h" />
     <ClInclude Include="ActorStatisticMgr.h" />
@@ -685,7 +685,7 @@
     <ClInclude Include="doug_lea_memory_allocator.h" />
     <CustomBuild Include="dRayMotions.h" />
     <ClInclude Include="DummyArtifact.h" />
-    <ClInclude Include="eatable_item.h" />
+    <ClInclude Include="EatableItem.h" />
     <ClInclude Include="eatable_item_object.h" />
     <ClInclude Include="edge_path.h" />
     <ClInclude Include="edge_path_inline.h" />
@@ -701,8 +701,8 @@
     <ClInclude Include="ef_storage_inline.h" />
     <ClInclude Include="ElectricBall.h" />
     <ClInclude Include="ElevatorState.h" />
-    <ClInclude Include="encyclopedia_article.h" />
-    <ClInclude Include="encyclopedia_article_defs.h" />
+    <ClInclude Include="EncyclopediaArticle.h" />
+    <ClInclude Include="EncyclopediaArticle_defs.h" />
     <ClInclude Include="enemy_manager.h" />
     <ClInclude Include="enemy_manager_inline.h" />
     <ClInclude Include="Entity.h" />
@@ -743,7 +743,7 @@
     <ClInclude Include="game_location_selector.h" />
     <ClInclude Include="game_location_selector_inline.h" />
     <ClInclude Include="game_news.h" />
-    <ClInclude Include="game_object_space.h" />
+    <ClInclude Include="GameObject_space.h" />
     <ClInclude Include="game_path_manager.h" />
     <ClInclude Include="game_path_manager_inline.h" />
     <ClInclude Include="game_sv_base.h" />
@@ -774,7 +774,7 @@
     <ClInclude Include="hit_immunity_space.h" />
     <ClInclude Include="hit_memory_manager.h" />
     <ClInclude Include="hit_memory_manager_inline.h" />
-    <ClInclude Include="holder_custom.h" />
+    <ClInclude Include="HolderCustom.h" />
     <ClInclude Include="HUDCrosshair.h" />
     <ClInclude Include="HudItem.h" />
     <ClInclude Include="HUDManager.h" />
@@ -838,8 +838,8 @@
     <ClInclude Include="map_location_defs.h" />
     <ClInclude Include="map_manager.h" />
     <ClInclude Include="MapSpot.h" />
-    <ClInclude Include="material_manager.h" />
-    <ClInclude Include="material_manager_inline.h" />
+    <ClInclude Include="MaterialManager.h" />
+    <ClInclude Include="MaterialManager_inline.h" />
     <ClInclude Include="MathUtils.h" />
     <ClInclude Include="Medkit.h" />
     <ClInclude Include="member_corpse.h" />
@@ -1003,7 +1003,6 @@
     <ClInclude Include="PhysicsShellHolder.h" />
     <ClInclude Include="PhysicsSkeletonObject.h" />
     <ClInclude Include="physic_item.h" />
-    <ClInclude Include="physic_item_inline.h" />
     <ClInclude Include="IPhysicShellCreator.h" />
     <ClInclude Include="PostprocessAnimator.h" />
     <ClInclude Include="pp_effector_custom.h" />
@@ -1504,10 +1503,10 @@
     <ClCompile Include="ActorInput.cpp" />
     <ClCompile Include="ActorMountedWeapon.cpp" />
     <ClCompile Include="ActorVehicle.cpp" />
-    <ClCompile Include="actor_communication.cpp" />
-    <ClCompile Include="Actor_Events.cpp" />
-    <ClCompile Include="Actor_Feel.cpp" />
-    <ClCompile Include="actor_input_handler.cpp" />
+    <ClCompile Include="Actor_communication.cpp" />
+    <ClCompile Include="Actor_events.cpp" />
+    <ClCompile Include="Actor_feel.cpp" />
+    <ClCompile Include="ActorInputHandler.cpp" />
     <ClCompile Include="actor_memory.cpp" />
     <ClCompile Include="Actor_Movement.cpp" />
     <ClCompile Include="Actor_Network.cpp" />
@@ -1789,7 +1788,7 @@
     </ClCompile>
     <ClCompile Include="dRayMotions.cpp" />
     <ClCompile Include="DummyArtifact.cpp" />
-    <ClCompile Include="eatable_item.cpp" />
+    <ClCompile Include="EatableItem.cpp" />
     <ClCompile Include="eatable_item_object.cpp" />
     <ClCompile Include="EffectorBobbing.cpp" />
     <ClCompile Include="EffectorFall.cpp" />
@@ -1802,7 +1801,7 @@
     <ClCompile Include="ef_storage_script.cpp" />
     <ClCompile Include="ElectricBall.cpp" />
     <ClCompile Include="ElevatorState.cpp" />
-    <ClCompile Include="encyclopedia_article.cpp" />
+    <ClCompile Include="EncyclopediaArticle.cpp" />
     <ClCompile Include="enemy_manager.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityCondition.cpp" />
@@ -1853,8 +1852,7 @@
     <ClCompile Include="HitMarker.cpp" />
     <ClCompile Include="hit_immunity.cpp" />
     <ClCompile Include="hit_memory_manager.cpp" />
-    <ClCompile Include="holder_custom.cpp" />
-    <ClCompile Include="holder_custom_script.cpp" />
+    <ClCompile Include="HolderCustom.cpp" />
     <ClCompile Include="HUDCrosshair.cpp" />
     <ClCompile Include="HudItem.cpp" />
     <ClCompile Include="HUDManager.cpp" />
@@ -1913,7 +1911,7 @@
     <ClCompile Include="map_location.cpp" />
     <ClCompile Include="map_manager.cpp" />
     <ClCompile Include="MapSpot.cpp" />
-    <ClCompile Include="material_manager.cpp" />
+    <ClCompile Include="MaterialManager.cpp" />
     <ClCompile Include="MathUtils.cpp" />
     <ClCompile Include="Medkit.cpp" />
     <ClCompile Include="memory_manager.cpp" />
@@ -2146,7 +2144,7 @@
     <ClCompile Include="space_restriction_manager.cpp" />
     <ClCompile Include="space_restriction_shape.cpp" />
     <ClCompile Include="space_restrictor.cpp" />
-    <ClCompile Include="specific_character.cpp" />
+    <ClCompile Include="SpecificCharacter.cpp" />
     <ClCompile Include="Spectator.cpp" />
     <ClCompile Include="squad_hierarchy_holder.cpp" />
     <ClCompile Include="StalkerOutfit.cpp" />
@@ -2478,9 +2476,6 @@
     </ProjectReference>
     <ProjectReference Include="..\xrLua\xrLua.vcxproj">
       <Project>{9ace5473-6d68-4b96-ac42-b39eaba0fe1f}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\xrNetServer\xrNetServer.vcxproj">
-      <Project>{435bac9a-b225-457d-ab40-c9bd0cc8838c}</Project>
     </ProjectReference>
     <ProjectReference Include="..\xrODE\contrib\msvc7\ode_default\default.vcxproj">
       <Project>{1bf75feb-87dd-486c-880b-227987d191c2}</Project>

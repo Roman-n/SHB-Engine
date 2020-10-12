@@ -1,6 +1,7 @@
 #pragma once
 
-enum{
+enum
+{
 		AF_GODMODE			=(1<<0),
 		AF_INVISIBLE		=(1<<1),
 		AF_ALWAYSRUN		=(1<<2),
@@ -12,5 +13,4 @@ enum{
 
 extern Flags32 psActorFlags;
 
-extern BOOL		GodMode	();	
-
+extern BOOL		GodMode	();

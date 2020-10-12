@@ -7,10 +7,12 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "detail_path_manager.h"
 #include "ai_space.h"
 #include "ai_object_location.h"
 #include "level_graph.h"
+#include "GameObject.h"
 
 #ifdef DEBUG
 #	include "custommonster.h"
@@ -149,7 +151,6 @@ void CDetailPathManager::on_travel_point_change	(const u32 &previous_travel_poin
 	m_distance_to_target_actual	= false;
 }
 
-#include "GameObject.h"
 u32 CDetailPathManager::location_on_path		(const CGameObject *object, float distance, Fvector &result) const
 {
 	VERIFY						(m_restricted_object);

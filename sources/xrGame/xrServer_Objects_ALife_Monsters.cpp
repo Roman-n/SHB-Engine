@@ -30,7 +30,7 @@
 #	include "date_time.h"
 #endif
 
-void setup_location_types_section(GameGraph::TERRAIN_VECTOR &m_vertex_types, CIniFile*ini, LPCSTR section)
+void setup_location_types_section(GameGraph::TERRAIN_VECTOR &m_vertex_types, CIniFile*ini, const char* section)
 {
 	VERIFY3							(ini->section_exist(section),"cannot open section",section);
 	GameGraph::STerrainPlace		terrain_mask;
@@ -40,7 +40,7 @@ void setup_location_types_section(GameGraph::TERRAIN_VECTOR &m_vertex_types, CIn
 	CIniFile::SectCIt				I = sect.Data.begin();
 	CIniFile::SectCIt				E = sect.Data.end();
 	for ( ; I != E; ++I) {
-		LPCSTR						S = *(*I).first;
+		const char* S = *(*I).first;
 		string16					I;
 		u32							N = _GetItemCount(S);
 		
@@ -62,7 +62,7 @@ void setup_location_types_section(GameGraph::TERRAIN_VECTOR &m_vertex_types, CIn
 	m_vertex_types.push_back		(terrain_mask);
 }
 
-void setup_location_types_line(GameGraph::TERRAIN_VECTOR &m_vertex_types, LPCSTR string)
+void setup_location_types_line(GameGraph::TERRAIN_VECTOR &m_vertex_types, const char* string)
 {
 	string16						I;
 	GameGraph::STerrainPlace		terrain_mask;
@@ -86,7 +86,7 @@ void setup_location_types_line(GameGraph::TERRAIN_VECTOR &m_vertex_types, LPCSTR
 	}
 }
 
-void setup_location_types(GameGraph::TERRAIN_VECTOR &m_vertex_types, CIniFile*ini, LPCSTR string)
+void setup_location_types(GameGraph::TERRAIN_VECTOR &m_vertex_types, CIniFile*ini, const char* string)
 {
 	m_vertex_types.clear			();
 	if (ini->section_exist(string) && ini->line_count(string))
@@ -110,7 +110,7 @@ using namespace ALife;
 ////////////////////////////////////////////////////////////////////////////
 // CSE_ALifeTraderAbstract
 ////////////////////////////////////////////////////////////////////////////
-CSE_ALifeTraderAbstract::CSE_ALifeTraderAbstract(LPCSTR caSection)
+CSE_ALifeTraderAbstract::CSE_ALifeTraderAbstract(const char* caSection)
 {
 //	m_fCumulativeItemMass		= 0.f;
 //	m_iCumulativeItemVolume		= 0;
@@ -381,7 +381,7 @@ void CSE_ALifeTraderAbstract::set_specific_character	(shared_str new_spec_char)
 
 	m_character_name = *(CStringTable().translate(selected_char.Name()));
 	
-	LPCSTR gen_name = "GENERATE_NAME_";
+	const char* gen_name = "GENERATE_NAME_";
 	if( strstr(m_character_name.c_str(),gen_name) ){
 		//select name and lastname
 		xr_string subset			= m_character_name.c_str()+xr_strlen(gen_name);
@@ -441,7 +441,7 @@ CHARACTER_COMMUNITY_INDEX		CSE_ALifeTraderAbstract::Community	() const
 	return m_community_index;
 }
 
-LPCSTR			CSE_ALifeTraderAbstract::CommunityName () const
+const char* CSE_ALifeTraderAbstract::CommunityName () const
 {
 	return *CHARACTER_COMMUNITY::IndexToId(m_community_index);
 }
@@ -477,7 +477,7 @@ void CSE_ALifeTraderAbstract::UPDATE_Read	(NET_Packet &tNetPacket)
 // CSE_ALifeTrader
 ////////////////////////////////////////////////////////////////////////////
 
-CSE_ALifeTrader::CSE_ALifeTrader			(LPCSTR caSection) : CSE_ALifeDynamicObjectVisual(caSection), CSE_ALifeTraderAbstract(caSection)
+CSE_ALifeTrader::CSE_ALifeTrader			(const char* caSection) : CSE_ALifeDynamicObjectVisual(caSection), CSE_ALifeTraderAbstract(caSection)
 {
 	if (pSettings->section_exist(caSection) && pSettings->line_exist(caSection,"visual"))
 		set_visual				(pSettings->r_string(caSection,"visual"));
@@ -566,7 +566,7 @@ bool CSE_ALifeTrader::interactive			() const
 	return						(false);
 }
 
-void CSE_ALifeTrader::FillProps				(LPCSTR _pref, PropItemVec& items)
+void CSE_ALifeTrader::FillProps				(const char* _pref, PropItemVec& items)
 {
 	inherited1::FillProps		(_pref,items);
 	inherited2::FillProps		(_pref,items);
@@ -575,7 +575,7 @@ void CSE_ALifeTrader::FillProps				(LPCSTR _pref, PropItemVec& items)
 ////////////////////////////////////////////////////////////////////////////
 // CSE_ALifeCustomZone
 ////////////////////////////////////////////////////////////////////////////
-CSE_ALifeCustomZone::CSE_ALifeCustomZone	(LPCSTR caSection) : CSE_ALifeSpaceRestrictor(caSection)
+CSE_ALifeCustomZone::CSE_ALifeCustomZone	(const char* caSection) : CSE_ALifeSpaceRestrictor(caSection)
 {
 	m_owner_id					= u32(-1);
 	m_maxPower					= pSettings->r_float(caSection,"min_start_power");
@@ -659,7 +659,7 @@ void CSE_ALifeCustomZone::UPDATE_Write	(NET_Packet	&tNetPacket)
 //	{ 0,				0}
 //};
 
-void CSE_ALifeCustomZone::FillProps		(LPCSTR pref, PropItemVec& items)
+void CSE_ALifeCustomZone::FillProps		(const char* pref, PropItemVec& items)
 {
 	inherited::FillProps		(pref,items);
 	PHelper().CreateU32			(items,PrepareKey(pref,*s_name,"on/off mode\\Shift time (sec)"),	&m_start_time_shift,0,100000);
@@ -670,7 +670,7 @@ void CSE_ALifeCustomZone::FillProps		(LPCSTR pref, PropItemVec& items)
 ////////////////////////////////////////////////////////////////////////////
 // CSE_ALifeAnomalousZone
 ////////////////////////////////////////////////////////////////////////////
-CSE_ALifeAnomalousZone::CSE_ALifeAnomalousZone(LPCSTR caSection) : CSE_ALifeCustomZone(caSection)
+CSE_ALifeAnomalousZone::CSE_ALifeAnomalousZone(const char* caSection) : CSE_ALifeCustomZone(caSection)
 {
 	m_offline_interactive_radius	= 30.f;
 	m_artefact_spawn_count			= 32;
@@ -774,7 +774,7 @@ void CSE_ALifeAnomalousZone::UPDATE_Write	(NET_Packet	&tNetPacket)
 	inherited::UPDATE_Write	(tNetPacket);
 }
 
-void CSE_ALifeAnomalousZone::FillProps		(LPCSTR pref, PropItemVec& items)
+void CSE_ALifeAnomalousZone::FillProps		(const char* pref, PropItemVec& items)
 {
 	inherited::FillProps			(pref,items);
 	PHelper().CreateFloat			(items,PrepareKey(pref,*s_name,"offline interactive radius"),			&m_offline_interactive_radius,	0.f,	100.f);
@@ -785,7 +785,7 @@ void CSE_ALifeAnomalousZone::FillProps		(LPCSTR pref, PropItemVec& items)
 //////////////////////////////////////////////////////////////////////////
 //SE_ALifeTorridZone
 //////////////////////////////////////////////////////////////////////////
-CSE_ALifeTorridZone::CSE_ALifeTorridZone(LPCSTR caSection) : CSE_ALifeCustomZone(caSection), CSE_Motion( )
+CSE_ALifeTorridZone::CSE_ALifeTorridZone(const char* caSection) : CSE_ALifeCustomZone(caSection), CSE_Motion( )
 { }
 
 CSE_ALifeTorridZone::~CSE_ALifeTorridZone	()
@@ -819,7 +819,7 @@ void CSE_ALifeTorridZone::UPDATE_Write		(NET_Packet	&tNetPacket)
 	inherited1::UPDATE_Write	(tNetPacket);
 }
 
-void CSE_ALifeTorridZone::FillProps(LPCSTR pref, PropItemVec& values)
+void CSE_ALifeTorridZone::FillProps(const char* pref, PropItemVec& values)
 {
 	inherited1::FillProps		(pref, values);
 	inherited2::FillProps		(pref, values);
@@ -828,7 +828,7 @@ void CSE_ALifeTorridZone::FillProps(LPCSTR pref, PropItemVec& values)
 //////////////////////////////////////////////////////////////////////////
 //CSE_ALifeZoneVisual
 //////////////////////////////////////////////////////////////////////////
-CSE_ALifeZoneVisual::CSE_ALifeZoneVisual	(LPCSTR caSection)
+CSE_ALifeZoneVisual::CSE_ALifeZoneVisual	(const char* caSection)
 :CSE_ALifeAnomalousZone(caSection),CSE_Visual(caSection)
 {
 	if (pSettings->line_exist(caSection,"visual"))
@@ -871,7 +871,7 @@ void CSE_ALifeZoneVisual::UPDATE_Write		(NET_Packet	&tNetPacket)
 	inherited1::UPDATE_Write	(tNetPacket);
 }
 
-void CSE_ALifeZoneVisual::FillProps(LPCSTR pref, PropItemVec& values)
+void CSE_ALifeZoneVisual::FillProps(const char* pref, PropItemVec& values)
 {
 	inherited1::FillProps		(pref, values);
 	inherited2::FillProps		(pref, values);
@@ -882,7 +882,7 @@ void CSE_ALifeZoneVisual::FillProps(LPCSTR pref, PropItemVec& values)
 ////////////////////////////////////////////////////////////////////////////
 // CSE_ALifeCreatureAbstract
 ////////////////////////////////////////////////////////////////////////////
-CSE_ALifeCreatureAbstract::CSE_ALifeCreatureAbstract(LPCSTR caSection)	: CSE_ALifeDynamicObjectVisual(caSection)
+CSE_ALifeCreatureAbstract::CSE_ALifeCreatureAbstract(const char* caSection)	: CSE_ALifeDynamicObjectVisual(caSection)
 {
 	s_team = s_squad = s_group	= 0;
 	o_model						= 0.f;
@@ -1032,7 +1032,7 @@ u8 CSE_ALifeCreatureAbstract::g_group		()
 	return s_group;
 }
 
-void CSE_ALifeCreatureAbstract::FillProps	(LPCSTR pref, PropItemVec& items)
+void CSE_ALifeCreatureAbstract::FillProps	(const char* pref, PropItemVec& items)
 {
   	inherited::FillProps			(pref,items);
     PHelper().CreateU8				(items,PrepareKey(pref,*s_name, "Team"),		&s_team, 	0,64,1);
@@ -1059,7 +1059,7 @@ bool CSE_ALifeCreatureAbstract::can_switch_offline	() const
 ////////////////////////////////////////////////////////////////////////////
 // CSE_ALifeMonsterAbstract
 ////////////////////////////////////////////////////////////////////////////
-CSE_ALifeMonsterAbstract::CSE_ALifeMonsterAbstract(LPCSTR caSection) : CSE_ALifeCreatureAbstract(caSection), CSE_ALifeSchedulable(caSection)
+CSE_ALifeMonsterAbstract::CSE_ALifeMonsterAbstract(const char* caSection) : CSE_ALifeCreatureAbstract(caSection), CSE_ALifeSchedulable(caSection)
 {
 	m_tNextGraphID				= m_tGraphID;
 	m_tPrevGraphID				= m_tGraphID;
@@ -1083,7 +1083,7 @@ CSE_ALifeMonsterAbstract::CSE_ALifeMonsterAbstract(LPCSTR caSection) : CSE_ALife
 		svector<float,ALife::eHitTypeMax>::iterator	B = m_fpImmunityFactors.begin(), I = B;
 		svector<float,ALife::eHitTypeMax>::iterator	E = m_fpImmunityFactors.end();
 
-		LPCSTR imm_section = caSection;
+		const char* imm_section = caSection;
 		if(pSettings->line_exist(caSection, "immunities_sect"))
 			imm_section = pSettings->r_string(caSection, "immunities_sect");
 		for ( ; I != E; ++I)
@@ -1211,7 +1211,7 @@ void CSE_ALifeMonsterAbstract::UPDATE_Read	(NET_Packet &tNetPacket)
 	tNetPacket.r				(&m_fDistanceToPoint,		sizeof(m_fDistanceToPoint));
 };
 
-void CSE_ALifeMonsterAbstract::FillProps		(LPCSTR pref, PropItemVec& items)
+void CSE_ALifeMonsterAbstract::FillProps		(const char* pref, PropItemVec& items)
 {
   	inherited1::FillProps		(pref,items);
 	
@@ -1219,7 +1219,7 @@ void CSE_ALifeMonsterAbstract::FillProps		(LPCSTR pref, PropItemVec& items)
 	PHelper().CreateFlag32		(items,	PrepareKey(pref,*s_name,"Use smart terrain tasks"),	&m_flags,			flUseSmartTerrains);
 
 	if (pSettings->line_exist(s_name,"SpaceRestrictionSection")) {
-		LPCSTR					gcs = pSettings->r_string(s_name,"SpaceRestrictionSection");
+		const char* gcs = pSettings->r_string(s_name,"SpaceRestrictionSection");
 		PHelper().CreateChoose	(items, PrepareKey(pref,*s_name,"out space restrictions"),&m_out_space_restrictors, smSpawnItem, 0, (void*)gcs, 16);
 		PHelper().CreateChoose	(items, PrepareKey(pref,*s_name,"in space restrictions"),&m_in_space_restrictors,  smSpawnItem, 0, (void*)gcs, 16);
 	}
@@ -1234,7 +1234,7 @@ bool CSE_ALifeMonsterAbstract::need_update	(CSE_ALifeDynamicObject *object)
 // CSE_ALifeCreatureActor
 ////////////////////////////////////////////////////////////////////////////
 
-CSE_ALifeCreatureActor::CSE_ALifeCreatureActor	(LPCSTR caSection) : CSE_ALifeCreatureAbstract(caSection), CSE_ALifeTraderAbstract(caSection),CSE_PHSkeleton(caSection)
+CSE_ALifeCreatureActor::CSE_ALifeCreatureActor	(const char* caSection) : CSE_ALifeCreatureAbstract(caSection), CSE_ALifeTraderAbstract(caSection),CSE_PHSkeleton(caSection)
 {
 	if (pSettings->section_exist(caSection) && pSettings->line_exist(caSection,"visual"))
 		set_visual				(pSettings->r_string(caSection,"visual"));
@@ -1398,7 +1398,7 @@ void CSE_ALifeCreatureActor::UPDATE_Write	(NET_Packet	&tNetPacket)
 	};
 }
 
-void CSE_ALifeCreatureActor::FillProps		(LPCSTR pref, PropItemVec& items)
+void CSE_ALifeCreatureActor::FillProps		(const char* pref, PropItemVec& items)
 {
   	inherited1::FillProps		(pref,items);
   	inherited2::FillProps		(pref,items);
@@ -1415,7 +1415,7 @@ void CSE_ALifeCreatureActor::spawn_supplies	()
 ////////////////////////////////////////////////////////////////////////////
 // CSE_ALifeCreatureCrow
 ////////////////////////////////////////////////////////////////////////////
-CSE_ALifeCreatureCrow::CSE_ALifeCreatureCrow(LPCSTR caSection) : CSE_ALifeCreatureAbstract(caSection)
+CSE_ALifeCreatureCrow::CSE_ALifeCreatureCrow(const char* caSection) : CSE_ALifeCreatureAbstract(caSection)
 {
 	if (pSettings->section_exist(caSection) && pSettings->line_exist(caSection,"visual"))
 		set_visual				(pSettings->r_string(caSection,"visual"));
@@ -1450,7 +1450,7 @@ void CSE_ALifeCreatureCrow::UPDATE_Write		(NET_Packet	&tNetPacket)
 	inherited::UPDATE_Write		(tNetPacket);
 }
 
-void CSE_ALifeCreatureCrow::FillProps			(LPCSTR pref, PropItemVec& values)
+void CSE_ALifeCreatureCrow::FillProps			(const char* pref, PropItemVec& values)
 {
   	inherited::FillProps			(pref,values);
 }
@@ -1463,7 +1463,7 @@ bool CSE_ALifeCreatureCrow::used_ai_locations	() const
 ////////////////////////////////////////////////////////////////////////////
 // CSE_ALifeCreaturePhantom
 ////////////////////////////////////////////////////////////////////////////
-CSE_ALifeCreaturePhantom::CSE_ALifeCreaturePhantom(LPCSTR caSection) : CSE_ALifeCreatureAbstract(caSection)
+CSE_ALifeCreaturePhantom::CSE_ALifeCreaturePhantom(const char* caSection) : CSE_ALifeCreatureAbstract(caSection)
 {
 	if (pSettings->section_exist(caSection) && pSettings->line_exist(caSection,"visual"))
 		set_visual				(pSettings->r_string(caSection,"visual"));
@@ -1494,7 +1494,7 @@ void CSE_ALifeCreaturePhantom::UPDATE_Write		(NET_Packet	&tNetPacket)
 	inherited::UPDATE_Write		(tNetPacket);
 }
 
-void CSE_ALifeCreaturePhantom::FillProps		(LPCSTR pref, PropItemVec& values)
+void CSE_ALifeCreaturePhantom::FillProps		(const char* pref, PropItemVec& values)
 {
 	inherited::FillProps		(pref,values);
 }
@@ -1507,7 +1507,7 @@ bool CSE_ALifeCreaturePhantom::used_ai_locations	() const
 ////////////////////////////////////////////////////////////////////////////
 // CSE_ALifeMonsterZombie
 ////////////////////////////////////////////////////////////////////////////
-CSE_ALifeMonsterZombie::CSE_ALifeMonsterZombie	(LPCSTR caSection) : CSE_ALifeMonsterAbstract(caSection)
+CSE_ALifeMonsterZombie::CSE_ALifeMonsterZombie	(const char* caSection) : CSE_ALifeMonsterAbstract(caSection)
 {
 	if (pSettings->section_exist(caSection) && pSettings->line_exist(caSection,"visual"))
 		set_visual				(pSettings->r_string(caSection,"visual"));
@@ -1580,7 +1580,7 @@ void CSE_ALifeMonsterZombie::UPDATE_Write	(NET_Packet	&tNetPacket)
 	inherited::UPDATE_Write		(tNetPacket);
 }
 
-void CSE_ALifeMonsterZombie::FillProps		(LPCSTR pref, PropItemVec& items)
+void CSE_ALifeMonsterZombie::FillProps		(const char* pref, PropItemVec& items)
 {
    	inherited::FillProps			(pref, items);
 	// personal characteristics
@@ -1601,7 +1601,7 @@ void CSE_ALifeMonsterZombie::FillProps		(LPCSTR pref, PropItemVec& items)
 //////////////////////////////////////////////////////////////////////////
 // CSE_ALifeMonsterBase
 //////////////////////////////////////////////////////////////////////////
-CSE_ALifeMonsterBase::CSE_ALifeMonsterBase	(LPCSTR caSection) : CSE_ALifeMonsterAbstract(caSection),CSE_PHSkeleton(caSection)
+CSE_ALifeMonsterBase::CSE_ALifeMonsterBase	(const char* caSection) : CSE_ALifeMonsterAbstract(caSection),CSE_PHSkeleton(caSection)
 {
     set_visual					(pSettings->r_string(caSection,"visual"));
 	m_spec_object_id			= 0xffff;
@@ -1646,7 +1646,7 @@ void CSE_ALifeMonsterBase::load(NET_Packet &tNetPacket)
 	inherited2::load(tNetPacket);
 }
 
-void CSE_ALifeMonsterBase::FillProps	(LPCSTR pref, PropItemVec& values)
+void CSE_ALifeMonsterBase::FillProps	(const char* pref, PropItemVec& values)
 {
 	inherited1::FillProps			(pref,values);
 	inherited2::FillProps			(pref,values);
@@ -1655,7 +1655,7 @@ void CSE_ALifeMonsterBase::FillProps	(LPCSTR pref, PropItemVec& values)
 //////////////////////////////////////////////////////////////////////////
 // CSE_ALifePsyDogPhantom
 //////////////////////////////////////////////////////////////////////////
-CSE_ALifePsyDogPhantom::CSE_ALifePsyDogPhantom	(LPCSTR caSection) : CSE_ALifeMonsterBase(caSection)
+CSE_ALifePsyDogPhantom::CSE_ALifePsyDogPhantom	(const char* caSection) : CSE_ALifeMonsterBase(caSection)
 { }
 
 CSE_ALifePsyDogPhantom::~CSE_ALifePsyDogPhantom()
@@ -1681,7 +1681,7 @@ void CSE_ALifePsyDogPhantom::UPDATE_Write	(NET_Packet	&tNetPacket)
 	inherited::UPDATE_Write		(tNetPacket);
 }
 
-void CSE_ALifePsyDogPhantom::FillProps	(LPCSTR pref, PropItemVec& values)
+void CSE_ALifePsyDogPhantom::FillProps	(const char* pref, PropItemVec& values)
 {
 	inherited::FillProps			(pref,values);
 }
@@ -1689,7 +1689,7 @@ void CSE_ALifePsyDogPhantom::FillProps	(LPCSTR pref, PropItemVec& values)
 //////////////////////////////////////////////////////////////////////////
 // CSE_ALifeHumanAbstract
 //////////////////////////////////////////////////////////////////////////
-CSE_ALifeHumanAbstract::CSE_ALifeHumanAbstract(LPCSTR caSection) : CSE_ALifeTraderAbstract(caSection), CSE_ALifeMonsterAbstract(caSection)
+CSE_ALifeHumanAbstract::CSE_ALifeHumanAbstract(const char* caSection) : CSE_ALifeTraderAbstract(caSection), CSE_ALifeMonsterAbstract(caSection)
 {
 	m_group_id					= 0xffff;
 }
@@ -1755,7 +1755,7 @@ void CSE_ALifeHumanAbstract::UPDATE_Read	(NET_Packet &tNetPacket)
 	}
 };
 
-void CSE_ALifeHumanAbstract::FillProps		(LPCSTR pref, PropItemVec& items)
+void CSE_ALifeHumanAbstract::FillProps		(const char* pref, PropItemVec& items)
 {
   	inherited1::FillProps		(pref,items);
   	inherited2::FillProps		(pref,items);
@@ -1765,7 +1765,7 @@ void CSE_ALifeHumanAbstract::FillProps		(LPCSTR pref, PropItemVec& items)
 //////////////////////////////////////////////////////////////////////////
 // CSE_ALifeHumanStalker
 //////////////////////////////////////////////////////////////////////////
-CSE_ALifeHumanStalker::CSE_ALifeHumanStalker(LPCSTR caSection) : CSE_ALifeHumanAbstract(caSection),CSE_PHSkeleton(caSection)
+CSE_ALifeHumanStalker::CSE_ALifeHumanStalker(const char* caSection) : CSE_ALifeHumanAbstract(caSection),CSE_PHSkeleton(caSection)
 {
 	m_trader_flags.set			(eTraderFlagInfiniteAmmo,TRUE);
 	m_start_dialog				= "";
@@ -1811,7 +1811,7 @@ void CSE_ALifeHumanStalker::load			(NET_Packet &tNetPacket)
 	inherited2::load			(tNetPacket);
 }
 
-void CSE_ALifeHumanStalker::FillProps		(LPCSTR pref, PropItemVec& values)
+void CSE_ALifeHumanStalker::FillProps		(const char* pref, PropItemVec& values)
 {
 	inherited1::FillProps		(pref,values);
 	inherited2::FillProps		(pref,values);
@@ -1820,7 +1820,7 @@ void CSE_ALifeHumanStalker::FillProps		(LPCSTR pref, PropItemVec& values)
 //////////////////////////////////////////////////////////////////////////
 // CSE_ALifeOnlineOfflineGroup
 //////////////////////////////////////////////////////////////////////////
-CSE_ALifeOnlineOfflineGroup::CSE_ALifeOnlineOfflineGroup	(LPCSTR caSection) : CSE_ALifeDynamicObject(caSection), CSE_ALifeSchedulable(caSection)
+CSE_ALifeOnlineOfflineGroup::CSE_ALifeOnlineOfflineGroup	(const char* caSection) : CSE_ALifeDynamicObject(caSection), CSE_ALifeSchedulable(caSection)
 { }
 
 CSE_Abstract *CSE_ALifeOnlineOfflineGroup::base				()
@@ -1894,7 +1894,7 @@ void CSE_ALifeOnlineOfflineGroup::UPDATE_Read				(NET_Packet &tNetPacket)
 	inherited1::UPDATE_Read		(tNetPacket);
 }
 
-void CSE_ALifeOnlineOfflineGroup::FillProps					(LPCSTR pref, PropItemVec& values)
+void CSE_ALifeOnlineOfflineGroup::FillProps					(const char* pref, PropItemVec& values)
 {
 	inherited1::FillProps		(pref,values);
 }
