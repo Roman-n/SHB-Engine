@@ -1,4 +1,5 @@
 #pragma once
+
 #include "inventory_item.h"
 
 class CInventory;
@@ -28,7 +29,6 @@ enum EActivationReason{
 
 typedef xr_vector<CInventorySlot> TISlotArr;
 
-
 class CInventory
 {				
 public:
@@ -56,7 +56,6 @@ public:
 	bool 					CanPutInRuck		(PIItem pIItem) const;
 
 	bool					CanTakeItem			(CInventoryItem *inventory_item) const;
-
 
 	bool					Activate			(u32 slot, EActivationReason reason=eGeneral, bool bForce=false);
 	void					Activate_deffered	(u32 slot, u32 _frame);
@@ -120,13 +119,11 @@ public:
 	u32					BeltWidth					() const;
 
 	inline	CInventoryOwner*GetOwner				() const				{ return m_pOwner; }
-	
 
 	// Объект на который наведен прицел
 	PIItem				m_pTarget;
 
 	friend class CInventoryOwner;
-
 
 	u32					ModifyFrame					() const					{ return m_dwModifyFrame; }
 	void				InvalidateState				()							{ m_dwModifyFrame = Device.dwFrame; }

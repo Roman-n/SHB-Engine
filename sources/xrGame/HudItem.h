@@ -64,7 +64,6 @@ public:
 	virtual void	net_Destroy			();
 
 	virtual void	StartIdleAnim		() {};
-
 	
 	virtual bool	Activate			();
 	virtual void	Deactivate			();
