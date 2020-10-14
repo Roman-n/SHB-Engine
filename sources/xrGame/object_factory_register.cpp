@@ -69,12 +69,12 @@
 #include "GalantineArtifact.h"
 #include "GraviArtifact.h"
 
+#include "WeaponAmmo.h"
 #include "weaponFN2000.h"
 #include "weaponAK74.h"
 #include "weaponLR300.h"
 #include "weaponHPSA.h"
 #include "weaponPM.h"
-#include "weaponAMMO.h"
 #include "weaponFORT.h"
 #include "weaponBINOCULARS.h"
 #include "weaponShotgun.h"
@@ -92,9 +92,9 @@
 #include "WeaponMounted.h"
 #include "WeaponStatMgun.h"
 
-#include "scope.h"
-#include "silencer.h"
-#include "grenadelauncher.h"
+#include "GrenadeLauncher.h"
+#include "Scope.h"
+#include "Silencer.h"
 
 #include "bolt.h"
 #include "Medkit.h"

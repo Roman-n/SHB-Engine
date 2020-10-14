@@ -4,7 +4,7 @@
 #include "shootingobject.h"
 
 #include "HudSound.h"
-#include "weaponammo.h"
+#include "WeaponAmmo.h"
 #include "physicsshellholder.h"
 
 class CWeaponMounted :	public CPhysicsShellHolder, 

@@ -6,9 +6,9 @@
 #include "HUDManager.h"//
 #include "weapon.h"
 #include "Artefact.h"
-#include "scope.h"
-#include "silencer.h"
-#include "grenadelauncher.h"
+#include "GrenadeLauncher.h"
+#include "Scope.h"
+#include "Silencer.h"
 #include "inventory.h"
 #include "Level.h"
 #include "xr_level_controller.h"

@@ -2,9 +2,9 @@
 
 #include "UIInventoryWnd.h"//
 #include "../actor.h"
-#include "../silencer.h"
-#include "../scope.h"
-#include "../grenadelauncher.h"
+#include "..\GrenadeLauncher.h"
+#include "..\Scope.h"
+#include "..\Silencer.h"
 #include "../Artefact.h"
 //#include "../EatableItem.h"
 #include "../BottleItem.h"//

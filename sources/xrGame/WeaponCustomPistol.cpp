@@ -6,13 +6,12 @@
 //////////////////////////////////////////////////////////////////////
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
-CWeaponCustomPistol::CWeaponCustomPistol(LPCSTR name) : CWeaponMagazined(name,SOUND_TYPE_WEAPON_PISTOL)
-{
-}
+CWeaponCustomPistol::CWeaponCustomPistol(const char* name) : CWeaponMagazined(name,SOUND_TYPE_WEAPON_PISTOL)
+{ }
 
 CWeaponCustomPistol::~CWeaponCustomPistol()
-{
-}
+{ }
+
 void CWeaponCustomPistol::switch2_Fire	()
 {
 	m_bFireSingleShot			= true;
@@ -20,8 +19,6 @@ void CWeaponCustomPistol::switch2_Fire	()
 	m_iShotNum					= 0;
 	m_bStopedAfterQueueFired	= false;
 }
-
-
 
 void CWeaponCustomPistol::FireEnd() 
 {

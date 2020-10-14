@@ -1,7 +1,7 @@
 #include "stdafx.h"
 
 #include "UIInventoryUtilities.h"//
-#include "../WeaponAmmo.h"
+#include "..\WeaponAmmo.h"
 #include "UIStaticItem.h"//
 #include "UIStatic.h"//
 //#include "../EatableItem.h"

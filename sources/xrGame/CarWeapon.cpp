@@ -6,7 +6,7 @@
 #include "..\ENGINE\skeletoncustom.h"
 #include "object_broker.h"
 #include "ai_sounds.h"
-#include "weaponAmmo.h"
+#include "WeaponAmmo.h"
 #include "xr_level_controller.h"
 #include "GameObject_space.h"
 

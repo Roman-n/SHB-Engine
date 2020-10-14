@@ -1,6 +1,7 @@
 #pragma once
 
 #include "..\ENGINE\SkeletonAnimated.h"
+
 class CHudItem;
 
 struct weapon_hud_value: public shared_value
@@ -91,7 +92,6 @@ public:
 	void				SetZoomOffset	(const Fvector& zoom_offset)  { m_fZoomOffset = zoom_offset;}
 	void				SetZoomRotateX	(float zoom_rotate_x)		  { m_fZoomRotateX = zoom_rotate_x;}
 	void				SetZoomRotateY	(float zoom_rotate_y)		  { m_fZoomRotateY = zoom_rotate_y;}
-	
 
 	// Animations
 	void				animPlay		(MotionID M, BOOL bMixIn/*=TRUE*/, CHudItem*  W /*=0*/, u32 state);
@@ -115,12 +115,14 @@ public:
 	static void			CreateSharedContainer	();
 	static void			DestroySharedContainer	();
 	static void			CleanSharedContainer	();
+
 #ifdef DEBUG
 public:
 	void				dbg_SetFirePoint	(const Fvector &fp)			{((weapon_hud_value*)m_shared_data.get_value())->m_fp_offset.set(fp);}
 	void				dbg_SetFirePoint2	(const Fvector &fp)			{((weapon_hud_value*)m_shared_data.get_value())->m_fp2_offset.set(fp);}
 	void				dbg_SetShellPoint	(const Fvector &sp)			{((weapon_hud_value*)m_shared_data.get_value())->m_sp_offset.set(sp);}
 #endif
+
 };
 
 #define		MAX_ANIM_COUNT							8

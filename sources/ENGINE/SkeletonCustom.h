@@ -394,6 +394,7 @@ public:
 		return sz;
 	}
 };
+
 IC CKinematics* PKinematics(IRender_Visual* V)
 {
 	return V ? V->dcast_PKinematics( ) : 0;

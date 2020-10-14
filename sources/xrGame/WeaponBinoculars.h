@@ -11,16 +11,18 @@ class CWeaponBinoculars: public CWeaponCustomPistol
 {
 private:
 	typedef CWeaponCustomPistol inherited;
+
 protected:
 	HUD_SOUND		sndZoomIn;
 	HUD_SOUND		sndZoomOut;
 	float			m_fRTZoomFactor; //run-time zoom factor
 	bool			m_bVision;
+
 public:
 					CWeaponBinoculars	(); 
 	virtual			~CWeaponBinoculars	();
 
-	void			Load				(LPCSTR section);
+	void			Load				(const char* section);
 
 	virtual void	OnZoomIn			();
 	virtual void	OnZoomOut			();
@@ -38,11 +40,13 @@ public:
 	virtual bool	use_crosshair		()	const {return false;}
 	virtual void	GetBriefInfo		(xr_string& str_name, xr_string& icon_sect_name, xr_string& str_count);
 	virtual void	net_Relcase			(CObject *object);
+
 protected:
 	CBinocularsVision*					m_binoc_vision;
 
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
+
 add_to_type_list(CWeaponBinoculars)
 #undef script_type_list
 #define script_type_list save_type_list(CWeaponBinoculars)

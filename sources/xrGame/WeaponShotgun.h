@@ -1,16 +1,16 @@
 #pragma once
 
-#include "weaponcustompistol.h"
+#include "WeaponCustomPistol.h"
 #include "script_export_space.h"
 
 class CWeaponShotgun :	public CWeaponCustomPistol
 {
 	typedef CWeaponCustomPistol inherited;
 public:
-	CWeaponShotgun(void);
-	virtual ~CWeaponShotgun(void);
+	CWeaponShotgun( );
+	virtual ~CWeaponShotgun( );
 
-	virtual void	Load			(LPCSTR section);
+	virtual void	Load			(const char* section);
 	
 	virtual void	net_Destroy			();
 	virtual void	net_Export			(NET_Packet& P);
@@ -59,6 +59,7 @@ protected:
 
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
+
 add_to_type_list(CWeaponShotgun)
 #undef script_type_list
 #define script_type_list save_type_list(CWeaponShotgun)

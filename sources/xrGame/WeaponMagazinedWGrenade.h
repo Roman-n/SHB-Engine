@@ -1,10 +1,9 @@
 #pragma once
+
 #include "weaponmagazined.h"
 #include "rocketlauncher.h"
 
-
 class CWeaponFakeGrenade;
-
 
 class CWeaponMagazinedWGrenade : public CWeaponMagazined,
 								 public CRocketLauncher

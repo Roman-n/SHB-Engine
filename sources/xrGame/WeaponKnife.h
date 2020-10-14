@@ -3,9 +3,11 @@
 #include "WeaponCustomPistol.h"
 #include "script_export_space.h"
 
-class CWeaponKnife: public CWeapon {
+class CWeaponKnife: public CWeapon
+{
 private:
 	typedef CWeapon inherited;
+
 protected:
 	MotionSVec			mhud_idle;
 	MotionSVec			mhud_hide;
@@ -20,7 +22,6 @@ protected:
 	bool				m_attackStart;
 
 protected:
-
 	virtual void		switch2_Idle				();
 	virtual void		switch2_Hiding				();
 	virtual void		switch2_Hidden				();
@@ -50,17 +51,17 @@ protected:
 	Fvector4			fvHitPower_2;
 	float				fCurrentHit;
 	float				fHitImpulse_2;
+
 protected:
-	virtual void		LoadFireParams					(LPCSTR section, LPCSTR prefix);
+	virtual void		LoadFireParams					(const char* section, const char* prefix);
 public:
 						CWeaponKnife(); 
 	virtual				~CWeaponKnife(); 
 
-	void				Load							(LPCSTR section);
+	void				Load							(const char* section);
 
 	virtual void		Fire2Start						();
 	virtual void		FireStart						();
-
 
 	virtual bool		Action							(int cmd, u32 flags);
 
@@ -69,6 +70,7 @@ public:
 
 	DECLARE_SCRIPT_REGISTER_FUNCTION
 };
+
 add_to_type_list(CWeaponKnife)
 #undef script_type_list
 #define script_type_list save_type_list(CWeaponKnife)

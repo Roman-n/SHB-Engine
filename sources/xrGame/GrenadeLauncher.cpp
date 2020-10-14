@@ -1,25 +1,20 @@
-///////////////////////////////////////////////////////////////
-// GrenadeLauncher.cpp
 // GrenadeLauncher - апгрейд оружия поствольный гранатомет
-///////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
 
-#include "grenadelauncher.h"
-//#include "PhysicsShell.h"
+#include "GrenadeLauncher.h"
 
-CGrenadeLauncher::CGrenadeLauncher()
+CGrenadeLauncher::CGrenadeLauncher( )
 {
-	m_fGrenadeVel = 0.f;
+	m_fGrenadeVel = 0.0f;
 }
 
-CGrenadeLauncher::~CGrenadeLauncher() 
-{
-}
+CGrenadeLauncher::~CGrenadeLauncher( )
+{ }
 
-BOOL CGrenadeLauncher::net_Spawn(CSE_Abstract* DC) 
+BOOL CGrenadeLauncher::net_Spawn(CSE_Abstract* DC)
 {
-	return		(inherited::net_Spawn(DC));
+	return inherited::net_Spawn(DC);
 }
 
 void CGrenadeLauncher::Load(const char* section)
@@ -28,28 +23,27 @@ void CGrenadeLauncher::Load(const char* section)
 	inherited::Load(section);
 }
 
-void CGrenadeLauncher::net_Destroy() 
+void CGrenadeLauncher::net_Destroy( )
 {
-	inherited::net_Destroy();
+	inherited::net_Destroy( );
 }
 
-void CGrenadeLauncher::UpdateCL() 
+void CGrenadeLauncher::UpdateCL( )
 {
-	inherited::UpdateCL();
+	inherited::UpdateCL( );
 }
 
-
-void CGrenadeLauncher::OnH_A_Chield() 
+void CGrenadeLauncher::OnH_A_Chield( )
 {
-	inherited::OnH_A_Chield		();
+	inherited::OnH_A_Chield( );
 }
 
-void CGrenadeLauncher::OnH_B_Independent(bool just_before_destroy) 
+void CGrenadeLauncher::OnH_B_Independent(bool just_before_destroy)
 {
 	inherited::OnH_B_Independent(just_before_destroy);
 }
 
-void CGrenadeLauncher::renderable_Render() 
+void CGrenadeLauncher::renderable_Render( )
 {
-	inherited::renderable_Render();
+	inherited::renderable_Render( );
 }

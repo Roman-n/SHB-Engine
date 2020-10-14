@@ -1,8 +1,9 @@
 #include "stdafx.h"
+
 #include "WeaponStatMgun.h"
 #include "..\ENGINE\skeletoncustom.h"
 #include "PhysicsShell.h"
-#include "weaponAmmo.h"
+#include "WeaponAmmo.h"
 #include "object_broker.h"
 #include "ai_sounds.h"
 #include "actor.h"

@@ -1411,9 +1411,6 @@
     <Filter Include="Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Weapon Generic">
       <UniqueIdentifier>{cc92a8ba-db0e-413d-a864-8f456ade4842}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Ammo">
-      <UniqueIdentifier>{8b75e6ca-17f9-41cf-a9ec-77b3d3e8338f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Pistol">
       <UniqueIdentifier>{4c02babd-cad6-4571-95d5-5ef73c8c799a}</UniqueIdentifier>
     </Filter>
@@ -2079,6 +2076,9 @@
     </Filter>
     <Filter Include="Core\Client\Objects\HangingLamp">
       <UniqueIdentifier>{a2da5d37-2afc-412b-b4ad-fdac7425a422}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\WeaponAmmo">
+      <UniqueIdentifier>{8b75e6ca-17f9-41cf-a9ec-77b3d3e8338f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -4717,7 +4717,7 @@
       <Filter>Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Weapon Generic</Filter>
     </ClInclude>
     <ClInclude Include="WeaponAmmo.h">
-      <Filter>Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Ammo</Filter>
+      <Filter>Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\WeaponAmmo</Filter>
     </ClInclude>
     <ClInclude Include="WeaponCustomPistol.h">
       <Filter>Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Pistol</Filter>
@@ -7377,7 +7377,7 @@
       <Filter>Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Weapon Generic</Filter>
     </ClCompile>
     <ClCompile Include="WeaponAmmo.cpp">
-      <Filter>Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Ammo</Filter>
+      <Filter>Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\WeaponAmmo</Filter>
     </ClCompile>
     <ClCompile Include="WeaponCustomPistol.cpp">
       <Filter>Core\Client\Objects\items &amp; weapons\Weapons\Custom Weapon\Pistol</Filter>

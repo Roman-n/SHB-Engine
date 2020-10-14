@@ -1,16 +1,15 @@
 // Weapon.h: interface for the CWeapon class.
 #pragma once
 
-#include "PhysicsShell.h"
-#include "weaponammo.h"
-#include "PHShellCreator.h"
-
-#include "ShootingObject.h"
 #include "HudItemObject.h"
+#include "ShootingObject.h"
+
+#include "PhysicsShell.h"
+#include "WeaponAmmo.h"
+#include "PHShellCreator.h"
 #include "Actor_Flags.h"
 #include "..\ENGINE\SkeletonAnimated.h"
 #include "game_cl_single.h"
-
 
 // refs
 class CEntity;
@@ -21,18 +20,17 @@ class CWeaponMagazined;
 class CParticlesObject;
 class CUIStaticItem;
 
-class CWeapon : public CHudItemObject,
-				public CShootingObject
+class CWeapon : public CHudItemObject, public CShootingObject
 {
 private:
 	typedef CHudItemObject inherited;
 
 public:
-							CWeapon				(LPCSTR name);
+							CWeapon				(const char* name);
 	virtual					~CWeapon			();
 
 	// Generic
-	virtual void			Load				(LPCSTR section);
+	virtual void			Load				(const char* section);
 
 	virtual BOOL			net_Spawn			(CSE_Abstract* DC);
 	virtual void			net_Destroy			();
@@ -63,7 +61,7 @@ public:
 	virtual	void			Hit					(SHit* pHDS);
 
 	virtual void			reinit				();
-	virtual void			reload				(LPCSTR section);
+	virtual void			reload				(const char* section);
 	virtual void			create_physic_shell	();
 	virtual void			activate_physic_shell();
 	virtual void			setup_physic_shell	();
@@ -99,7 +97,7 @@ protected:
 //////////////////////////////////////////////////////////////////////////
 public:
 
-//	void					animGet				(MotionSVec& lst, LPCSTR prefix);
+//	void					animGet				(MotionSVec& lst, const char* prefix);
 	void					signal_HideComplete	();
 
 //////////////////////////////////////////////////////////////////////////
@@ -250,7 +248,7 @@ public:
 	//показывает, что оружие находится в соостоянии поворота для приближенного прицеливания
 			bool			IsRotatingToZoom	() const		{	return (m_fZoomRotationFactor<1.f);}
 
-			void			LoadZoomOffset		(LPCSTR section, LPCSTR prefix);
+			void			LoadZoomOffset		(const char* section, const char* prefix);
 
 	virtual float				Weight			();		
 
@@ -259,14 +257,14 @@ public:
 			bool				IsSingleHanded		()	const		{	return m_bIsSingleHanded; }
 
 public:
-	IC		LPCSTR			strap_bone0			() const {return m_strap_bone0;}
-	IC		LPCSTR			strap_bone1			() const {return m_strap_bone1;}
+	IC		const char* strap_bone0			() const {return m_strap_bone0;}
+	IC		const char* strap_bone1			() const {return m_strap_bone1;}
 	IC		void			strapped_mode		(bool value) {m_strapped_mode = value;}
 	IC		bool			strapped_mode		() const {return m_strapped_mode;}
 
 protected:
-	LPCSTR					m_strap_bone0;
-	LPCSTR					m_strap_bone1;
+	const char* m_strap_bone0;
+	const char* m_strap_bone1;
 	Fmatrix					m_StrapOffset;
 	bool					m_strapped_mode;
 	bool					m_can_be_strapped;
@@ -298,6 +296,7 @@ private:
 			vLastSP.set			(0,0,0);
 		}
 	}						m_firedeps			;
+
 protected:
 	virtual void			UpdateFireDependencies_internal	();
 	virtual void			UpdatePosition			(const Fmatrix& transform);	//.
@@ -305,7 +304,7 @@ protected:
 	virtual void			UpdateHudAdditonal		(Fmatrix&);
 	IC		void			UpdateFireDependencies	()			{ if (dwFP_Frame==Device.dwFrame) return; UpdateFireDependencies_internal(); };
 
-	virtual void			LoadFireParams		(LPCSTR section, LPCSTR prefix);
+	virtual void			LoadFireParams		(const char* section, const char* prefix);
 public:	
 	IC		const Fvector&	get_LastFP				()			{ UpdateFireDependencies(); return m_firedeps.vLastFP;	}
 	IC		const Fvector&	get_LastFP2				()			{ UpdateFireDependencies(); return m_firedeps.vLastFP2;	}
@@ -334,7 +333,6 @@ protected:
 	virtual void			Fire2End			();
 	virtual void			Reload				();
 			void			StopShooting		();
-    
 
 	// обработка визуализации выстрела
 	virtual void			OnShot				(){};
@@ -401,6 +399,7 @@ protected:
 			void			StartFlameParticles2();
 			void			StopFlameParticles2	();
 			void			UpdateFlameParticles2();
+
 protected:
 	shared_str					m_sFlameParticles2;
 	//объект партиклов для стрельбы из 2-го ствола
@@ -418,7 +417,7 @@ public:
 
 	virtual void			OnMagazineEmpty		();
 			void			SpawnAmmo			(u32 boxCurr = 0xffffffff, 
-													LPCSTR ammoSect = NULL, 
+												 const char* ammoSect = NULL,
 													u32 ParentID = 0xffffffff);
 
 	//  [8/3/2005]
@@ -458,7 +457,7 @@ public:
 		bool				unlimited_ammo				();
 	IC	bool				can_be_strapped				() const {return m_can_be_strapped;};
 
-	LPCSTR					GetCurrentAmmo_ShortName	();
+	const char* GetCurrentAmmo_ShortName	();
 
 protected:
 	u32						m_ef_main_weapon_type;
