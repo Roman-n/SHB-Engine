@@ -19,7 +19,7 @@
 #include "inventoryowner.h"
 #include "movement_manager.h"
 #include "entity_alive.h"
-#include "weaponmagazined.h"
+#include "WeaponMagazined.h"
 #include "xrmessages.h"
 #include "inventory.h"
 #include "script_ini_file.h"

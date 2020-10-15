@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "missile.h"
+#include "Missile.h"
 #include "WeaponHUD.h"
 #include "PhysicsShell.h"
 #include "actor.h"

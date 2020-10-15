@@ -15,7 +15,7 @@
 #include "UIInventoryUtilities.h"//
 #include "UICellItem.h"//
 #include "UICellItemFactory.h"//
-#include "../WeaponMagazined.h"
+#include "..\WeaponMagazined.h"
 #include "../Actor.h"
 //#include "../EatableItem.h"
 #include "../alife_registry_wrappers.h"

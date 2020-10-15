@@ -7,11 +7,12 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "agent_explosive_manager.h"
 #include "agent_manager.h"
 #include "agent_location_manager.h"
 #include "agent_member_manager.h"
-#include "missile.h"
+#include "Missile.h"
 #include "explosive.h"
 #include "member_order.h"
 #include "ai/stalker/ai_stalker.h"

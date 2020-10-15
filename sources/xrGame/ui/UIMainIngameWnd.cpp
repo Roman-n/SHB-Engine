@@ -14,9 +14,9 @@
 #include "../character_info.h"
 #include "../inventory.h"
 #include "UIGameSP.h"//
-#include "../weaponmagazined.h"
-#include "../missile.h"
-#include "../Grenade.h"
+#include "..\WeaponMagazined.h"
+#include "..\Missile.h"
+#include "..\Grenade.h"
 #include "../xrServer_objects_ALife.h"
 #include "../alife_simulator.h"
 #include "../alife_object_registry.h"

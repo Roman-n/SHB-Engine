@@ -7,6 +7,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "object_handler_planner.h"
 #include "object_property_evaluators.h"
 #include "object_actions.h"
@@ -15,8 +16,8 @@
 #include "ai/stalker/ai_stalker.h"
 #include "inventory.h"
 #include "object_handler_planner_impl.h"
-#include "weaponmagazined.h"
-#include "missile.h"
+#include "WeaponMagazined.h"
+#include "Missile.h"
 #include "ai_monster_space.h"
 
 using namespace ObjectHandlerSpace;

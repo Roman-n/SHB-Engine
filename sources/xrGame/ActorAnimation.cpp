@@ -8,7 +8,7 @@
 #include "ui/UI.h"//
 #include "weapon.h"
 #include "inventory.h"
-#include "missile.h"
+#include "Missile.h"
 #include "Level.h"
 
 #ifdef DEBUG

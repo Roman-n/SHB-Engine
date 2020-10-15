@@ -7,13 +7,14 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "object_property_evaluators.h"
 #include "weapon.h"
 #include "ai/stalker/ai_stalker.h"
 #include "inventory.h"
-#include "missile.h"
+#include "Missile.h"
 #include "FoodItem.h"
-#include "weaponmagazined.h"
+#include "WeaponMagazined.h"
 
 //////////////////////////////////////////////////////////////////////////
 // CObjectPropertyEvaluatorState

@@ -32,7 +32,7 @@
 #include "inventory.h"
 #include "infoportion.h"
 #include "AI/Monsters/BaseMonster/BaseMonster.h"
-#include "weaponmagazined.h"
+#include "WeaponMagazined.h"
 #include "ai/stalker/ai_stalker.h"
 
 bool CScriptGameObject::GiveInfoPortion(LPCSTR info_id)

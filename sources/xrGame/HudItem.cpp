@@ -4,6 +4,7 @@
 //////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "HudItem.h"
 #include "physic_item.h"
 #include "WeaponHUD.h"

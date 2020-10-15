@@ -7,6 +7,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 #include "stdafx.h"
+
 #include "stalker_animation_manager.h"
 #include "ai/stalker/ai_stalker.h"
 #include "sight_manager.h"
@@ -14,7 +15,7 @@
 #include "stalker_animation_data.h"
 
 #include "weapon.h"
-#include "missile.h"
+#include "Missile.h"
 #include "inventory.h"
 #include "stalker_animation_manager_impl.h"
 

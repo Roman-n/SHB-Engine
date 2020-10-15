@@ -8,7 +8,7 @@
 #include "../Artefact.h"
 //#include "../EatableItem.h"
 #include "../BottleItem.h"//
-#include "../WeaponMagazined.h"
+#include "..\WeaponMagazined.h"
 #include "../inventory.h"
 #include "../game_base.h"
 #include "../game_cl_base.h"

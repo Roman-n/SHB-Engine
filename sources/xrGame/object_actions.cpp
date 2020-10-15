@@ -14,7 +14,7 @@
 #include "xrmessages.h"
 #include "FoodItem.h"
 #include "weapon.h"
-#include "weaponmagazined.h"
+#include "WeaponMagazined.h"
 #include "object_handler_space.h"
 #include "stalker_animation_manager.h"
 

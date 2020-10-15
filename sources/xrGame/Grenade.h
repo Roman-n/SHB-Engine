@@ -1,15 +1,15 @@
 #pragma once
-#include "missile.h"
+
+#include "Missile.h"
 #include "explosive.h"
 #include "..\ENGINE\feel_touch.h"
 
 #define SND_RIC_COUNT 5
 
-class CGrenade :
-	public CMissile,
-	public CExplosive
+class CGrenade : public CMissile, public CExplosive
 {
 	typedef CMissile		inherited;
+
 public:
 							CGrenade							();
 	virtual					~CGrenade							();
@@ -40,7 +40,7 @@ public:
 
 	virtual void			OnH_B_Chield						()				{inherited::OnH_B_Chield();}
 
-	virtual	void			Hit									(SHit* pHDS);
+	virtual void			Hit									(SHit* pHDS);
 
 	virtual bool			NeedToDestroyObject					() const; 
 	virtual ALife::_TIME_ID	TimePassedAfterIndependant			() const;
@@ -49,19 +49,23 @@ public:
 
 	virtual void			Deactivate							();
 	virtual void			GetBriefInfo						(xr_string& str_name, xr_string& icon_sect_name, xr_string& str_count);
+
 protected:
 	ALife::_TIME_ID			m_dwGrenadeRemoveTime;
 	ALife::_TIME_ID			m_dwGrenadeIndependencyTime;
+
 protected:
 	HUD_SOUND				sndCheckout;
 	ESoundTypes				m_eSoundCheckout;
+
 private:
 	float					m_grenade_detonation_threshold_hit;
 	bool					m_thrown;
-protected:
-	virtual	void			UpdateXForm							()		{ CMissile::UpdateXForm(); };
-public:
 
+protected:
+	virtual void			UpdateXForm							()		{ CMissile::UpdateXForm(); };
+
+public:
 	virtual BOOL			UsedAI_Locations					();
 	virtual CExplosive		*cast_explosive						()	{return this;}
 	virtual CMissile		*cast_missile						()	{return this;}

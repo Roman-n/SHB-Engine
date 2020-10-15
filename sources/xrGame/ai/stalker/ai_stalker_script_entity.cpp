@@ -13,7 +13,7 @@
 #include "../../torch.h"
 #include "../../inventory.h"
 #include "../../weapon.h"
-#include "../../weaponmagazined.h"
+#include "..\..\WeaponMagazined.h"
 #include "../../..\ENGINE\skeletoncustom.h"
 #include "../../script_engine.h"
 #include "../../sight_manager.h"

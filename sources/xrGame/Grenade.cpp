@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-#include "grenade.h"
+#include "Grenade.h"
 #include "PhysicsShell.h"
 #include "WeaponHUD.h"
 #include "entity.h"
