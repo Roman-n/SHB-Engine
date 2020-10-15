@@ -19,140 +19,141 @@ struct SGameMtl;
 
 class CMissile : public CHudItemObject
 {
-	typedef CHudItemObject inherited;
+	using inherited											= CHudItemObject;
 
 public:
-	CMissile( );
-	virtual					~CMissile( );
+						CMissile							( );
+	virtual				~CMissile							( );
 
-	virtual BOOL			AlwaysTheCrow( )
+	virtual BOOL		AlwaysTheCrow						( )
 	{
 		return TRUE;
 	}
-	virtual void			OnDrawUI( );
+	virtual void		OnDrawUI							( );
 
-	virtual void			reinit( );
-	virtual CMissile* cast_missile( )
+	virtual void		reinit								( );
+	virtual CMissile*	cast_missile						( )
 	{
 		return this;
 	}
 
-	virtual void 			Load(LPCSTR section);
-	virtual BOOL 			net_Spawn(CSE_Abstract* DC);
-	virtual void 			net_Destroy( );
+	virtual void		Load								(const char* section);
+	virtual BOOL		net_Spawn							(CSE_Abstract* DC);
+	virtual void		net_Destroy							( );
 
-	virtual void 			UpdateCL( );
-	virtual void 			shedule_Update(u32 dt);
+	virtual void		UpdateCL							( );
+	virtual void		shedule_Update						(u32 dt);
 
-	virtual void 			OnH_A_Chield( );
-	virtual void 			OnH_B_Independent(bool just_before_destroy);
+	virtual void		OnH_A_Chield						( );
+	virtual void		OnH_B_Independent					(bool just_before_destroy);
 
-	virtual void 			OnEvent(NET_Packet& P, u16 type);
+	virtual void		OnEvent								(NET_Packet& P, u16 type);
 
-	virtual void 			OnAnimationEnd(u32 state);
+	virtual void		OnAnimationEnd						(u32 state);
 
-	virtual void 			Show( );
-	virtual void 			Hide( );
-	virtual bool 			IsHidden( ) const
+	virtual void		Show								( );
+	virtual void		Hide								( );
+	virtual bool		IsHidden							( ) const
 	{
 		return GetState( ) == MS_HIDDEN;
 	}
-	virtual bool 			IsHiding( ) const
+	virtual bool		IsHiding							( ) const
 	{
 		return GetState( ) == MS_HIDING;
 	}
-	virtual bool 			IsShowing( ) const
+	virtual bool		IsShowing							( ) const
 	{
 		return GetState( ) == MS_SHOWING;
 	}
 
-	virtual void 			Throw( );
-	virtual void 			Destroy( );
+	virtual void		Throw								( );
+	virtual void		Destroy								( );
 
-	virtual bool 			Action(int cmd, u32 flags);
+	virtual bool		Action								(int cmd, u32 flags);
 
-//.	IC u32		 			State						()				{return m_state;}
-	virtual void 			State(u32 state);
-	virtual void 			OnStateSwitch(u32 S);
-	virtual void			GetBriefInfo(xr_string& str_name, xr_string& icon_sect_name, xr_string& str_count);
+//.	IC u32				State								( ) {return m_state;}
+	virtual void		State								(u32 state);
+	virtual void		OnStateSwitch						(u32 S);
+	virtual void		GetBriefInfo						(xr_string& str_name, xr_string& icon_sect_name, xr_string& str_count);
 
 protected:
-	virtual void			UpdateFireDependencies_internal( );
-	virtual void			UpdateXForm( );
-	void					UpdatePosition(const Fmatrix& trans);
-	void					spawn_fake_missile( );
+	virtual void		UpdateFireDependencies_internal		( );
+	virtual void		UpdateXForm							( );
+	void				UpdatePosition						(const Fmatrix& trans);
+	void				spawn_fake_missile					( );
 
 	//инициализация если вещь в активном слоте или спрятана на OnH_B_Chield
-	virtual void			OnActiveItem( );
-	virtual void			OnHiddenItem( );
+	virtual void		OnActiveItem						( );
+	virtual void		OnHiddenItem						( );
 
 	//для сети
-	virtual void			StartIdleAnim( );
-	virtual void			net_Relcase(CObject* O);
+	virtual void		StartIdleAnim						( );
+	virtual void		net_Relcase							(CObject* O);
 
 protected:
-	bool					m_throw;
+	bool													m_throw;
 
 	//время уничтожения
-	u32						m_dwDestroyTime;
-	u32						m_dwDestroyTimeMax;
+	u32														m_dwDestroyTime;
+	u32														m_dwDestroyTimeMax;
 
-	Fvector					m_throw_direction;
-	Fmatrix					m_throw_matrix;
+	Fvector													m_throw_direction;
+	Fmatrix													m_throw_matrix;
 
-	CMissile* m_fake_missile;
+	CMissile*												m_fake_missile;
 
 	//параметры броска
-	float m_fMinForce;
-	float m_fConstForce;
-	float m_fMaxForce;
-	float m_fForceGrowSpeed;
+	float													m_fMinForce;
+	float													m_fConstForce;
+	float													m_fMaxForce;
+	float													m_fForceGrowSpeed;
+
 //private:
-	bool					m_constpower;
-	float					m_fThrowForce;
+	bool													m_constpower;
+	float													m_fThrowForce;
 
 protected:
 	//относительная точка и направление вылета гранаты
-	Fvector					m_vThrowPoint;
-	Fvector					m_vThrowDir;
+	Fvector													m_vThrowPoint;
+	Fvector													m_vThrowDir;
 	//для HUD
-	Fvector					m_vHudThrowPoint;
-	Fvector					m_vHudThrowDir;
+	Fvector													m_vHudThrowPoint;
+	Fvector													m_vHudThrowDir;
 
 	//имена анимаций
-	shared_str				m_sAnimShow;
-	shared_str				m_sAnimHide;
-	shared_str				m_sAnimIdle;
-	shared_str				m_sAnimPlaying;
-	shared_str				m_sAnimThrowBegin;
-	shared_str				m_sAnimThrowIdle;
-	shared_str				m_sAnimThrowAct;
-	shared_str				m_sAnimThrowEnd;
+	shared_str												m_sAnimShow;
+	shared_str												m_sAnimHide;
+	shared_str												m_sAnimIdle;
+	shared_str												m_sAnimPlaying;
+	shared_str												m_sAnimThrowBegin;
+	shared_str												m_sAnimThrowIdle;
+	shared_str												m_sAnimThrowAct;
+	shared_str												m_sAnimThrowEnd;
 
 	//звук анимации "играния"
-	HUD_SOUND				sndPlaying;
+	HUD_SOUND												sndPlaying;
 
 protected:
-	void			setup_throw_params( );
+	void				setup_throw_params					( );
 
 public:
-	virtual void			activate_physic_shell( );
-	virtual void			setup_physic_shell( );
-	virtual void			create_physic_shell( );
-	IC		void			set_destroy_time(u32 delta_destroy_time)
+	virtual void		activate_physic_shell				( );
+	virtual void		setup_physic_shell					( );
+	virtual void		create_physic_shell					( );
+	IC void				set_destroy_time					(u32 delta_destroy_time)
 	{
 		m_dwDestroyTime = delta_destroy_time + Device.dwTimeGlobal;
 	}
 
 protected:
-	u32						m_ef_weapon_type;
+	u32														m_ef_weapon_type;
 
 public:
-	virtual u32				ef_weapon_type( ) const;
-	IC		u32				destroy_time( ) const
+	virtual u32			ef_weapon_type						( ) const;
+	IC u32				destroy_time						( ) const
 	{
 		return m_dwDestroyTime;
 	};
-	static	void			ExitContactCallback(bool& do_colide, bool bo1, dContact& c, SGameMtl* /*material_1*/, SGameMtl* /*material_2*/);
-	virtual u16				bone_count_to_synchronize( ) const;
+	static void			ExitContactCallback					(bool& do_colide, bool bo1, dContact& c, SGameMtl* material_1, SGameMtl* material_2);
+	virtual u16			bone_count_to_synchronize			( ) const;
 };

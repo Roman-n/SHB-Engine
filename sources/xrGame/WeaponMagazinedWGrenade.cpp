@@ -317,7 +317,7 @@ void CWeaponMagazinedWGrenade::state_Fire(float dt)
 				Log("H_Parent", H_Parent( )->cNameSect( ).c_str( ));
 			}
 
-			smart_cast<CEntity*>	(H_Parent( ))->g_fireParams(this, p1, d);
+			smart_cast<CEntity*> (H_Parent( ))->g_fireParams(this, p1, d);
 		}
 		else
 		{

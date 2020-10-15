@@ -100,5 +100,5 @@ public:
 	virtual void		UpdateGrenadeVisibility		(bool visibility);
 
 	//название косточки для гранаты подствольника в HUD
-	shared_str								grenade_bone_name;
+	shared_str										grenade_bone_name;
 };
